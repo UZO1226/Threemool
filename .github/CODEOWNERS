@@ -1,0 +1,15 @@
+# 공동 파일을 바꾸는 PR 은 작성자를 뺀 팀원 한 명 이상이 승인해야 merge 된다 (RULES/BRANCH_RULES.md 5절)
+# 개인 폴더(Yoo/, Lee/, Park/)는 소유자를 두지 않는다. 범위 검사를 통과하면 작성자가 merge 한다
+# 유지오 @UZO1226, 이하경 @dlgkrudha, 박성현 @qkrtjdgus1123
+
+/Paper/       @UZO1226 @dlgkrudha @qkrtjdgus1123
+/Compare/     @UZO1226 @dlgkrudha @qkrtjdgus1123
+/RULES/       @UZO1226 @dlgkrudha @qkrtjdgus1123
+/scripts/     @UZO1226 @dlgkrudha @qkrtjdgus1123
+/.github/     @UZO1226 @dlgkrudha @qkrtjdgus1123
+/Docs/        @UZO1226 @dlgkrudha @qkrtjdgus1123
+/Slides/      @UZO1226 @dlgkrudha @qkrtjdgus1123
+/README.md    @UZO1226 @dlgkrudha @qkrtjdgus1123
+/CLAUDE.md    @UZO1226 @dlgkrudha @qkrtjdgus1123
+/AGENTS.md    @UZO1226 @dlgkrudha @qkrtjdgus1123
+/.gitignore   @UZO1226 @dlgkrudha @qkrtjdgus1123

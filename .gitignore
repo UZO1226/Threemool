@@ -1,0 +1,73 @@
+# 대용량 산출물과 데이터는 Git 에 넣지 않는다 (BRANCH_RULES 6절)
+# 위치와 체크섬은 실험 기록에 적는다
+
+# 데이터 (Kaggle 원본, 전처리 결과)
+**/data/
+*.csv.gz
+*.parquet
+
+# 모델 가중치, 체크포인트 (Stable-Baselines3 모델은 .zip 으로 저장된다)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.zip
+*.npy
+*.npz
+*.pkl
+**/checkpoints/
+**/models/
+
+# 학습 로그
+**/runs/
+**/wandb/
+**/logs/
+**/mlruns/
+**/outputs/
+**/multirun/
+events.out.tfevents.*
+
+# 비밀 정보 (API 키, 토큰)
+.env
+.env.*
+kaggle.json
+*.key
+.netrc
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+node_modules/
+
+# 개인 AI 설정 (공용 지침은 CLAUDE.md, AGENTS.md 로 공유한다)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# 편집기, 운영체제
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# 한글, 오피스 임시 파일과 백업
+~$*
+*.bak
+*.asv
+
+# 개인 메신저 사진 (카카오톡에서 저장한 파일)
+KakaoTalk_*
+
+# 로컬 미리보기와 임시 파일
+*.preview.md
+*.preview.hwpx
+*.tmp

@@ -1,0 +1,49 @@
+name: 논문 통합
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Paper/sections/**"
+      - "Paper/refs/**"
+      - "Paper/figures/**"
+      - "Paper/template/**"
+      - "scripts/build_paper.py"
+      - "scripts/build_hwpx.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # main 은 PR 전용으로 잠겨 있다. 봇은 규칙 예외로 등록된 배포 키(PAPER_BOT_KEY)로 push 한다
+      - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.PAPER_BOT_KEY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 패키지 설치
+        run: pip install lxml
+      - name: 통합본 생성 (paper.md)
+        run: python scripts/build_paper.py
+      - name: 투고 양식 생성 (paper.hwpx)
+        run: python scripts/build_hwpx.py
+      - name: 통합본 커밋
+        run: |
+          if git diff --quiet -- Paper/build && [ -z "$(git ls-files --others --exclude-standard Paper/build)" ]; then
+            echo "통합본 변경 없음"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Paper/build
+          git commit -m "Paper 통합본 자동 갱신 (${GITHUB_SHA::7})"
+          git pull --rebase origin main
+          git push origin HEAD:main
