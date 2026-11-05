@@ -1,0 +1,362 @@
+[
+ {
+  "method": "fcsrl",
+  "seed": 0,
+  "best_epoch": 4,
+  "test_best": {
+   "air_m3": 31525.892017978218,
+   "reward": -47.288838026967326,
+   "cost": 18.81,
+   "nh4_viol_pct": 5.650406504065041,
+   "do_viol_pct": 0.9036004645760743,
+   "days_within_limit_pct": 80.33333333333333,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 32630.73753479096,
+   "reward": -48.94610630218643,
+   "cost": 14.303333333333333,
+   "nh4_viol_pct": 4.814169570267131,
+   "do_viol_pct": 0.16957026713124274,
+   "days_within_limit_pct": 85.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "fcsrl",
+  "seed": 1,
+  "best_epoch": 21,
+  "test_best": {
+   "air_m3": 31930.107985846338,
+   "reward": -47.895161978769515,
+   "cost": 13.08,
+   "nh4_viol_pct": 4.502903600464576,
+   "do_viol_pct": 0.0545876887340302,
+   "days_within_limit_pct": 86.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 31677.97547713698,
+   "reward": -47.51696321570547,
+   "cost": 14.543333333333333,
+   "nh4_viol_pct": 4.957026713124273,
+   "do_viol_pct": 0.11033681765389083,
+   "days_within_limit_pct": 84.66666666666667,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "fcsrl",
+  "seed": 2,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 33565.71463326329,
+   "reward": -50.348571949894925,
+   "cost": 12.693333333333333,
+   "nh4_viol_pct": 4.174216027874564,
+   "do_viol_pct": 0.24854819976771197,
+   "days_within_limit_pct": 85.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 33565.71463326329,
+   "reward": -50.348571949894925,
+   "cost": 12.693333333333333,
+   "nh4_viol_pct": 4.174216027874564,
+   "do_viol_pct": 0.24854819976771197,
+   "days_within_limit_pct": 85.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "fcsrl",
+  "seed": 3,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 34102.25946481426,
+   "reward": -51.1533891972214,
+   "cost": 16.21,
+   "nh4_viol_pct": 5.087108013937281,
+   "do_viol_pct": 0.5609756097560976,
+   "days_within_limit_pct": 81.66666666666667,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 34102.25946481426,
+   "reward": -51.1533891972214,
+   "cost": 16.21,
+   "nh4_viol_pct": 5.087108013937281,
+   "do_viol_pct": 0.5609756097560976,
+   "days_within_limit_pct": 81.66666666666667,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "fcsrl",
+  "seed": 4,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 32602.643528576493,
+   "reward": -48.90396529286474,
+   "cost": 13.783333333333333,
+   "nh4_viol_pct": 4.788617886178862,
+   "do_viol_pct": 0.013937282229965159,
+   "days_within_limit_pct": 84.66666666666667,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 32602.643528576493,
+   "reward": -48.90396529286474,
+   "cost": 13.783333333333333,
+   "nh4_viol_pct": 4.788617886178862,
+   "do_viol_pct": 0.013937282229965159,
+   "days_within_limit_pct": 84.66666666666667,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3",
+  "seed": 0,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3",
+  "seed": 1,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 9.934107462565105e-07,
+   "reward": -1.4901161193847657e-09,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 9.934107462565105e-07,
+   "reward": -1.4901161193847657e-09,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3",
+  "seed": 2,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 0.15011052290598548,
+   "reward": -0.00022516578435897828,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 0.15011052290598548,
+   "reward": -0.00022516578435897828,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3",
+  "seed": 3,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3",
+  "seed": 4,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 0.0,
+   "reward": 0.0,
+   "cost": 276.62,
+   "nh4_viol_pct": 96.38327526132404,
+   "do_viol_pct": 0.0,
+   "days_within_limit_pct": 0.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3lag",
+  "seed": 0,
+  "best_epoch": 4,
+  "test_best": {
+   "air_m3": 29571.654314744806,
+   "reward": -44.357481472117215,
+   "cost": 22.533333333333335,
+   "nh4_viol_pct": 7.836236933797909,
+   "do_viol_pct": 0.015098722415795587,
+   "days_within_limit_pct": 76.66666666666667,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 31303.866898632707,
+   "reward": -46.955800347949065,
+   "cost": 14.23,
+   "nh4_viol_pct": 4.852497096399536,
+   "do_viol_pct": 0.10569105691056911,
+   "days_within_limit_pct": 83.33333333333334,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3lag",
+  "seed": 1,
+  "best_epoch": 21,
+  "test_best": {
+   "air_m3": 33136.307415146024,
+   "reward": -49.704461122719025,
+   "cost": 14.07,
+   "nh4_viol_pct": 4.686411149825784,
+   "do_viol_pct": 0.21602787456445996,
+   "days_within_limit_pct": 86.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 30785.98539108634,
+   "reward": -46.178978086629506,
+   "cost": 14.49,
+   "nh4_viol_pct": 4.9279907084785135,
+   "do_viol_pct": 0.12078977932636467,
+   "days_within_limit_pct": 84.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3lag",
+  "seed": 2,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 31047.756948770744,
+   "reward": -46.57163542315611,
+   "cost": 15.236666666666666,
+   "nh4_viol_pct": 5.176538908246226,
+   "do_viol_pct": 0.132404181184669,
+   "days_within_limit_pct": 83.33333333333334,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 31047.756948770744,
+   "reward": -46.57163542315611,
+   "cost": 15.236666666666666,
+   "nh4_viol_pct": 5.176538908246226,
+   "do_viol_pct": 0.132404181184669,
+   "days_within_limit_pct": 83.33333333333334,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3lag",
+  "seed": 3,
+  "best_epoch": 19,
+  "test_best": {
+   "air_m3": 31565.470143153958,
+   "reward": -47.34820521473094,
+   "cost": 14.186666666666667,
+   "nh4_viol_pct": 4.768873403019745,
+   "do_viol_pct": 0.17421602787456444,
+   "days_within_limit_pct": 85.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 32878.99622852662,
+   "reward": -49.318494342789926,
+   "cost": 12.926666666666666,
+   "nh4_viol_pct": 4.346109175377468,
+   "do_viol_pct": 0.15795586527293845,
+   "days_within_limit_pct": 85.33333333333334,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ },
+ {
+  "method": "td3lag",
+  "seed": 4,
+  "best_epoch": 25,
+  "test_best": {
+   "air_m3": 32640.821274997656,
+   "reward": -48.96123191249649,
+   "cost": 17.35,
+   "nh4_viol_pct": 5.965156794425087,
+   "do_viol_pct": 0.08013937282229966,
+   "days_within_limit_pct": 79.0,
+   "n_episodes": 300
+  },
+  "test_final": {
+   "air_m3": 32640.821274997656,
+   "reward": -48.96123191249649,
+   "cost": 17.35,
+   "nh4_viol_pct": 5.965156794425087,
+   "do_viol_pct": 0.08013937282229966,
+   "days_within_limit_pct": 79.0,
+   "n_episodes": 300
+  },
+  "cost_limit": 15
+ }
+]
