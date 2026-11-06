@@ -1,0 +1,189 @@
+{
+  "code_commit": "a8ed1be5269bfd7b46db2b49ebe98c6ce3bfa0a1",
+  "data_archive_sha256": "f1b7683596512f2e432bb616d20fdc85ffdef3006e27a170b562789d30a050aa",
+  "packages": {
+    "bsm2-python": "0.0.16",
+    "numba": "0.63.1",
+    "llvmlite": "0.46.0",
+    "control": "0.10.2",
+    "numpy": "1.23.5",
+    "scipy": "1.15.3",
+    "torch": "2.14.1+cu130",
+    "gymnasium": "0.28.1"
+  },
+  "source_hashes": {
+    "bsm1_base.py": "506440544a7d55694824b9e0224761180fd44d7d8fd089df41da6fc3cb4a3665",
+    "bsm1_ol.py": "6a468e8343b7a39ff37fafcabfabba360d533397abec4f4ef1852625e299e30c",
+    "bsm_base.py": "6a0277e3b1fc5873356731eab6e44b48ef9eda427ecc31090e3e1284a439c17a",
+    "bsm2/asm1_bsm2.py": "709cffb043c79579587841d0068aa35bb078d9813cdf0192a34d28ff13552bab",
+    "bsm2/settler1d_bsm2.py": "25248ba4f35f8c4db632eae6d3362943ed51c36c2679d3fa179a04da75909dd3",
+    "data/dryinfluent.csv": "1d6c85865f7e2a030c91a546c79458aec7c7e8bb06d9c28cccd8ead329cf26e2",
+    "data/raininfluent.csv": "a9ad24b8b1f19b0a211c5f16d366868e67650bf98cef60d28c9869fd756928ae"
+  },
+  "steady": {
+    "matlab_reference_pass": true,
+    "max_abs_error": 8.610481394555336e-08,
+    "effluent_nh4": 1.7333314669584787,
+    "reactor5_do": 0.4909435164199288
+  },
+  "checks": {
+    "deterministic_reset": true,
+    "independent_instances": true,
+    "invalid_action_rejected": true,
+    "time_limit_guard": true,
+    "action_clipping": true,
+    "direct_upstream_equivalence": true,
+    "energy_units_and_substep_cost": true
+  },
+  "baselines": [
+    {
+      "weather": "dry",
+      "kla5_per_day": 0.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.896547536016442,
+      "aeration_kwh_per_day": 2843.733333333244,
+      "mixing_kwh_per_day": 399.9600000000114,
+      "nh4_time_mean": 11.255455210518583,
+      "nh4_flow_weighted_mean": 10.972612975185378,
+      "nh4_violation_percent": 92.93650793650794,
+      "nh4_crossings": 2,
+      "do5_mean": 0.032210515321413766,
+      "do5_above_target_percent": 0.0,
+      "episode_cost": 1873.6,
+      "episode_reward": -1715.7446808511338
+    },
+    {
+      "weather": "dry",
+      "kla5_per_day": 84.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.546153639035765,
+      "aeration_kwh_per_day": 3341.3866666668155,
+      "mixing_kwh_per_day": 239.99999999999412,
+      "nh4_time_mean": 4.9650801514420175,
+      "nh4_flow_weighted_mean": 4.8309879940078835,
+      "nh4_violation_percent": 62.857142857142854,
+      "nh4_crossings": 7,
+      "do5_mean": 0.8223571482890242,
+      "do5_above_target_percent": 14.384920634920634,
+      "episode_cost": 1267.2000000000003,
+      "episode_reward": -2016.0000000000002
+    },
+    {
+      "weather": "dry",
+      "kla5_per_day": 240.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.442782077996526,
+      "aeration_kwh_per_day": 4265.599999999816,
+      "mixing_kwh_per_day": 239.99999999999412,
+      "nh4_time_mean": 2.5239282767108135,
+      "nh4_flow_weighted_mean": 2.5303820283810614,
+      "nh4_violation_percent": 16.666666666666664,
+      "nh4_crossings": 5,
+      "do5_mean": 3.764478065432003,
+      "do5_above_target_percent": 99.9702380952381,
+      "episode_cost": 335.99999999999994,
+      "episode_reward": -2573.617021276655
+    },
+    {
+      "weather": "rain",
+      "kla5_per_day": 0.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.564057049981784,
+      "aeration_kwh_per_day": 2843.733333333244,
+      "mixing_kwh_per_day": 399.9600000000114,
+      "nh4_time_mean": 10.836548687295135,
+      "nh4_flow_weighted_mean": 9.999803017406792,
+      "nh4_violation_percent": 89.52380952380953,
+      "nh4_crossings": 4,
+      "do5_mean": 0.04616338846280718,
+      "do5_above_target_percent": 0.0,
+      "episode_cost": 1804.8,
+      "episode_reward": -1715.7446808511338
+    },
+    {
+      "weather": "rain",
+      "kla5_per_day": 84.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.430721429002006,
+      "aeration_kwh_per_day": 3341.3866666668155,
+      "mixing_kwh_per_day": 239.99999999999412,
+      "nh4_time_mean": 5.18092092034848,
+      "nh4_flow_weighted_mean": 5.066531931918882,
+      "nh4_violation_percent": 63.89880952380952,
+      "nh4_crossings": 7,
+      "do5_mean": 0.8769291712715557,
+      "do5_above_target_percent": 13.22420634920635,
+      "episode_cost": 1288.2000000000003,
+      "episode_reward": -2016.0000000000002
+    },
+    {
+      "weather": "rain",
+      "kla5_per_day": 240.0,
+      "substep_minutes": 1.0,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 7.5081695999833755,
+      "aeration_kwh_per_day": 4265.599999999816,
+      "mixing_kwh_per_day": 239.99999999999412,
+      "nh4_time_mean": 2.9876973085078244,
+      "nh4_flow_weighted_mean": 3.143797166031978,
+      "nh4_violation_percent": 26.08134920634921,
+      "nh4_crossings": 8,
+      "do5_mean": 3.8541751467159235,
+      "do5_above_target_percent": 99.9702380952381,
+      "episode_cost": 525.8,
+      "episode_reward": -2573.617021276655
+    }
+  ],
+  "integration_check": {
+    "refined": {
+      "weather": "dry",
+      "kla5_per_day": 84.0,
+      "substep_minutes": 0.5,
+      "days": 7.0,
+      "control_steps": 2016,
+      "seconds": 13.254866470990237,
+      "aeration_kwh_per_day": 3341.3866666668155,
+      "mixing_kwh_per_day": 239.99999999999412,
+      "nh4_time_mean": 4.945005452832245,
+      "nh4_flow_weighted_mean": 4.8090303423053475,
+      "nh4_violation_percent": 62.72321428571429,
+      "nh4_crossings": 7,
+      "do5_mean": 0.8218441151883795,
+      "do5_above_target_percent": 14.374999999999998,
+      "episode_cost": 1264.4999999999998,
+      "episode_reward": -2016.0000000000002
+    },
+    "nh4_endpoint_mae": 0.021670550028823923,
+    "do5_endpoint_mae": 0.0038719972098514134
+  },
+  "agent_smoke": {
+    "ppo": {
+      "finite": true,
+      "transitions": 12,
+      "optimizer_updates": 0
+    },
+    "fcsrl_ppo": {
+      "finite": true,
+      "transitions": 12,
+      "optimizer_updates": 0
+    },
+    "fcsrl_ppo_tail": {
+      "finite": true,
+      "transitions": 12,
+      "optimizer_updates": 0
+    }
+  },
+  "elapsed_seconds": 117.52154871198582,
+  "status": "preflight_complete_no_rl_training"
+}
