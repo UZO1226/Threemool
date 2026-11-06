@@ -8,8 +8,8 @@ import subprocess
 import numpy as np
 import pandas as pd
 import torch
-from experiment import arrays, load_model, replay, routing_frame, score, sha, write
 from summarize import rates
+from experiment import arrays, load_model, replay, routing_frame, score, sha, write
 
 
 def main(a):
