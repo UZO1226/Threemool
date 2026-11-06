@@ -1,0 +1,26 @@
+{
+ "val": {
+  "air_m3": 53596.02698679528,
+  "reward": -80.39404048019291,
+  "cost": 26.790697674418606,
+  "nh4_viol_pct": 6.343084028846933,
+  "do_viol_pct": 2.9916538368041485,
+  "days_within_limit_pct": 56.27906976744186,
+  "n_episodes": 215,
+  "measured_nh4_viol_pct": 20.873511060692003,
+  "measured_do_viol_pct": 3.848958755368285,
+  "measured_air_m3": 53596.026986795274
+ },
+ "test": {
+  "air_m3": 59810.681787979054,
+  "reward": -89.71602268196858,
+  "cost": 22.94,
+  "nh4_viol_pct": 5.411149825783972,
+  "do_viol_pct": 2.581881533101045,
+  "days_within_limit_pct": 77.0,
+  "n_episodes": 300,
+  "measured_nh4_viol_pct": 8.32171893147503,
+  "measured_do_viol_pct": 1.2369337979094075,
+  "measured_air_m3": 59810.84778007062
+ }
+}
