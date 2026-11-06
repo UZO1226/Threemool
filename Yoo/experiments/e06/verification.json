@@ -1,0 +1,79 @@
+{
+  "unit_tests_passed": 15,
+  "checks": {
+    "risk_off_actual_data_matches_e05_all_weights": true,
+    "risk_on_two_seeds_two_updates_restore_exact": true,
+    "initial_risk_signal_less_than_half_base_rms": true
+  },
+  "smokes": [
+    {
+      "method": "ppolag_fcsrl_tail",
+      "seed": 0,
+      "steps": 18368,
+      "tail_weight": 0.03,
+      "rms_ratios": [
+        0.3391211234999373,
+        0.04510324337313439
+      ],
+      "tail_episodes": [
+        6,
+        6
+      ],
+      "maximum_kl": 0.014765925847718285
+    },
+    {
+      "method": "ppolag_fcsrl_tail",
+      "seed": 1,
+      "steps": 18368,
+      "tail_weight": 0.03,
+      "rms_ratios": [
+        0.2156023383140564,
+        0.14465715355022365
+      ],
+      "tail_episodes": [
+        6,
+        6
+      ],
+      "maximum_kl": 0.006552188227134239
+    },
+    {
+      "method": "ppolag_tail",
+      "seed": 0,
+      "steps": 18368,
+      "tail_weight": 0.03,
+      "rms_ratios": [
+        0.3701266348361969,
+        0.04507124507485303
+      ],
+      "tail_episodes": [
+        5,
+        6
+      ],
+      "maximum_kl": 0.00956360674980614
+    },
+    {
+      "method": "ppolag_tail",
+      "seed": 1,
+      "steps": 18368,
+      "tail_weight": 0.03,
+      "rms_ratios": [
+        0.2237255573272705,
+        0.012338110763422594
+      ],
+      "tail_episodes": [
+        6,
+        6
+      ],
+      "maximum_kl": 0.007110250221254925
+    }
+  ],
+  "choice": {
+    "initial_weight": 0.1,
+    "initial_rms_ratios": [
+      1.2337554693222046,
+      1.1304037052633586
+    ],
+    "fixed_pilot_weight": 0.03,
+    "criterion": "Training-buffer tail signal RMS below 0.5 of base advantage; no validation score used to choose weight."
+  }
+}
