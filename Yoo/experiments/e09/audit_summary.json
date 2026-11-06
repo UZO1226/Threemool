@@ -1,0 +1,2941 @@
+{
+  "started_at": "2026-11-06T09:29:19.076184+00:00",
+  "commit": "862e2187446b84b1ebc57228391165d2e842bc41",
+  "source_sha256": "dda2dec7ce4973618536b8d84c1ca667eb47e738e331b583b7ac041703832624",
+  "inputs": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/data/avedore/aved_5min.pkl": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+    "/home/jio/fcsrl_src/results/e02/surrogate/surrogate.json": "d25dbe3ea1a8e33b17f0a2d0f11a5983fe6c4a6d81a1d0db851b530386658117"
+  },
+  "training_performed": false,
+  "test_used": false,
+  "train_temperature_min": 9.917534828186035,
+  "covariates": {
+    "train": {
+      "initial_nh4": {
+        "min": 0.13577166696389514,
+        "q25": 1.6452387124300003,
+        "median": 2.411684989929199,
+        "q75": 3.450268715620041,
+        "max": 10.316999912261963,
+        "mean": 2.658660264433635
+      },
+      "temperature_mean": {
+        "min": 10.186560919991244,
+        "q25": 12.693189448780485,
+        "median": 14.373249725059228,
+        "q75": 18.095482333114855,
+        "max": 20.798196815782124,
+        "mean": 15.223429969818103
+      },
+      "flow_mean": {
+        "min": 1484.8106676144178,
+        "q25": 1892.0097492381376,
+        "median": 2464.067627059089,
+        "q75": 3169.0309098804437,
+        "max": 9166.748005337186,
+        "mean": 2916.8971862475273
+      },
+      "aerobic_fraction": {
+        "min": 0.25,
+        "q25": 0.5208333333333334,
+        "median": 0.5555555555555556,
+        "q75": 0.59375,
+        "max": 0.8194444444444444,
+        "mean": 0.5556818181818182
+      },
+      "steps_below_train_temperature_min_fraction": 0.0,
+      "days_below_train_temperature_min": 0
+    },
+    "val": {
+      "initial_nh4": {
+        "min": 0.6700164675712585,
+        "q25": 2.1168559789657593,
+        "median": 3.0415971279144287,
+        "q75": 4.792864163716635,
+        "max": 6.075455665588379,
+        "mean": 3.3540781985881716
+      },
+      "temperature_mean": {
+        "min": 9.036677140328619,
+        "q25": 9.984480298227734,
+        "median": 10.884296704773549,
+        "q75": 11.424399826813627,
+        "max": 12.009271891028792,
+        "mean": 10.71143211720834
+      },
+      "flow_mean": {
+        "min": 2934.238017113121,
+        "q25": 3665.233469786467,
+        "median": 4165.309320803041,
+        "q75": 5416.28052994057,
+        "max": 9344.50859422154,
+        "mean": 4825.995558090091
+      },
+      "aerobic_fraction": {
+        "min": 0.4166666666666667,
+        "q25": 0.5954861111111112,
+        "median": 0.6493055555555556,
+        "q75": 0.7065972222222223,
+        "max": 0.8020833333333334,
+        "mean": 0.6441375968992248
+      },
+      "steps_below_train_temperature_min_fraction": 0.22084948320413436,
+      "days_below_train_temperature_min": 15
+    }
+  },
+  "policy_groups": [
+    {
+      "variant": "continuous",
+      "seed": 0,
+      "split": "train",
+      "cost": 8.30060606060606,
+      "cold_cost_share": 0.0,
+      "member0_cost_share": 0.22627044392523366,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 5.512544802867383,
+          "cost_sum": 1538.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 30.607843137254903,
+          "cost_sum": 1561.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 5.258064516129032,
+          "cost_sum": 1467.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 25.54901960784314,
+          "cost_sum": 1303.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 4.121863799283154,
+          "cost_sum": 1150.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 23.58823529411765,
+          "cost_sum": 1203.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 7.415770609318996,
+          "cost_sum": 2069.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 34.27450980392157,
+          "cost_sum": 1748.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 2.5412186379928317,
+          "cost_sum": 709.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 18.58823529411765,
+          "cost_sum": 948.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2023-01-16",
+          "member": 0,
+          "air_m3": 41462.30016152064,
+          "reward": -62.19345024228096,
+          "cost": 282.0,
+          "nh4_viol_pct": 98.25783972125436,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-11-21",
+          "member": 3,
+          "air_m3": 53263.4682096541,
+          "reward": -79.89520231448115,
+          "cost": 247.0,
+          "nh4_viol_pct": 85.71428571428571,
+          "do_viol_pct": 0.34843205574912894,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 3,
+          "air_m3": 28068.816772351664,
+          "reward": -42.1032251585275,
+          "cost": 192.0,
+          "nh4_viol_pct": 66.89895470383276,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 1,
+          "air_m3": 30268.217198550698,
+          "reward": -45.40232579782605,
+          "cost": 174.0,
+          "nh4_viol_pct": 58.18815331010453,
+          "do_viol_pct": 2.4390243902439024,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-10-22",
+          "member": 3,
+          "air_m3": 54361.68144767481,
+          "reward": -81.54252217151222,
+          "cost": 173.0,
+          "nh4_viol_pct": 59.930313588850176,
+          "do_viol_pct": 0.34843205574912894,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 0,
+          "air_m3": 29342.277406404413,
+          "reward": -44.013416109606624,
+          "cost": 168.0,
+          "nh4_viol_pct": 56.09756097560975,
+          "do_viol_pct": 2.4390243902439024,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-12-09",
+          "member": 3,
+          "air_m3": 60196.99312994879,
+          "reward": -90.29548969492319,
+          "cost": 167.0,
+          "nh4_viol_pct": 58.18815331010453,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 0,
+          "air_m3": 44141.12747708956,
+          "reward": -66.21169121563435,
+          "cost": 153.0,
+          "nh4_viol_pct": 53.31010452961672,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-09-28",
+          "member": 2,
+          "air_m3": 53922.31163382531,
+          "reward": -80.88346745073797,
+          "cost": 138.0,
+          "nh4_viol_pct": 48.08362369337979,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-12-06",
+          "member": 3,
+          "air_m3": 65694.93918617564,
+          "reward": -98.54240877926347,
+          "cost": 131.0,
+          "nh4_viol_pct": 44.94773519163763,
+          "do_viol_pct": 0.6968641114982579,
+          "initial_high": true,
+          "cold": false
+        }
+      ]
+    },
+    {
+      "variant": "continuous",
+      "seed": 1,
+      "split": "train",
+      "cost": 11.981818181818182,
+      "cold_cost_share": 0.0,
+      "member0_cost_share": 0.2679312089023773,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 11.652329749103943,
+          "cost_sum": 3251.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 40.11764705882353,
+          "cost_sum": 2046.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 6.437275985663082,
+          "cost_sum": 1796.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 29.392156862745097,
+          "cost_sum": 1499.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 9.290322580645162,
+          "cost_sum": 2592.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 26.88235294117647,
+          "cost_sum": 1371.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 10.444444444444445,
+          "cost_sum": 2914.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 45.86274509803921,
+          "cost_sum": 2339.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 3.4050179211469533,
+          "cost_sum": 950.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 19.84313725490196,
+          "cost_sum": 1012.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2023-01-16",
+          "member": 0,
+          "air_m3": 36285.70330142977,
+          "reward": -54.42855495214466,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-11-21",
+          "member": 3,
+          "air_m3": 52385.483215252556,
+          "reward": -78.57822482287884,
+          "cost": 240.0,
+          "nh4_viol_pct": 83.62369337979094,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-12-22",
+          "member": 0,
+          "air_m3": 35557.33309437831,
+          "reward": -53.33599964156746,
+          "cost": 233.0,
+          "nh4_viol_pct": 81.18466898954703,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-12-09",
+          "member": 3,
+          "air_m3": 57189.40049409867,
+          "reward": -85.78410074114801,
+          "cost": 217.0,
+          "nh4_viol_pct": 75.60975609756098,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 3,
+          "air_m3": 41993.6654518048,
+          "reward": -62.9904981777072,
+          "cost": 200.0,
+          "nh4_viol_pct": 69.68641114982579,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-10-22",
+          "member": 3,
+          "air_m3": 48435.4769786199,
+          "reward": -72.65321546792985,
+          "cost": 198.0,
+          "nh4_viol_pct": 68.98954703832753,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 3,
+          "air_m3": 23066.140770912178,
+          "reward": -34.59921115636827,
+          "cost": 198.0,
+          "nh4_viol_pct": 68.98954703832753,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 1,
+          "air_m3": 23834.89112555981,
+          "reward": -35.75233668833972,
+          "cost": 197.0,
+          "nh4_viol_pct": 68.6411149825784,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 0,
+          "air_m3": 24438.95207097133,
+          "reward": -36.658428106456995,
+          "cost": 172.0,
+          "nh4_viol_pct": 59.930313588850176,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 0,
+          "air_m3": 40748.55268498262,
+          "reward": -61.122829027473934,
+          "cost": 162.0,
+          "nh4_viol_pct": 56.44599303135889,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        }
+      ]
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 0,
+      "split": "train",
+      "cost": 9.423636363636364,
+      "cold_cost_share": 0.0,
+      "member0_cost_share": 0.2146118721461187,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 5.537634408602151,
+          "cost_sum": 1545.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 35.13725490196079,
+          "cost_sum": 1792.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 5.318996415770609,
+          "cost_sum": 1484.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 30.41176470588235,
+          "cost_sum": 1551.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 3.985663082437276,
+          "cost_sum": 1112.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 27.470588235294116,
+          "cost_sum": 1401.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 7.620071684587813,
+          "cost_sum": 2126.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 55.09803921568628,
+          "cost_sum": 2810.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 2.5125448028673834,
+          "cost_sum": 701.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 20.137254901960784,
+          "cost_sum": 1027.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2023-08-28",
+          "member": 3,
+          "air_m3": 58312.561747928434,
+          "reward": -87.46884262189266,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-12-09",
+          "member": 3,
+          "air_m3": 45848.91365468501,
+          "reward": -68.77337048202753,
+          "cost": 274.0,
+          "nh4_viol_pct": 95.47038327526133,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-11-21",
+          "member": 3,
+          "air_m3": 42288.785104950264,
+          "reward": -63.4331776574254,
+          "cost": 271.0,
+          "nh4_viol_pct": 94.42508710801394,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-11-08",
+          "member": 3,
+          "air_m3": 47976.98359191419,
+          "reward": -71.9654753878713,
+          "cost": 271.0,
+          "nh4_viol_pct": 94.42508710801394,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-01-16",
+          "member": 0,
+          "air_m3": 33333.57819418112,
+          "reward": -50.00036729127169,
+          "cost": 248.0,
+          "nh4_viol_pct": 86.41114982578397,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 3,
+          "air_m3": 34373.511369029686,
+          "reward": -51.56026705354453,
+          "cost": 214.0,
+          "nh4_viol_pct": 74.56445993031359,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 1,
+          "air_m3": 25397.250521928076,
+          "reward": -38.095875782892115,
+          "cost": 190.0,
+          "nh4_viol_pct": 66.2020905923345,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-12-06",
+          "member": 3,
+          "air_m3": 44325.17377535501,
+          "reward": -66.48776066303252,
+          "cost": 187.0,
+          "nh4_viol_pct": 65.15679442508711,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 3,
+          "air_m3": 20992.01950679222,
+          "reward": -31.488029260188334,
+          "cost": 186.0,
+          "nh4_viol_pct": 64.80836236933798,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-10-22",
+          "member": 3,
+          "air_m3": 46008.59181334577,
+          "reward": -69.01288772001865,
+          "cost": 185.0,
+          "nh4_viol_pct": 64.45993031358886,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        }
+      ]
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 1,
+      "split": "train",
+      "cost": 9.564242424242424,
+      "cold_cost_share": 0.0,
+      "member0_cost_share": 0.254926810721754,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 8.3584229390681,
+          "cost_sum": 2332.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 33.15686274509804,
+          "cost_sum": 1691.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 6.896057347670251,
+          "cost_sum": 1924.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 25.215686274509803,
+          "cost_sum": 1286.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 5.272401433691757,
+          "cost_sum": 1471.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 21.980392156862745,
+          "cost_sum": 1121.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 8.587813620071685,
+          "cost_sum": 2396.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 34.627450980392155,
+          "cost_sum": 1766.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 279,
+          "cost": 3.053763440860215,
+          "cost_sum": 852.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 51,
+          "cost": 18.470588235294116,
+          "cost_sum": 942.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2023-01-16",
+          "member": 0,
+          "air_m3": 40961.09790354968,
+          "reward": -61.44164685532452,
+          "cost": 284.0,
+          "nh4_viol_pct": 98.95470383275261,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 3,
+          "air_m3": 26468.863010406494,
+          "reward": -39.70329451560974,
+          "cost": 206.0,
+          "nh4_viol_pct": 71.77700348432056,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-12-22",
+          "member": 0,
+          "air_m3": 39323.30674429736,
+          "reward": -58.98496011644605,
+          "cost": 202.0,
+          "nh4_viol_pct": 70.38327526132404,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 3,
+          "air_m3": 45870.608126123734,
+          "reward": -68.8059121891856,
+          "cost": 194.0,
+          "nh4_viol_pct": 67.59581881533101,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-10-22",
+          "member": 3,
+          "air_m3": 57159.35168166955,
+          "reward": -85.73902752250433,
+          "cost": 188.0,
+          "nh4_viol_pct": 65.50522648083624,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 1,
+          "air_m3": 29466.56520167986,
+          "reward": -44.19984780251979,
+          "cost": 177.0,
+          "nh4_viol_pct": 61.67247386759582,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-10-17",
+          "member": 0,
+          "air_m3": 29352.549528082203,
+          "reward": -44.02882429212331,
+          "cost": 161.0,
+          "nh4_viol_pct": 56.09756097560975,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2022-11-21",
+          "member": 3,
+          "air_m3": 61406.86983118456,
+          "reward": -92.11030474677685,
+          "cost": 156.0,
+          "nh4_viol_pct": 54.35540069686411,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2023-12-04",
+          "member": 0,
+          "air_m3": 43891.56012733779,
+          "reward": -65.83734019100669,
+          "cost": 156.0,
+          "nh4_viol_pct": 54.35540069686411,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2023-01-07",
+          "member": 0,
+          "air_m3": 19933.055105308686,
+          "reward": -29.89958265796303,
+          "cost": 150.0,
+          "nh4_viol_pct": 52.26480836236934,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        }
+      ]
+    },
+    {
+      "variant": "continuous",
+      "seed": 0,
+      "split": "val",
+      "cost": 13.43720930232558,
+      "cold_cost_share": 0.4932502596053998,
+      "member0_cost_share": 0.5316718587746625,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 12.4,
+          "cost_sum": 124.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 48.5,
+          "cost_sum": 582.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 166.0,
+          "cost_sum": 830.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 14.416666666666666,
+          "cost_sum": 173.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 13.6,
+          "cost_sum": 68.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 4.5,
+          "cost_sum": 45.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 22.25,
+          "cost_sum": 267.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 33.0,
+          "cost_sum": 165.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 24.0,
+          "cost_sum": 288.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 20.8,
+          "cost_sum": 104.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.6,
+          "cost_sum": 6.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 12.833333333333334,
+          "cost_sum": 154.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 16.6,
+          "cost_sum": 83.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2024-01-07",
+          "member": 0,
+          "air_m3": 67278.32422032952,
+          "reward": -100.91748633049428,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-06",
+          "member": 0,
+          "air_m3": 52553.02555734912,
+          "reward": -78.82953833602369,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-28",
+          "member": 0,
+          "air_m3": 53070.215308417886,
+          "reward": -79.60532296262683,
+          "cost": 171.0,
+          "nh4_viol_pct": 59.58188153310105,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-02-27",
+          "member": 0,
+          "air_m3": 55680.401347577565,
+          "reward": -83.52060202136636,
+          "cost": 161.0,
+          "nh4_viol_pct": 56.09756097560975,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-05",
+          "member": 0,
+          "air_m3": 27083.44442645709,
+          "reward": -40.62516663968564,
+          "cost": 156.0,
+          "nh4_viol_pct": 54.35540069686411,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-04",
+          "member": 0,
+          "air_m3": 25208.95756656925,
+          "reward": -37.81343634985388,
+          "cost": 124.0,
+          "nh4_viol_pct": 43.20557491289198,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-02-21",
+          "member": 0,
+          "air_m3": 37913.6699338754,
+          "reward": -56.870504900813096,
+          "cost": 93.0,
+          "nh4_viol_pct": 32.40418118466899,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-28",
+          "member": 3,
+          "air_m3": 52948.731796816,
+          "reward": -79.423097695224,
+          "cost": 72.0,
+          "nh4_viol_pct": 25.087108013937282,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-02-25",
+          "member": 0,
+          "air_m3": 49360.46888058389,
+          "reward": -74.04070332087583,
+          "cost": 66.0,
+          "nh4_viol_pct": 22.99651567944251,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-07",
+          "member": 2,
+          "air_m3": 35022.45891094207,
+          "reward": -52.53368836641311,
+          "cost": 64.0,
+          "nh4_viol_pct": 22.299651567944252,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        }
+      ]
+    },
+    {
+      "variant": "continuous",
+      "seed": 1,
+      "split": "val",
+      "cost": 18.8,
+      "cold_cost_share": 0.6125680356259278,
+      "member0_cost_share": 0.5633349826818407,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 5.375,
+          "cost_sum": 86.0
+        },
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 70.2,
+          "cost_sum": 702.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 43.666666666666664,
+          "cost_sum": 524.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 193.0,
+          "cost_sum": 965.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 2.1,
+          "cost_sum": 21.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 14.666666666666666,
+          "cost_sum": 176.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 20.4,
+          "cost_sum": 102.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 2.75,
+          "cost_sum": 44.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 27.5,
+          "cost_sum": 275.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 21.75,
+          "cost_sum": 261.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 47.6,
+          "cost_sum": 238.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.4375,
+          "cost_sum": 7.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 25.083333333333332,
+          "cost_sum": 301.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 17.8,
+          "cost_sum": 89.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.6,
+          "cost_sum": 6.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 13.916666666666666,
+          "cost_sum": 167.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 15.6,
+          "cost_sum": 78.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2024-01-07",
+          "member": 0,
+          "air_m3": 55684.88915016256,
+          "reward": -83.52733372524385,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-06",
+          "member": 0,
+          "air_m3": 43130.80210983752,
+          "reward": -64.69620316475627,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-05",
+          "member": 0,
+          "air_m3": 31785.926985243957,
+          "reward": -47.67889047786594,
+          "cost": 261.0,
+          "nh4_viol_pct": 90.94076655052265,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-04",
+          "member": 0,
+          "air_m3": 24533.06140005589,
+          "reward": -36.799592100083835,
+          "cost": 210.0,
+          "nh4_viol_pct": 73.17073170731707,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-01-02",
+          "member": 0,
+          "air_m3": 23225.888147950172,
+          "reward": -34.83883222192526,
+          "cost": 186.0,
+          "nh4_viol_pct": 64.80836236933798,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-01-03",
+          "member": 0,
+          "air_m3": 25974.935228625927,
+          "reward": -38.96240284293889,
+          "cost": 181.0,
+          "nh4_viol_pct": 63.066202090592334,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-02-28",
+          "member": 0,
+          "air_m3": 42177.514503399514,
+          "reward": -63.266271755099275,
+          "cost": 151.0,
+          "nh4_viol_pct": 52.613240418118465,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-02-27",
+          "member": 0,
+          "air_m3": 42737.22551390531,
+          "reward": -64.10583827085797,
+          "cost": 143.0,
+          "nh4_viol_pct": 49.825783972125436,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-05",
+          "member": 2,
+          "air_m3": 15957.370872298872,
+          "reward": -23.93605630844831,
+          "cost": 129.0,
+          "nh4_viol_pct": 44.94773519163763,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-10",
+          "member": 0,
+          "air_m3": 22204.10714546841,
+          "reward": -33.30616071820262,
+          "cost": 125.0,
+          "nh4_viol_pct": 43.55400696864111,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        }
+      ]
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 0,
+      "split": "val",
+      "cost": 13.372093023255815,
+      "cold_cost_share": 0.5436521739130434,
+      "member0_cost_share": 0.5231304347826087,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 20.0,
+          "cost_sum": 200.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 37.75,
+          "cost_sum": 453.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 170.2,
+          "cost_sum": 851.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 13.666666666666666,
+          "cost_sum": 164.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 14.0,
+          "cost_sum": 70.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 9.5,
+          "cost_sum": 95.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 21.166666666666668,
+          "cost_sum": 254.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 33.8,
+          "cost_sum": 169.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 22.5,
+          "cost_sum": 270.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 19.0,
+          "cost_sum": 95.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.6,
+          "cost_sum": 6.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 14.25,
+          "cost_sum": 171.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 15.4,
+          "cost_sum": 77.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2024-01-07",
+          "member": 0,
+          "air_m3": 38345.010340213776,
+          "reward": -57.51751551032066,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-06",
+          "member": 0,
+          "air_m3": 32805.921114981174,
+          "reward": -49.20888167247176,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-05",
+          "member": 0,
+          "air_m3": 25506.34808341662,
+          "reward": -38.25952212512493,
+          "cost": 198.0,
+          "nh4_viol_pct": 68.98954703832753,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-28",
+          "member": 0,
+          "air_m3": 41434.02124692998,
+          "reward": -62.151031870394974,
+          "cost": 155.0,
+          "nh4_viol_pct": 54.00696864111498,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-04",
+          "member": 0,
+          "air_m3": 19593.754651645824,
+          "reward": -29.390631977468736,
+          "cost": 137.0,
+          "nh4_viol_pct": 47.73519163763066,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-02-27",
+          "member": 0,
+          "air_m3": 46765.63780506452,
+          "reward": -70.1484567075968,
+          "cost": 83.0,
+          "nh4_viol_pct": 28.9198606271777,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-06",
+          "member": 2,
+          "air_m3": 18484.657237927117,
+          "reward": -27.726985856890675,
+          "cost": 74.0,
+          "nh4_viol_pct": 25.78397212543554,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-21",
+          "member": 0,
+          "air_m3": 27419.058389961716,
+          "reward": -41.12858758494258,
+          "cost": 74.0,
+          "nh4_viol_pct": 25.78397212543554,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-02-28",
+          "member": 3,
+          "air_m3": 45420.63564062118,
+          "reward": -68.13095346093178,
+          "cost": 68.0,
+          "nh4_viol_pct": 23.693379790940767,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-01-02",
+          "member": 0,
+          "air_m3": 17798.30989241599,
+          "reward": -26.697464838623986,
+          "cost": 63.0,
+          "nh4_viol_pct": 21.951219512195124,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        }
+      ]
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 1,
+      "split": "val",
+      "cost": 19.632558139534883,
+      "cold_cost_share": 0.568348732527837,
+      "member0_cost_share": 0.6083866382373845,
+      "groups": [
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 17.8125,
+          "cost_sum": 285.0
+        },
+        {
+          "member": 0,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 73.4,
+          "cost_sum": 734.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 48.583333333333336,
+          "cost_sum": 583.0
+        },
+        {
+          "member": 0,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 193.2,
+          "cost_sum": 966.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 14.833333333333334,
+          "cost_sum": 178.0
+        },
+        {
+          "member": 1,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 14.2,
+          "cost_sum": 71.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 2.1875,
+          "cost_sum": 35.0
+        },
+        {
+          "member": 2,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 24.4,
+          "cost_sum": 244.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 22.416666666666668,
+          "cost_sum": 269.0
+        },
+        {
+          "member": 2,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 39.2,
+          "cost_sum": 196.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.5,
+          "cost_sum": 8.0
+        },
+        {
+          "member": 3,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 26.0,
+          "cost_sum": 312.0
+        },
+        {
+          "member": 3,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 19.8,
+          "cost_sum": 99.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": false,
+          "episodes": 16,
+          "cost": 0.0,
+          "cost_sum": 0.0
+        },
+        {
+          "member": 4,
+          "initial_high": false,
+          "cold": true,
+          "episodes": 10,
+          "cost": 0.6,
+          "cost_sum": 6.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": false,
+          "episodes": 12,
+          "cost": 12.666666666666666,
+          "cost_sum": 152.0
+        },
+        {
+          "member": 4,
+          "initial_high": true,
+          "cold": true,
+          "episodes": 5,
+          "cost": 16.6,
+          "cost_sum": 83.0
+        }
+      ],
+      "worst_episodes": [
+        {
+          "day": "2024-01-07",
+          "member": 0,
+          "air_m3": 63605.09762167933,
+          "reward": -95.407646432519,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-06",
+          "member": 0,
+          "air_m3": 49046.00035150845,
+          "reward": -73.56900052726269,
+          "cost": 287.0,
+          "nh4_viol_pct": 100.0,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-05",
+          "member": 0,
+          "air_m3": 33571.215073267624,
+          "reward": -50.356822609901435,
+          "cost": 234.0,
+          "nh4_viol_pct": 81.53310104529616,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        },
+        {
+          "day": "2024-01-04",
+          "member": 0,
+          "air_m3": 26086.47324641546,
+          "reward": -39.12970986962319,
+          "cost": 215.0,
+          "nh4_viol_pct": 74.91289198606272,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-01-03",
+          "member": 0,
+          "air_m3": 28416.26036912202,
+          "reward": -42.624390553683035,
+          "cost": 189.0,
+          "nh4_viol_pct": 65.85365853658537,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-01-02",
+          "member": 0,
+          "air_m3": 25355.347663164135,
+          "reward": -38.03302149474621,
+          "cost": 188.0,
+          "nh4_viol_pct": 65.50522648083624,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": true
+        },
+        {
+          "day": "2024-01-22",
+          "member": 0,
+          "air_m3": 31931.9414893786,
+          "reward": -47.8979122340679,
+          "cost": 174.0,
+          "nh4_viol_pct": 60.62717770034843,
+          "do_viol_pct": 0.0,
+          "initial_high": false,
+          "cold": false
+        },
+        {
+          "day": "2024-02-27",
+          "member": 0,
+          "air_m3": 51978.934481739976,
+          "reward": -77.96840172260997,
+          "cost": 166.0,
+          "nh4_viol_pct": 57.8397212543554,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-02-28",
+          "member": 0,
+          "air_m3": 50736.33773128191,
+          "reward": -76.10450659692286,
+          "cost": 164.0,
+          "nh4_viol_pct": 57.142857142857146,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": false
+        },
+        {
+          "day": "2024-02-21",
+          "member": 0,
+          "air_m3": 34457.310770948716,
+          "reward": -51.68596615642308,
+          "cost": 151.0,
+          "nh4_viol_pct": 52.613240418118465,
+          "do_viol_pct": 0.0,
+          "initial_high": true,
+          "cold": true
+        }
+      ]
+    }
+  ],
+  "replay": {
+    "train": [
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.18494244522888365,
+        "nh4_bias": 0.006509918534263024,
+        "do_mae": 0.16124162382031001,
+        "do_bias": -0.004446014234371404,
+        "predicted_cost": 39.24242424242424,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.4180128814275157,
+        "nh4_false_positive_pct": 1.070636680392778
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.18673302108981132,
+        "nh4_bias": -0.006381637116397928,
+        "do_mae": 0.15626759603793622,
+        "do_bias": -0.005331228631306456,
+        "predicted_cost": 38.86060606060606,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.5172632245802977,
+        "nh4_false_positive_pct": 0.9977827050997782
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.18526509525336013,
+        "nh4_bias": -0.00982130278866336,
+        "do_mae": 0.15786300397368702,
+        "do_bias": -0.006315978489167672,
+        "predicted_cost": 38.88787878787879,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.492978566149298,
+        "nh4_false_positive_pct": 1.0315700559602998
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.18498202390004154,
+        "nh4_bias": -0.0019656751658634177,
+        "do_mae": 0.1536316666403846,
+        "do_bias": -0.018901021371259877,
+        "predicted_cost": 38.972727272727276,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.444409249287298,
+        "nh4_false_positive_pct": 1.0664132615352129
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.18603826572090787,
+        "nh4_bias": 0.00037169284868211424,
+        "do_mae": 0.15996712820218473,
+        "do_bias": 0.010579445385781901,
+        "predicted_cost": 39.24545454545454,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.48664343786295,
+        "nh4_false_positive_pct": 1.0315700559602998
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.5607250178018285,
+        "nh4_bias": -0.03027674714696727,
+        "do_mae": 0.20100174735296267,
+        "do_bias": 0.006876675207390181,
+        "predicted_cost": 32.61818181818182,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 4.968852285925457,
+        "nh4_false_positive_pct": 2.3725055432372506
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.5889188396180897,
+        "nh4_bias": -0.08388614457369639,
+        "do_mae": 0.1940393398098761,
+        "do_bias": 0.006017383123275787,
+        "predicted_cost": 30.906060606060606,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 5.433428360257628,
+        "nh4_false_positive_pct": 2.147608489071904
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.58241384063965,
+        "nh4_bias": -0.09732275934585288,
+        "do_mae": 0.19562787955905495,
+        "do_bias": 0.002577415494589087,
+        "predicted_cost": 31.812121212121212,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 5.197972758948369,
+        "nh4_false_positive_pct": 2.342941611234294
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.5845967966258947,
+        "nh4_bias": -0.028756408095597943,
+        "do_mae": 0.19203317411983756,
+        "do_bias": -0.016504019593473872,
+        "predicted_cost": 33.36060606060606,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 4.926618097349804,
+        "nh4_false_positive_pct": 2.719881744271988
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.5883159915125366,
+        "nh4_bias": -0.09136739902816331,
+        "do_mae": 0.19896368100396628,
+        "do_bias": 0.03121348429667586,
+        "predicted_cost": 30.69090909090909,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 5.54006968641115,
+        "nh4_false_positive_pct": 2.056804983634252
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.7290458319569019,
+        "nh4_bias": -0.051409611042932186,
+        "do_mae": 0.20475125011106599,
+        "do_bias": 0.007869103953754973,
+        "predicted_cost": 32.29090909090909,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 6.648717136522015,
+        "nh4_false_positive_pct": 3.9362263752507656
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.7621624521328868,
+        "nh4_bias": -0.15563623712565955,
+        "do_mae": 0.1980748268898236,
+        "do_bias": 0.008260486000290845,
+        "predicted_cost": 27.05151515151515,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 7.664449371766445,
+        "nh4_false_positive_pct": 3.0017949530144654
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.7559847083230576,
+        "nh4_bias": -0.192486409785035,
+        "do_mae": 0.1996835769927068,
+        "do_bias": 0.005509767296046947,
+        "predicted_cost": 30.1030303030303,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 7.053109492133883,
+        "nh4_false_positive_pct": 3.576179917643332
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.7504606993579112,
+        "nh4_bias": 0.0033841667327578445,
+        "do_mae": 0.19684577958626479,
+        "do_bias": -0.015478013997678884,
+        "predicted_cost": 36.154545454545456,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 6.207369865906451,
+        "nh4_false_positive_pct": 4.958293738781544
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.7496954867087283,
+        "nh4_bias": -0.20985583308662528,
+        "do_mae": 0.20376783435060478,
+        "do_bias": 0.03641385624699584,
+        "predicted_cost": 26.05757575757576,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 7.6750079189103575,
+        "nh4_false_positive_pct": 2.5108225108225106
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.8849119480574373,
+        "nh4_bias": -0.08829612882000352,
+        "do_mae": 0.20596132476827977,
+        "do_bias": 0.007438800492547183,
+        "predicted_cost": 32.372727272727275,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.046668778376095,
+        "nh4_false_positive_pct": 5.354239256678281
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.9352650197038211,
+        "nh4_bias": -0.23856790626951296,
+        "do_mae": 0.19963595972074727,
+        "do_bias": 0.008287229357024271,
+        "predicted_cost": 25.454545454545453,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 9.23661704149509,
+        "nh4_false_positive_pct": 4.001689367543026
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.9318249907770362,
+        "nh4_bias": -0.33039367426239113,
+        "do_mae": 0.2014366295824441,
+        "do_bias": 0.007416759863584086,
+        "predicted_cost": 27.421212121212122,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.838559814169571,
+        "nh4_false_positive_pct": 4.400802449582938
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.9236205278617794,
+        "nh4_bias": 0.03705874621993023,
+        "do_mae": 0.19971724358049034,
+        "do_bias": -0.015711538139904023,
+        "predicted_cost": 40.596969696969694,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 7.289620948157534,
+        "nh4_false_positive_pct": 7.560975609756097
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.8933662333612575,
+        "nh4_bias": -0.37206994966634815,
+        "do_mae": 0.20610364345035023,
+        "do_bias": 0.03889418262586584,
+        "predicted_cost": 20.73030303030303,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 9.478407771090698,
+        "nh4_false_positive_pct": 2.41262802238412
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 1.2063124724467105,
+        "nh4_bias": -0.052949997559303616,
+        "do_mae": 0.2078200626063945,
+        "do_bias": 0.006004307140811565,
+        "predicted_cost": 37.56969696969697,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 10.052792735719565,
+        "nh4_false_positive_pct": 9.159539647344525
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 1.382714489250067,
+        "nh4_bias": 0.054905356369484,
+        "do_mae": 0.20238724140772693,
+        "do_bias": 0.00921291307293834,
+        "predicted_cost": 47.42121212121212,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 10.022172949002217,
+        "nh4_false_positive_pct": 12.437968535529512
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 1.310681933898573,
+        "nh4_bias": -0.4844635895332291,
+        "do_mae": 0.20336113802680167,
+        "do_bias": 0.009083103737898767,
+        "predicted_cost": 26.44848484848485,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 10.86052159222891,
+        "nh4_false_positive_pct": 6.070108753035583
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 1.6245974830868046,
+        "nh4_bias": 0.6537510626493018,
+        "do_mae": 0.2084788559700641,
+        "do_bias": -0.024033237901023182,
+        "predicted_cost": 68.95454545454545,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.442614296272833,
+        "nh4_false_positive_pct": 18.57881955442931
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 1.1770373731181842,
+        "nh4_bias": -0.5533467947409306,
+        "do_mae": 0.20887404323154238,
+        "do_bias": 0.04304832207154583,
+        "predicted_cost": 17.824242424242424,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 11.399007496568473,
+        "nh4_false_positive_pct": 3.1802343997465945
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 0,
+        "nh4_mae": 1.8099588572112717,
+        "nh4_bias": 1.165668088617098,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 110.84242424242424,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 7.070003167564143,
+        "nh4_false_positive_pct": 29.677964312110657
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 1,
+        "nh4_mae": 1.8934688233960293,
+        "nh4_bias": 1.041097974238797,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 91.6969696969697,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.434167458557702,
+        "nh4_false_positive_pct": 24.371238517579982
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 2,
+        "nh4_mae": 1.4847785532697846,
+        "nh4_bias": 0.12531652572104943,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 58.11212121212121,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 9.680076021539437,
+        "nh4_false_positive_pct": 13.91510928096294
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 3,
+        "nh4_mae": 1.712625262222981,
+        "nh4_bias": 0.8604498276486132,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 85.88787878787879,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.258895575968747,
+        "nh4_false_positive_pct": 22.171893147502903
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 4,
+        "nh4_mae": 1.862861180416976,
+        "nh4_bias": 1.058674606339528,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 97.53030303030303,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 8.191320874247705,
+        "nh4_false_positive_pct": 26.160912258473235
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 0,
+        "nh4_mae": 0.18041048174909993,
+        "nh4_bias": -0.009519380659179571,
+        "do_mae": 0.20555713422162053,
+        "do_bias": 0.009445067129700247,
+        "predicted_cost": 38.69090909090909,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.5235983528666457,
+        "nh4_false_positive_pct": 1.003061978671735
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 1,
+        "nh4_mae": 0.18441957150849134,
+        "nh4_bias": -0.019784304935948294,
+        "do_mae": 0.19924477190645218,
+        "do_bias": 0.01003014759515517,
+        "predicted_cost": 38.42727272727273,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.620736986590645,
+        "nh4_false_positive_pct": 0.9397106958082568
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 2,
+        "nh4_mae": 0.1826658549983955,
+        "nh4_bias": -0.02010306126823217,
+        "do_mae": 0.19970387079651092,
+        "do_bias": 0.004517840177718339,
+        "predicted_cost": 38.372727272727275,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.5542181395839934,
+        "nh4_false_positive_pct": 0.9872241579558653
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 3,
+        "nh4_mae": 0.18293793928869895,
+        "nh4_bias": -0.0077258596701823825,
+        "do_mae": 0.1964094815481445,
+        "do_bias": -0.014441403778252973,
+        "predicted_cost": 38.42424242424242,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.4644704888607327,
+        "nh4_false_positive_pct": 1.0484637313905607
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 4,
+        "nh4_mae": 0.18528019028800555,
+        "nh4_bias": -0.02280379513580322,
+        "do_mae": 0.20329578911729349,
+        "do_bias": 0.03560043951839421,
+        "predicted_cost": 38.42121212121212,
+        "actual_cost": 45.95757575757576,
+        "nh4_false_negative_pct": 1.655580192165558,
+        "nh4_false_positive_pct": 0.9175377468060395
+      }
+    ],
+    "val": [
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.1508501879271875,
+        "nh4_bias": 0.02911365409874113,
+        "do_mae": 0.1815583257986895,
+        "do_bias": 0.03385137939383995,
+        "predicted_cost": 65.53488372093024,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 0.8184101774572563,
+        "nh4_false_positive_pct": 1.2073575885260515
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.15039588298397788,
+        "nh4_bias": 0.002753314260125064,
+        "do_mae": 0.18088584804333532,
+        "do_bias": 0.04159773627097219,
+        "predicted_cost": 64.51162790697674,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.0939145936309862,
+        "nh4_false_positive_pct": 1.0290900251195203
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.14889096423789008,
+        "nh4_bias": 0.010892156855321284,
+        "do_mae": 0.1824669562503261,
+        "do_bias": 0.04376798898925285,
+        "predicted_cost": 64.46511627906976,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 0.9237501012883884,
+        "nh4_false_positive_pct": 1.0209869540555871
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.14817063419424129,
+        "nh4_bias": 0.011980856437231666,
+        "do_mae": 0.17276871674798894,
+        "do_bias": 0.021706573493350676,
+        "predicted_cost": 64.23255813953489,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.0047808119277206,
+        "nh4_false_positive_pct": 1.0209869540555871
+      },
+      {
+        "reset_steps": 1,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.14922557562347674,
+        "nh4_bias": 0.008725762554538389,
+        "do_mae": 0.1861185343858674,
+        "do_bias": 0.05350284186208305,
+        "predicted_cost": 65.20930232558139,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.0290900251195203,
+        "nh4_false_positive_pct": 1.0371930961834535
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.5388302950910282,
+        "nh4_bias": -0.023279145526062115,
+        "do_mae": 0.23513477654909898,
+        "do_bias": 0.07365679280527669,
+        "predicted_cost": 68.4186046511628,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 4.343246090268211,
+        "nh4_false_positive_pct": 4.626853577505875
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.5527971539082229,
+        "nh4_bias": -0.11136480390659068,
+        "do_mae": 0.22688347204980294,
+        "do_bias": 0.07859999452904588,
+        "predicted_cost": 57.95348837209303,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 6.312292358803987,
+        "nh4_false_positive_pct": 2.4876428166275018
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.5537104794264053,
+        "nh4_bias": -0.09707661797589968,
+        "do_mae": 0.22562341614264406,
+        "do_bias": 0.07708256370337345,
+        "predicted_cost": 61.604651162790695,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 5.380439186451666,
+        "nh4_false_positive_pct": 3.5167328417470225
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.5326965230954022,
+        "nh4_bias": -0.026540841756909243,
+        "do_mae": 0.21181890398601583,
+        "do_bias": 0.05189788290675871,
+        "predicted_cost": 61.95348837209303,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 5.210274694109067,
+        "nh4_false_positive_pct": 3.4275990600437565
+      },
+      {
+        "reset_steps": 12,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.5462260241535017,
+        "nh4_bias": -0.12924793712676055,
+        "do_mae": 0.22931645432686618,
+        "do_bias": 0.08994311041847075,
+        "predicted_cost": 57.627906976744185,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 6.215055506036788,
+        "nh4_false_positive_pct": 2.568673527266834
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.8530545112796689,
+        "nh4_bias": -0.07813882846986485,
+        "do_mae": 0.24196967096167962,
+        "do_bias": 0.07510699282732904,
+        "predicted_cost": 68.90697674418605,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 7.381897739243174,
+        "nh4_false_positive_pct": 7.681711368608703
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.8074068253291186,
+        "nh4_bias": -0.259449483585827,
+        "do_mae": 0.2324622375579848,
+        "do_bias": 0.08113315687735279,
+        "predicted_cost": 43.48837209302326,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 11.644113118872053,
+        "nh4_false_positive_pct": 2.568673527266834
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.8332539574380887,
+        "nh4_bias": -0.23161163920539932,
+        "do_mae": 0.22980251263294818,
+        "do_bias": 0.08096609995900521,
+        "predicted_cost": 56.95348837209303,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 8.848553601815087,
+        "nh4_false_positive_pct": 5.145450125597602
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.771739774612257,
+        "nh4_bias": -0.06022950314085199,
+        "do_mae": 0.2172422646105354,
+        "do_bias": 0.05491114490405542,
+        "predicted_cost": 58.2093023255814,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 8.386678551170894,
+        "nh4_false_positive_pct": 5.080625557086136
+      },
+      {
+        "reset_steps": 36,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.8141204205138001,
+        "nh4_bias": -0.3124843765011168,
+        "do_mae": 0.2332551467232266,
+        "do_bias": 0.09175068632787504,
+        "predicted_cost": 46.23255813953488,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 10.696053804391864,
+        "nh4_false_positive_pct": 2.690219593225833
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 0.963039913091344,
+        "nh4_bias": -0.23087429958307693,
+        "do_mae": 0.24407826966798135,
+        "do_bias": 0.071743709585795,
+        "predicted_cost": 58.48837209302326,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 9.634551495016613,
+        "nh4_false_positive_pct": 6.287983145612188
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 0.92356246949731,
+        "nh4_bias": -0.48297196055064173,
+        "do_mae": 0.23390209150226926,
+        "do_bias": 0.0803769926024488,
+        "predicted_cost": 29.906976744186046,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 15.412041163601003,
+        "nh4_false_positive_pct": 1.5314804310833807
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 0.9551969233796609,
+        "nh4_bias": -0.4869390251886807,
+        "do_mae": 0.23119760569068926,
+        "do_bias": 0.08147800187970564,
+        "predicted_cost": 40.93023255813954,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 12.69751235718337,
+        "nh4_false_positive_pct": 3.306052994084758
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.8355277787550048,
+        "nh4_bias": -0.20380776462119385,
+        "do_mae": 0.2188526092104829,
+        "do_bias": 0.05366834297563213,
+        "predicted_cost": 45.18604651162791,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 11.652216189935986,
+        "nh4_false_positive_pct": 3.6301758366420875
+      },
+      {
+        "reset_steps": 72,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 0.9588506030515919,
+        "nh4_bias": -0.5813344306295728,
+        "do_mae": 0.23525630659577051,
+        "do_bias": 0.09032133741111396,
+        "predicted_cost": 32.2093023255814,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 14.698970909974882,
+        "nh4_false_positive_pct": 1.823190989384977
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 0,
+        "nh4_mae": 1.4729346154673768,
+        "nh4_bias": -0.2485450075740566,
+        "do_mae": 0.24742853670320078,
+        "do_bias": 0.07356805841096645,
+        "predicted_cost": 44.58139534883721,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 13.248521189530832,
+        "nh4_false_positive_pct": 5.145450125597602
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 1,
+        "nh4_mae": 1.1365517702425447,
+        "nh4_bias": -0.7990109577198858,
+        "do_mae": 0.23508684458038007,
+        "do_bias": 0.07987601959875129,
+        "predicted_cost": 17.11627906976744,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 18.823434081516897,
+        "nh4_false_positive_pct": 0.5429057612835264
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 2,
+        "nh4_mae": 1.2554391048952986,
+        "nh4_bias": -0.9261661057875553,
+        "do_mae": 0.23167328918583774,
+        "do_bias": 0.08290286678393774,
+        "predicted_cost": 28.53488372093023,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 16.40061583340086,
+        "nh4_false_positive_pct": 2.706425735353699
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 3,
+        "nh4_mae": 0.9845197722362542,
+        "nh4_bias": -0.4396425440248311,
+        "do_mae": 0.2195399874697786,
+        "do_bias": 0.050788958475982596,
+        "predicted_cost": 27.3953488372093,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 15.882019285309132,
+        "nh4_false_positive_pct": 1.5963049995948466
+      },
+      {
+        "reset_steps": 287,
+        "oracle": null,
+        "member": 4,
+        "nh4_mae": 1.240883668457956,
+        "nh4_bias": -0.9858414508269712,
+        "do_mae": 0.23703861843452506,
+        "do_bias": 0.08884650519957972,
+        "predicted_cost": 16.325581395348838,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 18.93687707641196,
+        "nh4_false_positive_pct": 0.6482456851146585
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 0,
+        "nh4_mae": 2.2499178981961294,
+        "nh4_bias": 1.8823003129251852,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 156.90697674418604,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 3.8084434000486183,
+        "nh4_false_positive_pct": 33.75739405234584
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 1,
+        "nh4_mae": 1.1602398543898995,
+        "nh4_bias": 0.3046627412489697,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 51.0,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 15.112227534235476,
+        "nh4_false_positive_pct": 8.159792561380764
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 2,
+        "nh4_mae": 1.0484811943528876,
+        "nh4_bias": 0.3492837872795346,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 84.02325581395348,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 9.148367231180618,
+        "nh4_false_positive_pct": 13.702293169111094
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 3,
+        "nh4_mae": 1.2392114209947196,
+        "nh4_bias": 0.7237663451880202,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 103.74418604651163,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 7.819463576695568,
+        "nh4_false_positive_pct": 19.244793776841423
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "do",
+        "member": 4,
+        "nh4_mae": 1.119019893406044,
+        "nh4_bias": 0.2835527912560283,
+        "do_mae": 0.0,
+        "do_bias": 0.0,
+        "predicted_cost": 59.25581395348837,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 13.580747103152094,
+        "nh4_false_positive_pct": 9.504902357993679
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 0,
+        "nh4_mae": 0.14804980345250576,
+        "nh4_bias": -0.012586842343797642,
+        "do_mae": 0.24299917995930126,
+        "do_bias": 0.08069987323067639,
+        "predicted_cost": 68.16279069767442,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.1101207357588527,
+        "nh4_false_positive_pct": 0.9885746697998542
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 1,
+        "nh4_mae": 0.15240584775915156,
+        "nh4_bias": -0.025314673503448865,
+        "do_mae": 0.2357934379518454,
+        "do_bias": 0.08779620612835976,
+        "predicted_cost": 68.02325581395348,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.3208005834211165,
+        "nh4_false_positive_pct": 0.8346163195851228
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 2,
+        "nh4_mae": 0.15125735690057862,
+        "nh4_bias": -0.022817346718363076,
+        "do_mae": 0.23139866841595627,
+        "do_bias": 0.08150354170315229,
+        "predicted_cost": 66.90697674418605,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.158739162142452,
+        "nh4_false_positive_pct": 0.9237501012883884
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 3,
+        "nh4_mae": 0.14861398178047147,
+        "nh4_bias": -0.009852825153612787,
+        "do_mae": 0.21995998854895546,
+        "do_bias": 0.058219120344039824,
+        "predicted_cost": 67.23255813953489,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.1425330200145856,
+        "nh4_false_positive_pct": 0.9237501012883884
+      },
+      {
+        "reset_steps": 287,
+        "oracle": "nh4",
+        "member": 4,
+        "nh4_mae": 0.15194727139238515,
+        "nh4_bias": -0.027890414864746513,
+        "do_mae": 0.23715686507821698,
+        "do_bias": 0.09712746131877191,
+        "predicted_cost": 67.48837209302326,
+        "actual_cost": 70.95348837209302,
+        "nh4_false_negative_pct": 1.2802852281014505,
+        "nh4_false_positive_pct": 0.8184101774572563
+      }
+    ]
+  },
+  "completed_at": "2026-11-06T09:29:24.771124+00:00"
+}
