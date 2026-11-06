@@ -1,0 +1,5 @@
+# 기존 venv를 바꾸지 않고 별도 target 경로에 no-deps로 설치한다.
+bsm2-python==0.0.16
+numba==0.63.1
+llvmlite==0.46.0
+control==0.10.2
