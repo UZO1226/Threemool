@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "parameter_tolerance": 0,
+  "old_update": {
+    "kl": 0.007532128598541021,
+    "pi_epochs": 10,
+    "std": 0.6075841784477234
+  },
+  "new_update": {
+    "kl": 0.007532128598541021,
+    "pi_epochs": 10,
+    "std": 0.6075841784477234
+  }
+}

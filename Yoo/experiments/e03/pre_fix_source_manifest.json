@@ -1,0 +1,17 @@
+{
+  "captured_at": "2026-11-06T13:26:45.115092",
+  "note": "Post-hoc source snapshot before config-only repairs, not a proven launch-time snapshot.",
+  "sha256": {
+    "agents.py": "aefe8f02d6a285fb9a00efed220e01ce5f365df33e653d250b87ef2cb4f09917",
+    "env.py": "f67fd7cba9324aee5839a8ddc2f611f153f8b1dda3f0d66586b7cacd96026017",
+    "evaluate.py": "25237c8bdf323b32d65992d12fb864adcd6aafa57601c55962dc1b9d10ff4d9d",
+    "plot.py": "311a101c2dd7884e0d7790a65e9e4ac6a7d99a145cd039727d09ff20d7335a05",
+    "ppo_lag.py": "be99807251c4bc67946ddf165b4c2a67b6ea16c8a2f3dc901aef1955122340ed",
+    "ppo_wwtp.yaml": "557fe3450c8eef959ecd9e286d61632da3166d50b0202838de15eec8879d4c1d",
+    "prep.py": "24c0b3cb2934bcf39e5e334a00ac7dd18c8e302abafb5edeab751a88023dab0c",
+    "surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "surrogate_gbm.py": "395dbce6bdfa9b14efe890523ef1202dc95cab191fc25d29c1ab0ac9daf02f21",
+    "td3_wwtp.yaml": "9e80fbb5ee6837d6b61c6017a84ec3285de2031f87468ee0f3e9eb4762debc12",
+    "train.py": "8f4ee4c61387d331c9a4d8e7d18a30a912db584cc2ebbab7df7ea7d1ef3d2eaa"
+  }
+}
