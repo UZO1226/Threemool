@@ -58,6 +58,7 @@ def main(a):
     x = np.arange(len(labels))
     for i, s in enumerate(r['seeds']):
         ax.bar(x + (i-.5)*.35, [s['pooled_mse'][m] for m in labels], width=.35, label=f"Seed {s['seed']}")
+    ax.set_ylim(0, 1.25*max(v for s in r['seeds'] for v in s['pooled_mse'].values()))
     ax.set_xticks(x, ['Constant', 'Initial context', 'Initial residual', 'Context + residual'])
     ax.set(ylabel='MSE of predicted daily NH4 bias', title='Forward regression validation within base-model fit days')
     ax.legend(); ax.grid(axis='y', alpha=.2)
