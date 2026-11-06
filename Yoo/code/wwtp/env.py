@@ -40,6 +40,8 @@ class AerationEnv(gym.Env):
     def __init__(self, data_path, surrogate_path, split="train", seed=None, fixed_episodes=None,
                  pess_k=0.0, unc_pen=0.0, track_unc=False):
         """fixed_episodes: [(날짜, 구성원), ...] 을 주면 그 순서대로 돌고, 없으면 무작위로 고른다"""
+        if not all(np.isfinite(v) and v >= 0 for v in (pess_k, unc_pen)):
+            raise ValueError("pess_k and unc_pen must be finite and nonnegative")
         d = pd.read_pickle(data_path)
         self.days = d["days"][split]
         r = d["data"]
