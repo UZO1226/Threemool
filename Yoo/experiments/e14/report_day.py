@@ -55,6 +55,15 @@ def main(a):
             maximum_multiplier=float(np.max([r['multiplier'] for r in logs])),
             first_50_mse=float(np.mean([r['multi'] for r in logs[:50]])),
             last_50_mse=float(np.mean([r['multi'] for r in logs[-50:]]))))
+    diagnostic['inactive_global_checks'] = []
+    for seed in (0, 1):
+        behavior = next(r for r in diagnostic['training_behavior'] if r['mode'] == 'day_global' and r['seed'] == seed)
+        inactive = behavior['maximum_multiplier'] == 0
+        left = torch.load(a.trial / f'day_mse_s{seed}.pt', weights_only=True)
+        right = torch.load(a.trial / f'day_global_s{seed}.pt', weights_only=True)
+        equal = all(torch.equal(left[k], right[k]) for k in left)
+        if inactive: assert equal
+        diagnostic['inactive_global_checks'].append(dict(seed=seed, inactive=inactive, weights_exactly_equal=equal))
     modes = ('reference', 'start_multi', 'short_mse', 'day_mse', 'day_global', 'day_group')
     selected = [r for r in report['evaluation'] if r['split'] == 'inner_holdout' and r['reset_steps'] == 275]
     for r in selected:
@@ -139,6 +148,8 @@ def main(a):
            '| 군 | seed | gradient clip 비율 | 최대 lambda | 초기 50회 MSE | 마지막 50회 MSE |', '| --- | --- | --- | --- | --- | --- |']
     for r in diagnostic['training_behavior']:
         md.append(f"| {r['mode']} | {r['seed']} | {r['gradient_clip_fraction']*100:.1f}% | {r['maximum_multiplier']:.3f} | {r['first_50_mse']:.3f} | {r['last_50_mse']:.3f} |")
+    if all(r['inactive'] for r in diagnostic['inactive_global_checks']):
+        md += ['', 'day_global은 두 seed 모두 전체 FPR 제약이 학습 내내 비활성이었다. day_mse와 모든 가중치 및 정규화 buffer가 정확히 같음을 확인했다. FN proxy가 없으므로 제약이 비활성일 때 기본 MSE 학습으로 돌아간다.']
     md += ['', '## 같은 FPR에서의 구분 능력 진단', '',
            '동일 holdout에서 판정 기준을 사후 이동한 진단이며 환경 기준을 변경하지 않았다. 독립 검증이나 배포 성능이 아니다.', '',
            '| 군 | NH4 ROC AUC | FPR 10% 이하에서 NH4 recall |', '| --- | --- | --- |']
