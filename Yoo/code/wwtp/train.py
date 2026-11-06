@@ -126,6 +126,8 @@ def main():
         "final_eval_split": a.final_eval_split, "data": str(a.data.resolve()),
         "surrogate": str(a.surrogate.resolve()), "method": a.method, "seed": a.seed}, indent=2))
     set_seed(a.seed)
+    # Collector의 warmup은 환경 Box의 별도 난수 생성기를 사용한다.
+    probe.action_space.seed(a.seed)
     # e02 와 같은 순서: seed 를 정한 뒤 신경망을 만든다
     agent, config = make_agent(a.method, cfg, probe, ucb_n=a.ucb_n, ucb_k=a.ucb_k)
     pid_trace = []

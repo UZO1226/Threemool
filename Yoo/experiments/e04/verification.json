@@ -6,5 +6,12 @@
   "validation_cost_scalar_batch_equal": true,
   "invalid_cli_rejected": 4,
   "unit_tests_passed": 6,
-  "instrumentation_parity": true
+  "instrumentation_parity": true,
+  "warmup_action_rng_seeded": true,
+  "repeated_seed_bitwise_equal": true,
+  "repeated_seed_pid_trace_equal": true,
+  "repeated_seed_runs": [
+    "/home/jio/fcsrl_src/results/e04/smoke/seeded_a/fcsrl/seed_901",
+    "/home/jio/fcsrl_src/results/e04/smoke/seeded_b/fcsrl/seed_901"
+  ]
 }

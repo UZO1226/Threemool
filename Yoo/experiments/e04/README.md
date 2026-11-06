@@ -4,6 +4,8 @@
 
 ## 실행 전 판정
 
+- 같은 seed의 반복 학습에서 warmup 행동이 달라지는 오류를 발견했다. Collector가 사용하는 `probe.action_space`는 NumPy 및 PyTorch와 별도 난수 생성기를 사용하므로 seed를 명시했다. 수정 뒤 두 실행의 최종 가중치 전체, 검증 결과와 PID 기록이 정확히 일치했다. e03의 과거 실행에는 소급 적용하지 않는다.
+
 - e03의 `pess_k=0`, `unc_pen=0`은 환경 불확실성 보정을 끈 설정이다. `train.py`에는 이를 변경할 CLI도 없다. 환경 기능의 존재를 실험에 사용했다는 뜻으로 해석하지 않는다.
 - UCB는 critic 5개와 k=0.5다. 원본 target의 최대값보다 항상 보수적이지 않다. 샘플 표준편차를 쓰므로 critic 1개는 NaN을 만든다. 2개 미만과 음수 및 비유한 계수를 거부하도록 수정했다.
 - TD3의 `--epochs 0` 및 `--grad_steps 0`은 원래 값으로 조용히 돌아갔다. 이제 양수만 받는다. 음수 및 비유한 승수 상한과 기존 결과 폴더 덮어쓰기도 거부한다.
@@ -54,3 +56,5 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 현재 상태는 `/home/jio/fcsrl_src/results/e04/pilot/status.json`, 로그는 같은 폴더에 있다. 학습 실행 커밋과 입력 및 소스 해시는 `manifest.json`에 저장한다.
+
+진단 실행 커밋은 `dde6398`이다. 고정 검증 및 시험 실행 코드는 `b8199ad` 이후 warmup 행동 seed를 추가로 수정했다. 정확한 학습 실행 커밋은 실행 폴더의 manifest.json을 따른다.
