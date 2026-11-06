@@ -44,7 +44,17 @@ def main(a):
         masks[split].update(steps_1_36=time <= 36, steps_37_144=(time > 36) & (time <= 144), steps_145_275=time > 144)
     diagnostic = dict(commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
                       training_commit=report['commit'], same_holdout_posthoc_sweep=True,
-                      deployment_threshold_changed=False, input_sha256=report['input_sha256'], roc=[], strata=[])
+                      deployment_threshold_changed=False, input_sha256=report['input_sha256'], roc=[], strata=[], training_behavior=[])
+    for t in report['training']:
+        path = a.trial / f"{t['mode']}_s{t['seed']}_log.json"
+        logs = json.loads(path.read_text())
+        assert len(logs) == report['config']['updates'] and logs[0] == t['first'] and logs[-1] == t['last']
+        diagnostic['training_behavior'].append(dict(mode=t['mode'], seed=t['seed'], log_sha256=sha(path),
+            gradient_clip_fraction=float(np.mean([r['grad'] > report['config']['grad_clip'] for r in logs])),
+            maximum_gradient_norm=max(r['grad'] for r in logs),
+            maximum_multiplier=float(np.max([r['multiplier'] for r in logs])),
+            first_50_mse=float(np.mean([r['multi'] for r in logs[:50]])),
+            last_50_mse=float(np.mean([r['multi'] for r in logs[-50:]]))))
     modes = ('reference', 'start_multi', 'short_mse', 'day_mse', 'day_global', 'day_group')
     selected = [r for r in report['evaluation'] if r['split'] == 'inner_holdout' and r['reset_steps'] == 275]
     for r in selected:
@@ -92,6 +102,15 @@ def main(a):
     md += ['', '## seed별 결과', '', '| 군 | seed | NH4 recall | NH4 FPR | NH4 MAE | DO recall | DO FPR |', '| --- | --- | --- | --- | --- | --- | --- |']
     for r in selected:
         md.append(f"| {r['mode']} | {r['seed']} | {r['nh4']['step_recall']*100:.2f}% | {r['nh4']['fpr']*100:.2f}% | {r['nh4']['mae']:.3f} | {r['do']['step_recall']*100:.2f}% | {r['do']['fpr']*100:.2f}% |")
+    md += ['', '## 실제 현재 상태가 주어질 때와 자기 예측을 이어갈 때', '',
+           '한 스텝 재시작은 매번 실제 현재 농도를 사용하므로 배포 가능한 하루 예측 성능이 아니다. 입력 정보 부족과 누적 오차를 혼동하지 않기 위한 진단이며 미래 유입 정보의 충분성을 증명하지 않는다.', '',
+           '| 군 | 한 스텝 NH4 recall | 한 스텝 NH4 FPR | 하루 NH4 recall | 하루 NH4 FPR |', '| --- | --- | --- | --- | --- |']
+    for mode in modes:
+        values = []
+        for reset in (1, 275):
+            rs = [r for r in report['evaluation'] if r['mode'] == mode and r['split'] == 'inner_holdout' and r['reset_steps'] == reset]
+            values += [np.mean([r['nh4'][k] for r in rs]) for k in ('step_recall', 'fpr')]
+        md.append('| ' + mode + ' | ' + ' | '.join(f'{v*100:.2f}%' for v in values) + ' |')
     md += ['', '## 사전 gate', '', '| 군 | e12 screening | recall80/FPR10 | tradeoff |', '| --- | --- | --- | --- |']
     for g in report['gates']:
         trade = next((v['passed'] for v in report['tradeoff_gates'] if v['candidate'] == g['candidate']), '대조군')
@@ -115,6 +134,11 @@ def main(a):
         for k, group in enumerate(GROUPS):
             m, n = t['last']['multiplier'][k], t['supported_updates'][k]
             md.append(f"| {t['seed']} | {group} | {m[0]:.3f} | {m[1]:.3f} | {n[0]} | {n[1]} |")
+    md += ['', '## 최적화 상태', '',
+           'gradient norm은 clip 전 값이다. 모든 군에 같은 norm 1 clip을 적용했다. 첫 50회와 마지막 50회 MSE는 서로 다른 표본 batch의 학습 지표로, 별도 검증 성능이나 수렴 보장이 아니다.', '',
+           '| 군 | seed | gradient clip 비율 | 최대 lambda | 초기 50회 MSE | 마지막 50회 MSE |', '| --- | --- | --- | --- | --- | --- |']
+    for r in diagnostic['training_behavior']:
+        md.append(f"| {r['mode']} | {r['seed']} | {r['gradient_clip_fraction']*100:.1f}% | {r['maximum_multiplier']:.3f} | {r['first_50_mse']:.3f} | {r['last_50_mse']:.3f} |")
     md += ['', '## 같은 FPR에서의 구분 능력 진단', '',
            '동일 holdout에서 판정 기준을 사후 이동한 진단이며 환경 기준을 변경하지 않았다. 독립 검증이나 배포 성능이 아니다.', '',
            '| 군 | NH4 ROC AUC | FPR 10% 이하에서 NH4 recall |', '| --- | --- | --- |']
