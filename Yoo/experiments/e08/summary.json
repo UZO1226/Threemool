@@ -1,0 +1,109 @@
+{
+  "launch_commit": "68680d5da23392cd12c99a640f68a1c78d007b7b",
+  "completed_at": "2026-11-06T09:16:53.893074+00:00",
+  "prefix_all_weights_normalizer_rng_log_pid_match": true,
+  "frozen_representation_unchanged": true,
+  "continuous_final_weights_match_e06": true,
+  "audits": [
+    {
+      "variant": "continuous",
+      "seed": 0,
+      "updates": 44,
+      "maximum_lambda": 2.6654687500000005,
+      "restored_best_and_final_match": true
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 0,
+      "updates": 44,
+      "maximum_lambda": 2.6654687500000005,
+      "restored_best_and_final_match": true
+    },
+    {
+      "variant": "continuous",
+      "seed": 1,
+      "updates": 44,
+      "maximum_lambda": 2.1481250000000003,
+      "restored_best_and_final_match": true
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 1,
+      "updates": 44,
+      "maximum_lambda": 2.1481250000000003,
+      "restored_best_and_final_match": true
+    }
+  ],
+  "methods": {
+    "continuous": {
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 33125.127799472546,
+        "air_m3_sd": 12339.458763979737,
+        "cost_mean": 16.11860465116279,
+        "cost_sd": 3.7920656684097187,
+        "cost_cvar_mean": 69.37209302325581,
+        "cost_cvar_sd": 15.852347373577482
+      },
+      "val_best": {
+        "feasible_seeds": 2,
+        "air_m3_mean": 38527.38480971649,
+        "air_m3_sd": 4537.248297678251,
+        "cost_mean": 13.413953488372094,
+        "cost_sd": 1.5391905748618797,
+        "cost_cvar_mean": 57.63953488372093,
+        "cost_cvar_sd": 6.528404468164169
+      }
+    },
+    "freeze_half": {
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 29555.747664809343,
+        "air_m3_sd": 7387.090753779024,
+        "cost_mean": 16.502325581395347,
+        "cost_sd": 4.426817337102757,
+        "cost_cvar_mean": 70.83720930232559,
+        "cost_cvar_sd": 18.910995310803028
+      },
+      "val_best": {
+        "feasible_seeds": 2,
+        "air_m3_mean": 35049.137700274005,
+        "air_m3_sd": 381.73593778032455,
+        "cost_mean": 13.93720930232558,
+        "cost_sd": 0.7991951061782834,
+        "cost_cvar_mean": 59.86046511627906,
+        "cost_cvar_sd": 3.3875348121960167
+      }
+    }
+  },
+  "paired_deltas": {
+    "val_final": [
+      {
+        "seed": 0,
+        "air_m3": -7071.233137607458,
+        "cost": -0.06511627906976614,
+        "cost_cvar": -0.697674418604656
+      },
+      {
+        "seed": 1,
+        "air_m3": -67.52713171895084,
+        "cost": 0.832558139534882,
+        "cost_cvar": 3.6279069767441996
+      }
+    ],
+    "val_best": [
+      {
+        "seed": 0,
+        "air_m3": -6956.494218884967,
+        "cost": 1.0465116279069768,
+        "cost_cvar": 4.441860465116278
+      },
+      {
+        "seed": 1,
+        "air_m3": 0.0,
+        "cost": 0.0,
+        "cost_cvar": 0.0
+      }
+    ]
+  }
+}
