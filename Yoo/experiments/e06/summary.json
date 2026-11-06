@@ -1,0 +1,246 @@
+{
+  "launch_commit": "6eb6e0839524c2da3cf9370331225f246f30a392",
+  "completed_at": "2026-11-06T08:17:00.184567+00:00",
+  "seeds": [
+    0,
+    1
+  ],
+  "split": "val",
+  "report_limit": 15,
+  "tail_fraction": 0.2,
+  "baseline_metrics_match_e05": true,
+  "audits": [
+    {
+      "method": "ppolag",
+      "seed": 0,
+      "final_lambda": 1.45484375,
+      "maximum_lambda": 2.6709375,
+      "maximum_encoder_sync_kl": 0,
+      "maximum_tail_to_base_rms": 0.0,
+      "maximum_training_cost_cvar": 262.65625,
+      "updates": 44,
+      "elapsed_seconds": 127.40645366400713
+    },
+    {
+      "method": "ppolag_tail",
+      "seed": 0,
+      "final_lambda": 1.575625,
+      "maximum_lambda": 2.7103124999999997,
+      "maximum_encoder_sync_kl": 0,
+      "maximum_tail_to_base_rms": 0.3701266348361969,
+      "maximum_training_cost_cvar": 263.75,
+      "updates": 44,
+      "elapsed_seconds": 125.0346737820073
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 0,
+      "final_lambda": 1.80359375,
+      "maximum_lambda": 2.6654687500000005,
+      "maximum_encoder_sync_kl": 0.0016406659269705415,
+      "maximum_tail_to_base_rms": 0.0,
+      "maximum_training_cost_cvar": 237.21875,
+      "updates": 44,
+      "elapsed_seconds": 373.6156533900066
+    },
+    {
+      "method": "ppolag_fcsrl_tail",
+      "seed": 0,
+      "final_lambda": 1.86421875,
+      "maximum_lambda": 2.63765625,
+      "maximum_encoder_sync_kl": 0.0011807042174041271,
+      "maximum_tail_to_base_rms": 0.3391211234999373,
+      "maximum_training_cost_cvar": 238.90625,
+      "updates": 44,
+      "elapsed_seconds": 363.9900205709855
+    },
+    {
+      "method": "ppolag",
+      "seed": 1,
+      "final_lambda": 1.95875,
+      "maximum_lambda": 3.05078125,
+      "maximum_encoder_sync_kl": 0,
+      "maximum_tail_to_base_rms": 0.0,
+      "maximum_training_cost_cvar": 256.4375,
+      "updates": 44,
+      "elapsed_seconds": 124.3789313909947
+    },
+    {
+      "method": "ppolag_tail",
+      "seed": 1,
+      "final_lambda": 2.0365625,
+      "maximum_lambda": 3.14640625,
+      "maximum_encoder_sync_kl": 0,
+      "maximum_tail_to_base_rms": 0.2237255573272705,
+      "maximum_training_cost_cvar": 257.21875,
+      "updates": 44,
+      "elapsed_seconds": 126.15571179596009
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 1,
+      "final_lambda": 1.55015625,
+      "maximum_lambda": 2.1481250000000003,
+      "maximum_encoder_sync_kl": 0.0015176273882389069,
+      "maximum_tail_to_base_rms": 0.0,
+      "maximum_training_cost_cvar": 180.78125,
+      "updates": 44,
+      "elapsed_seconds": 364.0236790709896
+    },
+    {
+      "method": "ppolag_fcsrl_tail",
+      "seed": 1,
+      "final_lambda": 1.3514062500000001,
+      "maximum_lambda": 2.005,
+      "maximum_encoder_sync_kl": 0.002586851827800274,
+      "maximum_tail_to_base_rms": 0.2156023383140564,
+      "maximum_training_cost_cvar": 169.625,
+      "updates": 44,
+      "elapsed_seconds": 360.87812976399437
+    }
+  ],
+  "methods": {
+    "ppolag": {
+      "val_best": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 40221.907092164474,
+        "air_m3_sd": 3306.812469776155,
+        "cost_mean": 15.172093023255814,
+        "cost_sd": 0.36177556246753656,
+        "cost_cvar_mean": 65.65116279069767,
+        "cost_cvar_sd": 1.644434374852434
+      },
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 40221.907092164474,
+        "air_m3_sd": 3306.812469776155,
+        "cost_mean": 15.172093023255814,
+        "cost_sd": 0.36177556246753656,
+        "cost_cvar_mean": 65.65116279069767,
+        "cost_cvar_sd": 1.644434374852434
+      }
+    },
+    "ppolag_tail": {
+      "val_best": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 45563.318604808446,
+        "air_m3_sd": 11992.706293488061,
+        "cost_mean": 15.093023255813954,
+        "cost_sd": 0.6117295874451059,
+        "cost_cvar_mean": 64.76744186046511,
+        "cost_cvar_sd": 1.6115456873553877
+      },
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 40470.8948775635,
+        "air_m3_sd": 4790.93159306771,
+        "cost_mean": 15.186046511627907,
+        "cost_sd": 0.7432843374333009,
+        "cost_cvar_mean": 65.75581395348837,
+        "cost_cvar_sd": 3.009314905979962
+      }
+    },
+    "ppolag_fcsrl": {
+      "val_best": {
+        "feasible_seeds": 2,
+        "air_m3_mean": 38527.38480971649,
+        "air_m3_sd": 4537.248297678251,
+        "cost_mean": 13.413953488372094,
+        "cost_sd": 1.5391905748618797,
+        "cost_cvar_mean": 57.63953488372093,
+        "cost_cvar_sd": 6.528404468164169
+      },
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 33125.127799472546,
+        "air_m3_sd": 12339.458763979737,
+        "cost_mean": 16.11860465116279,
+        "cost_sd": 3.7920656684097187,
+        "cost_cvar_mean": 69.37209302325581,
+        "cost_cvar_sd": 15.852347373577482
+      }
+    },
+    "ppolag_fcsrl_tail": {
+      "val_best": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 37204.15746057189,
+        "air_m3_sd": 8918.158282358261,
+        "cost_mean": 13.816279069767443,
+        "cost_sd": 1.7003451435974188,
+        "cost_cvar_mean": 59.19767441860465,
+        "cost_cvar_sd": 6.988846093122852
+      },
+      "val_final": {
+        "feasible_seeds": 1,
+        "air_m3_mean": 33994.82306101207,
+        "air_m3_sd": 13456.84251640627,
+        "cost_mean": 15.816279069767441,
+        "cost_sd": 4.528772268343608,
+        "cost_cvar_mean": 68.0,
+        "cost_cvar_sd": 19.437214310755795
+      }
+    }
+  },
+  "paired_deltas": {
+    "val_best": [
+      {
+        "base": "ppolag",
+        "seed": 0,
+        "air_m3": -800.4429107690667,
+        "cost": -0.25581395348837077,
+        "cost_cvar": -0.8604651162790802
+      },
+      {
+        "base": "ppolag",
+        "seed": 1,
+        "air_m3": 11483.26593605701,
+        "cost": 0.09767441860465098,
+        "cost_cvar": -0.9069767441860535
+      },
+      {
+        "base": "ppolag_fcsrl",
+        "seed": 0,
+        "air_m3": 1774.5438087904913,
+        "cost": 0.2883720930232556,
+        "cost_cvar": 1.2325581395348877
+      },
+      {
+        "base": "ppolag_fcsrl",
+        "seed": 1,
+        "air_m3": -4420.9985070796865,
+        "cost": 0.5162790697674424,
+        "cost_cvar": 1.8837209302325633
+      }
+    ],
+    "val_final": [
+      {
+        "base": "ppolag",
+        "seed": 0,
+        "air_m3": -800.4429107690667,
+        "cost": -0.25581395348837077,
+        "cost_cvar": -0.8604651162790802
+      },
+      {
+        "base": "ppolag",
+        "seed": 1,
+        "air_m3": 1298.4184815671179,
+        "cost": 0.2837209302325583,
+        "cost_cvar": 1.0697674418604635
+      },
+      {
+        "base": "ppolag_fcsrl",
+        "seed": 0,
+        "air_m3": 1659.8048900680005,
+        "cost": -0.8232558139534873,
+        "cost_cvar": -3.9069767441860463
+      },
+      {
+        "base": "ppolag_fcsrl",
+        "seed": 1,
+        "air_m3": 79.58563301105823,
+        "cost": 0.2186046511627886,
+        "cost_cvar": 1.1627906976744242
+      }
+    ]
+  }
+}

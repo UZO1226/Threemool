@@ -1,0 +1,22 @@
+[
+  {
+    "method": "ppolag",
+    "seed": 0,
+    "all_saved_tensors_and_normalizer_match_e05": true
+  },
+  {
+    "method": "ppolag",
+    "seed": 1,
+    "all_saved_tensors_and_normalizer_match_e05": true
+  },
+  {
+    "method": "ppolag_fcsrl",
+    "seed": 0,
+    "all_saved_tensors_and_normalizer_match_e05": true
+  },
+  {
+    "method": "ppolag_fcsrl",
+    "seed": 1,
+    "all_saved_tensors_and_normalizer_match_e05": true
+  }
+]
