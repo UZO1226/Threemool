@@ -1,0 +1,169 @@
+{
+  "note": "Post-hoc common selection rule: highest validation reward among epochs with full validation cost <=15. Validation-only exploratory result, not independent test. Selection from rounded logs verified by exact reevaluation; no candidates near 15 within rounding tolerance.",
+  "rows": [
+    {
+      "tag": "fcsrl_limit12",
+      "seed": 0,
+      "selected_epoch_common_limit15": 4,
+      "validation": {
+        "air_m3": 33052.15425132823,
+        "reward": -49.57823137699235,
+        "cost": 13.767441860465116,
+        "nh4_viol_pct": 4.797018069848472,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "history_rounded": [
+        [
+          1,
+          -68.463,
+          15.158
+        ],
+        [
+          2,
+          -67.599,
+          14.084
+        ],
+        [
+          3,
+          -60.47,
+          13.037
+        ],
+        [
+          4,
+          -49.578,
+          13.767
+        ],
+        [
+          5,
+          -38.289,
+          17.023
+        ]
+      ]
+    },
+    {
+      "tag": "fcsrl_limit12",
+      "seed": 1,
+      "selected_epoch_common_limit15": 4,
+      "validation": {
+        "air_m3": 26578.451282266702,
+        "reward": -39.86767692340005,
+        "cost": 14.144186046511628,
+        "nh4_viol_pct": 4.563649623207196,
+        "do_viol_pct": 0.36463819787699536,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215
+      },
+      "history_rounded": [
+        [
+          1,
+          -55.605,
+          14.721
+        ],
+        [
+          2,
+          -56.1,
+          13.326
+        ],
+        [
+          3,
+          -47.796,
+          13.833
+        ],
+        [
+          4,
+          -39.868,
+          14.144
+        ],
+        [
+          5,
+          -43.243,
+          14.293
+        ]
+      ]
+    },
+    {
+      "tag": "fcsrl_limit15",
+      "seed": 0,
+      "selected_epoch_common_limit15": 3,
+      "validation": {
+        "air_m3": 34299.57775893845,
+        "reward": -51.449366638407675,
+        "cost": 11.497674418604651,
+        "nh4_viol_pct": 4.006158334008589,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215
+      },
+      "history_rounded": [
+        [
+          1,
+          -70.747,
+          15.177
+        ],
+        [
+          2,
+          -66.189,
+          13.484
+        ],
+        [
+          3,
+          -51.449,
+          11.498
+        ],
+        [
+          4,
+          -38.648,
+          15.419
+        ],
+        [
+          5,
+          -38.419,
+          18.372
+        ]
+      ]
+    },
+    {
+      "tag": "fcsrl_limit15",
+      "seed": 1,
+      "selected_epoch_common_limit15": 4,
+      "validation": {
+        "air_m3": 29663.041314509897,
+        "reward": -44.494561971764846,
+        "cost": 14.846511627906978,
+        "nh4_viol_pct": 5.088728628150069,
+        "do_viol_pct": 0.0842719390649056,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215
+      },
+      "history_rounded": [
+        [
+          1,
+          -57.436,
+          14.233
+        ],
+        [
+          2,
+          -57.369,
+          13.316
+        ],
+        [
+          3,
+          -46.189,
+          13.456
+        ],
+        [
+          4,
+          -44.495,
+          14.847
+        ],
+        [
+          5,
+          -43.345,
+          16.121
+        ]
+      ]
+    }
+  ]
+}
