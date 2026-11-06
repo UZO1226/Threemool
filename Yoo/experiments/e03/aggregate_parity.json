@@ -1,0 +1,15 @@
+{
+  "comparison": "fresh batched MLP evaluation versus stored post-training scalar test_best",
+  "n_policies": 35,
+  "episodes_per_policy": 300,
+  "max_absolute_error": {
+    "air_m3": 0.003248580869694706,
+    "cost": 0.0,
+    "reward": 4.872871308236881e-06,
+    "nh4_viol_pct": 0.0,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0
+  },
+  "final_gbm_available": 20,
+  "final_gbm_missing": 15
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "surrogate": "surrogate.json",
+    "method": "fcsrl",
+    "episodes": 2,
+    "max_air_abs_diff": 0.00034148493432439864
+  },
+  {
+    "surrogate": "surrogate.json",
+    "method": "ppolag",
+    "episodes": 2,
+    "max_air_abs_diff": 0.00012914340913994238
+  },
+  {
+    "surrogate": "surrogate_gbm.pkl",
+    "method": "fcsrl",
+    "episodes": 2,
+    "max_air_abs_diff": 0.0005513429750862997
+  },
+  {
+    "surrogate": "surrogate_gbm.pkl",
+    "method": "ppolag",
+    "episodes": 2,
+    "max_air_abs_diff": 0.0004271666366548743
+  }
+]

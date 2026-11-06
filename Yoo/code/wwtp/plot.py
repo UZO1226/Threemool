@@ -15,30 +15,14 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import yaml
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from agents import act_fn, load_agent  # noqa: E402
 from env import AIR_MAX, DO_MAX, NH4_MAX, AerationEnv, historical_air  # noqa: E402
 
 COLORS = {"historical": "#555555", "td3": "#d62728", "td3lag": "#1f77b4", "fcsrl": "#2ca02c"}
 LABELS = {"historical": "Plant operation", "td3": "TD3 (unconstrained)", "td3lag": "TD3-Lag", "fcsrl": "FCSRL + TD3-Lag"}
-
-
-def load_agent(run_dir: Path, env: AerationEnv, cudaid: int):
-    from fcsrl.agent import TD3LagReprAgent
-    from fcsrl.utils import DeviceConfig, MeanStdNormalizer, dict2attr
-
-    DeviceConfig().select_device(cudaid)
-    cfg = dict2attr(yaml.safe_load(open(HERE / "td3_wwtp.yaml")))
-    cfg.network.s_dim = int(np.prod(env.observation_space.shape))
-    cfg.network.a_dim = 1
-    cfg.agent.action_range = [-1.0, 1.0]
-    agent = TD3LagReprAgent(cfg, obs_normalizer=MeanStdNormalizer())
-    m = json.loads((run_dir / "metrics.json").read_text())
-    agent.load_model(str(run_dir / "model" / f"epoch_{m['best_epoch']}"))
-    agent.train(False)
-    return agent
 
 
 def trajectory(env, act_fn):
@@ -90,9 +74,6 @@ def main():
     fig.savefig(a.out / "tradeoff.png", dpi=200)
 
     # 2) 하루 궤적
-    import torch
-    from fcsrl.data import Batch
-
     env = AerationEnv(a.data, a.surrogate, split="test")
     day = a.day or env.days[len(env.days) // 2]
     env.fixed = [(day, a.member)]
@@ -101,14 +82,7 @@ def main():
         rd = a.runs / m / f"seed_{a.seed}"
         if not (rd / "metrics.json").exists():
             continue
-        agent = load_agent(rd, env, a.cudaid)
-
-        def act(obs, _e, agent=agent):
-            with torch.no_grad():
-                res, _ = agent(Batch(obs=agent.obs_normalizer(obs[None]), info={}), add_noise=False)
-            return res.act.cpu().numpy()[0]
-
-        curves[m] = trajectory(env, act)
+        curves[m] = trajectory(env, act_fn(load_agent(rd, env, a.cudaid)))
     t = np.arange(1, len(curves["historical"]) + 1) * 5 / 60
     fig, axs = plt.subplots(3, 1, figsize=(7, 6), sharex=True)
     aer = curves["historical"][:, 3] == 2

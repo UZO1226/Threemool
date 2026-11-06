@@ -132,10 +132,26 @@ class Surrogate:
         nh4_n = max(0.0, nh4 + float(self.nh4_model.predict(xn, member)[0, 0]))
         return nh4_n, do_n
 
+    @property
+    def n_members(self):
+        return len(self.do_model.layers)
+
+    def step_all(self, nh4, do, air, phase, temp, q_in, hour):
+        """모든 구성원의 한 스텝 예측. 구성원 i 의 NH4 는 구성원 i 의 DO 예측을 입력으로 쓴다.
+        돌려주는 값: (nh4_n, do_n), 각각 (구성원 수,) 배열"""
+        s, c = np.sin(2 * np.pi * hour / 24), np.cos(2 * np.pi * hour / 24)
+        ph = phase_onehot([phase])
+        xd = do_inputs([do], [air], ph, [temp], [nh4], [q_in], [s], [c])
+        do_n = np.maximum(0.0, do + self.do_model.predict(xd)[:, 0])
+        k = len(do_n)
+        xn = nh4_inputs([nh4] * k, [do] * k, do_n, np.repeat(ph, k, 0), [temp] * k, [q_in] * k, [s] * k, [c] * k)
+        nh4_n = np.maximum(0.0, nh4 + np.diag(self.nh4_model.predict(xn)))
+        return nh4_n, do_n
+
 
 def rollout(sur: Surrogate, day: pd.DataFrame, air, member=None):
     """하루 open loop 시뮬레이션. member=None 이면 앙상블 평균 대신 0번부터 차례로 평균낸다."""
-    members = range(len(sur.do_model.layers)) if member is None else [member]
+    members = range(sur.n_members) if member is None else [member]
     res = []
     for m in members:
         nh4, do = float(day.nh4.iloc[0]), float(day.do.iloc[0])
@@ -147,6 +163,37 @@ def rollout(sur: Surrogate, day: pd.DataFrame, air, member=None):
             nh4, do = sur.step(nh4, do, air[t], row.phase, row.temp, row.q_in, h, m)
         res.append(tr)
     return np.array(res).mean(0)  # (T, 2)
+
+
+def one_step_delta(sur, X, kind):
+    """1 스텝 변화량 예측의 구성원 평균. kind: "do" 또는 "nh4" """
+    return (sur.do_model if kind == "do" else sur.nh4_model).predict(X).mean(0)
+
+
+def report(sur, r, days):
+    """1 스텝 R2 와 하루 open loop 오차 (실제 공기량 재생). 학습용과 평가 전용 대리 모델에 같이 쓴다"""
+    rep = {}
+    for split in ("val", "test"):
+        Xd_, yd_, Xn_, yn_ = make_pairs(r, days[split])
+        pd_ = one_step_delta(sur, Xd_, "do")
+        pn_ = one_step_delta(sur, Xn_, "nh4")
+        r2 = lambda y, p: float(1 - ((y - p) ** 2).sum() / ((y - y.mean()) ** 2).sum())
+        rep[split] = {"one_step_r2_delta_do": r2(yd_, pd_), "one_step_r2_delta_nh4": r2(yn_, pn_)}
+        errs = []
+        for day in days[split]:
+            g = r.loc[day]
+            sim = rollout(sur, g, g.air.to_numpy())
+            errs.append({
+                "rmse_nh4": float(np.sqrt(np.mean((sim[:, 0] - g.nh4.to_numpy()) ** 2))),
+                "rmse_do": float(np.sqrt(np.mean((sim[:, 1] - g.do.to_numpy()) ** 2))),
+                "mean_nh4_sim": float(sim[:, 0].mean()), "mean_nh4_real": float(g.nh4.mean()),
+                "mean_do_sim": float(sim[:, 1].mean()), "mean_do_real": float(g.do.mean()),
+                "rmse_nh4_const": float(np.sqrt(np.mean((g.nh4.iloc[0] - g.nh4.to_numpy()) ** 2))),
+            })
+        e = pd.DataFrame(errs)
+        rep[split].update({k: float(v) for k, v in e.mean().items()})
+        rep[split]["corr_daily_mean_nh4"] = float(np.corrcoef(e.mean_nh4_sim, e.mean_nh4_real)[0, 1])
+    return rep
 
 
 def main():
@@ -165,29 +212,8 @@ def main():
               "nh4": train_ensemble(Xn, yn, Xnv, ynv, device=a.device, seed=1)}
     (a.out / "surrogate.json").write_text(json.dumps(params))
 
-    # 평가: 1 스텝 R2, 하루 open loop 오차 (평가 구간, 실제 공기량 재생)
     sur = Surrogate(a.out / "surrogate.json")
-    rep = {}
-    for split in ("val", "test"):
-        Xd_, yd_, Xn_, yn_ = make_pairs(r, days[split])
-        pd_ = sur.do_model.predict(Xd_).mean(0)
-        pn_ = sur.nh4_model.predict(Xn_).mean(0)
-        r2 = lambda y, p: float(1 - ((y - p) ** 2).sum() / ((y - y.mean()) ** 2).sum())
-        rep[split] = {"one_step_r2_delta_do": r2(yd_, pd_), "one_step_r2_delta_nh4": r2(yn_, pn_)}
-        errs = []
-        for day in days[split]:
-            g = r.loc[day]
-            sim = rollout(sur, g, g.air.to_numpy())
-            errs.append({
-                "rmse_nh4": float(np.sqrt(np.mean((sim[:, 0] - g.nh4.to_numpy()) ** 2))),
-                "rmse_do": float(np.sqrt(np.mean((sim[:, 1] - g.do.to_numpy()) ** 2))),
-                "mean_nh4_sim": float(sim[:, 0].mean()), "mean_nh4_real": float(g.nh4.mean()),
-                "mean_do_sim": float(sim[:, 1].mean()), "mean_do_real": float(g.do.mean()),
-                "rmse_nh4_const": float(np.sqrt(np.mean((g.nh4.iloc[0] - g.nh4.to_numpy()) ** 2))),
-            })
-        e = pd.DataFrame(errs)
-        rep[split].update({k: float(v) for k, v in e.mean().items()})
-        rep[split]["corr_daily_mean_nh4"] = float(np.corrcoef(e.mean_nh4_sim, e.mean_nh4_real)[0, 1])
+    rep = report(sur, r, days)
     (a.out / "surrogate_report.json").write_text(json.dumps(rep, indent=1))
     print(json.dumps(rep, indent=1))
 

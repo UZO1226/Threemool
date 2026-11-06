@@ -8,6 +8,8 @@
     python evaluate.py sensitivity --data ... --surrogate ... --out <폴더>
     # 여러 실행 결과를 표로 모으기
     python evaluate.py summarize --runs <결과 폴더> --out <md 파일>
+    # 학습된 정책과 실제 운전을 다른 대리 모델(예: 평가 전용 GBM)로 다시 평가 (Yoo/e03)
+    python evaluate.py crosseval --runs <결과 폴더> [<결과 폴더> ...] --data ... --surrogate <모델> --out <json>
 """
 import argparse
 import json
@@ -15,7 +17,8 @@ from pathlib import Path
 
 import numpy as np
 
-from env import AIR_MAX, STEP_H, AerationEnv, historical_air
+from env import AIR_MAX, DO_MAX, NH4_MAX, STEP_H, AerationEnv, historical_air, load_surrogate
+from surrogate import do_inputs, nh4_inputs, phase_onehot
 
 
 def episodes(env: AerationEnv):
@@ -51,21 +54,117 @@ def summarize_rows(rows, cost_limit):
 
 
 def eval_agent(agent, data, surrogate, split, cost_limit):
-    import torch
-    from fcsrl.data import Batch
+    from agents import act_fn
 
     env = AerationEnv(data, surrogate, split=split, fixed_episodes=None)
     env.fixed = episodes(env)
     agent.train(False)
-
-    def act(obs, _env):
-        o = agent.obs_normalizer(obs[None])
-        with torch.no_grad():
-            res, _ = agent(Batch(obs=o, info={}), add_noise=False)
-        return res.act.detach().cpu().numpy()[0]
-
-    rows = run_policy(env, act, len(env.fixed))
+    rows = run_policy(env, act_fn(agent), len(env.fixed))
     return summarize_rows(rows, cost_limit), rows
+
+
+def batched_rollout(env: AerationEnv, sur, act_batch, cost_limit):
+    """env.fixed 의 모든 (날짜, 구성원) 에피소드를 한꺼번에 굴린다. 상태 전이는 sur 로 한다.
+    env.step 과 같은 규칙(관측, 공기량 변환, 비용)을 배열로 다시 쓴 것이다. act_batch(obs (N, 11)) -> (N,) [-1, 1]"""
+    eps = env.fixed
+    X = [env.day_data[d] for d, _ in eps]
+    mem = np.array([m for _, m in eps])
+    key = lambda k: np.stack([x[k] for x in X])  # (N, T+1)
+    phase, temp, q_in, hour, since = key("phase"), key("temp"), key("q_in"), key("hour"), key("since")
+    nh4, do = key("nh4")[:, 0].astype(float), key("do")[:, 0].astype(float)
+    N, T = len(eps), env.T
+    prev = np.zeros(N)
+    air_sum, cost, vn, vd = np.zeros(N), np.zeros(N), np.zeros(N), np.zeros(N)
+    for t in range(T):
+        ph = phase[:, t].astype(int)
+        s, c = np.sin(2 * np.pi * hour[:, t] / 24), np.cos(2 * np.pi * hour[:, t] / 24)
+        obs = np.column_stack([nh4, do, ph == 0, ph == 1, ph == 2, temp[:, t] / 10, q_in[:, t] / 1000, s, c,
+                               np.minimum(since[:, t], 24) / 12, prev / AIR_MAX]).astype(np.float32)
+        a = np.clip(np.asarray(act_batch(obs), dtype=float).reshape(N), -1, 1)
+        air = np.where(ph == 2, (a + 1) / 2 * AIR_MAX, 0.0)
+        oh = phase_onehot(ph)
+        do_n, nh4_n = np.empty(N), np.empty(N)
+        for m in np.unique(mem):
+            i = mem == m
+            xd = do_inputs(do[i], air[i], oh[i], temp[i, t], nh4[i], q_in[i, t], s[i], c[i])
+            do_n[i] = np.maximum(0.0, do[i] + sur.do_model.predict(xd, m)[0])
+            xn = nh4_inputs(nh4[i], do[i], do_n[i], oh[i], temp[i, t], q_in[i, t], s[i], c[i])
+            nh4_n[i] = np.maximum(0.0, nh4[i] + sur.nh4_model.predict(xn, m)[0])
+        nh4, do, prev = nh4_n, do_n, air
+        v1, v2 = (nh4 > NH4_MAX).astype(float), (do > DO_MAX).astype(float)
+        vn += v1
+        vd += v2
+        cost += v1 + v2
+        air_sum += air * STEP_H
+    rows = [{"day": d, "member": int(m), "air_m3": float(air_sum[k]), "reward": float(-air_sum[k] / STEP_H / AIR_MAX),
+             "cost": float(cost[k]), "nh4_viol_pct": float(100 * vn[k] / T), "do_viol_pct": float(100 * vd[k] / T)}
+            for k, (d, m) in enumerate(eps)]
+    return summarize_rows(rows, cost_limit), rows
+
+
+def batch_act_fn(agent):
+    """act_fn 의 배치 버전: obs (N, 11) -> (N,)"""
+    import torch
+    from fcsrl.agent import PPOLagReprAgent
+    from fcsrl.data import Batch
+
+    if hasattr(agent, "act_det"):
+        return lambda obs: agent.act_det(obs)[:, 0]
+    is_ppo = isinstance(agent, PPOLagReprAgent)
+    dev = next(agent.actor.parameters()).device
+
+    def act(obs):
+        o = agent.obs_normalizer(obs)
+        with torch.no_grad():
+            if is_ppo:
+                ot = torch.as_tensor(o, dtype=torch.float32, device=dev)
+                mu, _ = agent.actor(ot, agent.fixed_encoder.zs(ot))
+                a = mu.clamp(-1.0, 1.0) * agent._act_scale + agent._act_bias
+            else:
+                a = agent(Batch(obs=o, info={}), add_noise=False)[0].act
+        return a.detach().cpu().numpy()[:, 0]
+
+    return act
+
+
+def cmd_crosseval(a):
+    from agents import load_agent
+
+    sur = load_surrogate(a.surrogate)
+    env = AerationEnv(a.data, a.surrogate, split="test")
+    env.fixed = episodes(env)
+    out = {"surrogate": str(a.surrogate), "checkpoint": a.checkpoint,
+           "historical": None, "runs": [], "missing_checkpoints": []}
+    # 실제 운전 공기량: 에피소드 순서대로 그날 기록을 넣는다
+    hist_air = np.stack([np.clip(env.day_data[d]["air"] / AIR_MAX * 2 - 1, -1, 1) for d, _ in env.fixed])
+    step = {"t": 0}
+
+    def hist_act(obs):
+        v = hist_air[:, step["t"]]
+        step["t"] += 1
+        return v
+
+    out["historical"] = batched_rollout(env, sur, hist_act, a.cost_limit)[0]
+    for root in a.runs:
+        for p in sorted(Path(root).glob("*/seed_*/metrics.json")):
+            m = json.loads(p.read_text())
+            try:
+                agent = load_agent(p.parent, env, a.cudaid, checkpoint=a.checkpoint)
+            except FileNotFoundError as exc:
+                if a.checkpoint != "final":
+                    raise
+                out["missing_checkpoints"].append({"run_dir": str(p.parent), "reason": str(exc)})
+                continue
+            summ, _ = batched_rollout(env, sur, batch_act_fn(agent), a.cost_limit)
+            out["runs"].append({"tag": m.get("tag", m["method"]), "method": m["method"], "seed": m["seed"],
+                                "run_dir": str(p.parent), "eval": summ,
+                                "checkpoint_path": agent.checkpoint_path,
+                                "train_surrogate_final": m["test_final"]})
+            print(m.get("tag", m["method"]), m["seed"], {k: round(v, 2) for k, v in summ.items()}, flush=True)
+    a.out.parent.mkdir(parents=True, exist_ok=True)
+    temporary = a.out.with_suffix(a.out.suffix + ".tmp")
+    temporary.write_text(json.dumps(out, indent=1))
+    temporary.replace(a.out)
 
 
 def cmd_historical(a):
@@ -149,8 +248,17 @@ def main():
     s = sub.add_parser("summarize")
     s.add_argument("--runs", type=Path, required=True)
     s.add_argument("--out", type=Path, required=True)
+    x = sub.add_parser("crosseval")
+    x.add_argument("--runs", type=Path, nargs="+", required=True)
+    x.add_argument("--data", type=Path, required=True)
+    x.add_argument("--surrogate", type=Path, required=True)
+    x.add_argument("--out", type=Path, required=True)
+    x.add_argument("--cost_limit", type=float, default=15)
+    x.add_argument("--cudaid", type=int, default=0)
+    x.add_argument("--checkpoint", choices=["best", "final"], default="best")
     a = ap.parse_args()
-    {"historical": cmd_historical, "sensitivity": cmd_sensitivity, "summarize": cmd_summarize}[a.cmd](a)
+    {"historical": cmd_historical, "sensitivity": cmd_sensitivity, "summarize": cmd_summarize,
+     "crosseval": cmd_crosseval}[a.cmd](a)
 
 
 if __name__ == "__main__":
