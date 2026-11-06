@@ -44,8 +44,12 @@ FCSRL 공개 구현체(czp16/FCSRL)를 수정 없이 돌려 논문 Table 4 (FCSR
 | e02 | FCSRL 폭기 제어 적용, TD3 Lag와 TD3 비교 | 완료. [실험 기록](experiments/e02/README.md) |
 | e03 | PPO Lag, FCSRL + UCB, 승수 상한 5 추가 실험 | 학습 20개 완료. e02 15개와 합친 35개 정책의 MLP 및 GBM 재평가 완료. [실험 기록](experiments/e03/README.md) |
 
-현재는 전체 결과와 재현성 점검을 정리한 단계다. 선택 모델과 마지막 모델을 구분해 [RESULT.md](RESULT.md)에 요약했다. 기존 TD3의 마지막 가중치가 없는 경우 GBM 재평가 누락을 명시했다.
+e03의 전체 결과와 재현성 점검을 정리했다. 선택 모델과 마지막 모델을 구분해 [RESULT.md](RESULT.md)에 요약했다. 기존 TD3의 마지막 가중치가 없는 경우 GBM 재평가 누락을 명시했다.
 
 다음 단계는 고정된 검증 조건과 대리 모델 오차 점검이다. UCB 효과와 승수 상한 가설의 판정은 [e03 결과](experiments/e03/results.md)를 따른다. 실제 공정 안전성을 입증한 결과는 아니다.
 
 로그와 대용량 산출물은 `/home/jio/fcsrl_src/results/e03/`에 있다. 재평가와 집계는 `experiments/e03/finalize_e03.py`로 재현한다.
+
+## 후속 실험 e04
+
+2026-11-06: 학습 전 코드와 설정 점검, 기존 정책 35개의 전체 검증 진단을 완료했다. 무작위 소수 에피소드로 모델을 고르는 문제와 불확실성 추정의 한계를 확인했다. 다음은 고정 검증에서 FCSRL 학습 한도 15 대 12를 seed 2개씩 비교하는 작은 시험 실행이다. [점검과 실행 기록](experiments/e04/README.md), [진단 결과](experiments/e04/results.md).

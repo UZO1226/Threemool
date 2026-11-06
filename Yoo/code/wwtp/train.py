@@ -35,6 +35,9 @@ def main():
     ap.add_argument("--ucb_k", type=float, default=0.5, help="fcsrl_ucb: 평균 + k x 표준편차")
     ap.add_argument("--tag", default=None, help="결과 폴더 이름 (없으면 방법 이름)")
     ap.add_argument("--max_lambda", type=float, default=None, help="Lagrange 승수 상한 덮어쓰기")
+    ap.add_argument("--cost_limit", type=float, default=None, help="학습 비용 한도. 최종 보고 한도는 별도로 명시")
+    ap.add_argument("--fixed_validation", action="store_true", help="TD3: 모든 검증 날짜와 모델 구성원을 매번 평가")
+    ap.add_argument("--final_eval_split", choices=["val", "test"], default="test")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--epochs", type=int, default=None, help="TD3 계열 학습 epoch 수")
     ap.add_argument("--grad_steps", type=int, default=None, help="TD3 계열 epoch당 gradient step 수")
@@ -47,6 +50,10 @@ def main():
             ap.error(f"--{name} must be positive")
     if a.max_lambda is not None and (not np.isfinite(a.max_lambda) or a.max_lambda < 0):
         ap.error("--max_lambda must be finite and nonnegative")
+    if a.cost_limit is not None and (not np.isfinite(a.cost_limit) or a.cost_limit < 0):
+        ap.error("--cost_limit must be finite and nonnegative")
+    if a.method == "ppolag" and a.fixed_validation:
+        ap.error("--fixed_validation currently supports TD3 methods only")
     if a.method == "ppolag" and (a.epochs is not None or a.grad_steps is not None):
         ap.error("PPO에는 --total_steps와 --eval_chunks를 사용하세요. --epochs/--grad_steps는 TD3 전용입니다.")
     if a.method != "ppolag" and (a.total_steps is not None or a.eval_chunks is not None):
@@ -75,7 +82,7 @@ def main():
             ap.error("PPO 설정 파일은 key-value mapping이어야 합니다.")
         cfg = dict(cfg)
         for key, value in (("total_steps", a.total_steps), ("n_chunks", a.eval_chunks),
-                           ("max_lambda", a.max_lambda)):
+                           ("max_lambda", a.max_lambda), ("cost_limit", a.cost_limit)):
             if value is not None:
                 cfg[key] = value
         try:
@@ -91,6 +98,8 @@ def main():
     cfg["misc"]["seed"] = a.seed
     if a.max_lambda is not None:
         cfg["Lagrangian"]["max_lambda"] = a.max_lambda
+    if a.cost_limit is not None:
+        cfg["Lagrangian"]["constraint_threshold"] = a.cost_limit
     if a.method == "td3":
         # PID 이득을 0 으로 두면 원본 updater 가 KI 로 나누다 멈추므로 상한만 0 으로 막는다
         cfg["Lagrangian"].update(init_lagrg=0.0, max_lambda=0.0)
@@ -100,10 +109,36 @@ def main():
 
     base = 1000 * a.seed
     train_envs = SubprocVectorEnv([make("train", base + i) for i in range(e.num_env_train)])
-    test_envs = SubprocVectorEnv([make("val", base + 500 + i) for i in range(e.num_env_test)])
+    validation = {"mode": "random", "episodes": cfg["trainer"]["test_episode"]}
+    if a.fixed_validation:
+        import pandas as pd
+        days = pd.read_pickle(a.data)["days"]["val"]
+        cfg["env"]["num_env_test"] = probe.n_members
+        cfg["trainer"]["test_episode"] = len(days) * probe.n_members
+        validation = {"mode": "all_dates_members", "days": days,
+                      "episodes": cfg["trainer"]["test_episode"], "n_members": probe.n_members}
+        test_envs = SubprocVectorEnv([
+            (lambda member: lambda: AerationEnv(a.data, a.surrogate, split="val", seed=500 + member,
+              fixed_episodes=[(day, member) for day in days]))(m) for m in range(probe.n_members)])
+    else:
+        test_envs = SubprocVectorEnv([make("val", base + 500 + i) for i in range(e.num_env_test)])
+    (run_dir / "effective_config.json").write_text(json.dumps({"config": cfg, "validation": validation,
+        "final_eval_split": a.final_eval_split, "data": str(a.data.resolve()),
+        "surrogate": str(a.surrogate.resolve()), "method": a.method, "seed": a.seed}, indent=2))
     set_seed(a.seed)
     # e02 와 같은 순서: seed 를 정한 뒤 신경망을 만든다
     agent, config = make_agent(a.method, cfg, probe, ucb_n=a.ucb_n, ucb_k=a.ucb_k)
+    pid_trace = []
+    if a.fixed_validation:
+        original_update = agent.update_lagrangian_multiplier
+
+        def logged_update(cost):
+            original_update(cost)
+            pid = agent.lagrg_updater
+            pid_trace.append({"cost": float(np.mean(cost)), "lambda": float(pid.lag),
+                              "integral": float(pid.error_integral)})
+
+        agent.update_lagrangian_multiplier = logged_update
 
     train_c = Collector(agent, train_envs, ReplayBuffer(config.trainer.replay_size), act_space=probe.action_space)
     test_c = Collector(agent, test_envs)
@@ -116,24 +151,27 @@ def main():
                              lag.constraint_threshold, None, str(run_dir / "model"), lambda r: False)
     train_c.close()
     test_c.close()
+    if a.fixed_validation:
+        (run_dir / "pid_trace.json").write_text(json.dumps(pid_trace))
 
     limit = lag.constraint_threshold
     (run_dir / "model_final").mkdir(exist_ok=True)
     agent.save_model(str(run_dir / "model_final"))
-    final, _ = eval_agent(agent, a.data, a.surrogate, "test", limit)
+    final, _ = eval_agent(agent, a.data, a.surrogate, a.final_eval_split, limit)
     best_dirs = sorted((run_dir / "model").glob("epoch_*"), key=lambda p: int(p.name.split("_")[1]))
     agent.load_model(str(best_dirs[-1]))  # 트레이너는 val 기준으로 나아질 때만 저장하므로 마지막 저장본이 최고 epoch
-    best, rows = eval_agent(agent, a.data, a.surrogate, "test", limit)
+    best, rows = eval_agent(agent, a.data, a.surrogate, a.final_eval_split, limit)
     metrics = {"method": a.method, "tag": a.tag or a.method, "seed": a.seed,
                "best_epoch": int(best_dirs[-1].name.split("_")[1]),
                **({"ucb_n": a.ucb_n, "ucb_k": a.ucb_k} if a.method == "fcsrl_ucb" else {}),
                "max_lambda": cfg["Lagrangian"]["max_lambda"],
-               "test_best": best, "test_final": final, "cost_limit": limit,
+               f"{a.final_eval_split}_best": best, f"{a.final_eval_split}_final": final, "cost_limit": limit,
+               "evaluation_split": a.final_eval_split, "validation": validation,
                "train_info": {k: str(v) for k, v in info.items()}}
     (run_dir / "metrics.json").write_text(json.dumps(metrics, indent=1))
-    (run_dir / "test_episodes.json").write_text(json.dumps(rows))
-    print("TEST_BEST", json.dumps(best))
-    print("TEST_FINAL", json.dumps(final))
+    (run_dir / f"{a.final_eval_split}_episodes.json").write_text(json.dumps(rows))
+    print(a.final_eval_split.upper() + "_BEST", json.dumps(best))
+    print(a.final_eval_split.upper() + "_FINAL", json.dumps(final))
 
 
 def train_ppo(a, config, run_dir):
@@ -144,17 +182,18 @@ def train_ppo(a, config, run_dir):
 
     limit = config.cost_limit
     agent, best = train(a.data, a.surrogate, a.seed, run_dir, device=DeviceConfig.DEVICE, config=config)
-    final, _ = eval_agent(agent, a.data, a.surrogate, "test", limit)
+    final, _ = eval_agent(agent, a.data, a.surrogate, a.final_eval_split, limit)
     agent.load(run_dir / "model" / f"epoch_{best['epoch']}")
-    best_eval, rows = eval_agent(agent, a.data, a.surrogate, "test", limit)
+    best_eval, rows = eval_agent(agent, a.data, a.surrogate, a.final_eval_split, limit)
     metrics = {"method": "ppolag", "tag": a.tag or "ppolag", "seed": a.seed, "best_epoch": best["epoch"],
-               "max_lambda": config.max_lambda, "impl": "ppo_lag.py", "test_best": best_eval,
-               "test_final": final, "cost_limit": limit, "effective_config": config.to_dict(),
+               "max_lambda": config.max_lambda, "impl": "ppo_lag.py", f"{a.final_eval_split}_best": best_eval,
+               f"{a.final_eval_split}_final": final, "evaluation_split": a.final_eval_split,
+               "cost_limit": limit, "effective_config": config.to_dict(),
                "actual_steps": config.actual_steps, "n_updates": config.n_updates}
     (run_dir / "metrics.json").write_text(json.dumps(metrics, indent=1))
-    (run_dir / "test_episodes.json").write_text(json.dumps(rows))
-    print("TEST_BEST", json.dumps(best_eval))
-    print("TEST_FINAL", json.dumps(final))
+    (run_dir / f"{a.final_eval_split}_episodes.json").write_text(json.dumps(rows))
+    print(a.final_eval_split.upper() + "_BEST", json.dumps(best_eval))
+    print(a.final_eval_split.upper() + "_FINAL", json.dumps(final))
 
 
 if __name__ == "__main__":

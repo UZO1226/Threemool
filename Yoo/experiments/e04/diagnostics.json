@@ -1,0 +1,1319 @@
+{
+  "split": "val",
+  "note": "Exploratory. Validation data previously used for model selection. Bootstrap targets are not independent ground truth.",
+  "inputs": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/data/avedore/aved_5min.pkl": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+    "/home/jio/fcsrl_src/results/e02/surrogate/surrogate.json": "d25dbe3ea1a8e33b17f0a2d0f11a5983fe6c4a6d81a1d0db851b530386658117"
+  },
+  "source": {
+    "/tmp/threemool-e04-preflight/Yoo/experiments/e04/diagnose.py": "d0d30eac5122087a7960b6af713ac84ffc49dee430f6970d9a9a7fe13aa2efa7",
+    "/tmp/threemool-e04-preflight/Yoo/code/wwtp/evaluate.py": "87ecbfb5420275ccee3f26c6598fed984c4c3fd66388fd72930646d8a409942a",
+    "/tmp/threemool-e04-preflight/Yoo/code/wwtp/agents.py": "e23b6251f2cb348a7b99ebdee338e44f8a534195a8927c7d0d164ec9471151b3"
+  },
+  "observed_model": {
+    "nh4": {
+      "all": {
+        "n": 12341,
+        "actual_violation_rate": 0.20873511060692002,
+        "mae": 0.14814840538921056,
+        "mean_sigma": 0.019720300204849113,
+        "corr_sigma_abs_error": -0.011032942974629473,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.5288064176322826,
+            "false_negative_rate": 0.04580745341614907,
+            "false_positive_rate": 0.013824884792626729,
+            "predicted_violation_rate": 0.21011263268778868
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.554250060773033,
+            "false_negative_rate": 0.042701863354037264,
+            "false_positive_rate": 0.0141321044546851,
+            "predicted_violation_rate": 0.21100397050482134
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.5828539016287173,
+            "false_negative_rate": 0.04076086956521739,
+            "false_positive_rate": 0.014644137224782387,
+            "predicted_violation_rate": 0.21181427761121466
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.6363341706506767,
+            "false_negative_rate": 0.03687888198757764,
+            "false_positive_rate": 0.016180235535074246,
+            "predicted_violation_rate": 0.21384004537719795
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.6828457985576534,
+            "false_negative_rate": 0.035326086956521736,
+            "false_positive_rate": 0.01863799283154122,
+            "predicted_violation_rate": 0.21610890527509927
+          }
+        ]
+      },
+      "aerobic_low_do": {
+        "n": 2386,
+        "actual_violation_rate": 0.1969823973176865,
+        "mae": 0.1598658502897522,
+        "mean_sigma": 0.01790016993351973,
+        "corr_sigma_abs_error": -0.03799979476030233,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.5138306789606035,
+            "false_negative_rate": 0.05319148936170213,
+            "false_positive_rate": 0.013569937369519834,
+            "predicted_violation_rate": 0.19740150880134116
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.5305951383067896,
+            "false_negative_rate": 0.05106382978723404,
+            "false_positive_rate": 0.014091858037578288,
+            "predicted_violation_rate": 0.19823973176865045
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.548197820620285,
+            "false_negative_rate": 0.05106382978723404,
+            "false_positive_rate": 0.015135699373695199,
+            "predicted_violation_rate": 0.19907795473595977
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.5825649622799665,
+            "false_negative_rate": 0.04680851063829787,
+            "false_positive_rate": 0.015135699373695199,
+            "predicted_violation_rate": 0.19991617770326908
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.6274098910310143,
+            "false_negative_rate": 0.04680851063829787,
+            "false_positive_rate": 0.016701461377870562,
+            "predicted_violation_rate": 0.20117351215423301
+          }
+        ]
+      },
+      "aerobic": {
+        "n": 7947,
+        "actual_violation_rate": 0.2551906379765949,
+        "mae": 0.15857024679147846,
+        "mean_sigma": 0.016905344872622175,
+        "corr_sigma_abs_error": -0.03326456075218069,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.511262111488612,
+            "false_negative_rate": 0.04240631163708087,
+            "false_positive_rate": 0.017739483020780537,
+            "predicted_violation_rate": 0.2575814772870266
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.5310179942116522,
+            "false_negative_rate": 0.04043392504930966,
+            "false_positive_rate": 0.01824632539280284,
+            "predicted_violation_rate": 0.25846231282244875
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.5532905498930414,
+            "false_negative_rate": 0.03895463510848126,
+            "false_positive_rate": 0.01875316776482514,
+            "predicted_violation_rate": 0.25921731470995346
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.598716496791242,
+            "false_negative_rate": 0.03648915187376726,
+            "false_positive_rate": 0.020104747423551277,
+            "predicted_violation_rate": 0.26085315213288035
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.6422549389706808,
+            "false_negative_rate": 0.03550295857988166,
+            "false_positive_rate": 0.022976854198344315,
+            "predicted_violation_rate": 0.26324399144331195
+          }
+        ]
+      },
+      "near_limit": {
+        "n": 1744,
+        "actual_violation_rate": 0.45298165137614677,
+        "mae": 0.14618207174968958,
+        "mean_sigma": 0.02034545356725537,
+        "corr_sigma_abs_error": 0.015257775178494989,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.4386467889908257,
+            "false_negative_rate": 0.13924050632911392,
+            "false_positive_rate": 0.1278825995807128,
+            "predicted_violation_rate": 0.4598623853211009
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.4713302752293578,
+            "false_negative_rate": 0.13037974683544304,
+            "false_positive_rate": 0.1310272536687631,
+            "predicted_violation_rate": 0.46559633027522934
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.5011467889908257,
+            "false_negative_rate": 0.1240506329113924,
+            "false_positive_rate": 0.13522012578616352,
+            "predicted_violation_rate": 0.47075688073394495
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.5774082568807339,
+            "false_negative_rate": 0.11139240506329114,
+            "false_positive_rate": 0.1488469601677149,
+            "predicted_violation_rate": 0.48394495412844035
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.6450688073394495,
+            "false_negative_rate": 0.10632911392405063,
+            "false_positive_rate": 0.1740041928721174,
+            "predicted_violation_rate": 0.5
+          }
+        ]
+      }
+    },
+    "do": {
+      "all": {
+        "n": 12341,
+        "actual_violation_rate": 0.03848958755368285,
+        "mae": 0.17929092996823828,
+        "mean_sigma": 0.026915091106602958,
+        "corr_sigma_abs_error": 0.1786771486300042,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.7012397698727818,
+            "false_negative_rate": 0.7663157894736842,
+            "false_positive_rate": 0.007079049384796899,
+            "predicted_violation_rate": 0.0158009885746698
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.7223887853496476,
+            "false_negative_rate": 0.7494736842105263,
+            "false_positive_rate": 0.008343165346367773,
+            "predicted_violation_rate": 0.017664694919374443
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.7408637873754153,
+            "false_negative_rate": 0.7368421052631579,
+            "false_positive_rate": 0.009860104500252823,
+            "predicted_violation_rate": 0.019609431974718417
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.7715744267077222,
+            "false_negative_rate": 0.7094736842105264,
+            "false_positive_rate": 0.012641159615708747,
+            "predicted_violation_rate": 0.023336844664127703
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.7941009642654566,
+            "false_negative_rate": 0.6757894736842105,
+            "false_positive_rate": 0.015843586718354962,
+            "predicted_violation_rate": 0.027712503038651647
+          }
+        ]
+      },
+      "aerobic_low_do": {
+        "n": 2386,
+        "actual_violation_rate": 0.0012573344509639564,
+        "mae": 0.17964137377101466,
+        "mean_sigma": 0.03155241076424053,
+        "corr_sigma_abs_error": 0.023885950782469398,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.6437552388935457,
+            "false_negative_rate": 1.0,
+            "false_positive_rate": 0.0,
+            "predicted_violation_rate": 0.0
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.6655490360435876,
+            "false_negative_rate": 1.0,
+            "false_positive_rate": 0.0,
+            "predicted_violation_rate": 0.0
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.69279128248114,
+            "false_negative_rate": 1.0,
+            "false_positive_rate": 0.0,
+            "predicted_violation_rate": 0.0
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.7451802179379715,
+            "false_negative_rate": 1.0,
+            "false_positive_rate": 0.0,
+            "predicted_violation_rate": 0.0
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.7816429170159263,
+            "false_negative_rate": 1.0,
+            "false_positive_rate": 0.0,
+            "predicted_violation_rate": 0.0
+          }
+        ]
+      },
+      "aerobic": {
+        "n": 7947,
+        "actual_violation_rate": 0.05951931546495533,
+        "mae": 0.24581694907862683,
+        "mean_sigma": 0.031236487891365544,
+        "corr_sigma_abs_error": -0.08314034146017793,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.5773247766452749,
+            "false_negative_rate": 0.7653276955602537,
+            "false_positive_rate": 0.01123896173401124,
+            "predicted_violation_rate": 0.02453756134390336
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.5956964892412231,
+            "false_negative_rate": 0.7484143763213531,
+            "false_positive_rate": 0.013245919186513246,
+            "predicted_violation_rate": 0.02743173524600478
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.6157040392600982,
+            "false_negative_rate": 0.7357293868921776,
+            "false_positive_rate": 0.015654268129515654,
+            "predicted_violation_rate": 0.030451742796023657
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.6558449729457657,
+            "false_negative_rate": 0.7082452431289641,
+            "false_positive_rate": 0.02006957452502007,
+            "predicted_violation_rate": 0.0362400906002265
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.6888133887001384,
+            "false_negative_rate": 0.6744186046511628,
+            "false_positive_rate": 0.025153866738025155,
+            "predicted_violation_rate": 0.04303510758776897
+          }
+        ]
+      },
+      "near_limit": {
+        "n": 1851,
+        "actual_violation_rate": 0.2252836304700162,
+        "mae": 0.3092502981858819,
+        "mean_sigma": 0.028608438685395445,
+        "corr_sigma_abs_error": -0.005476626797288418,
+        "k_sweep": [
+          {
+            "k": 0.0,
+            "upper_coverage": 0.24905456509994597,
+            "false_negative_rate": 0.8081534772182254,
+            "false_positive_rate": 0.04881450488145049,
+            "predicted_violation_rate": 0.08103727714748785
+          },
+          {
+            "k": 0.5,
+            "upper_coverage": 0.25823878984332793,
+            "false_negative_rate": 0.7913669064748201,
+            "false_positive_rate": 0.05578800557880056,
+            "predicted_violation_rate": 0.0902215018908698
+          },
+          {
+            "k": 1.0,
+            "upper_coverage": 0.2701242571582928,
+            "false_negative_rate": 0.7769784172661871,
+            "false_positive_rate": 0.06485355648535565,
+            "predicted_violation_rate": 0.10048622366288493
+          },
+          {
+            "k": 2.0,
+            "upper_coverage": 0.29983792544570503,
+            "false_negative_rate": 0.7553956834532374,
+            "false_positive_rate": 0.0801952580195258,
+            "predicted_violation_rate": 0.11723392760669908
+          },
+          {
+            "k": 3.0,
+            "upper_coverage": 0.3317125877903836,
+            "false_negative_rate": 0.7170263788968825,
+            "false_positive_rate": 0.09902370990237098,
+            "predicted_violation_rate": 0.14046461372231225
+          }
+        ]
+      }
+    }
+  },
+  "policies": [
+    {
+      "tag": "fcsrl",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0/model/epoch_4",
+      "validation": {
+        "air_m3": 18320.377817632838,
+        "reward": -27.48056672644926,
+        "cost": 21.91627906976744,
+        "nh4_viol_pct": 7.163114820516976,
+        "do_viol_pct": 0.47321935013370064,
+        "days_within_limit_pct": 70.69767441860465,
+        "n_episodes": 215
+      },
+      "q0_mean": 11.342482566833496,
+      "discounted_day_cost": 8.747544479379705,
+      "discounted_tail_q": 0.21882621943950653,
+      "q0_minus_day_cost_with_tail": 2.376112893133496,
+      "one_hour_q_residual_mean": 0.1469143100511616,
+      "one_hour_q_residual_mae": 2.414342585905419,
+      "one_hour_mean_under_target_fraction": 0.4408493427704752,
+      "one_hour_ucb_under_target_fraction": 0.3872598584428716,
+      "critic_sigma_mean": 0.5032108426094055,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9324524977979112
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1/model/epoch_21",
+      "validation": {
+        "air_m3": 21159.611606623173,
+        "reward": -31.739417409934752,
+        "cost": 15.17674418604651,
+        "nh4_viol_pct": 4.996353618021231,
+        "do_viol_pct": 0.29171055830159626,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "q0_mean": 11.634246826171875,
+      "discounted_day_cost": 8.037151401179635,
+      "discounted_tail_q": 0.22062785923480988,
+      "q0_minus_day_cost_with_tail": 3.376467708843233,
+      "one_hour_q_residual_mean": 0.15519675250502057,
+      "one_hour_q_residual_mae": 1.0019576518617006,
+      "one_hour_mean_under_target_fraction": 0.3025278058645096,
+      "one_hour_ucb_under_target_fraction": 0.24651162790697675,
+      "critic_sigma_mean": 0.2757585644721985,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 5.033345916698125e-05,
+      "aerobic_low_do_fraction": 0.9197181326286649
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 20875.867410502833,
+        "reward": -31.313801115754245,
+        "cost": 15.897674418604652,
+        "nh4_viol_pct": 5.356129973259866,
+        "do_viol_pct": 0.18312940604489103,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.71432113647461,
+      "discounted_day_cost": 8.321121238084999,
+      "discounted_tail_q": 0.30834388732910156,
+      "q0_minus_day_cost_with_tail": 1.0848549422833862,
+      "one_hour_q_residual_mean": -0.009469333118867492,
+      "one_hour_q_residual_mae": 0.9962784460294488,
+      "one_hour_mean_under_target_fraction": 0.39858442871587463,
+      "one_hour_ucb_under_target_fraction": 0.3195146612740142,
+      "critic_sigma_mean": 0.38930413126945496,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.00047816786208632186,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9038882597206493
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3/model/epoch_25",
+      "validation": {
+        "air_m3": 21336.46174145735,
+        "reward": -32.00469261218603,
+        "cost": 18.32093023255814,
+        "nh4_viol_pct": 6.148610323312536,
+        "do_viol_pct": 0.23498906085406368,
+        "days_within_limit_pct": 73.0232558139535,
+        "n_episodes": 215
+      },
+      "q0_mean": 13.560015678405762,
+      "discounted_day_cost": 8.491929418586961,
+      "discounted_tail_q": 0.27247312664985657,
+      "q0_minus_day_cost_with_tail": 4.7956137386412445,
+      "one_hour_q_residual_mean": 0.3296379893535126,
+      "one_hour_q_residual_mae": 1.6874068767222286,
+      "one_hour_mean_under_target_fraction": 0.3864509605662285,
+      "one_hour_ucb_under_target_fraction": 0.33367037411526795,
+      "critic_sigma_mean": 0.4924907386302948,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.000201333836667925,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8981502453756134
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4/model/epoch_25",
+      "validation": {
+        "air_m3": 19671.44367622975,
+        "reward": -29.507165514344624,
+        "cost": 19.04186046511628,
+        "nh4_viol_pct": 6.620209059233451,
+        "do_viol_pct": 0.014585527915079815,
+        "days_within_limit_pct": 72.09302325581395,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.5902681350708,
+      "discounted_day_cost": 8.555257945688325,
+      "discounted_tail_q": 0.2625272870063782,
+      "q0_minus_day_cost_with_tail": 0.7724843063427119,
+      "one_hour_q_residual_mean": 0.02355522879076497,
+      "one_hour_q_residual_mae": 1.2685627972990903,
+      "one_hour_mean_under_target_fraction": 0.3237613751263903,
+      "one_hour_ucb_under_target_fraction": 0.2608695652173913,
+      "critic_sigma_mean": 0.3952958285808563,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0023153391216811374,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8947527368818422
+    },
+    {
+      "tag": "td3",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0/model/epoch_25",
+      "validation": {
+        "air_m3": 4.250873890958091e-05,
+        "reward": -6.376310836437136e-08,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "q0_mean": 84.1921615600586,
+      "discounted_day_cost": 82.6751565801207,
+      "discounted_tail_q": 5.5104265213012695,
+      "q0_minus_day_cost_with_tail": -3.9934263041903084,
+      "one_hour_q_residual_mean": -0.24994983863846088,
+      "one_hour_q_residual_mae": 1.2497481722578858,
+      "one_hour_mean_under_target_fraction": 0.4568250758341759,
+      "one_hour_ucb_under_target_fraction": 0.3826086956521739,
+      "critic_sigma_mean": 0.26134926080703735,
+      "ucb_below_same_ensemble_max_fraction": 0.9995955510616784,
+      "aerobic_action_lower_clip_fraction": 1.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9933056499307915
+    },
+    {
+      "tag": "td3",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1/model/epoch_25",
+      "validation": {
+        "air_m3": 0.0,
+        "reward": 0.0,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "q0_mean": 85.64640045166016,
+      "discounted_day_cost": 82.6751565801207,
+      "discounted_tail_q": 5.5611162185668945,
+      "q0_minus_day_cost_with_tail": -2.589870916515933,
+      "one_hour_q_residual_mean": -0.06670661766021485,
+      "one_hour_q_residual_mae": 0.8266663601427982,
+      "one_hour_mean_under_target_fraction": 0.3731041456016178,
+      "one_hour_ucb_under_target_fraction": 0.3114256825075834,
+      "critic_sigma_mean": 0.14860060811042786,
+      "ucb_below_same_ensemble_max_fraction": 0.9993933265925177,
+      "aerobic_action_lower_clip_fraction": 1.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9933056499307915
+    },
+    {
+      "tag": "td3",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 0.07932592732037687,
+        "reward": -0.00011898889098056531,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "q0_mean": 87.43635559082031,
+      "discounted_day_cost": 82.6751565801207,
+      "discounted_tail_q": 5.523961067199707,
+      "q0_minus_day_cost_with_tail": -0.7627562080368719,
+      "one_hour_q_residual_mean": 0.030660494486978468,
+      "one_hour_q_residual_mae": 0.6409901008840179,
+      "one_hour_mean_under_target_fraction": 0.5005055611729019,
+      "one_hour_ucb_under_target_fraction": 0.4062689585439838,
+      "critic_sigma_mean": 0.1589619368314743,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.9997483327041651,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9933056499307915
+    },
+    {
+      "tag": "td3",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3/model/epoch_25",
+      "validation": {
+        "air_m3": 0.0,
+        "reward": 0.0,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "q0_mean": 86.4847183227539,
+      "discounted_day_cost": 82.6751565801207,
+      "discounted_tail_q": 5.545559406280518,
+      "q0_minus_day_cost_with_tail": -1.7359903868904614,
+      "one_hour_q_residual_mean": -0.06112298162994638,
+      "one_hour_q_residual_mae": 0.9038570426803433,
+      "one_hour_mean_under_target_fraction": 0.37067745197168855,
+      "one_hour_ucb_under_target_fraction": 0.29221435793731043,
+      "critic_sigma_mean": 0.2629929780960083,
+      "ucb_below_same_ensemble_max_fraction": 0.9993933265925177,
+      "aerobic_action_lower_clip_fraction": 1.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9933056499307915
+    },
+    {
+      "tag": "td3",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4/model/epoch_25",
+      "validation": {
+        "air_m3": 8.316927177961481e-07,
+        "reward": -1.2475390766942224e-09,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "q0_mean": 87.44068908691406,
+      "discounted_day_cost": 82.6751565801207,
+      "discounted_tail_q": 5.545102596282959,
+      "q0_minus_day_cost_with_tail": -0.7795783443170204,
+      "one_hour_q_residual_mean": 0.016028494513638924,
+      "one_hour_q_residual_mae": 0.7960170338395277,
+      "one_hour_mean_under_target_fraction": 0.38705763397371085,
+      "one_hour_ucb_under_target_fraction": 0.3025278058645096,
+      "critic_sigma_mean": 0.21338088810443878,
+      "ucb_below_same_ensemble_max_fraction": 0.9997977755308393,
+      "aerobic_action_lower_clip_fraction": 1.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9933056499307915
+    },
+    {
+      "tag": "td3lag",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0/model/epoch_4",
+      "validation": {
+        "air_m3": 17683.467317655388,
+        "reward": -26.52520097648308,
+        "cost": 23.065116279069766,
+        "nh4_viol_pct": 7.90535612997326,
+        "do_viol_pct": 0.13126975123571832,
+        "days_within_limit_pct": 67.44186046511628,
+        "n_episodes": 215
+      },
+      "q0_mean": 10.715023040771484,
+      "discounted_day_cost": 9.657849599978311,
+      "discounted_tail_q": 0.2685473561286926,
+      "q0_minus_day_cost_with_tail": 0.7886271419847137,
+      "one_hour_q_residual_mean": 0.19114702982295603,
+      "one_hour_q_residual_mae": 2.1689589204541906,
+      "one_hour_mean_under_target_fraction": 0.37451971688574315,
+      "one_hour_ucb_under_target_fraction": 0.34155712841253794,
+      "critic_sigma_mean": 0.35917338728904724,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 7.550018875047188e-05,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9541713854284636
+    },
+    {
+      "tag": "td3lag",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1/model/epoch_21",
+      "validation": {
+        "air_m3": 22523.376017793213,
+        "reward": -33.78506402668982,
+        "cost": 18.553488372093025,
+        "nh4_viol_pct": 6.432217810550199,
+        "do_viol_pct": 0.03241228425573292,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215
+      },
+      "q0_mean": 10.888834953308105,
+      "discounted_day_cost": 8.719832828226487,
+      "discounted_tail_q": 0.16540966928005219,
+      "q0_minus_day_cost_with_tail": 2.0035921860873,
+      "one_hour_q_residual_mean": 0.054812921476769534,
+      "one_hour_q_residual_mae": 1.3173195635243922,
+      "one_hour_mean_under_target_fraction": 0.4434782608695652,
+      "one_hour_ucb_under_target_fraction": 0.372901921132457,
+      "critic_sigma_mean": 0.30463263392448425,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0018371712595948156,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8909777274443186
+    },
+    {
+      "tag": "td3lag",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 17560.53057322062,
+        "reward": -26.34079585983093,
+        "cost": 25.413953488372094,
+        "nh4_viol_pct": 8.85179483024066,
+        "do_viol_pct": 0.0032412284255732924,
+        "days_within_limit_pct": 66.04651162790698,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.179788589477539,
+      "discounted_day_cost": 10.414904002420013,
+      "discounted_tail_q": 0.1956649273633957,
+      "q0_minus_day_cost_with_tail": -1.430777913071317,
+      "one_hour_q_residual_mean": -0.22241064965425741,
+      "one_hour_q_residual_mae": 1.6131895991205631,
+      "one_hour_mean_under_target_fraction": 0.4018200202224469,
+      "one_hour_ucb_under_target_fraction": 0.36562184024266936,
+      "critic_sigma_mean": 0.3648955821990967,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9546998867497168
+    },
+    {
+      "tag": "td3lag",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3/model/epoch_19",
+      "validation": {
+        "air_m3": 22022.849916317362,
+        "reward": -33.03427487447605,
+        "cost": 19.613953488372093,
+        "nh4_viol_pct": 6.591038003403292,
+        "do_viol_pct": 0.24309213191799692,
+        "days_within_limit_pct": 72.09302325581395,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.017027854919434,
+      "discounted_day_cost": 9.71022759054724,
+      "discounted_tail_q": 0.15771310031414032,
+      "q0_minus_day_cost_with_tail": -0.8509127428096875,
+      "one_hour_q_residual_mean": -0.16666842455274988,
+      "one_hour_q_residual_mae": 0.9923023734410301,
+      "one_hour_mean_under_target_fraction": 0.3979777553083923,
+      "one_hour_ucb_under_target_fraction": 0.3356926188068756,
+      "critic_sigma_mean": 0.28876736760139465,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0006543349691707562,
+      "aerobic_action_upper_clip_fraction": 2.5166729583490626e-05,
+      "aerobic_low_do_fraction": 0.9096011073361017
+    },
+    {
+      "tag": "td3lag",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4/model/epoch_25",
+      "validation": {
+        "air_m3": 19783.246778059733,
+        "reward": -29.67487016708961,
+        "cost": 18.032558139534885,
+        "nh4_viol_pct": 6.245847176079735,
+        "do_viol_pct": 0.03727412689409287,
+        "days_within_limit_pct": 72.09302325581395,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.562215805053711,
+      "discounted_day_cost": 8.686920161586968,
+      "discounted_tail_q": 0.1792246252298355,
+      "q0_minus_day_cost_with_tail": 0.696073257274992,
+      "one_hour_q_residual_mean": 0.0654451351156407,
+      "one_hour_q_residual_mae": 1.279944158745459,
+      "one_hour_mean_under_target_fraction": 0.3077856420626896,
+      "one_hour_ucb_under_target_fraction": 0.27482305358948433,
+      "critic_sigma_mean": 0.30783921480178833,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9121177802944508
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0/model/epoch_22",
+      "validation": {
+        "air_m3": 18058.131037061798,
+        "reward": -27.087196555592698,
+        "cost": 25.38139534883721,
+        "nh4_viol_pct": 8.843691759176728,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 66.51162790697674,
+        "n_episodes": 215
+      },
+      "q0_mean": 12.535602569580078,
+      "discounted_day_cost": 10.761574319996933,
+      "discounted_tail_q": 0.2879084646701813,
+      "q0_minus_day_cost_with_tail": 1.4861204730693789,
+      "one_hour_q_residual_mean": 0.11290363833729172,
+      "one_hour_q_residual_mae": 1.7016529482817397,
+      "one_hour_mean_under_target_fraction": 0.27765419615773507,
+      "one_hour_ucb_under_target_fraction": 0.2404448938321537,
+      "critic_sigma_mean": 0.36383891105651855,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9356486724550145
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1/model/epoch_21",
+      "validation": {
+        "air_m3": 18827.061072337106,
+        "reward": -28.240591608505657,
+        "cost": 17.493023255813952,
+        "nh4_viol_pct": 5.9103800340329,
+        "do_viol_pct": 0.18475002025767764,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215
+      },
+      "q0_mean": 10.611502647399902,
+      "discounted_day_cost": 8.18413623974981,
+      "discounted_tail_q": 0.2294343262910843,
+      "q0_minus_day_cost_with_tail": 2.197933150396034,
+      "one_hour_q_residual_mean": 0.08383884831896814,
+      "one_hour_q_residual_mae": 1.3546702081069717,
+      "one_hour_mean_under_target_fraction": 0.3447927199191102,
+      "one_hour_ucb_under_target_fraction": 0.2940343781597573,
+      "critic_sigma_mean": 0.28610530495643616,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9236944759028565
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 20343.785348551643,
+        "reward": -30.515678022827462,
+        "cost": 21.404651162790696,
+        "nh4_viol_pct": 7.380277125030387,
+        "do_viol_pct": 0.07778948221375902,
+        "days_within_limit_pct": 70.69767441860465,
+        "n_episodes": 215
+      },
+      "q0_mean": 11.084638595581055,
+      "discounted_day_cost": 9.364136229121113,
+      "discounted_tail_q": 0.256665974855423,
+      "q0_minus_day_cost_with_tail": 1.4638358487517507,
+      "one_hour_q_residual_mean": 0.07880744407887685,
+      "one_hour_q_residual_mae": 1.5745079596121212,
+      "one_hour_mean_under_target_fraction": 0.34519716885743174,
+      "one_hour_ucb_under_target_fraction": 0.2903943377148635,
+      "critic_sigma_mean": 0.5237488746643066,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0001761671070844344,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9067069334340002
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3/model/epoch_9",
+      "validation": {
+        "air_m3": 22310.40599664119,
+        "reward": -33.465608994961784,
+        "cost": 17.35348837209302,
+        "nh4_viol_pct": 6.018961186289604,
+        "do_viol_pct": 0.027550441617372984,
+        "days_within_limit_pct": 73.48837209302326,
+        "n_episodes": 215
+      },
+      "q0_mean": 6.488664150238037,
+      "discounted_day_cost": 8.425440007027396,
+      "discounted_tail_q": 0.12469309568405151,
+      "q0_minus_day_cost_with_tail": -2.0614696021813668,
+      "one_hour_q_residual_mean": -0.25376451778721737,
+      "one_hour_q_residual_mae": 0.8901104974532222,
+      "one_hour_mean_under_target_fraction": 0.37795753286147626,
+      "one_hour_ucb_under_target_fraction": 0.31749241658240646,
+      "critic_sigma_mean": 0.24421589076519012,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8652069963508242
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4/model/epoch_25",
+      "validation": {
+        "air_m3": 18525.884491417288,
+        "reward": -27.788826737125934,
+        "cost": 21.925581395348836,
+        "nh4_viol_pct": 7.639575399076251,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 69.30232558139535,
+        "n_episodes": 215
+      },
+      "q0_mean": 11.058748245239258,
+      "discounted_day_cost": 9.004017717632307,
+      "discounted_tail_q": 0.29489463567733765,
+      "q0_minus_day_cost_with_tail": 1.7598355067172695,
+      "one_hour_q_residual_mean": 0.18555608624630496,
+      "one_hour_q_residual_mae": 1.756093219931009,
+      "one_hour_mean_under_target_fraction": 0.30171890798786655,
+      "one_hour_ucb_under_target_fraction": 0.2525783619817998,
+      "critic_sigma_mean": 0.4653979539871216,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9223103057757644
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0/model/epoch_15",
+      "validation": {
+        "air_m3": 22204.411454875673,
+        "reward": -33.30661718231351,
+        "cost": 21.911627906976744,
+        "nh4_viol_pct": 6.772546795235395,
+        "do_viol_pct": 0.8621667612024958,
+        "days_within_limit_pct": 66.51162790697674,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.454517364501953,
+      "discounted_day_cost": 10.31469178849473,
+      "discounted_tail_q": 0.1952003538608551,
+      "q0_minus_day_cost_with_tail": -1.055374249001024,
+      "one_hour_q_residual_mean": -0.08351797465544453,
+      "one_hour_q_residual_mae": 1.3023046126168012,
+      "one_hour_mean_under_target_fraction": 0.3237613751263903,
+      "one_hour_ucb_under_target_fraction": 0.26248736097067743,
+      "critic_sigma_mean": 0.46712303161621094,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 7.550018875047188e-05,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8623883226374732
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1/model/epoch_16",
+      "validation": {
+        "air_m3": 18316.889937390126,
+        "reward": -27.475334906085195,
+        "cost": 24.64651162790698,
+        "nh4_viol_pct": 7.744915322907383,
+        "do_viol_pct": 0.8427193906490559,
+        "days_within_limit_pct": 66.97674418604652,
+        "n_episodes": 215
+      },
+      "q0_mean": 10.188156127929688,
+      "discounted_day_cost": 10.231118455761742,
+      "discounted_tail_q": 0.40808191895484924,
+      "q0_minus_day_cost_with_tail": -0.4510451873620598,
+      "one_hour_q_residual_mean": -0.19535211441697029,
+      "one_hour_q_residual_mae": 1.4459925328022614,
+      "one_hour_mean_under_target_fraction": 0.31890798786653185,
+      "one_hour_ucb_under_target_fraction": 0.26976744186046514,
+      "critic_sigma_mean": 0.3270619511604309,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0011073361016735875,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9387693469233673
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 17996.089457266185,
+        "reward": -26.994134185899274,
+        "cost": 36.87906976744186,
+        "nh4_viol_pct": 12.849850093185315,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 55.348837209302324,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.574748039245605,
+      "discounted_day_cost": 15.11750309920585,
+      "discounted_tail_q": 0.3418690264225006,
+      "q0_minus_day_cost_with_tail": -5.884626091316656,
+      "one_hour_q_residual_mean": -0.5692038556796627,
+      "one_hour_q_residual_mae": 1.9957967671271695,
+      "one_hour_mean_under_target_fraction": 0.41314459049544994,
+      "one_hour_ucb_under_target_fraction": 0.350252780586451,
+      "critic_sigma_mean": 0.6581031084060669,
+      "ucb_below_same_ensemble_max_fraction": 0.9995955510616784,
+      "aerobic_action_lower_clip_fraction": 0.003749842707940103,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9250283125707814
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3/model/epoch_19",
+      "validation": {
+        "air_m3": 21030.517787371653,
+        "reward": -31.54577668105749,
+        "cost": 23.106976744186046,
+        "nh4_viol_pct": 7.7060205818005025,
+        "do_viol_pct": 0.3451908273235556,
+        "days_within_limit_pct": 71.16279069767441,
+        "n_episodes": 215
+      },
+      "q0_mean": 6.93201208114624,
+      "discounted_day_cost": 9.574743104940996,
+      "discounted_tail_q": 0.16664554178714752,
+      "q0_minus_day_cost_with_tail": -2.8093753413036904,
+      "one_hour_q_residual_mean": -0.2726696481406591,
+      "one_hour_q_residual_mae": 1.266488489132807,
+      "one_hour_mean_under_target_fraction": 0.38240647118301313,
+      "one_hour_ucb_under_target_fraction": 0.30151668351870575,
+      "critic_sigma_mean": 0.42582967877388,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8683025040895935
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4/model/epoch_25",
+      "validation": {
+        "air_m3": 21401.720304120165,
+        "reward": -32.10258045618024,
+        "cost": 23.01860465116279,
+        "nh4_viol_pct": 7.757880236609676,
+        "do_viol_pct": 0.26253950247143665,
+        "days_within_limit_pct": 66.04651162790698,
+        "n_episodes": 215
+      },
+      "q0_mean": 20.07814598083496,
+      "discounted_day_cost": 9.116568107248884,
+      "discounted_tail_q": 1.8509129285812378,
+      "q0_minus_day_cost_with_tail": 9.11066273062298,
+      "one_hour_q_residual_mean": 0.3133559257042586,
+      "one_hour_q_residual_mae": 2.9177853183452647,
+      "one_hour_mean_under_target_fraction": 0.4262891809908999,
+      "one_hour_ucb_under_target_fraction": 0.36380182002022243,
+      "critic_sigma_mean": 1.104169249534607,
+      "ucb_below_same_ensemble_max_fraction": 0.9997977755308393,
+      "aerobic_action_lower_clip_fraction": 0.011627029067572668,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8647791619479048
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0/model/epoch_14",
+      "validation": {
+        "air_m3": 18262.58949785026,
+        "reward": -27.39388424677539,
+        "cost": 23.46046511627907,
+        "nh4_viol_pct": 8.137103962401751,
+        "do_viol_pct": 0.03727412689409286,
+        "days_within_limit_pct": 64.65116279069767,
+        "n_episodes": 215
+      },
+      "q0_mean": 12.788378715515137,
+      "discounted_day_cost": 10.169894930234364,
+      "discounted_tail_q": 0.3668690025806427,
+      "q0_minus_day_cost_with_tail": 2.2516128575394134,
+      "one_hour_q_residual_mean": 0.13173104348385328,
+      "one_hour_q_residual_mae": 1.8161618138741835,
+      "one_hour_mean_under_target_fraction": 0.3417593528816987,
+      "one_hour_ucb_under_target_fraction": 0.29524772497472196,
+      "critic_sigma_mean": 0.5409108400344849,
+      "ucb_below_same_ensemble_max_fraction": 0.9995955510616784,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9218573046432617
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1/model/epoch_12",
+      "validation": {
+        "air_m3": 17542.31264795684,
+        "reward": -26.313468971935258,
+        "cost": 21.260465116279068,
+        "nh4_viol_pct": 7.37379466817924,
+        "do_viol_pct": 0.03403289846851957,
+        "days_within_limit_pct": 68.37209302325581,
+        "n_episodes": 215
+      },
+      "q0_mean": 11.195712089538574,
+      "discounted_day_cost": 8.572993335671462,
+      "discounted_tail_q": 0.26510897278785706,
+      "q0_minus_day_cost_with_tail": 2.357609267266426,
+      "one_hour_q_residual_mean": 0.016156458679166635,
+      "one_hour_q_residual_mae": 1.628387140850303,
+      "one_hour_mean_under_target_fraction": 0.3949443882709808,
+      "one_hour_ucb_under_target_fraction": 0.3302325581395349,
+      "critic_sigma_mean": 0.3865242302417755,
+      "ucb_below_same_ensemble_max_fraction": 0.9997977755308393,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9282244872278848
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2/model/epoch_25",
+      "validation": {
+        "air_m3": 21288.941938664975,
+        "reward": -31.933412907997464,
+        "cost": 20.94418604651163,
+        "nh4_viol_pct": 7.292763957539909,
+        "do_viol_pct": 0.004861842638359939,
+        "days_within_limit_pct": 72.09302325581395,
+        "n_episodes": 215
+      },
+      "q0_mean": 9.14333724975586,
+      "discounted_day_cost": 9.243886482865781,
+      "discounted_tail_q": 0.18402045965194702,
+      "q0_minus_day_cost_with_tail": -0.2845697249639726,
+      "one_hour_q_residual_mean": -0.19186178763089226,
+      "one_hour_q_residual_mae": 1.107493272462105,
+      "one_hour_mean_under_target_fraction": 0.41759352881698686,
+      "one_hour_ucb_under_target_fraction": 0.32335692618806877,
+      "critic_sigma_mean": 0.5465127229690552,
+      "ucb_below_same_ensemble_max_fraction": 0.9997977755308393,
+      "aerobic_action_lower_clip_fraction": 0.0019378381779287782,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9038127595318989
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3/model/epoch_23",
+      "validation": {
+        "air_m3": 16531.078216972193,
+        "reward": -24.796617325458293,
+        "cost": 23.66046511627907,
+        "nh4_viol_pct": 8.218134673041082,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 66.97674418604652,
+        "n_episodes": 215
+      },
+      "q0_mean": 13.283350944519043,
+      "discounted_day_cost": 9.84100305957438,
+      "discounted_tail_q": 0.6349484920501709,
+      "q0_minus_day_cost_with_tail": 2.807397482877511,
+      "one_hour_q_residual_mean": 0.12654908450391478,
+      "one_hour_q_residual_mae": 2.047095893863354,
+      "one_hour_mean_under_target_fraction": 0.37997977755308393,
+      "one_hour_ucb_under_target_fraction": 0.3225480283114257,
+      "critic_sigma_mean": 0.6243950128555298,
+      "ucb_below_same_ensemble_max_fraction": 1.0,
+      "aerobic_action_lower_clip_fraction": 0.0,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9548005536680508
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4/model/epoch_22",
+      "validation": {
+        "air_m3": 17008.261210896984,
+        "reward": -25.512391816345477,
+        "cost": 22.190697674418605,
+        "nh4_viol_pct": 7.73195040920509,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 69.30232558139535,
+        "n_episodes": 215
+      },
+      "q0_mean": 12.021852493286133,
+      "discounted_day_cost": 9.636721993159323,
+      "discounted_tail_q": 0.3807620406150818,
+      "q0_minus_day_cost_with_tail": 2.0043683775899948,
+      "one_hour_q_residual_mean": 0.26643875194929173,
+      "one_hour_q_residual_mae": 2.200898049106511,
+      "one_hour_mean_under_target_fraction": 0.36380182002022243,
+      "one_hour_ucb_under_target_fraction": 0.3114256825075834,
+      "critic_sigma_mean": 0.7852108478546143,
+      "ucb_below_same_ensemble_max_fraction": 0.9991911021233569,
+      "aerobic_action_lower_clip_fraction": 0.0006040015100037751,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.928954322385806
+    },
+    {
+      "tag": "ppolag",
+      "seed": 0,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model/epoch_24",
+      "validation": {
+        "air_m3": 20777.812623654223,
+        "reward": -31.166718935481338,
+        "cost": 18.325581395348838,
+        "nh4_viol_pct": 5.806660724414552,
+        "do_viol_pct": 0.5785592739648326,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "q0_mean": 5.122592449188232,
+      "discounted_day_cost": 8.396795372426224,
+      "discounted_tail_q": 0.08617200702428818,
+      "q0_minus_day_cost_with_tail": -3.360375317023218,
+      "one_hour_q_residual_mean": -0.3792652867347467,
+      "one_hour_q_residual_mae": 0.7840242346145331,
+      "one_hour_mean_under_target_fraction": 0.23559150657229525,
+      "one_hour_ucb_under_target_fraction": 0.23559150657229525,
+      "critic_sigma_mean": 0.0,
+      "ucb_below_same_ensemble_max_fraction": 0.0,
+      "aerobic_action_lower_clip_fraction": 5.033345916698125e-05,
+      "aerobic_action_upper_clip_fraction": 0.0001761671070844344,
+      "aerobic_low_do_fraction": 0.9306908267270668
+    },
+    {
+      "tag": "ppolag",
+      "seed": 1,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model/epoch_14",
+      "validation": {
+        "air_m3": 22869.47111013786,
+        "reward": -34.304206665206785,
+        "cost": 17.641860465116277,
+        "nh4_viol_pct": 5.649461145774248,
+        "do_viol_pct": 0.49752856332550033,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "q0_mean": 7.790727138519287,
+      "discounted_day_cost": 8.44608579967476,
+      "discounted_tail_q": 0.0929022878408432,
+      "q0_minus_day_cost_with_tail": -0.7482607402241165,
+      "one_hour_q_residual_mean": -0.25754776590746953,
+      "one_hour_q_residual_mae": 0.6796391450234812,
+      "one_hour_mean_under_target_fraction": 0.17735085945399393,
+      "one_hour_ucb_under_target_fraction": 0.17735085945399393,
+      "critic_sigma_mean": 0.0,
+      "ucb_below_same_ensemble_max_fraction": 0.0,
+      "aerobic_action_lower_clip_fraction": 0.00025166729583490623,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.8895935573172267
+    },
+    {
+      "tag": "ppolag",
+      "seed": 2,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model/epoch_17",
+      "validation": {
+        "air_m3": 19895.07157332444,
+        "reward": -29.842607359986665,
+        "cost": 17.753488372093024,
+        "nh4_viol_pct": 5.8277287091807795,
+        "do_viol_pct": 0.3581557410258488,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "q0_mean": 6.981916427612305,
+      "discounted_day_cost": 8.199032684956018,
+      "discounted_tail_q": 0.11088898032903671,
+      "q0_minus_day_cost_with_tail": -1.3280063464317087,
+      "one_hour_q_residual_mean": -0.28895921764374494,
+      "one_hour_q_residual_mae": 1.1169919108858783,
+      "one_hour_mean_under_target_fraction": 0.4649140546006067,
+      "one_hour_ucb_under_target_fraction": 0.4649140546006067,
+      "critic_sigma_mean": 0.0,
+      "ucb_below_same_ensemble_max_fraction": 0.0,
+      "aerobic_action_lower_clip_fraction": 0.0005788347804202844,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9343148357870895
+    },
+    {
+      "tag": "ppolag",
+      "seed": 3,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model/epoch_20",
+      "validation": {
+        "air_m3": 20778.589210237642,
+        "reward": -31.167883815356465,
+        "cost": 18.972093023255812,
+        "nh4_viol_pct": 6.127542338546308,
+        "do_viol_pct": 0.48294303541042055,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215
+      },
+      "q0_mean": 6.561335563659668,
+      "discounted_day_cost": 8.721369509506923,
+      "discounted_tail_q": 0.08493847399950027,
+      "q0_minus_day_cost_with_tail": -2.244971871518677,
+      "one_hour_q_residual_mean": -0.3498216744237568,
+      "one_hour_q_residual_mae": 0.764263058103831,
+      "one_hour_mean_under_target_fraction": 0.16177957532861476,
+      "one_hour_ucb_under_target_fraction": 0.16177957532861476,
+      "critic_sigma_mean": 0.0,
+      "ucb_below_same_ensemble_max_fraction": 0.0,
+      "aerobic_action_lower_clip_fraction": 7.550018875047188e-05,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.935573172266264
+    },
+    {
+      "tag": "ppolag",
+      "seed": 4,
+      "checkpoint": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model/epoch_21",
+      "validation": {
+        "air_m3": 21903.903490247187,
+        "reward": -32.85585523537078,
+        "cost": 16.730232558139534,
+        "nh4_viol_pct": 5.514950166112957,
+        "do_viol_pct": 0.3143991572806093,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "q0_mean": 7.9735636711120605,
+      "discounted_day_cost": 8.352159796128246,
+      "discounted_tail_q": 0.09782113134860992,
+      "q0_minus_day_cost_with_tail": -0.476416751908509,
+      "one_hour_q_residual_mean": -0.17254294757564462,
+      "one_hour_q_residual_mae": 0.7481049850708261,
+      "one_hour_mean_under_target_fraction": 0.14620829120323559,
+      "one_hour_ucb_under_target_fraction": 0.14620829120323559,
+      "critic_sigma_mean": 0.0,
+      "ucb_below_same_ensemble_max_fraction": 0.0,
+      "aerobic_action_lower_clip_fraction": 0.002290172392097647,
+      "aerobic_action_upper_clip_fraction": 0.0,
+      "aerobic_low_do_fraction": 0.9002894173902102
+    }
+  ],
+  "complete": true
+}

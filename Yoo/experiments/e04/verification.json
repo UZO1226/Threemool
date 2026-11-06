@@ -1,0 +1,10 @@
+{
+  "smoke_run": "/home/jio/fcsrl_src/results/e04/smoke/runs/fcsrl/seed_901",
+  "fixed_validation_unique_episodes": 10,
+  "test_split_empty": true,
+  "custom_td3_architecture_reloaded": true,
+  "validation_cost_scalar_batch_equal": true,
+  "invalid_cli_rejected": 4,
+  "unit_tests_passed": 6,
+  "instrumentation_parity": true
+}

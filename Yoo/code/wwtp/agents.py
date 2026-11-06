@@ -185,7 +185,11 @@ def load_agent(run_dir: Path, env, cudaid=0, checkpoint="best"):
         agent.load(model_dir)
         agent.checkpoint_path = str(model_dir)
         return agent
-    cfg = yaml.safe_load(open(config_path(method)))
+    effective_path = Path(run_dir) / "effective_config.json"
+    if effective_path.exists():
+        cfg = json.loads(effective_path.read_text())["config"]
+    else:
+        cfg = yaml.safe_load(open(config_path(method)))
     agent, _ = make_agent(method, cfg, env, ucb_n=m.get("ucb_n", 5), ucb_k=m.get("ucb_k", 0.5))
     agent.load_model(str(model_dir))
     agent.train(False)

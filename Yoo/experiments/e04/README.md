@@ -39,3 +39,18 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 평가는 CPU 스레드 1개를 사용한다. 요약은 `diagnostics.json`, 단계별 기록은 Git에 넣지 않는 `details/`에 저장한다. 실행 코드와 입력 SHA256은 JSON에 남긴다. 실행 커밋과 완료 상태는 후속 기록에 추가한다.
+
+## 2026-11-06 점검 후 착수 결정
+
+진단 35개를 완료했다. [결과](results.md)에 따라 검증 전체 고정과 단순 보수성 대조를 먼저 시행한다. 불확실성 벌점은 꺼 둔다. 작은 실제 학습에서 검증 2일 x 5 구성원의 중복 없는 평가, 비표준 TD3 네트워크 복원, CLI 한도 반영 및 test 날짜가 없는 데이터에서 val 전용 평가를 확인했다. [검증 기록](verification.json).
+
+파일 `run_pilot.py`는 CPU에서 2개씩 총 4개의 시험 학습을 시작하며, 실패 시 나머지 실행을 중지한다. GPU 메모리가 대부분 사용 중이어서 CPU 스레드를 실행당 1개로 제한한다. 5 epoch는 수렴 결과를 주장하기 위한 본 실행이 아니다. 학습 종료 후 모든 정책의 보고 한도를 15로 맞춰 results.json을 쓴다. 별도의 test 재평가는 실행하지 않는다.
+
+```bash
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e04/run_pilot.py \
+ --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
+ --model /home/jio/fcsrl_src/results/e02/surrogate/surrogate.json \
+ --out /home/jio/fcsrl_src/results/e04/pilot
+```
+
+현재 상태는 `/home/jio/fcsrl_src/results/e04/pilot/status.json`, 로그는 같은 폴더에 있다. 학습 실행 커밋과 입력 및 소스 해시는 `manifest.json`에 저장한다.
