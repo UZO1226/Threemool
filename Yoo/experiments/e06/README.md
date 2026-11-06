@@ -2,7 +2,7 @@
 
 ## 상태와 목적
 
-2026-11-06T17:06:25.475467+09:00, 사전 코드 검증 후 seed 0, 1의 4방법 시험(총 8개)을 시작했다. 실행 커밋은 `6eb6e0839524c2da3cf9370331225f246f30a392`이며 4개씩 병렬 실행한다. 정식 팀 비교나 최종 성능 실험이 아닌 개인 탐색 실험이다. `Compare/PROTOCOL.md`의 공동 합의는 아직 없다. 실제 실행 커밋, 입력과 소스 SHA256, 시작 시간은 실행 폴더의 `manifest.json`에 기록한다.
+2026-11-06 17:06:25 KST 시작, 17:17:00 KST에 8개 모두 정상 종료했다. 실행 커밋은 `6eb6e0839524c2da3cf9370331225f246f30a392`이며 4개씩 병렬 실행했다. 완료 후 집계와 저장 모델 재평가를 마쳤다. 남은 실행은 없다. 정식 팀 비교나 최종 성능 실험이 아닌 개인 탐색 실험이다. `Compare/PROTOCOL.md`의 공동 합의는 아직 없다. 실제 실행 커밋, 입력과 소스 SHA256, 시작 시간은 실행 폴더의 `manifest.json`에 기록한다.
 
 e05에서 학습 평균 비용은 한도 15보다 낮아도 검증 비용은 높았다. 마지막 FCSRL 정책의 학습 비용은 8.30, 11.98이고 검증 비용은 13.44, 18.80이었다. 초기 NH4가 4보다 큰 날은 학습의 15.45%, 검증의 39.53%였다. 학습의 초기 NH4 두 집단 비용을 검증 구성비로 재가중하면 13.49, 17.80으로 검증값에 가까워졌다. 이는 구성비 차이의 영향을 지지하지만 인과관계의 증명은 아니다. 근거는 `e05_train_val_final.json`, `e05_initial_mix.json`이다.
 
@@ -64,7 +64,7 @@ beta 0.1의 첫 수집에서 추가 위험 신호 RMS가 기본 이점 RMS의 1.
 
 ## 한계
 
-CVaR 항은 큰 비용의 꼬리를 줄이는 수단이지 초기 상태 분포 차이 자체를 제거하는 수단은 아니다. 학습에 없는 상황으로 일반화한다는 보장도 없다. 초기 비호기 구간은 행동이 무시되며, 그 구간에서만 비용 15를 넘는 날도 존재한다(`e05_uncontrollable_prefix.json`). 따라서 모든 날의 비용을 15 이하로 만드는 것은 이 환경에서 불가능한 경우가 있다. 평균 한도 달성 가능성과 구분한다.
+CVaR 항은 큰 비용의 꼬리를 줄이는 수단이지 초기 상태 분포 차이 자체를 제거하는 수단은 아니다. 학습에 없는 상황으로 일반화한다는 보장도 없다. 학습 CVaR는 확률적으로 행동을 수집한 학습 분포에서 계산하고 검증은 결정적 평균 행동을 사용하므로 두 값의 최적화 대상도 완전히 같지 않다. 검증 CVaR는 날짜와 대리 모델 구성원에 걸친 분포이며 실제 수질 위험 그 자체가 아니다. 초기 비호기 구간은 행동이 무시되며, 그 구간에서만 비용 15를 넘는 날도 존재한다(`e05_uncontrollable_prefix.json`). 따라서 모든 날의 비용을 15 이하로 만드는 것은 이 환경에서 불가능한 경우가 있다. 평균 한도 달성 가능성과 구분한다.
 
 실제 공정 안전성, GBM 검증이나 최종 test 성능을 주장하지 않는다. 공기량을 늘려 tail 비용을 줄였는지 반드시 함께 보고하며, 개선되지 않은 결과도 남긴다.
 
@@ -79,3 +79,42 @@ PYTHONPATH=/home/jio/fcsrl_src/FCSRL /home/jio/fcsrl_src/.venv/bin/python -m uni
 ```
 
 전체 로그와 모델은 위 실행 폴더에 보존하고 Git에는 설정과 작은 결과 요약만 넣는다. 진행률은 각 실행의 `progress.json`, 전체 종료 상태는 `status.json`으로 확인한다.
+
+완료 후 표, 그림과 사후 진단은 다음과 같이 재생성한다. 사후 진단은 결정적 평균 행동의 train 및 val 성능을 비교하며 모델 선택이나 파라미터 조정에 사용하지 않는다.
+
+```bash
+export PYTHONPATH=/home/jio/fcsrl_src/FCSRL
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e06/summarize.py \
+  --runs /home/jio/fcsrl_src/results/e06/pilot --out Yoo/experiments/e06
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e06/plot.py \
+  --runs /home/jio/fcsrl_src/results/e06/pilot --out Yoo/experiments/e06/figures
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e06/postreview.py \
+  --runs /home/jio/fcsrl_src/results/e06/pilot \
+  --out /home/jio/fcsrl_src/results/e06/postreview \
+  --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
+  --model /home/jio/fcsrl_src/results/e02/surrogate/surrogate.json
+```
+
+## 결과와 판정
+
+**이번 가중치와 학습량에서는 확장의 일관된 개선이 확인되지 않았다.** seed 2개 평균이며 선택은 동일한 평균 비용 한도 15를 기준으로 했다. 비용 만족 시점이 없는 seed는 최소 비용 시점을 남기고 실패로 센다.
+
+| 선택 정책 | 공기량 (Nm3/일) | 평균 비용 | CVaR20 | 평균 한도 만족 seed |
+| --- | --- | --- | --- | --- |
+| PPO-Lag | 40,222 | 15.17 | 65.65 | 1/2 |
+| PPO-Lag + tail | 45,563 | 15.09 | 64.77 | 1/2 |
+| FCSRL + PPO-Lag | 38,527 | 13.41 | 57.64 | 2/2 |
+| FCSRL + PPO-Lag + tail | 37,204 | 13.82 | 59.20 | 1/2 |
+
+- FCSRL 선택 정책에 tail을 추가하면 두 seed 모두 평균 비용과 CVaR가 높아졌다. 공기량은 seed 0에서 증가하고 seed 1에서 감소했다. 두 seed 평균 공기량 감소만으로 개선이라고 주장하지 않는다.
+- 마지막 FCSRL 정책의 CVaR는 seed 0에서 58.16에서 54.26으로 줄고, seed 1에서는 80.58에서 81.74로 늘었다. 평균 비용은 16.12에서 15.82로 소폭 줄었지만 여전히 한도 15보다 높다.
+- 기본 PPO 선택 정책의 CVaR는 조금 줄었지만 seed 1에서 공기량이 11,483 Nm3/일 증가했다. 마지막 정책에서는 seed별 CVaR 변화의 방향도 달랐다.
+- tail 신호 RMS는 전체 실행에서 기본 이점의 0.38배 미만이고 승수는 3.15 미만이었다. NaN, 승수 상한 20 포화, 초기 위험 신호 폭증으로 설명되는 실패는 관찰되지 않았다. 작은 가중치가 최적이었다거나 더 큰 가중치가 해결책이라는 뜻도 아니다.
+
+마지막 정책을 저장 파일에서 다시 읽어 train 1,650개와 val 215개 episode로 재평가했다. 모든 검증 지표가 학습 종료 시 기록과 일치한다. FCSRL seed 1의 학습 CVaR는 tail 추가 시 52.85에서 43.97로 낮아졌지만 검증 CVaR는 80.58에서 81.74로 높아졌다. 학습 위험 감소가 검증 분포로 그대로 옮겨가지 않는 사례다. seed 0은 반대 방향이므로 CVaR 학습 실패의 원인을 하나로 단정하지 않는다. 조건별 평균, 초기 NH4 집단, 대리 모델 구성원별 비용은 `train_val_final.json`에 기록했다.
+
+표현 학습과 평균 제약을 유지한 기법 적용 및 확장 후보 실험이라는 구조는 유지됐다. 다만 개선된 확장의 성능 근거는 얻지 못했다. 이 후보를 5-seed 본 실험으로 확대하지 않는다. 후속 검토에서는 초기 상태와 대리 모델 구성원별로 train 및 val 위험이 달라지는 원인, 32개 trajectory의 표본 위험 경사 잡음과 결정적 평가의 차이를 구분해야 한다. 이번 결과만으로 가중치를 올리거나 기존 FCSRL 표현 학습을 다른 기법으로 대체하지 않는다.
+
+선택 및 마지막 정책의 seed 편차와 개별 결과는 [results.md](results.md), 실행 정보는 [launch.json](launch.json), 점검 수치는 [summary.json](summary.json)에 있다. 위험 항이 없는 네 실행의 마지막 저장 가중치와 정규화 상태는 e05와 정확히 같았다([검증](baseline_verification.json)).
+
+![검증 비용, CVaR 및 공기량의 학습 경과](figures/validation.png)
