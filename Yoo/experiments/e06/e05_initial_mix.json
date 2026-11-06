@@ -1,0 +1,51 @@
+{
+  "note": "Descriptive reweighting, not a causal intervention or independent test.",
+  "train_high_initial_nh4_days": 51,
+  "train_days": 330,
+  "val_high_initial_nh4_days": 17,
+  "val_days": 43,
+  "results": [
+    {
+      "method": "ppolag",
+      "seed": 0,
+      "train_cost": 8.014545454545454,
+      "val_cost": 14.916279069767441,
+      "train_cost_reweighted_to_val_initial_mix": 12.21347003417521
+    },
+    {
+      "method": "ppolag",
+      "seed": 1,
+      "train_cost": 7.8139393939393935,
+      "val_cost": 15.427906976744186,
+      "train_cost_reweighted_to_val_initial_mix": 12.286688338751356
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 0,
+      "train_cost": 8.30060606060606,
+      "val_cost": 13.43720930232558,
+      "train_cost_reweighted_to_val_initial_mix": 13.490322580645161
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 1,
+      "train_cost": 11.981818181818182,
+      "val_cost": 18.8,
+      "train_cost_reweighted_to_val_initial_mix": 17.802934066850046
+    },
+    {
+      "method": "ppolag_frozen",
+      "seed": 0,
+      "train_cost": 8.42909090909091,
+      "val_cost": 14.320930232558139,
+      "train_cost_reweighted_to_val_initial_mix": 13.02820705176294
+    },
+    {
+      "method": "ppolag_frozen",
+      "seed": 1,
+      "train_cost": 9.466060606060607,
+      "val_cost": 15.813953488372093,
+      "train_cost_reweighted_to_val_initial_mix": 14.666733350004169
+    }
+  ]
+}

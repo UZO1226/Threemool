@@ -175,19 +175,30 @@ def load_agent(run_dir: Path, env, cudaid=0, checkpoint="best"):
     m = json.loads((Path(run_dir) / "metrics.json").read_text())
     method = m["method"]
     model_dir = checkpoint_path(run_dir, m, checkpoint)
-    if method in ("ppolag", "ppolag_fcsrl", "ppolag_frozen"):
+    if method in ("ppolag", "ppolag_fcsrl", "ppolag_frozen", "ppolag_tail", "ppolag_fcsrl_tail"):
         from ppo_config import PPOConfig
         from ppo_lag import PPOLagAgent
         cfg_path = model_dir / "config.json"
         # 기존 e03 체크포인트는 설정 파일이 없다. 당시 실제 기본값으로 읽는다.
         cfg = PPOConfig.from_dict(json.loads(cfg_path.read_text())) if cfg_path.exists() else PPOConfig()
-        if method == "ppolag":
+        if method == "ppolag_tail":
+            from ppo_tail import PPOTailAgent, TailConfig
+            tail = TailConfig(**json.loads((model_dir / "tail_config.json").read_text()))
+            agent = PPOTailAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE,
+                                  config=cfg, tail_config=tail)
+        elif method == "ppolag":
             agent = PPOLagAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE, config=cfg)
         else:
             from ppo_fcsrl import PPOFCSRLAgent, RepresentationConfig
             repr_cfg = RepresentationConfig(**json.loads((model_dir / "representation.json").read_text()))
-            agent = PPOFCSRLAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE,
-                                  config=cfg, repr_config=repr_cfg)
+            if method == "ppolag_fcsrl_tail":
+                from ppo_tail import PPOFCSRLTailAgent, TailConfig
+                tail = TailConfig(**json.loads((model_dir / "tail_config.json").read_text()))
+                agent = PPOFCSRLTailAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE,
+                                          config=cfg, repr_config=repr_cfg, tail_config=tail)
+            else:
+                agent = PPOFCSRLAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE,
+                                      config=cfg, repr_config=repr_cfg)
         agent.load(model_dir)
         agent.checkpoint_path = str(model_dir)
         return agent

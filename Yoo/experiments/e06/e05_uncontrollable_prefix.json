@@ -1,0 +1,75 @@
+{
+  "train": {
+    "n_episodes": 1650,
+    "prefix_cost_mean": 0.6545454545454545,
+    "prefix_cost_max": 23.0,
+    "episodes_prefix_gt15": 15,
+    "days_with_any_member_prefix_gt15": 3,
+    "examples": [
+      {
+        "day": "2023-01-12",
+        "member": 0,
+        "uncontrollable_prefix_cost": 23.0
+      },
+      {
+        "day": "2023-01-12",
+        "member": 1,
+        "uncontrollable_prefix_cost": 21.0
+      },
+      {
+        "day": "2023-01-12",
+        "member": 2,
+        "uncontrollable_prefix_cost": 23.0
+      },
+      {
+        "day": "2023-01-12",
+        "member": 3,
+        "uncontrollable_prefix_cost": 23.0
+      },
+      {
+        "day": "2023-01-12",
+        "member": 4,
+        "uncontrollable_prefix_cost": 23.0
+      },
+      {
+        "day": "2023-07-27",
+        "member": 0,
+        "uncontrollable_prefix_cost": 17.0
+      },
+      {
+        "day": "2023-07-27",
+        "member": 1,
+        "uncontrollable_prefix_cost": 19.0
+      },
+      {
+        "day": "2023-07-27",
+        "member": 2,
+        "uncontrollable_prefix_cost": 20.0
+      },
+      {
+        "day": "2023-07-27",
+        "member": 3,
+        "uncontrollable_prefix_cost": 19.0
+      },
+      {
+        "day": "2023-07-27",
+        "member": 4,
+        "uncontrollable_prefix_cost": 16.0
+      }
+    ]
+  },
+  "val": {
+    "n_episodes": 215,
+    "prefix_cost_mean": 0.4232558139534884,
+    "prefix_cost_max": 17.0,
+    "episodes_prefix_gt15": 1,
+    "days_with_any_member_prefix_gt15": 1,
+    "examples": [
+      {
+        "day": "2024-02-21",
+        "member": 1,
+        "uncontrollable_prefix_cost": 17.0
+      }
+    ]
+  }
+}

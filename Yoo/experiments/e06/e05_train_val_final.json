@@ -1,0 +1,194 @@
+[
+  {
+    "method": "ppolag",
+    "seed": 0,
+    "train_final": {
+      "air_m3": 39970.95571368368,
+      "reward": -59.956433570525526,
+      "cost": 8.014545454545454,
+      "nh4_viol_pct": 2.7800654629922925,
+      "do_viol_pct": 0.012459085629817339,
+      "days_within_limit_pct": 83.21212121212122,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 37883.63757067352,
+      "reward": -56.82545635601029,
+      "cost": 14.916279069767441,
+      "nh4_viol_pct": 4.808362369337979,
+      "do_viol_pct": 0.3889474110687951,
+      "days_within_limit_pct": 77.20930232558139,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 5.3197132616487455
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 22.75686274509804
+      }
+    }
+  },
+  {
+    "method": "ppolag",
+    "seed": 1,
+    "train_final": {
+      "air_m3": 43145.77815489862,
+      "reward": -64.71866723234794,
+      "cost": 7.8139393939393935,
+      "nh4_viol_pct": 2.7226269665294054,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 83.27272727272728,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 42560.17661365543,
+      "reward": -63.84026492048315,
+      "cost": 15.427906976744186,
+      "nh4_viol_pct": 4.972044404829431,
+      "do_viol_pct": 0.40353293898387493,
+      "days_within_limit_pct": 77.20930232558139,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 4.94336917562724
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 23.51764705882353
+      }
+    }
+  },
+  {
+    "method": "ppolag_fcsrl",
+    "seed": 0,
+    "train_final": {
+      "air_m3": 45507.386059155215,
+      "reward": -68.26107908873283,
+      "cost": 8.30060606060606,
+      "nh4_viol_pct": 2.8841727378312743,
+      "do_viol_pct": 0.008024495829373878,
+      "days_within_limit_pct": 83.33333333333334,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 41850.44276765439,
+      "reward": -62.77566415148159,
+      "cost": 13.43720930232558,
+      "nh4_viol_pct": 4.681954460740621,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 78.13953488372093,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 4.969892473118279
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 26.521568627450982
+      }
+    }
+  },
+  {
+    "method": "ppolag_fcsrl",
+    "seed": 1,
+    "train_final": {
+      "air_m3": 35922.17047389935,
+      "reward": -53.88325571084903,
+      "cost": 11.981818181818182,
+      "nh4_viol_pct": 4.1748495407032,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 79.57575757575758,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 24399.8128312907,
+      "reward": -36.599719246936054,
+      "cost": 18.8,
+      "nh4_viol_pct": 6.550522648083624,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 74.4186046511628,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 8.245878136200718
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 32.41960784313726
+      }
+    }
+  },
+  {
+    "method": "ppolag_frozen",
+    "seed": 0,
+    "train_final": {
+      "air_m3": 38492.43305603663,
+      "reward": -57.73864958405495,
+      "cost": 8.42909090909091,
+      "nh4_viol_pct": 2.9369654735508393,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 82.60606060606061,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 32346.477022065326,
+      "reward": -48.51971553309799,
+      "cost": 14.320930232558139,
+      "nh4_viol_pct": 4.8472571104448585,
+      "do_viol_pct": 0.14261405072522487,
+      "days_within_limit_pct": 77.20930232558139,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 5.47741935483871
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 24.576470588235296
+      }
+    }
+  },
+  {
+    "method": "ppolag_frozen",
+    "seed": 1,
+    "train_final": {
+      "air_m3": 35058.15712541567,
+      "reward": -52.58723568812351,
+      "cost": 9.466060606060607,
+      "nh4_viol_pct": 3.2982789568155417,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 81.6969696969697,
+      "n_episodes": 1650
+    },
+    "val_final": {
+      "air_m3": 28092.267110256496,
+      "reward": -42.13840066538474,
+      "cost": 15.813953488372093,
+      "nh4_viol_pct": 5.318855846365772,
+      "do_viol_pct": 0.19123247710882424,
+      "days_within_limit_pct": 75.81395348837209,
+      "n_episodes": 215
+    },
+    "train_groups": {
+      "initial_nh4_le4": {
+        "days": 279,
+        "cost": 6.12831541218638
+      },
+      "initial_nh4_gt4": {
+        "days": 51,
+        "cost": 27.725490196078432
+      }
+    }
+  }
+]

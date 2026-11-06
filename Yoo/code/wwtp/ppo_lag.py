@@ -87,6 +87,9 @@ class PPOLagAgent:
     def finish_update(self):
         pass
 
+    def adjust_advantage(self, advantage, buf):
+        return advantage
+
     @torch.no_grad()
     def act_det(self, obs):
         """평가용 결정적 행동: 정규화한 관측 -> 평균 행동 (N, a_dim), [-1, 1]"""
@@ -120,7 +123,7 @@ class PPOLagAgent:
         ar = (ar - ar.mean()) / (ar.std() + 1e-8)
         ac = ac - ac.mean()
         lam = self.lagrg
-        adv = self._t((ar - lam * ac) / (1 + lam))
+        adv = self._t(self.adjust_advantage((ar - lam * ac) / (1 + lam), buf))
         ret_r, ret_c = self._t(buf["ret_r"]), self._t(buf["ret_c"])
         n = len(o)
         info, aux = {}, {}
