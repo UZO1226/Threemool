@@ -1,0 +1,8 @@
+{
+  "unit_tests_passed": 3,
+  "actual_data_steps": 18368,
+  "freeze_update_in_smoke": 1,
+  "boundary_all_saved_tensors_and_normalizer_and_rng_match": true,
+  "frozen_representation_unchanged_to_final": true,
+  "restored_final_validation_exact": true
+}
