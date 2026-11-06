@@ -1,0 +1,90 @@
+[
+  {
+    "tag": "fcsrl_limit15",
+    "seed": 0,
+    "training_limit": 15,
+    "report_limit": 15,
+    "best_epoch": 3,
+    "val_best": {
+      "air_m3": 34299.5777588316,
+      "reward": -51.4493666382474,
+      "cost": 11.497674418604651,
+      "nh4_viol_pct": 4.006158334008589,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 79.06976744186046,
+      "n_episodes": 215
+    },
+    "final_air": 25612.361934081007,
+    "final_cost": 18.372093023255815,
+    "pid_updates": 174,
+    "lambda_at_cap_fraction": 0.19540229885057472,
+    "lambda_zero_fraction": 0.0,
+    "final_integral": 378.125
+  },
+  {
+    "tag": "fcsrl_limit12",
+    "seed": 0,
+    "training_limit": 12,
+    "report_limit": 15,
+    "best_epoch": 5,
+    "val_best": {
+      "air_m3": 25526.10592685113,
+      "reward": -38.289158890276696,
+      "cost": 17.023255813953487,
+      "nh4_viol_pct": 5.931448018799125,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 73.95348837209302,
+      "n_episodes": 215
+    },
+    "final_air": 25526.10592685113,
+    "final_cost": 17.023255813953487,
+    "pid_updates": 174,
+    "lambda_at_cap_fraction": 0.5402298850574713,
+    "lambda_zero_fraction": 0.0,
+    "final_integral": 786.125
+  },
+  {
+    "tag": "fcsrl_limit15",
+    "seed": 1,
+    "training_limit": 15,
+    "report_limit": 15,
+    "best_epoch": 4,
+    "val_best": {
+      "air_m3": 29663.041366564332,
+      "reward": -44.4945620498465,
+      "cost": 14.846511627906978,
+      "nh4_viol_pct": 5.088728628150069,
+      "do_viol_pct": 0.0842719390649056,
+      "days_within_limit_pct": 76.27906976744187,
+      "n_episodes": 215
+    },
+    "final_air": 28896.62630345005,
+    "final_cost": 16.12093023255814,
+    "pid_updates": 174,
+    "lambda_at_cap_fraction": 0.8333333333333334,
+    "lambda_zero_fraction": 0.0,
+    "final_integral": 874.125
+  },
+  {
+    "tag": "fcsrl_limit12",
+    "seed": 1,
+    "training_limit": 12,
+    "report_limit": 15,
+    "best_epoch": 5,
+    "val_best": {
+      "air_m3": 28828.50074060884,
+      "reward": -43.24275111091326,
+      "cost": 14.293023255813953,
+      "nh4_viol_pct": 4.343246090268211,
+      "do_viol_pct": 0.636901385625152,
+      "days_within_limit_pct": 78.13953488372093,
+      "n_episodes": 215
+    },
+    "final_air": 28828.50074060884,
+    "final_cost": 14.293023255813953,
+    "pid_updates": 174,
+    "lambda_at_cap_fraction": 0.9885057471264368,
+    "lambda_zero_fraction": 0.0,
+    "final_integral": 1360.75
+  }
+]
