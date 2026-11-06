@@ -1,0 +1,41 @@
+{
+  "note": "Descriptive decomposition, not a causal identification or a new policy evaluation.",
+  "results": [
+    {
+      "variant": "continuous",
+      "seed": 0,
+      "train_cost": 8.30060606060606,
+      "val_cost": 13.43720930232558,
+      "train_cost_reweighted_to_val_initial_nh4_mix": 13.490322580645161,
+      "composition_term": 5.1897165200391004,
+      "within_group_term": -0.05311327831958046
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 0,
+      "train_cost": 9.423636363636364,
+      "val_cost": 13.372093023255815,
+      "train_cost_reweighted_to_val_initial_nh4_mix": 16.324097691089438,
+      "composition_term": 6.900461327453074,
+      "within_group_term": -2.9520046678336236
+    },
+    {
+      "variant": "continuous",
+      "seed": 1,
+      "train_cost": 11.981818181818182,
+      "val_cost": 18.8,
+      "train_cost_reweighted_to_val_initial_nh4_mix": 17.802934066850046,
+      "composition_term": 5.821115885031864,
+      "within_group_term": 0.9970659331499547
+    },
+    {
+      "variant": "freeze_half",
+      "seed": 1,
+      "train_cost": 9.564242424242424,
+      "val_cost": 19.632558139534883,
+      "train_cost_reweighted_to_val_initial_nh4_mix": 14.442077185963157,
+      "composition_term": 4.877834761720733,
+      "within_group_term": 5.190480953571726
+    }
+  ]
+}
