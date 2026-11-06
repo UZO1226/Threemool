@@ -41,6 +41,12 @@ def main():
     ap.add_argument("--total_steps", type=int, default=None, help="PPO 목표 환경 전이 수")
     ap.add_argument("--eval_chunks", type=int, default=None, help="PPO 학습 중 검증 횟수")
     a = ap.parse_args()
+    for name in ("epochs", "grad_steps"):
+        value = getattr(a, name)
+        if value is not None and value <= 0:
+            ap.error(f"--{name} must be positive")
+    if a.max_lambda is not None and (not np.isfinite(a.max_lambda) or a.max_lambda < 0):
+        ap.error("--max_lambda must be finite and nonnegative")
     if a.method == "ppolag" and (a.epochs is not None or a.grad_steps is not None):
         ap.error("PPO에는 --total_steps와 --eval_chunks를 사용하세요. --epochs/--grad_steps는 TD3 전용입니다.")
     if a.method != "ppolag" and (a.total_steps is not None or a.eval_chunks is not None):
@@ -60,6 +66,8 @@ def main():
     DeviceConfig().select_device(a.cudaid)
     cfg = yaml.safe_load(open(a.hyperparams or config_path(a.method)))
     run_dir = (a.out / (a.tag or a.method) / f"seed_{a.seed}").resolve()
+    if run_dir.exists() and any(run_dir.iterdir()):
+        ap.error(f"Refusing to overwrite an existing run: {run_dir}")
     if a.method == "ppolag":
         from ppo_config import PPOConfig
 

@@ -63,7 +63,7 @@ def eval_agent(agent, data, surrogate, split, cost_limit):
     return summarize_rows(rows, cost_limit), rows
 
 
-def batched_rollout(env: AerationEnv, sur, act_batch, cost_limit):
+def batched_rollout(env: AerationEnv, sur, act_batch, cost_limit, observe=None):
     """env.fixed 의 모든 (날짜, 구성원) 에피소드를 한꺼번에 굴린다. 상태 전이는 sur 로 한다.
     env.step 과 같은 규칙(관측, 공기량 변환, 비용)을 배열로 다시 쓴 것이다. act_batch(obs (N, 11)) -> (N,) [-1, 1]"""
     eps = env.fixed
@@ -96,6 +96,15 @@ def batched_rollout(env: AerationEnv, sur, act_batch, cost_limit):
         vd += v2
         cost += v1 + v2
         air_sum += air * STEP_H
+        if observe is not None:
+            observe(t, obs, a, v1 + v2, air)
+    if observe is not None:
+        ph = phase[:, T].astype(int)
+        s, c = np.sin(2 * np.pi * hour[:, T] / 24), np.cos(2 * np.pi * hour[:, T] / 24)
+        obs = np.column_stack([nh4, do, ph == 0, ph == 1, ph == 2, temp[:, T] / 10,
+                               q_in[:, T] / 1000, s, c, np.minimum(since[:, T], 24) / 12,
+                               prev / AIR_MAX]).astype(np.float32)
+        observe(T, obs, None, None, None)
     rows = [{"day": d, "member": int(m), "air_m3": float(air_sum[k]), "reward": float(-air_sum[k] / STEP_H / AIR_MAX),
              "cost": float(cost[k]), "nh4_viol_pct": float(100 * vn[k] / T), "do_viol_pct": float(100 * vd[k] / T)}
             for k, (d, m) in enumerate(eps)]

@@ -115,6 +115,11 @@ def config_path(method):
 
 def make_agent(method, cfg: dict, env, ucb_n=5, ucb_k=0.5):
     """cfg: yaml 을 읽은 dict (필요하면 학습 스크립트가 고친 것)"""
+    if method == "fcsrl_ucb":
+        if type(ucb_n) is not int or ucb_n < 2:
+            raise ValueError("ucb_n must be an integer >= 2 for sample standard deviation")
+        if not np.isfinite(ucb_k) or ucb_k < 0:
+            raise ValueError("ucb_k must be finite and nonnegative")
     from fcsrl.utils import MeanStdNormalizer, dict2attr
 
     if method == "ppolag":
