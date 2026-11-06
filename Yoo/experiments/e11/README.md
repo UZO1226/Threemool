@@ -1,5 +1,7 @@
 # Yoo/e11 누락한 유입 및 유출 반응조 입력 대조
 
+**2026-11-06 19:06:54 KST, 4개 학습과 내부 및 외부 검증 완료.** 경로 입력이 비용 MAE를 줄였지만 위반 recall이 낮아져 기존 환경 모델 교체와 RL 재학습은 하지 않았다.
+
 ## 배경
 
 e10의 이력 추가는 내부 holdout 비용 MAE를 낮췄지만 NH4 위반 recall과 시작 F1, DO 장기 오차를 개선하지 못했다. 원자료를 재점검하니 유입 및 유출 반응조 신호가 전처리에서 빠져 있었다. [데이터 설명 논문 Table 1](https://arxiv.org/html/2407.05959v1)은 `INLET.Q`를 처리장 전체 유량, `PROCESSPHASE.INLET TANK`와 `OUTLET TANK`를 물이 들어가고 나가는 반응조 번호로 정의한다. 이는 반응조의 호기 단계와 별도 신호다.
@@ -44,4 +46,37 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
  --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
  --trial /home/jio/fcsrl_src/results/e11/routing_trial \
  --out /home/jio/fcsrl_src/results/e11/outer_val.json
+```
+
+## 최종 결과와 판정
+
+학습 실행 커밋 `0a97165790bb199efd7266a9d723e994e619c296`, 고정 외부 검증 커밋 `1b41a7400314b282c5cd8c500cf517de29adcf08`의 전체 SHA는 [외부 요약](outer_summary.json)에 있다. 모델 구조나 학습 설정을 결과에 맞춰 바꾸지 않았다. 두 군의 모델 크기는 10,882개 파라미터로 같다.
+
+| 구간 | 경로 입력 | 날짜별 비용 MAE | NH4 위반 스텝 recall | NH4 시작 F1 | 최장 관측 위반 구간 MAE (분) |
+| --- | --- | --- | --- | --- | --- |
+| 내부 66일 | 없음 | 57.780 | 39.29% | 0.103 | 207.84 |
+| 내부 66일 | 있음 | 42.424 | 30.12% | 0.135 | 125.49 |
+| 기존 val 43일 | 없음 | 58.872 | 36.54% | 0.050 | 150.87 |
+| 기존 val 43일 | 있음 | 48.140 | 19.41% | 0.081 | 100.99 |
+
+seed 2개 평균이며 전체 275전이 연속 예측이다. 개별 seed 및 단기 예측은 [결과 표](results.md)에 있다. 경로 입력 추가는 내부 비용 MAE를 26.58%, 기존 val 비용 MAE를 18.23% 줄였다. 시작 F1과 최장 위반 구간 길이 오차도 두 구간의 두 seed에서 개선했다. val에서 유입 및 유출 신호는 100% 유효했다.
+
+그러나 위반 스텝 recall은 기존 val에서 두 seed 모두 낮아졌다. 후보의 평균 예측 비용도 36.535로 실측 66.535보다 작다. 잘못 예측한 위반이 줄면서 실제 위반도 놓치는 절충이 생겼다. **사전 진행 기준은 통과했지만 기존 환경 모델을 교체하지 않는다.** 이 기준에는 위반 스텝 recall 유지 조건이 없었다는 한계도 드러났다. 사후에 기준을 바꿔 통과 여부를 다시 쓰지 않고, 통과와 최종 미채택 판정을 모두 남긴다.
+
+현재 결론은 경로 신호 누락이 예측에 영향을 주는 구체적인 문제라는 것이다. 이것이 모든 장기 오차의 원인이거나 경로 입력 추가만으로 제약 예측이 해결된다는 결론은 아니다. 다음 보정은 평균 오차와 함께 위반 누락률을 줄여야 하며, 임계값 주변의 예측 편향과 예측 분포를 점검할 필요가 있다. 평균 오차만으로 후보를 고르지 않는다. FCSRL + PPO의 핵심을 바꾸거나 이 결과를 RL 확장 성공으로 보고하지 않는다.
+
+## 실행 중 수정과 검사
+
+최초 학습 4개와 평가 24개를 모두 마친 뒤 JSON 저장에서 numpy boolean 직렬화 오류가 났다. 학습 실패나 비유한 값은 아니었다. `4926f3c`에서 결과 판정을 Python bool로 바꾸고 `--finalize-only`로 저장을 완료했다. 기존 모델 4개의 SHA256과 예측 배열 24개에서 다시 계산한 지표가 저장된 진행 기록과 모두 일치함을 확인했으며 재학습하거나 결과를 선택하지 않았다. 원래 실행 커밋과 후처리 커밋을 둘 다 기록했다.
+
+모든 loss와 gradient 유한, 같은 초기 가중치와 샘플 순서, 저장 및 복원 출력 일치, 실제 학습망의 미래 실측값 비참조 검사를 통과했다. 외부 확인은 저장된 모델의 SHA256이 그대로임을 검사했다. 원래 데이터와 기존 환경용 모델은 덮어쓰지 않았다. 결과는 `/home/jio/fcsrl_src/results/e11`에 보관한다.
+
+표와 그림 재생성:
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+ /home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e11/summarize.py \
+ --trial /home/jio/fcsrl_src/results/e11/routing_trial \
+ --outer /home/jio/fcsrl_src/results/e11/outer_val.json \
+ --out Yoo/experiments/e11
 ```

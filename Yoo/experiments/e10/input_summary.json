@@ -1,0 +1,121 @@
+{
+  "commit": "d46d255ca0c364a063db61bd5fdd9c9657be7ffa",
+  "source_sha256": "4b2dd7fbfa3339ebece0dd9929d9d863a11ae875d778b42b4f4d3652a9772705",
+  "raw_sha256": "b57bc042a394d84da9fc9620aae5b90f029885dbafa14d3ce6ed437a0b005a2e",
+  "processed_sha256": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+  "outer_val_used": false,
+  "test_used": false,
+  "imputation": "none",
+  "quality_policy": "keep quality == 0 only",
+  "coverage": {
+    "fit": {
+      "days": 263,
+      "rows": 75744,
+      "valid_fraction": {
+        "inlet_0": 0.9999603929024081,
+        "inlet_1": 0.9999603929024081,
+        "inlet_2": 0.9999603929024081,
+        "outlet_0": 0.9999603929024081,
+        "outlet_1": 0.9999603929024081,
+        "outlet_2": 0.9999603929024081,
+        "ss": 0.8828818124207858
+      },
+      "complete_days_all_features": 42
+    },
+    "inner_holdout": {
+      "days": 66,
+      "rows": 19008,
+      "valid_fraction": {
+        "inlet_0": 1.0,
+        "inlet_1": 1.0,
+        "inlet_2": 1.0,
+        "outlet_0": 1.0,
+        "outlet_1": 1.0,
+        "outlet_2": 1.0,
+        "ss": 0.8592697811447811
+      },
+      "complete_days_all_features": 3
+    }
+  },
+  "fit_phase_inlet_groups": [
+    {
+      "phase": 0,
+      "inlet_tank": 1,
+      "n": 11,
+      "mean_delta_nh4": -0.03315566164074517,
+      "median_delta_nh4": -0.02188829580942775,
+      "nh4_rising_fraction": 0.2727272727272727,
+      "mean_current_nh4": 4.494440486936859,
+      "mean_do": 0.18595788831060578,
+      "mean_air": 0.0,
+      "mean_flow": 6232.866118459991,
+      "mean_temp": 12.853866822791822
+    },
+    {
+      "phase": 0,
+      "inlet_tank": 2,
+      "n": 2459,
+      "mean_delta_nh4": 0.009388525440927374,
+      "median_delta_nh4": -0.00014638900756835938,
+      "nh4_rising_fraction": 0.4969499796665311,
+      "mean_current_nh4": 4.194662213634553,
+      "mean_do": 0.23142828437428623,
+      "mean_air": 0.0,
+      "mean_flow": 6794.146330227515,
+      "mean_temp": 11.88827481036492
+    },
+    {
+      "phase": 1,
+      "inlet_tank": 1,
+      "n": 27075,
+      "mean_delta_nh4": 0.047084653109223766,
+      "median_delta_nh4": 0.025548358758290535,
+      "nh4_rising_fraction": 0.5703416435826408,
+      "mean_current_nh4": 1.6539642150027154,
+      "mean_do": 0.2627272922416797,
+      "mean_air": 0.0,
+      "mean_flow": 2381.454536640635,
+      "mean_temp": 15.6646369408842
+    },
+    {
+      "phase": 1,
+      "inlet_tank": 2,
+      "n": 2026,
+      "mean_delta_nh4": -0.07761238572768764,
+      "median_delta_nh4": -0.03811082740624744,
+      "nh4_rising_fraction": 0.30454096742349457,
+      "mean_current_nh4": 1.4038893394960552,
+      "mean_do": 0.4628782525610953,
+      "mean_air": 0.0,
+      "mean_flow": 2174.948304266473,
+      "mean_temp": 16.357356754797546
+    },
+    {
+      "phase": 2,
+      "inlet_tank": 1,
+      "n": 9407,
+      "mean_delta_nh4": 0.08503217689055659,
+      "median_delta_nh4": 0.05139601230621338,
+      "nh4_rising_fraction": 0.626660997129797,
+      "mean_current_nh4": 2.9061609823031667,
+      "mean_do": 0.7694915120133583,
+      "mean_air": 3356.6885516089355,
+      "mean_flow": 3613.713003717,
+      "mean_temp": 15.246532454632085
+    },
+    {
+      "phase": 2,
+      "inlet_tank": 2,
+      "n": 29642,
+      "mean_delta_nh4": -0.06420388418333717,
+      "median_delta_nh4": -0.061940838893254746,
+      "nh4_rising_fraction": 0.3939342824370825,
+      "mean_current_nh4": 2.8908484955888194,
+      "mean_do": 0.9349917720772544,
+      "mean_air": 3534.8256705067774,
+      "mean_flow": 2369.773998757222,
+      "mean_temp": 15.714085603337821
+    }
+  ],
+  "completed_at": "2026-11-06T09:58:22.082788+00:00"
+}

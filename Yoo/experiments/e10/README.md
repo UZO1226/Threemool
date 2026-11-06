@@ -1,5 +1,7 @@
 # Yoo/e10 위반 사건 진단과 과거 상태 입력 대조
 
+**2026-11-06 18:54:06 KST, 학습 4개와 평가 완료.** 이력 입력은 비용 MAE를 줄였지만 사전 기준을 통과하지 못해 미채택이다.
+
 ## 목적
 
 e09에서 평균 농도 오차 감소가 날짜별 위반 비용 정확도 개선으로 이어지지 않았다. 실제 위반의 시작과 지속시간을 먼저 측정하고, 최근 상태 이력이 빠진 것이 원인 후보인지 확인한다. 원본 FCSRL 표현 손실, PPO, 환경 코드 및 기존 모델은 바꾸지 않는다. 이 시험은 대리 환경 진단이며 새로운 FCSRL 확장 성과가 아니다. 팀 공식 비교 조건은 아직 합의되지 않았고 개인 탐색으로 수행한다.
@@ -55,3 +57,37 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 데이터 출처와 전처리는 [e02 기록](../e02/README.md)을 따른다. 코드 커밋, 입력 해시, 날짜 목록, 버전 및 시간은 결과 JSON에 남긴다. 전체 모델과 예측 배열은 서버 결과 폴더에 보존하고 Git에는 요약만 올린다. 재실행 시 비어 있는 별도 결과 경로를 사용한다.
+
+## 결과와 해석
+
+실행 커밋 `701335953b74b2ff91ffdea3cd8e81385df35d97`, 18:52:28부터 18:54:06 KST까지 약 98초다. 두 군 모두 모델 파라미터 10,882개, 동일 초기 가중치와 샘플 순서를 확인했다. 모든 loss와 gradient는 유한했고 저장 및 복원 출력도 같다. 추가 `verify.py`로 과거값에 실제로 반응하는 모델의 미래 실측값 비참조와 사건 경계 처리를 확인했다.
+
+이력 입력은 내부 holdout 연속 예측의 날짜별 비용 MAE를 평균 52.62에서 35.33으로 32.85% 줄였다. 최장 관측 위반 구간 길이 MAE도 seed 0에서 165.15분에서 103.41분, seed 1에서 154.39분에서 63.64분으로 줄었다. 한 스텝 NH4 및 DO 예측도 좋아졌다.
+
+하지만 실제 NH4 위반 스텝 recall은 seed 0에서 45.31%에서 28.88%, seed 1에서 29.96%에서 22.81%로 낮아졌다. 잘못 예측한 위반을 줄이는 대신 실제 위반도 더 놓쳤다. 시작 F1도 두 seed에서 소폭 낮아졌으며 장기 DO MAE는 0.237에서 0.263, 0.245에서 0.262로 악화했다. 평균 오차만 보고 채택하면 안 되는 이유다. 두 seed 모두 사전 기준을 통과하지 못해 새 모델을 외부 val에 평가하거나 RL에 적용하지 않았다.
+
+이력 입력의 효과가 전혀 없다는 결론도 아니다. 단기 예측과 일부 집계 오차는 좋아졌지만, 하루 연속 예측에서 위반 탐지와 DO 정확도가 보존되지 않았다. 원인을 과거 상태 누락 하나로 확정할 수 없다. [전체 결과](results.md), [학습 및 사건 지표 JSON](trial_summary.json), [기존 모델 사건 진단](event_summary.json)을 보존한다.
+
+## 원자료에서 찾은 별도 입력 누락
+
+기존 `prep.py`는 처리장 전체 유량 `INLET.Q`와 반응조 호기 단계를 사용하지만, 원자료의 유입 및 유출 반응조 번호를 제외했다. [원 데이터 설명 논문 Table 1](https://arxiv.org/html/2407.05959v1)은 해당 신호를 물이 유입 또는 유출되는 반응조 번호로 구분한다. 이력 대조와 별개로 발견한 입력 누락이다.
+
+품질 0인 값만 5분 단위로 집계하고 보간하지 않아도 유입 및 유출 신호 유효 비율은 학습 263일에서 99.996%, 내부 holdout 66일에서 100%다. 같은 호기 단계의 학습 자료에서 평균 NH4 5분 변화는 1번으로 유입될 때 +0.0850, 2번으로 유입될 때 -0.0642다. 현재 NH4 평균은 각각 2.906과 2.891이지만 DO, 유량 등도 달라 이것만으로 인과 효과를 주장하지 않는다.
+
+SS도 원자료에 있으나 유효 비율은 학습 88.3%, 내부 holdout 85.9%이며 모든 추가 신호가 하루 내내 유효한 날짜는 각각 42일과 3일뿐이다. 이를 넣으려고 다수 날짜를 제외하면 비교 구간이 바뀐다. 우선 결측이 거의 없는 경로 신호만 별도 e11에서 대조한다. 이력 입력 결과와 합쳐 개선 성과로 세지 않는다.
+
+입력 진단 실행 커밋 `d46d255ca0c364a063db61bd5fdd9c9657be7ffa`. [입력 진단 JSON](input_summary.json)에 해시와 집계 기준을 남겼다. 재현 명령은 다음과 같다.
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+ /home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e10/audit_inputs.py \
+ --raw /home/jio/사물/Yoo/data/avedore/aved_raw.csv \
+ --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
+ --out /home/jio/fcsrl_src/results/e10/input_audit.json
+
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+ /home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e10/summarize.py \
+ --trial /home/jio/fcsrl_src/results/e10/history_trial \
+ --audit /home/jio/fcsrl_src/results/e10/event_audit.json \
+ --out Yoo/experiments/e10
+```
