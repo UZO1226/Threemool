@@ -1,0 +1,40 @@
+{
+  "started_at": "2026-11-06T07:19:04.203006+00:00",
+  "pid": 3820591,
+  "commit": "98fb8b8d0386c8dd2d6a8c3b26ebbea4773965e2",
+  "upstream_commit": "d882b91054d52c7a63a18a21f7db67bbbed82b63",
+  "python": "/home/jio/fcsrl_src/.venv/bin/python",
+  "parallel_jobs": 2,
+  "steps_requested": 400000,
+  "steps_actual_per_run": 404096,
+  "seeds": [
+    0,
+    1
+  ],
+  "methods": [
+    "ppolag",
+    "ppolag_fcsrl",
+    "ppolag_frozen"
+  ],
+  "evaluation_split": "val",
+  "inputs": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/data/avedore/aved_5min.pkl": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+    "/home/jio/fcsrl_src/results/e02/surrogate/surrogate.json": "d25dbe3ea1a8e33b17f0a2d0f11a5983fe6c4a6d81a1d0db851b530386658117"
+  },
+  "source": {
+    "Yoo/code/wwtp/agents.py": "6a2ebb82c08a9b0627387c3b1efd63518e57b05f575b9b3d6e92e2c3aeaa0309",
+    "Yoo/code/wwtp/env.py": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5",
+    "Yoo/code/wwtp/evaluate.py": "87ecbfb5420275ccee3f26c6598fed984c4c3fd66388fd72930646d8a409942a",
+    "Yoo/code/wwtp/plot.py": "311a101c2dd7884e0d7790a65e9e4ac6a7d99a145cd039727d09ff20d7335a05",
+    "Yoo/code/wwtp/ppo_config.py": "7236f11934ee8bca42e997e086092e451ce8535a06053ec2174ca145af1c2052",
+    "Yoo/code/wwtp/ppo_fcsrl.py": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66",
+    "Yoo/code/wwtp/ppo_lag.py": "9e2c1fd84de1adfc88fce153825cc07086d577ae2c8dc1628fed80e6fb5c3e03",
+    "Yoo/code/wwtp/prep.py": "24c0b3cb2934bcf39e5e334a00ac7dd18c8e302abafb5edeab751a88023dab0c",
+    "Yoo/code/wwtp/surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "Yoo/code/wwtp/surrogate_gbm.py": "321cfc0380ba0b5f3866f7412d531d4a2c2d9d4e1a2f39f60b5bd67806fdcc56",
+    "Yoo/code/wwtp/train.py": "385aa40bf9fded744c793d34e2b06188cbd38724de5d787a086e829e5d68e27a",
+    "Yoo/experiments/e05/run_pilot.py": "229fd8432f2d157309f8549d760eebaaee9158b3ea0d3ce48d651f67d9c52736",
+    "Yoo/experiments/e05/train_ppo.py": "0605f5732697cc563192f15b8a2b6fafd06cae16ad2a612178536159279ca045"
+  },
+  "note": "Launch snapshot. Full evolving commands and completion are in the runtime manifest and status."
+}
