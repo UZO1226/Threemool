@@ -127,7 +127,7 @@ def main(a):
     primary = next(g for g in report['gates'] if g['candidate'] == 'day_group')
     md += ['', '주 후보의 screening 실패 항목:', '']
     for r in primary['per_seed']:
-        md.append(f"- seed {r['seed']}, {r['base']}: " + ', '.join(k for k, v in r.items() if v is False))
+        md.append(f"- seed {r['seed']}, {r['base']}: " + (', '.join(k for k, v in r.items() if v is False) or '없음'))
     md += ['', '## 조건별 하루 FPR', '', '| 군 | 조건 | fit NH4 FPR | holdout NH4 FPR | fit DO FPR | holdout DO FPR |', '| --- | --- | --- | --- | --- | --- |']
     for mode in ('start_multi', 'day_mse', 'day_global', 'day_group'):
         for group in GROUPS:
