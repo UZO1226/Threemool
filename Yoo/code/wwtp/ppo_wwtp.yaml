@@ -1,0 +1,23 @@
+# 자체 PPO Lag의 실제 설정. 기존 e03 본 실행과 같은 기본값이다.
+# total_steps는 목표 전이 수이며 마지막 rollout은 끝까지 수집한다.
+total_steps: 2000000
+n_env: 8
+horizon: 1148
+n_chunks: 25
+test_episodes: 10
+hidden_dim: 64
+init_log_std: -0.5
+actor_lr: 0.0003
+critic_lr: 0.001
+gamma: 0.99
+gae_lambda: 0.95
+update_epochs: 10
+minibatch_size: 512
+clip_ratio: 0.2
+target_kl: 0.02
+max_grad_norm: 0.5
+cost_limit: 15.0
+max_lambda: 20.0
+pid_kp: 0.02
+pid_ki: 0.005
+pid_kd: 0.01
