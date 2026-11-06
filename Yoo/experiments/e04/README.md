@@ -58,3 +58,5 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 현재 상태는 `/home/jio/fcsrl_src/results/e04/pilot/status.json`, 로그는 같은 폴더에 있다. 학습 실행 커밋과 입력 및 소스 해시는 `manifest.json`에 저장한다.
 
 진단 실행 커밋은 `dde6398`이다. 고정 검증 및 시험 실행 코드는 `b8199ad` 이후 warmup 행동 seed를 추가로 수정했다. 정확한 학습 실행 커밋은 실행 폴더의 manifest.json을 따른다.
+
+2026-11-06 14:53 (한국 시간): 커밋 `c2194a3`으로 시험 학습을 시작했다. 한도 15와 12의 seed 0 두 개가 실행 중이고 seed 1 두 개는 대기 중이다. 총 네 실행의 완료 여부는 status.json을 따른다.
