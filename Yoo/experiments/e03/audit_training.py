@@ -61,17 +61,20 @@ def main():
                   f"{r['selected_test_cost']:.2f} | {r['final_test_cost']:.2f} | {r['final_lambda']:.3f} |")
     (a.out / 'training_audit.md').write_text('\n'.join(md) + '\n')
     order = ['fcsrl', 'fcsrl_ucb', 'fcsrl_ml5', 'fcsrl_ucb_ml5', 'ppolag']
-    fig, axs = plt.subplots(2, len(order), figsize=(14, 5), sharex=True)
+    fig, axs = plt.subplots(2, len(order), figsize=(14, 5), sharex=True, sharey='row')
     for j, tag in enumerate(order):
         group = [r for r in rows if r['tag'] == tag]
         for r in group:
             x = [v['epoch'] for v in r['history']]
-            axs[0, j].plot(x, [v['lambda'] for v in r['history']], alpha=.6, lw=1)
+            axs[0, j].plot(x, [v['lambda'] for v in r['history']], alpha=.6, lw=1, label=f"seed {r['seed']}")
             axs[1, j].plot(x, [v['test_cost'] for v in r['history']], alpha=.6, lw=1)
         axs[0, j].set_title(tag, fontsize=9)
+        axs[0, j].set_ylim(bottom=0)
+        axs[1, j].set_ylim(bottom=0)
         axs[1, j].axhline(15, color='black', ls='--', lw=.8)
         axs[1, j].set_xlabel('Validation round')
-    axs[0, 0].set_ylabel('Multiplier (scales differ)')
+    axs[0, 0].set_ylabel('PID multiplier')
+    axs[0, 0].legend(fontsize=7)
     axs[1, 0].set_ylabel('Validation cost (10 episodes)')
     fig.tight_layout()
     (a.out / 'figures').mkdir(exist_ok=True)

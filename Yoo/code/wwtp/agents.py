@@ -1,5 +1,8 @@
 """방법별 에이전트 만들기와 불러오기, 평가용 행동 함수
 
+UCB 클래스의 학습 메서드는 czp16/FCSRL의 td3_lag_repr.py에서 수정했다.
+원본 커밋 d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0 (FCSRL_LICENSE).
+
 방법(--method):
 - fcsrl     : 원본 FCSRL + TD3 Lag
 - td3lag    : 같은 신경망에서 표현 학습(encoder 학습)만 끈 TD3 Lag
@@ -137,6 +140,26 @@ def make_agent(method, cfg: dict, env, ucb_n=5, ucb_k=0.5):
     return agent, config
 
 
+def checkpoint_path(run_dir: Path, metrics: dict, checkpoint="best"):
+    """마지막 epoch에 저장한 선택 모델도 로그로 확인되면 마지막 모델로 사용할 수 있다."""
+    import re
+
+    run_dir = Path(run_dir)
+    if checkpoint not in ("best", "final"):
+        raise ValueError(f"Unknown checkpoint: {checkpoint}")
+    best = run_dir / "model" / f"epoch_{metrics['best_epoch']}"
+    path = best if checkpoint == "best" else run_dir / "model_final"
+    if checkpoint == "final" and not (path / "model.pt").exists():
+        logs = list(run_dir.glob("wandb/offline-run-*/files/output.log"))
+        if len(logs) == 1:
+            epochs = [int(e) for e in re.findall(r"Epoch #(\d+) =+", logs[0].read_text())]
+            if epochs and metrics["best_epoch"] == max(epochs):
+                path = best
+    if not (path / "model.pt").exists():
+        raise FileNotFoundError(f"{checkpoint} checkpoint unavailable: {path}")
+    return path
+
+
 def load_agent(run_dir: Path, env, cudaid=0, checkpoint="best"):
     """run_dir/metrics.json 의 방법과 best_epoch 로 에이전트를 다시 만들고 가중치를 불러온다"""
     import json
@@ -146,11 +169,7 @@ def load_agent(run_dir: Path, env, cudaid=0, checkpoint="best"):
     DeviceConfig().select_device(cudaid)
     m = json.loads((Path(run_dir) / "metrics.json").read_text())
     method = m["method"]
-    if checkpoint not in ("best", "final"):
-        raise ValueError(f"Unknown checkpoint: {checkpoint}")
-    model_dir = Path(run_dir) / (f"model/epoch_{m['best_epoch']}" if checkpoint == "best" else "model_final")
-    if not (model_dir / "model.pt").exists():
-        raise FileNotFoundError(f"{checkpoint} checkpoint unavailable: {model_dir}")
+    model_dir = checkpoint_path(run_dir, m, checkpoint)
     if method == "ppolag":
         from ppo_config import PPOConfig
         from ppo_lag import PPOLagAgent
@@ -159,11 +178,13 @@ def load_agent(run_dir: Path, env, cudaid=0, checkpoint="best"):
         cfg = PPOConfig.from_dict(json.loads(cfg_path.read_text())) if cfg_path.exists() else PPOConfig()
         agent = PPOLagAgent(int(np.prod(env.observation_space.shape)), 1, DeviceConfig.DEVICE, config=cfg)
         agent.load(model_dir)
+        agent.checkpoint_path = str(model_dir)
         return agent
     cfg = yaml.safe_load(open(config_path(method)))
     agent, _ = make_agent(method, cfg, env, ucb_n=m.get("ucb_n", 5), ucb_k=m.get("ucb_k", 0.5))
     agent.load_model(str(model_dir))
     agent.train(False)
+    agent.checkpoint_path = str(model_dir)
     return agent
 
 

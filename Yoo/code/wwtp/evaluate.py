@@ -158,6 +158,7 @@ def cmd_crosseval(a):
             summ, _ = batched_rollout(env, sur, batch_act_fn(agent), a.cost_limit)
             out["runs"].append({"tag": m.get("tag", m["method"]), "method": m["method"], "seed": m["seed"],
                                 "run_dir": str(p.parent), "eval": summ,
+                                "checkpoint_path": agent.checkpoint_path,
                                 "train_surrogate_final": m["test_final"]})
             print(m.get("tag", m["method"]), m["seed"], {k: round(v, 2) for k, v in summ.items()}, flush=True)
     a.out.parent.mkdir(parents=True, exist_ok=True)
