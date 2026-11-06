@@ -153,6 +153,9 @@ def local_model_checks(env):
 
 def main(a):
     torch.set_num_threads(1)
+    frozen_root = a.runs.parents[2] / 'e05/pilot/runs/ppolag_frozen'
+    if not frozen_root.is_dir():
+        raise FileNotFoundError(frozen_root)
     if a.out.exists() and any(a.out.iterdir()):
         raise ValueError(f'Refusing to overwrite {a.out}')
     a.out.mkdir(parents=True)
@@ -188,7 +191,7 @@ def main(a):
                 report['encoder_swap_diagnostic'].append({'seed': seed, 'actor_and_normalizer': actor_kind,
                                                           'encoder': encoder_kind, **stats})
         # 바꾸지 않은 비교군. 표현 학습이 없는 경우의 성능도 함께 기록한다.
-        frozen_run = a.runs.parents[1] / 'e05/pilot/runs/ppolag_frozen' / f'seed_{seed}'
+        frozen_run = frozen_root / f'seed_{seed}'
         frozen = load_agent(frozen_run, env, cudaid=-1, checkpoint='final')
         report['profiles'][f'ppolag_frozen_s{seed}_val'] = profile(env, frozen, a.out, f'ppolag_frozen_s{seed}_val')
     rows_by_air = {}
