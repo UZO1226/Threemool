@@ -1,0 +1,11 @@
+{
+  "completed_at": "2026-11-06T05:23:10.106579+00:00",
+  "n_runs": 35,
+  "artifacts": {
+    "training_audit.json": "7c5aa1bb68dfa21441ef15fd02232b8852941ca7b85f253fa41f72880144d04e",
+    "manifest.json": "e8597026947b614c6b772caa6f8c394e1ea8b2c586d7a8b745ccd4575c6901d2",
+    "final_gbm.json": "26052522d1d6af916cb69a080a95fa350afc66a92ff9dfcc79cbfde8b0ff5d79",
+    "gbm.json": "f9d61064c22cf926439d0500a544f535ea254731a8b4a77a36ca1828486e5ce4",
+    "mlp.json": "a7890665e3619f9a0ca0b0574a401c67ba2bf1a89c6f37f42b10b65eff62e943"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "created_at": "2026-11-06T05:16:38.378316+00:00",
+  "runs": [
+    {
+      "tag": "td3",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0/metrics.json": "1b450c9adfc55f46c610f963d0a9cf8ae55dbcce45beb1f731655d5e9b8a17a2",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0/model/epoch_25/model.pt": "acd919ee7e1a331e33f69e9c192b463d14f1e266aa1721bd9d5899ae5235dc51",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0/model/epoch_25/normalizer.stats": "cf9f266639df37c35aec7c29f8da9249f8833076d5acc772f28c7a337271a197"
+      }
+    },
+    {
+      "tag": "td3",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1/metrics.json": "ef9f35692b80df491ec7a62bcbf85c4eecc02e42d1e67bb343f0bfc99578e2d2",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1/model/epoch_25/model.pt": "da7f49eafb02f6cb4ecc7a4dec4645de9430ce46315fa33d522b2f70c7f2de94",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1/model/epoch_25/normalizer.stats": "85fbf84642888eda1556d53edacd48a7b88245abc4667324160b85576dd9936c"
+      }
+    },
+    {
+      "tag": "td3",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2/metrics.json": "9d88a487a1c1bd49309ca5dfdfd3b8af2a1e3bda9bfca8f483718944247cc26e",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2/model/epoch_25/model.pt": "629b78714e822d2d0d8cc9a8b7a0d46bc1151bef9d8aa9bb5465b7deb2c89104",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2/model/epoch_25/normalizer.stats": "629d385f0a7789510049744af4371459a9d85729175648e04e8e681954812c35"
+      }
+    },
+    {
+      "tag": "td3",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3/metrics.json": "ee29d320c08c02235459245527cbdda9c0baab497a2af20161d9ecbc0956df6d",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3/model/epoch_25/model.pt": "19a8d46e60fee389fc0aeb6c42b7bd16e2231c5c5df0a2cad2876509e81061f7",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3/model/epoch_25/normalizer.stats": "4915e8984905f49aa329f9f99da6faa57190bc2e7c3798fe7b79ecb2574057df"
+      }
+    },
+    {
+      "tag": "td3",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4/metrics.json": "19d57e20a8787fc215613c7ef3c233b278cdbfe086bb24325493707b07d5067a",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4/model/epoch_25/model.pt": "62503a67798e0ddf1b3200bf09e5f0c6cb17fa757461828fd289aeb43637d36f",
+        "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4/model/epoch_25/normalizer.stats": "942655a6b25c88432630e2601c27fadbb9624f39c94737e3c51aff8c53c3e6ae"
+      }
+    },
+    {
+      "tag": "td3lag",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0/metrics.json": "6dce653ab0d3fa3e33c62579bc29efdcec9d2ba242ca680016773d01f6659dec",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0/model/epoch_4/model.pt": "5bbb3098bc0fe6a7516be8fea9de775870a5c4d1f42bfceee853eee911181976",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0/model/epoch_4/normalizer.stats": "d55649c5533eeee570e1feb6354bf64e0066532524e525213ffa713496bea55c"
+      }
+    },
+    {
+      "tag": "td3lag",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1/metrics.json": "ead7e9f0b40f40b5e2cf208470237c8d74707fc06c96ddccf5140764d08c2905",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1/model/epoch_21/model.pt": "02e65cb1ef1b2d8bd4286283710f0450e6340d588936b0fec920b9bbf6475ab3",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1/model/epoch_21/normalizer.stats": "7a1b4bd17d92717f5bdb3d142552c9b51af34ad85411fdc9fff7f7c1f249287d"
+      }
+    },
+    {
+      "tag": "td3lag",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2/metrics.json": "21d1ea11860e9dd6a02f00b6402c776bf4ecf2f25ecb4ca9aa55bff18d9ab8b9",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2/model/epoch_25/model.pt": "89f83292310e2f7ba501a92ea87dc4d0b654c5c69045f85bf2274b3bead4f10f",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2/model/epoch_25/normalizer.stats": "82059a5b610f65668519bfca138c7f105530590de181dadb1244d29b47ef5432"
+      }
+    },
+    {
+      "tag": "td3lag",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3/metrics.json": "d825517a536925723cb1872942f778fcef10fb8c1d9b04c50ce5a54761fe4d13",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3/model/epoch_19/model.pt": "b3950552c7012db7f194d40c7766951dbab4816d81a809bd16cc839516775bc1",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3/model/epoch_19/normalizer.stats": "7357cdcd357d4b320568e5f7233057ad517e66fe4ce3ad39c534bdb7931184c4"
+      }
+    },
+    {
+      "tag": "td3lag",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4/metrics.json": "4d360322ca08a9b631d797e5f73c440053b8cdea14a9aca64ab15b7369cfdd82",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4/model/epoch_25/model.pt": "702d7ff75429a6d01f6c2c4ec39b50cf67c4377e43c28483e22558bcca81fd31",
+        "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4/model/epoch_25/normalizer.stats": "1e731deb589082a33c19b6b24afe9a85a5a07390d199c3f0b928cb3cf0399280"
+      }
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0/metrics.json": "fac505493521e86fa864b61e328a77a9d965c8f2f1e847ed323b68de4789e8c8",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0/model/epoch_4/model.pt": "d076f882dbed667267056ff7e5247a7a8044a490219fad47856b7cef21dd28be",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0/model/epoch_4/normalizer.stats": "479e06e8b6b5dda4d1bea4b408bbf9728a4f7992fd1f6c711a91f2defdedca15"
+      }
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1/metrics.json": "4c5e3fa22af22be3e8ec20cfbf158ce97576ba658ed1cb27e6a96fe033b66dde",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1/model/epoch_21/model.pt": "30dc123f44023bb58b57dd9cc54015fc1b5a530738d60731805b1352f318f4a0",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1/model/epoch_21/normalizer.stats": "4606120894a985f56ad8179e1f967b581aeb3c7c415f484416c5d7d75bbfc437"
+      }
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2/metrics.json": "4286a5c8085ec26ab0fa624f56cd8dfc76a5e5bdaef76ae025b6b133569a2fe5",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2/model/epoch_25/model.pt": "e1b007eebfaf405fea8999d9456e94d8ba4ea8af64092358416eb5b041417450",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2/model/epoch_25/normalizer.stats": "6db5d69699325b7a41ac4bbff905d09bad4bc5fc7ee9c40ffa9a1efc1fb893e7"
+      }
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3/metrics.json": "1a2018f9842136cf0ad9d35450713c5beb5987c6bf3d9896bb4ef78e83f3154d",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3/model/epoch_25/model.pt": "f9aaf771cbc9661e1111ee10a17162ee4b808317e1c3da106589565212d72aec",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3/model/epoch_25/normalizer.stats": "2540f0340f6960884afe18058c6653c63ed06222d10ddcfed00147e365a60307"
+      }
+    },
+    {
+      "tag": "fcsrl",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4/metrics.json": "27f7ed5e3b566e899d92eca6b866114b856d6279a9b83d9100d484dc22ae1c94",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4/model/epoch_25/model.pt": "45fda247df40f89d3bf90c06ad142734947e6d6535b92feab5a3882a3cb5e3e7",
+        "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4/model/epoch_25/normalizer.stats": "d6f7affa95da975bbfb18fa562b0d142f24d33e7f6e6faa5429efeadf8bf01cb"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0/metrics.json": "d8acc0944d41b252d5fdd351395e7cda4a66a2ff48760fa4d0be80e95c030170",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0/model/epoch_15/model.pt": "6abedcd02266f5da526d9c9b1c6f93d87fcb64c04502889094d65e78913e21da",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0/model/epoch_15/normalizer.stats": "4b919f9bea7c2e0d747913e707570cd60283fe7537b9c275cc7f1c944123130b"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1/metrics.json": "980d8b4261e9405820b362ec67fa5bed0e3ffc506ed39c46e002798f02b888d9",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1/model/epoch_16/model.pt": "40d5cba7554f3bfe46f64b20e1a0888f48f201aba27794b8726fb6dcbffade6c",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1/model/epoch_16/normalizer.stats": "b3af1c682e9f24f1bd032601ee8b6a216bd0ab537bc1ebe4a7a8676fe0fd6b4b"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2/metrics.json": "149899e34c468b6285bbe60af3e360dec6dea8d2e523b1b1d2ea30c7303355d1",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2/model/epoch_25/model.pt": "0f42339de35201adb0de4dd7d021cd97aae984990197ad8f7e4a1493f078c663",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2/model/epoch_25/normalizer.stats": "6aab8988f13483cd539ad88af98af83f2d281ebf65bf2d34741f43d29f4e98b4"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3/metrics.json": "bc5846d808ecb4678f84e2465c38f56e641658ffbf2fb9d25d2524d462c352e2",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3/model/epoch_19/model.pt": "189dff34854686ed0827d6e70d9eca935d7e102f5c98364c599d048a667a8d22",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3/model/epoch_19/normalizer.stats": "140b0c9229791d5e16fc531dd796fc6dd2bccb73b35ff7e5819cdca9b34672e6"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4/metrics.json": "024110e1f26aab9fe271c740e05b635fe57c4822afffd3786be1edc17d942a0b",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4/model/epoch_25/model.pt": "16beca76a29063f6543c4a623e30091750a92caa8a5af62c1a753c0f0e04e176",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4/model/epoch_25/normalizer.stats": "6bc773dde02947eadc71ad215b217cbf13ddd026889e4084b60ced05b8d2b16c"
+      }
+    },
+    {
+      "tag": "ppolag",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/metrics.json": "37621c7b59965bb270381c1a6312634fb1bfc8177f284d27007b972892ccd1bc",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model/epoch_24/model.pt": "778bba00ed6872ac2fff5dc7a5def69b65c8abe55371b2130e230707c09c05ab",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model/epoch_24/normalizer.json": "d031c8acfb79fd525725a10e4f8488e2acfa2ac7b515c18f623086f914f847d1",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model_final/model.pt": "5fae3e4b1ca291cd2b41d14db6358e321d2dad67d6c44098e3a72eaaa5266cd5",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model_final/normalizer.json": "354c28d3b90e2fddd5aa538c545de3afaeb144cb9ed16da0b73ce441a1d8ad55"
+      }
+    },
+    {
+      "tag": "ppolag",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/metrics.json": "9dd99ed256dd33c61e4169a40cbc4428bd7532ac8a1ece7fe60874358eef3db9",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model/epoch_14/model.pt": "b1479e20e182d6440d91538c3325604e8a8dcd209d87282dea546c4df9c6f407",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model/epoch_14/normalizer.json": "55b262372943586dff695e6bdfde0a8998f54d1841cab2bf14f385bfe6b23d02",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model_final/model.pt": "59c7c0a860f295759104925edb0972620a189c00d014750bce43a24ed5c102af",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model_final/normalizer.json": "e3198b8eb2484a7798f641e91dccd8aad6bbe6cb3f175a06f4ed36ae75b3723f"
+      }
+    },
+    {
+      "tag": "ppolag",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/metrics.json": "5d960a2750f3aacce9dd9ffe32116a2f204077ca21b7dbba5938d73ae253afd8",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model/epoch_17/model.pt": "94ee3c9476ec765d659e5ff6f2352fb1719037bd8f9a11c4269d709b4e833819",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model/epoch_17/normalizer.json": "933b8783c865c6d18551f8ff83f8bd18f9a9532d7a8e5b31464153c679f66ebc",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model_final/model.pt": "6bb57776dc29284fe6279ebdc4c19352fbc4be887760148ae83a0357760c8083",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model_final/normalizer.json": "632d514423368f59253df5005939220b00a9edcabd82cfe78802fd4ad1952354"
+      }
+    },
+    {
+      "tag": "ppolag",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/metrics.json": "f040f2cab4bfd267a30a7e813481da4a64fd49306aa59637cdcab5a6d4f8631f",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model/epoch_20/model.pt": "f3057367360cebeb78822fefa046cee34a21e1a41ae2a443ed102edf09704e0b",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model/epoch_20/normalizer.json": "869f7b5a4427b73df6639a5bfdfa57ce18ddc70cae0c50326a3a60addae2405f",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model_final/model.pt": "77b58fe1b1b22489b499867bc00c03c94be6a8778cc0070e5ae404a0ddbc1600",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model_final/normalizer.json": "60908c6fd5e71110d7dbf1df6ecd362694a058198b464874a326b7927d0f4042"
+      }
+    },
+    {
+      "tag": "ppolag",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/metrics.json": "fb73041dcf6db623e6b984b79a17e2d4d22453dcac303d37ec15d5244bfc0274",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model/epoch_21/model.pt": "54cc600deee95e7df67f92e1ae1aa480b44d270e2497e397bfbf7b72c6a3a9b7",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model/epoch_21/normalizer.json": "5db25518920863af577a06b6fabc19c95d733ab79738e0e890e8970533b72d06",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model_final/model.pt": "5b26127a22b3d5f69000f9143762142df31e1be171cdad436aa5e72f7a430440",
+        "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model_final/normalizer.json": "8bf62d8ac02195d2a43b38eb4f711b0a3a149859c668bc40ab6345515a4ff303"
+      }
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0/metrics.json": "9af4f31b135f77c6211baeaa00e336771af77f15123ff12cd361eed25013fbce",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0/model/epoch_22/model.pt": "9a5f562a942e08de3716e4cf6850db0aa7caa2c87de97fb6df57a9c5b3cba8c0",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0/model/epoch_22/normalizer.stats": "16e68f54670eee5288612e344b4d6dcb92346add0e658201532dd85338cf7bec"
+      }
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1/metrics.json": "2ee11b73f903c0f7615473cdba738d6972a5aba0b88684c655328c8212cdf453",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1/model/epoch_21/model.pt": "9585e7014f91bf014cb5beb92dd9c27fae648f9bdcdab738349db374af0d6453",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1/model/epoch_21/normalizer.stats": "ddae0e1ec70522452b56ff04504b6babc63fbc8a7399f9761055cbb34b31165c"
+      }
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2/metrics.json": "2689a4816f279a13df5504111fa5b47241da2e2151c1f871b03a41e01767849c",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2/model/epoch_25/model.pt": "763feafdd23b681a11e845fbb562f6447f8c474b32bbb35a4b1151c322b813d4",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2/model/epoch_25/normalizer.stats": "99f03b41a9b4eb88162120cdc3bfc933a77238864522ae1e148b9e252ebaf4bc"
+      }
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3/metrics.json": "6c2bbbd38a5b8f8284fa2357029c3ddeed03055aefc78b6908bc713de9b4fbbf",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3/model/epoch_9/model.pt": "8013ee04789e9ac9176f4a156b0f15d49d6e54deeca4ab36c59550717b2e3c0a",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3/model/epoch_9/normalizer.stats": "00fac4530eb12478feb4418b196067e572ab751e67253f5337b23f7ffc072a0d"
+      }
+    },
+    {
+      "tag": "fcsrl_ml5",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4/metrics.json": "474154419bafbe7b4d8b27b7f743b2391185ae2270a1ffc30692664c26e6c527",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4/model/epoch_25/model.pt": "b815ece626fc5c749ee7aaa1642ee1a1b2b1ab81007a28a06d64f7ba77c6579c",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4/model/epoch_25/normalizer.stats": "2c6f8291030fa374cf9ad2754abd31a0d699e921dba18dd87ba277609609b9c5"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 0,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0/metrics.json": "2d751f1e5ce05efb5e30e843273d5c43972c381750b6bb8af64baf67b451c3b5",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0/model/epoch_14/model.pt": "48d24655c792db8fb98385249fb4b8d58e4d891548f8ae23aa98a3436a71b9ee",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0/model/epoch_14/normalizer.stats": "97adef91ada7f7db7800bce1142d215cb586db813beb723ae8c983b51458cbce"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 1,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1/metrics.json": "5dbaf7ac70778198537cc94b84aba6cf3c62f00c0c474d262e328a2588f0774a",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1/model/epoch_12/model.pt": "5619544a56207b4d35c777b8b4a97a1cc4daea92b614b00ada021bbe2ef35a94",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1/model/epoch_12/normalizer.stats": "07dfa72f78709a1df5dd361bf79fcaef118387187f5b96bad01c2d8bf13ed241"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 2,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2/metrics.json": "1106fd872de4809574f954d41591778a907fd559ec45e8266b408c4d54493e7b",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2/model/epoch_25/model.pt": "a80ed46cb7e0cfea0518c45ed188254ca0ad1ec6717440ec49c49ac32880f70b",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2/model/epoch_25/normalizer.stats": "17998028f497ca62586755ba527c270e083155810ac98e37bb3f246ca5049b47"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 3,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3/metrics.json": "60ec07167e9e597e13c9538bdbb2b7e25c4c487605f24c6f93746303c7d3df34",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3/model/epoch_23/model.pt": "375d807726f2403981fb23483f4d8ee173a3bf063fa1f5ddf2be8d71b7312125",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3/model/epoch_23/normalizer.stats": "89a426636951d8357e448d32db5def71310c3969cc9934f2ad9c63654d6e50b8"
+      }
+    },
+    {
+      "tag": "fcsrl_ucb_ml5",
+      "seed": 4,
+      "artifacts": {
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4/metrics.json": "dc2e6c1d4a4f2042e2d3a8e5233f2db22994c64e618a9f0455fca7f58423dd1f",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4/model/epoch_22/model.pt": "79c228ea488f3222c1dc630f069180ad76877074d86637d170c039b9a5285871",
+        "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4/model/epoch_22/normalizer.stats": "ad5bd1fa886ec83b4d2d812b387494710086f4cb5046bbb73e0ed5acc3f0a281"
+      }
+    }
+  ],
+  "inputs": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/data/avedore/aved_5min.pkl": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+    "/home/jio/fcsrl_src/results/e02/surrogate/surrogate.json": "d25dbe3ea1a8e33b17f0a2d0f11a5983fe6c4a6d81a1d0db851b530386658117",
+    "/home/jio/fcsrl_src/results/e03/surrogate_gbm/surrogate_gbm.pkl": "c9f5539c1fba1d286b9a3e339d74d3f17da6fe3707e5bcbf4f69798e775ec194"
+  },
+  "source": {
+    "agents.py": "b3a9b42cc66cb9893738d1f3632f477687a6cf262e3ff84d8acc69ebef420549",
+    "env.py": "f67fd7cba9324aee5839a8ddc2f611f153f8b1dda3f0d66586b7cacd96026017",
+    "evaluate.py": "9dfaa092a95c72e9b53974a8b8d9e8636def1691021223780de8e3d59dac1e21",
+    "plot.py": "311a101c2dd7884e0d7790a65e9e4ac6a7d99a145cd039727d09ff20d7335a05",
+    "ppo_config.py": "7236f11934ee8bca42e997e086092e451ce8535a06053ec2174ca145af1c2052",
+    "ppo_lag.py": "9ea9e169149e17322199a197b53516a5b70ceb81d907f9548f69405b9f746a6c",
+    "prep.py": "24c0b3cb2934bcf39e5e334a00ac7dd18c8e302abafb5edeab751a88023dab0c",
+    "surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "surrogate_gbm.py": "321cfc0380ba0b5f3866f7412d531d4a2c2d9d4e1a2f39f60b5bd67806fdcc56",
+    "train.py": "8829c755b4ef8fcb2b9b131e15b399635fedd89e2c648dca0fbc2f3ab885d5d1"
+  }
+}

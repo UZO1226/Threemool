@@ -1,0 +1,891 @@
+{
+ "surrogate": "/home/jio/fcsrl_src/results/e03/surrogate_gbm/surrogate_gbm.pkl",
+ "checkpoint": "best",
+ "historical": {
+  "air_m3": 59810.681787979054,
+  "reward": -89.71602268196858,
+  "cost": 15.283333333333333,
+  "nh4_viol_pct": 1.1022067363530779,
+  "do_viol_pct": 4.222996515679442,
+  "days_within_limit_pct": 67.33333333333333,
+  "n_episodes": 300
+ },
+ "runs": [
+  {
+   "tag": "fcsrl",
+   "method": "fcsrl",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0",
+   "eval": {
+    "air_m3": 25036.694669920642,
+    "reward": -37.55504200488096,
+    "cost": 3.16,
+    "nh4_viol_pct": 1.0046457607433217,
+    "do_viol_pct": 0.09639953542392567,
+    "days_within_limit_pct": 93.66666666666667,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_0/model/epoch_4",
+   "train_surrogate_final": {
+    "air_m3": 32630.73753479096,
+    "reward": -48.94610630218643,
+    "cost": 14.303333333333333,
+    "nh4_viol_pct": 4.814169570267131,
+    "do_viol_pct": 0.16957026713124274,
+    "days_within_limit_pct": 85.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl",
+   "method": "fcsrl",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1",
+   "eval": {
+    "air_m3": 28021.216806162876,
+    "reward": -42.03182520924432,
+    "cost": 3.02,
+    "nh4_viol_pct": 1.0336817653890824,
+    "do_viol_pct": 0.018583042973286876,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_1/model/epoch_21",
+   "train_surrogate_final": {
+    "air_m3": 31677.97547713698,
+    "reward": -47.51696321570547,
+    "cost": 14.543333333333333,
+    "nh4_viol_pct": 4.957026713124273,
+    "do_viol_pct": 0.11033681765389083,
+    "days_within_limit_pct": 84.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl",
+   "method": "fcsrl",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2",
+   "eval": {
+    "air_m3": 29367.59554694794,
+    "reward": -44.05139332042192,
+    "cost": 2.8833333333333333,
+    "nh4_viol_pct": 0.9651567944250872,
+    "do_viol_pct": 0.039488966318234606,
+    "days_within_limit_pct": 93.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 33565.71463326329,
+    "reward": -50.348571949894925,
+    "cost": 12.693333333333333,
+    "nh4_viol_pct": 4.174216027874564,
+    "do_viol_pct": 0.24854819976771197,
+    "days_within_limit_pct": 85.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl",
+   "method": "fcsrl",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3",
+   "eval": {
+    "air_m3": 27909.540138847176,
+    "reward": -41.864310208270766,
+    "cost": 3.9566666666666666,
+    "nh4_viol_pct": 1.097560975609756,
+    "do_viol_pct": 0.28106852497096396,
+    "days_within_limit_pct": 91.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_3/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 34102.25946481426,
+    "reward": -51.1533891972214,
+    "cost": 16.21,
+    "nh4_viol_pct": 5.087108013937281,
+    "do_viol_pct": 0.5609756097560976,
+    "days_within_limit_pct": 81.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl",
+   "method": "fcsrl",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4",
+   "eval": {
+    "air_m3": 28305.692470255763,
+    "reward": -42.45853870538364,
+    "cost": 2.85,
+    "nh4_viol_pct": 0.9883855981416957,
+    "do_viol_pct": 0.004645760743321719,
+    "days_within_limit_pct": 93.66666666666667,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/fcsrl/seed_4/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 32602.643528576493,
+    "reward": -48.90396529286474,
+    "cost": 13.783333333333333,
+    "nh4_viol_pct": 4.788617886178862,
+    "do_viol_pct": 0.013937282229965159,
+    "days_within_limit_pct": 84.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3",
+   "method": "td3",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0",
+   "eval": {
+    "air_m3": 1.8543667263454859e-06,
+    "reward": -2.781550089518229e-09,
+    "cost": 215.36,
+    "nh4_viol_pct": 75.03832752613239,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_0/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 276.62,
+    "nh4_viol_pct": 96.38327526132404,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3",
+   "method": "td3",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1",
+   "eval": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 215.36,
+    "nh4_viol_pct": 75.03832752613239,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_1/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 9.934107462565105e-07,
+    "reward": -1.4901161193847657e-09,
+    "cost": 276.62,
+    "nh4_viol_pct": 96.38327526132404,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3",
+   "method": "td3",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2",
+   "eval": {
+    "air_m3": 0.13886908690134675,
+    "reward": -0.00020830363035202013,
+    "cost": 210.05,
+    "nh4_viol_pct": 73.18815331010454,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 0.15011052290598548,
+    "reward": -0.00022516578435897828,
+    "cost": 276.62,
+    "nh4_viol_pct": 96.38327526132404,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3",
+   "method": "td3",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3",
+   "eval": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 215.36,
+    "nh4_viol_pct": 75.03832752613239,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_3/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 276.62,
+    "nh4_viol_pct": 96.38327526132404,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3",
+   "method": "td3",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4",
+   "eval": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 215.36,
+    "nh4_viol_pct": 75.03832752613239,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3/seed_4/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 0.0,
+    "reward": 0.0,
+    "cost": 276.62,
+    "nh4_viol_pct": 96.38327526132404,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 0.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3lag",
+   "method": "td3lag",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0",
+   "eval": {
+    "air_m3": 24296.78981781316,
+    "reward": -36.445184726719745,
+    "cost": 3.5366666666666666,
+    "nh4_viol_pct": 1.2322880371660858,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 93.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_0/model/epoch_4",
+   "train_surrogate_final": {
+    "air_m3": 31303.866898632707,
+    "reward": -46.955800347949065,
+    "cost": 14.23,
+    "nh4_viol_pct": 4.852497096399536,
+    "do_viol_pct": 0.10569105691056911,
+    "days_within_limit_pct": 83.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3lag",
+   "method": "td3lag",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1",
+   "eval": {
+    "air_m3": 28489.649042076097,
+    "reward": -42.73447356311415,
+    "cost": 2.9033333333333333,
+    "nh4_viol_pct": 0.9175377468060395,
+    "do_viol_pct": 0.0940766550522648,
+    "days_within_limit_pct": 94.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_1/model/epoch_21",
+   "train_surrogate_final": {
+    "air_m3": 30785.98539108634,
+    "reward": -46.178978086629506,
+    "cost": 14.49,
+    "nh4_viol_pct": 4.9279907084785135,
+    "do_viol_pct": 0.12078977932636467,
+    "days_within_limit_pct": 84.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3lag",
+   "method": "td3lag",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2",
+   "eval": {
+    "air_m3": 26042.227901850933,
+    "reward": -39.063341852776404,
+    "cost": 3.3466666666666667,
+    "nh4_viol_pct": 1.1475029036004645,
+    "do_viol_pct": 0.018583042973286876,
+    "days_within_limit_pct": 93.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 31047.756948770744,
+    "reward": -46.57163542315611,
+    "cost": 15.236666666666666,
+    "nh4_viol_pct": 5.176538908246226,
+    "do_viol_pct": 0.132404181184669,
+    "days_within_limit_pct": 83.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3lag",
+   "method": "td3lag",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3",
+   "eval": {
+    "air_m3": 26833.645388022673,
+    "reward": -40.25046808203401,
+    "cost": 3.06,
+    "nh4_viol_pct": 1.0069686411149825,
+    "do_viol_pct": 0.059233449477351915,
+    "days_within_limit_pct": 93.66666666666667,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_3/model/epoch_19",
+   "train_surrogate_final": {
+    "air_m3": 32878.99622852662,
+    "reward": -49.318494342789926,
+    "cost": 12.926666666666666,
+    "nh4_viol_pct": 4.346109175377468,
+    "do_viol_pct": 0.15795586527293845,
+    "days_within_limit_pct": 85.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "td3lag",
+   "method": "td3lag",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4",
+   "eval": {
+    "air_m3": 27829.06281123342,
+    "reward": -41.74359421685013,
+    "cost": 3.493333333333333,
+    "nh4_viol_pct": 1.1986062717770036,
+    "do_viol_pct": 0.018583042973286876,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e02/runs/td3lag/seed_4/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 32640.821274997656,
+    "reward": -48.96123191249649,
+    "cost": 17.35,
+    "nh4_viol_pct": 5.965156794425087,
+    "do_viol_pct": 0.08013937282229966,
+    "days_within_limit_pct": 79.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ml5",
+   "method": "fcsrl",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0",
+   "eval": {
+    "air_m3": 24179.439109834173,
+    "reward": -36.26915866475125,
+    "cost": 3.1366666666666667,
+    "nh4_viol_pct": 1.0522648083623694,
+    "do_viol_pct": 0.04065040650406504,
+    "days_within_limit_pct": 93.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_0/model/epoch_22",
+   "train_surrogate_final": {
+    "air_m3": 31966.450762160555,
+    "reward": -47.94967614324084,
+    "cost": 17.023333333333333,
+    "nh4_viol_pct": 5.714285714285714,
+    "do_viol_pct": 0.21718931475029044,
+    "days_within_limit_pct": 81.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ml5",
+   "method": "fcsrl",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1",
+   "eval": {
+    "air_m3": 22416.822395646337,
+    "reward": -33.6252335934695,
+    "cost": 3.6066666666666665,
+    "nh4_viol_pct": 1.2404181184668988,
+    "do_viol_pct": 0.016260162601626018,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_1/model/epoch_21",
+   "train_surrogate_final": {
+    "air_m3": 32267.230574642468,
+    "reward": -48.4008458619637,
+    "cost": 13.003333333333334,
+    "nh4_viol_pct": 4.419279907084785,
+    "do_viol_pct": 0.11149825783972127,
+    "days_within_limit_pct": 85.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ml5",
+   "method": "fcsrl",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2",
+   "eval": {
+    "air_m3": 23332.253035892594,
+    "reward": -34.998379553838895,
+    "cost": 3.17,
+    "nh4_viol_pct": 1.070847851335656,
+    "do_viol_pct": 0.03368176538908247,
+    "days_within_limit_pct": 93.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 30397.081513873512,
+    "reward": -45.595622270810274,
+    "cost": 18.053333333333335,
+    "nh4_viol_pct": 6.13472706155633,
+    "do_viol_pct": 0.15563298490127758,
+    "days_within_limit_pct": 81.33333333333333,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ml5",
+   "method": "fcsrl",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3",
+   "eval": {
+    "air_m3": 26702.361546583932,
+    "reward": -40.0535423198759,
+    "cost": 2.77,
+    "nh4_viol_pct": 0.9256678281068526,
+    "do_viol_pct": 0.03948896631823461,
+    "days_within_limit_pct": 94.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_3/model/epoch_9",
+   "train_surrogate_final": {
+    "air_m3": 32601.95264660346,
+    "reward": -48.90292896990519,
+    "cost": 13.72,
+    "nh4_viol_pct": 4.476190476190475,
+    "do_viol_pct": 0.30429732868757264,
+    "days_within_limit_pct": 83.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ml5",
+   "method": "fcsrl",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4",
+   "eval": {
+    "air_m3": 25956.676528022737,
+    "reward": -38.9350147920341,
+    "cost": 2.91,
+    "nh4_viol_pct": 1.0092915214866434,
+    "do_viol_pct": 0.004645760743321719,
+    "days_within_limit_pct": 94.33333333333334,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ml5/seed_4/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 31291.95731743498,
+    "reward": -46.93793597615247,
+    "cost": 15.026666666666667,
+    "nh4_viol_pct": 5.2137049941928,
+    "do_viol_pct": 0.022067363530778164,
+    "days_within_limit_pct": 84.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb",
+   "method": "fcsrl_ucb",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0",
+   "eval": {
+    "air_m3": 24773.29894617769,
+    "reward": -37.159948419266534,
+    "cost": 4.096666666666667,
+    "nh4_viol_pct": 1.3519163763066202,
+    "do_viol_pct": 0.07549361207897794,
+    "days_within_limit_pct": 91.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_0/model/epoch_15",
+   "train_surrogate_final": {
+    "air_m3": 30950.331891052356,
+    "reward": -46.42549783657853,
+    "cost": 15.423333333333334,
+    "nh4_viol_pct": 5.339140534262486,
+    "do_viol_pct": 0.0348432055749129,
+    "days_within_limit_pct": 83.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb",
+   "method": "fcsrl_ucb",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1",
+   "eval": {
+    "air_m3": 24536.38207518935,
+    "reward": -36.804573112784034,
+    "cost": 3.13,
+    "nh4_viol_pct": 1.0104529616724738,
+    "do_viol_pct": 0.08013937282229966,
+    "days_within_limit_pct": 93.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_1/model/epoch_16",
+   "train_surrogate_final": {
+    "air_m3": 30580.248131709162,
+    "reward": -45.87037219756375,
+    "cost": 14.136666666666667,
+    "nh4_viol_pct": 4.535423925667828,
+    "do_viol_pct": 0.3902439024390244,
+    "days_within_limit_pct": 85.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb",
+   "method": "fcsrl_ucb",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2",
+   "eval": {
+    "air_m3": 25053.647304000042,
+    "reward": -37.58047095600006,
+    "cost": 4.07,
+    "nh4_viol_pct": 1.2891986062717773,
+    "do_viol_pct": 0.1289198606271777,
+    "days_within_limit_pct": 91.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 31691.171653874528,
+    "reward": -47.536757480811794,
+    "cost": 20.406666666666666,
+    "nh4_viol_pct": 6.807200929152148,
+    "do_viol_pct": 0.30313588850174217,
+    "days_within_limit_pct": 77.33333333333333,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb",
+   "method": "fcsrl_ucb",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3",
+   "eval": {
+    "air_m3": 25106.503889196516,
+    "reward": -37.65975583379477,
+    "cost": 3.1233333333333335,
+    "nh4_viol_pct": 1.0174216027874565,
+    "do_viol_pct": 0.07084785133565621,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_3/model/epoch_19",
+   "train_surrogate_final": {
+    "air_m3": 32554.477926950913,
+    "reward": -48.83171689042637,
+    "cost": 20.316666666666666,
+    "nh4_viol_pct": 6.761904761904762,
+    "do_viol_pct": 0.31707317073170727,
+    "days_within_limit_pct": 75.33333333333333,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb",
+   "method": "fcsrl_ucb",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4",
+   "eval": {
+    "air_m3": 25892.8337472111,
+    "reward": -38.83925062081665,
+    "cost": 3.1533333333333333,
+    "nh4_viol_pct": 1.0499419279907085,
+    "do_viol_pct": 0.048780487804878044,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb/seed_4/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 31290.693081154383,
+    "reward": -46.93603962173157,
+    "cost": 13.636666666666667,
+    "nh4_viol_pct": 4.5876887340301975,
+    "do_viol_pct": 0.1637630662020906,
+    "days_within_limit_pct": 84.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb_ml5",
+   "method": "fcsrl_ucb",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0",
+   "eval": {
+    "air_m3": 23709.71954993548,
+    "reward": -35.56457932490322,
+    "cost": 3.4133333333333336,
+    "nh4_viol_pct": 1.169570267131243,
+    "do_viol_pct": 0.019744483159117306,
+    "days_within_limit_pct": 92.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_0/model/epoch_14",
+   "train_surrogate_final": {
+    "air_m3": 30227.930533519375,
+    "reward": -45.34189580027907,
+    "cost": 17.913333333333334,
+    "nh4_viol_pct": 6.2125435540069684,
+    "do_viol_pct": 0.029036004645760737,
+    "days_within_limit_pct": 80.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb_ml5",
+   "method": "fcsrl_ucb",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1",
+   "eval": {
+    "air_m3": 23953.331698711005,
+    "reward": -35.92999754806651,
+    "cost": 3.5433333333333334,
+    "nh4_viol_pct": 1.1416957026713126,
+    "do_viol_pct": 0.09291521486643438,
+    "days_within_limit_pct": 92.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_1/model/epoch_12",
+   "train_surrogate_final": {
+    "air_m3": 31750.149803013293,
+    "reward": -47.62522470451993,
+    "cost": 13.446666666666667,
+    "nh4_viol_pct": 4.672473867595818,
+    "do_viol_pct": 0.012775842044134728,
+    "days_within_limit_pct": 85.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb_ml5",
+   "method": "fcsrl_ucb",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2",
+   "eval": {
+    "air_m3": 25156.649403151467,
+    "reward": -37.7349741047272,
+    "cost": 2.9766666666666666,
+    "nh4_viol_pct": 1.013937282229965,
+    "do_viol_pct": 0.023228803716608598,
+    "days_within_limit_pct": 93.33333333333333,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_2/model/epoch_25",
+   "train_surrogate_final": {
+    "air_m3": 31393.798988541825,
+    "reward": -47.09069848281273,
+    "cost": 15.07,
+    "nh4_viol_pct": 5.207897793263646,
+    "do_viol_pct": 0.0429732868757259,
+    "days_within_limit_pct": 83.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb_ml5",
+   "method": "fcsrl_ucb",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3",
+   "eval": {
+    "air_m3": 26155.18027942767,
+    "reward": -39.2327704191415,
+    "cost": 3.466666666666667,
+    "nh4_viol_pct": 1.0638792102206736,
+    "do_viol_pct": 0.14401858304297327,
+    "days_within_limit_pct": 94.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_3/model/epoch_23",
+   "train_surrogate_final": {
+    "air_m3": 30467.840452663986,
+    "reward": -45.701760678995974,
+    "cost": 17.376666666666665,
+    "nh4_viol_pct": 5.452961672473868,
+    "do_viol_pct": 0.6016260162601625,
+    "days_within_limit_pct": 81.33333333333333,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "fcsrl_ucb_ml5",
+   "method": "fcsrl_ucb",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4",
+   "eval": {
+    "air_m3": 22082.898376386016,
+    "reward": -33.124347564579026,
+    "cost": 3.1133333333333333,
+    "nh4_viol_pct": 1.0847851335656213,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 92.66666666666666,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/fcsrl_ucb_ml5/seed_4/model/epoch_22",
+   "train_surrogate_final": {
+    "air_m3": 30212.396137777963,
+    "reward": -45.318594206666944,
+    "cost": 15.67,
+    "nh4_viol_pct": 5.304297328687573,
+    "do_viol_pct": 0.15563298490127758,
+    "days_within_limit_pct": 82.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "ppolag",
+   "method": "ppolag",
+   "seed": 0,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0",
+   "eval": {
+    "air_m3": 25101.647446159688,
+    "reward": -37.65247116923953,
+    "cost": 2.8966666666666665,
+    "nh4_viol_pct": 1.005807200929152,
+    "do_viol_pct": 0.0034843205574912896,
+    "days_within_limit_pct": 94.66666666666667,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_0/model/epoch_24",
+   "train_surrogate_final": {
+    "air_m3": 29055.742896414467,
+    "reward": -43.5836143446217,
+    "cost": 14.063333333333333,
+    "nh4_viol_pct": 4.9001161440185825,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 84.33333333333334,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "ppolag",
+   "method": "ppolag",
+   "seed": 1,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1",
+   "eval": {
+    "air_m3": 26300.512168705463,
+    "reward": -39.45076825305819,
+    "cost": 2.8,
+    "nh4_viol_pct": 0.975609756097561,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 95.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_1/model/epoch_14",
+   "train_surrogate_final": {
+    "air_m3": 29824.96417253382,
+    "reward": -44.73744625880072,
+    "cost": 13.24,
+    "nh4_viol_pct": 4.613240418118466,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 85.66666666666667,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "ppolag",
+   "method": "ppolag",
+   "seed": 2,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2",
+   "eval": {
+    "air_m3": 24552.39100339512,
+    "reward": -36.82858650509268,
+    "cost": 3.0166666666666666,
+    "nh4_viol_pct": 1.051103368176539,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 95.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_2/model/epoch_17",
+   "train_surrogate_final": {
+    "air_m3": 29929.98177921192,
+    "reward": -44.894972668817886,
+    "cost": 14.28,
+    "nh4_viol_pct": 4.975609756097561,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 84.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "ppolag",
+   "method": "ppolag",
+   "seed": 3,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3",
+   "eval": {
+    "air_m3": 26554.90439914167,
+    "reward": -39.8323565987125,
+    "cost": 2.7533333333333334,
+    "nh4_viol_pct": 0.959349593495935,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 95.0,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_3/model/epoch_20",
+   "train_surrogate_final": {
+    "air_m3": 30032.045253204804,
+    "reward": -45.048067879807206,
+    "cost": 12.63,
+    "nh4_viol_pct": 4.400696864111499,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 86.0,
+    "n_episodes": 300
+   }
+  },
+  {
+   "tag": "ppolag",
+   "method": "ppolag",
+   "seed": 4,
+   "run_dir": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4",
+   "eval": {
+    "air_m3": 26446.779306257766,
+    "reward": -39.67016895938664,
+    "cost": 2.763333333333333,
+    "nh4_viol_pct": 0.959349593495935,
+    "do_viol_pct": 0.0034843205574912896,
+    "days_within_limit_pct": 95.33333333333334,
+    "n_episodes": 300
+   },
+   "checkpoint_path": "/home/jio/fcsrl_src/results/e03/runs/ppolag/seed_4/model/epoch_21",
+   "train_surrogate_final": {
+    "air_m3": 29735.85738883664,
+    "reward": -44.60378608325496,
+    "cost": 14.07,
+    "nh4_viol_pct": 4.902439024390244,
+    "do_viol_pct": 0.0,
+    "days_within_limit_pct": 84.33333333333334,
+    "n_episodes": 300
+   }
+  }
+ ],
+ "missing_checkpoints": []
+}

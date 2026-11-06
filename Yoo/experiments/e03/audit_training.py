@@ -69,10 +69,10 @@ def main():
             axs[0, j].plot(x, [v['lambda'] for v in r['history']], alpha=.6, lw=1, label=f"seed {r['seed']}")
             axs[1, j].plot(x, [v['test_cost'] for v in r['history']], alpha=.6, lw=1)
         axs[0, j].set_title(tag, fontsize=9)
-        axs[0, j].set_ylim(bottom=0)
-        axs[1, j].set_ylim(bottom=0)
         axs[1, j].axhline(15, color='black', ls='--', lw=.8)
         axs[1, j].set_xlabel('Validation round')
+    for row in axs:
+        row[0].set_ylim(bottom=0)
     axs[0, 0].set_ylabel('PID multiplier')
     axs[0, 0].legend(fontsize=7)
     axs[1, 0].set_ylabel('Validation cost (10 episodes)')

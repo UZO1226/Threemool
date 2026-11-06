@@ -120,13 +120,13 @@ def main():
     fig, axs = plt.subplots(1, 2, figsize=(10, 3.8))
     for ax, d, name in ((axs[0], mlp, "Training surrogate (MLP)"), (axs[1], gbm, "Evaluation-only surrogate (GBM)")):
         h, by = d["historical"], group(d)
-        ax.scatter(h["air_m3"] / 1000, h["cost"], marker="*", s=160, c="#555555", label="Plant operation", zorder=3)
+        ax.scatter(h["air_m3"] / 1000, h["cost"], marker="*", s=160, c="#555555", label="Recorded air replay", zorder=3)
         for t in [x for x in ORDER if x in by and x != "td3"]:
             ax.scatter([r["air_m3"] / 1000 for r in by[t]], [r["cost"] for r in by[t]], c=COLORS[t], label=EN[t],
                        alpha=0.8, s=22)
         ax.axhline(15, ls="--", c="k", lw=0.8)
         ax.set_xlabel("Air volume (10$^3$ Nm$^3$/day)")
-        ax.set_ylabel("Cost (violation steps/day)")
+        ax.set_ylabel("Daily violation cost")
         ax.set_title(name, fontsize=9)
     axs[0].legend(fontsize=7)
     fig.tight_layout()
