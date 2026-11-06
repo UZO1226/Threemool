@@ -8,7 +8,7 @@ e10 입력 진단에서 학습 263일의 신호 유효 비율은 99.996%, 내부
 
 ## 사전에 고정한 별도 대조
 
-이 실험은 이력 시험 결과를 본 뒤 정한 탐색적 후속이다. 내부 holdout을 재사용한다는 사실을 명시하며 새 독립 검증이라 주장하지 않는다. 바깥 val과 test는 사용하지 않는다. FCSRL + PPO, 기존 환경 모델, 보상과 비용 정의는 바꾸지 않는다. 대리 환경 입력의 타당성 점검이지 새로운 RL 확장이 아니다.
+이 실험은 이력 시험 결과를 본 뒤 정한 탐색적 후속이다. 내부 holdout을 재사용한다는 사실을 명시하며 새 독립 검증이라 주장하지 않는다. 학습과 내부 판정에는 바깥 val과 test를 사용하지 않는다. FCSRL + PPO, 기존 환경 모델, 보상과 비용 정의는 바꾸지 않는다. 대리 환경 입력의 타당성 점검이지 새로운 RL 확장이 아니다.
 
 - e10과 같은 학습 263일, 제외 1일, 내부 holdout 66일, seed 0과 1을 쓴다. 새 모델을 초기화해 두 군 모두 60 epochs 학습한다. 기존 모델은 가져오지 않는다.
 - `without_routing`: 추가 입력 8개를 모두 0으로 둔다. `with_routing`: inlet 0, 1, 2와 outlet 0, 1, 2의 비율 및 두 신호의 관측 여부를 넣는다. 입력 비율은 각 5분 구간의 품질 0인 원자료만 집계한다. 미래 보간 없이 결측은 값 0과 관측 여부 0으로 표현한다.
@@ -32,3 +32,16 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 데이터 출처와 기존 전처리는 [e02](../e02/README.md), 입력 누락 근거는 [e10](../e10/README.md)을 따른다. 모델과 예측 배열은 서버 결과 경로에 보관한다. 팀 공식 비교는 아직 합의하지 않은 개인 탐색이다.
+
+## 고정 모델의 외부 val 확인
+
+내부 기준을 통과하여 저장한 모델 4개를 바꾸지 않고 기존 val 43일에서 한 번 평가한다. 새 학습이나 설정 탐색은 하지 않는다. 275전이, 1 및 12 및 275스텝 재시작과 같은 지표 및 진행 기준을 사용한다. 외부 결과를 본 뒤 모델을 재선택하지 않는다. 기존 연구에서 이 val을 관찰한 이력이 있으므로 완전히 독립적인 일반화 근거라고 주장하지 않는다. test는 사용하지 않는다.
+
+```bash
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+ /home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e11/validate.py \
+ --raw /home/jio/사물/Yoo/data/avedore/aved_raw.csv \
+ --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
+ --trial /home/jio/fcsrl_src/results/e11/routing_trial \
+ --out /home/jio/fcsrl_src/results/e11/outer_val.json
+```

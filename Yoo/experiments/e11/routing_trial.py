@@ -16,11 +16,11 @@ from history_trial import Model, batches, arrays, pack, event_metrics, write, CO
 from audit_inputs import COLUMNS
 
 
-def routing_frame(path):
+def routing_frame(path, end='2023-12-31'):
     columns=[COLUMNS[k] for k in ('inlet','outlet')]
     raw=pd.read_csv(path,usecols=['time']+[c+s for c in columns for s in (' value',' quality')])
     raw.index=pd.to_datetime(raw.pop('time'),utc=True).dt.tz_convert('Europe/Copenhagen')
-    raw=raw.loc['2022-09-15':'2023-12-31']
+    raw=raw.loc['2022-09-15':end]
     features={}
     for name,col in zip(('inlet','outlet'),columns):
         value=raw[col+' value'].where(raw[col+' quality'].eq(0))
@@ -50,13 +50,13 @@ def replay(model,x,aux,mode,reset):
     return np.stack(result,1)
 
 
-def finalize(report):
+def finalize(report, split='inner_holdout'):
     for seed in CONFIG['seeds']:
         pair=[r for r in report['training'] if r['seed']==seed]
         for k in ('initial_parameter_sha256','batch_sha256','parameter_count'):assert pair[0][k]==pair[1][k]
     checks=[]
     for seed in CONFIG['seeds']:
-        def row(m,h):return next(r for r in report['evaluation'] if r['mode']==m and r['seed']==seed and r['split']=='inner_holdout' and r['reset_steps']==h)
+        def row(m,h):return next(r for r in report['evaluation'] if r['mode']==m and r['seed']==seed and r['split']==split and r['reset_steps']==h)
         c,h=row('without_routing',275),row('with_routing',275)
         c1,h1=row('without_routing',1),row('with_routing',1)
         checks.append({'seed':seed,'cost_mae_improved':h['cost']['daily_mae']<c['cost']['daily_mae'],
@@ -64,7 +64,7 @@ def finalize(report):
             'longest_run_mae_not_worse':h['nh4']['longest_observed_run_mae_minutes']<=c['nh4']['longest_observed_run_mae_minutes'],
             'do_mae_within_5pct':h['do']['mae']<=c['do']['mae']*1.05,
             'one_step_nh4_mae_within_5pct':h1['nh4']['mae']<=c1['nh4']['mae']*1.05})
-    means={mode:np.mean([r['cost']['daily_mae'] for r in report['evaluation'] if r['split']=='inner_holdout'
+    means={mode:np.mean([r['cost']['daily_mae'] for r in report['evaluation'] if r['split']==split
                         and r['reset_steps']==275 and r['mode']==mode]) for mode in ('without_routing','with_routing')}
     report['gate']={'per_seed':checks,'mean_cost_mae_improvement_fraction':1-means['with_routing']/means['without_routing']}
     report['gate']['passed']=bool(all(v for r in checks for k,v in r.items() if k!='seed') and report['gate']['mean_cost_mae_improvement_fraction']>=.05)
