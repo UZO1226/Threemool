@@ -1,5 +1,8 @@
 """BSM1의 원본 공정식을 호출하는 별도 탐색 환경. 기존 Avedore 환경은 유지한다."""
 from pathlib import Path
+import io
+import os
+import zipfile
 
 import bsm2_python
 from bsm2_python import BSM1OL
@@ -30,8 +33,20 @@ def restore(model, state):
 
 def weather_data(weather):
     if weather not in ('dry', 'rain'):
-        raise ValueError('Only packaged dry and rain scenarios are supported')
-    data = np.loadtxt(PACKAGE / f'data/{weather}influent.csv', delimiter=',')
+        raise ValueError('Only dry and rain preflight scenarios are supported')
+    archive = Path(os.environ['BSM1_ARCHIVE'])
+    with zipfile.ZipFile(archive) as z:
+        raw = np.loadtxt(io.BytesIO(z.read(f'BSM1/influent_files/{weather}influent.ascii')))
+    if raw.shape != (1344, 10) or not np.isfinite(raw).all():
+        raise ValueError('Unexpected official BSM1 influent schema')
+    # IWA 배포본 convert.m의 열 배치. 온도 15 C와 비활성 dummy 5개를 추가한다.
+    data = np.zeros((len(raw), 22))
+    data[:, [0, 1, 2, 3, 4, 5, 10, 11, 12, 15]] = raw[:, [0, 6, 1, 4, 3, 2, 5, 7, 8, 9]]
+    data[:, 13] = 7
+    data[:, 14] = .75 * raw[:, [2, 3, 4]].sum(axis=1)
+    data[:, 16] = 15
+    if not (np.diff(data[:, 0]) > 0).all() or data[:, 15].min() < 1000:
+        raise ValueError('Invalid timestamps or influent flow units')
     # 마지막 관측은 13.98958일이다. 마지막 15분을 영차 유지하며 14일을 완성한다.
     last = data[-1].copy()
     last[0] = 14.1

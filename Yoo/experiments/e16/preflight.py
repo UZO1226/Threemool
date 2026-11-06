@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import importlib.metadata
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -165,6 +166,7 @@ def main():
     warnings.filterwarnings('error', category=ODEintWarning)
     start = time.perf_counter()
     summary = {'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+        'data_archive_sha256': sha(os.environ['BSM1_ARCHIVE']),
         'packages': {x: importlib.metadata.version(x) for x in
                      ('bsm2-python', 'numba', 'llvmlite', 'control', 'numpy', 'scipy', 'torch', 'gymnasium')},
         'source_hashes': {str(p.relative_to(PACKAGE)): sha(p) for p in
