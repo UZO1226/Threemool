@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "same_seed_repeat_all_model_tensors_exact": true,
+    "same_seed_repeat_validation_exact": true,
+    "all_three_load_agent_and_full_validation_exact": true,
+    "all_three_scalar_batch_cost_exact": true,
+    "common_checkpoint_selection_feasible_and_infeasible": true,
+    "existing_ppo_update_bitwise_equal_to_main": true
+  },
+  "smoke_runs": [
+    {
+      "method": "ppolag",
+      "steps": 9184,
+      "val": {
+        "air_m3": 57730.47100602425,
+        "reward": -86.59570650903638,
+        "cost": 15.395348837209303,
+        "nh4_viol_pct": 5.364233044323798,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "scalar_batch_max_air_error": 0.00023096800578059629
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "steps": 9184,
+      "val": {
+        "air_m3": 52330.552431484764,
+        "reward": -78.49582864722713,
+        "cost": 13.0,
+        "nh4_viol_pct": 4.529616724738677,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215
+      },
+      "scalar_batch_max_air_error": 0.00048180420708376914
+    },
+    {
+      "method": "ppolag_frozen",
+      "steps": 9184,
+      "val": {
+        "air_m3": 52534.98574164949,
+        "reward": -78.80247861247423,
+        "cost": 12.972093023255814,
+        "nh4_viol_pct": 4.519893039461956,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215
+      },
+      "scalar_batch_max_air_error": 0.0005538264740607701
+    }
+  ],
+  "python": "3.10.19 (main, Feb 12 2026, 00:42:18) [Clang 21.1.4 ]",
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "numpy": "1.23.5",
+    "gymnasium": "0.28.1",
+    "pandas": "2.3.3"
+  },
+  "runtime_artifacts": "/home/jio/fcsrl_src/results/e05/smoke",
+  "unit_tests": {
+    "passed": 10,
+    "command": "python -m unittest discover -s Yoo/code/wwtp/tests -v"
+  },
+  "note": "Smoke runs check implementation only; no performance conclusion."
+}

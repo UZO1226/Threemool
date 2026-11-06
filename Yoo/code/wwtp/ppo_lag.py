@@ -72,13 +72,26 @@ class PPOLagAgent:
         return torch.as_tensor(x, dtype=torch.float32, device=self.dev)
 
     def dist(self, o):
-        return torch.distributions.Normal(self.pi(o), self.log_std.exp())
+        return torch.distributions.Normal(self.pi(self.policy_input(o)), self.log_std.exp())
+
+    def policy_input(self, o):
+        return o
+
+    def values(self, o):
+        features = self.policy_input(o)
+        return self.vr(features)[:, 0], self.vc(features)[:, 0]
+
+    def update_aux(self, buf, idx):
+        return {}
+
+    def finish_update(self):
+        pass
 
     @torch.no_grad()
     def act_det(self, obs):
         """평가용 결정적 행동: 정규화한 관측 -> 평균 행동 (N, a_dim), [-1, 1]"""
         o = self._t(self.obs_normalizer(np.atleast_2d(obs)))
-        return self.pi(o).clamp(-1, 1).cpu().numpy()
+        return self.pi(self.policy_input(o)).clamp(-1, 1).cpu().numpy()
 
     def train(self, mode=True):
         pass
@@ -110,12 +123,14 @@ class PPOLagAgent:
         adv = self._t((ar - lam * ac) / (1 + lam))
         ret_r, ret_c = self._t(buf["ret_r"]), self._t(buf["ret_c"])
         n = len(o)
-        info = {}
+        info, aux = {}, {}
         for ep in range(epochs):
             perm = torch.randperm(n, device=self.dev)
             kls = []
             for i in range(0, n, mb):
                 idx = perm[i:i + mb]
+                for key, value in self.update_aux(buf, idx).items():
+                    aux.setdefault(key, []).append(value)
                 d = self.dist(o[idx])
                 logp = d.log_prob(a[idx]).sum(-1)
                 ratio = torch.exp((logp - logp_old[idx]).clamp(-20, 20))
@@ -124,8 +139,8 @@ class PPOLagAgent:
                 loss_pi.backward()
                 nn.utils.clip_grad_norm_(list(self.pi.parameters()) + [self.log_std], c.max_grad_norm)
                 self.opt_pi.step()
-                loss_v = ((self.vr(o[idx])[:, 0] - ret_r[idx]) ** 2).mean() + \
-                         ((self.vc(o[idx])[:, 0] - ret_c[idx]) ** 2).mean()
+                vr, vc = self.values(o[idx])
+                loss_v = ((vr - ret_r[idx]) ** 2).mean() + ((vc - ret_c[idx]) ** 2).mean()
                 self.opt_v.zero_grad()
                 loss_v.backward()
                 nn.utils.clip_grad_norm_(list(self.vr.parameters()) + list(self.vc.parameters()), c.max_grad_norm)
@@ -133,6 +148,8 @@ class PPOLagAgent:
                 kls.append((logp_old[idx] - logp).mean().item())
             if np.mean(kls) > target_kl:
                 break
+        info.update(self.finish_update() or {})
+        info.update({key: float(np.mean(values)) for key, values in aux.items()})
         info.update(kl=float(np.mean(kls)), pi_epochs=ep + 1, std=float(self.log_std.detach().exp().mean()))
         return info
 
