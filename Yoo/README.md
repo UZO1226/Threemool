@@ -23,4 +23,4 @@
 | e01 | FCSRL 원본 재현 (Safety Gymnasium 6개 과제 x seed 5개) | 완료. PointGoal2 를 뺀 5개 과제가 논문 편차 안 |
 | e02 | FCSRL 을 Avedøre 폭기조 데이터 기반 폭기 제어에 적용, TD3 Lag 와 TD3 와 실제 운전 비교 | 완료. 대리 모델 위에서 공기량 약 45% 절감, 비용 실제 운전 22.9 에서 15 안팎. FCSRL 과 TD3 Lag 차이는 seed 편차 안. `experiments/e02/README.md` |
 
-다음 할 일: `Compare/PROTOCOL.md` 합의 (e02 의 정의를 후보로 제안), 합의 뒤 `RESULT.md` 작성
+다음 할 일: e03 확장 기법 실험 (계획은 `RESULT.md` 의 "확장 계획")

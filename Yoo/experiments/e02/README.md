@@ -2,8 +2,6 @@
 
 수행계획서의 "기법 적용과 확장" 단계다. Yoo/e01 에서 재현한 FCSRL + TD3 Lag 를 실제 하수처리장 폭기조 데이터로 만든 Safe RL 환경에 적용하고, 표현 학습을 뺀 TD3 Lag, 제약이 없는 TD3, 실제 운전 기록과 비교한다.
 
-`Compare/PROTOCOL.md` 는 아직 팀 합의 전이다. 아래 데이터, 환경, 지표 정의는 유지오의 제안이며 합의 결과에 따라 바뀔 수 있다 (마지막 절 참고).
-
 ## 가설과 기준 대비 바꾼 요소
 
 - 가설: 실현 가능성(feasibility) 표현을 학습하는 FCSRL 은 같은 신경망의 TD3 Lag 보다 같은 에너지에서 NH4 와 DO 제약을 더 잘 지킨다. 두 방법 모두 실제 운전보다 공기량을 줄이면서 제약 위반을 늘리지 않는다
@@ -165,7 +163,3 @@ $PY ../../code/wwtp/plot.py --runs $R/runs --surrogate $R/surrogate/surrogate.js
 ```
 
 이 폴더의 `surrogate.json` 은 실험에 쓴 대리 모델 가중치다. GPU 학습은 실행마다 조금씩 달라지므로, 같은 결과를 보려면 다시 학습하지 말고 이 파일을 쓴다.
-
-## PROTOCOL 제안
-
-`team/protocol` PR 에서 `Compare/PROTOCOL.md` 를 채울 때 위의 데이터, 분할, 환경, 지표 정의를 v1 후보로 제안한다. 팀이 다른 데이터나 제약 값을 고르면 이 실험을 그 조건으로 다시 돌린다.

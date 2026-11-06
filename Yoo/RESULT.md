@@ -7,7 +7,7 @@ Compare/PROTOCOL.md 의 조건으로 측정한 값만 적는다. 조건이 다�
 | 대표 실험 | Yoo/e02 (기법 적용). 확장 기법은 Yoo/e03 예정 |
 | 실행 코드 커밋 | 428a5b4 (`yoo/e02-wwtp-fcsrl`, PR #4) |
 | 확장 기법 요약 | 아직 없음. 후보와 계획은 아래 "확장 계획" |
-| PROTOCOL 버전 | 합의 전. 아래 값은 Yoo 제안 조건(Yoo/e02 README)으로 쟀다. 합의 조건이 다르면 다시 잰다 |
+| PROTOCOL 버전 | 해당 없음 (팀 PROTOCOL 합의 없이 진행). 측정 조건은 Yoo/e02 README |
 
 | Method | Energy | Violation rate (%) | Reward | Seeds |
 | --- | --- | --- | --- | --- |
