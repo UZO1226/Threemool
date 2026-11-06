@@ -1,0 +1,2100 @@
+{
+  "started_at": "2026-11-06T08:31:09.924429+00:00",
+  "commit": "c89636fa01c5bcce75742a4c7dce874ef908fa31",
+  "source_sha256": "9efab5f7967517a4362c35bf1e0034a5a3150f055ec00439acafb16cbe5e3586",
+  "inputs": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/data/avedore/aved_5min.pkl": "3a01d5995e49d3b4f3fd42240a4579d1be991629ef70243435422f797d789315",
+    "/home/jio/fcsrl_src/results/e02/surrogate/surrogate.json": "d25dbe3ea1a8e33b17f0a2d0f11a5983fe6c4a6d81a1d0db851b530386658117"
+  },
+  "training_performed": false,
+  "test_used": false,
+  "profiles": {
+    "ppolag_s0_train": {
+      "metrics": {
+        "air_m3": 39970.955713954616,
+        "reward": -59.95643357093192,
+        "cost": 8.014545454545454,
+        "nh4_viol_pct": 2.7800654629922925,
+        "do_viol_pct": 0.012459085629817339,
+        "days_within_limit_pct": 83.21212121212122,
+        "n_episodes": 1650,
+        "cost_var": 11.0,
+        "cost_cvar": 34.875757575757575,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 5.3197132616487455,
+      "cost_initial_high": 22.75686274509804,
+      "nh4_cost": 7.9787878787878785,
+      "do_cost": 0.03575757575757576,
+      "aerobic_low_do_fraction": 0.33585572574208505,
+      "unsafe_transition_fraction": 0.027800654629922924,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.9940751993923281,
+      "feasibility_immediate_dominates_all_fraction": 0.9383803188681238,
+      "finite_day_discounted_cost_start": 4.64662254861433,
+      "critic_cost_start": 4.3202433586120605,
+      "critic_minus_finite_day_return_start": -0.3263790271551549,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.986025333404541,
+        "median": 1.3808554410934448,
+        "p95": 5.1482529640197745,
+        "max": 31.49350357055664
+      },
+      "start_discounted_terminal_contribution": 0.11099046468734741,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 41194.7805598698,
+          "reward": -61.792170839804704,
+          "cost": 8.575757575757576,
+          "nh4_viol_pct": 2.9817337134410304,
+          "do_viol_pct": 0.006335128286347799,
+          "days_within_limit_pct": 82.12121212121211,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 40110.616228981606,
+          "reward": -60.165924343472405,
+          "cost": 8.145454545454545,
+          "nh4_viol_pct": 2.8381374722838135,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.63636363636363,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 37779.50196607283,
+          "reward": -56.66925294910924,
+          "cost": 6.587878787878788,
+          "nh4_viol_pct": 2.2817020377995987,
+          "do_viol_pct": 0.013726111287086897,
+          "days_within_limit_pct": 83.03030303030303,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 42265.133935420046,
+          "reward": -63.39770090313007,
+          "cost": 11.772727272727273,
+          "nh4_viol_pct": 4.0597613768345475,
+          "do_viol_pct": 0.04223418857565199,
+          "days_within_limit_pct": 78.78787878787878,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 38504.745879428774,
+          "reward": -57.75711881914317,
+          "cost": 4.990909090909091,
+          "nh4_viol_pct": 1.7389927146024706,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 88.48484848484848,
+          "n_episodes": 330
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag/seed_0/model_final"
+    },
+    "ppolag_s1_train": {
+      "metrics": {
+        "air_m3": 43145.77815450653,
+        "reward": -64.7186672317598,
+        "cost": 7.8139393939393935,
+        "nh4_viol_pct": 2.7226269665294054,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 83.27272727272728,
+        "n_episodes": 1650,
+        "cost_var": 11.0,
+        "cost_cvar": 34.31515151515151,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 4.94336917562724,
+      "cost_initial_high": 23.51764705882353,
+      "nh4_cost": 7.8139393939393935,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.13984645205427387,
+      "unsafe_transition_fraction": 0.027226269665294057,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9417252666033153,
+      "finite_day_discounted_cost_start": 4.6383266531480345,
+      "critic_cost_start": 6.518188953399658,
+      "critic_minus_finite_day_return_start": 1.8798623271278994,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.6774054765701294,
+        "median": 0.748780369758606,
+        "p95": 4.578375148773193,
+        "max": 29.536901473999023
+      },
+      "start_discounted_terminal_contribution": 0.09374301135540009,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 44322.21825402042,
+          "reward": -66.48332738103063,
+          "cost": 8.375757575757575,
+          "nh4_viol_pct": 2.9183824305775525,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 82.12121212121211,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 43224.35165514624,
+          "reward": -64.83652748271936,
+          "cost": 8.266666666666667,
+          "nh4_viol_pct": 2.8803716608594656,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.33333333333334,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 41342.349541482676,
+          "reward": -62.013524312224014,
+          "cost": 6.084848484848485,
+          "nh4_viol_pct": 2.1201562664977303,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.63636363636363,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 45187.86855351481,
+          "reward": -67.78180283027221,
+          "cost": 11.372727272727273,
+          "nh4_viol_pct": 3.9626227431105483,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 78.48484848484848,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 41652.10276836849,
+          "reward": -62.47815415255274,
+          "cost": 4.96969696969697,
+          "nh4_viol_pct": 1.7316017316017314,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 88.7878787878788,
+          "n_episodes": 330
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag/seed_1/model_final"
+    },
+    "ppolag_fcsrl_s0_train": {
+      "metrics": {
+        "air_m3": 45507.386059514574,
+        "reward": -68.26107908927186,
+        "cost": 8.30060606060606,
+        "nh4_viol_pct": 2.8841727378312743,
+        "do_viol_pct": 0.008024495829373878,
+        "days_within_limit_pct": 83.33333333333334,
+        "n_episodes": 1650,
+        "cost_var": 11.0,
+        "cost_cvar": 36.93333333333333,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 4.969892473118279,
+      "cost_initial_high": 26.521568627450982,
+      "nh4_cost": 8.277575757575757,
+      "do_cost": 0.02303030303030303,
+      "aerobic_low_do_fraction": 0.12488312872942875,
+      "unsafe_transition_fraction": 0.028892408404603526,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.9969302733518491,
+      "feasibility_immediate_dominates_all_fraction": 0.9449772991236406,
+      "finite_day_discounted_cost_start": 4.957290912281089,
+      "critic_cost_start": 4.344012260437012,
+      "critic_minus_finite_day_return_start": -0.6132783111583767,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.6853115558624268,
+        "median": 1.068755865097046,
+        "p95": 3.887839245796202,
+        "max": 35.657997131347656
+      },
+      "start_discounted_terminal_contribution": 0.09418486058712006,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 46901.5956150951,
+          "reward": -70.35239342264266,
+          "cost": 9.39090909090909,
+          "nh4_viol_pct": 3.258367648611551,
+          "do_viol_pct": 0.013726111287086897,
+          "days_within_limit_pct": 82.42424242424242,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 45223.54167055602,
+          "reward": -67.83531250583403,
+          "cost": 8.393939393939394,
+          "nh4_viol_pct": 2.9173265758631612,
+          "do_viol_pct": 0.007390983000739098,
+          "days_within_limit_pct": 83.33333333333334,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 44388.61773105508,
+          "reward": -66.58292659658261,
+          "cost": 7.13030303030303,
+          "nh4_viol_pct": 2.477035159961989,
+          "do_viol_pct": 0.007390983000739099,
+          "days_within_limit_pct": 83.63636363636363,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 47018.07105957031,
+          "reward": -70.52710658935548,
+          "cost": 11.566666666666666,
+          "nh4_viol_pct": 4.025974025974025,
+          "do_viol_pct": 0.004223418857565199,
+          "days_within_limit_pct": 78.78787878787878,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 44005.10422129636,
+          "reward": -66.00765633194453,
+          "cost": 5.0212121212121215,
+          "nh4_viol_pct": 1.7421602787456447,
+          "do_viol_pct": 0.007390983000739098,
+          "days_within_limit_pct": 88.48484848484848,
+          "n_episodes": 330
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.007686371239586318,
+        "target_variance": 0.034678094070034506,
+        "r2": 0.7783508163954101,
+        "prediction": {
+          "mean": 0.050776850432157516,
+          "median": 0.0016480684280395508,
+          "p95": 0.24762135744094824,
+          "max": 1.7501046657562256
+        },
+        "target": {
+          "mean": 0.04143817480821751,
+          "median": 0.0,
+          "p95": 0.2058911320946491,
+          "max": 1.4580000000000002
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl/seed_0/model_final"
+    },
+    "ppolag_fcsrl_s1_train": {
+      "metrics": {
+        "air_m3": 35922.17047357123,
+        "reward": -53.88325571035684,
+        "cost": 11.981818181818182,
+        "nh4_viol_pct": 4.1748495407032,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 79.57575757575758,
+        "n_episodes": 1650,
+        "cost_var": 16.0,
+        "cost_cvar": 52.85151515151515,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 8.245878136200718,
+      "cost_initial_high": 32.41960784313726,
+      "nh4_cost": 11.981818181818182,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.5777013416441792,
+      "unsafe_transition_fraction": 0.041748495407031995,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9022785344736565,
+      "finite_day_discounted_cost_start": 5.74093627821851,
+      "critic_cost_start": 6.80108118057251,
+      "critic_minus_finite_day_return_start": 1.0601449363828328,
+      "cost_bootstrap_at_day_end": {
+        "mean": 2.971251964569092,
+        "median": 1.7963051795959473,
+        "p95": 7.005186915397634,
+        "max": 53.89928436279297
+      },
+      "start_discounted_terminal_contribution": 0.16605056822299957,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 36650.48377049165,
+          "reward": -54.97572565573748,
+          "cost": 16.05151515151515,
+          "nh4_viol_pct": 5.592862422130715,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 73.63636363636363,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 36078.31149577267,
+          "reward": -54.117467243659,
+          "cost": 9.984848484848484,
+          "nh4_viol_pct": 3.479041283919332,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 82.12121212121211,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 34081.544802740515,
+          "reward": -51.12231720411078,
+          "cost": 12.00909090909091,
+          "nh4_viol_pct": 4.184352233132721,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 78.78787878787878,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 38566.27380810678,
+          "reward": -57.84941071216017,
+          "cost": 15.918181818181818,
+          "nh4_viol_pct": 5.546404814697498,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.06060606060606,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 34234.23849074452,
+          "reward": -51.35135773611678,
+          "cost": 5.945454545454545,
+          "nh4_viol_pct": 2.07158694963573,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 87.27272727272727,
+          "n_episodes": 330
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.012998451224227455,
+        "target_variance": 0.0475927977115431,
+        "r2": 0.7268819685068687,
+        "prediction": {
+          "mean": 0.07568790763616562,
+          "median": 0.0008158683776855469,
+          "p95": 0.5716038942337034,
+          "max": 1.4694368839263916
+        },
+        "target": {
+          "mean": 0.05856195418720594,
+          "median": 0.0,
+          "p95": 0.6561000000000001,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl/seed_1/model_final"
+    },
+    "ppolag_fcsrl_tail_s0_train": {
+      "metrics": {
+        "air_m3": 46462.14593668855,
+        "reward": -69.69321890503281,
+        "cost": 9.253333333333334,
+        "nh4_viol_pct": 3.222890930208003,
+        "do_viol_pct": 0.0012670256572695597,
+        "days_within_limit_pct": 82.78787878787878,
+        "n_episodes": 1650,
+        "cost_var": 11.0,
+        "cost_cvar": 42.02424242424242,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 5.141935483870967,
+      "cost_initial_high": 31.745098039215687,
+      "nh4_cost": 9.24969696969697,
+      "do_cost": 0.0036363636363636364,
+      "aerobic_low_do_fraction": 0.13910911785945043,
+      "unsafe_transition_fraction": 0.03224157955865273,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9487847112237356,
+      "finite_day_discounted_cost_start": 5.23609523414867,
+      "critic_cost_start": 4.747296333312988,
+      "critic_minus_finite_day_return_start": -0.4887987762077893,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.5469626188278198,
+        "median": 0.9661113023757935,
+        "p95": 3.8634566187858574,
+        "max": 41.53559875488281
+      },
+      "start_discounted_terminal_contribution": 0.08645311743021011,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 48491.26787169112,
+          "reward": -72.73690180753668,
+          "cost": 10.16060606060606,
+          "nh4_viol_pct": 3.5381691479252457,
+          "do_viol_pct": 0.0021117094287825995,
+          "days_within_limit_pct": 81.51515151515152,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 45926.11776840205,
+          "reward": -68.88917665260308,
+          "cost": 8.89090909090909,
+          "nh4_viol_pct": 3.0978777320240733,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.63636363636363,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 44718.332622627335,
+          "reward": -67.07749893394102,
+          "cost": 8.642424242424243,
+          "nh4_viol_pct": 3.011297645443987,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.03030303030303,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 48253.4115296384,
+          "reward": -72.3801172944576,
+          "cost": 13.460606060606061,
+          "nh4_viol_pct": 4.690106641326153,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 77.87878787878788,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 44921.59989108378,
+          "reward": -67.38239983662568,
+          "cost": 5.112121212121212,
+          "nh4_viol_pct": 1.7770034843205573,
+          "do_viol_pct": 0.004223418857565199,
+          "days_within_limit_pct": 87.87878787878788,
+          "n_episodes": 330
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.014723554897628699,
+        "target_variance": 0.03646626338152111,
+        "r2": 0.5962417442229713,
+        "prediction": {
+          "mean": 0.07361377030611038,
+          "median": 0.0037107467651367188,
+          "p95": 0.5153313398361198,
+          "max": 1.0054144859313965
+        },
+        "target": {
+          "mean": 0.04341749911144045,
+          "median": 0.0,
+          "p95": 0.22876792454961012,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl_tail/seed_0/model_final"
+    },
+    "ppolag_fcsrl_tail_s1_train": {
+      "metrics": {
+        "air_m3": 35949.753811778595,
+        "reward": -53.924630717667895,
+        "cost": 10.063636363636364,
+        "nh4_viol_pct": 3.506493506493506,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 81.0909090909091,
+        "n_episodes": 1650,
+        "cost_var": 14.0,
+        "cost_cvar": 43.96969696969697,
+        "tail_fraction": 0.2
+      },
+      "episodes": 1650,
+      "initial_high_nh4_fraction": 0.15454545454545454,
+      "cost_initial_low": 6.648745519713262,
+      "cost_initial_high": 28.745098039215687,
+      "nh4_cost": 10.063636363636364,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.5801641898825586,
+      "unsafe_transition_fraction": 0.03506493506493506,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9146827156583254,
+      "finite_day_discounted_cost_start": 5.2226349931027345,
+      "critic_cost_start": 7.061252593994141,
+      "critic_minus_finite_day_return_start": 1.8386173853754606,
+      "cost_bootstrap_at_day_end": {
+        "mean": 2.8253250122070312,
+        "median": 1.9656360149383545,
+        "p95": 6.20657382011413,
+        "max": 43.36030960083008
+      },
+      "start_discounted_terminal_contribution": 0.15789532661437988,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 36554.0537929106,
+          "reward": -54.83108068936589,
+          "cost": 12.409090909090908,
+          "nh4_viol_pct": 4.323725055432373,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 78.18181818181819,
+          "n_episodes": 330
+        },
+        "1": {
+          "air_m3": 35965.212017960024,
+          "reward": -53.94781802694003,
+          "cost": 9.827272727272728,
+          "nh4_viol_pct": 3.4241368387709854,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 81.81818181818183,
+          "n_episodes": 330
+        },
+        "2": {
+          "air_m3": 34353.57122447982,
+          "reward": -51.53035683671972,
+          "cost": 8.06969696969697,
+          "nh4_viol_pct": 2.811741104424031,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 80.9090909090909,
+          "n_episodes": 330
+        },
+        "3": {
+          "air_m3": 38496.110003957096,
+          "reward": -57.744165005935635,
+          "cost": 14.496969696969696,
+          "nh4_viol_pct": 5.051208953647978,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.96969696969697,
+          "n_episodes": 330
+        },
+        "4": {
+          "air_m3": 34379.82201958545,
+          "reward": -51.569733029378185,
+          "cost": 5.515151515151516,
+          "nh4_viol_pct": 1.9216555801921655,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 87.57575757575758,
+          "n_episodes": 330
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.011697924002428526,
+        "target_variance": 0.04161206804548959,
+        "r2": 0.7188814555037121,
+        "prediction": {
+          "mean": 0.06296630948781967,
+          "median": 0.0005216598510742188,
+          "p95": 0.457501101493835,
+          "max": 1.1826317310333252
+        },
+        "target": {
+          "mean": 0.05123474804679785,
+          "median": 0.0,
+          "p95": 0.47829690000000014,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl_tail/seed_1/model_final"
+    },
+    "ppolag_s0_val": {
+      "metrics": {
+        "air_m3": 37883.63757067352,
+        "reward": -56.82545635601029,
+        "cost": 14.916279069767441,
+        "nh4_viol_pct": 4.808362369337979,
+        "do_viol_pct": 0.3889474110687951,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "cost_var": 19.0,
+        "cost_cvar": 64.48837209302326,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 1.5615384615384615,
+      "cost_initial_high": 35.34117647058824,
+      "nh4_cost": 13.8,
+      "do_cost": 1.1162790697674418,
+      "aerobic_low_do_fraction": 0.4079023530892161,
+      "unsafe_transition_fraction": 0.04808362369337979,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.9737108190091001,
+      "feasibility_immediate_dominates_all_fraction": 0.9699538124949356,
+      "finite_day_discounted_cost_start": 8.445501585703566,
+      "critic_cost_start": 5.236361503601074,
+      "critic_minus_finite_day_return_start": -3.2091400405178554,
+      "cost_bootstrap_at_day_end": {
+        "mean": 0.3127613961696625,
+        "median": 0.09165847301483154,
+        "p95": 0.8309366464614866,
+        "max": 32.430904388427734
+      },
+      "start_discounted_terminal_contribution": 0.01747889816761017,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 39860.34174988321,
+          "reward": -59.79051262482481,
+          "cost": 37.372093023255815,
+          "nh4_viol_pct": 11.076898144396727,
+          "do_viol_pct": 1.9447370553439756,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 37570.450410304606,
+          "reward": -56.35567561545691,
+          "cost": 6.255813953488372,
+          "nh4_viol_pct": 2.1797261161980384,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 36238.825926947036,
+          "reward": -54.35823889042056,
+          "cost": 13.953488372093023,
+          "nh4_viol_pct": 4.8618426383599385,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 40124.16730516467,
+          "reward": -60.18625095774701,
+          "cost": 10.837209302325581,
+          "nh4_viol_pct": 3.776031115792886,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 35624.40246106811,
+          "reward": -53.436603691602166,
+          "cost": 6.162790697674419,
+          "nh4_viol_pct": 2.1473138319423057,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag/seed_0/model_final"
+    },
+    "ppolag_s1_val": {
+      "metrics": {
+        "air_m3": 42560.17661365543,
+        "reward": -63.84026492048315,
+        "cost": 15.427906976744186,
+        "nh4_viol_pct": 4.972044404829431,
+        "do_viol_pct": 0.40353293898387493,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "cost_var": 19.0,
+        "cost_cvar": 66.81395348837209,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 1.7769230769230768,
+      "cost_initial_high": 36.305882352941175,
+      "nh4_cost": 14.269767441860465,
+      "do_cost": 1.158139534883721,
+      "aerobic_low_do_fraction": 0.09258839813766201,
+      "unsafe_transition_fraction": 0.0497204440482943,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.977509778357236,
+      "feasibility_immediate_dominates_all_fraction": 0.970261729195365,
+      "finite_day_discounted_cost_start": 8.591299619844493,
+      "critic_cost_start": 8.761682510375977,
+      "critic_minus_finite_day_return_start": 0.1703837444026735,
+      "cost_bootstrap_at_day_end": {
+        "mean": 0.71892911195755,
+        "median": 0.2359483242034912,
+        "p95": 0.9464181900024397,
+        "max": 32.44452667236328
+      },
+      "start_discounted_terminal_contribution": 0.040177877992391586,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 44146.86904495308,
+          "reward": -66.22030356742961,
+          "cost": 37.58139534883721,
+          "nh4_viol_pct": 11.076898144396727,
+          "do_viol_pct": 2.017664694919375,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 42084.74171952914,
+          "reward": -63.12711257929372,
+          "cost": 6.348837209302325,
+          "nh4_viol_pct": 2.212138400453772,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 41373.9640775115,
+          "reward": -62.060946116267246,
+          "cost": 15.906976744186046,
+          "nh4_viol_pct": 5.54250060773033,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 44727.723510343894,
+          "reward": -67.09158526551585,
+          "cost": 11.093023255813954,
+          "nh4_viol_pct": 3.8651648974961517,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 40467.58471593954,
+          "reward": -60.701377073909306,
+          "cost": 6.209302325581396,
+          "nh4_viol_pct": 2.1635199740701725,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag/seed_1/model_final"
+    },
+    "ppolag_fcsrl_s0_val": {
+      "metrics": {
+        "air_m3": 41850.44276765439,
+        "reward": -62.77566415148159,
+        "cost": 13.43720930232558,
+        "nh4_viol_pct": 4.681954460740621,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "cost_var": 17.0,
+        "cost_cvar": 58.16279069767442,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 1.3461538461538463,
+      "cost_initial_high": 31.929411764705883,
+      "nh4_cost": 13.43720930232558,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.18235812256197306,
+      "unsafe_transition_fraction": 0.046819544607406206,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9699376063528077,
+      "finite_day_discounted_cost_start": 7.754546761648144,
+      "critic_cost_start": 6.7981672286987305,
+      "critic_minus_finite_day_return_start": -0.9563801082035435,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.2779815196990967,
+        "median": 0.8281118869781494,
+        "p95": 1.1836561918258663,
+        "max": 42.558040618896484
+      },
+      "start_discounted_terminal_contribution": 0.07142091542482376,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 43666.65240019098,
+          "reward": -65.49997860028647,
+          "cost": 35.72093023255814,
+          "nh4_viol_pct": 12.446317154201443,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 41407.46741167218,
+          "reward": -62.11120111750829,
+          "cost": 5.604651162790698,
+          "nh4_viol_pct": 1.9528401264079085,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 40592.42518809299,
+          "reward": -60.8886377821395,
+          "cost": 11.093023255813954,
+          "nh4_viol_pct": 3.8651648974961503,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 72.09302325581395,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 42779.33271591689,
+          "reward": -64.16899907387533,
+          "cost": 9.116279069767442,
+          "nh4_viol_pct": 3.176403857061826,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 40806.33612239892,
+          "reward": -61.20950418359838,
+          "cost": 5.651162790697675,
+          "nh4_viol_pct": 1.969046268535775,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.011751395620409607,
+        "target_variance": 0.11086411439287044,
+        "r2": 0.8940018085675041,
+        "prediction": {
+          "mean": 0.1400327831506729,
+          "median": 0.005502581596374512,
+          "p95": 0.9995889663696289,
+          "max": 1.121692419052124
+        },
+        "target": {
+          "mean": 0.13118127332879465,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl/seed_0/model_final"
+    },
+    "ppolag_fcsrl_s1_val": {
+      "metrics": {
+        "air_m3": 24399.8128312907,
+        "reward": -36.599719246936054,
+        "cost": 18.8,
+        "nh4_viol_pct": 6.550522648083624,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 74.4186046511628,
+        "n_episodes": 215,
+        "cost_var": 24.0,
+        "cost_cvar": 80.5813953488372,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 8.776923076923078,
+      "cost_initial_high": 34.129411764705885,
+      "nh4_cost": 18.8,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.8982509122939474,
+      "unsafe_transition_fraction": 0.06550522648083623,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.956680982092213,
+      "finite_day_discounted_cost_start": 8.800152781202726,
+      "critic_cost_start": 9.183006286621094,
+      "critic_minus_finite_day_return_start": 0.38285406334556654,
+      "cost_bootstrap_at_day_end": {
+        "mean": 2.126014232635498,
+        "median": 1.0768404006958008,
+        "p95": 2.021257388591763,
+        "max": 48.890079498291016
+      },
+      "start_discounted_terminal_contribution": 0.11881382763385773,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 26944.54548337548,
+          "reward": -40.41681822506322,
+          "cost": 52.95348837209303,
+          "nh4_viol_pct": 18.45069281257597,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 60.46511627906976,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 23633.600651351524,
+          "reward": -35.450400977027286,
+          "cost": 6.953488372093023,
+          "nh4_viol_pct": 2.422818248116036,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 81.3953488372093,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 22151.332733358522,
+          "reward": -33.22699910003779,
+          "cost": 19.023255813953487,
+          "nh4_viol_pct": 6.628312130297382,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 65.11627906976744,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 26143.196525442047,
+          "reward": -39.21479478816307,
+          "cost": 9.232558139534884,
+          "nh4_viol_pct": 3.2169192123814923,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 79.06976744186046,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 23126.388762925948,
+          "reward": -34.68958314438892,
+          "cost": 5.837209302325581,
+          "nh4_viol_pct": 2.0338708370472407,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.016676517750569875,
+        "target_variance": 0.15162431357372153,
+        "r2": 0.8900142242526192,
+        "prediction": {
+          "mean": 0.19299180805683136,
+          "median": 0.0004445314407348633,
+          "p95": 1.0018486976623535,
+          "max": 1.1374447345733643
+        },
+        "target": {
+          "mean": 0.19442336176430444,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl/seed_1/model_final"
+    },
+    "ppolag_fcsrl_tail_s0_val": {
+      "metrics": {
+        "air_m3": 43510.24765772239,
+        "reward": -65.26537148658359,
+        "cost": 12.613953488372093,
+        "nh4_viol_pct": 4.395105745077385,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "cost_var": 18.0,
+        "cost_cvar": 54.25581395348837,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 0.5153846153846153,
+      "cost_initial_high": 31.11764705882353,
+      "nh4_cost": 12.613953488372093,
+      "do_cost": 0.0,
+      "aerobic_low_do_fraction": 0.10826727066817667,
+      "unsafe_transition_fraction": 0.043951057450773844,
+      "feasibility_immediate_dominates_unsafe_fraction": 1.0,
+      "feasibility_immediate_dominates_all_fraction": 0.9755449315290495,
+      "finite_day_discounted_cost_start": 7.819786860615119,
+      "critic_cost_start": 6.0669145584106445,
+      "critic_minus_finite_day_return_start": -1.7528728746862947,
+      "cost_bootstrap_at_day_end": {
+        "mean": 0.7751722931861877,
+        "median": 0.21725887060165405,
+        "p95": 0.8662827491760252,
+        "max": 50.89490509033203
+      },
+      "start_discounted_terminal_contribution": 0.04332106560468674,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 44504.80598982338,
+          "reward": -66.75720898473506,
+          "cost": 29.53488372093023,
+          "nh4_viol_pct": 10.290900251195206,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 72.09302325581395,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 43318.637884084805,
+          "reward": -64.9779568261272,
+          "cost": 5.72093023255814,
+          "nh4_viol_pct": 1.9933554817275747,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 42222.837140812546,
+          "reward": -63.334255711218816,
+          "cost": 12.186046511627907,
+          "nh4_viol_pct": 4.2460092375010134,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 72.09302325581395,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 45311.866141740196,
+          "reward": -67.9677992126103,
+          "cost": 9.674418604651162,
+          "nh4_viol_pct": 3.3708775625962235,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 42193.091132151065,
+          "reward": -63.289636698226595,
+          "cost": 5.953488372093023,
+          "nh4_viol_pct": 2.074386192366907,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.014174024199757333,
+        "target_variance": 0.09371366366587486,
+        "r2": 0.8487517866093341,
+        "prediction": {
+          "mean": 0.10646452009677887,
+          "median": 0.0039784908294677734,
+          "p95": 0.999109148979187,
+          "max": 1.0035851001739502
+        },
+        "target": {
+          "mean": 0.10704225448304278,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 1.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl_tail/seed_0/model_final"
+    },
+    "ppolag_fcsrl_tail_s1_val": {
+      "metrics": {
+        "air_m3": 24479.398464301757,
+        "reward": -36.71909769645264,
+        "cost": 19.01860465116279,
+        "nh4_viol_pct": 6.620209059233451,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215,
+        "cost_var": 23.0,
+        "cost_cvar": 81.74418604651163,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 9.207692307692307,
+      "cost_initial_high": 34.023529411764706,
+      "nh4_cost": 19.0,
+      "do_cost": 0.018604651162790697,
+      "aerobic_low_do_fraction": 0.8980495784572795,
+      "unsafe_transition_fraction": 0.06620209059233449,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.998531211750306,
+      "feasibility_immediate_dominates_all_fraction": 0.9541042054938822,
+      "finite_day_discounted_cost_start": 8.881161730721995,
+      "critic_cost_start": 9.480308532714844,
+      "critic_minus_finite_day_return_start": 0.5991468740728833,
+      "cost_bootstrap_at_day_end": {
+        "mean": 2.737833261489868,
+        "median": 1.5301837921142578,
+        "p95": 2.881628775596616,
+        "max": 47.66892623901367
+      },
+      "start_discounted_terminal_contribution": 0.15300579369068146,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 29320.899244426753,
+          "reward": -43.98134886664014,
+          "cost": 57.53488372093023,
+          "nh4_viol_pct": 20.014585527915077,
+          "do_viol_pct": 0.03241228425573293,
+          "days_within_limit_pct": 55.81395348837209,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 23336.565785283266,
+          "reward": -35.0048486779249,
+          "cost": 5.790697674418604,
+          "nh4_viol_pct": 2.0176646949193744,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 22640.831845097764,
+          "reward": -33.96124776764665,
+          "cost": 16.3953488372093,
+          "nh4_viol_pct": 5.712665100072927,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 67.44186046511628,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 24721.000142568766,
+          "reward": -37.08150021385315,
+          "cost": 9.604651162790697,
+          "nh4_viol_pct": 3.3465683494044236,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 22377.69530413224,
+          "reward": -33.56654295619837,
+          "cost": 5.767441860465116,
+          "nh4_viol_pct": 2.0095616238554412,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 0.032978154814621345,
+        "target_variance": 0.162552103585046,
+        "r2": 0.7971225589377413,
+        "prediction": {
+          "mean": 0.20577460527420044,
+          "median": 0.0005218982696533203,
+          "p95": 1.0626277923583984,
+          "max": 1.1287899017333984
+        },
+        "target": {
+          "mean": 0.21270285076446369,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 2.0
+        }
+      },
+      "checkpoint": "/home/jio/fcsrl_src/results/e06/pilot/runs/ppolag_fcsrl_tail/seed_1/model_final"
+    },
+    "ppolag_frozen_s0_val": {
+      "metrics": {
+        "air_m3": 32346.477022065326,
+        "reward": -48.51971553309799,
+        "cost": 14.320930232558139,
+        "nh4_viol_pct": 4.8472571104448585,
+        "do_viol_pct": 0.14261405072522487,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "cost_var": 19.0,
+        "cost_cvar": 61.534883720930225,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 2.0846153846153848,
+      "cost_initial_high": 33.03529411764706,
+      "nh4_cost": 13.911627906976744,
+      "do_cost": 0.40930232558139534,
+      "aerobic_low_do_fraction": 0.6375235938089845,
+      "unsafe_transition_fraction": 0.04847257110444859,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.9879638916750251,
+      "feasibility_immediate_dominates_all_fraction": 0.9669394700591524,
+      "finite_day_discounted_cost_start": 7.995088333783526,
+      "critic_cost_start": 5.902227401733398,
+      "critic_minus_finite_day_return_start": -2.0928612952226153,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.5532325506210327,
+        "median": 1.1070945262908936,
+        "p95": 1.6274839639663696,
+        "max": 46.33222579956055
+      },
+      "start_discounted_terminal_contribution": 0.08680352568626404,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 34368.32122311226,
+          "reward": -51.552481834668406,
+          "cost": 38.16279069767442,
+          "nh4_viol_pct": 12.584069362288304,
+          "do_viol_pct": 0.7130702536261243,
+          "days_within_limit_pct": 67.44186046511628,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 31397.599855466757,
+          "reward": -47.09639978320013,
+          "cost": 5.813953488372093,
+          "nh4_viol_pct": 2.0257677659833075,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 31473.428928228313,
+          "reward": -47.21014339234247,
+          "cost": 12.325581395348838,
+          "nh4_viol_pct": 4.294627663884612,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 72.09302325581395,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 33415.67420956585,
+          "reward": -50.123511314348775,
+          "cost": 9.44186046511628,
+          "nh4_viol_pct": 3.289846851956891,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 31077.36089395345,
+          "reward": -46.616041340930174,
+          "cost": 5.8604651162790695,
+          "nh4_viol_pct": 2.041973908111174,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 2.0169965458765224,
+        "target_variance": 0.13407851688510827,
+        "r2": -14.043398396216483,
+        "prediction": {
+          "mean": 1.5159279108047485,
+          "median": 1.500511884689331,
+          "p95": 1.7408533096313477,
+          "max": 1.9262874126434326
+        },
+        "target": {
+          "mean": 0.14099678868928092,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 2.0
+        }
+      }
+    },
+    "ppolag_frozen_s1_val": {
+      "metrics": {
+        "air_m3": 28092.267110256496,
+        "reward": -42.13840066538474,
+        "cost": 15.813953488372093,
+        "nh4_viol_pct": 5.318855846365772,
+        "do_viol_pct": 0.19123247710882424,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "cost_var": 19.0,
+        "cost_cvar": 67.90697674418604,
+        "tail_fraction": 0.2
+      },
+      "episodes": 215,
+      "initial_high_nh4_fraction": 0.3953488372093023,
+      "cost_initial_low": 4.084615384615384,
+      "cost_initial_high": 33.752941176470586,
+      "nh4_cost": 15.265116279069767,
+      "do_cost": 0.5488372093023256,
+      "aerobic_low_do_fraction": 0.8591166477916194,
+      "unsafe_transition_fraction": 0.05318855846365773,
+      "feasibility_immediate_dominates_unsafe_fraction": 0.985679463741621,
+      "feasibility_immediate_dominates_all_fraction": 0.9614455878778057,
+      "finite_day_discounted_cost_start": 8.208026844843229,
+      "critic_cost_start": 7.862815856933594,
+      "critic_minus_finite_day_return_start": -0.3452109241465255,
+      "cost_bootstrap_at_day_end": {
+        "mean": 1.0025712251663208,
+        "median": 0.4108668565750122,
+        "p95": 1.029908227920532,
+        "max": 34.340579986572266
+      },
+      "start_discounted_terminal_contribution": 0.056029416620731354,
+      "gamma_weights": {
+        "12": 0.8863848717161292,
+        "36": 0.6964132180495735,
+        "144": 0.23521662924041012,
+        "287": 0.05588571986991975
+      },
+      "feasibility_weights": {
+        "12": 0.2824295364810001,
+        "36": 0.022528399544939195,
+        "144": 2.575854686758998e-07,
+        "287": 7.372252630331439e-14
+      },
+      "by_member": {
+        "0": {
+          "air_m3": 31163.247248692107,
+          "reward": -46.74487087303816,
+          "cost": 45.7906976744186,
+          "nh4_viol_pct": 14.998784539340411,
+          "do_viol_pct": 0.9561623855441211,
+          "days_within_limit_pct": 62.7906976744186,
+          "n_episodes": 43
+        },
+        "1": {
+          "air_m3": 27378.504112536124,
+          "reward": -41.067756168804195,
+          "cost": 5.837209302325581,
+          "nh4_viol_pct": 2.0338708370472407,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 83.72093023255815,
+          "n_episodes": 43
+        },
+        "2": {
+          "air_m3": 26002.298716138037,
+          "reward": -39.00344807420706,
+          "cost": 12.069767441860465,
+          "nh4_viol_pct": 4.205493882181347,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 69.76744186046511,
+          "n_episodes": 43
+        },
+        "3": {
+          "air_m3": 29915.10428124389,
+          "reward": -44.87265642186584,
+          "cost": 9.55813953488372,
+          "nh4_viol_pct": 3.3303622072765573,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 43
+        },
+        "4": {
+          "air_m3": 26002.181192672302,
+          "reward": -39.00327178900846,
+          "cost": 5.813953488372093,
+          "nh4_viol_pct": 2.0257677659833075,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 86.04651162790698,
+          "n_episodes": 43
+        }
+      },
+      "feasibility_prediction_finite_day": {
+        "mse": 2.787890155934045,
+        "target_variance": 0.15873138832055536,
+        "r2": -16.563571927588438,
+        "prediction": {
+          "mean": 1.7843437194824219,
+          "median": 1.7729172706604004,
+          "p95": 2.0700302124023438,
+          "max": 2.201957941055298
+        },
+        "target": {
+          "mean": 0.17152235701155363,
+          "median": 0.0,
+          "p95": 1.0,
+          "max": 2.0
+        }
+      }
+    }
+  },
+  "historical": {
+    "train": {
+      "predicted": {
+        "air_m3": 46657.691944426355,
+        "reward": -69.98653791663955,
+        "cost": 39.64424242424242,
+        "nh4_viol_pct": 13.129975715341567,
+        "do_viol_pct": 0.6833491711540493,
+        "days_within_limit_pct": 58.60606060606061,
+        "n_episodes": 1650
+      },
+      "measured_cost": 45.95757575757576,
+      "by_member": {
+        "0": {
+          "nh4_mae": 1.206847649121074,
+          "do_mae": 0.20782575378761775,
+          "air_m3": 46657.691944426355,
+          "reward": -69.98653791663953,
+          "cost": 37.59090909090909,
+          "nh4_viol_pct": 12.515045929680078,
+          "do_viol_pct": 0.5828318023439975,
+          "days_within_limit_pct": 59.3939393939394,
+          "n_episodes": 330
+        },
+        "1": {
+          "nh4_mae": 1.3826411194421757,
+          "do_mae": 0.20238878662729123,
+          "air_m3": 46657.691944426355,
+          "reward": -69.98653791663953,
+          "cost": 47.415151515151514,
+          "nh4_viol_pct": 15.812480202724101,
+          "do_viol_pct": 0.7084785133565622,
+          "days_within_limit_pct": 53.03030303030303,
+          "n_episodes": 330
+        },
+        "2": {
+          "nh4_mae": 1.3106223378359019,
+          "do_mae": 0.2033574629789709,
+          "air_m3": 46657.691944426355,
+          "reward": -69.98653791663953,
+          "cost": 26.439393939393938,
+          "nh4_viol_pct": 8.605215922289092,
+          "do_viol_pct": 0.6071164607749974,
+          "days_within_limit_pct": 66.36363636363637,
+          "n_episodes": 330
+        },
+        "3": {
+          "nh4_mae": 1.6245790314301833,
+          "do_mae": 0.20848138424966195,
+          "air_m3": 46657.691944426355,
+          "reward": -69.98653791663953,
+          "cost": 68.95454545454545,
+          "nh4_viol_pct": 23.537113293210854,
+          "do_viol_pct": 0.4888607327631719,
+          "days_within_limit_pct": 44.84848484848485,
+          "n_episodes": 330
+        },
+        "4": {
+          "nh4_mae": 1.177065037474074,
+          "do_mae": 0.20886767193693992,
+          "air_m3": 46657.691944426355,
+          "reward": -69.98653791663953,
+          "cost": 17.82121212121212,
+          "nh4_viol_pct": 5.180023228803716,
+          "do_viol_pct": 1.0294583465315172,
+          "days_within_limit_pct": 69.39393939393939,
+          "n_episodes": 330
+        }
+      }
+    },
+    "val": {
+      "predicted": {
+        "air_m3": 53596.02698679528,
+        "reward": -80.39404048019291,
+        "cost": 26.790697674418606,
+        "nh4_viol_pct": 6.343084028846933,
+        "do_viol_pct": 2.9916538368041485,
+        "days_within_limit_pct": 56.27906976744186,
+        "n_episodes": 215
+      },
+      "measured_cost": 70.95348837209302,
+      "by_member": {
+        "0": {
+          "nh4_mae": 1.4729346150788798,
+          "do_mae": 0.2474285367825679,
+          "air_m3": 53596.026986795274,
+          "reward": -80.39404048019293,
+          "cost": 44.58139534883721,
+          "nh4_viol_pct": 12.77043999675877,
+          "do_viol_pct": 2.763147232801231,
+          "days_within_limit_pct": 53.48837209302325,
+          "n_episodes": 43
+        },
+        "1": {
+          "nh4_mae": 1.1365517703801957,
+          "do_mae": 0.23508684476247624,
+          "air_m3": 53596.026986795274,
+          "reward": -80.39404048019293,
+          "cost": 17.11627906976744,
+          "nh4_viol_pct": 2.592982740458633,
+          "do_viol_pct": 3.370877562596224,
+          "days_within_limit_pct": 60.46511627906976,
+          "n_episodes": 43
+        },
+        "2": {
+          "nh4_mae": 1.255439105096048,
+          "do_mae": 0.23167328890937783,
+          "air_m3": 53596.026986795274,
+          "reward": -80.39404048019293,
+          "cost": 28.53488372093023,
+          "nh4_viol_pct": 7.179320962644843,
+          "do_viol_pct": 2.763147232801231,
+          "days_within_limit_pct": 53.48837209302325,
+          "n_episodes": 43
+        },
+        "3": {
+          "nh4_mae": 0.984519771788746,
+          "do_mae": 0.21953998711517086,
+          "air_m3": 53596.026986795274,
+          "reward": -80.39404048019293,
+          "cost": 27.3953488372093,
+          "nh4_viol_pct": 6.587796774977717,
+          "do_viol_pct": 2.9576209383356287,
+          "days_within_limit_pct": 53.48837209302325,
+          "n_episodes": 43
+        },
+        "4": {
+          "nh4_mae": 1.240883668873466,
+          "do_mae": 0.23703861857292988,
+          "air_m3": 53596.026986795274,
+          "reward": -80.39404048019293,
+          "cost": 16.325581395348838,
+          "nh4_viol_pct": 2.5848796693947005,
+          "do_viol_pct": 3.1034762174864268,
+          "days_within_limit_pct": 60.46511627906976,
+          "n_episodes": 43
+        }
+      }
+    }
+  },
+  "model_checks": {
+    "train": {
+      "air_plus_1000": [
+        {
+          "member": 0,
+          "samples": 52494,
+          "do_delta_mean": 0.1989880800652093,
+          "nh4_delta_mean": 0.006427738376478881,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.6352154531946508
+        },
+        {
+          "member": 1,
+          "samples": 52494,
+          "do_delta_mean": 0.20940037035679396,
+          "nh4_delta_mean": 0.005644113071799754,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.711528936640378
+        },
+        {
+          "member": 2,
+          "samples": 52494,
+          "do_delta_mean": 0.20381082569211684,
+          "nh4_delta_mean": 0.005699817064333584,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.6455975921057645
+        },
+        {
+          "member": 3,
+          "samples": 52494,
+          "do_delta_mean": 0.20524072294048293,
+          "nh4_delta_mean": 0.00680933963608546,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.73111212710024
+        },
+        {
+          "member": 4,
+          "samples": 52494,
+          "do_delta_mean": 0.2047574071367285,
+          "nh4_delta_mean": 0.006031895049106554,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.7089381643616414
+        }
+      ],
+      "same_input_between_member_sd_nh4": {
+        "mean": 0.016841846948140733,
+        "median": 0.01500984655545234,
+        "p95": 0.034040278548474925,
+        "max": 0.12554230328596802
+      },
+      "same_input_between_member_sd_do": {
+        "mean": 0.026722503465174578,
+        "median": 0.024723933713847852,
+        "p95": 0.05001229395511914,
+        "max": 0.12959320708489078
+      }
+    },
+    "val": {
+      "air_plus_1000": [
+        {
+          "member": 0,
+          "samples": 7927,
+          "do_delta_mean": 0.22434990237872016,
+          "nh4_delta_mean": 0.008357011388812835,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.7328119086665825
+        },
+        {
+          "member": 1,
+          "samples": 7927,
+          "do_delta_mean": 0.24814885492643735,
+          "nh4_delta_mean": 0.008218726845708608,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.8675413144947647
+        },
+        {
+          "member": 2,
+          "samples": 7927,
+          "do_delta_mean": 0.2424388438369969,
+          "nh4_delta_mean": 0.009872558124821308,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.784407720449098
+        },
+        {
+          "member": 3,
+          "samples": 7927,
+          "do_delta_mean": 0.25527376488718406,
+          "nh4_delta_mean": 0.010714647687750142,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.7781001639964678
+        },
+        {
+          "member": 4,
+          "samples": 7927,
+          "do_delta_mean": 0.2443234704714625,
+          "nh4_delta_mean": 0.01019898180701862,
+          "do_decreases_fraction": 0.0,
+          "nh4_increases_fraction": 0.881165636432446
+        }
+      ],
+      "same_input_between_member_sd_nh4": {
+        "mean": 0.016904465278174012,
+        "median": 0.015284977517859448,
+        "p95": 0.03250850291820431,
+        "max": 0.07209419457094976
+      },
+      "same_input_between_member_sd_do": {
+        "mean": 0.031216840167445907,
+        "median": 0.029533518009050016,
+        "p95": 0.05421353971022662,
+        "max": 0.09253078350859742
+      }
+    }
+  },
+  "encoder_swap_diagnostic": [
+    {
+      "seed": 0,
+      "actor_and_normalizer": "best",
+      "encoder": "best",
+      "air_m3": 41735.7038489319,
+      "reward": -62.603555773397865,
+      "cost": 12.325581395348838,
+      "nh4_viol_pct": 4.294627663884612,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 78.6046511627907,
+      "n_episodes": 215
+    },
+    {
+      "seed": 0,
+      "actor_and_normalizer": "best",
+      "encoder": "final",
+      "air_m3": 44449.91494026757,
+      "reward": -66.67487241040135,
+      "cost": 12.548837209302325,
+      "nh4_viol_pct": 4.372417146098371,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 78.6046511627907,
+      "n_episodes": 215
+    },
+    {
+      "seed": 0,
+      "actor_and_normalizer": "final",
+      "encoder": "best",
+      "air_m3": 38386.15478898666,
+      "reward": -57.57923218347999,
+      "cost": 13.013953488372094,
+      "nh4_viol_pct": 4.534478567377036,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 78.13953488372093,
+      "n_episodes": 215
+    },
+    {
+      "seed": 0,
+      "actor_and_normalizer": "final",
+      "encoder": "final",
+      "air_m3": 41850.44276765439,
+      "reward": -62.77566415148159,
+      "cost": 13.43720930232558,
+      "nh4_viol_pct": 4.681954460740621,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 78.13953488372093,
+      "n_episodes": 215
+    },
+    {
+      "seed": 1,
+      "actor_and_normalizer": "best",
+      "encoder": "best",
+      "air_m3": 35319.06577050108,
+      "reward": -52.978598655751625,
+      "cost": 14.502325581395349,
+      "nh4_viol_pct": 5.038489587553683,
+      "do_viol_pct": 0.014585527915079815,
+      "days_within_limit_pct": 76.74418604651163,
+      "n_episodes": 215
+    },
+    {
+      "seed": 1,
+      "actor_and_normalizer": "best",
+      "encoder": "final",
+      "air_m3": 32429.49478462223,
+      "reward": -48.644242176933346,
+      "cost": 15.502325581395349,
+      "nh4_viol_pct": 5.401507171217891,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 76.27906976744187,
+      "n_episodes": 215
+    },
+    {
+      "seed": 1,
+      "actor_and_normalizer": "final",
+      "encoder": "best",
+      "air_m3": 31213.45383349315,
+      "reward": -46.82018075023973,
+      "cost": 13.841860465116278,
+      "nh4_viol_pct": 4.822947897253059,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 76.74418604651163,
+      "n_episodes": 215
+    },
+    {
+      "seed": 1,
+      "actor_and_normalizer": "final",
+      "encoder": "final",
+      "air_m3": 24399.8128312907,
+      "reward": -36.599719246936054,
+      "cost": 18.8,
+      "nh4_viol_pct": 6.550522648083624,
+      "do_viol_pct": 0.0,
+      "days_within_limit_pct": 74.4186046511628,
+      "n_episodes": 215
+    }
+  ],
+  "constant_air_diagnostic": {
+    "note": "Best of fixed actions with hindsight is not a deployable policy or a lower bound on achievable cost.",
+    "policies": {
+      "0": {
+        "air_m3": 0.0,
+        "reward": 0.0,
+        "cost": 270.6790697674419,
+        "nh4_viol_pct": 94.31326472733167,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "1000": {
+        "air_m3": 15401.162790697706,
+        "reward": -23.10174418604656,
+        "cost": 121.29302325581395,
+        "nh4_viol_pct": 42.26237744105016,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 33.02325581395349,
+        "n_episodes": 215
+      },
+      "2000": {
+        "air_m3": 30802.325581395413,
+        "reward": -46.20348837209312,
+        "cost": 12.906976744186046,
+        "nh4_viol_pct": 4.4972044404829425,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215
+      },
+      "3000": {
+        "air_m3": 46203.48837209302,
+        "reward": -69.30523255813954,
+        "cost": 12.646511627906976,
+        "nh4_viol_pct": 4.406450044566891,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215
+      },
+      "4000": {
+        "air_m3": 61604.651162790826,
+        "reward": -92.40697674418624,
+        "cost": 15.69767441860465,
+        "nh4_viol_pct": 5.469572968154931,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215
+      },
+      "5000": {
+        "air_m3": 77005.8139534884,
+        "reward": -115.50872093023256,
+        "cost": 23.13953488372093,
+        "nh4_viol_pct": 6.459768252167572,
+        "do_viol_pct": 1.6027874564459934,
+        "days_within_limit_pct": 68.83720930232559,
+        "n_episodes": 215
+      },
+      "6000": {
+        "air_m3": 92406.97674418605,
+        "reward": -138.61046511627907,
+        "cost": 182.55348837209303,
+        "nh4_viol_pct": 6.79847662263998,
+        "do_viol_pct": 56.80901061502309,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "7000": {
+        "air_m3": 107808.13953488348,
+        "reward": -161.71220930232525,
+        "cost": 189.5767441860465,
+        "nh4_viol_pct": 6.513248521189531,
+        "do_viol_pct": 59.54136617778138,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      },
+      "8000": {
+        "air_m3": 123209.30232558165,
+        "reward": -184.81395348837248,
+        "cost": 192.22790697674418,
+        "nh4_viol_pct": 5.890932663479459,
+        "do_viol_pct": 61.08743213677984,
+        "days_within_limit_pct": 0.0,
+        "n_episodes": 215
+      }
+    },
+    "hindsight_min_cost_mean": 10.33953488372093,
+    "episodes_without_cost_le15_in_grid": 42,
+    "hardest_episodes": [
+      {
+        "day": "2024-01-06",
+        "member": 0,
+        "minimum_grid_cost": 287.0,
+        "costs_by_air": [
+          287.0,
+          287.0,
+          287.0,
+          287.0,
+          287.0,
+          346.0,
+          423.0,
+          426.0,
+          432.0
+        ]
+      },
+      {
+        "day": "2024-01-07",
+        "member": 0,
+        "minimum_grid_cost": 287.0,
+        "costs_by_air": [
+          287.0,
+          287.0,
+          287.0,
+          287.0,
+          287.0,
+          461.0,
+          481.0,
+          485.0,
+          487.0
+        ]
+      },
+      {
+        "day": "2024-02-28",
+        "member": 0,
+        "minimum_grid_cost": 101.0,
+        "costs_by_air": [
+          287.0,
+          287.0,
+          101.0,
+          153.0,
+          172.0,
+          137.0,
+          164.0,
+          165.0,
+          169.0
+        ]
+      },
+      {
+        "day": "2024-02-28",
+        "member": 3,
+        "minimum_grid_cost": 70.0,
+        "costs_by_air": [
+          287.0,
+          287.0,
+          98.0,
+          70.0,
+          77.0,
+          70.0,
+          190.0,
+          172.0,
+          168.0
+        ]
+      },
+      {
+        "day": "2024-02-21",
+        "member": 0,
+        "minimum_grid_cost": 67.0,
+        "costs_by_air": [
+          265.0,
+          224.0,
+          67.0,
+          83.0,
+          103.0,
+          99.0,
+          247.0,
+          167.0,
+          149.0
+        ]
+      },
+      {
+        "day": "2024-01-06",
+        "member": 2,
+        "minimum_grid_cost": 58.0,
+        "costs_by_air": [
+          287.0,
+          61.0,
+          58.0,
+          87.0,
+          177.0,
+          212.0,
+          300.0,
+          253.0,
+          250.0
+        ]
+      },
+      {
+        "day": "2024-02-25",
+        "member": 0,
+        "minimum_grid_cost": 50.0,
+        "costs_by_air": [
+          287.0,
+          287.0,
+          51.0,
+          55.0,
+          63.0,
+          50.0,
+          229.0,
+          227.0,
+          232.0
+        ]
+      },
+      {
+        "day": "2024-01-07",
+        "member": 2,
+        "minimum_grid_cost": 44.0,
+        "costs_by_air": [
+          270.0,
+          49.0,
+          44.0,
+          73.0,
+          104.0,
+          203.0,
+          285.0,
+          273.0,
+          246.0
+        ]
+      },
+      {
+        "day": "2024-02-25",
+        "member": 3,
+        "minimum_grid_cost": 38.0,
+        "costs_by_air": [
+          287.0,
+          282.0,
+          41.0,
+          38.0,
+          39.0,
+          40.0,
+          222.0,
+          223.0,
+          222.0
+        ]
+      },
+      {
+        "day": "2024-01-04",
+        "member": 2,
+        "minimum_grid_cost": 38.0,
+        "costs_by_air": [
+          196.0,
+          90.0,
+          38.0,
+          57.0,
+          98.0,
+          114.0,
+          218.0,
+          237.0,
+          231.0
+        ]
+      }
+    ]
+  },
+  "completed_at": "2026-11-06T08:31:36.205105+00:00"
+}

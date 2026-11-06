@@ -1,0 +1,10 @@
+{
+  "diagnostic_profiles": 14,
+  "all_e06_final_metrics_match": true,
+  "encoder_swap_diagonal_matches_saved_metrics": true,
+  "exact_historical_actions_unchanged": true,
+  "training_performed": false,
+  "test_used": false,
+  "diagnosis_commit": "c89636fa01c5bcce75742a4c7dce874ef908fa31",
+  "intervention_commit": "bd4e17ed539fcbb3308c552091aa65f960d18be7"
+}
