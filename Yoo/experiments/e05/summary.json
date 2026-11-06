@@ -1,0 +1,116 @@
+{
+  "launch_commit": "98fb8b8d0386c8dd2d6a8c3b26ebbea4773965e2",
+  "completed_at": "2026-11-06T07:30:56.971243+00:00",
+  "seeds": [
+    0,
+    1
+  ],
+  "split": "val",
+  "report_limit": 15,
+  "audits": [
+    {
+      "method": "ppolag",
+      "seed": 0,
+      "final_lambda": 1.45484375,
+      "maximum_lambda": 2.6709375,
+      "maximum_encoder_sync_kl": 0,
+      "updates": 44,
+      "elapsed_seconds": 117.9324108879664
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 0,
+      "final_lambda": 1.80359375,
+      "maximum_lambda": 2.6654687500000005,
+      "maximum_encoder_sync_kl": 0.0016406659269705415,
+      "updates": 44,
+      "elapsed_seconds": 349.6735559469671
+    },
+    {
+      "method": "ppolag_frozen",
+      "seed": 0,
+      "final_lambda": 1.9354687499999998,
+      "maximum_lambda": 2.5509375,
+      "maximum_encoder_sync_kl": 0,
+      "updates": 44,
+      "elapsed_seconds": 186.23404974903679
+    },
+    {
+      "method": "ppolag",
+      "seed": 1,
+      "final_lambda": 1.95875,
+      "maximum_lambda": 3.05078125,
+      "maximum_encoder_sync_kl": 0,
+      "updates": 44,
+      "elapsed_seconds": 120.36608178098686
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "seed": 1,
+      "final_lambda": 1.55015625,
+      "maximum_lambda": 2.1481250000000003,
+      "maximum_encoder_sync_kl": 0.0015176273882389069,
+      "updates": 44,
+      "elapsed_seconds": 349.8322893999866
+    },
+    {
+      "method": "ppolag_frozen",
+      "seed": 1,
+      "final_lambda": 1.3396875000000001,
+      "maximum_lambda": 2.02859375,
+      "maximum_encoder_sync_kl": 0,
+      "updates": 44,
+      "elapsed_seconds": 189.86683650600025
+    }
+  ],
+  "methods": {
+    "ppolag": {
+      "val_best": {
+        "air_mean": 40221.907092164474,
+        "air_sd": 3306.812469776155,
+        "cost_mean": 15.172093023255814,
+        "cost_sd": 0.36177556246753656,
+        "feasible_seeds": 1
+      },
+      "val_final": {
+        "air_mean": 40221.907092164474,
+        "air_sd": 3306.812469776155,
+        "cost_mean": 15.172093023255814,
+        "cost_sd": 0.36177556246753656,
+        "feasible_seeds": 1
+      }
+    },
+    "ppolag_fcsrl": {
+      "val_best": {
+        "air_mean": 38527.38480971649,
+        "air_sd": 4537.248297678251,
+        "cost_mean": 13.413953488372094,
+        "cost_sd": 1.5391905748618797,
+        "feasible_seeds": 2
+      },
+      "val_final": {
+        "air_mean": 33125.127799472546,
+        "air_sd": 12339.458763979737,
+        "cost_mean": 16.11860465116279,
+        "cost_sd": 3.7920656684097187,
+        "feasible_seeds": 1
+      }
+    },
+    "ppolag_frozen": {
+      "val_best": {
+        "air_mean": 30710.369678889943,
+        "air_sd": 230.75906987759546,
+        "cost_mean": 14.137209302325582,
+        "cost_sd": 1.2135925686410978,
+        "feasible_seeds": 2
+      },
+      "val_final": {
+        "air_mean": 30219.37206616091,
+        "air_sd": 3008.180677231048,
+        "cost_mean": 15.067441860465117,
+        "cost_sd": 1.0557268686552643,
+        "feasible_seeds": 1
+      }
+    }
+  }
+}
