@@ -50,8 +50,51 @@ def replay(model,x,aux,mode,reset):
     return np.stack(result,1)
 
 
+def finalize(report):
+    for seed in CONFIG['seeds']:
+        pair=[r for r in report['training'] if r['seed']==seed]
+        for k in ('initial_parameter_sha256','batch_sha256','parameter_count'):assert pair[0][k]==pair[1][k]
+    checks=[]
+    for seed in CONFIG['seeds']:
+        def row(m,h):return next(r for r in report['evaluation'] if r['mode']==m and r['seed']==seed and r['split']=='inner_holdout' and r['reset_steps']==h)
+        c,h=row('without_routing',275),row('with_routing',275)
+        c1,h1=row('without_routing',1),row('with_routing',1)
+        checks.append({'seed':seed,'cost_mae_improved':h['cost']['daily_mae']<c['cost']['daily_mae'],
+            'onset_f1_not_worse':h['nh4']['onset_f1']>=c['nh4']['onset_f1'],
+            'longest_run_mae_not_worse':h['nh4']['longest_observed_run_mae_minutes']<=c['nh4']['longest_observed_run_mae_minutes'],
+            'do_mae_within_5pct':h['do']['mae']<=c['do']['mae']*1.05,
+            'one_step_nh4_mae_within_5pct':h1['nh4']['mae']<=c1['nh4']['mae']*1.05})
+    means={mode:np.mean([r['cost']['daily_mae'] for r in report['evaluation'] if r['split']=='inner_holdout'
+                        and r['reset_steps']==275 and r['mode']==mode]) for mode in ('without_routing','with_routing')}
+    report['gate']={'per_seed':checks,'mean_cost_mae_improvement_fraction':1-means['with_routing']/means['without_routing']}
+    report['gate']['passed']=bool(all(v for r in checks for k,v in r.items() if k!='seed') and report['gate']['mean_cost_mae_improvement_fraction']>=.05)
+    report['checks']={'paired_initial_parameters':True,'paired_batches':True,'finite_training':True,
+                      'save_restore_exact':True,'future_state_not_used':True}
+    return report
+
+
 def main(a):
     torch.set_num_threads(1);torch.use_deterministic_algorithms(True)
+    if a.finalize_only:
+        if (a.out/'results.json').exists():raise ValueError('Results already exist')
+        report=json.loads((a.out/'progress.json').read_text())
+        assert len(report['training'])==4 and len(report['evaluation'])==24
+        source=subprocess.check_output(['git','show',report['commit']+':Yoo/experiments/e11/routing_trial.py'])
+        assert hashlib.sha256(source).hexdigest()==report['source_sha256']
+        for row in report['training']:
+            path=a.out/f"{row['mode']}_s{row['seed']}.pt"
+            assert hashlib.sha256(path.read_bytes()).hexdigest()==row['model_sha256']
+        for row in report['evaluation']:
+            z=np.load(a.out/f"{row['mode']}_s{row['seed']}_{row['split']}_h{row['reset_steps']}.npz")
+            expected=event_metrics(z['pred'],z['truth'],z['initial'])
+            assert all(row[k]==v for k,v in expected.items())
+        finalize(report)
+        report['finalizer_commit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+        report['recovered_from']='JSON bool serialization failure after all training and evaluation'
+        report['completed_at']=datetime.now(timezone.utc).isoformat()
+        write(a.out/'results.json',report)
+        print(json.dumps(report['gate']),flush=True)
+        return
     if a.out.exists() and any(a.out.iterdir()):raise ValueError(f'Refusing overwrite {a.out}')
     a.out.mkdir(parents=True)
     data=pd.read_pickle(a.data);days=data['days']['train'];assert len(days)==330
@@ -113,25 +156,7 @@ def main(a):
                 tiny['nh4'][:,13:]+=1000;tiny['do'][:,13:]+=1000
                 np.testing.assert_array_equal(original,replay(restored,tiny,aux[split][:2],mode,275))
             write(a.out/'progress.json',report)
-    for seed in CONFIG['seeds']:
-        pair=[r for r in report['training'] if r['seed']==seed]
-        for k in ('initial_parameter_sha256','batch_sha256','parameter_count'):assert pair[0][k]==pair[1][k]
-    checks=[]
-    for seed in CONFIG['seeds']:
-        def row(m,h):return next(r for r in report['evaluation'] if r['mode']==m and r['seed']==seed and r['split']=='inner_holdout' and r['reset_steps']==h)
-        c,h=row('without_routing',275),row('with_routing',275)
-        c1,h1=row('without_routing',1),row('with_routing',1)
-        checks.append({'seed':seed,'cost_mae_improved':h['cost']['daily_mae']<c['cost']['daily_mae'],
-            'onset_f1_not_worse':h['nh4']['onset_f1']>=c['nh4']['onset_f1'],
-            'longest_run_mae_not_worse':h['nh4']['longest_observed_run_mae_minutes']<=c['nh4']['longest_observed_run_mae_minutes'],
-            'do_mae_within_5pct':h['do']['mae']<=c['do']['mae']*1.05,
-            'one_step_nh4_mae_within_5pct':h1['nh4']['mae']<=c1['nh4']['mae']*1.05})
-    means={mode:np.mean([r['cost']['daily_mae'] for r in report['evaluation'] if r['split']=='inner_holdout'
-                        and r['reset_steps']==275 and r['mode']==mode]) for mode in ('without_routing','with_routing')}
-    report['gate']={'per_seed':checks,'mean_cost_mae_improvement_fraction':1-means['with_routing']/means['without_routing']}
-    report['gate']['passed']=all(v for r in checks for k,v in r.items() if k!='seed') and report['gate']['mean_cost_mae_improvement_fraction']>=.05
-    report['checks']={'paired_initial_parameters':True,'paired_batches':True,'finite_training':True,
-                      'save_restore_exact':True,'future_state_not_used':True}
+    finalize(report)
     report['completed_at']=datetime.now(timezone.utc).isoformat();write(a.out/'results.json',report)
     print(json.dumps(report['gate']),flush=True)
 
@@ -139,4 +164,5 @@ def main(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     for k in ('raw','data','out'):p.add_argument('--'+k,type=Path,required=True)
+    p.add_argument('--finalize-only',action='store_true')
     main(p.parse_args())
