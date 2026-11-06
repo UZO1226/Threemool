@@ -70,9 +70,16 @@ def main(a):
             for group, mask in groups.items():
                 diagnostic['strata'].append(dict(mode=r['mode'], seed=r['seed'], variable=name, group=group,
                                                   **rates(pred[:, :, k], truth[:, :, k], mask, threshold)))
+    conditions = json.loads(a.conditions.read_text()) if a.conditions else None
+    if conditions is not None:
+        assert conditions['training_commit'] == report['commit']
+        assert conditions['input_sha256'] == report['input_sha256']
+        diagnostic['conditions_sha256'] = sha(a.conditions)
     a.out.mkdir(parents=True, exist_ok=True)
     write(a.out / 'trial_summary.json', report)
     write(a.out / 'diagnostics.json', diagnostic)
+    if conditions is not None:
+        write(a.out / 'condition_summary.json', conditions)
     md = ['# Yoo/e13 결과', '', f"학습 실행 커밋 `{report['commit']}`.",
           f"학습 시작 `{report['started_at']}`, 완료 `{report['completed_at']}` (UTC).", '',
           '263일 fit, 반복 관찰한 내부 holdout 66일, seed 2개. 외부 val과 test, RL 학습은 사용하지 않았다. 고정된 NH4 > 4, DO > 2 기준으로 초기 1시간 이후 275전이를 평가한다. 비용은 두 위반 스텝 수의 합이며 기존 정책 한도 15와 비교하지 않는다.', '',
@@ -112,7 +119,22 @@ def main(a):
         def get(split, reset):
             return next(r for r in report['evaluation'] if r['mode'] == t['mode'] and r['seed'] == t['seed'] and r['split'] == split and r['reset_steps'] == reset)['nh4']['fpr']
         md.append(f"| {t['mode']} | {t['seed']} | {t['last']['window_fpr'][0]*100:.2f}% | {get('fit',36)*100:.2f}% | {get('fit',275)*100:.2f}% | {get('inner_holdout',275)*100:.2f}% | {t['last']['multiplier'][0]:.3f} |")
-    md += ['', '온도 및 운전 단계별 표본 수, TP/FP/FN/TN, bias, MAE는 diagnostics.json에 있다. 조건별 비교는 실측 운전의 관찰적 진단이며 실제 공정 인과 효과가 아니다.', '', '![고정 기준의 탐지와 거짓경보](figures/tradeoff.png)', '']
+    if conditions is not None:
+        md += ['', '## 평균에 가려진 조건별 거짓경보', '',
+               '주 후보 multi_anchor_rate의 seed 평균이다. 수온 구간은 fit의 3분위 경계로 고정했다. 표본 수는 한 seed의 평가 전이 수이고 FPR의 분모는 그중 실제 비위반 수다.', '',
+               '| 조건 | fit 전이 수 | fit NH4 FPR | holdout 전이 수 | holdout NH4 FPR |', '| --- | --- | --- | --- | --- |']
+        for group in ('all', 'temp_0', 'temp_1', 'temp_2', 'phase_0', 'phase_1', 'phase_2'):
+            parts = []
+            for split in ('fit', 'inner_holdout'):
+                rs = [r for r in conditions['rows'] if r['mode'] == 'multi_anchor_rate' and r['group'] == group and r['split'] == split]
+                parts += [str(rs[0]['count']), f"{np.mean([r['fpr'] for r in rs])*100:.2f}%" if rs[0]['count'] else '해당 없음']
+            md.append('| ' + group + ' | ' + ' | '.join(parts) + ' |')
+        md += ['', '온도 3구간 x 운전 단계 3구간에서 fit FPR을 holdout 비위반 구성 비율로 재가중했다. 실제 모델을 보정하거나 재학습하지 않았다. 구성 비율 변화와 같은 구간 안의 차이를 나눈 기술적 분해이며 인과 분해가 아니다.', '',
+               '| 군 | 원래 fit FPR | 재가중 fit FPR | holdout FPR |', '| --- | --- | --- | --- |']
+        for mode in ('start_multi', 'multi', 'multi_anchor_rate'):
+            rs = [r for r in conditions['decomposition'] if r['mode'] == mode]
+            md.append('| ' + mode + ' | ' + ' | '.join(f"{np.mean([r[key] for r in rs])*100:.2f}%" for key in ('fit_fpr', 'reweighted_fit_fpr', 'holdout_fpr')) + ' |')
+    md += ['', '온도 및 운전 단계별 표본 수, TP/FP/FN/TN, bias, MAE는 diagnostics.json 및 condition_summary.json에 있다. 조건별 비교는 실측 운전의 관찰적 진단이며 실제 공정 인과 효과가 아니다.', '', '![고정 기준의 탐지와 거짓경보](figures/tradeoff.png)', '']
     (a.out / 'results.md').write_text('\n'.join(md))
     import matplotlib
     matplotlib.use('Agg')
@@ -138,4 +160,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     for key in ('trial', 'data', 'out'):
         parser.add_argument('--' + key, type=Path, required=True)
+    parser.add_argument('--conditions', type=Path)
     main(parser.parse_args())
