@@ -1,0 +1,79 @@
+{
+  "cost_ratio_identity": true,
+  "flow_unit_invariance": true,
+  "pid_relative_error_invariance": true,
+  "terminal_gae_and_feasibility_no_bootstrap": true,
+  "flow_independent_of_extreme_actions": true,
+  "real_bsm_fcsrl_tail_optimizer_update": true,
+  "preflight_seed": 999,
+  "not_part_of_comparison": true,
+  "diagnostics": {
+    "daily_nh4_mean": 4.524682362874349,
+    "daily_cost_mean": 325.7771301269531,
+    "stage_cost_max": 2.804732322692871,
+    "feasibility_symlog_outside_fraction": 0.0,
+    "raw_action_clip_fraction": 0.0006944444444444445,
+    "observation_clip_fraction": 0.0,
+    "training_days": [
+      [
+        5,
+        5,
+        1,
+        1
+      ],
+      [
+        1,
+        4,
+        0,
+        5
+      ],
+      [
+        1,
+        1,
+        1,
+        6
+      ],
+      [
+        0,
+        0,
+        6,
+        4
+      ],
+      [
+        4,
+        6,
+        4,
+        1
+      ]
+    ],
+    "train_cost_var": 416.2516174316406,
+    "train_cost_cvar": 420.1433410644531,
+    "tail_episode_count": 20,
+    "tail_effective_mass": 4.0,
+    "tail_positive_episodes": 4,
+    "tail_score_rms": 0.03449142441874397
+  },
+  "update": {
+    "encoder_sync_kl": 0.00025355315301567316,
+    "encoder_dynamics": -0.8750341097513835,
+    "encoder_pred_feasi": 1.21893630027771,
+    "encoder_pred_feasi_MSE": 0.09774259290813157,
+    "encoder": 0.7814192436635494,
+    "kl": 0.01176413195207715,
+    "pi_epochs": 10,
+    "std": 0.2233719527721405,
+    "full_update_probe_kl": 0.0031897262670099735,
+    "policy_parameter_delta_l2": 0.18280039727687836,
+    "gradient_norm_max": 258.142822265625,
+    "gradient_clip_fraction": 0.9208333333333333
+  },
+  "code_commit_at_verification": "69e1a57",
+  "verification_used_uncommitted_trainer": true,
+  "checked_source_hashes": {
+    "Yoo/experiments/e17/verify.py": "1595a44540a522bc9811e99c264c07e6fe95423f1e308401af170fb0efafcf9d",
+    "Yoo/experiments/e17/prepare.py": "3f7b1758cce043002df09d20d80ed15aa4100cb8a1835dd293cdf368c34bdacc",
+    "Yoo/experiments/e17/train_pilot.py": "95d9ad71c0e87efd4ddb47b77c71f9c0a07bd5b5d4e46477dcfb079e02f4e13e",
+    "Yoo/experiments/e17/run_pilot.py": "239c8c266602d65212c0eb4f00c448ee4e7aafcba08dc7061a0a3268e4c50c77",
+    "Yoo/experiments/e17/bsm_mean.py": "43619a6275e3e92e642091ea491e1f808352ce54368074639620a45f3d1578ff"
+  }
+}
