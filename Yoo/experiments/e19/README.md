@@ -54,7 +54,7 @@ PY=/home/jio/fcsrl_src/.venv/bin/python
 cd Yoo/experiments/e18
 $PY prepare.py --steady /home/jio/fcsrl_src/results/e16/preflight_v2/steady_state.npz --out /home/jio/fcsrl_src/results/e19/prepared --tanks 3 4 5
 $PY run.py --prepared /home/jio/fcsrl_src/results/e19/prepared --out /home/jio/fcsrl_src/results/e19/main \
-    --tanks 3 4 5 --pid_mult 3 --updates 100 --seeds 0 1 2 3 4 --jobs 10 --desc "e19 학습 전이"
+    --tanks 3 4 5 --pid_mult 3 --updates 100 --seeds 0 1 2 3 4 --jobs 5 --desc "e19 학습 전이"
 ```
 
 ## 결과

@@ -45,10 +45,10 @@ def save(path, value):
     tmp.replace(path)
 
 
-def config(updates, cost_limit, init_log_std=-1.2, value_scale=100., pid_mult=1.):
+def config(updates, cost_limit, init_log_std=-1.2, value_scale=100., pid_mult=1., horizon=1440):
     # e17 과 같은 PID 단위 환산(같은 상대 제약 오차에 같은 응답)에 pid_mult 를 곱한다. e18 은 1, e19 는 3
     k = 15 / cost_limit * pid_mult
-    return PPOConfig(total_steps=updates * 5760, n_env=4, horizon=1440, n_chunks=1, cost_limit=cost_limit,
+    return PPOConfig(total_steps=updates * 4 * horizon, n_env=4, horizon=horizon, n_chunks=1, cost_limit=cost_limit,
                      init_log_std=init_log_std, pid_kp=.02 * k, pid_ki=.005 * k, pid_kd=.01 * k,
                      value_scale=value_scale)
 
@@ -66,8 +66,15 @@ def make_agent(method, seed, observations, c):
     return agent
 
 
-def collect(agent, c, states, rng, bar=None, tanks=(5,)):
-    envs = [SetpointEnv(states[0], tanks=tanks) for _ in range(c.n_env)]
+def collect(agent, c, states, rng, bar=None, tanks=(5,), continuous_days=0):
+    """continuous_days = 0: e18, e19 처럼 하루씩 reset, 하루 끝은 종료(terminal).
+    continuous_days = N: 건기 0일 시작 상태에서 N일 연속 운전. 하루 끝은 이어지는 시간이고,
+    N일 끝은 시간 제한이라 마지막 상태의 가치로 이어 붙인다 (Yoo/e20)"""
+    if continuous_days:
+        assert c.horizon == continuous_days * 288
+        envs = [SetpointEnv(states[0], start_day=0., days=float(continuous_days), tanks=tanks) for _ in range(c.n_env)]
+    else:
+        envs = [SetpointEnv(states[0], tanks=tanks) for _ in range(c.n_env)]
     schedule = rng.integers(0, 7, size=(c.horizon // 288, c.n_env))
     obs = np.empty((c.n_env, OBS_DIM), np.float32)
 
@@ -78,7 +85,7 @@ def collect(agent, c, states, rng, bar=None, tanks=(5,)):
         return envs[i].reset()[0]
 
     for i in range(c.n_env):
-        obs[i] = reset_day(i, 0)
+        obs[i] = envs[i].reset()[0] if continuous_days else reset_day(i, 0)
     shapes = (('obs', (OBS_DIM,)), ('obs_next', (OBS_DIM,)), ('act', (1,)), ('act_exec', (1,)),
               ('logp', ()), ('rew', ()), ('cost', ()), ('flow', ()), ('vr', ()), ('vc', ()),
               ('nvr', ()), ('nvc', ()), ('end', ()), ('terminated', ()), ('next_feasi', ()), ('energy', ()))
@@ -97,10 +104,14 @@ def collect(agent, c, states, rng, bar=None, tanks=(5,)):
         nxt = np.empty_like(obs)
         for i, env in enumerate(envs):
             nxt[i], reward, term, trunc, info = env.step(b['act_exec'][t, i])
-            assert not trunc and term == ((t + 1) % 288 == 0)
             b['rew'][t, i], b['cost'][t, i], b['flow'][t, i] = reward, info['load'], info['flow_ratio']
             b['energy'][t, i] = info['energy_kwh']
-            b['end'][t, i] = b['terminated'][t, i] = term
+            if continuous_days:
+                assert not trunc and term == (t + 1 == c.horizon)
+                b['end'][t, i], b['terminated'][t, i] = term, 0.  # 시간 제한: 가치로 이어 붙인다
+            else:
+                assert not trunc and term == ((t + 1) % 288 == 0)
+                b['end'][t, i] = b['terminated'][t, i] = term
         next_on = agent.obs_normalizer(nxt)
         b['obs_next'][t] = next_on
         with torch.no_grad():
@@ -113,7 +124,7 @@ def collect(agent, c, states, rng, bar=None, tanks=(5,)):
         if (t + 1) % 288 == 0:
             lo = t + 1 - 288
             b['cost'][lo:t + 1] = normalized_cost(b['cost'][lo:t + 1], b['flow'][lo:t + 1])
-            if t + 1 < c.horizon:
+            if t + 1 < c.horizon and not continuous_days:
                 for i in range(c.n_env):
                     obs[i] = reset_day(i, (t + 1) // 288)
         if bar is not None:
@@ -171,6 +182,21 @@ def checked_update(agent, buf):
     return info
 
 
+def continuous_training(state0, pol, tanks, days=7):
+    """학습 날짜(건기 0 ~ 6일)를 reset 없이 이어서 운전한다. 하루 reset 평가와 비교해 다음 날로 넘기는 피해를 본다"""
+    from setpoint_env import episode_metrics
+    env = SetpointEnv(state0, start_day=0., days=float(days), tanks=tanks)
+    obs, _ = env.reset()
+    infos = []
+    for _ in range(env.T):
+        obs, _, _, _, info = env.step(np.asarray(pol(obs, env), dtype=float).reshape(1))
+        infos.append(info)
+    m = episode_metrics(infos)
+    return {'flow_weighted_nh4': m['flow_weighted_nh4'], 'aeration_kwh_per_day': m['aeration_kwh_per_day'],
+            'nh4_violation_percent': m['nh4_violation_percent'],
+            'daily_nh4': [episode_metrics(infos[i:i + 288])['flow_weighted_nh4'] for i in range(0, len(infos), 288)]}
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--method', choices=METHODS, required=True)
@@ -181,6 +207,7 @@ def main():
     p.add_argument('--value_scale', type=float, default=100.)
     p.add_argument('--tanks', nargs='+', type=int, default=[5])
     p.add_argument('--pid_mult', type=float, default=1.)
+    p.add_argument('--continuous_days', type=int, default=0)
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     warnings.filterwarnings('error', category=ODEintWarning)
@@ -190,12 +217,13 @@ def main():
     meta = json.loads((a.prepared / 'metadata.json').read_text())
     tanks = tuple(a.tanks)
     assert tuple(meta.get('tanks', [5])) == tanks, '준비 폴더와 제어 구조가 다르다'
-    c = config(a.updates, float(meta['cost_limit']), value_scale=a.value_scale, pid_mult=a.pid_mult)
+    c = config(a.updates, float(meta['cost_limit']), value_scale=a.value_scale, pid_mult=a.pid_mult,
+               horizon=a.continuous_days * 288 if a.continuous_days else 1440)
     agent = make_agent(a.method, a.seed, np.load(a.prepared / 'train_observations.npy'), c)
     states = [dict(np.load(a.prepared / f'day_{d}.npz')) for d in range(7)]
     initial = dict(np.load(a.prepared / 'initial.npz'))
     save(a.out / 'config.json', {'method': a.method, 'seed': a.seed, 'config': asdict(c), 'tanks': list(tanks),
-        'pid_mult': a.pid_mult,
+        'pid_mult': a.pid_mult, 'continuous_days': a.continuous_days,
         'representation': asdict(RepresentationConfig()), 'started_at': datetime.now(timezone.utc).isoformat(),
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'source_hashes': {x.name: hashlib.sha256(x.read_bytes()).hexdigest() for x in
@@ -212,7 +240,7 @@ def main():
     bar = tqdm(total=c.actual_steps, desc=f'{a.method} seed={a.seed}', mininterval=5)
     for update in range(1, c.n_updates + 1):
         tick = time.monotonic()
-        buf, diag = collect(agent, c, states, rng, bar, tanks)
+        buf, diag = collect(agent, c, states, rng, bar, tanks, a.continuous_days)
         info = checked_update(agent, buf)
         agent.pid.update(diag['daily_cost_mean'], c.cost_limit)
         agent.lagrg = agent.pid.get_lagrg()
@@ -229,10 +257,12 @@ def main():
     bar.close()
     save(a.out / 'progress.json', {'phase': 'final_evaluation', 'steps': c.actual_steps, 'total_steps': c.actual_steps})
     final_train = training_days(states, pol, tanks=tanks)
+    final_train_cont = continuous_training(states[0], pol, tanks)
     final = evaluate(initial, pol, tanks=tanks)
     agent.save(a.out / 'model_final')
     result = {'method': a.method, 'seed': a.seed, 'steps': c.actual_steps, 'updates': c.n_updates,
               'cost_limit': c.cost_limit, 'initial_training_days': init_train, 'final_training_days': final_train,
+              'final_training_continuous': final_train_cont,
               'final': final, 'training': records, 'elapsed_seconds': time.monotonic() - start,
               'finished_at': datetime.now(timezone.utc).isoformat()}
     save(a.out / 'metrics.json', result)
