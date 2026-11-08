@@ -158,3 +158,47 @@ def training_days(states, policy, days=range(7), tanks=(5,)):
                      'nh4_violation_percent': m['nh4_violation_percent'], 'cost': m['cost']})
     mean = {k: float(np.mean([r[k] for r in rows])) for k in rows[0] if k != 'day'}
     return {'days': rows, 'mean': mean}
+
+
+class HoldEnv:
+    """같은 행동을 5분 x k 동안 유지하는 결정 주기 감싸개 (Yoo/e21).
+    load 는 5분 구간 load 의 합, flow_ratio 는 평균이라, 하루 단위로 정규화한 비용의 합이 k = 1 과 같은 단위다"""
+
+    def __init__(self, env, k):
+        self.env, self.k = env, int(k)
+        assert env.T % self.k == 0
+        self.T = env.T // self.k
+
+    def reset(self, **kw):
+        return self.env.reset(**kw)
+
+    def step(self, action):
+        infos, rew = [], 0.
+        for _ in range(self.k):
+            obs, r, term, trunc, info = self.env.step(action)
+            rew += r
+            infos.append(info)
+        agg = {'load': float(sum(x['load'] for x in infos)), 'flow_ratio': float(np.mean([x['flow_ratio'] for x in infos])),
+               'energy_kwh': float(sum(x['energy_kwh'] for x in infos)),
+               'mixing_kwh': float(sum(x['mixing_kwh'] for x in infos)),
+               'effluent': np.concatenate([x['effluent'] for x in infos]),
+               'do5': np.concatenate([x['do5'] for x in infos]), 'kla5': np.concatenate([x['kla5'] for x in infos]),
+               'setpoint': infos[-1]['setpoint'], 'violation_fraction': float(np.mean([x['violation_fraction'] for x in infos]))}
+        return obs, rew, term, trunc, agg
+
+
+class HoldPolicy:
+    """평가용: 5분마다 부르지만 env.t 가 k 의 배수일 때만 정책을 다시 계산한다"""
+
+    def __init__(self, policy, k):
+        self.policy, self.k, self.a = policy, int(k), None
+
+    def reset(self):
+        self.a = None
+        if hasattr(self.policy, 'reset'):
+            self.policy.reset()
+
+    def __call__(self, obs, env):
+        if self.a is None or env.t % self.k == 0:
+            self.a = self.policy(obs, env)
+        return self.a

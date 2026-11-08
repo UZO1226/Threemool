@@ -28,7 +28,8 @@ from tqdm import tqdm
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / 'Yoo/code/wwtp'))
-from setpoint_env import OBS_DIM, SetpointEnv, evaluate, normalized_cost, setpoint_to_action, training_days  # noqa: E402
+from setpoint_env import (OBS_DIM, HoldEnv, HoldPolicy, SetpointEnv, evaluate, normalized_cost,  # noqa: E402
+                          setpoint_to_action, training_days)
 from fcsrl.utils import DeviceConfig  # noqa: E402
 from ppo_config import PPOConfig  # noqa: E402
 from ppo_lag import PPOLagAgent, gae  # noqa: E402
@@ -66,16 +67,19 @@ def make_agent(method, seed, observations, c):
     return agent
 
 
-def collect(agent, c, states, rng, bar=None, tanks=(5,), continuous_days=0):
+def collect(agent, c, states, rng, bar=None, tanks=(5,), continuous_days=0, interval=1):
     """continuous_days = 0: e18, e19 처럼 하루씩 reset, 하루 끝은 종료(terminal).
     continuous_days = N: 건기 0일 시작 상태에서 N일 연속 운전. 하루 끝은 이어지는 시간이고,
     N일 끝은 시간 제한이라 마지막 상태의 가치로 이어 붙인다 (Yoo/e20)"""
+    spd = 288 // interval  # 하루의 결정 수
     if continuous_days:
-        assert c.horizon == continuous_days * 288
-        envs = [SetpointEnv(states[0], start_day=0., days=float(continuous_days), tanks=tanks) for _ in range(c.n_env)]
+        assert c.horizon == continuous_days * spd
+        envs = [HoldEnv(SetpointEnv(states[0], start_day=0., days=float(continuous_days), tanks=tanks), interval)
+                for _ in range(c.n_env)]
     else:
+        assert interval == 1, '하루 reset 모드는 결정 주기 5분만 지원한다'
         envs = [SetpointEnv(states[0], tanks=tanks) for _ in range(c.n_env)]
-    schedule = rng.integers(0, 7, size=(c.horizon // 288, c.n_env))
+    schedule = rng.integers(0, 7, size=(c.horizon // spd, c.n_env))
     obs = np.empty((c.n_env, OBS_DIM), np.float32)
 
     def reset_day(i, block):
@@ -121,20 +125,20 @@ def collect(agent, c, states, rng, bar=None, tanks=(5,), continuous_days=0):
             if isinstance(agent, PPOFCSRLAgent):
                 b['next_feasi'][t] = agent.next_feasibility(next_on)
         obs = nxt
-        if (t + 1) % 288 == 0:
-            lo = t + 1 - 288
+        if (t + 1) % spd == 0:
+            lo = t + 1 - spd
             b['cost'][lo:t + 1] = normalized_cost(b['cost'][lo:t + 1], b['flow'][lo:t + 1])
             if t + 1 < c.horizon and not continuous_days:
                 for i in range(c.n_env):
-                    obs[i] = reset_day(i, (t + 1) // 288)
+                    obs[i] = reset_day(i, (t + 1) // spd)
         if bar is not None:
             bar.update(c.n_env)
     b['adv_r'], b['ret_r'] = gae(b['rew'], b['vr'], b['nvr'], b['end'], c.gamma, c.gae_lambda)
     b['adv_c'], b['ret_c'] = gae(b['cost'], b['vc'], b['nvc'], b['end'], c.gamma, c.gae_lambda)
     r = RepresentationConfig()
     b['feasi'] = feasibility_targets(b['cost'], b['next_feasi'], b['end'], b['terminated'], r.feasibility_discount)
-    daily_cost = b['cost'].reshape(-1, 288, c.n_env).sum(axis=1).ravel()
-    daily_energy = b['energy'].reshape(-1, 288, c.n_env).sum(axis=1).ravel()
+    daily_cost = b['cost'].reshape(-1, spd, c.n_env).sum(axis=1).ravel()
+    daily_energy = b['energy'].reshape(-1, spd, c.n_env).sum(axis=1).ravel()
     sp = 0.5 + (b['act_exec'] + 1) / 2 * 2.5
     diagnostics = {'daily_nh4_mean': float(daily_cost.mean() / 288 * 4), 'daily_cost_mean': float(daily_cost.mean()),
                    'daily_aeration_kwh': float(daily_energy.mean()),
@@ -208,6 +212,7 @@ def main():
     p.add_argument('--tanks', nargs='+', type=int, default=[5])
     p.add_argument('--pid_mult', type=float, default=1.)
     p.add_argument('--continuous_days', type=int, default=0)
+    p.add_argument('--interval', type=int, default=1, help='설정값 결정 주기 (5분 단위). e21: 6 = 30분')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     warnings.filterwarnings('error', category=ODEintWarning)
@@ -218,12 +223,12 @@ def main():
     tanks = tuple(a.tanks)
     assert tuple(meta.get('tanks', [5])) == tanks, '준비 폴더와 제어 구조가 다르다'
     c = config(a.updates, float(meta['cost_limit']), value_scale=a.value_scale, pid_mult=a.pid_mult,
-               horizon=a.continuous_days * 288 if a.continuous_days else 1440)
+               horizon=a.continuous_days * 288 // a.interval if a.continuous_days else 1440)
     agent = make_agent(a.method, a.seed, np.load(a.prepared / 'train_observations.npy'), c)
     states = [dict(np.load(a.prepared / f'day_{d}.npz')) for d in range(7)]
     initial = dict(np.load(a.prepared / 'initial.npz'))
     save(a.out / 'config.json', {'method': a.method, 'seed': a.seed, 'config': asdict(c), 'tanks': list(tanks),
-        'pid_mult': a.pid_mult, 'continuous_days': a.continuous_days,
+        'pid_mult': a.pid_mult, 'continuous_days': a.continuous_days, 'interval': a.interval,
         'representation': asdict(RepresentationConfig()), 'started_at': datetime.now(timezone.utc).isoformat(),
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'source_hashes': {x.name: hashlib.sha256(x.read_bytes()).hexdigest() for x in
@@ -232,6 +237,8 @@ def main():
         'normalizer': agent.obs_normalizer.state()})
     start = time.monotonic()
     pol = lambda o, e: agent.act_det(o)[0]  # noqa: E731
+    if a.interval > 1:
+        pol = HoldPolicy(pol, a.interval)
     save(a.out / 'progress.json', {'phase': 'initial_evaluation', 'steps': 0, 'total_steps': c.actual_steps})
     init_train = training_days(states, pol, tanks=tanks)
     assert abs(init_train['mean']['cost'] - c.cost_limit) < 1e-3 * c.cost_limit, '학습 전 정책이 DO PI 와 다르다'
@@ -240,7 +247,7 @@ def main():
     bar = tqdm(total=c.actual_steps, desc=f'{a.method} seed={a.seed}', mininterval=5)
     for update in range(1, c.n_updates + 1):
         tick = time.monotonic()
-        buf, diag = collect(agent, c, states, rng, bar, tanks, a.continuous_days)
+        buf, diag = collect(agent, c, states, rng, bar, tanks, a.continuous_days, a.interval)
         info = checked_update(agent, buf)
         agent.pid.update(diag['daily_cost_mean'], c.cost_limit)
         agent.lagrg = agent.pid.get_lagrg()

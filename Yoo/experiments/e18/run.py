@@ -36,14 +36,15 @@ def main():
     p.add_argument('--pid_mult', type=float, default=1.)
     p.add_argument('--desc', default='e18 학습 전이')
     p.add_argument('--continuous_days', type=int, default=0)
+    p.add_argument('--interval', type=int, default=1)
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
-    per_run = a.updates * 4 * (a.continuous_days * 288 if a.continuous_days else 1440)
+    per_run = a.updates * 4 * (a.continuous_days * 288 // a.interval if a.continuous_days else 1440)
     jobs = [(m, s) for s in a.seeds for m in a.methods]
     env = dict(os.environ, OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', NUMBA_NUM_THREADS='1',
                OMP_WAIT_POLICY='PASSIVE', PYTHONWARNINGS='ignore')
     save(a.out / 'manifest.json', {'started_at': datetime.now(timezone.utc).isoformat(), 'jobs': jobs,
-        'updates': a.updates, 'steps_per_run': per_run, 'tanks': a.tanks, 'pid_mult': a.pid_mult, 'continuous_days': a.continuous_days,
+        'updates': a.updates, 'steps_per_run': per_run, 'tanks': a.tanks, 'pid_mult': a.pid_mult, 'continuous_days': a.continuous_days, 'interval': a.interval,
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()})
     pending, active, done = jobs.copy(), [], []
     bar = tqdm(total=len(jobs) * per_run, desc=a.desc, unit='step', mininterval=5, dynamic_ncols=True)
@@ -61,7 +62,7 @@ def main():
                 cmd = [sys.executable, '-u', str(HERE / 'train.py'), '--method', m, '--seed', str(s),
                        '--prepared', str(a.prepared.resolve()), '--out', str(out), '--updates', str(a.updates),
                        '--tanks', *map(str, a.tanks), '--pid_mult', str(a.pid_mult),
-                       '--continuous_days', str(a.continuous_days)]
+                       '--continuous_days', str(a.continuous_days), '--interval', str(a.interval)]
                 log = (a.out / f'{m}_s{s}.log').open('w')
                 active.append((subprocess.Popen(cmd, env=env, stdout=log, stderr=subprocess.STDOUT,
                                                 start_new_session=True), log, m, s))
