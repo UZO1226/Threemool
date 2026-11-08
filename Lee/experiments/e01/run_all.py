@@ -17,8 +17,12 @@ from tqdm import tqdm
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-MODES = ('mean', 'binary')
-METHODS = ('ppo', 'fcsrl')
+sys.path.insert(0, str(ROOT / 'Lee/code/bsm'))
+import bsm_binary as cost_modes  # noqa: E402
+
+MODES = cost_modes.MODES
+METHODS = ('ppo', 'fcsrl', 'fcsrl_fpen')
+DEFAULT_METHODS = ('ppo', 'fcsrl')
 SEEDS = (0, 1, 2)
 
 
@@ -34,7 +38,8 @@ def main():
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--updates', type=int, default=10)
     p.add_argument('--parallel', type=int, default=6)
-    p.add_argument('--modes', default=','.join(MODES), help='쉼표로 구분한 비용 모드')
+    p.add_argument('--modes', default=','.join(('mean', 'binary')), help='쉼표로 구분한 비용 모드')
+    p.add_argument('--methods', default=','.join(DEFAULT_METHODS), help='쉼표로 구분한 방법')
     p.add_argument('--cost-limit', type=float, default=None,
                    help='하루 비용 한도. 생략하면 모드의 기본값')
     p.add_argument('--upstream', type=Path, required=True)
@@ -51,7 +56,9 @@ def main():
 
     modes = tuple(x.strip() for x in a.modes.split(',') if x.strip())
     assert all(m in MODES for m in modes), f'Unknown cost mode in {a.modes}'
-    jobs = [(mode, method, seed) for seed in SEEDS for mode in modes for method in METHODS]
+    methods = tuple(x.strip() for x in a.methods.split(',') if x.strip())
+    assert all(m in METHODS for m in methods), f'Unknown method in {a.methods}'
+    jobs = [(mode, method, seed) for seed in SEEDS for mode in modes for method in methods]
     steps_per_run = a.updates * 5760
     sources = sorted([*HERE.glob('*.py'), *(ROOT / 'Lee/code/bsm').glob('*.py')])
     save(a.out / 'manifest.json', {
