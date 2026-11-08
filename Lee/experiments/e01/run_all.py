@@ -42,6 +42,8 @@ def main():
     p.add_argument('--methods', default=','.join(DEFAULT_METHODS), help='쉼표로 구분한 방법')
     p.add_argument('--cost-limit', type=float, default=None,
                    help='하루 비용 한도. 생략하면 모드의 기본값')
+    p.add_argument('--feasibility-weight', type=float, default=None,
+                   help='fcsrl_fpen 의 feasibility 벌점 가중치. 생략하면 0.1')
     p.add_argument('--upstream', type=Path, required=True)
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
@@ -66,7 +68,7 @@ def main():
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'upstream_commit': commit, 'python': sys.executable, 'jobs': jobs,
         'parallel_jobs': a.parallel, 'steps_per_run': steps_per_run, 'updates_per_run': a.updates,
-        'cost_limit_override': a.cost_limit,
+        'cost_limit_override': a.cost_limit, 'feasibility_weight': a.feasibility_weight,
         'source_hashes': {str(s.relative_to(ROOT)): hashlib.sha256(s.read_bytes()).hexdigest() for s in sources},
         'prepared_metadata_sha256': hashlib.sha256((a.prepared / 'metadata.json').read_bytes()).hexdigest()})
 
@@ -103,6 +105,8 @@ def main():
                        '--prepared', str(a.prepared.resolve()), '--out', str(run_dir(mode, method, seed).resolve())]
                 if a.cost_limit is not None:
                     cmd += ['--cost-limit', str(a.cost_limit)]
+                if a.feasibility_weight is not None:
+                    cmd += ['--feasibility-weight', str(a.feasibility_weight)]
                 log = (a.out / f'{mode}_{method}_s{seed}.log').open('w')
                 proc = subprocess.Popen(cmd, env=environment, stdout=log, stderr=subprocess.STDOUT, cwd=str(ROOT))
                 active.append((proc, log, mode, method, seed))
