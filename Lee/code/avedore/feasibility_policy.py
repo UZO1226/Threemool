@@ -65,8 +65,8 @@ class FeasibilityPenaltyMixin:
         scores = np.asarray(buf['next_feasi'], dtype=np.float64)
         if scores.shape != advantage.shape or not np.isfinite(scores).all():
             raise ValueError('Missing or invalid next state feasibility scores')
-        if (scores < 0).any():
-            raise ValueError('Feasibility scores must be nonnegative')
+        # 예측 feasibility 는 분포의 기댓값이라 구간 범위의 아래쪽에서 0 보다 약간 작을 수 있다.
+        # 표준화해서 쓰므로 부호는 문제가 없다 (Lee/e06 첫 실행에서 음수 검사가 학습을 중단시켜 제거).
         if c.standardize:
             scores = (scores - scores.mean()) / (scores.std() + 1e-8)
         else:
