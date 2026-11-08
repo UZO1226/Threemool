@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-11-08T08:30:18.883412+00:00",
+  "copied_file_hashes": {
+    "ppo_config.py": "9e11cf4eec433601",
+    "ppo_lag.py": "79e9fb579d986659",
+    "ppo_fcsrl.py": "56020b2dd8c5477b",
+    "ppo_tail.py": "1a865fe264831f6f",
+    "env.py": "53adb88d86de302d",
+    "surrogate.py": "02bc4716bb328678",
+    "FCSRL_LICENSE": "1eb85fc97224598d",
+    "bsm_env.py": "a5758c914464ab8c",
+    "BSM_LICENSE": "979dfed37e932576",
+    "bsm_mean.py": "5dcf36a55a7420bb"
+  },
+  "module_origin": {
+    "ppo_config": "Lee/code/bsm/ppo_config.py",
+    "ppo_lag": "Lee/code/bsm/ppo_lag.py",
+    "ppo_fcsrl": "Lee/code/bsm/ppo_fcsrl.py",
+    "bsm_env": "Lee/code/bsm/bsm_env.py",
+    "bsm_mean": "Lee/code/bsm/bsm_mean.py",
+    "bsm_binary": "Lee/code/bsm/bsm_binary.py"
+  },
+  "pid_scaling": {
+    "mean": {
+      "limit": 288.0,
+      "pid_kp": 0.0010416666666666667,
+      "pid_ki": 0.00026041666666666666,
+      "pid_kd": 0.0005208333333333333
+    },
+    "binary": {
+      "limit": 72.0,
+      "pid_kp": 0.004166666666666667,
+      "pid_ki": 0.0010416666666666667,
+      "pid_kd": 0.0020833333333333333
+    }
+  },
+  "boundaries": {
+    "terminal_advantage": 1.0,
+    "feasibility_before_violation": 0.8999999761581421,
+    "feasibility_after_boundary": 0.0
+  },
+  "cost_definitions": {
+    "flow_weighted_nh4": 4.268897828007593,
+    "mean_mode_daily_cost": 307.36064361654667,
+    "mean_mode_limit": 288.0,
+    "binary_mode_daily_cost": 131.0,
+    "binary_mode_limit": 72.0,
+    "step_violation_percent": 45.48611111111111,
+    "sample_violation_percent": 45.27777777777778
+  },
+  "optimization": {
+    "mean/ppo": {
+      "policy_parameter_delta_l2": 0.05599847435951233,
+      "full_update_probe_kl": 0.013583754189312458,
+      "gradient_norm_max": 105.57308959960938,
+      "daily_cost_mean": 205.02871704101562,
+      "feasibility_target_mean": 0.713006854057312,
+      "feasibility_symlog_outside_fraction": 0.0
+    },
+    "mean/fcsrl": {
+      "policy_parameter_delta_l2": 0.05441605672240257,
+      "full_update_probe_kl": 0.02840595878660679,
+      "gradient_norm_max": 138.44384765625,
+      "daily_cost_mean": 234.197998046875,
+      "feasibility_target_mean": 0.8145741820335388,
+      "feasibility_symlog_outside_fraction": 0.0
+    },
+    "binary/ppo": {
+      "policy_parameter_delta_l2": 0.05599847435951233,
+      "full_update_probe_kl": 0.013583754189312458,
+      "gradient_norm_max": 96.25196075439453,
+      "daily_cost_mean": 86.5,
+      "feasibility_target_mean": 0.3003472089767456,
+      "feasibility_symlog_outside_fraction": 0.0
+    },
+    "binary/fcsrl": {
+      "policy_parameter_delta_l2": 0.05441605672240257,
+      "full_update_probe_kl": 0.032726697623729706,
+      "gradient_norm_max": 116.50979614257812,
+      "daily_cost_mean": 128.0,
+      "feasibility_target_mean": 0.47569137811660767,
+      "feasibility_symlog_outside_fraction": 0.0
+    }
+  }
+}
