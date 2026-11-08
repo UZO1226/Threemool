@@ -79,4 +79,5 @@ python -u Lee/experiments/e01/run_all.py --prepared <결과>/e01_prepared --out 
 
 ## 실행 결과
 
-실행 후 results.md 에 기록한다.
+[results.md](results.md) 에 있다. 벌점의 실제 크기가 명목 가중치보다 작았고(기본 이점의 약 4%와 11%), 알려진
+하루 reset 설계 결함 위의 결과라는 한계를 함께 적었다.
