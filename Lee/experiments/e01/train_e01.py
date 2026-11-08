@@ -43,16 +43,18 @@ def save(path, value):
     tmp.replace(path)
 
 
-def config(mode, updates):
+def config(mode, updates, limit=None):
+    """limit 을 주지 않으면 모드의 기본 한도를 쓴다 (e01, e02 와 같은 설정)."""
+    limit = cost_modes.daily_limit(mode) if limit is None else float(limit)
     return PPOConfig(total_steps=updates * 5760, n_env=4, horizon=1440, n_chunks=1,
-                     cost_limit=cost_modes.daily_limit(mode), init_log_std=-1.5,
-                     **cost_modes.pid_gains(mode))
+                     cost_limit=limit, init_log_std=-1.5,
+                     **cost_modes.pid_gains(mode, limit))
 
 
-def make_agent(method, mode, seed, observations, updates):
+def make_agent(method, mode, seed, observations, updates, limit=None):
     torch.manual_seed(seed)
     np.random.seed(seed)
-    c = config(mode, updates)
+    c = config(mode, updates, limit)
     agent = METHODS[method](OBS_DIM, ACT_DIM, config=c)
     agent.obs_normalizer.update(observations)
     agent.obs_normalizer.m2 = np.maximum(agent.obs_normalizer.m2,
@@ -187,18 +189,21 @@ def main():
     p.add_argument('--prepared', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--updates', type=int, default=10)
+    p.add_argument('--cost-limit', type=float, default=None,
+                   help='하루 비용 한도. 생략하면 모드의 기본값 (mean 288, binary 72)')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     warnings.filterwarnings('error', category=ODEintWarning)
     torch.set_num_threads(1)
     DeviceConfig().select_device(-1)
 
-    agent, c = make_agent(a.method, a.mode, a.seed, np.load(a.prepared / 'train_observations.npy'), a.updates)
+    agent, c = make_agent(a.method, a.mode, a.seed, np.load(a.prepared / 'train_observations.npy'),
+                          a.updates, a.cost_limit)
     initial = dict(np.load(a.prepared / 'initial.npz'))
     save(a.out / 'config.json', {
         'mode': a.mode, 'method': a.method, 'seed': a.seed, 'updates': a.updates,
         'config': asdict(c), 'representation': asdict(RepresentationConfig()),
-        'daily_cost_limit': cost_modes.daily_limit(a.mode),
+        'daily_cost_limit': c.cost_limit,
         'started_at': datetime.now(timezone.utc).isoformat(),
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'prepared_metadata_sha256': hashlib.sha256((a.prepared / 'metadata.json').read_bytes()).hexdigest(),
@@ -237,7 +242,7 @@ def main():
     result = {'mode': a.mode, 'method': a.method, 'seed': a.seed, 'steps': c.actual_steps,
               'updates': c.n_updates, 'daily_cost_limit': c.cost_limit,
               'initial': baseline, 'final': final, 'training': records,
-              'final_within_own_limit': {w: satisfied(a.mode, final[w]['week']) for w in final},
+              'final_within_own_limit': {w: satisfied(a.mode, final[w]['week'], c.cost_limit) for w in final},
               'elapsed_seconds': time.monotonic() - start,
               'finished_at': datetime.now(timezone.utc).isoformat()}
     save(a.out / 'metrics.json', result)

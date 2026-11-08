@@ -62,8 +62,12 @@ def daily_limit(mode):
     return BINARY_DAILY_LIMIT if mode == 'binary' else MEAN_DAILY_LIMIT
 
 
-def pid_gains(mode):
-    scale = BASE_PID_LIMIT / daily_limit(mode)
+def pid_gains(mode, limit=None):
+    """한도를 지정하지 않으면 모드의 기본 한도를 쓴다 (e01, e02 와 같은 값)."""
+    limit = daily_limit(mode) if limit is None else float(limit)
+    if not np.isfinite(limit) or limit <= 0:
+        raise ValueError('Daily cost limit must be a positive finite number')
+    scale = BASE_PID_LIMIT / limit
     return {name: value * scale for name, value in zip(('pid_kp', 'pid_ki', 'pid_kd'), BASE_PID)}
 
 
@@ -133,9 +137,10 @@ def evaluate(initial, policy, controller=False, weathers=('dry', 'rain'), days=1
     return result
 
 
-def satisfied(mode, week):
-    """해당 모드의 하루 한도를 평가 구간 평균 기준으로 만족했는가."""
+def satisfied(mode, week, limit=None):
+    """해당 한도를 평가 구간 평균 기준으로 만족했는가. 기본값은 모드의 기본 한도다."""
     check_mode(mode)
+    limit = daily_limit(mode) if limit is None else float(limit)
     if mode == 'binary':
-        return bool(week['violating_steps_per_day'] <= BINARY_DAILY_LIMIT)
-    return bool(week['cost_ratio'] * STEPS_PER_DAY <= MEAN_DAILY_LIMIT)
+        return bool(week['violating_steps_per_day'] <= limit)
+    return bool(week['cost_ratio'] * STEPS_PER_DAY <= limit)
