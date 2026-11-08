@@ -100,13 +100,15 @@ def main():
     p.add_argument('--prepared', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--updates', type=int, default=10)
+    p.add_argument('--feasibility-discount', type=float, default=Config.feasibility_discount,
+                   help='F 의 할인율. 클수록 더 먼 미래의 위반까지 본다 (Park/e02)')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
 
-    c = Config(updates=a.updates)
+    c = Config(updates=a.updates, feasibility_discount=a.feasibility_discount)
     normalizer = ObsNormalizer(np.load(a.prepared / 'train_observations.npy'))
     agent = METHODS[a.method](OBS_DIM, ACT_DIM, c, normalizer)
     initial = dict(np.load(a.prepared / 'initial.npz'))

@@ -20,4 +20,4 @@ BSM1 환경에서 FCSRL 확장을 준비하고 있다. 코드는 `code/` 에 직
 | 실험 | 내용 | 상태 |
 | --- | --- | --- |
 | e01 | feasibility 점수로 실행 시점에 위험 행동을 막는 안전 차단 | 2026-11-09 완료. 위반은 줄었지만 F 가 NH4 규칙보다 낫다는 주 가설은 지지 안 됨. [실험 기록](experiments/e01/README.md) |
-| e02 | 더 먼 미래를 보는 F (feasibility discount 0.97, 0.99) | 준비 중 |
+| e02 | 더 먼 미래를 보는 F (feasibility discount 0.97, 0.99) | 2026-11-09 완료. F 의 조기 경보와 같은 에너지 비교 우위 확인, discount 효과는 없음. 학습 표본 안 결과. [실험 기록](experiments/e02/README.md) |
