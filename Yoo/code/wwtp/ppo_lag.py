@@ -79,7 +79,10 @@ class PPOLagAgent:
 
     def values(self, o):
         features = self.policy_input(o)
-        return self.vr(features)[:, 0], self.vc(features)[:, 0]
+        s = self.config.value_scale
+        if s == 1.0:
+            return self.vr(features)[:, 0], self.vc(features)[:, 0]
+        return self.vr(features)[:, 0] * s, self.vc(features)[:, 0] * s
 
     def update_aux(self, buf, idx):
         return {}
@@ -143,7 +146,11 @@ class PPOLagAgent:
                 nn.utils.clip_grad_norm_(list(self.pi.parameters()) + [self.log_std], c.max_grad_norm)
                 self.opt_pi.step()
                 vr, vc = self.values(o[idx])
-                loss_v = ((vr - ret_r[idx]) ** 2).mean() + ((vc - ret_c[idx]) ** 2).mean()
+                s = c.value_scale
+                if s == 1.0:
+                    loss_v = ((vr - ret_r[idx]) ** 2).mean() + ((vc - ret_c[idx]) ** 2).mean()
+                else:
+                    loss_v = (((vr - ret_r[idx]) / s) ** 2).mean() + (((vc - ret_c[idx]) / s) ** 2).mean()
                 self.opt_v.zero_grad()
                 loss_v.backward()
                 nn.utils.clip_grad_norm_(list(self.vr.parameters()) + list(self.vc.parameters()), c.max_grad_norm)

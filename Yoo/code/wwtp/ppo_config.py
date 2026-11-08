@@ -26,6 +26,9 @@ class PPOConfig:
     pid_kp: float = 0.02
     pid_ki: float = 0.005
     pid_kd: float = 0.01
+    # 가치망 출력 척도. 가치 = value_scale x 망 출력, 손실은 value_scale 로 나눈 목표로 계산한다.
+    # 1.0 이면 이전 실행과 계산이 같다 (Yoo/e18 에서 BSM1 하루 반환값 약 100 에 맞추려고 추가)
+    value_scale: float = 1.0
 
     def __post_init__(self):
         ints = ("total_steps", "n_env", "horizon", "n_chunks", "test_episodes", "hidden_dim",
@@ -37,7 +40,7 @@ class PPOConfig:
         for name, value in asdict(self).items():
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
                 raise ValueError(f"{name} must be finite and numeric")
-        for name in ("actor_lr", "critic_lr", "target_kl", "max_grad_norm", "pid_ki"):
+        for name in ("actor_lr", "critic_lr", "target_kl", "max_grad_norm", "pid_ki", "value_scale"):
             if getattr(self, name) <= 0:
                 raise ValueError(f"{name} must be positive")
         for name in ("cost_limit", "max_lambda", "pid_kp", "pid_kd"):
