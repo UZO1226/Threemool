@@ -1,7 +1,3 @@
-# FCSRL 논문 쉽게 읽기
-
-Cen et al., "Feasibility Consistent Representation Learning for Safe Reinforcement Learning" (ICML 2024) 를 수식 없이 풀어 쓴 노트다. 수식, 하이퍼파라미터, 결과표 등 자세한 내용은 [fcsrl.md](fcsrl.md) 에 있다.
-
 ## 1. 이 논문이 풀려는 문제
 
 강화학습(RL)은 AI 가 직접 해 보면서 "잘하면 점수(reward)"를 받아 행동을 배우는 방식이다. 안전 강화학습은 여기에 조건이 하나 붙는다. 점수는 최대한 따되, 위험한 일(cost)은 정해진 횟수 이하로만 해야 한다. 예를 들어 로봇이 목표 지점까지 가되 장애물에는 10번 이하로만 부딪혀야 한다.
