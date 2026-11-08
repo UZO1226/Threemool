@@ -32,16 +32,20 @@ def main():
     p.add_argument('--seeds', nargs='+', type=int, default=[0, 1])
     p.add_argument('--updates', type=int, default=40)
     p.add_argument('--jobs', type=int, default=4)
+    p.add_argument('--tanks', nargs='+', type=int, default=[5])
+    p.add_argument('--pid_mult', type=float, default=1.)
+    p.add_argument('--desc', default='e18 학습 전이')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     per_run = a.updates * 5760
     jobs = [(m, s) for s in a.seeds for m in a.methods]
-    env = dict(os.environ, OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONWARNINGS='ignore')
+    env = dict(os.environ, OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', NUMBA_NUM_THREADS='1',
+               OMP_WAIT_POLICY='PASSIVE', PYTHONWARNINGS='ignore')
     save(a.out / 'manifest.json', {'started_at': datetime.now(timezone.utc).isoformat(), 'jobs': jobs,
-        'updates': a.updates, 'steps_per_run': per_run,
+        'updates': a.updates, 'steps_per_run': per_run, 'tanks': a.tanks, 'pid_mult': a.pid_mult,
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()})
     pending, active, done = jobs.copy(), [], []
-    bar = tqdm(total=len(jobs) * per_run, desc='e18 학습 전이', unit='step', mininterval=5, dynamic_ncols=True)
+    bar = tqdm(total=len(jobs) * per_run, desc=a.desc, unit='step', mininterval=5, dynamic_ncols=True)
 
     def stop(signum, frame):
         raise InterruptedError(f'signal {signum}')
@@ -54,7 +58,8 @@ def main():
                 m, s = pending.pop(0)
                 out = (a.out / m / f'seed_{s}').resolve()
                 cmd = [sys.executable, '-u', str(HERE / 'train.py'), '--method', m, '--seed', str(s),
-                       '--prepared', str(a.prepared.resolve()), '--out', str(out), '--updates', str(a.updates)]
+                       '--prepared', str(a.prepared.resolve()), '--out', str(out), '--updates', str(a.updates),
+                       '--tanks', *map(str, a.tanks), '--pid_mult', str(a.pid_mult)]
                 log = (a.out / f'{m}_s{s}.log').open('w')
                 active.append((subprocess.Popen(cmd, env=env, stdout=log, stderr=subprocess.STDOUT,
                                                 start_new_session=True), log, m, s))

@@ -39,3 +39,21 @@ class ABAC:
 
 GRID = [dict(nh4_ref=r, kp=k, ti_hours=t) for r in (1.0, 1.5, 2.0, 2.5, 3.0)
         for k in (0.25, 0.5, 1.0) for t in (1.0, 3.0)]
+
+
+class FeedForward:
+    """유입 부하 비례 설정값: sp = clip(a + b (Q_in x NH4_in / L0 - 1), 0.5, 3.0).
+    obs[5] = 유입량 / 10000, obs[6] = 유입 NH4. L0 는 학습 날짜 DO PI 운전의 평균 부하 (e19)"""
+
+    def __init__(self, a, b, l0):
+        self.a, self.b, self.l0 = float(a), float(b), float(l0)
+
+    def __call__(self, obs, env=None):
+        sp = self.a + self.b * (float(obs[5]) * float(obs[6]) / self.l0 - 1)
+        return [setpoint_to_action(float(np.clip(sp, SP_LOW, SP_HIGH)))]
+
+    def params(self):
+        return {'a': self.a, 'b': self.b, 'l0': self.l0}
+
+
+FF_GRID = [dict(a=a, b=b) for a in (1.5, 1.75, 2.0, 2.25, 2.5) for b in (0.5, 1.0, 1.5, 2.0, 3.0)]

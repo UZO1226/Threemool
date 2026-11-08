@@ -45,10 +45,12 @@ class SetpointPI:
         return output
 
 
-def snapshot_with_pi(model, pi, sp):
+def snapshot_with_pi(model, pi, sp, pis=None):
     s = snapshot(model)
     s['pi_integral'] = np.array(pi.integral)
     s['setpoint'] = np.array(sp)
+    for k, pk in (pis or {}).items():
+        s[f'pi_integral_{k}'] = np.array(pk.integral)
     return s
 
 
@@ -113,14 +115,14 @@ class SetpointEnv(MeanEnv):
         return self._obs(), -energy / self.energy_reference, self.t == self.T, False, info
 
 
-def evaluate(initial, policy, days_eval=7):
+def evaluate(initial, policy, days_eval=7, tanks=(5,)):
     """e17 과 같은 평가: 조건화 상태에서 14일 연속 운전, 후반 7일 집계. 건기와 우기.
     policy(obs, env) -> 행동 [-1, 1]"""
     from ppo_tail import empirical_cvar
 
     result = {}
     for weather in ('dry', 'rain'):
-        env = SetpointEnv(initial, weather=weather, days=14.)
+        env = SetpointEnv(initial, weather=weather, days=14., tanks=tanks)
         obs, _ = env.reset()
         if hasattr(policy, 'reset'):
             policy.reset()
@@ -137,12 +139,12 @@ def evaluate(initial, policy, days_eval=7):
     return result
 
 
-def training_days(states, policy, days=range(7)):
+def training_days(states, policy, days=range(7), tanks=(5,)):
     """학습과 같은 조건(건기 d 일, 그날 시작 상태에서 하루 reset)으로 정책을 돌린다.
     states[d]: d 일 시작 snapshot. 반환: 날짜별 지표와 평균"""
     rows = []
     for d in days:
-        env = SetpointEnv(states[d], weather='dry', start_day=float(d), days=1.)
+        env = SetpointEnv(states[d], weather='dry', start_day=float(d), days=1., tanks=tanks)
         obs, _ = env.reset()
         if hasattr(policy, 'reset'):
             policy.reset()

@@ -1,0 +1,62 @@
+# Yoo/e19: BSM1 3개 조 DO 제어에서 PPO-Lag 와 FCSRL + PPO-Lag 본 실험
+
+## 목적
+
+e18 에서 5번 조만 제어하면 동적 배분의 이득이 약 1% 로 작다는 것을 확인했다. e19 는 3, 4, 5번 조를 모두 DO PI 로 제어하는 구조에서 RL 이 정하는 공통 DO 설정값이 고정 설정값과 손으로 설계한 규칙보다 나은지 5-seed 로 판정한다.
+
+계획서의 비교(기존 PPO, FCSRL, 에너지, 수질 위반, 보상)에 맞춰 PPO-Lag 와 FCSRL + PPO-Lag 를 같은 조건에서 비교한다.
+
+## 설정 (e18 코드를 그대로 쓰고 옵션만 바꿈)
+
+| 항목 | e19 |
+| --- | --- |
+| 제어 구조 | 3, 4, 5번 조 각각 원본 BSM1 DO PI (같은 계수), 정책이 공통 설정값 0.5 ~ 3.0 mg/L 를 5분마다 정한다 (`--tanks 3 4 5`) |
+| 시작 상태 | e16 정상상태에서 같은 구조, 설정값 2.0 으로 건기 14일 조건화. 학습은 이어지는 건기 0 ~ 6일 하루 reset (3개 조 PI 적분 포함) |
+| 비용 한도 | 학습 날짜에서 같은 구조의 설정값 2.0 이 낸 평균 비용 (같은 평균 NH4 에서 에너지 절감) |
+| 방법 | PPO-Lag, FCSRL + PPO-Lag. 모두 설정값 2.0 의 결정적 정책에서 출발 |
+| seed | 0, 1, 2, 3, 4 |
+| 학습량 | 100회 갱신 x 5,760전이 = 576,000전이 |
+| lambda | e18 단위 환산에 3배 (`--pid_mult 3`). e18 에서 60회 갱신 동안 lambda 가 다 오르지 못했고, e03 의 218회보다 갱신 수가 적어서다. 상한 20 |
+| 나머지 | e18 과 같다 (PPO 설정, 초기 log std −1.2, value_scale 100, 관측 12차원) |
+| 모델 선택 | 없음. 마지막 정책만 평가 |
+
+## 비교 기준 (같은 구조, `prepare.py --tanks 3 4 5`)
+
+- DO PI 설정값 2.0 (출발점)
+- 고정 설정값 경계: 0.75 ~ 3.0 의 10개
+- 유입 부하 비례 규칙: 설정값 = a + b (유입량 x 유입 NH4 / 기준 부하 − 1). a 5개 x b 5개 격자에서 학습 날짜 평균 NH4 가 DO PI 이하인 것 중 에너지 최소
+- ABAC: e18 과 같은 격자, 같은 선택 규칙
+
+## 평가
+
+- 주 평가: 조건화 상태에서 14일 연속 운전, 후반 7일(건기 7 ~ 13일). 학습에 쓰지 않은 날짜다
+- 보조 평가: 같은 방식의 우기(학습에 쓰지 않은 날씨), 학습 날짜(건기 0 ~ 6일 하루 reset)
+- 고정 설정값 경계도 주 평가와 같은 14일 연속 운전으로 다시 잰다
+- 지표: 폭기 에너지 kWh/일, 유량 가중 NH4, NH4 > 4 시간, 일별 NH4 CVaR20, "경계 대비 에너지" (같은 NH4 를 내는 고정 설정값의 에너지를 보간해 비교. 음수면 경계보다 효율적)
+
+## 판정 기준 (결과를 보기 전에 정함)
+
+건기 주 평가에서 seed 5개 기준으로 본다.
+
+1. 수질 유지: 방법의 평균 NH4 가 DO PI 의 1.05배 이하
+2. 개선: 경계 대비 에너지의 평균이 0 보다 작고, t 분포 95% 신뢰구간 상한도 0 보다 작다
+3. 규칙 대비: 경계 대비 에너지가 유입 부하 비례 규칙보다 작다 (손으로 만든 동적 규칙보다 나은가)
+4. FCSRL 효과: FCSRL + PPO-Lag 와 PPO-Lag 의 경계 대비 에너지와 NH4 를 Welch t 검정으로 비교한다. p < 0.05 일 때만 차이가 있다고 쓴다
+
+1, 2 를 만족하면 "RL 이 같은 수질에서 고정 설정값보다 에너지를 줄였다" 고 보고한다. 우기 결과는 일반화 확인용이며 판정에 쓰지 않는다.
+
+## 실행
+
+```bash
+export BSM1_ARCHIVE=/home/jio/fcsrl_src/results/e16/BSM1.zip
+export PYTHONPATH=/home/jio/fcsrl_src/bsm-deps-e16:$PWD/Yoo/code/wwtp
+PY=/home/jio/fcsrl_src/.venv/bin/python
+cd Yoo/experiments/e18
+$PY prepare.py --steady /home/jio/fcsrl_src/results/e16/preflight_v2/steady_state.npz --out /home/jio/fcsrl_src/results/e19/prepared --tanks 3 4 5
+$PY run.py --prepared /home/jio/fcsrl_src/results/e19/prepared --out /home/jio/fcsrl_src/results/e19/main \
+    --tanks 3 4 5 --pid_mult 3 --updates 100 --seeds 0 1 2 3 4 --jobs 10 --desc "e19 학습 전이"
+```
+
+## 결과
+
+<!-- RESULTS -->
