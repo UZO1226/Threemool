@@ -1,0 +1,568 @@
+{
+ "tanks": [
+  3,
+  4,
+  5
+ ],
+ "load_reference_l0": 58.207481384277344,
+ "cost_limit": 179.46689558559117,
+ "do_pi_training_days": {
+  "days": [
+   {
+    "day": 0,
+    "flow_weighted_nh4": 2.645259693575796,
+    "aeration_kwh_per_day": 3508.109315610032,
+    "nh4_violation_percent": 24.305555555555554,
+    "cost": 190.45869793745732
+   },
+   {
+    "day": 1,
+    "flow_weighted_nh4": 3.2746552080047353,
+    "aeration_kwh_per_day": 3576.135973253135,
+    "nh4_violation_percent": 25.416666666666664,
+    "cost": 235.77517497634094
+   },
+   {
+    "day": 2,
+    "flow_weighted_nh4": 3.106746354604624,
+    "aeration_kwh_per_day": 3595.8715821289925,
+    "nh4_violation_percent": 23.055555555555557,
+    "cost": 223.68573753153294
+   },
+   {
+    "day": 3,
+    "flow_weighted_nh4": 2.9825155808874024,
+    "aeration_kwh_per_day": 3554.7938638146147,
+    "nh4_violation_percent": 23.055555555555557,
+    "cost": 214.74112182389297
+   },
+   {
+    "day": 4,
+    "flow_weighted_nh4": 2.7887713470369353,
+    "aeration_kwh_per_day": 3569.7923715674615,
+    "nh4_violation_percent": 20.97222222222222,
+    "cost": 200.79153698665934
+   },
+   {
+    "day": 5,
+    "flow_weighted_nh4": 1.4885752358105317,
+    "aeration_kwh_per_day": 3257.2468014007964,
+    "nh4_violation_percent": 0.0,
+    "cost": 107.17741697835828
+   },
+   {
+    "day": 6,
+    "flow_weighted_nh4": 1.1616469842346744,
+    "aeration_kwh_per_day": 3167.733360940428,
+    "nh4_violation_percent": 0.0,
+    "cost": 83.63858286489656
+   }
+  ],
+  "mean": {
+   "flow_weighted_nh4": 2.4925957720221,
+   "aeration_kwh_per_day": 3461.3833241022085,
+   "nh4_violation_percent": 16.686507936507933,
+   "cost": 179.46689558559117
+  }
+ },
+ "abac_selected": {
+  "nh4_ref": 1.5,
+  "kp": 0.25,
+  "ti_hours": 3.0,
+  "flow_weighted_nh4": 2.478937918956802,
+  "aeration_kwh_per_day": 3621.6224258177353,
+  "nh4_violation_percent": 16.716269841269842,
+  "cost": 178.4835301648897
+ },
+ "feedforward_selected": {
+  "a": 2.0,
+  "b": 1.5,
+  "flow_weighted_nh4": 2.4672322797383,
+  "aeration_kwh_per_day": 3418.0100713854963,
+  "nh4_violation_percent": 16.349206349206348,
+  "cost": 177.64072414115762
+ },
+ "feedforward_grid": [
+  {
+   "a": 1.5,
+   "b": 0.5,
+   "flow_weighted_nh4": 2.6834244444996727,
+   "aeration_kwh_per_day": 3188.2489077593063,
+   "nh4_violation_percent": 17.896825396825395,
+   "cost": 193.20656000397642
+  },
+  {
+   "a": 1.5,
+   "b": 1.0,
+   "flow_weighted_nh4": 2.6674111562043086,
+   "aeration_kwh_per_day": 3189.591679080838,
+   "nh4_violation_percent": 17.668650793650794,
+   "cost": 192.05360324671022
+  },
+  {
+   "a": 1.5,
+   "b": 1.5,
+   "flow_weighted_nh4": 2.710959506043222,
+   "aeration_kwh_per_day": 3173.142258348627,
+   "nh4_violation_percent": 17.80753968253968,
+   "cost": 195.18908443511197
+  },
+  {
+   "a": 1.5,
+   "b": 2.0,
+   "flow_weighted_nh4": 2.786712747534724,
+   "aeration_kwh_per_day": 3158.7279545004676,
+   "nh4_violation_percent": 18.144841269841272,
+   "cost": 200.64331782250014
+  },
+  {
+   "a": 1.5,
+   "b": 3.0,
+   "flow_weighted_nh4": 2.85175354835098,
+   "aeration_kwh_per_day": 3153.83385990315,
+   "nh4_violation_percent": 18.482142857142858,
+   "cost": 205.3262554812706
+  },
+  {
+   "a": 1.75,
+   "b": 0.5,
+   "flow_weighted_nh4": 2.5412653444757636,
+   "aeration_kwh_per_day": 3334.554082479443,
+   "nh4_violation_percent": 16.89484126984127,
+   "cost": 182.97110480225496
+  },
+  {
+   "a": 1.75,
+   "b": 1.0,
+   "flow_weighted_nh4": 2.532021161888887,
+   "aeration_kwh_per_day": 3327.428505397527,
+   "nh4_violation_percent": 16.765873015873016,
+   "cost": 182.30552365599988
+  },
+  {
+   "a": 1.75,
+   "b": 1.5,
+   "flow_weighted_nh4": 2.5540251940557988,
+   "aeration_kwh_per_day": 3305.6717993779234,
+   "nh4_violation_percent": 16.83531746031746,
+   "cost": 183.8898139720175
+  },
+  {
+   "a": 1.75,
+   "b": 2.0,
+   "flow_weighted_nh4": 2.6134300231222274,
+   "aeration_kwh_per_day": 3274.2984138007837,
+   "nh4_violation_percent": 17.083333333333336,
+   "cost": 188.16696166480037
+  },
+  {
+   "a": 1.75,
+   "b": 3.0,
+   "flow_weighted_nh4": 2.7087843044945528,
+   "aeration_kwh_per_day": 3244.7496978062873,
+   "nh4_violation_percent": 17.48015873015873,
+   "cost": 195.0324699236078
+  },
+  {
+   "a": 2.0,
+   "b": 0.5,
+   "flow_weighted_nh4": 2.4529950656664092,
+   "aeration_kwh_per_day": 3462.8260523069525,
+   "nh4_violation_percent": 16.30952380952381,
+   "cost": 176.61564472798145
+  },
+  {
+   "a": 2.0,
+   "b": 1.0,
+   "flow_weighted_nh4": 2.4520858593242507,
+   "aeration_kwh_per_day": 3444.975902206191,
+   "nh4_violation_percent": 16.279761904761905,
+   "cost": 176.5501818713461
+  },
+  {
+   "a": 2.0,
+   "b": 1.5,
+   "flow_weighted_nh4": 2.4672322797383,
+   "aeration_kwh_per_day": 3418.0100713854963,
+   "nh4_violation_percent": 16.349206349206348,
+   "cost": 177.64072414115762
+  },
+  {
+   "a": 2.0,
+   "b": 2.0,
+   "flow_weighted_nh4": 2.4972037207712154,
+   "aeration_kwh_per_day": 3385.056680359679,
+   "nh4_violation_percent": 16.488095238095237,
+   "cost": 179.79866789552753
+  },
+  {
+   "a": 2.0,
+   "b": 3.0,
+   "flow_weighted_nh4": 2.615707834346946,
+   "aeration_kwh_per_day": 3324.2079903477998,
+   "nh4_violation_percent": 16.934523809523807,
+   "cost": 188.33096407298012
+  },
+  {
+   "a": 2.25,
+   "b": 0.5,
+   "flow_weighted_nh4": 2.3999956037024015,
+   "aeration_kwh_per_day": 3572.2733451868094,
+   "nh4_violation_percent": 15.992063492063492,
+   "cost": 172.79968346657293
+  },
+  {
+   "a": 2.25,
+   "b": 1.0,
+   "flow_weighted_nh4": 2.4044387166374013,
+   "aeration_kwh_per_day": 3546.61485892328,
+   "nh4_violation_percent": 16.001984126984127,
+   "cost": 173.11958759789292
+  },
+  {
+   "a": 2.25,
+   "b": 1.5,
+   "flow_weighted_nh4": 2.4164759266241913,
+   "aeration_kwh_per_day": 3514.0183442523257,
+   "nh4_violation_percent": 16.061507936507937,
+   "cost": 173.9862667169418
+  },
+  {
+   "a": 2.25,
+   "b": 2.0,
+   "flow_weighted_nh4": 2.43520430610322,
+   "aeration_kwh_per_day": 3478.5490924438227,
+   "nh4_violation_percent": 16.170634920634917,
+   "cost": 175.33471003943185
+  },
+  {
+   "a": 2.25,
+   "b": 3.0,
+   "flow_weighted_nh4": 2.5315654301319586,
+   "aeration_kwh_per_day": 3399.492168594079,
+   "nh4_violation_percent": 16.557539682539687,
+   "cost": 182.272710969501
+  },
+  {
+   "a": 2.5,
+   "b": 0.5,
+   "flow_weighted_nh4": 2.3715598212219597,
+   "aeration_kwh_per_day": 3662.6875451436035,
+   "nh4_violation_percent": 15.882936507936506,
+   "cost": 170.75230712798106
+  },
+  {
+   "a": 2.5,
+   "b": 1.0,
+   "flow_weighted_nh4": 2.3770139853007146,
+   "aeration_kwh_per_day": 3630.39290041543,
+   "nh4_violation_percent": 15.902777777777777,
+   "cost": 171.14500694165147
+  },
+  {
+   "a": 2.5,
+   "b": 1.5,
+   "flow_weighted_nh4": 2.386041243669954,
+   "aeration_kwh_per_day": 3594.791364402297,
+   "nh4_violation_percent": 15.95238095238095,
+   "cost": 171.79496954423666
+  },
+  {
+   "a": 2.5,
+   "b": 2.0,
+   "flow_weighted_nh4": 2.398762211065901,
+   "aeration_kwh_per_day": 3557.880163423287,
+   "nh4_violation_percent": 15.992063492063492,
+   "cost": 172.71087919674483
+  },
+  {
+   "a": 2.5,
+   "b": 3.0,
+   "flow_weighted_nh4": 2.450232133860671,
+   "aeration_kwh_per_day": 3479.547462224094,
+   "nh4_violation_percent": 16.23015873015873,
+   "cost": 176.41671363796834
+  }
+ ],
+ "abac_grid": [
+  {
+   "nh4_ref": 1.0,
+   "kp": 0.25,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.414265043131603,
+   "aeration_kwh_per_day": 3732.6985266183983,
+   "nh4_violation_percent": 15.942460317460318,
+   "cost": 173.8270831054754
+  },
+  {
+   "nh4_ref": 1.0,
+   "kp": 0.25,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.39430847160576,
+   "aeration_kwh_per_day": 3720.120619980013,
+   "nh4_violation_percent": 15.95238095238095,
+   "cost": 172.39020995561467
+  },
+  {
+   "nh4_ref": 1.0,
+   "kp": 0.5,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.4924722217079114,
+   "aeration_kwh_per_day": 3710.440688558315,
+   "nh4_violation_percent": 18.26388888888889,
+   "cost": 179.45799996296964
+  },
+  {
+   "nh4_ref": 1.0,
+   "kp": 0.5,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.4226618950952634,
+   "aeration_kwh_per_day": 3708.837770286315,
+   "nh4_violation_percent": 16.11111111111111,
+   "cost": 174.431656446859
+  },
+  {
+   "nh4_ref": 1.0,
+   "kp": 1.0,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.623222450369392,
+   "aeration_kwh_per_day": 3666.331220083769,
+   "nh4_violation_percent": 20.049603174603174,
+   "cost": 188.87201642659622
+  },
+  {
+   "nh4_ref": 1.0,
+   "kp": 1.0,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.543983467404405,
+   "aeration_kwh_per_day": 3651.7856668525847,
+   "nh4_violation_percent": 18.492063492063494,
+   "cost": 183.16680965311713
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 0.25,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.6454402824216605,
+   "aeration_kwh_per_day": 3629.1539657376306,
+   "nh4_violation_percent": 19.54365079365079,
+   "cost": 190.47170033435955
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 0.25,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.478937918956802,
+   "aeration_kwh_per_day": 3621.6224258177353,
+   "nh4_violation_percent": 16.716269841269842,
+   "cost": 178.4835301648897
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 0.5,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.798377836514591,
+   "aeration_kwh_per_day": 3560.613365112763,
+   "nh4_violation_percent": 22.023809523809526,
+   "cost": 201.4832042290505
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 0.5,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.621207443506311,
+   "aeration_kwh_per_day": 3597.6291824033738,
+   "nh4_violation_percent": 19.27579365079365,
+   "cost": 188.72693593245435
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 1.0,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.06245391361955,
+   "aeration_kwh_per_day": 3490.013138481142,
+   "nh4_violation_percent": 24.15674603174603,
+   "cost": 220.49668178060756
+  },
+  {
+   "nh4_ref": 1.5,
+   "kp": 1.0,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.9111753760148757,
+   "aeration_kwh_per_day": 3478.552446763825,
+   "nh4_violation_percent": 23.045634920634917,
+   "cost": 209.60462707307107
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 0.25,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 2.8503903506612747,
+   "aeration_kwh_per_day": 3521.5156696056097,
+   "nh4_violation_percent": 22.73809523809524,
+   "cost": 205.22810524761175
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 0.25,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.672778037433219,
+   "aeration_kwh_per_day": 3498.2497719470075,
+   "nh4_violation_percent": 19.5734126984127,
+   "cost": 192.4400186951918
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 0.5,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.209266834667976,
+   "aeration_kwh_per_day": 3424.4646432524382,
+   "nh4_violation_percent": 25.446428571428573,
+   "cost": 231.0672120960942
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 0.5,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.848962000605673,
+   "aeration_kwh_per_day": 3463.527826861044,
+   "nh4_violation_percent": 22.599206349206348,
+   "cost": 205.12526404360847
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 1.0,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.263444403485586,
+   "aeration_kwh_per_day": 3404.19839557986,
+   "nh4_violation_percent": 25.714285714285715,
+   "cost": 234.96799705096223
+  },
+  {
+   "nh4_ref": 2.0,
+   "kp": 1.0,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.20823171021042,
+   "aeration_kwh_per_day": 3364.398931672877,
+   "nh4_violation_percent": 25.26785714285714,
+   "cost": 230.9926831351502
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 0.25,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.2060744134087735,
+   "aeration_kwh_per_day": 3372.7009450608675,
+   "nh4_violation_percent": 25.744047619047617,
+   "cost": 230.83735776543173
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 0.25,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 2.9100434477346906,
+   "aeration_kwh_per_day": 3371.2671900619757,
+   "nh4_violation_percent": 23.174603174603174,
+   "cost": 209.52312823689772
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 0.5,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.4157071680014597,
+   "aeration_kwh_per_day": 3313.2870203372754,
+   "nh4_violation_percent": 26.924603174603174,
+   "cost": 245.93091609610505
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 0.5,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.1974529772402547,
+   "aeration_kwh_per_day": 3302.423301436527,
+   "nh4_violation_percent": 25.38690476190476,
+   "cost": 230.21661436129835
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 1.0,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.4223761454226307,
+   "aeration_kwh_per_day": 3272.746581121813,
+   "nh4_violation_percent": 26.82539682539683,
+   "cost": 246.4110824704294
+  },
+  {
+   "nh4_ref": 2.5,
+   "kp": 1.0,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.372209828698528,
+   "aeration_kwh_per_day": 3248.676624231107,
+   "nh4_violation_percent": 26.46825396825397,
+   "cost": 242.79910766629408
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 0.25,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.537463166198048,
+   "aeration_kwh_per_day": 3239.540325325525,
+   "nh4_violation_percent": 28.055555555555554,
+   "cost": 254.69734796625946
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 0.25,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.200482706658568,
+   "aeration_kwh_per_day": 3252.8890184026204,
+   "nh4_violation_percent": 25.783730158730155,
+   "cost": 230.4347548794169
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 0.5,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.593656307017235,
+   "aeration_kwh_per_day": 3174.58636082819,
+   "nh4_violation_percent": 27.976190476190474,
+   "cost": 258.7432541052409
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 0.5,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.4736049814471164,
+   "aeration_kwh_per_day": 3165.6569564846636,
+   "nh4_violation_percent": 27.242063492063494,
+   "cost": 250.09955866419244
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 1.0,
+   "ti_hours": 1.0,
+   "flow_weighted_nh4": 3.6212560543360124,
+   "aeration_kwh_per_day": 3109.0713835325246,
+   "nh4_violation_percent": 27.71825396825397,
+   "cost": 260.7304359121929
+  },
+  {
+   "nh4_ref": 3.0,
+   "kp": 1.0,
+   "ti_hours": 3.0,
+   "flow_weighted_nh4": 3.5414211036021777,
+   "aeration_kwh_per_day": 3090.7215544681267,
+   "nh4_violation_percent": 27.410714285714285,
+   "cost": 254.9823194593568
+  }
+ ],
+ "source_hashes": {
+  "abac.py": "fd45d9b28df42a8bada9498e0b82c8a1f777c6ec0f43385dfe31c525f459dfc1",
+  "prepare.py": "0781808d089e39e8af5dc54706dac0ae36af965c150ff84e7643cda5c273cd8a",
+  "report.py": "ec1c08c83ccb59ce29c4e66db8aa29a3ffd5c74813b3427e9aeec0d2c36d1ef4",
+  "run.py": "04f2abdf776e3a6fba0be2fc56e8ee86431fed23a459aa017c9b7aaeaaceb7a9",
+  "setpoint_env.py": "0f9bd8fc5dcac6765907d2d7df7fccca94ddc7012f580563a1e245cd931ed5be",
+  "train.py": "d1791108b8270da0cad221cca83b645741088d90109b91b927d041f1b9db9eed"
+ },
+ "code_commit": "4a618c55c4fa54347dff5881c04782584701af32"
+}
