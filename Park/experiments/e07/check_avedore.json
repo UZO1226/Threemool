@@ -1,0 +1,79 @@
+{
+  "val": [
+    {
+      "metric": "air_m3",
+      "value": 53596.02698679528,
+      "target": 53596.02698679528,
+      "passed": true
+    },
+    {
+      "metric": "cost",
+      "value": 26.790697674418606,
+      "target": 26.790697674418606,
+      "passed": true
+    },
+    {
+      "metric": "nh4_viol_pct",
+      "value": 6.343084028846933,
+      "target": 6.343084028846933,
+      "passed": true
+    },
+    {
+      "metric": "do_viol_pct",
+      "value": 2.9916538368041485,
+      "target": 2.9916538368041485,
+      "passed": true
+    },
+    {
+      "metric": "days_within_limit_pct",
+      "value": 56.27906976744186,
+      "target": 56.27906976744186,
+      "passed": true
+    },
+    {
+      "metric": "n_episodes",
+      "value": 215,
+      "target": 215,
+      "passed": true
+    }
+  ],
+  "test": [
+    {
+      "metric": "air_m3",
+      "value": 59810.681787979054,
+      "target": 59810.681787979054,
+      "passed": true
+    },
+    {
+      "metric": "cost",
+      "value": 22.94,
+      "target": 22.94,
+      "passed": true
+    },
+    {
+      "metric": "nh4_viol_pct",
+      "value": 5.411149825783972,
+      "target": 5.411149825783972,
+      "passed": true
+    },
+    {
+      "metric": "do_viol_pct",
+      "value": 2.581881533101045,
+      "target": 2.581881533101045,
+      "passed": true
+    },
+    {
+      "metric": "days_within_limit_pct",
+      "value": 77.0,
+      "target": 77.0,
+      "passed": true
+    },
+    {
+      "metric": "n_episodes",
+      "value": 300,
+      "target": 300,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}
