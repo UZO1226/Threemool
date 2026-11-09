@@ -25,6 +25,8 @@
 | `Yoo/experiments/e02/surrogate.json` | `db0a448` | 대리 모델 가중치. 복사하지 않고 그 경로에서 읽는다 (sha256 d25dbe3e...) |
 | `Yoo/experiments/e02/historical.json` | `db0a448` | Avedøre 환경 검증 기준값 |
 | `Yoo/code/wwtp/prep.py` | `db0a448` | 데이터 전처리. 고치지 않고 그대로 실행한다 |
+| `Lee/code/darrow/env_dw.py`, `surrogate_dw.py` | `1f0c1b6` | DARROW 환경 규칙과 대리 모델 입력 정의. 마지막 스텝 공기량을 세는 방식의 차이는 `check_darrow.py` 주석 참고 |
+| `Lee/code/darrow/prep_darrow.py`, `surrogate_dw.py`, `calibrate_dw.py` | `1f0c1b6` | DARROW 전처리, 단조 제약 GBM 대리 모델, 비용 한도. 고치지 않고 그대로 실행한다 |
 
 ## 수정 이력
 
@@ -32,3 +34,4 @@
 | --- | --- | --- | --- |
 | 2026-11-08 | 전체 | 직접 작성으로 방향을 정하고 구조를 잡음 | Park/e01 준비 |
 | 2026-11-09 | `avedore_env.py`, `check_avedore.py`, `train_avedore.py`, `agent.py` | Avedøre 환경과 학습 추가, 관측 정규화 표준편차 하한을 인자로 받게 함 | Park/e07 |
+| 2026-11-10 | `darrow_env.py`, `check_darrow.py`, `train_darrow.py` | DARROW 환경, 검사, 학습 추가 | Park/e08 |

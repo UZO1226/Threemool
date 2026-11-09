@@ -23,6 +23,9 @@
 | `avedore_env.py` | Kaggle Avedøre 폭기 환경, 여러 에피소드를 한꺼번에 굴리는 배열 버전 (Park/e07). Yoo 의 대리 모델 가중치를 읽는다 |
 | `check_avedore.py` | Avedøre 환경이 Yoo/e02 의 실제 운전 재생 지표 12개를 재현하는지 검사한다 |
 | `train_avedore.py` | Avedøre 에서 PPO-Lag, FCSRL + PPO-Lag 학습 (Yoo/e05, e06 과 같은 설정) |
+| `darrow_env.py` | 팀 공식 데이터 Kaggle DARROW 폭기 환경, 배열 버전 (Park/e08). Lee 의 방법으로 만든 단조 제약 GBM 대리 모델을 읽는다 |
+| `check_darrow.py` | DARROW 환경이 같은 대리 모델의 Lee 코드 결과 15개를 재현하는지 검사한다 |
+| `train_darrow.py` | DARROW 에서 PPO-Lag, FCSRL + PPO-Lag 학습 (Lee/e07 과 같은 설정) |
 
 2026-11-09 확인: `prepare.py` 의 MATLAB 정상상태 최대 절대 오차 8.68e-08, `check_env.py` 기준값 12개 모두 통과 (`../experiments/e01/check_env.json`). `train.py --updates 1` 과 차단기 3종의 연결 시험도 끝까지 돌았다. 연결 시험 수치는 결과가 아니다.
 
