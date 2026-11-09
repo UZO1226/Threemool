@@ -1,0 +1,29 @@
+{
+  "detached_original_encoder_update_exact": true,
+  "window_and_reset_mask": true,
+  "original_encoder_gradient_norm": 7.474114418029785,
+  "recovery_encoder_gradient_norm": 4.823958396911621,
+  "gradient_ratio": 0.6454220697069876,
+  "passed": true,
+  "initial_policy_equal_all_four": true,
+  "current_air_absent_from_input": true,
+  "penalty_units_and_aerobic_mask": true,
+  "raw_log_probability": true,
+  "original_fcsrl_update_finite": true,
+  "prior_and_normalizer_frozen": true,
+  "checkpoint_exact_restore": true,
+  "scalar_batched_air_difference": 0.00011192366946488619,
+  "scalar_batched_cost_equal": true,
+  "update": {
+    "encoder_sync_kl": 0.0,
+    "encoder_dynamics": -0.12868129927664995,
+    "encoder_pred_feasi": 3.812753677368164,
+    "encoder_pred_feasi_MSE": 1.3873222470283508,
+    "encoder": 4.212914347648621,
+    "recovery_mse": 0.46450117230415344,
+    "original_encoder_loss": 3.7484130859375,
+    "kl": 0.0006624478846788406,
+    "pi_epochs": 2,
+    "std": 0.20177534222602844
+  }
+}

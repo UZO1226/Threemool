@@ -1,0 +1,32 @@
+[
+  {
+    "seed": 0,
+    "split": "train",
+    "episodes": 1650,
+    "violating_full_windows": 26982,
+    "max_equals_current_fraction": 0.9975539248387814,
+    "one_cost_collapsed_windows": 26891,
+    "recovery_q10_q50_q90": [
+      0.1666666716337204,
+      1.0,
+      1.0
+    ],
+    "recovery_std": 0.32895517349243164,
+    "within_hour_recovery_fraction": 0.4982707969209029
+  },
+  {
+    "seed": 1,
+    "split": "train",
+    "episodes": 1650,
+    "violating_full_windows": 22799,
+    "max_equals_current_fraction": 0.999736830562744,
+    "one_cost_collapsed_windows": 22792,
+    "recovery_q10_q50_q90": [
+      0.1666666716337204,
+      1.0,
+      1.0
+    ],
+    "recovery_std": 0.32572492957115173,
+    "within_hour_recovery_fraction": 0.4836784836784837
+  }
+]
