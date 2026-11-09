@@ -8,6 +8,7 @@
 | `code/` | 구현 코드 (FCSRL 재현, 환경, 확장 기법) |
 | `experiments/<실험ID>/README.md` | 실험 기록. 실험 ID 는 e01, e02 처럼 이 폴더 안에서 겹치지 않게 붙인다 |
 | `RESULT.md` | 결과 비교용 요약 |
+| [EXPERIMENTS_SUMMARY_e01-e28.md](EXPERIMENTS_SUMMARY_e01-e28.md) | e01~e28 전체 실험의 목적, 결과, 판단과 원본 결과표 모음 |
 
 ## 구현체 구동 결과 (Yoo/e01)
 
