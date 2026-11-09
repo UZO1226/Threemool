@@ -98,4 +98,4 @@ python -u Lee/experiments/e06/report_av.py --runs <결과>/e06_runs --out Lee/ex
 
 ## 실행 결과
 
-실행 후 [results.md](results.md) 에 기록한다.
+[results.md](results.md) 에 있다. 결론은 이 확장이 원래 FCSRL 보다 좋아지지 않았다는 것이다.
