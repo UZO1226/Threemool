@@ -53,6 +53,21 @@ class RandomShield:
         return action, False
 
 
+class PredictorShield:
+    """예측기가 낸 위반 확률 >= threshold 이면 차단한다 (Park/e04).
+
+    prob(obs) -> 0 ~ 1 사이 값 하나. 예측기는 실험 쪽에서 맞춰 넘긴다.
+    """
+
+    def __init__(self, prob, threshold, fallback=FALLBACK):
+        self.prob, self.threshold, self.fallback = prob, float(threshold), fallback
+
+    def __call__(self, obs, action):
+        if self.prob(obs) >= self.threshold:
+            return self.fallback.copy(), True
+        return action, False
+
+
 def tau_to_minutes(tau, discount=0.9, minutes_per_step=5):
     """위반이 k 스텝 뒤에 확실히 일어나면 F = discount^k 다. tau 가 대략 몇 분 앞을 뜻하는지 환산한다."""
     return float(np.log(tau) / np.log(discount) * minutes_per_step)
