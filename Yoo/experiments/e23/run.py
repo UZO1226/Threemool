@@ -47,7 +47,7 @@ def main():
         'upstream_commit': upstream, 'python': sys.executable, 'parallel_jobs': 4,
         'steps_requested': 200000, 'steps_actual_per_run': 202048, 'seeds': [0, 1],
         'methods': ['ppo', 'fcsrl', 'ppo_anchor', 'fcsrl_anchor'], 'evaluation_split': 'val',
-        'inputs': {str(p.resolve()): hashlib.sha256(p.read_bytes()).hexdigest() for p in (a.data, a.model, a.gbm, a.prepared / 'prior.pt', a.prepared / 'normalizer.json')},
+        'inputs': {str(p.resolve()): hashlib.sha256(p.read_bytes()).hexdigest() for p in (a.data, a.model, a.gbm, a.prepared / 'prior.pt', a.prepared / 'normalizer.json', a.prepared / 'preparation.json')},
         'source': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in sorted([*CODE.glob('*.py'), *HERE.glob('*.py')])}, 'commands': []}
 
