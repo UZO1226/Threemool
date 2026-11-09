@@ -68,3 +68,62 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 e23에서 같은 실제 운전 행동의 val 비용은 실측 70.953, MLP 재생 26.791, GBM 재생 28.391이었다. 두 모델 모두 실제 위반을 크게 과소평가한다. 따라서 이번 두 모델 평가가 좋아져도 실제 공정 절감과 안전성의 증거가 되지 않는다. 짧은 동일 예산에서 확장 효과를 구분하는 실험이며 장기 수렴 비교는 아니다.
 
 기법 근거: [FCSRL 원 논문](https://proceedings.mlr.press/v235/cen24b.html), [보조 학습의 일반적 근거인 UNREAL](https://arxiv.org/abs/1611.05397). UNREAL 재현이나 논문의 원래 목적함수 변경으로 주장하지 않는다.
+
+## 평가 및 집계 명령
+
+저장소 루트에서 실행한다. `match_air.py`는 기본 정책을 다시 학습하지 않고 평가 시 행동 offset만 적용한다.
+
+```bash
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+/home/jio/fcsrl_src/.venv/bin/python -u Yoo/experiments/e24/match_air.py \
+  --root /home/jio/fcsrl_src/results/e24/pilot \
+  --prepared /home/jio/fcsrl_src/results/e23/prepared \
+  --data /home/jio/사물/Yoo/data/avedore/aved_5min.pkl \
+  --model /home/jio/fcsrl_src/results/e02/surrogate/surrogate.json \
+  --gbm /home/jio/fcsrl_src/results/e03/surrogate_gbm/surrogate_gbm.pkl \
+  --out /home/jio/fcsrl_src/results/e24/matched_air.json
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e24/postcheck.py \
+  --root /home/jio/fcsrl_src/results/e24 --repo /home/jio/사물 \
+  --prepared-root /home/jio/fcsrl_src/results/e23/prepared \
+  --out /home/jio/fcsrl_src/results/e24/postcheck.json
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e24/report.py \
+  --root /home/jio/fcsrl_src/results/e24/pilot \
+  --matches /home/jio/fcsrl_src/results/e24/matched_air.json \
+  --out Yoo/experiments/e24
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e24/plot.py \
+  --summary Yoo/experiments/e24/summary.json \
+  --out Yoo/experiments/e24/figures/comparison.png
+```
+
+## 완료한 학습과 불변 요소 점검
+
+학습 실행 커밋은 `072e2bfec9ab35be19b22778b0e7b48da181c448`이다. 2026-11-09 13:35:47~13:46:55 KST에 새 실행 11개가 모두 정상 종료됐다. e23 재사용 4개를 포함한 비교 대상은 15개이며 새 학습량은 2,222,528전이, 비교 대상 전체는 3,030,720전이다. `launch.json`은 실제 실행 manifest 사본이다.
+
+`postcheck.json`: 15개 모두 동일한 prior/정규화, 202,048전이, 22갱신, val 2회, val 215개 고유 에피소드, 마지막 MLP 평가 완전 일치, 원자료와 실행 소스 해시 및 재사용 체크포인트 해시 불변에 통과했다. 새 실행의 회복 목표 유효 비율은 1104/1148 = 96.17%다.
+
+확장 seed 5개의 학습 중 평균 recovery MSE는 첫 갱신 0.01330에서 마지막 갱신 0.00442로 감소했다. 서로 다른 정책과 배치에서 측정한 학습 오차이므로 일반화 개선 증거는 아니다. 전체 실행의 최대 lambda는 3.571로 상한 20보다 낮았다. 따라서 이번 결과를 lambda 상한 포화로 설명할 근거는 없다. 확장과 기본 FCSRL 모두 이 짧은 예산에서 모든 seed가 MLP 제약을 지키지는 못했다.
+
+## 결과와 해석
+
+학습 11개 신규 및 4개 재사용, 두 모델의 같은 공기량 대조 10개를 완료했다. **사전 기준 미통과로 확장을 채택하지 않는다.** [전체 수치](results.md), [기계 판독 요약](summary.json), [같은 공기량 대조 원자료](matched_air.json).
+
+| 최종 정책 | MLP 공기량 (Nm³/일) | MLP 하루 비용 | MLP 한도 만족 seed | GBM 하루 비용 |
+| --- | --- | --- | --- | --- |
+| PPO | 40,585 ± 1,515 | 16.07 ± 1.28 | 1/5 | 8.12 ± 0.25 |
+| 기본 FCSRL | 30,627 ± 8,936 | 16.68 ± 4.95 | 2/5 | 9.64 ± 2.99 |
+| 회복 예측 확장 | 30,099 ± 7,098 | 17.55 ± 5.45 | 3/5 | 9.50 ± 2.05 |
+
+확장과 공기량을 맞춘 기본 FCSRL 대비 비용 차이는 MLP +0.78(95% CI -1.17~2.74), GBM -0.69(-3.51~2.13)였다. MLP 비용은 4.68% 증가, GBM은 6.78% 감소했지만 두 신뢰구간 모두 0을 포함했다. 이는 두 방법이 동등하다는 증거도 아니다. 10개 대조 모두 공기량 오차 0.1% 이내였으며 최대 절대 오차는 0.00466%였다.
+
+MLP의 같은 공기량 대조에서 seed 2의 비용 증가(+3.00)가 가장 컸고, seed 0(+1.28), seed 1(+0.89)도 악화했다. seed 3은 거의 같고 seed 4는 개선했다. GBM 평균 감소는 seed 0의 큰 감소(-4.33)에 영향을 많이 받으며 seed 2는 여기서도 악화(+1.95)했다. 이는 결과가 한 방향으로 재현되지 않는다는 관찰이지, 특정 내부 기제가 악화의 원인임을 입증하는 인과 분석은 아니다.
+
+이번 실험에서 구분한 사실은 다음과 같다.
+
+- 현재 위반 중인 구간에도 앞으로의 위반 지속시간 차이는 있다. 원래 max 목표가 이를 모두 구분하지 않는다는 진단을 확인했다.
+- 그 차이를 추가로 학습하는 경로는 작동했고 학습 MSE는 줄었다. 그러나 같은 공기량 제어 개선은 두 모델에서 일관되게 확인되지 않았다. 예측 목표의 정보량과 정책에 유용한 표현은 같은 것이 아니다.
+- lambda 상한이나 NaN이 이번 미개선의 설명은 아니다. 미래 평균 비용 보조 손실 하나로 공기량과 위반 비용의 상충 관계가 해결된다는 가설은 이 설정에서 지지되지 않았다.
+- 20만 전이 예산과 seed 5개, 재사용한 val의 탐색 실험이다. 모든 시간 길이, 모든 보조 학습, 장기 수렴 효과를 부정하지 않는다. 결과를 근거로 가중치나 seed를 다시 고르는 후속 실행은 하지 않았다.
+
+![정책별 결과와 같은 공기량 비용 차이](figures/comparison.png)
+
+학습은 CPU 작업당 torch thread 1이었다. 사전 검사와 같은 공기량 사후 대조는 원본 DeviceConfig 호출이 torch thread를 4로 설정하므로 그 설정으로 실행됐다. 학습 정책과 데이터, 평가 수식은 바꾸지 않았다. 학습과 대조 평가 모두 종료됐으며 현재 실행 중인 e24 작업은 없다.

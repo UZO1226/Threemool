@@ -52,7 +52,11 @@ def main(root, repo, out, prepared_root):
                 assert abs(r['recovery_valid_fraction'] - 1104 / 1148) < 1e-6
         checks.append({'method': m['method'], 'seed': m['seed'], 'passed': True,
                        'max_lambda': max(r['lambda'] for r in log),
-                       'last_behavior_penalty': log[-1]['behavior_penalty_mean']})
+                       'last_behavior_penalty': log[-1]['behavior_penalty_mean'],
+                       'last_std': log[-1]['std'],
+                       'max_encoder_sync_kl': max(r.get('encoder_sync_kl', 0.) for r in log),
+                       'first_recovery_mse': log[0].get('recovery_mse'),
+                       'last_recovery_mse': log[-1].get('recovery_mse')})
     assert len(checks) == 15
     assert sum(r['method'] == 'fcsrl_recovery' for r in checks) == 5
     report = {'passed': True, 'input_and_training_source_hashes_unchanged': True,

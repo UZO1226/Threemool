@@ -1,0 +1,176 @@
+{
+  "passed": true,
+  "input_and_training_source_hashes_unchanged": true,
+  "prior_weights_and_normalizer_unchanged_all_runs": true,
+  "last_checkpoint_mlp_evaluation_exact": true,
+  "two_model_val_only_215_unique_episodes": true,
+  "reward_penalty_accounting": true,
+  "steps_per_run": 202048,
+  "runs": [
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.525625,
+      "last_behavior_penalty": 0.03217777982354164,
+      "last_std": 0.18075580894947052,
+      "max_encoder_sync_kl": 0.0014241256285458803,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "fcsrl",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 1.99015625,
+      "last_behavior_penalty": 0.02878359891474247,
+      "last_std": 0.17377541959285736,
+      "max_encoder_sync_kl": 0.001853033434599638,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "fcsrl",
+      "seed": 2,
+      "passed": true,
+      "max_lambda": 1.5351562500000002,
+      "last_behavior_penalty": 0.035699646919965744,
+      "last_std": 0.1844545304775238,
+      "max_encoder_sync_kl": 0.0036729476414620876,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "fcsrl",
+      "seed": 3,
+      "passed": true,
+      "max_lambda": 3.57109375,
+      "last_behavior_penalty": 0.024382328614592552,
+      "last_std": 0.1737624853849411,
+      "max_encoder_sync_kl": 0.0008478958043269813,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "fcsrl",
+      "seed": 4,
+      "passed": true,
+      "max_lambda": 2.20046875,
+      "last_behavior_penalty": 0.029545282945036888,
+      "last_std": 0.17853856086730957,
+      "max_encoder_sync_kl": 0.0016816499410197139,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "fcsrl_recovery",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.5021875000000002,
+      "last_behavior_penalty": 0.03051959164440632,
+      "last_std": 0.18284963071346283,
+      "max_encoder_sync_kl": 0.0015172171406447887,
+      "first_recovery_mse": 0.012539433311515798,
+      "last_recovery_mse": 0.003864602115936577
+    },
+    {
+      "method": "fcsrl_recovery",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 2.1706250000000002,
+      "last_behavior_penalty": 0.02772672474384308,
+      "last_std": 0.17250622808933258,
+      "max_encoder_sync_kl": 0.0021360362879931927,
+      "first_recovery_mse": 0.01270943838947763,
+      "last_recovery_mse": 0.004861074239791681
+    },
+    {
+      "method": "fcsrl_recovery",
+      "seed": 2,
+      "passed": true,
+      "max_lambda": 1.5917187499999998,
+      "last_behavior_penalty": 0.03532034903764725,
+      "last_std": 0.18450652062892914,
+      "max_encoder_sync_kl": 0.0019565834663808346,
+      "first_recovery_mse": 0.012611613707203003,
+      "last_recovery_mse": 0.006330370502029028
+    },
+    {
+      "method": "fcsrl_recovery",
+      "seed": 3,
+      "passed": true,
+      "max_lambda": 2.7821875,
+      "last_behavior_penalty": 0.02702305093407631,
+      "last_std": 0.17536240816116333,
+      "max_encoder_sync_kl": 0.0013768246863037348,
+      "first_recovery_mse": 0.011959586716774438,
+      "last_recovery_mse": 0.003200260274914197
+    },
+    {
+      "method": "fcsrl_recovery",
+      "seed": 4,
+      "passed": true,
+      "max_lambda": 2.10734375,
+      "last_behavior_penalty": 0.03056836500763893,
+      "last_std": 0.1770310252904892,
+      "max_encoder_sync_kl": 0.002118553500622511,
+      "first_recovery_mse": 0.016681739033406806,
+      "last_recovery_mse": 0.003844025733673738
+    },
+    {
+      "method": "ppo",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.6318750000000002,
+      "last_behavior_penalty": 0.027432795614004135,
+      "last_std": 0.1780320554971695,
+      "max_encoder_sync_kl": 0.0,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "ppo",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 2.01265625,
+      "last_behavior_penalty": 0.025127194821834564,
+      "last_std": 0.17630542814731598,
+      "max_encoder_sync_kl": 0.0,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "ppo",
+      "seed": 2,
+      "passed": true,
+      "max_lambda": 1.85546875,
+      "last_behavior_penalty": 0.02524809166789055,
+      "last_std": 0.18041419982910156,
+      "max_encoder_sync_kl": 0.0,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "ppo",
+      "seed": 3,
+      "passed": true,
+      "max_lambda": 1.824375,
+      "last_behavior_penalty": 0.02793698199093342,
+      "last_std": 0.1771308034658432,
+      "max_encoder_sync_kl": 0.0,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    },
+    {
+      "method": "ppo",
+      "seed": 4,
+      "passed": true,
+      "max_lambda": 1.9557812500000002,
+      "last_behavior_penalty": 0.02759414352476597,
+      "last_std": 0.1700330227613449,
+      "max_encoder_sync_kl": 0.0,
+      "first_recovery_mse": null,
+      "last_recovery_mse": null
+    }
+  ]
+}
