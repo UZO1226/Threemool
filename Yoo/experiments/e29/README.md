@@ -71,4 +71,4 @@ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
  --out /home/jio/fcsrl_src/results/e29/pilot
 ```
 
-`verify.py`가 학습 전 실제 갱신의 원본 보존, 보정 대상 분리, 난수열 보존, e25 parity와 저장 복원을 확인한다. `match_air.py`는 data/model/gbm/prepared와 `--root` pilot, `--out` matched_air.json을 받는다. `report.py`는 `--root`, `--matches`, `--out` 보고서 폴더를 받는다. 실행 커밋, 명령 및 입력 해시는 runtime manifest와 보관한 launch.json에 기록한다. 현재는 준비 단계이며 완료 결과는 실행 후 추가한다.
+`verify.py`가 학습 전 실제 갱신의 원본 보존, 보정 대상 분리, 난수열 보존, e25 parity와 저장 복원을 확인한다. `match_air.py`는 data/model/gbm/prepared와 `--root` pilot, `--out` matched_air.json을 받는다. `report.py`는 `--root`, `--matches`, `--out` 보고서 폴더를 받는다. 실행 커밋, 명령 및 입력 해시는 runtime manifest와 보관한 launch.json에 기록한다. 실행 commit `543bb8b`, 2026-11-09 17:20 KST경 신규15개 학습 착수. 결과는 완료 후 추가한다. `--wait-for-runs`로 종료된 정책의 matched-air 평가를 먼저 처리할 수 있다. 학습4개와 평가4개를 병행하며 각 작업 thread1을 유지한다. `plot.py --summary <summary.json> --out <comparison.png>`로 그림을 만든다.
