@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "episodes_independently_aggregated": 10750,
+  "cost_equals_nh4_plus_do_counts": true,
+  "paired_statistics_match_scipy_ttest_rel": true,
+  "matched_source_hashes_unchanged": true,
+  "all_40_air_matches_within_tolerance": true,
+  "max_abs_air_mismatch_percent": 0.025773911594129117,
+  "e25_all_ten_baseline_matches_exact": true,
+  "matching_finished_at": "2026-11-09T08:36:40.505594+00:00"
+}

@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-11-09T08:27:47.929157+00:00",
+  "commit": "71c00260cd4c77d5c63dfe46c5230eea22c72ce3",
+  "source": {
+    "Yoo/experiments/e29/match_air.py": "f908f10937803433e86e86a73f97e73b7ae4534a8b61dab4f62876f5a095561a",
+    "Yoo/experiments/e29/report.py": "97a78555c29b120bbc4903efbe327105908645de08925c6a7f10aa522f3599b4",
+    "Yoo/experiments/e29/postcheck.py": "d1cc3046d46f88dae1f25c11a513e12f03c8b2e1404ea645b7d5a3457bd49fde",
+    "Yoo/experiments/e29/plot.py": "40419334c1ddcec3315105f48fd21705a0b5542721fa7c03d789d81d0ab8cc98"
+  },
+  "comparison_design": "README frozen before training at 543bb8b",
+  "runtime_root": "/home/jio/fcsrl_src/results/e29",
+  "reporting_revision_note": "실행 뒤 보고 표에서 미측정 기본 가치 오차를 0 대신 측정 안 함으로 표시. 학습 및 통계 기준 변경 없음.",
+  "final_source": {
+    "Yoo/experiments/e29/match_air.py": "f908f10937803433e86e86a73f97e73b7ae4534a8b61dab4f62876f5a095561a",
+    "Yoo/experiments/e29/report.py": "eaa239439f28d591be5e49b69713de077be2a53fc7477ae5c93f30e898b1cc34",
+    "Yoo/experiments/e29/postcheck.py": "d1cc3046d46f88dae1f25c11a513e12f03c8b2e1404ea645b7d5a3457bd49fde",
+    "Yoo/experiments/e29/plot.py": "40419334c1ddcec3315105f48fd21705a0b5542721fa7c03d789d81d0ab8cc98"
+  }
+}
