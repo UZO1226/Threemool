@@ -1,0 +1,127 @@
+{
+  "train": [
+    {
+      "metric": "air_m3_lee_counting",
+      "value": 89636.23727917815,
+      "lee_code_same_model": 89636.23727917817,
+      "passed": true
+    },
+    {
+      "metric": "cost",
+      "value": 12.176595744680851,
+      "lee_code_same_model": 12.176595744680851,
+      "passed": true
+    },
+    {
+      "metric": "nh4_viol_pct",
+      "value": 5.78835386338186,
+      "lee_code_same_model": 5.78835386338186,
+      "passed": true
+    },
+    {
+      "metric": "do_viol_pct",
+      "value": 7.029115341545354,
+      "lee_code_same_model": 7.029115341545354,
+      "passed": true
+    },
+    {
+      "metric": "n_episodes",
+      "value": 940,
+      "lee_code_same_model": 940,
+      "passed": true
+    },
+    {
+      "metric": "air_m3_correct_counting",
+      "value": 89621.56077292372
+    },
+    {
+      "metric": "cost_vs_lee_readme",
+      "value": 12.18,
+      "lee_readme": 12.17
+    }
+  ],
+  "val": [
+    {
+      "metric": "air_m3_lee_counting",
+      "value": 84879.67698443511,
+      "lee_code_same_model": 84879.67698443512,
+      "passed": true
+    },
+    {
+      "metric": "cost",
+      "value": 28.77,
+      "lee_code_same_model": 28.77,
+      "passed": true
+    },
+    {
+      "metric": "nh4_viol_pct",
+      "value": 28.484210526315792,
+      "lee_code_same_model": 28.484210526315792,
+      "passed": true
+    },
+    {
+      "metric": "do_viol_pct",
+      "value": 1.8,
+      "lee_code_same_model": 1.8,
+      "passed": true
+    },
+    {
+      "metric": "n_episodes",
+      "value": 200,
+      "lee_code_same_model": 200,
+      "passed": true
+    },
+    {
+      "metric": "air_m3_correct_counting",
+      "value": 84859.75950433375
+    },
+    {
+      "metric": "cost_vs_lee_readme",
+      "value": 28.77,
+      "lee_readme": 28.77
+    }
+  ],
+  "test": [
+    {
+      "metric": "air_m3_lee_counting",
+      "value": 99884.4460863234,
+      "lee_code_same_model": 99884.44608632344,
+      "passed": true
+    },
+    {
+      "metric": "cost",
+      "value": 8.8,
+      "lee_code_same_model": 8.8,
+      "passed": true
+    },
+    {
+      "metric": "nh4_viol_pct",
+      "value": 7.876765083440309,
+      "lee_code_same_model": 7.876765083440309,
+      "passed": true
+    },
+    {
+      "metric": "do_viol_pct",
+      "value": 1.386392811296534,
+      "lee_code_same_model": 1.386392811296534,
+      "passed": true
+    },
+    {
+      "metric": "n_episodes",
+      "value": 205,
+      "lee_code_same_model": 205,
+      "passed": true
+    },
+    {
+      "metric": "air_m3_correct_counting",
+      "value": 99891.39158737267
+    },
+    {
+      "metric": "cost_vs_lee_readme",
+      "value": 8.8,
+      "lee_readme": 8.8
+    }
+  ],
+  "all_passed_same_model": true,
+  "cost_limit": 12.0
+}
