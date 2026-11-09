@@ -34,6 +34,10 @@ while str(HERE) in sys.path:
 sys.path.insert(0, str(HERE))
 
 NH4_LIMIT = 4.0
+# DO 상한. BSM1 의 표준 DO 목표는 2.0 mg/L 이고, 목표 2.0 의 DO PI 기준 제어는 2.5 를
+# 한 번도 넘지 않는다(건기 평가 0.0%). 반면 최대 폭기는 88.5% 넘는다. 즉 잘 조정된
+# 제어는 벌하지 않고 과폭기만 제약하는 값이다. 측정값은 Lee/experiments/e04/README.md.
+DO_LIMIT = 2.5
 STEPS_PER_DAY = 288
 # 사전 고정값. 근거는 Lee/experiments/e01/README.md 의 기준 제어 측정표다.
 BINARY_DAILY_LIMIT = 72.0
@@ -43,7 +47,8 @@ MEAN_DAILY_LIMIT = 288.0
 BASE_PID = (0.02, 0.005, 0.01)
 BASE_PID_LIMIT = 15.0
 
-MODES = ('mean', 'binary')
+MODES = ('mean', 'binary', 'binary_do')
+BINARY_MODES = ('binary', 'binary_do')
 
 
 class BinaryEnv(MeanEnv):
@@ -53,17 +58,24 @@ class BinaryEnv(MeanEnv):
         obs, reward, terminated, truncated, info = super().step(action)
         nh4 = info['effluent'][:, 9]
         info['violation'] = float((nh4 > NH4_LIMIT).any())
+        info['violation_do'] = float((info['do5'] > DO_LIMIT).any())
+        info['violation_joint'] = float(info['violation'] or info['violation_do'])
         info['nh4_max'] = float(nh4.max())
+        info['do5_max'] = float(info['do5'].max())
         return obs, reward, terminated, truncated, info
 
 
 def daily_limit(mode):
     check_mode(mode)
-    return BINARY_DAILY_LIMIT if mode == 'binary' else MEAN_DAILY_LIMIT
+    return BINARY_DAILY_LIMIT if mode in BINARY_MODES else MEAN_DAILY_LIMIT
 
 
-def pid_gains(mode):
-    scale = BASE_PID_LIMIT / daily_limit(mode)
+def pid_gains(mode, limit=None):
+    """한도를 지정하지 않으면 모드의 기본 한도를 쓴다 (e01, e02 와 같은 값)."""
+    limit = daily_limit(mode) if limit is None else float(limit)
+    if not np.isfinite(limit) or limit <= 0:
+        raise ValueError('Daily cost limit must be a positive finite number')
+    scale = BASE_PID_LIMIT / limit
     return {name: value * scale for name, value in zip(('pid_kp', 'pid_ki', 'pid_kd'), BASE_PID)}
 
 
@@ -75,10 +87,11 @@ def check_mode(mode):
 def step_cost(mode, info):
     """수집 중 한 스텝에 기록하는 값. mean 모드는 하루 끝에 유량으로 정규화한다."""
     check_mode(mode)
-    value = float(info['load'] if mode == 'mean' else info['violation'])
+    value = float({'mean': info.get('load'), 'binary': info.get('violation'),
+                   'binary_do': info.get('violation_joint')}[mode])
     if not np.isfinite(value) or value < 0:
         raise ValueError('Step cost must be finite and nonnegative')
-    if mode == 'binary' and value not in (0.0, 1.0):
+    if mode in BINARY_MODES and value not in (0.0, 1.0):
         raise ValueError('Binary cost must be exactly 0 or 1')
     return value
 
@@ -100,13 +113,22 @@ def violation_metrics(infos):
     """Yoo 의 episode_metrics 에 제어 스텝 단위 위반 지표를 더한다."""
     base = episode_metrics(infos)
     steps = np.array([float((x['effluent'][:, 9] > NH4_LIMIT).any()) for x in infos])
+    do_steps = np.array([float((x['do5'] > DO_LIMIT).any()) for x in infos])
+    joint = np.maximum(steps, do_steps)
     days = len(steps) / STEPS_PER_DAY
     daily = steps.reshape(-1, STEPS_PER_DAY).sum(axis=1) if float(days).is_integer() else None
     base['step_violation_percent'] = float(steps.mean() * 100)
     base['violating_steps_per_day'] = float(steps.sum() / days)
+    base['do_step_violation_percent'] = float(do_steps.mean() * 100)
+    base['do_violating_steps_per_day'] = float(do_steps.sum() / days)
+    base['joint_step_violation_percent'] = float(joint.mean() * 100)
+    base['joint_violating_steps_per_day'] = float(joint.sum() / days)
+    base['do_limit'] = DO_LIMIT
     if daily is not None:
         base['daily_violating_steps'] = daily.tolist()
         base['days_within_binary_limit_percent'] = float((daily <= BINARY_DAILY_LIMIT).mean() * 100)
+        daily_joint = joint.reshape(-1, STEPS_PER_DAY).sum(axis=1)
+        base['daily_joint_violating_steps'] = daily_joint.tolist()
     return base
 
 
@@ -129,13 +151,18 @@ def evaluate(initial, policy, controller=False, weathers=('dry', 'rain'), days=1
         week['daily_nh4_cvar20'] = empirical_cvar([d['flow_weighted_nh4'] for d in daily], .2)[1]
         week['daily_violating_steps_cvar20'] = empirical_cvar(
             [d['violating_steps_per_day'] for d in daily], .2)[1]
+        week['daily_joint_violating_steps_cvar20'] = empirical_cvar(
+            [d['joint_violating_steps_per_day'] for d in daily], .2)[1]
         result[weather] = {'week': week, 'days': daily}
     return result
 
 
-def satisfied(mode, week):
-    """해당 모드의 하루 한도를 평가 구간 평균 기준으로 만족했는가."""
+def satisfied(mode, week, limit=None):
+    """해당 한도를 평가 구간 평균 기준으로 만족했는가. 기본값은 모드의 기본 한도다."""
     check_mode(mode)
+    limit = daily_limit(mode) if limit is None else float(limit)
     if mode == 'binary':
-        return bool(week['violating_steps_per_day'] <= BINARY_DAILY_LIMIT)
-    return bool(week['cost_ratio'] * STEPS_PER_DAY <= MEAN_DAILY_LIMIT)
+        return bool(week['violating_steps_per_day'] <= limit)
+    if mode == 'binary_do':
+        return bool(week['joint_violating_steps_per_day'] <= limit)
+    return bool(week['cost_ratio'] * STEPS_PER_DAY <= limit)

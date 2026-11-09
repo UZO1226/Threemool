@@ -29,8 +29,11 @@ from fcsrl.utils import DeviceConfig  # noqa: E402
 from ppo_config import PPOConfig  # noqa: E402
 from ppo_lag import PPOLagAgent, gae  # noqa: E402
 from ppo_fcsrl import PPOFCSRLAgent, RepresentationConfig, feasibility_targets  # noqa: E402
+from feasibility_policy import (PPOFCSRLFeasibilityPenaltyAgent,  # noqa: E402
+                                FeasibilityPenaltyConfig)
 
-METHODS = {'ppo': PPOLagAgent, 'fcsrl': PPOFCSRLAgent}
+METHODS = {'ppo': PPOLagAgent, 'fcsrl': PPOFCSRLAgent,
+           'fcsrl_fpen': PPOFCSRLFeasibilityPenaltyAgent}
 STEPS_PER_DAY = 288
 OBS_DIM, ACT_DIM = 11, 1
 # 기준 운전에서 상수인 특징도 다른 행동을 표현할 수 있도록 두는 물리 척도 하한 (Yoo/e17 과 동일)
@@ -43,17 +46,23 @@ def save(path, value):
     tmp.replace(path)
 
 
-def config(mode, updates):
+def config(mode, updates, limit=None):
+    """limit 을 주지 않으면 모드의 기본 한도를 쓴다 (e01, e02 와 같은 설정)."""
+    limit = cost_modes.daily_limit(mode) if limit is None else float(limit)
     return PPOConfig(total_steps=updates * 5760, n_env=4, horizon=1440, n_chunks=1,
-                     cost_limit=cost_modes.daily_limit(mode), init_log_std=-1.5,
-                     **cost_modes.pid_gains(mode))
+                     cost_limit=limit, init_log_std=-1.5,
+                     **cost_modes.pid_gains(mode, limit))
 
 
-def make_agent(method, mode, seed, observations, updates):
+def make_agent(method, mode, seed, observations, updates, limit=None, feasibility_weight=None):
     torch.manual_seed(seed)
     np.random.seed(seed)
-    c = config(mode, updates)
-    agent = METHODS[method](OBS_DIM, ACT_DIM, config=c)
+    c = config(mode, updates, limit)
+    extra = {}
+    if method == 'fcsrl_fpen':
+        extra['feasibility_penalty'] = FeasibilityPenaltyConfig(
+            weight=0.1 if feasibility_weight is None else float(feasibility_weight))
+    agent = METHODS[method](OBS_DIM, ACT_DIM, config=c, **extra)
     agent.obs_normalizer.update(observations)
     agent.obs_normalizer.m2 = np.maximum(agent.obs_normalizer.m2,
                                          agent.obs_normalizer.n * OBS_STD_FLOORS ** 2)
@@ -75,7 +84,8 @@ def collect(agent, c, mode, prepared, rng, bar=None):
     for i in range(c.n_env):
         obs[i] = reset_day(i, 0)
     shapes = (('obs', (OBS_DIM,)), ('obs_next', (OBS_DIM,)), ('act', (ACT_DIM,)), ('act_exec', (ACT_DIM,)),
-              ('logp', ()), ('rew', ()), ('cost', ()), ('flow', ()), ('violation', ()), ('vr', ()), ('vc', ()),
+              ('logp', ()), ('rew', ()), ('cost', ()), ('flow', ()), ('violation', ()),
+              ('violation_joint', ()), ('vr', ()), ('vc', ()),
               ('nvr', ()), ('nvc', ()), ('end', ()), ('terminated', ()), ('next_feasi', ()))
     b = {k: np.zeros((c.horizon, c.n_env) + shape, np.float32) for k, shape in shapes}
     for t in range(c.horizon):
@@ -97,6 +107,7 @@ def collect(agent, c, mode, prepared, rng, bar=None):
             b['cost'][t, i] = cost_modes.step_cost(mode, info)
             b['flow'][t, i] = info['flow_ratio']
             b['violation'][t, i] = info['violation']
+            b['violation_joint'][t, i] = info['violation_joint']
             b['end'][t, i] = b['terminated'][t, i] = term
         next_on = agent.obs_normalizer(nxt)
         b['obs_next'][t] = next_on
@@ -122,11 +133,14 @@ def collect(agent, c, mode, prepared, rng, bar=None):
                                      r.feasibility_discount)
     daily_cost = b['cost'].reshape(-1, STEPS_PER_DAY, c.n_env).sum(axis=1).ravel()
     daily_violations = b['violation'].reshape(-1, STEPS_PER_DAY, c.n_env).sum(axis=1).ravel()
+    daily_joint = b['violation_joint'].reshape(-1, STEPS_PER_DAY, c.n_env).sum(axis=1).ravel()
     diagnostics = {
         'daily_cost_mean': float(daily_cost.mean()),
         'daily_cost_max': float(daily_cost.max()),
         'daily_violating_steps_mean': float(daily_violations.mean()),
         'train_step_violation_percent': float(b['violation'].mean() * 100),
+        'daily_joint_violating_steps_mean': float(daily_joint.mean()),
+        'train_joint_step_violation_percent': float(b['violation_joint'].mean() * 100),
         'train_daily_nh4_mean': float(np.mean(b['cost'].reshape(-1, STEPS_PER_DAY, c.n_env).sum(axis=1)) / 288 * 4)
         if mode == 'mean' else None,
         'stage_cost_max': float(b['cost'].max()),
@@ -187,18 +201,25 @@ def main():
     p.add_argument('--prepared', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--updates', type=int, default=10)
+    p.add_argument('--cost-limit', type=float, default=None,
+                   help='하루 비용 한도. 생략하면 모드의 기본값 (mean 288, binary 72)')
+    p.add_argument('--feasibility-weight', type=float, default=None,
+                   help='fcsrl_fpen 의 feasibility 벌점 가중치. 생략하면 0.1')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     warnings.filterwarnings('error', category=ODEintWarning)
     torch.set_num_threads(1)
     DeviceConfig().select_device(-1)
 
-    agent, c = make_agent(a.method, a.mode, a.seed, np.load(a.prepared / 'train_observations.npy'), a.updates)
+    agent, c = make_agent(a.method, a.mode, a.seed, np.load(a.prepared / 'train_observations.npy'),
+                          a.updates, a.cost_limit, a.feasibility_weight)
     initial = dict(np.load(a.prepared / 'initial.npz'))
     save(a.out / 'config.json', {
         'mode': a.mode, 'method': a.method, 'seed': a.seed, 'updates': a.updates,
         'config': asdict(c), 'representation': asdict(RepresentationConfig()),
-        'daily_cost_limit': cost_modes.daily_limit(a.mode),
+        'daily_cost_limit': c.cost_limit,
+        'feasibility_penalty': (asdict(agent.feasibility_penalty)
+                                if hasattr(agent, 'feasibility_penalty') else None),
         'started_at': datetime.now(timezone.utc).isoformat(),
         'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'prepared_metadata_sha256': hashlib.sha256((a.prepared / 'metadata.json').read_bytes()).hexdigest(),
@@ -219,6 +240,9 @@ def main():
         agent.pid.update(diag['daily_cost_mean'], c.cost_limit)
         agent.lagrg = agent.pid.get_lagrg()
         record = {'update': update, 'seconds': time.monotonic() - tick, 'lambda': agent.lagrg, **diag, **info}
+        if hasattr(agent, 'last_penalty_rms'):
+            record['feasibility_penalty_rms'] = agent.last_penalty_rms
+            record['penalty_to_base_rms'] = agent.last_penalty_rms / max(agent.last_base_rms, 1e-8)
         records.append(record)
         save(a.out / 'training.json', records)
         save(a.out / 'progress.json', {
@@ -237,7 +261,7 @@ def main():
     result = {'mode': a.mode, 'method': a.method, 'seed': a.seed, 'steps': c.actual_steps,
               'updates': c.n_updates, 'daily_cost_limit': c.cost_limit,
               'initial': baseline, 'final': final, 'training': records,
-              'final_within_own_limit': {w: satisfied(a.mode, final[w]['week']) for w in final},
+              'final_within_own_limit': {w: satisfied(a.mode, final[w]['week'], c.cost_limit) for w in final},
               'elapsed_seconds': time.monotonic() - start,
               'finished_at': datetime.now(timezone.utc).isoformat()}
     save(a.out / 'metrics.json', result)
