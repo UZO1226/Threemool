@@ -38,3 +38,18 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 참고: [OMPB](https://arxiv.org/abs/2609.31960), [BC-ACI](https://arxiv.org/abs/2604.13253), [분포 전이의 Neyman-Pearson 분류](https://arxiv.org/abs/2511.06641). 실행 결과와 실행 커밋은 완료 뒤 추가한다.
+
+## 완료 결과
+
+실행 코드 `adce5cd`, 2026-11-09 16:26 KST 완료. [전체 결과](results.md), [seed별 판정과 출처](summary.json), [그림](figures/tradeoff.png). 상세 원시 결과 `/home/jio/fcsrl_src/results/e27/diagnosis.json` 및6개 예측 배열. 내부 캐시 재사용과 외부 재생의 기존 score가 완전히 일치했다. 미래 정답 비참조 및 해시 불변 검사를 통과했고, 별도 정렬 기반 검산으로6개 모델의 recall80 FPR 및 FP 수를 확인했다.
+
+day_mse의 외부 후반145~275전이 FPR은33.28%, 전체 오탐 중83.93%가 이 구간에 있었다. 정상 상태에서는 NH4 +1.414, 위반 상태에서는 -1.075의 평균 편향이 함께 있었다. 같은 recall50에서 외부 FPR은 short_mse10.69%, day_mse18.17%로, 임계값 위치만의 문제가 아닌 구분 능력 저하가 확인됐다. 세 모델 모두 사후 전역 임계값으로도 recall80/FPR10을 달성하지 못했다. 예측 거리와 시간대는 함께 변하므로 누적 오차만을 원인으로 확정하지 않는다.
+
+과거 편향 보정9개 후보는 모두 탐지율 유지 기준에서 실패했다. day_mse의 일간 EWMA는 FPR17.75%→6.82%로 낮췄지만 recall49.25%→29.20%로 낮췄다. OMPB, 환경 교체 및 e25 결합은 실행하지 않는다. 평균 편향 제거보다 예측 후반의 정상/위반 구분 능력 저하를 다음 분석 대상으로 남긴다.
+
+표와 그림 재생성:
+
+```bash
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e27/report.py \
+ --source /home/jio/fcsrl_src/results/e27/diagnosis.json --out Yoo/experiments/e27
+```
