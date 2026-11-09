@@ -11,7 +11,8 @@ import numpy as np
 from scipy import stats
 
 LABELS = {'ppolag_fcsrl': '원래 FCSRL + PPO-Lag', 'ppolag': 'PPO-Lag (참고)',
-          'ppolag_fcsrl_pid3': 'FCSRL + 승수 반응 3배', 'ppolag_fcsrl_pid8': 'FCSRL + 승수 반응 8배'}
+          'ppolag_fcsrl_pid3': 'FCSRL + 승수 반응 3배', 'ppolag_fcsrl_pid8': 'FCSRL + 승수 반응 8배',
+          'ppolag_fcsrl_fpen_w0.1': 'FCSRL + 이점 벌점 0.1', 'ppolag_fcsrl_fpen_w0.3': 'FCSRL + 이점 벌점 0.3'}
 ORDER = list(LABELS)
 KEYS = ('air_m3', 'cost', 'nh4_viol_pct', 'do_viol_pct', 'days_within_limit_pct')
 LIMIT = 12.0
