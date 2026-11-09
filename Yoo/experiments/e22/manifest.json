@@ -1,0 +1,38 @@
+{
+  "commit": "1c37be4447117401f13c497de81679e942967509",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e21/all/fcsrl/seed_0/metrics.json": "3b459df02a118031de8776fe6c220f658c21b4e8ba77c3c83240d675cfc76ec5",
+    "/home/jio/fcsrl_src/results/e21/all/fcsrl/seed_1/metrics.json": "06ec94f45ca1a69857a4abe9513b7b05c5ed656a9f91838f90d0144eb3a63700",
+    "/home/jio/fcsrl_src/results/e21/all/fcsrl/seed_2/metrics.json": "338edda8ffe335d5eda8b2204d3be4366c20f78098f01a9ef80615258f1a35eb",
+    "/home/jio/fcsrl_src/results/e21/all/fcsrl/seed_3/metrics.json": "8cf6489fc184ec27d9e3c89686c4b0a61a75312120854842bb300b7bf872fb17",
+    "/home/jio/fcsrl_src/results/e21/all/fcsrl/seed_4/metrics.json": "c829ee9dffb68bae246bf4e2d604f319554de2b2e8980bfa007d1322051d0d45",
+    "/home/jio/fcsrl_src/results/e21/all/ppo/seed_0/metrics.json": "a110bfc58d5d87408c020529d69301e7dad541126bdde5af0a19bbfc3a35706a",
+    "/home/jio/fcsrl_src/results/e21/all/ppo/seed_1/metrics.json": "544ea82afc418e584628676d1dd7acc41c89c3b58b2127b8308005f8b3847377",
+    "/home/jio/fcsrl_src/results/e21/all/ppo/seed_2/metrics.json": "bff844cf6d89308419cee47930aeb1fbadffcd5bdd39fe36531426323e85f424",
+    "/home/jio/fcsrl_src/results/e21/all/ppo/seed_3/metrics.json": "06f5928c4dc5711df3d2e58821849586ca5b58c6f9cb0b865d0c8a44e4f60f56",
+    "/home/jio/fcsrl_src/results/e21/all/ppo/seed_4/metrics.json": "1f179e3afc71bb37096c1aed8245e8be1e44e9465037f98f66d13ae3b3ec6d29",
+    "/home/jio/fcsrl_src/results/e19/prepared/initial.npz": "a78f16e410c3a5f902bb891a7c57f295d2bce68e44829a72a8371033d3b8e787",
+    "/home/jio/fcsrl_src/results/e19/prepared/metadata.json": "7138bb04b422b06d421092f70f1184deac70b51f4e62e3aefdc59f410380f013",
+    "/home/jio/fcsrl_src/results/e19/prepared/eval_frontier.json": "ab051fdcf6ad447822fda1b1b2b7448e8f1ac2e3092e1be5f59aa511209154d7",
+    "/home/jio/fcsrl_src/results/e19/prepared/references.json": "de28514d4070fa0fac9890b544e5511821e55b41f0a10271ea2e391e998671b5"
+  },
+  "source_sha256": {
+    "/home/jio/\uc0ac\ubb3c/Yoo/experiments/e22/audit.py": "c94b24f22cb0ae762453db5a410f671db7139ea866ee8b72a3b2052227550b5c",
+    "/home/jio/\uc0ac\ubb3c/Yoo/experiments/e18/setpoint_env.py": "e1b4e7962796f404d5f30df97f8eae60f13811769896aae30c07b80c97f7616f",
+    "/home/jio/\uc0ac\ubb3c/Yoo/experiments/e18/abac.py": "fd45d9b28df42a8bada9498e0b82c8a1f777c6ec0f43385dfe31c525f459dfc1",
+    "/home/jio/\uc0ac\ubb3c/Yoo/experiments/e17/bsm_mean.py": "43619a6275e3e92e642091ea491e1f808352ce54368074639620a45f3d1578ff",
+    "/home/jio/\uc0ac\ubb3c/Yoo/experiments/e16/bsm_env.py": "243de4fd08ea43b44f5042fe7a46b336ddd2ee9a1673d1b57abbc8e0166530c6"
+  },
+  "argv": [
+    "Yoo/experiments/e22/audit.py",
+    "--prepared",
+    "/home/jio/fcsrl_src/results/e19/prepared",
+    "--runs",
+    "/home/jio/fcsrl_src/results/e21/all",
+    "--out",
+    "/home/jio/fcsrl_src/results/e22",
+    "--workers",
+    "4"
+  ],
+  "python": "3.10.19 (main, Feb 12 2026, 00:42:18) [Clang 21.1.4 ]"
+}
