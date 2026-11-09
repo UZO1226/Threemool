@@ -27,3 +27,20 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 출력 배열과 상세 JSON은 `/home/jio/fcsrl_src/results/e28/`. 실행 커밋 및 결과는 완료 후 기록한다.
+
+## 완료 결과
+
+실행 `c15ade7`, 2026-11-09 16:37:52 KST 완료. [전체 표](results.md), [seed별 검사와 출처](summary.json), [그림](figures/horizon.png). 기존 예측, 판정 수, 인과 순서, 해시 검증을 모두 통과했다. 저장 배열72개의 TP/FP 수도 별도로 검산했다.
+
+동일 후반 목표에서 day_mse의 FPR은5분1.36%,1시간10.74%,3시간25.34%,6시간30.80%,12시간33.18%,기존 하루33.28%였다. 실제 시작 상태에서1시간 예측은 세 모델 두seed 모두 내부/외부에서 기존 하루 대비 recall/FPR/MAE를 개선했다. 긴 예측과 누적 상태 오차의 관여를 지지하지만 새 배포 정책의 성능은 아니다.
+
+3시간 전 NH4만 실측으로 바꾸면 외부 day_mse recall53.78→62.71%, FPR33.28→24.33%였다. DO만 바꾸면 FPR34.18%로 악화했다. 외부 세 모델 두seed 모두 NH4 초기 정보는 recall/FPR/MAE를 개선하고 DO만의 초기 정보는 FPR/MAE를 악화했다. 한편 정확한 초기 상태에서도 하루 MSE의3시간 FPR은 다른 두 모델보다 높고 고정 예측 길이의 시간대 차이도 남았다.
+
+다음 보완의 표적은 NH4 반복 전이의 구분 능력 보존이다. 큰 구조나 데이터는 유지하며 실제 미래 관측을 가상 제어에 넣지 않는다. 새 모델/정책 학습, OMPB, 환경 교체는 실행하지 않았다.
+
+보고서 재생성:
+
+```bash
+/home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e28/report.py \
+ --source /home/jio/fcsrl_src/results/e28/diagnosis.json --out Yoo/experiments/e28
+```
