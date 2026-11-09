@@ -11,7 +11,7 @@ evaluate.run(..., shield=...) 에 넘겨 쓴다. 모든 차단기는 shield(obs,
 """
 import numpy as np
 
-from env import kla_to_action
+from env import action_to_kla, kla_to_action
 
 FALLBACK = np.array([kla_to_action(240.0)])   # 최대 폭기 KLa5 = 240, 행동으로는 +1
 
@@ -65,6 +65,22 @@ class PredictorShield:
     def __call__(self, obs, action):
         if self.prob(obs) >= self.threshold:
             return self.fallback.copy(), True
+        return action, False
+
+
+class GradedShield:
+    """위험 확률에 비례해 폭기 하한을 올린다 (Park/e05).
+
+    KLa5 = max(정책 KLa5, 240 x min(1, p / c)). 하한이 정책 행동보다 클 때를 개입으로 센다.
+    """
+
+    def __init__(self, prob, c):
+        self.prob, self.c = prob, float(c)
+
+    def __call__(self, obs, action):
+        floor = 240.0 * min(1.0, self.prob(obs) / self.c)
+        if floor > action_to_kla(float(np.asarray(action).reshape(-1)[0])):
+            return np.array([kla_to_action(floor)]), True
         return action, False
 
 
