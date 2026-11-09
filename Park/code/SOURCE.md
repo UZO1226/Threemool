@@ -21,9 +21,14 @@
 | `Yoo/experiments/e16/bsm_env.py` | `1f7a14a` | BSM1 연결 방식 (5분마다 5번 조 KLa 제어, 1분 내부 적분), 관측 구성 |
 | `Lee/code/bsm/bsm_binary.py` | `1f7a14a` | 이진 비용 정의 (5분 안에 NH4 > 4 mg N/L 인 시점이 있으면 1), 하루 한도 72 스텝 |
 | `Lee/experiments/e01/results.md` | `1f7a14a` | 환경 검증 기준값 (`Park/code/README.md` 참고) |
+| `Yoo/code/wwtp/env.py`, `surrogate.py`, `evaluate.py` | `db0a448` | Avedøre 환경 규칙(관측, 행동, 비용, 보상), 대리 모델 추론 방식, 평가 지표 정의 |
+| `Yoo/experiments/e02/surrogate.json` | `db0a448` | 대리 모델 가중치. 복사하지 않고 그 경로에서 읽는다 (sha256 d25dbe3e...) |
+| `Yoo/experiments/e02/historical.json` | `db0a448` | Avedøre 환경 검증 기준값 |
+| `Yoo/code/wwtp/prep.py` | `db0a448` | 데이터 전처리. 고치지 않고 그대로 실행한다 |
 
 ## 수정 이력
 
 | 날짜 | 파일 | 내용 | 실험 |
 | --- | --- | --- | --- |
 | 2026-11-08 | 전체 | 직접 작성으로 방향을 정하고 구조를 잡음 | Park/e01 준비 |
+| 2026-11-09 | `avedore_env.py`, `check_avedore.py`, `train_avedore.py`, `agent.py` | Avedøre 환경과 학습 추가, 관측 정규화 표준편차 하한을 인자로 받게 함 | Park/e07 |

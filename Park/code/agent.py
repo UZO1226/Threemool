@@ -95,11 +95,12 @@ class Config:
 class ObsNormalizer:
     """학습 전 기본 폭기 관측으로 평균과 표준편차를 정하고 학습 중에는 바꾸지 않는다."""
 
-    def __init__(self, observations=None):
+    def __init__(self, observations=None, floors=OBS_STD_FLOORS):
+        """floors: 표준편차 하한. 기본값은 BSM1 관측용이다. Avedøre 는 1e-3 을 쓴다 (Park/e07)."""
         if observations is not None:
             observations = np.asarray(observations, dtype=float)
             self.mean = observations.mean(0)
-            self.std = np.maximum(observations.std(0), OBS_STD_FLOORS)
+            self.std = np.maximum(observations.std(0), floors)
 
     def __call__(self, obs):
         return np.clip((np.asarray(obs) - self.mean) / self.std, -10, 10).astype(np.float32)
