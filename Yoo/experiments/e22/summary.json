@@ -1,0 +1,71 @@
+{
+  "dry": {
+    "ppo": {
+      "mean_rel_percent": -1.342211010777159,
+      "ci95": [
+        -2.8773037363936727,
+        0.1928817148393549
+      ],
+      "mean_correction_pp": 0.06037539571029926,
+      "gap_to_ff30_pp": 1.5350841527023618
+    },
+    "fcsrl": {
+      "mean_rel_percent": -1.0516463620702732,
+      "ci95": [
+        -2.2148166970097587,
+        0.11152397286921234
+      ],
+      "mean_correction_pp": 0.10707215785515256,
+      "gap_to_ff30_pp": 1.8256488014092476
+    },
+    "welch_rel_p": 0.6871204838963791,
+    "ff_5min_rel": -2.8706013666434327,
+    "ff_30min_rel": -2.8772951634795207
+  },
+  "rain": {
+    "ppo": {
+      "mean_rel_percent": -0.9362759487277273,
+      "ci95": [
+        -3.68097142960337,
+        1.8084195321479157
+      ],
+      "mean_correction_pp": 0.11329771336127781,
+      "gap_to_ff30_pp": 1.2537133700284087
+    },
+    "fcsrl": {
+      "mean_rel_percent": -0.754435926760495,
+      "ci95": [
+        -1.4444504997515246,
+        -0.06442135376946534
+      ],
+      "mean_correction_pp": 0.08949203760143076,
+      "gap_to_ff30_pp": 1.435553391995641
+    },
+    "welch_rel_p": 0.8661573639665219,
+    "ff_5min_rel": -2.1678845534195745,
+    "ff_30min_rel": -2.189989318756136
+  },
+  "max_nh4_match_error": 1.4491684607875754e-07,
+  "replay_checks": {
+    "rain/constant_2": {
+      "aeration_kwh_per_day": 0.0,
+      "flow_weighted_nh4": 0.0,
+      "nh4_violation_percent": 0.0
+    },
+    "dry/constant_2": {
+      "aeration_kwh_per_day": 0.0,
+      "flow_weighted_nh4": 0.0,
+      "nh4_violation_percent": 0.0
+    },
+    "dry/feedforward_5min": {
+      "aeration_kwh_per_day": 0.0,
+      "flow_weighted_nh4": 0.0,
+      "nh4_violation_percent": 0.0
+    },
+    "rain/feedforward_5min": {
+      "aeration_kwh_per_day": 0.0,
+      "flow_weighted_nh4": 0.0,
+      "nh4_violation_percent": 0.0
+    }
+  }
+}

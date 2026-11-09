@@ -1,0 +1,369 @@
+{
+  "runs": [
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "steps": 202048,
+      "best": {
+        "epoch": 1,
+        "air_m3": 41946.51133834507,
+        "reward": -62.919767007517606,
+        "cost": 15.976744186046512,
+        "nh4_viol_pct": 5.476055425006078,
+        "do_viol_pct": 0.09075439591605218,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 26097.99802745151,
+          "reward": -39.146997041177265,
+          "cost": 25.427906976744186,
+          "nh4_viol_pct": 8.715663236366584,
+          "do_viol_pct": 0.14423466493801151,
+          "days_within_limit_pct": 67.44186046511628,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 744.6901814859514
+        },
+        "gbm": {
+          "air_m3": 24851.44119515957,
+          "reward": -37.277161792739356,
+          "cost": 14.986046511627906,
+          "nh4_viol_pct": 5.161656267725469,
+          "do_viol_pct": 0.05996272587310591,
+          "days_within_limit_pct": 67.90697674418604,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 757.9788512927535
+        }
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 1,
+      "steps": 202048,
+      "best": {
+        "epoch": 2,
+        "air_m3": 27694.00484198921,
+        "reward": -41.54100726298381,
+        "cost": 14.009302325581395,
+        "nh4_viol_pct": 4.8812900089133775,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215
+      },
+      "best_feasible": true,
+      "final": {
+        "mlp": {
+          "air_m3": 27694.00484198921,
+          "reward": -41.54100726298381,
+          "cost": 14.009302325581395,
+          "nh4_viol_pct": 4.8812900089133775,
+          "do_viol_pct": 0.0,
+          "days_within_limit_pct": 76.27906976744187,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 782.3767069752028
+        },
+        "gbm": {
+          "air_m3": 26968.40463248622,
+          "reward": -40.45260694872935,
+          "cost": 8.190697674418605,
+          "nh4_viol_pct": 2.826351187099911,
+          "do_viol_pct": 0.027550441617372984,
+          "days_within_limit_pct": 76.27906976744187,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 747.3400994852173
+        }
+      }
+    },
+    {
+      "method": "fcsrl_anchor",
+      "seed": 0,
+      "steps": 202048,
+      "best": {
+        "epoch": 1,
+        "air_m3": 44095.914344357094,
+        "reward": -66.14387151653565,
+        "cost": 16.613953488372093,
+        "nh4_viol_pct": 5.638116846284742,
+        "do_viol_pct": 0.15071712178915808,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 32534.044297398323,
+          "reward": -48.80106644609748,
+          "cost": 17.07906976744186,
+          "nh4_viol_pct": 5.895794506117818,
+          "do_viol_pct": 0.05510088323474597,
+          "days_within_limit_pct": 75.34883720930232,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 682.565433047154
+        },
+        "gbm": {
+          "air_m3": 31539.288543551702,
+          "reward": -47.308932815327545,
+          "cost": 8.874418604651163,
+          "nh4_viol_pct": 3.040272263187748,
+          "do_viol_pct": 0.05185965480917268,
+          "days_within_limit_pct": 76.27906976744187,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 658.168068379295
+        }
+      }
+    },
+    {
+      "method": "fcsrl_anchor",
+      "seed": 1,
+      "steps": 202048,
+      "best": {
+        "epoch": 2,
+        "air_m3": 32604.125073874122,
+        "reward": -48.90618761081119,
+        "cost": 13.483720930232558,
+        "nh4_viol_pct": 4.680333846527834,
+        "do_viol_pct": 0.01782675634065311,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "best_feasible": true,
+      "final": {
+        "mlp": {
+          "air_m3": 32604.125073874122,
+          "reward": -48.90618761081119,
+          "cost": 13.483720930232558,
+          "nh4_viol_pct": 4.680333846527834,
+          "do_viol_pct": 0.01782675634065311,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 704.9051811206793
+        },
+        "gbm": {
+          "air_m3": 32108.993500575074,
+          "reward": -48.163490250862615,
+          "cost": 8.093023255813954,
+          "nh4_viol_pct": 2.7793533749290984,
+          "do_viol_pct": 0.04051535531966616,
+          "days_within_limit_pct": 77.20930232558139,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 650.3776486060657
+        }
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 0,
+      "steps": 202048,
+      "best": {
+        "epoch": 2,
+        "air_m3": 38436.9074153418,
+        "reward": -57.65536112301268,
+        "cost": 15.73953488372093,
+        "nh4_viol_pct": 5.100072927639575,
+        "do_viol_pct": 0.3840855684304352,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 38436.9074153418,
+          "reward": -57.65536112301268,
+          "cost": 15.73953488372093,
+          "nh4_viol_pct": 5.100072927639575,
+          "do_viol_pct": 0.3840855684304352,
+          "days_within_limit_pct": 76.27906976744187,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 619.4023955774162
+        },
+        "gbm": {
+          "air_m3": 37696.8519846194,
+          "reward": -56.5452779769291,
+          "cost": 8.055813953488371,
+          "nh4_viol_pct": 2.750182319098938,
+          "do_viol_pct": 0.05672149744753262,
+          "days_within_limit_pct": 77.20930232558139,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 589.1140522751491
+        }
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 1,
+      "steps": 202048,
+      "best": {
+        "epoch": 2,
+        "air_m3": 42203.574654643686,
+        "reward": -63.30536198196554,
+        "cost": 15.2,
+        "nh4_viol_pct": 5.009318531723523,
+        "do_viol_pct": 0.2868487156632364,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 42203.574654643686,
+          "reward": -63.30536198196554,
+          "cost": 15.2,
+          "nh4_viol_pct": 5.009318531723523,
+          "do_viol_pct": 0.2868487156632364,
+          "days_within_limit_pct": 75.81395348837209,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 525.2728780514519
+        },
+        "gbm": {
+          "air_m3": 41451.6854206952,
+          "reward": -62.1775281310428,
+          "cost": 7.7627906976744185,
+          "nh4_viol_pct": 2.6675309942468197,
+          "do_viol_pct": 0.03727412689409287,
+          "days_within_limit_pct": 77.20930232558139,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 513.5484310563846
+        }
+      }
+    },
+    {
+      "method": "ppo_anchor",
+      "seed": 0,
+      "steps": 202048,
+      "best": {
+        "epoch": 2,
+        "air_m3": 41011.392114216156,
+        "reward": -61.51708817132424,
+        "cost": 16.390697674418604,
+        "nh4_viol_pct": 5.3302001458552795,
+        "do_viol_pct": 0.3808443400048619,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 41011.392114216156,
+          "reward": -61.51708817132424,
+          "cost": 16.390697674418604,
+          "nh4_viol_pct": 5.3302001458552795,
+          "do_viol_pct": 0.3808443400048619,
+          "days_within_limit_pct": 75.81395348837209,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 542.4082942701697
+        },
+        "gbm": {
+          "air_m3": 40242.25425106552,
+          "reward": -60.36338137659829,
+          "cost": 8.269767441860465,
+          "nh4_viol_pct": 2.813386273397618,
+          "do_viol_pct": 0.06806579693703914,
+          "days_within_limit_pct": 76.74418604651163,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 524.4007982008934
+        }
+      }
+    },
+    {
+      "method": "ppo_anchor",
+      "seed": 1,
+      "steps": 202048,
+      "best": {
+        "epoch": 1,
+        "air_m3": 47570.35483651716,
+        "reward": -71.35553225477572,
+        "cost": 16.21395348837209,
+        "nh4_viol_pct": 5.425816384409691,
+        "do_viol_pct": 0.22364476136455716,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "best_feasible": false,
+      "final": {
+        "mlp": {
+          "air_m3": 46357.87020431355,
+          "reward": -69.53680530647033,
+          "cost": 16.334883720930232,
+          "nh4_viol_pct": 5.351268130621507,
+          "do_viol_pct": 0.3403289846851957,
+          "days_within_limit_pct": 75.34883720930232,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 414.5155797621447
+        },
+        "gbm": {
+          "air_m3": 45653.335788993296,
+          "reward": -68.48000368348994,
+          "cost": 8.065116279069768,
+          "nh4_viol_pct": 2.766388461226805,
+          "do_viol_pct": 0.043756583745239455,
+          "days_within_limit_pct": 75.81395348837209,
+          "n_episodes": 215,
+          "aerobic_prior_departure_nm3h": 420.31571039133314
+        }
+      }
+    }
+  ],
+  "gate": {
+    "mlp": {
+      "both_seeds_feasible": false,
+      "mean_air_lower": false,
+      "mean_cost_not_higher": true
+    },
+    "gbm": {
+      "both_seeds_feasible": true,
+      "mean_air_lower": false,
+      "mean_cost_not_higher": true
+    }
+  },
+  "passed": false,
+  "historical_measured": {
+    "air_m3": 53596.026986795274,
+    "cost": 70.95348837209302,
+    "nh4_viol_pct": 20.873511060692,
+    "do_viol_pct": 3.8489587553682845
+  },
+  "historical_replay": {
+    "mlp": {
+      "air_m3": 53596.02698679528,
+      "reward": -80.39404048019291,
+      "cost": 26.790697674418606,
+      "nh4_viol_pct": 6.343084028846933,
+      "do_viol_pct": 2.9916538368041485,
+      "days_within_limit_pct": 56.27906976744186,
+      "n_episodes": 215
+    },
+    "gbm": {
+      "air_m3": 53596.02698679528,
+      "reward": -80.39404048019291,
+      "cost": 28.390697674418604,
+      "nh4_viol_pct": 2.86038408556843,
+      "do_viol_pct": 7.031845069281257,
+      "days_within_limit_pct": 42.32558139534884,
+      "n_episodes": 215
+    }
+  },
+  "behavior_policy": {
+    "mlp": {
+      "air_m3": 59077.510748075896,
+      "reward": -88.61626612211383,
+      "cost": 21.390697674418604,
+      "nh4_viol_pct": 7.153391135240256,
+      "do_viol_pct": 0.2998136293655296,
+      "days_within_limit_pct": 71.16279069767441,
+      "n_episodes": 215,
+      "aerobic_prior_departure_nm3h": 0.0
+    },
+    "gbm": {
+      "air_m3": 59056.51756898146,
+      "reward": -88.5847763534722,
+      "cost": 13.06046511627907,
+      "nh4_viol_pct": 3.0111012073575885,
+      "do_viol_pct": 1.5395835021473137,
+      "days_within_limit_pct": 64.18604651162791,
+      "n_episodes": 215,
+      "aerobic_prior_departure_nm3h": 0.0
+    }
+  }
+}

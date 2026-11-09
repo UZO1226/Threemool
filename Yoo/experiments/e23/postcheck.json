@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "input_and_training_source_hashes_unchanged": true,
+  "prior_weights_and_normalizer_unchanged_all_runs": true,
+  "last_checkpoint_mlp_evaluation_exact": true,
+  "two_model_val_only_215_unique_episodes": true,
+  "reward_penalty_accounting": true,
+  "steps_per_run": 202048,
+  "runs": [
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.525625,
+      "last_behavior_penalty": 0.03217777982354164
+    },
+    {
+      "method": "fcsrl",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 1.99015625,
+      "last_behavior_penalty": 0.02878359891474247
+    },
+    {
+      "method": "fcsrl_anchor",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.4425,
+      "last_behavior_penalty": 0.0253409706056118
+    },
+    {
+      "method": "fcsrl_anchor",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 2.01328125,
+      "last_behavior_penalty": 0.02326599694788456
+    },
+    {
+      "method": "ppo",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.6318750000000002,
+      "last_behavior_penalty": 0.027432795614004135
+    },
+    {
+      "method": "ppo",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 2.01265625,
+      "last_behavior_penalty": 0.025127194821834564
+    },
+    {
+      "method": "ppo_anchor",
+      "seed": 0,
+      "passed": true,
+      "max_lambda": 1.58109375,
+      "last_behavior_penalty": 0.020582107827067375
+    },
+    {
+      "method": "ppo_anchor",
+      "seed": 1,
+      "passed": true,
+      "max_lambda": 1.93359375,
+      "last_behavior_penalty": 0.020174218341708183
+    }
+  ]
+}

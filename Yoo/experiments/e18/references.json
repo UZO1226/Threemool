@@ -1,0 +1,1206 @@
+{
+  "fixed84": {
+    "dry": {
+      "week": {
+        "flow_weighted_nh4": 4.7020917305687995,
+        "cost_ratio": 1.1755229326421999,
+        "cost": 2369.854232206675,
+        "nh4_violation_percent": 62.142857142857146,
+        "aeration_kwh_per_day": 3341.3866666668155,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 0.8365060975063696,
+        "do5_above_target_percent": 15.0,
+        "kla5_mean": 84.0,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 15.547681500763677,
+          "COD": 48.30242404262273,
+          "BOD5e": 2.7764125805605735,
+          "TSS": 12.995778890526378
+        },
+        "daily_nh4_cvar20": 5.884972340742258
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 4.17901539261783,
+          "cost_ratio": 1.0447538481544576,
+          "cost": 300.88910826848377,
+          "nh4_violation_percent": 45.208333333333336,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.9599473406400335,
+          "do5_above_target_percent": 20.13888888888889,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.833580351974076,
+            "COD": 48.74849631444794,
+            "BOD5e": 2.8283420536563377,
+            "TSS": 13.325354358231767
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.876901799862469,
+          "cost_ratio": 1.4692254499656172,
+          "cost": 423.13692959009774,
+          "nh4_violation_percent": 84.375,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.7357282281227518,
+          "do5_above_target_percent": 13.819444444444445,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.93723323062819,
+            "COD": 49.127292272245136,
+            "BOD5e": 2.904080841266606,
+            "TSS": 13.545141770915428
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.888200557094173,
+          "cost_ratio": 1.4720501392735432,
+          "cost": 423.95044011078045,
+          "nh4_violation_percent": 84.79166666666667,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.6107731622663304,
+          "do5_above_target_percent": 8.819444444444445,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.772438321120449,
+            "COD": 48.770254096944925,
+            "BOD5e": 2.8580993558172616,
+            "TSS": 13.294148828094494
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.592474777257858,
+          "cost_ratio": 1.3981186943144646,
+          "cost": 402.6581839625658,
+          "nh4_violation_percent": 83.75,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.7193833776257577,
+          "do5_above_target_percent": 13.055555555555557,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.613326607023566,
+            "COD": 48.902813961094544,
+            "BOD5e": 2.8777870160339925,
+            "TSS": 13.416160370380615
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.49494581475498,
+          "cost_ratio": 1.373736453688745,
+          "cost": 395.63609866235856,
+          "nh4_violation_percent": 83.26388888888889,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.6374495560260064,
+          "do5_above_target_percent": 9.791666666666666,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.374246423334203,
+            "COD": 48.556898299638064,
+            "BOD5e": 2.8310077800150704,
+            "TSS": 13.152454307022127
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.2626428566444066,
+          "cost_ratio": 0.8156607141611016,
+          "cost": 234.91028567839726,
+          "nh4_violation_percent": 44.02777777777778,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.9339388984539281,
+          "do5_above_target_percent": 15.76388888888889,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 14.841440338363554,
+            "COD": 46.82975783923569,
+            "BOD5e": 2.5498966164397614,
+            "TSS": 11.984430399408657
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.9530843946672207,
+          "cost_ratio": 0.4882710986668052,
+          "cost": 140.6220764160399,
+          "nh4_violation_percent": 9.583333333333334,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.2583221194097791,
+          "do5_above_target_percent": 23.61111111111111,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.279019171297342,
+            "COD": 46.64958505161857,
+            "BOD5e": 2.501460896381207,
+            "TSS": 11.891747286840824
+          }
+        }
+      ]
+    },
+    "rain": {
+      "week": {
+        "flow_weighted_nh4": 4.94754765335346,
+        "cost_ratio": 1.236886913338365,
+        "cost": 2493.564017290144,
+        "nh4_violation_percent": 63.34325396825397,
+        "aeration_kwh_per_day": 3341.3866666668155,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 0.8863656388160357,
+        "do5_above_target_percent": 13.67063492063492,
+        "kla5_mean": 84.0,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 14.312534371730136,
+          "COD": 45.519234258466675,
+          "BOD5e": 3.476755851916714,
+          "TSS": 16.159352054821415
+        },
+        "daily_nh4_cvar20": 6.559825330230572
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 4.17901539261783,
+          "cost_ratio": 1.0447538481544576,
+          "cost": 300.88910826848377,
+          "nh4_violation_percent": 45.208333333333336,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.9599473406400335,
+          "do5_above_target_percent": 20.13888888888889,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.833580351974076,
+            "COD": 48.74849631444794,
+            "BOD5e": 2.8283420536563377,
+            "TSS": 13.325354358231767
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.323755964228285,
+          "cost_ratio": 1.3309389910570713,
+          "cost": 383.3104294244365,
+          "nh4_violation_percent": 87.63888888888889,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.8396442775771785,
+          "do5_above_target_percent": 13.402777777777777,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 14.420996084430136,
+            "COD": 50.850361542818575,
+            "BOD5e": 4.180135158320747,
+            "TSS": 19.7178837742878
+          }
+        },
+        {
+          "flow_weighted_nh4": 4.917531531790555,
+          "cost_ratio": 1.2293828829476388,
+          "cost": 354.06227028892,
+          "nh4_violation_percent": 73.95833333333334,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.957135211473957,
+          "do5_above_target_percent": 14.374999999999998,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.390098834520284,
+            "COD": 43.312003447961246,
+            "BOD5e": 4.313610305459284,
+            "TSS": 20.060744112487846
+          }
+        },
+        {
+          "flow_weighted_nh4": 5.334246635987465,
+          "cost_ratio": 1.3335616589968662,
+          "cost": 384.06575779109744,
+          "nh4_violation_percent": 71.04166666666667,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.9131629431634265,
+          "do5_above_target_percent": 16.666666666666664,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.872776057679408,
+            "COD": 39.132633398968224,
+            "BOD5e": 3.4852079815341592,
+            "TSS": 15.962449572177903
+          }
+        },
+        {
+          "flow_weighted_nh4": 7.050056807927814,
+          "cost_ratio": 1.7625142019819535,
+          "cost": 507.60409017080264,
+          "nh4_violation_percent": 88.81944444444444,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.5437839845923116,
+          "do5_above_target_percent": 0.0,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.397763890724708,
+            "COD": 45.89716179294322,
+            "BOD5e": 2.830997477013544,
+            "TSS": 12.851186713392478
+          }
+        },
+        {
+          "flow_weighted_nh4": 4.420743108573166,
+          "cost_ratio": 1.1051857771432916,
+          "cost": 318.29350381726795,
+          "nh4_violation_percent": 59.93055555555556,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 0.8119757136271902,
+          "do5_above_target_percent": 9.791666666666666,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.643656387410761,
+            "COD": 46.06090982430948,
+            "BOD5e": 2.533891655456214,
+            "TSS": 11.669523688763137
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.650241462321973,
+          "cost_ratio": 0.6625603655804932,
+          "cost": 190.81738528718205,
+          "nh4_violation_percent": 16.805555555555557,
+          "aeration_kwh_per_day": 3341.3866666666604,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.1789100006381525,
+          "do5_above_target_percent": 21.319444444444443,
+          "kla5_mean": 84.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.650476759666947,
+            "COD": 46.19496125844229,
+            "BOD5e": 2.4868581323404277,
+            "TSS": 11.59474706914027
+          }
+        }
+      ]
+    }
+  },
+  "fixed240": {
+    "dry": {
+      "week": {
+        "flow_weighted_nh4": 2.2405675358991672,
+        "cost_ratio": 0.5601418839747918,
+        "cost": 1129.2460380931802,
+        "nh4_violation_percent": 15.208333333333332,
+        "aeration_kwh_per_day": 4265.599999999816,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 3.800105420502698,
+        "do5_above_target_percent": 100.0,
+        "kla5_mean": 240.0,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 18.377617233128287,
+          "COD": 48.23177748823957,
+          "BOD5e": 2.7591127380753666,
+          "TSS": 13.00452041604261
+        },
+        "daily_nh4_cvar20": 2.8858257237391167
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.3599443441659718,
+          "cost_ratio": 0.5899860860414929,
+          "cost": 169.91599277994996,
+          "nh4_violation_percent": 22.569444444444446,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.6826887197787226,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 19.199260431714713,
+            "COD": 48.69296853566832,
+            "BOD5e": 2.8147664153015977,
+            "TSS": 13.331278899578749
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.9354896913820694,
+          "cost_ratio": 0.7338724228455173,
+          "cost": 211.355257779509,
+          "nh4_violation_percent": 23.26388888888889,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.508086193520053,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 18.51262264865728,
+            "COD": 49.030110580256434,
+            "BOD5e": 2.8799787587627494,
+            "TSS": 13.551505948121015
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.7616658046317357,
+          "cost_ratio": 0.6904164511579339,
+          "cost": 198.83993793348498,
+          "nh4_violation_percent": 21.11111111111111,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.5103351530208453,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 18.0650911620946,
+            "COD": 48.670266596668284,
+            "BOD5e": 2.8334270321234665,
+            "TSS": 13.301744733038422
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.631499784825582,
+          "cost_ratio": 0.6578749462063955,
+          "cost": 189.4679845074419,
+          "nh4_violation_percent": 20.90277777777778,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.5662475177759143,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 18.150784235154873,
+            "COD": 48.817782935403315,
+            "BOD5e": 2.8569635419210835,
+            "TSS": 13.424756622937192
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.458536610935347,
+          "cost_ratio": 0.6146341527338367,
+          "cost": 177.01463598734497,
+          "nh4_violation_percent": 18.61111111111111,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.580273697185142,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.814217713309787,
+            "COD": 48.466156736658405,
+            "BOD5e": 2.8087499367139857,
+            "TSS": 13.16191515298982
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.2153329916267586,
+          "cost_ratio": 0.30383324790668964,
+          "cost": 87.50397539712662,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 4.29765272065088,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.88961418317869,
+            "COD": 46.78864064171697,
+            "BOD5e": 2.5400932226539066,
+            "TSS": 11.996553914055358
+          }
+        },
+        {
+          "flow_weighted_nh4": 0.9288375412399849,
+          "cost_ratio": 0.2322093853099962,
+          "cost": 66.87630296927891,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 4.455453941587327,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 18.984984476945602,
+            "COD": 46.63871688319381,
+            "BOD5e": 2.499148050836307,
+            "TSS": 11.904176177799682
+          }
+        }
+      ]
+    },
+    "rain": {
+      "week": {
+        "flow_weighted_nh4": 2.8370501118804468,
+        "cost_ratio": 0.7092625279701117,
+        "cost": 1429.8732563877452,
+        "nh4_violation_percent": 21.617063492063494,
+        "aeration_kwh_per_day": 4265.599999999816,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 3.8756587763313117,
+        "do5_above_target_percent": 100.0,
+        "kla5_mean": 240.0,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 15.72059108013195,
+          "COD": 45.4000953178312,
+          "BOD5e": 3.446934217723072,
+          "TSS": 16.167488671370073
+        },
+        "daily_nh4_cvar20": 3.342358138063187
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.3599443441659718,
+          "cost_ratio": 0.5899860860414929,
+          "cost": 169.91599277994996,
+          "nh4_violation_percent": 22.569444444444446,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.6826887197787226,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 19.199260431714713,
+            "COD": 48.69296853566832,
+            "BOD5e": 2.8147664153015977,
+            "TSS": 13.331278899578749
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.3144409466311493,
+          "cost_ratio": 0.8286102366577873,
+          "cost": 238.63974815744274,
+          "nh4_violation_percent": 19.86111111111111,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.793496999176157,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.96300227971096,
+            "COD": 50.706510108524284,
+            "BOD5e": 4.143740937348009,
+            "TSS": 19.72333851195055
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.2916886499796028,
+          "cost_ratio": 0.8229221624949007,
+          "cost": 237.0015827985314,
+          "nh4_violation_percent": 31.944444444444443,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.8628094105582766,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.45767097796957,
+            "COD": 43.13140375723419,
+            "BOD5e": 4.268061254284166,
+            "TSS": 20.06665701499329
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.216596026606724,
+          "cost_ratio": 0.804149006651681,
+          "cost": 231.59491391568412,
+          "nh4_violation_percent": 36.59722222222222,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.6520184846418613,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.947391005966844,
+            "COD": 38.973258689110075,
+            "BOD5e": 3.4454336649213264,
+            "TSS": 15.969630371885797
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.353525014636002,
+          "cost_ratio": 0.8383812536590005,
+          "cost": 241.45380105379215,
+          "nh4_violation_percent": 40.34722222222222,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 3.541398865151495,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.51230727646329,
+            "COD": 45.78452203272722,
+            "BOD5e": 2.80303395083933,
+            "TSS": 12.862152172881578
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.7191224027614316,
+          "cost_ratio": 0.4297806006903579,
+          "cost": 123.77681299882308,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 4.204343918064789,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 18.110502856832973,
+            "COD": 46.01551834375449,
+            "BOD5e": 2.5229031198760876,
+            "TSS": 11.683599917037009
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.2267667091942165,
+          "cost_ratio": 0.3066916772985541,
+          "cost": 88.32720306198358,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 4265.600000000005,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 4.392855036947876,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 240.0,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 19.226960664429495,
+            "COD": 46.18517351739745,
+            "BOD5e": 2.4847848994704105,
+            "TSS": 11.608821099064615
+          }
+        }
+      ]
+    }
+  },
+  "do_pi": {
+    "dry": {
+      "week": {
+        "flow_weighted_nh4": 2.487273415167571,
+        "cost_ratio": 0.6218183537918928,
+        "cost": 1253.5858012444558,
+        "nh4_violation_percent": 16.428571428571427,
+        "aeration_kwh_per_day": 3716.184615007802,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 1.9999999763763756,
+        "do5_above_target_percent": 58.511904761904766,
+        "kla5_mean": 147.2629695249484,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 16.969177407658997,
+          "COD": 48.24296588195463,
+          "BOD5e": 2.7619192408890996,
+          "TSS": 13.003846410737834
+        },
+        "setpoint_mean": 2.0,
+        "daily_nh4_cvar20": 3.1628422265918137
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.5868232760548624,
+          "cost_ratio": 0.6467058190137156,
+          "cost": 186.25127587595009,
+          "nh4_violation_percent": 24.02777777777778,
+          "aeration_kwh_per_day": 3748.5894268518523,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9963436447077736,
+          "do5_above_target_percent": 53.263888888888886,
+          "kla5_mean": 152.73264894348583,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.387837645487195,
+            "COD": 48.706223510120815,
+            "BOD5e": 2.818120372445041,
+            "TSS": 13.330851667200047
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.211668347587573,
+          "cost_ratio": 0.8029170868968932,
+          "cost": 231.24012102630525,
+          "nh4_violation_percent": 25.069444444444443,
+          "aeration_kwh_per_day": 3799.7402949767743,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.99946537019735,
+          "do5_above_target_percent": 60.90277777777777,
+          "kla5_mean": 161.36651640643242,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.323660228436893,
+            "COD": 49.042561077688035,
+            "BOD5e": 2.883109284844938,
+            "TSS": 13.55099475114915
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.0407769241024156,
+          "cost_ratio": 0.7601942310256039,
+          "cost": 218.93593853537394,
+          "nh4_violation_percent": 22.63888888888889,
+          "aeration_kwh_per_day": 3799.0931861585714,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.0008109777000964,
+          "do5_above_target_percent": 57.638888888888886,
+          "kla5_mean": 161.25728948663038,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.996342183232922,
+            "COD": 48.68157287828354,
+            "BOD5e": 2.8362519860034916,
+            "TSS": 13.301136398169104
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.911273947479577,
+          "cost_ratio": 0.7278184868698943,
+          "cost": 209.61172421852956,
+          "nh4_violation_percent": 22.63888888888889,
+          "aeration_kwh_per_day": 3782.487800362347,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9995009540514297,
+          "do5_above_target_percent": 60.138888888888886,
+          "kla5_mean": 158.45442991862515,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.97971595421427,
+            "COD": 48.828933131929794,
+            "BOD5e": 2.8597430482835997,
+            "TSS": 13.424074468093647
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.7253345039280426,
+          "cost_ratio": 0.6813336259820106,
+          "cost": 196.22408428281906,
+          "nh4_violation_percent": 20.625,
+          "aeration_kwh_per_day": 3780.446897041698,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.000745036543722,
+          "do5_above_target_percent": 58.26388888888889,
+          "kla5_mean": 158.109941361127,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.66753446873122,
+            "COD": 48.477447550536574,
+            "BOD5e": 2.8115670663678602,
+            "TSS": 13.161177079319378
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.4240634788902262,
+          "cost_ratio": 0.35601586972255655,
+          "cost": 102.53257048009628,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3574.99937546075,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.0038066378221795,
+          "do5_above_target_percent": 61.66666666666667,
+          "kla5_mean": 123.43200260965406,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.405980363272526,
+            "COD": 46.797509696051655,
+            "BOD5e": 2.5423124943557296,
+            "TSS": 11.99564446087238
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.100496674747879,
+          "cost_ratio": 0.27512416868696976,
+          "cost": 79.23576058184729,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3527.93532420265,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.99932721361208,
+          "do5_above_target_percent": 57.70833333333333,
+          "kla5_mean": 115.48795794868394,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.88770802871563,
+            "COD": 46.64792970777797,
+            "BOD5e": 2.5014711226269224,
+            "TSS": 11.90324150316355
+          }
+        }
+      ]
+    },
+    "rain": {
+      "week": {
+        "flow_weighted_nh4": 3.1726877114060783,
+        "cost_ratio": 0.7931719278515196,
+        "cost": 1599.0346065486635,
+        "nh4_violation_percent": 26.855158730158728,
+        "aeration_kwh_per_day": 3681.6248682914643,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 1.9999992058861835,
+        "do5_above_target_percent": 58.24404761904762,
+        "kla5_mean": 141.4295539126622,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 14.808714121161156,
+          "COD": 45.431392959327646,
+          "BOD5e": 3.4550007396045905,
+          "TSS": 16.166679327873144
+        },
+        "setpoint_mean": 2.0,
+        "daily_nh4_cvar20": 3.7603834461408043
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.5868232760548624,
+          "cost_ratio": 0.6467058190137156,
+          "cost": 186.25127587595009,
+          "nh4_violation_percent": 24.02777777777778,
+          "aeration_kwh_per_day": 3748.5894268518523,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9963436447077736,
+          "do5_above_target_percent": 53.263888888888886,
+          "kla5_mean": 152.73264894348583,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.387837645487195,
+            "COD": 48.706223510120815,
+            "BOD5e": 2.818120372445041,
+            "TSS": 13.330851667200047
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.613579147144178,
+          "cost_ratio": 0.9033947867860445,
+          "cost": 260.1776985943808,
+          "nh4_violation_percent": 23.333333333333332,
+          "aeration_kwh_per_day": 3691.662772877154,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.00223722165395,
+          "do5_above_target_percent": 59.72222222222222,
+          "kla5_mean": 143.12387389149288,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.10699570792868,
+            "COD": 50.738444513003394,
+            "BOD5e": 4.152101532885542,
+            "TSS": 19.723074724467466
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.6340839644993994,
+          "cost_ratio": 0.9085209911248499,
+          "cost": 261.65404544395676,
+          "nh4_violation_percent": 39.375,
+          "aeration_kwh_per_day": 3658.548334500978,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.001038153276802,
+          "do5_above_target_percent": 59.791666666666664,
+          "kla5_mean": 137.53441505080295,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.181569486253645,
+            "COD": 43.188744535760776,
+            "BOD5e": 4.283001994746352,
+            "TSS": 20.066363930317458
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.621480464002614,
+          "cost_ratio": 0.9053701160006535,
+          "cost": 260.74659340818823,
+          "nh4_violation_percent": 48.333333333333336,
+          "aeration_kwh_per_day": 3739.355454035025,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.997306117379193,
+          "do5_above_target_percent": 60.0,
+          "kla5_mean": 151.17402637500433,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.615970461129834,
+            "COD": 39.01848832964496,
+            "BOD5e": 3.4569498262939455,
+            "TSS": 15.968834162900404
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.810903238797366,
+          "cost_ratio": 0.9527258096993415,
+          "cost": 274.3850331934104,
+          "nh4_violation_percent": 52.916666666666664,
+          "aeration_kwh_per_day": 3786.1533236203377,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.0004183491705496,
+          "do5_above_target_percent": 56.666666666666664,
+          "kla5_mean": 159.07314164634317,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.667744868720742,
+            "COD": 45.79792024259372,
+            "BOD5e": 2.806339590855892,
+            "TSS": 12.860630641225969
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.0637534299809923,
+          "cost_ratio": 0.5159383574952481,
+          "cost": 148.59024695863144,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3601.826988898617,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.0031204945821064,
+          "do5_above_target_percent": 61.25000000000001,
+          "kla5_mean": 127.96029445025444,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 16.713924462940778,
+            "COD": 46.0238198997141,
+            "BOD5e": 2.524949020678491,
+            "TSS": 11.681772466011182
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.4846138990088258,
+          "cost_ratio": 0.37115347475220645,
+          "cost": 106.89220072863546,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3545.23777725626,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9995304604329116,
+          "do5_above_target_percent": 57.013888888888886,
+          "kla5_mean": 118.4084770312515,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.16739579805961,
+            "COD": 46.19341086105589,
+            "BOD5e": 2.4868309751686164,
+            "TSS": 11.60700634007976
+          }
+        }
+      ]
+    }
+  },
+  "abac": {
+    "dry": {
+      "week": {
+        "flow_weighted_nh4": 2.3924282984777734,
+        "cost_ratio": 0.5981070746194433,
+        "cost": 1205.7838624327978,
+        "nh4_violation_percent": 16.01190476190476,
+        "aeration_kwh_per_day": 3845.7094907446044,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 2.4849366430348336,
+        "do5_above_target_percent": 83.01587301587303,
+        "kla5_mean": 169.12575800266032,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 17.379130666009534,
+          "COD": 48.2394058463887,
+          "BOD5e": 2.761032868155009,
+          "TSS": 13.004159033650113
+        },
+        "setpoint_mean": 2.5876338544183737,
+        "daily_nh4_cvar20": 2.9993819742210572
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.7082808513061534,
+          "cost_ratio": 0.6770702128265383,
+          "cost": 194.99622129404304,
+          "nh4_violation_percent": 24.930555555555557,
+          "aeration_kwh_per_day": 3768.8823171879317,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9093995930380578,
+          "do5_above_target_percent": 43.333333333333336,
+          "kla5_mean": 156.15793050808975,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.125803056630872,
+            "COD": 48.712271867934156,
+            "BOD5e": 2.819696246147163,
+            "TSS": 13.331108380491537
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.056063879426045,
+          "cost_ratio": 0.7640159698565112,
+          "cost": 220.03659931867523,
+          "nh4_violation_percent": 24.09722222222222,
+          "aeration_kwh_per_day": 3993.259464217188,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.7211795521140987,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 194.03104234723668,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.71336754076921,
+            "COD": 49.03654211089518,
+            "BOD5e": 2.881574575946178,
+            "TSS": 13.551147241225435
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.8576772112085878,
+          "cost_ratio": 0.7144193028021469,
+          "cost": 205.75275920701833,
+          "nh4_violation_percent": 21.805555555555557,
+          "aeration_kwh_per_day": 3997.5281927198253,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.7465060624216844,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 194.75157041407374,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.559661002274513,
+            "COD": 48.6744874727249,
+            "BOD5e": 2.8344608329492034,
+            "TSS": 13.301361392004672
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.7295091764646555,
+          "cost_ratio": 0.6823772941161639,
+          "cost": 196.5246607054552,
+          "nh4_violation_percent": 21.666666666666668,
+          "aeration_kwh_per_day": 3983.3577634524513,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.757122660691742,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 192.35971251072854,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.61174084760416,
+            "COD": 48.822015380144386,
+            "BOD5e": 2.858002090496626,
+            "TSS": 13.424365351578446
+          }
+        },
+        {
+          "flow_weighted_nh4": 2.550008720345609,
+          "cost_ratio": 0.6375021800864022,
+          "cost": 183.60062786488385,
+          "nh4_violation_percent": 19.583333333333332,
+          "aeration_kwh_per_day": 3974.6488446573453,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.748151816841473,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 190.88971496466806,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.28738987840446,
+            "COD": 48.47052806123923,
+            "BOD5e": 2.8098319630476767,
+            "TSS": 13.16152790217625
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.3109435516681027,
+          "cost_ratio": 0.3277358879170257,
+          "cost": 94.3879357201034,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3714.826342885744,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.680302541516622,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 147.0337037879162,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.090909183873254,
+            "COD": 46.79306356012989,
+            "BOD5e": 2.5412058782384506,
+            "TSS": 11.996113162916789
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.1348390818789773,
+          "cost_ratio": 0.2837097704697443,
+          "cost": 81.70841389528637,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3487.463510092077,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.8318942746201587,
+          "do5_above_target_percent": 37.77777777777778,
+          "kla5_mean": 108.65663148590943,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.18175299779319,
+            "COD": 46.64857408164833,
+            "BOD5e": 2.5016582390743105,
+            "TSS": 11.903748727978616
+          }
+        }
+      ]
+    },
+    "rain": {
+      "week": {
+        "flow_weighted_nh4": 3.003928595005146,
+        "cost_ratio": 0.7509821487512865,
+        "cost": 1513.9800118825938,
+        "nh4_violation_percent": 23.432539682539684,
+        "aeration_kwh_per_day": 3855.3370329935283,
+        "mixing_kwh_per_day": 239.99999999999412,
+        "do5_mean": 2.631023190319616,
+        "do5_above_target_percent": 89.58333333333334,
+        "kla5_mean": 170.75081202066772,
+        "days": 7.0,
+        "other_flow_weighted": {
+          "totalN": 15.063678348179584,
+          "COD": 45.41527629230141,
+          "BOD5e": 3.450831030648147,
+          "TSS": 16.167078749604546
+        },
+        "setpoint_mean": 2.6834995490047144,
+        "daily_nh4_cvar20": 3.481262296561784
+      },
+      "days": [
+        {
+          "flow_weighted_nh4": 2.7082808513061534,
+          "cost_ratio": 0.6770702128265383,
+          "cost": 194.99622129404304,
+          "nh4_violation_percent": 24.930555555555557,
+          "aeration_kwh_per_day": 3768.8823171879317,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 1.9093995930380578,
+          "do5_above_target_percent": 43.333333333333336,
+          "kla5_mean": 156.15793050808975,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.125803056630872,
+            "COD": 48.712271867934156,
+            "BOD5e": 2.819696246147163,
+            "TSS": 13.331108380491537
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.4309085623175055,
+          "cost_ratio": 0.8577271405793764,
+          "cost": 247.0254164868604,
+          "nh4_violation_percent": 21.041666666666668,
+          "aeration_kwh_per_day": 3945.552627356983,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.899220864790944,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 185.97850049161377,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 15.407473078082543,
+            "COD": 50.71958857249228,
+            "BOD5e": 4.1471037604978855,
+            "TSS": 19.72306911881922
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.4240603361358253,
+          "cost_ratio": 0.8560150840339563,
+          "cost": 246.5323442017794,
+          "nh4_violation_percent": 34.30555555555556,
+          "aeration_kwh_per_day": 3907.7389666858166,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.8608353996476557,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 179.59584959062914,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.30294986039266,
+            "COD": 43.156064853271154,
+            "BOD5e": 4.274472250120361,
+            "TSS": 20.066454917635323
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.385805505341868,
+          "cost_ratio": 0.846451376335467,
+          "cost": 243.77799638461448,
+          "nh4_violation_percent": 39.65277777777778,
+          "aeration_kwh_per_day": 3945.776297589261,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.721068041129497,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 186.01625428175805,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 12.747680641968778,
+            "COD": 38.99349154794618,
+            "BOD5e": 3.450581394149962,
+            "TSS": 15.969253580923215
+          }
+        },
+        {
+          "flow_weighted_nh4": 3.5014037902594954,
+          "cost_ratio": 0.8753509475648739,
+          "cost": 252.10107289868367,
+          "nh4_violation_percent": 44.09722222222222,
+          "aeration_kwh_per_day": 4015.4849773289807,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.830324976191231,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 197.7825355581547,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.153652082051465,
+            "COD": 45.78887644851716,
+            "BOD5e": 2.80410294375168,
+            "TSS": 12.86143478174035
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.845456794624258,
+          "cost_ratio": 0.4613641986560645,
+          "cost": 132.87288921294657,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3781.749490165774,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.8150449767606704,
+          "do5_above_target_percent": 100.0,
+          "kla5_mean": 158.329808917704,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.44650971725409,
+            "COD": 46.01885977083506,
+            "BOD5e": 2.5237391591090086,
+            "TSS": 11.682791032989908
+          }
+        },
+        {
+          "flow_weighted_nh4": 1.4151484364516325,
+          "cost_ratio": 0.3537871091129081,
+          "cost": 101.89068742451754,
+          "nh4_violation_percent": 0.0,
+          "aeration_kwh_per_day": 3622.1745546401494,
+          "mixing_kwh_per_day": 240.00000000000102,
+          "do5_mean": 2.381268480679253,
+          "do5_above_target_percent": 83.75,
+          "kla5_mean": 131.39480479672451,
+          "days": 1.0,
+          "other_flow_weighted": {
+            "totalN": 17.757733065091138,
+            "COD": 46.19201056533954,
+            "BOD5e": 2.4865170019364293,
+            "TSS": 11.608025512989846
+          }
+        }
+      ]
+    }
+  }
+}
