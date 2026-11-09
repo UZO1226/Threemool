@@ -1,0 +1,4511 @@
+{
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/cross_evaluation.json": "76552b05116e9506e10c344866a488e8045a4f7fbdd4ff1d67919f5bc84e2262",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/model.pt": "428e6390e22ee4ef66817e16aa45cc00661c49c9b7571f790dabfa2b8537ae77",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_0/model_final/representation.pt": "be72b46cbf3888324f47d6daf66cbd4852b478c166fa83509489b5f838e97c16",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/cross_evaluation.json": "561907c71a08e8489565615e04ab87a3e2fe0949ebde81f311a30a576c1757b0",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/model.pt": "a1a761f552405d1a900efbe32b4eb8af75937eec8064158301e279ba68530d7f",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_0/model_final/representation.pt": "8c4d4f810752a79631437f68be77a20b8c51d979e75979b083ea03f5e4aae996",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/cross_evaluation.json": "6eff6f897c614a02824b6d3a40972fde481c5857c3b94836bfd69e3fa9dab17b",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/model.pt": "caaa68a2eeb4bba95a7e104d9ff460ea6b031256a42075f25c8182ca35ece7a4",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_1/model_final/representation.pt": "8d450e518877b3150848424073920f7b517f8e18f21f2cd24a7c719411e4ab5b",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/cross_evaluation.json": "ebc5d171975c30c1434705e095d244bf9da9eb4b3dc1ce2c9cc5cd3300aa8a93",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/model.pt": "9ed077c59fa937c3f713f8104ced6a48d64d186a50e62b376589f4a486757298",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_1/model_final/representation.pt": "f9cbc1715997fa48f71250e8d7b16916a320b9a73ea5320466ba38eaf8176c74",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/cross_evaluation.json": "324e1887f4be5145bd520a0c8c4fcabe87fe1a2235b23e31603bd0515056442a",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/model.pt": "5167ced93fdf299e4aa27a38301806228b261e74cdf49846c1afdc1663a6d72d",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_2/model_final/representation.pt": "2565fa2813c0b0c75d92b15d2df404bccf1e84ce45d322bf5069f3cd8e488cac",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/cross_evaluation.json": "a1aad1d236b814946b9e8c8799467c484f6e37ca9ced776a64f6c12edab857b6",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/model.pt": "d6a1dd5e21428e3679258448e1dcf0e431010b6164ebd348cc7b20a28c99f1c2",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_2/model_final/representation.pt": "b21aef56b756944d7051dbf8ca94fc76e047a09907ecc94616d41edd03492c13",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/cross_evaluation.json": "e0afd62d367cb17efeff40933b97554eadc21c34f447de73ab0a66288635bdd4",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/model.pt": "df326a81a31cdd635f1a869047b900cf0bf3f47599a9a5a0f388d97800496de5",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_3/model_final/representation.pt": "d2e29c5b1fa89d714e947c80852158df0a8e439567d340a384293ca45959897b",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/cross_evaluation.json": "49f31a7ac89147a0d10b0bdac3ec3444f8a552aa1c8504abe194c600912e9120",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/model.pt": "2cad38f536bc2b4ba5c7f719ed6daf470d660fdb59f4851ceca81d1cab736336",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_3/model_final/representation.pt": "60d8b3ed3e4723a46da5de1e3484bccf1602fd6aa54213878887cadbc1a84a70",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/cross_evaluation.json": "de44f0960844406f4a4a530f3accf9598de25b5894f4fbdb1435cc8b4e0973c7",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/model.pt": "f10165f03d331179573614e35cbe34af67a792ff64b50e4f5c9bf864b58c2cdd",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl/seed_4/model_final/representation.pt": "3b14ac12f7ab8af18428bfada05d5792020cfcd245aef4bc00fcb2263d0e238d",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/cross_evaluation.json": "116e88dcb69b8760367469b489789e554fd38eb2cd13a7ac3cfe7317cd063222",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/model.pt": "bf431513fab6efb2515618fba898c07053dd11c0ea4b64693d328d2c4901df8c",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_preserve/seed_4/model_final/representation.pt": "ce29a0044ca8e11c6187f770a8fc795263b7823ab21849ccf392c583b739cfc6",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/cross_evaluation.json": "7e1d33b361357a017bfb76dda1c8c47de0b44e518fe99f7b47a23648df1612dd",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/model.pt": "64d9f8e7babdce109c30332fcc931a5021d381a90f6b56cd7e67452b74475267",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_0/model_final/representation.pt": "459c420f7b18f2dff02e4db6f989317a443b9a5f254f0897c6a9c570035e5925",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/cross_evaluation.json": "a39f293a7f353fc68e2690fe31b15ede2372c08fd2a1e7b1360166c4b3a2062f",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/model.pt": "8c3340dda0c4f491007e677acbac00be513ae4c6dac73a08bc34ec517c96eaad",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_1/model_final/representation.pt": "a6129ff110148ad595daf8cc6b5eaa95d3f130330e514e1e513830f860d9c345",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/cross_evaluation.json": "a922a0efab73a1de806f18934f2145214bd1a8496a00f645e99a9ad4de16e04c",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/model.pt": "36dfd2459e8e690ed9c5d18729e54e0db23c8b98a27e08ea0c2c8a5c663bc63d",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_2/model_final/representation.pt": "83c40a3e16c0abe91805c5800fbbe6de9f8b024673f8895cfe591ebcab704c6e",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/cross_evaluation.json": "d3eab48738fd6f3c925f2264500f22616492ce674cafb60f2d71de56acd61413",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/model.pt": "e8d9afa22cfdc83d3ab51fdc429bb82ded65c8137865b7d5f4e5d0f60689f1db",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_0/model_final/representation.pt": "6f701928116c22f177e40fe9de1edce478d4273bf30feed97bc22b39983e591d",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/cross_evaluation.json": "b93051bbfb7f9022321ee5703b7c24dc5e426849025adba72070a51a4a5a246c",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/model.pt": "535618044017c8dbb68c75b4cece5c0de0bfe5963eab0f9d3244d4a728299e3e",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_1/model_final/representation.pt": "89fafe5bd4194083c71a1bf9ad923deb41b61719299e7f617b7b9bb04f794a55",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/cross_evaluation.json": "dba01a9154e7dcade29f435395271f188724f23113aa50f8cc5f2defeff8a37c",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/model.pt": "e95cac0c2af2d142fc6ad1b6f07bb2a6c3d4316e90dee991c7f1dcd69e91d338",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_2/model_final/representation.pt": "7920bb444389efb79617991e4f2206f3b1e8b8ffd7465162976a5ec2974d2aa4",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/cross_evaluation.json": "66f3d92534e65e8df47e5da71cbf7314fe17b1c4d364f7298df6a41407df6c06",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/model.pt": "7f27da4ae0a5a74be56d0ab2874632b5bc3aebbb0c1ae02694b716880cafe762",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_0/model_final/representation.pt": "7979f24da71442852901e76c7b19bc033f81958edda4c4b153e610abe57e6952",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/cross_evaluation.json": "f6606a28cb73f5dbb5936e6fe356f4ad6b5564413417a187f6acc82e836367a9",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/model.pt": "23a56f38a913c14491d18d29a9450d1030504d814a748948a07543b3407726d3",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_3/model_final/representation.pt": "3dae82ef3fb491649c17f296b8f3d50af3a98a4cd1467014031fe61d3e039015",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/cross_evaluation.json": "aa861f915bd47e15ff8b7bd4ffe11aae59ab59d0dcc4fc5f070a4cdc0145bb46",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/model.pt": "d967997618d2766726c30478e9440a297e651803ff0192aef11e9b8dd5003e13",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_3/model_final/representation.pt": "0f6dbead6e77ba089e846b7daae2348f999bb4b0a5015094fa33b5f96011b681",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/cross_evaluation.json": "0ae148cebc1bad79ab79583e4e91b5f9b5723193a4cb48c19a40d70bcae025f8",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/model.pt": "e01b8c285c5c8eab9876db3a7e450544e5f49950fa743c8cb859d13eaa4207bb",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_1/model_final/representation.pt": "25073c210521a7852a2bd6d6f96e85a000ea182f9a05c9b592148d303a92a7c0",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/cross_evaluation.json": "c410f315c42d0cf7df5a62e6a5332f2424f508fd8b806359a758859d7299fdae",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/model.pt": "7f107b20272d12d740dce6a9077d1984ad0d628b49f91c396ebd5de04dfb88cf",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_2/model_final/representation.pt": "3ebe26b1e3f9a828260fbf0b0f9f4006a740c9b25772033e9f494c699887e1f6",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/cross_evaluation.json": "9025fc4b721c28713699c4b57f135028c1d57f52624fc17289aa65c66b672b0d",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/model.pt": "c1a7793fdaceed5223b8d07965eafaa0dd51e52db423cbf8f88bec5c1036db44",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_3/model_final/representation.pt": "62ef27a70ed1719ee677ad97e61aa313c6fa5508157b0b25bbd06754575a6a79",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/cross_evaluation.json": "47c2d536f32d373f2ef1b5f97c073bed05f343bafb9c562f092de96b36425d8a",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/model.pt": "a2acf54323350ae559a631b883d75a7a53cc16deafc2b68c08725f30711fd2f8",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_actor/seed_4/model_final/representation.pt": "9e91156a87b574ddb3276b125a96953c3ad66e1a6c8e9b3556d6b4be61b93bb4",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/cross_evaluation.json": "e24dac9d7ba4d925536e1205fbf76963320ddea2459707a8f4f95439d99e4095",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/model.pt": "c680fc05bbbb6bc55d5520657c869441a9364b68036ea8eec8855a182586ed58",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_critic/seed_4/model_final/representation.pt": "fcba9280578aec46125122aae355b85e101cd3929273229783faa8d67d26cb11",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/cross_evaluation.json": "f68bb498b41edfd55b023c938be80f4aaa74b1c1b576c059fa411779e64e2a2a",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/config.json": "77aeaaac8b29870701275aa3e2d8788151e1e1b65dcb98842f78bf1c126593e1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/model.pt": "a4653809b81dc1f6245eb14d1903fb2029b7e4f495ecbb6c647e15f19066a8ea",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/normalizer.json": "776fb9ac4fc583f2e4c0151c562a99bceca292bffa8cd1206d4cec2d36edad57",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/prior.pt": "5922e48ed78c3c5adafb1aa75ed36733c50120ebe6b78b8547b96fd0356878d1",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e29/pilot/runs/fcsrl_extra_ppo/seed_4/model_final/representation.pt": "6e4e8aebfd3dda0afa8c485385e8b93efda366b981a933880b9021e92a841ba7"
+  },
+  "matches": [
+    {
+      "comparator": "fcsrl",
+      "seed": 0,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 27292.943101013876,
+        "reward": -40.93941465152081,
+        "cost": 8.027906976744186,
+        "nh4_viol_pct": 2.738838019609432,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 743.6326894563663
+      },
+      "base": {
+        "air_m3": 24851.44119515957,
+        "reward": -37.277161792739356,
+        "cost": 14.986046511627906,
+        "nh4_viol_pct": 5.161656267725469,
+        "do_viol_pct": 0.05996272587310591,
+        "days_within_limit_pct": 67.90697674418604,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 757.9788512927535
+      },
+      "matched": {
+        "air_m3": 27291.05928931529,
+        "reward": -40.93658893397294,
+        "cost": 9.986046511627906,
+        "nh4_viol_pct": 3.40166923263917,
+        "do_viol_pct": 0.07778948221375902,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215
+      },
+      "offset": 0.029669814171186196,
+      "air_mismatch_percent": -0.006902193331126405,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.9581395348837205,
+      "cost_reduction_percent": 19.608756404285042,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.113932387056554,
+          "air_m3": 16.9760176377703,
+          "cost": 242.93023255813952
+        },
+        {
+          "offset": 0.44303380647172297,
+          "air_m3": 71024.7345641833,
+          "cost": 54.14883720930233
+        },
+        {
+          "offset": -0.515860295867123,
+          "air_m3": 3232.4873766233754,
+          "cost": 190.4232558139535
+        },
+        {
+          "offset": -0.03641324469770002,
+          "air_m3": 22231.661821901802,
+          "cost": 17.693023255813955
+        },
+        {
+          "offset": 0.06362938430265293,
+          "air_m3": 30566.937150991005,
+          "cost": 9.209302325581396
+        },
+        {
+          "offset": 0.024333865059497327,
+          "air_m3": 26777.114722472,
+          "cost": 10.0
+        },
+        {
+          "offset": 0.02968233305700165,
+          "air_m3": 27300.415537154026,
+          "cost": 9.995348837209303
+        },
+        {
+          "offset": 0.029605959995011925,
+          "air_m3": 27254.828986005727,
+          "cost": 9.846511627906978
+        },
+        {
+          "offset": 0.029669814171186196,
+          "air_m3": 27291.05928931529,
+          "cost": 9.986046511627906
+        },
+        {
+          "offset": 0.02967481417118621,
+          "air_m3": 27289.498066962806,
+          "cost": 9.986046511627906
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 1,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 30553.39693512132,
+        "reward": -45.830095402681984,
+        "cost": 7.651162790697675,
+        "nh4_viol_pct": 2.627015638927153,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 701.6764573150983
+      },
+      "base": {
+        "air_m3": 26968.40463248622,
+        "reward": -40.45260694872935,
+        "cost": 8.190697674418605,
+        "nh4_viol_pct": 2.826351187099911,
+        "do_viol_pct": 0.027550441617372984,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 747.3400994852173
+      },
+      "matched": {
+        "air_m3": 30551.770761903634,
+        "reward": -45.82765614285545,
+        "cost": 7.869767441860465,
+        "nh4_viol_pct": 2.7080463495664855,
+        "do_viol_pct": 0.03403289846851957,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215
+      },
+      "offset": 0.04464646710492524,
+      "air_mismatch_percent": -0.005322397444507132,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.21860465116279038,
+      "cost_reduction_percent": 2.777777777777779,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.00808148870501,
+          "air_m3": 17.84795421038487,
+          "cost": 242.85581395348837
+        },
+        {
+          "offset": 0.495959255647495,
+          "air_m3": 69422.38291984843,
+          "cost": 31.50232558139535
+        },
+        {
+          "offset": -0.3463565763314912,
+          "air_m3": 11581.413508200832,
+          "cost": 68.4093023255814
+        },
+        {
+          "offset": 0.0748013396580019,
+          "air_m3": 33186.162410566736,
+          "cost": 7.725581395348837
+        },
+        {
+          "offset": 0.02347882598572986,
+          "air_m3": 28686.073778457074,
+          "cost": 7.790697674418604
+        },
+        {
+          "offset": 0.044775232806393464,
+          "air_m3": 30587.072896241218,
+          "cost": 7.934883720930233
+        },
+        {
+          "offset": 0.04439796962863768,
+          "air_m3": 30524.909390249224,
+          "cost": 7.962790697674419
+        },
+        {
+          "offset": 0.044570857266382755,
+          "air_m3": 30513.78782631238,
+          "cost": 7.925581395348837
+        },
+        {
+          "offset": 0.04468131814211134,
+          "air_m3": 30558.509249205505,
+          "cost": 7.976744186046512
+        },
+        {
+          "offset": 0.04466643081475087,
+          "air_m3": 30566.39196664211,
+          "cost": 7.9581395348837205
+        },
+        {
+          "offset": 0.04461864404056681,
+          "air_m3": 30550.838979691725,
+          "cost": 7.8930232558139535
+        },
+        {
+          "offset": 0.044626503395099604,
+          "air_m3": 30550.095506358983,
+          "cost": 7.879069767441861
+        },
+        {
+          "offset": 0.04464646710492524,
+          "air_m3": 30551.770761903634,
+          "cost": 7.869767441860465
+        },
+        {
+          "offset": 0.04465644895983806,
+          "air_m3": 30562.55360509651,
+          "cost": 7.9581395348837205
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 2,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26792.659253007623,
+        "reward": -40.188988879511435,
+        "cost": 7.962790697674419,
+        "nh4_viol_pct": 2.725873105907139,
+        "do_viol_pct": 0.04861842638359939,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 778.1935504025801
+      },
+      "base": {
+        "air_m3": 20672.917185902825,
+        "reward": -31.00937577885424,
+        "cost": 8.516279069767442,
+        "nh4_viol_pct": 2.9381735677821896,
+        "do_viol_pct": 0.02917105583015963,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 879.3750934991895
+      },
+      "matched": {
+        "air_m3": 26792.54936921273,
+        "reward": -40.1888240538191,
+        "cost": 7.623255813953488,
+        "nh4_viol_pct": 2.6108094967992868,
+        "do_viol_pct": 0.0453771979580261,
+        "days_within_limit_pct": 79.53488372093022,
+        "n_episodes": 215
+      },
+      "offset": 0.10010502399489733,
+      "air_mismatch_percent": -0.0004101264971634322,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.33953488372093066,
+      "cost_reduction_percent": -4.453935326418557,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1301741427864662,
+          "air_m3": 7.473489388014919,
+          "cost": 242.7767441860465
+        },
+        {
+          "offset": 0.434912928606767,
+          "air_m3": 56474.027414169424,
+          "cost": 12.38139534883721
+        },
+        {
+          "offset": -0.3877674430726865,
+          "air_m3": 7954.199628913126,
+          "cost": 109.78139534883721
+        },
+        {
+          "offset": 0.023572742767040245,
+          "air_m3": 21891.21368756706,
+          "cost": 8.530232558139534
+        },
+        {
+          "offset": 0.1347036063322005,
+          "air_m3": 29355.307940919265,
+          "cost": 7.693023255813953
+        },
+        {
+          "offset": 0.09654902896015785,
+          "air_m3": 26498.646973679926,
+          "cost": 7.632558139534884
+        },
+        {
+          "offset": 0.1004759612732983,
+          "air_m3": 26872.300794431867,
+          "cost": 7.72093023255814
+        },
+        {
+          "offset": 0.09963896476712635,
+          "air_m3": 26767.408668966025,
+          "cost": 7.813953488372093
+        },
+        {
+          "offset": 0.09984045415946878,
+          "air_m3": 26761.614698731857,
+          "cost": 7.627906976744186
+        },
+        {
+          "offset": 0.10015820771638353,
+          "air_m3": 26825.54078367214,
+          "cost": 7.753488372093023
+        },
+        {
+          "offset": 0.09999476546373796,
+          "air_m3": 26764.046348949047,
+          "cost": 7.525581395348837
+        },
+        {
+          "offset": 0.10007648659006074,
+          "air_m3": 26778.94433494802,
+          "cost": 7.609302325581395
+        },
+        {
+          "offset": 0.10011734715322214,
+          "air_m3": 26805.629845258103,
+          "cost": 7.688372093023256
+        },
+        {
+          "offset": 0.10009748672343335,
+          "air_m3": 26784.725988477236,
+          "cost": 7.627906976744186
+        },
+        {
+          "offset": 0.10010502399489733,
+          "air_m3": 26792.54936921273,
+          "cost": 7.623255813953488
+        },
+        {
+          "offset": 0.10011002399489738,
+          "air_m3": 26798.981007101924,
+          "cost": 7.688372093023256
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 3,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 31624.087276696697,
+        "reward": -47.43613091504505,
+        "cost": 7.809302325581395,
+        "nh4_viol_pct": 2.7080463495664855,
+        "do_viol_pct": 0.01296491370229317,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 703.8120175117297
+      },
+      "base": {
+        "air_m3": 44883.894946153254,
+        "reward": -67.32584241922989,
+        "cost": 8.18139534883721,
+        "nh4_viol_pct": 2.8117656591848306,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 442.78249550590624
+      },
+      "matched": {
+        "air_m3": 31625.81484270419,
+        "reward": -47.43872226405629,
+        "cost": 9.734883720930233,
+        "nh4_viol_pct": 3.3919455473624502,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215
+      },
+      "offset": -0.1096488236675501,
+      "air_mismatch_percent": 0.0054628169735781995,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.9255813953488374,
+      "cost_reduction_percent": 19.780219780219777,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -0.9733214398656436,
+          "air_m3": 23.812386786290837,
+          "cost": 242.68837209302325
+        },
+        {
+          "offset": 0.5133392800671783,
+          "air_m3": 93243.15573910408,
+          "cost": 176.2232558139535
+        },
+        {
+          "offset": -0.46936071960659875,
+          "air_m3": 2139.836896205133,
+          "cost": 202.85581395348837
+        },
+        {
+          "offset": 0.021989280230289787,
+          "air_m3": 47487.904735322496,
+          "cost": 8.055813953488371
+        },
+        {
+          "offset": -0.14989647096338066,
+          "air_m3": 26704.94433210571,
+          "cost": 14.55813953488372
+        },
+        {
+          "offset": -0.1092126336343544,
+          "air_m3": 31679.272974034153,
+          "cost": 9.716279069767442
+        },
+        {
+          "offset": -0.10966398417730838,
+          "air_m3": 31621.29637567225,
+          "cost": 9.776744186046512
+        },
+        {
+          "offset": -0.10964225688167002,
+          "air_m3": 31628.622093213387,
+          "cost": 9.716279069767442
+        },
+        {
+          "offset": -0.10965570666301507,
+          "air_m3": 31619.334095751132,
+          "cost": 9.725581395348836
+        },
+        {
+          "offset": -0.1096488236675501,
+          "air_m3": 31625.81484270419,
+          "cost": 9.734883720930233
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 4,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26147.19879293901,
+        "reward": -39.22079818940851,
+        "cost": 8.716279069767442,
+        "nh4_viol_pct": 2.9916538368041485,
+        "do_viol_pct": 0.04537719795802609,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 771.9558726493665
+      },
+      "base": {
+        "air_m3": 30933.821700694214,
+        "reward": -46.40073255104132,
+        "cost": 8.334883720930232,
+        "nh4_viol_pct": 2.7988007454825374,
+        "do_viol_pct": 0.105339923831132,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 691.5465909444152
+      },
+      "matched": {
+        "air_m3": 26147.725109779098,
+        "reward": -39.22158766466864,
+        "cost": 9.469767441860466,
+        "nh4_viol_pct": 3.241228425573292,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 74.4186046511628,
+        "n_episodes": 215
+      },
+      "offset": -0.06511962304519654,
+      "air_mismatch_percent": 0.0020128995241730507,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.7534883720930239,
+      "cost_reduction_percent": 7.95677799607073,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1511290690099094,
+          "air_m3": 21.32893024488937,
+          "cost": 242.85581395348837
+        },
+        {
+          "offset": 0.4244354654950453,
+          "air_m3": 68790.54362947165,
+          "cost": 33.06976744186046
+        },
+        {
+          "offset": -0.5525619024545594,
+          "air_m3": 2905.2457196305895,
+          "cost": 197.5720930232558
+        },
+        {
+          "offset": -0.06406321847975704,
+          "air_m3": 26194.572474836375,
+          "cost": 9.497674418604651
+        },
+        {
+          "offset": -0.06505689174069541,
+          "air_m3": 26153.35835295824,
+          "cost": 9.530232558139534
+        },
+        {
+          "offset": -0.06520535950291591,
+          "air_m3": 26111.394827495245,
+          "cost": 9.288372093023256
+        },
+        {
+          "offset": -0.06507868438281088,
+          "air_m3": 26170.06738314102,
+          "cost": 9.516279069767442
+        },
+        {
+          "offset": -0.06514202194286339,
+          "air_m3": 26123.250856712577,
+          "cost": 9.390697674418604
+        },
+        {
+          "offset": -0.06510962304519648,
+          "air_m3": 26147.79137462493,
+          "cost": 9.474418604651163
+        },
+        {
+          "offset": -0.06511462304519651,
+          "air_m3": 26148.459863847536,
+          "cost": 9.474418604651163
+        },
+        {
+          "offset": -0.06512832249402994,
+          "air_m3": 26123.901444326995,
+          "cost": 9.395348837209303
+        },
+        {
+          "offset": -0.06511962304519654,
+          "air_m3": 26147.725109779098,
+          "cost": 9.469767441860466
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 0,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 27292.943101013876,
+        "reward": -40.93941465152081,
+        "cost": 8.027906976744186,
+        "nh4_viol_pct": 2.738838019609432,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 743.6326894563663
+      },
+      "base": {
+        "air_m3": 27532.6939170978,
+        "reward": -41.299040875646696,
+        "cost": 8.511627906976743,
+        "nh4_viol_pct": 2.9057612835264566,
+        "do_viol_pct": 0.05996272587310591,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 737.4720141710696
+      },
+      "matched": {
+        "air_m3": 27290.340344264176,
+        "reward": -40.93551051639627,
+        "cost": 8.69767441860465,
+        "nh4_viol_pct": 2.972206466250709,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 74.88372093023256,
+        "n_episodes": 215
+      },
+      "offset": -0.003165544327833363,
+      "air_mismatch_percent": -0.009536372607632515,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.6697674418604649,
+      "cost_reduction_percent": 7.700534759358291,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.113932387056554,
+          "air_m3": 29.40909206405166,
+          "cost": 242.96744186046513
+        },
+        {
+          "offset": 0.44303380647172297,
+          "air_m3": 70237.85170704819,
+          "cost": 46.49302325581395
+        },
+        {
+          "offset": -0.5093270264046166,
+          "air_m3": 5482.083552244097,
+          "cost": 130.37209302325581
+        },
+        {
+          "offset": -0.033146609966446805,
+          "air_m3": 25220.83969183786,
+          "cost": 10.255813953488373
+        },
+        {
+          "offset": 0.007386823680103453,
+          "air_m3": 28028.87086629463,
+          "cost": 8.037209302325582
+        },
+        {
+          "offset": -0.0032361635267362954,
+          "air_m3": 27266.010368643547,
+          "cost": 8.432558139534883
+        },
+        {
+          "offset": -0.0028611197640874336,
+          "air_m3": 27297.157422717402,
+          "cost": 8.734883720930233
+        },
+        {
+          "offset": -0.002911864693766995,
+          "air_m3": 27301.26230822328,
+          "cost": 8.665116279069768
+        },
+        {
+          "offset": -0.0030740141102516454,
+          "air_m3": 27302.04442082652,
+          "cost": 8.706976744186047
+        },
+        {
+          "offset": -0.0031550888184939704,
+          "air_m3": 27300.36168554328,
+          "cost": 8.679069767441861
+        },
+        {
+          "offset": -0.003195626172615133,
+          "air_m3": 27285.980282476994,
+          "cost": 8.674418604651162
+        },
+        {
+          "offset": -0.003175999837172756,
+          "air_m3": 27289.234371536026,
+          "cost": 8.674418604651162
+        },
+        {
+          "offset": -0.003165544327833363,
+          "air_m3": 27290.340344264176,
+          "cost": 8.69767441860465
+        },
+        {
+          "offset": -0.0031603165731636665,
+          "air_m3": 27296.89148176938,
+          "cost": 8.69767441860465
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 1,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 30553.39693512132,
+        "reward": -45.830095402681984,
+        "cost": 7.651162790697675,
+        "nh4_viol_pct": 2.627015638927153,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 701.6764573150983
+      },
+      "base": {
+        "air_m3": 32700.334353464867,
+        "reward": -49.050501530197295,
+        "cost": 7.883720930232558,
+        "nh4_viol_pct": 2.703184506928126,
+        "do_viol_pct": 0.043756583745239455,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 665.9744636576266
+      },
+      "matched": {
+        "air_m3": 30546.956901585814,
+        "reward": -45.820435352378716,
+        "cost": 8.07906976744186,
+        "nh4_viol_pct": 2.772870918077951,
+        "do_viol_pct": 0.0421359695324528,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": -0.027357924991041293,
+      "air_mismatch_percent": -0.02107796245759408,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.4279069767441852,
+      "cost_reduction_percent": 5.296488198042592,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.00808148870501,
+          "air_m3": 36.87228232391121,
+          "cost": 242.45116279069768
+        },
+        {
+          "offset": 0.495959255647495,
+          "air_m3": 72370.62331336412,
+          "cost": 46.91162790697675
+        },
+        {
+          "offset": -0.37354925721394616,
+          "air_m3": 12550.743163694706,
+          "cost": 52.0
+        },
+        {
+          "offset": 0.26457937605502957,
+          "air_m3": 54870.05645404028,
+          "cost": 9.813953488372093
+        },
+        {
+          "offset": -0.10208906674351548,
+          "air_m3": 25015.300561002517,
+          "cost": 7.948837209302326
+        },
+        {
+          "offset": -0.0038509143107679084,
+          "air_m3": 32369.54432801459,
+          "cost": 7.837209302325581
+        },
+        {
+          "offset": -0.02811105173287481,
+          "air_m3": 30467.708914438193,
+          "cost": 8.111627906976745
+        },
+        {
+          "offset": -0.027018000703137278,
+          "air_m3": 30612.406641273767,
+          "cost": 8.130232558139534
+        },
+        {
+          "offset": -0.02746376181829105,
+          "air_m3": 30527.36896254526,
+          "cost": 7.906976744186046
+        },
+        {
+          "offset": -0.02732732514393476,
+          "air_m3": 30567.469706546603,
+          "cost": 8.088372093023256
+        },
+        {
+          "offset": -0.027375205605508678,
+          "air_m3": 30545.449636017463,
+          "cost": 8.07906976744186
+        },
+        {
+          "offset": -0.027357924991041293,
+          "air_m3": 30546.956901585814,
+          "cost": 8.07906976744186
+        },
+        {
+          "offset": -0.027342625067488024,
+          "air_m3": 30537.247007732934,
+          "cost": 8.074418604651163
+        },
+        {
+          "offset": -0.027334449336526456,
+          "air_m3": 30538.101134159013,
+          "cost": 8.074418604651163
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 2,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26792.659253007623,
+        "reward": -40.188988879511435,
+        "cost": 7.962790697674419,
+        "nh4_viol_pct": 2.725873105907139,
+        "do_viol_pct": 0.04861842638359939,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 778.1935504025801
+      },
+      "base": {
+        "air_m3": 26494.668684595137,
+        "reward": -39.74200302689271,
+        "cost": 7.865116279069768,
+        "nh4_viol_pct": 2.691840207438619,
+        "do_viol_pct": 0.04861842638359939,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 782.5152827338428
+      },
+      "matched": {
+        "air_m3": 26792.792273234834,
+        "reward": -40.18918840985226,
+        "cost": 7.925581395348837,
+        "nh4_viol_pct": 2.711287577992059,
+        "do_viol_pct": 0.050239040596386036,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215
+      },
+      "offset": 0.0049737785605001245,
+      "air_mismatch_percent": 0.0004964801215034953,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.037209302325581284,
+      "cost_reduction_percent": -0.46948356807512415,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1301741427864662,
+          "air_m3": 19.108917269595835,
+          "cost": 242.8139534883721
+        },
+        {
+          "offset": 0.434912928606767,
+          "air_m3": 61069.28301278011,
+          "cost": 19.069767441860463
+        },
+        {
+          "offset": -0.44380529770825083,
+          "air_m3": 9790.294439085694,
+          "cost": 76.13023255813954
+        },
+        {
+          "offset": -0.004446184550741916,
+          "air_m3": 26256.91111097546,
+          "cost": 7.883720930232558
+        },
+        {
+          "offset": 0.007350801526538284,
+          "air_m3": 26883.148154867595,
+          "cost": 7.804651162790698
+        },
+        {
+          "offset": 0.0056461813259256755,
+          "air_m3": 26830.263072444315,
+          "cost": 7.7953488372093025
+        },
+        {
+          "offset": 0.004513609445208833,
+          "air_m3": 26753.342591958164,
+          "cost": 7.9581395348837205
+        },
+        {
+          "offset": 0.005092505266800972,
+          "air_m3": 26802.528002159306,
+          "cost": 7.967441860465116
+        },
+        {
+          "offset": 0.004935023994413557,
+          "air_m3": 26789.437912981382,
+          "cost": 7.883720930232558
+        },
+        {
+          "offset": 0.0049737785605001245,
+          "air_m3": 26792.792273234834,
+          "cost": 7.925581395348837
+        },
+        {
+          "offset": 0.004968778560500122,
+          "air_m3": 26791.29066654849,
+          "cost": 7.925581395348837
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 3,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 31624.087276696697,
+        "reward": -47.43613091504505,
+        "cost": 7.809302325581395,
+        "nh4_viol_pct": 2.7080463495664855,
+        "do_viol_pct": 0.01296491370229317,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 703.8120175117297
+      },
+      "base": {
+        "air_m3": 34068.397537370525,
+        "reward": -51.10259630605579,
+        "cost": 7.506976744186047,
+        "nh4_viol_pct": 2.605947654160927,
+        "do_viol_pct": 0.009723685276719877,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 664.4460125896966
+      },
+      "matched": {
+        "air_m3": 31623.657249604435,
+        "reward": -47.435485874406645,
+        "cost": 8.055813953488371,
+        "nh4_viol_pct": 2.8004213596953247,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.024442567070887045,
+      "air_mismatch_percent": -0.0013598087068800169,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.24651162790697612,
+      "cost_reduction_percent": 3.060046189376431,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -0.9733214398656436,
+          "air_m3": 14.220983390660248,
+          "cost": 242.73023255813953
+        },
+        {
+          "offset": 0.5133392800671783,
+          "air_m3": 79150.59654906738,
+          "cost": 85.73953488372094
+        },
+        {
+          "offset": -0.37949658694972854,
+          "air_m3": 6435.842941250912,
+          "cost": 157.4139534883721
+        },
+        {
+          "offset": 0.06692134655872489,
+          "air_m3": 40886.567347080905,
+          "cost": 7.47906976744186
+        },
+        {
+          "offset": -0.05310333459092341,
+          "air_m3": 28775.336844162193,
+          "cost": 8.92093023255814
+        },
+        {
+          "offset": -0.024871656376436752,
+          "air_m3": 31553.916150002286,
+          "cost": 8.330232558139535
+        },
+        {
+          "offset": -0.024164045336339247,
+          "air_m3": 31670.99965881816,
+          "cost": 8.065116279069768
+        },
+        {
+          "offset": -0.024447567070887057,
+          "air_m3": 31623.578176488598,
+          "cost": 8.055813953488371
+        },
+        {
+          "offset": -0.024442567070887045,
+          "air_m3": 31623.657249604435,
+          "cost": 8.055813953488371
+        },
+        {
+          "offset": -0.024415640093396525,
+          "air_m3": 31622.210290017283,
+          "cost": 8.07906976744186
+        },
+        {
+          "offset": -0.024289842714867886,
+          "air_m3": 31633.20771627012,
+          "cost": 8.125581395348837
+        },
+        {
+          "offset": -0.024394169614906844,
+          "air_m3": 31617.81844167227,
+          "cost": 8.12093023255814
+        },
+        {
+          "offset": -0.024342006164887367,
+          "air_m3": 31626.607330761442,
+          "cost": 8.111627906976745
+        },
+        {
+          "offset": -0.02435696308525796,
+          "air_m3": 31612.52835998528,
+          "cost": 8.12093023255814
+        },
+        {
+          "offset": -0.02434700616488738,
+          "air_m3": 31627.534695001414,
+          "cost": 8.111627906976745
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 4,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26147.19879293901,
+        "reward": -39.22079818940851,
+        "cost": 8.716279069767442,
+        "nh4_viol_pct": 2.9916538368041485,
+        "do_viol_pct": 0.04537719795802609,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 771.9558726493665
+      },
+      "base": {
+        "air_m3": 27563.968581475256,
+        "reward": -41.34595287221289,
+        "cost": 8.911627906976744,
+        "nh4_viol_pct": 3.0548577911028283,
+        "do_viol_pct": 0.050239040596386036,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 746.2087894546936
+      },
+      "matched": {
+        "air_m3": 26146.894974423245,
+        "reward": -39.22034246163486,
+        "cost": 9.33953488372093,
+        "nh4_viol_pct": 3.210436755530346,
+        "do_viol_pct": 0.04375658374523945,
+        "days_within_limit_pct": 71.62790697674419,
+        "n_episodes": 215
+      },
+      "offset": -0.020115183383785377,
+      "air_mismatch_percent": -0.0011619543575980273,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.6232558139534881,
+      "cost_reduction_percent": 6.673306772908361,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1511290690099094,
+          "air_m3": 11.637891909872838,
+          "cost": 242.8372093023256
+        },
+        {
+          "offset": 0.4244354654950453,
+          "air_m3": 64670.11506368024,
+          "cost": 22.24186046511628
+        },
+        {
+          "offset": -0.5142711557673418,
+          "air_m3": 2556.91924912985,
+          "cost": 198.63720930232557
+        },
+        {
+          "offset": -0.04491784513614827,
+          "air_m3": 24463.364813473916,
+          "cost": 10.553488372093023
+        },
+        {
+          "offset": -0.01507753552133893,
+          "air_m3": 26573.78925337463,
+          "cost": 9.26046511627907
+        },
+        {
+          "offset": -0.02110930390757023,
+          "air_m3": 26047.623176855403,
+          "cost": 9.344186046511627
+        },
+        {
+          "offset": -0.01996780680250049,
+          "air_m3": 26158.155787588898,
+          "cost": 9.288372093023256
+        },
+        {
+          "offset": -0.020080962346281764,
+          "air_m3": 26158.208965862443,
+          "cost": 9.213953488372093
+        },
+        {
+          "offset": -0.020595133126926,
+          "air_m3": 26085.258487216375,
+          "cost": 9.362790697674418
+        },
+        {
+          "offset": -0.02015856443076617,
+          "air_m3": 26133.241506319406,
+          "cost": 9.255813953488373
+        },
+        {
+          "offset": -0.020115183383785377,
+          "air_m3": 26146.894974423245,
+          "cost": 9.33953488372093
+        },
+        {
+          "offset": -0.02011018338378537,
+          "air_m3": 26148.12558222013,
+          "cost": 9.33953488372093
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 0,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 27292.943101013876,
+        "reward": -40.93941465152081,
+        "cost": 8.027906976744186,
+        "nh4_viol_pct": 2.738838019609432,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 743.6326894563663
+      },
+      "base": {
+        "air_m3": 22430.674822988032,
+        "reward": -33.64601223448205,
+        "cost": 19.925581395348836,
+        "nh4_viol_pct": 6.890851632768818,
+        "do_viol_pct": 0.05185965480917268,
+        "days_within_limit_pct": 64.18604651162791,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 798.2508285055262
+      },
+      "matched": {
+        "air_m3": 27290.16040459622,
+        "reward": -40.935240606894325,
+        "cost": 11.367441860465116,
+        "nh4_viol_pct": 3.8765091969856575,
+        "do_viol_pct": 0.0842719390649056,
+        "days_within_limit_pct": 71.62790697674419,
+        "n_episodes": 215
+      },
+      "offset": 0.05303707931050542,
+      "air_mismatch_percent": -0.010195662693313068,
+      "matched_within_tolerance": true,
+      "cost_difference": -3.3395348837209298,
+      "cost_reduction_percent": 29.378068739770868,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.113932387056554,
+          "air_m3": 16.32523536682129,
+          "cost": 242.95348837209303
+        },
+        {
+          "offset": 0.44303380647172297,
+          "air_m3": 75083.4189343822,
+          "cost": 68.93953488372092
+        },
+        {
+          "offset": -0.5481882001178378,
+          "air_m3": 1147.4124526330668,
+          "cost": 224.2232558139535
+        },
+        {
+          "offset": -0.05257719682305739,
+          "air_m3": 18880.785243487517,
+          "cost": 30.64651162790698
+        },
+        {
+          "offset": 0.12561948946971277,
+          "air_m3": 36331.034912030365,
+          "cost": 9.17674418604651
+        },
+        {
+          "offset": 0.03332522195351356,
+          "air_m3": 25240.41369354367,
+          "cost": 13.167441860465116
+        },
+        {
+          "offset": 0.055918742734351434,
+          "air_m3": 27646.65885427606,
+          "cost": 11.213953488372093
+        },
+        {
+          "offset": 0.052597516638085165,
+          "air_m3": 27234.559601389392,
+          "cost": 11.372093023255815
+        },
+        {
+          "offset": 0.05306804600979823,
+          "air_m3": 27318.94197684041,
+          "cost": 11.386046511627907
+        },
+        {
+          "offset": 0.05292307219693127,
+          "air_m3": 27279.89940326516,
+          "cost": 11.56279069767442
+        },
+        {
+          "offset": 0.05297150636566943,
+          "air_m3": 27252.07206946184,
+          "cost": 11.418604651162791
+        },
+        {
+          "offset": 0.053030511604287046,
+          "air_m3": 27287.429017099992,
+          "cost": 11.367441860465116
+        },
+        {
+          "offset": 0.05303707931050542,
+          "air_m3": 27290.16040459622,
+          "cost": 11.367441860465116
+        },
+        {
+          "offset": 0.05304312347514017,
+          "air_m3": 27305.477295608023,
+          "cost": 11.35813953488372
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 1,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 30553.39693512132,
+        "reward": -45.830095402681984,
+        "cost": 7.651162790697675,
+        "nh4_viol_pct": 2.627015638927153,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 701.6764573150983
+      },
+      "base": {
+        "air_m3": 25745.101799480908,
+        "reward": -38.61765269922136,
+        "cost": 8.720930232558139,
+        "nh4_viol_pct": 3.0046187505064417,
+        "do_viol_pct": 0.03403289846851957,
+        "days_within_limit_pct": 72.09302325581395,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 770.9855252293967
+      },
+      "matched": {
+        "air_m3": 30550.788449807915,
+        "reward": -45.82618267471187,
+        "cost": 8.372093023255815,
+        "nh4_viol_pct": 2.8668665424195767,
+        "do_viol_pct": 0.050239040596386036,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": 0.06177560946591796,
+      "air_mismatch_percent": -0.008537464161328945,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.7209302325581399,
+      "cost_reduction_percent": 8.611111111111114,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.00808148870501,
+          "air_m3": 27.02297813208528,
+          "cost": 242.95348837209303
+        },
+        {
+          "offset": 0.495959255647495,
+          "air_m3": 67649.30562640345,
+          "cost": 28.46046511627907
+        },
+        {
+          "offset": -0.3291202290346862,
+          "air_m3": 11500.496884002241,
+          "cost": 61.093023255813954
+        },
+        {
+          "offset": 0.0834195133064044,
+          "air_m3": 32343.289959355618,
+          "cost": 7.976744186046512
+        },
+        {
+          "offset": 0.047992303317504516,
+          "air_m3": 29360.70384552716,
+          "cost": 8.311627906976744
+        },
+        {
+          "offset": 0.062159132681276,
+          "air_m3": 30628.471553042644,
+          "cost": 8.353488372093024
+        },
+        {
+          "offset": 0.0613202019407809,
+          "air_m3": 30464.250973210663,
+          "cost": 8.47906976744186
+        },
+        {
+          "offset": 0.06177560946591796,
+          "air_m3": 30550.788449807915,
+          "cost": 8.372093023255815
+        },
+        {
+          "offset": 0.06178848761615854,
+          "air_m3": 30519.904950994627,
+          "cost": 8.213953488372093
+        },
+        {
+          "offset": 0.061973810148717265,
+          "air_m3": 30568.561266108536,
+          "cost": 8.269767441860465
+        },
+        {
+          "offset": 0.06191605213279414,
+          "air_m3": 30563.875827031537,
+          "cost": 8.30232558139535
+        },
+        {
+          "offset": 0.06185226987447634,
+          "air_m3": 30568.093979557932,
+          "cost": 8.330232558139535
+        },
+        {
+          "offset": 0.06182037874531744,
+          "air_m3": 30540.094868498018,
+          "cost": 8.251162790697675
+        },
+        {
+          "offset": 0.061835529866503265,
+          "air_m3": 30535.12146150939,
+          "cost": 8.204651162790698
+        },
+        {
+          "offset": 0.061844808247169404,
+          "air_m3": 30538.436671303105,
+          "cost": 8.190697674418605
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 2,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26792.659253007623,
+        "reward": -40.188988879511435,
+        "cost": 7.962790697674419,
+        "nh4_viol_pct": 2.725873105907139,
+        "do_viol_pct": 0.04861842638359939,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 778.1935504025801
+      },
+      "base": {
+        "air_m3": 22963.60970102792,
+        "reward": -34.44541455154188,
+        "cost": 7.948837209302326,
+        "nh4_viol_pct": 2.7291143343327118,
+        "do_viol_pct": 0.04051535531966616,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 831.5881802040085
+      },
+      "matched": {
+        "air_m3": 26794.169301666723,
+        "reward": -40.191253952500084,
+        "cost": 7.446511627906977,
+        "nh4_viol_pct": 2.5443643140750347,
+        "do_viol_pct": 0.050239040596386036,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215
+      },
+      "offset": 0.0657772245759927,
+      "air_mismatch_percent": 0.005636053684865416,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.5162790697674415,
+      "cost_reduction_percent": -6.933166770768273,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1301741427864662,
+          "air_m3": 16.956661653149034,
+          "cost": 242.86046511627907
+        },
+        {
+          "offset": 0.434912928606767,
+          "air_m3": 58786.75229637198,
+          "cost": 17.6046511627907
+        },
+        {
+          "offset": -0.41711558097580337,
+          "air_m3": 11654.680935172148,
+          "cost": 43.646511627906975
+        },
+        {
+          "offset": 0.21250409452304864,
+          "air_m3": 38001.725616750795,
+          "cost": 7.823255813953488
+        },
+        {
+          "offset": -0.05536081449726005,
+          "air_m3": 20391.769793563228,
+          "cost": 8.190697674418605
+        },
+        {
+          "offset": 0.0420030681790096,
+          "air_m3": 25275.406744244487,
+          "cost": 7.530232558139535
+        },
+        {
+          "offset": 0.06864581619106759,
+          "air_m3": 27029.056600400414,
+          "cost": 7.7953488372093025
+        },
+        {
+          "offset": 0.06505429252675347,
+          "air_m3": 26690.94792246934,
+          "cost": 7.465116279069767
+        },
+        {
+          "offset": 0.06613471037580848,
+          "air_m3": 26829.393910657065,
+          "cost": 7.623255813953488
+        },
+        {
+          "offset": 0.06584803699275915,
+          "air_m3": 26855.857386001087,
+          "cost": 7.5488372093023255
+        },
+        {
+          "offset": 0.06545116475975632,
+          "air_m3": 26721.713615705576,
+          "cost": 7.595348837209302
+        },
+        {
+          "offset": 0.06566106159980968,
+          "air_m3": 26704.29142281529,
+          "cost": 7.4837209302325585
+        },
+        {
+          "offset": 0.06577007426615647,
+          "air_m3": 26774.836123792473,
+          "cost": 7.446511627906977
+        },
+        {
+          "offset": 0.06578722457599276,
+          "air_m3": 26798.935941029195,
+          "cost": 7.46046511627907
+        },
+        {
+          "offset": 0.06578222457599273,
+          "air_m3": 26795.811330290268,
+          "cost": 7.446511627906977
+        },
+        {
+          "offset": 0.0657772245759927,
+          "air_m3": 26794.169301666723,
+          "cost": 7.446511627906977
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 3,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 31624.087276696697,
+        "reward": -47.43613091504505,
+        "cost": 7.809302325581395,
+        "nh4_viol_pct": 2.7080463495664855,
+        "do_viol_pct": 0.01296491370229317,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 703.8120175117297
+      },
+      "base": {
+        "air_m3": 44428.33631590528,
+        "reward": -66.64250447385793,
+        "cost": 7.869767441860465,
+        "nh4_viol_pct": 2.735596791183858,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 459.0785244793146
+      },
+      "matched": {
+        "air_m3": 31622.52889212019,
+        "reward": -47.43379333818028,
+        "cost": 10.237209302325581,
+        "nh4_viol_pct": 3.566971882343408,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215
+      },
+      "offset": -0.11175661750570602,
+      "air_mismatch_percent": -0.0049278404871344605,
+      "matched_within_tolerance": true,
+      "cost_difference": -2.427906976744186,
+      "cost_reduction_percent": 23.716492503407537,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -0.9733214398656436,
+          "air_m3": 15.523328245148175,
+          "cost": 242.65581395348838
+        },
+        {
+          "offset": 0.5133392800671783,
+          "air_m3": 92320.29564990554,
+          "cost": 175.87906976744185
+        },
+        {
+          "offset": -0.4642338894203175,
+          "air_m3": 2889.9546655111535,
+          "cost": 193.88837209302326
+        },
+        {
+          "offset": 0.024552695323430407,
+          "air_m3": 47248.11144643426,
+          "cost": 8.023255813953488
+        },
+        {
+          "offset": -0.14760985533431295,
+          "air_m3": 27697.74321868669,
+          "cost": 12.251162790697675
+        },
+        {
+          "offset": -0.11303406627948158,
+          "air_m3": 31500.960747452904,
+          "cost": 10.283720930232558
+        },
+        {
+          "offset": -0.11192345139427627,
+          "air_m3": 31621.410551921348,
+          "cost": 10.21860465116279
+        },
+        {
+          "offset": -0.11189878068099446,
+          "air_m3": 31617.867420758157,
+          "cost": 10.246511627906976
+        },
+        {
+          "offset": -0.043673042678782026,
+          "air_m3": 39411.02446317095,
+          "cost": 7.748837209302326
+        },
+        {
+          "offset": -0.11184432851746627,
+          "air_m3": 31617.364248858634,
+          "cost": 10.246511627906976
+        },
+        {
+          "offset": -0.07775868559812416,
+          "air_m3": 35547.082716064855,
+          "cost": 8.576744186046511
+        },
+        {
+          "offset": -0.11178601423156072,
+          "air_m3": 31615.705321122747,
+          "cost": 10.227906976744187
+        },
+        {
+          "offset": -0.09477234991484243,
+          "air_m3": 33584.849379829655,
+          "cost": 9.595348837209302
+        },
+        {
+          "offset": -0.11171359303016498,
+          "air_m3": 31642.71711245642,
+          "cost": 10.213953488372093
+        },
+        {
+          "offset": -0.11176354140533411,
+          "air_m3": 31621.943999977073,
+          "cost": 10.237209302325581
+        },
+        {
+          "offset": -0.11175661750570602,
+          "air_m3": 31622.52889212019,
+          "cost": 10.237209302325581
+        },
+        {
+          "offset": -0.11173510526793551,
+          "air_m3": 31633.59520181205,
+          "cost": 10.241860465116279
+        },
+        {
+          "offset": -0.11175161750570597,
+          "air_m3": 31626.750301656335,
+          "cost": 10.255813953488373
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 4,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26147.19879293901,
+        "reward": -39.22079818940851,
+        "cost": 8.716279069767442,
+        "nh4_viol_pct": 2.9916538368041485,
+        "do_viol_pct": 0.04537719795802609,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 771.9558726493665
+      },
+      "base": {
+        "air_m3": 31154.759848883827,
+        "reward": -46.732139773325734,
+        "cost": 8.665116279069768,
+        "nh4_viol_pct": 2.926829268292683,
+        "do_viol_pct": 0.09237501012883885,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 684.2714164977019
+      },
+      "matched": {
+        "air_m3": 26153.736023454705,
+        "reward": -39.230604035182054,
+        "cost": 9.902325581395349,
+        "nh4_viol_pct": 3.3968073900008107,
+        "do_viol_pct": 0.05348026902195933,
+        "days_within_limit_pct": 74.4186046511628,
+        "n_episodes": 215
+      },
+      "offset": -0.06975853516622255,
+      "air_mismatch_percent": 0.02500164766201518,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.1860465116279073,
+      "cost_reduction_percent": 11.977454203851579,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1511290690099094,
+          "air_m3": 17.36323796501455,
+          "cost": 242.92093023255813
+        },
+        {
+          "offset": 0.4244354654950453,
+          "air_m3": 69867.03005892823,
+          "cost": 40.96279069767442
+        },
+        {
+          "offset": -0.5617312369717479,
+          "air_m3": 1929.6489649964856,
+          "cost": 210.8093023255814
+        },
+        {
+          "offset": -0.06864788573835129,
+          "air_m3": 26300.66562033324,
+          "cost": 10.30232558139535
+        },
+        {
+          "offset": -0.07175288290054942,
+          "air_m3": 26019.182479289153,
+          "cost": 9.995348837209303
+        },
+        {
+          "offset": -0.0703407546674926,
+          "air_m3": 26099.20140364489,
+          "cost": 9.990697674418605
+        },
+        {
+          "offset": -0.06969552305358528,
+          "air_m3": 26162.671297534496,
+          "cost": 9.87906976744186
+        },
+        {
+          "offset": -0.06985281572416542,
+          "air_m3": 26099.491271411265,
+          "cost": 9.976744186046512
+        },
+        {
+          "offset": -0.06973404332205813,
+          "air_m3": 26179.283836310682,
+          "cost": 9.869767441860466
+        },
+        {
+          "offset": -0.06979342952311177,
+          "air_m3": 26127.069347611694,
+          "cost": 9.930232558139535
+        },
+        {
+          "offset": -0.06977053527829406,
+          "air_m3": 26134.391774127416,
+          "cost": 9.902325581395349
+        },
+        {
+          "offset": -0.0697522893001761,
+          "air_m3": 26153.864641013995,
+          "cost": 9.888372093023255
+        },
+        {
+          "offset": -0.06975853516622255,
+          "air_m3": 26153.736023454705,
+          "cost": 9.902325581395349
+        },
+        {
+          "offset": -0.06976453522225831,
+          "air_m3": 26154.420129752663,
+          "cost": 9.902325581395349
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 0,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 27292.943101013876,
+        "reward": -40.93941465152081,
+        "cost": 8.027906976744186,
+        "nh4_viol_pct": 2.738838019609432,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 743.6326894563663
+      },
+      "base": {
+        "air_m3": 33001.96142090672,
+        "reward": -49.502942131360086,
+        "cost": 7.818604651162791,
+        "nh4_viol_pct": 2.6448423952678066,
+        "do_viol_pct": 0.07941009642654566,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 670.0744656822254
+      },
+      "matched": {
+        "air_m3": 27290.66600845188,
+        "reward": -40.93599901267782,
+        "cost": 7.972093023255814,
+        "nh4_viol_pct": 2.730734948545499,
+        "do_viol_pct": 0.04699781217081274,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215
+      },
+      "offset": -0.06551903774684462,
+      "air_mismatch_percent": -0.008343155055012819,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.05581395348837148,
+      "cost_reduction_percent": -0.7001166861143382,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.113932387056554,
+          "air_m3": 52.525239027747816,
+          "cost": 242.10232558139535
+        },
+        {
+          "offset": 0.44303380647172297,
+          "air_m3": 73910.18283773762,
+          "cost": 70.58604651162791
+        },
+        {
+          "offset": -0.5396871281676899,
+          "air_m3": 7417.181121194087,
+          "cost": 137.8046511627907
+        },
+        {
+          "offset": -0.04832666084798348,
+          "air_m3": 28625.866399878676,
+          "cost": 7.855813953488372
+        },
+        {
+          "offset": -0.07920767994112711,
+          "air_m3": 26379.508394233944,
+          "cost": 8.18139534883721
+        },
+        {
+          "offset": -0.06665055656652275,
+          "air_m3": 27203.3493531016,
+          "cost": 7.995348837209303
+        },
+        {
+          "offset": -0.06537096265318355,
+          "air_m3": 27301.93283263334,
+          "cost": 7.920930232558139
+        },
+        {
+          "offset": -0.0654876475776502,
+          "air_m3": 27300.888749090747,
+          "cost": 8.0
+        },
+        {
+          "offset": -0.06606910207208647,
+          "air_m3": 27229.808487217553,
+          "cost": 7.920930232558139
+        },
+        {
+          "offset": -0.06555264498570347,
+          "air_m3": 27244.721950284504,
+          "cost": 7.944186046511628
+        },
+        {
+          "offset": -0.06549684244973258,
+          "air_m3": 27313.63776247631,
+          "cost": 8.0
+        },
+        {
+          "offset": -0.06552474371771802,
+          "air_m3": 27287.622913816405,
+          "cost": 7.9906976744186045
+        },
+        {
+          "offset": -0.06551903774684462,
+          "air_m3": 27290.66600845188,
+          "cost": 7.972093023255814
+        },
+        {
+          "offset": -0.06551403774684458,
+          "air_m3": 27297.28404943102,
+          "cost": 7.972093023255814
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 1,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 30553.39693512132,
+        "reward": -45.830095402681984,
+        "cost": 7.651162790697675,
+        "nh4_viol_pct": 2.627015638927153,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 78.13953488372093,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 701.6764573150983
+      },
+      "base": {
+        "air_m3": 39278.951064307,
+        "reward": -58.9184265964605,
+        "cost": 8.065116279069768,
+        "nh4_viol_pct": 2.7323555627582854,
+        "do_viol_pct": 0.07778948221375902,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 537.7520219816524
+      },
+      "matched": {
+        "air_m3": 30553.710909724934,
+        "reward": -45.83056636458739,
+        "cost": 7.865116279069768,
+        "nh4_viol_pct": 2.6983226642897655,
+        "do_viol_pct": 0.0421359695324528,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215
+      },
+      "offset": -0.0886241550789223,
+      "air_mismatch_percent": 0.001027625845595459,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.21395348837209305,
+      "cost_reduction_percent": 2.7202838557066844,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.00808148870501,
+          "air_m3": 91.88733960306922,
+          "cost": 241.66511627906976
+        },
+        {
+          "offset": 0.495959255647495,
+          "air_m3": 80499.73581620427,
+          "cost": 98.67441860465117
+        },
+        {
+          "offset": -0.43829442893215,
+          "air_m3": 12772.48662650123,
+          "cost": 43.986046511627904
+        },
+        {
+          "offset": 0.15091137633861829,
+          "air_m3": 53579.403841148975,
+          "cost": 8.855813953488372
+        },
+        {
+          "offset": -0.18155816233965183,
+          "air_m3": 22834.087000024872,
+          "cost": 9.023255813953488
+        },
+        {
+          "offset": -0.03404244566147835,
+          "air_m3": 35839.25266025024,
+          "cost": 7.651162790697675
+        },
+        {
+          "offset": -0.0939991440935925,
+          "air_m3": 30097.95383540119,
+          "cost": 8.004651162790697
+        },
+        {
+          "offset": -0.08924292683057186,
+          "air_m3": 30499.497873757693,
+          "cost": 7.841860465116279
+        },
+        {
+          "offset": -0.08861094630461398,
+          "air_m3": 30558.782085389357,
+          "cost": 7.855813953488372
+        },
+        {
+          "offset": -0.08866835299022366,
+          "air_m3": 30546.40733030761,
+          "cost": 7.813953488372093
+        },
+        {
+          "offset": -0.08863592810234298,
+          "air_m3": 30551.779468282482,
+          "cost": 7.865116279069768
+        },
+        {
+          "offset": -0.08863015779835741,
+          "air_m3": 30552.510876329834,
+          "cost": 7.865116279069768
+        },
+        {
+          "offset": -0.0886241550789223,
+          "air_m3": 30553.710909724934,
+          "cost": 7.865116279069768
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 2,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26792.659253007623,
+        "reward": -40.188988879511435,
+        "cost": 7.962790697674419,
+        "nh4_viol_pct": 2.725873105907139,
+        "do_viol_pct": 0.04861842638359939,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 778.1935504025801
+      },
+      "base": {
+        "air_m3": 28685.43638582233,
+        "reward": -43.0281545787335,
+        "cost": 6.916279069767442,
+        "nh4_viol_pct": 2.400129649137023,
+        "do_viol_pct": 0.009723685276719877,
+        "days_within_limit_pct": 80.46511627906978,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 749.7766027668857
+      },
+      "matched": {
+        "air_m3": 26793.48861383953,
+        "reward": -40.19023292075929,
+        "cost": 7.209302325581396,
+        "nh4_viol_pct": 2.510331415606515,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215
+      },
+      "offset": -0.030207309489448123,
+      "air_mismatch_percent": 0.003095477847403494,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.753488372093023,
+      "cost_reduction_percent": -10.451612903225804,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1301741427864662,
+          "air_m3": 3.9040764172871905,
+          "cost": 242.94883720930233
+        },
+        {
+          "offset": 0.434912928606767,
+          "air_m3": 61584.71426536408,
+          "cost": 24.24186046511628
+        },
+        {
+          "offset": -0.449333240288474,
+          "air_m3": 7108.959499070811,
+          "cost": 143.12093023255815
+        },
+        {
+          "offset": -0.007210155840853494,
+          "air_m3": 28194.127687777196,
+          "cost": 7.06046511627907
+        },
+        {
+          "offset": -0.0365967626533229,
+          "air_m3": 26479.287717829262,
+          "cost": 7.26046511627907
+        },
+        {
+          "offset": -0.03122662535078147,
+          "air_m3": 26743.992123888554,
+          "cost": 7.162790697674419
+        },
+        {
+          "offset": -0.03027243578212504,
+          "air_m3": 26781.56943508937,
+          "cost": 7.190697674418605
+        },
+        {
+          "offset": -0.02999420951958345,
+          "air_m3": 26839.501418490978,
+          "cost": 7.348837209302325
+        },
+        {
+          "offset": -0.03021917541694346,
+          "air_m3": 26786.37650144366,
+          "cost": 7.209302325581396
+        },
+        {
+          "offset": -0.030157797434453546,
+          "air_m3": 26818.874813575847,
+          "cost": 7.213953488372093
+        },
+        {
+          "offset": -0.030207309489448123,
+          "air_m3": 26793.48861383953,
+          "cost": 7.209302325581396
+        },
+        {
+          "offset": -0.030212309489448134,
+          "air_m3": 26790.14522192148,
+          "cost": 7.209302325581396
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 3,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 31624.087276696697,
+        "reward": -47.43613091504505,
+        "cost": 7.809302325581395,
+        "nh4_viol_pct": 2.7080463495664855,
+        "do_viol_pct": 0.01296491370229317,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 703.8120175117297
+      },
+      "base": {
+        "air_m3": 54251.335297579804,
+        "reward": -81.3770029463697,
+        "cost": 27.627906976744185,
+        "nh4_viol_pct": 2.8166275018231905,
+        "do_viol_pct": 6.809820922129487,
+        "days_within_limit_pct": 29.767441860465116,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 537.2393148686731
+      },
+      "matched": {
+        "air_m3": 31628.257698236506,
+        "reward": -47.442386547354765,
+        "cost": 12.516279069767442,
+        "nh4_viol_pct": 3.7630662020905925,
+        "do_viol_pct": 0.5980066445182723,
+        "days_within_limit_pct": 68.37209302325581,
+        "n_episodes": 215
+      },
+      "offset": -0.18704018594394697,
+      "air_mismatch_percent": 0.013187484284737927,
+      "matched_within_tolerance": true,
+      "cost_difference": -4.706976744186047,
+      "cost_reduction_percent": 37.60683760683761,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -0.9733214398656436,
+          "air_m3": 32.592901980230046,
+          "cost": 242.75813953488372
+        },
+        {
+          "offset": 0.5133392800671783,
+          "air_m3": 96262.07229938619,
+          "cost": 165.13953488372093
+        },
+        {
+          "offset": -0.4852606702867974,
+          "air_m3": 11796.515576922617,
+          "cost": 146.24651162790698
+        },
+        {
+          "offset": 0.14424468480270758,
+          "air_m3": 67216.11762880816,
+          "cost": 56.33953488372093
+        },
+        {
+          "offset": -0.2600413958549226,
+          "air_m3": 21867.23553078581,
+          "cost": 15.237209302325581
+        },
+        {
+          "offset": -0.08878731896655437,
+          "air_m3": 44436.67244969528,
+          "cost": 15.874418604651163
+        },
+        {
+          "offset": -0.18600761977596808,
+          "air_m3": 31737.882356957874,
+          "cost": 12.53953488372093
+        },
+        {
+          "offset": -0.18686112812646488,
+          "air_m3": 31685.66656005244,
+          "cost": 12.772093023255813
+        },
+        {
+          "offset": -0.18786137708223657,
+          "air_m3": 31536.54239652462,
+          "cost": 12.237209302325581
+        },
+        {
+          "offset": -0.1872741706033956,
+          "air_m3": 31579.168160744877,
+          "cost": 12.446511627906977
+        },
+        {
+          "offset": -0.18709995668999493,
+          "air_m3": 31598.87214177108,
+          "cost": 12.576744186046511
+        },
+        {
+          "offset": -0.1869417834590398,
+          "air_m3": 31660.36093471817,
+          "cost": 12.78139534883721
+        },
+        {
+          "offset": -0.18703509349836284,
+          "air_m3": 31630.74638630993,
+          "cost": 12.516279069767442
+        },
+        {
+          "offset": -0.18704864459923412,
+          "air_m3": 31613.02636071693,
+          "cost": 12.525581395348837
+        },
+        {
+          "offset": -0.18704018594394697,
+          "air_m3": 31628.257698236506,
+          "cost": 12.516279069767442
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 4,
+      "model": "gbm",
+      "extension": {
+        "air_m3": 26147.19879293901,
+        "reward": -39.22079818940851,
+        "cost": 8.716279069767442,
+        "nh4_viol_pct": 2.9916538368041485,
+        "do_viol_pct": 0.04537719795802609,
+        "days_within_limit_pct": 73.95348837209302,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 771.9558726493665
+      },
+      "base": {
+        "air_m3": 29432.595029190295,
+        "reward": -44.14889254378545,
+        "cost": 8.279069767441861,
+        "nh4_viol_pct": 2.839316100802204,
+        "do_viol_pct": 0.04537719795802609,
+        "days_within_limit_pct": 78.6046511627907,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 727.6183988482259
+      },
+      "matched": {
+        "air_m3": 26140.459637037777,
+        "reward": -39.21068945555666,
+        "cost": 8.4,
+        "nh4_viol_pct": 2.907381897739243,
+        "do_viol_pct": 0.019447370553439754,
+        "days_within_limit_pct": 79.06976744186046,
+        "n_episodes": 215
+      },
+      "offset": -0.053114347670274786,
+      "air_mismatch_percent": -0.025773911594129117,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.31627906976744136,
+      "cost_reduction_percent": -3.765227021040962,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 242.9860465116279
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 193.27906976744185
+        },
+        {
+          "offset": -1.1511290690099094,
+          "air_m3": 32.45202127353165,
+          "cost": 242.37674418604652
+        },
+        {
+          "offset": 0.4244354654950453,
+          "air_m3": 63761.000673784765,
+          "cost": 30.023255813953487
+        },
+        {
+          "offset": -0.5054926986389903,
+          "air_m3": 8403.474084443824,
+          "cost": 91.2139534883721
+        },
+        {
+          "offset": -0.04052861657197249,
+          "air_m3": 26902.30398113991,
+          "cost": 8.516279069767442
+        },
+        {
+          "offset": -0.05950802189958086,
+          "air_m3": 25794.486680777034,
+          "cost": 8.493023255813954
+        },
+        {
+          "offset": -0.053465269057134536,
+          "air_m3": 26111.190044475614,
+          "cost": 8.804651162790698
+        },
+        {
+          "offset": -0.05280948840195976,
+          "air_m3": 26230.21939832341,
+          "cost": 8.17674418604651
+        },
+        {
+          "offset": -0.05326688235758525,
+          "air_m3": 26084.640842641507,
+          "cost": 8.6
+        },
+        {
+          "offset": -0.05303818537977251,
+          "air_m3": 26164.126360895792,
+          "cost": 8.279069767441861
+        },
+        {
+          "offset": -0.053086889643372465,
+          "air_m3": 26159.469196725957,
+          "cost": 8.4
+        },
+        {
+          "offset": -0.053194170098240415,
+          "air_m3": 26111.5278605054,
+          "cost": 8.748837209302325
+        },
+        {
+          "offset": -0.053114347670274786,
+          "air_m3": 26140.459637037777,
+          "cost": 8.4
+        },
+        {
+          "offset": -0.0531046134140863,
+          "air_m3": 26161.62531302534,
+          "cost": 8.4
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 0,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27221.482762760774,
+        "reward": -40.832224144141165,
+        "cost": 14.344186046511627,
+        "nh4_viol_pct": 4.99635361802123,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 799.2510183700618
+      },
+      "base": {
+        "air_m3": 26097.99802745151,
+        "reward": -39.146997041177265,
+        "cost": 25.427906976744186,
+        "nh4_viol_pct": 8.715663236366584,
+        "do_viol_pct": 0.14423466493801151,
+        "days_within_limit_pct": 67.44186046511628,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 744.6901814859514
+      },
+      "matched": {
+        "air_m3": 27221.49057865518,
+        "reward": -40.832235867982774,
+        "cost": 22.753488372093024,
+        "nh4_viol_pct": 7.757880236609676,
+        "do_viol_pct": 0.1701644923425978,
+        "days_within_limit_pct": 70.23255813953489,
+        "n_episodes": 215
+      },
+      "offset": 0.017017249805828995,
+      "air_mismatch_percent": 2.8712228772320714e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -8.409302325581397,
+      "cost_reduction_percent": 36.95829926410467,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1162523527378552,
+          "air_m3": 16.34815552437952,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4418738236310724,
+          "air_m3": 70484.00508481865,
+          "cost": 31.925581395348836
+        },
+        {
+          "offset": -0.5147135161946241,
+          "air_m3": 2118.11940388162,
+          "cost": 263.9767441860465
+        },
+        {
+          "offset": -0.03641984628177586,
+          "air_m3": 23680.612019619857,
+          "cost": 31.12558139534884
+        },
+        {
+          "offset": 0.026569425168299174,
+          "air_m3": 27900.929125515355,
+          "cost": 20.93953488372093
+        },
+        {
+          "offset": 0.01642852098848558,
+          "air_m3": 27180.166567555923,
+          "cost": 22.809302325581395
+        },
+        {
+          "offset": 0.017009826956754875,
+          "air_m3": 27220.96144256521,
+          "cost": 22.748837209302327
+        },
+        {
+          "offset": 0.017017249805828995,
+          "air_m3": 27221.49057865518,
+          "cost": 22.753488372093024
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 1,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 30565.224687008606,
+        "reward": -45.847837030512906,
+        "cost": 13.186046511627907,
+        "nh4_viol_pct": 4.59444129325014,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 765.1991376714487
+      },
+      "base": {
+        "air_m3": 27694.00484198921,
+        "reward": -41.54100726298381,
+        "cost": 14.009302325581395,
+        "nh4_viol_pct": 4.8812900089133775,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 782.3767069752028
+      },
+      "matched": {
+        "air_m3": 30565.220629149517,
+        "reward": -45.84783094372427,
+        "cost": 13.53953488372093,
+        "nh4_viol_pct": 4.70626367393242,
+        "do_viol_pct": 0.011344299489506523,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": 0.037666359062669984,
+      "air_mismatch_percent": -1.3276064969591772e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.35348837209302353,
+      "cost_reduction_percent": 2.6107866712470007,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.0076974997800172,
+          "air_m3": 17.322476982146274,
+          "cost": 270.6744186046512
+        },
+        {
+          "offset": 0.4961512501099914,
+          "air_m3": 70652.00755309689,
+          "cost": 27.986046511627908
+        },
+        {
+          "offset": -0.3573169608025024,
+          "air_m3": 11730.894308381303,
+          "cost": 143.9906976744186
+        },
+        {
+          "offset": 0.06941714465374449,
+          "air_m3": 33400.97967349859,
+          "cost": 13.772093023255813
+        },
+        {
+          "offset": 0.01357456964474918,
+          "air_m3": 28643.49690070448,
+          "cost": 13.683720930232559
+        },
+        {
+          "offset": 0.03613150430507843,
+          "air_m3": 30435.346207337447,
+          "cost": 13.530232558139534
+        },
+        {
+          "offset": 0.037694893209246856,
+          "air_m3": 30567.639229204073,
+          "cost": 13.53953488372093
+        },
+        {
+          "offset": 0.037666359062669984,
+          "air_m3": 30565.220629149517,
+          "cost": 13.53953488372093
+        },
+        {
+          "offset": 0.03767135906267,
+          "air_m3": 30565.64360543681,
+          "cost": 13.53953488372093
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 2,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27147.5009464861,
+        "reward": -40.72125141972914,
+        "cost": 13.38139534883721,
+        "nh4_viol_pct": 4.636577262782594,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 829.7799254905766
+      },
+      "base": {
+        "air_m3": 22059.652067905707,
+        "reward": -33.08947810185857,
+        "cost": 15.334883720930232,
+        "nh4_viol_pct": 5.343165059557572,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 878.4274909458281
+      },
+      "matched": {
+        "air_m3": 27147.516657238786,
+        "reward": -40.72127498585817,
+        "cost": 13.409302325581395,
+        "nh4_viol_pct": 4.633336034357021,
+        "do_viol_pct": 0.0388947411068795,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215
+      },
+      "offset": 0.09771910652216001,
+      "air_mismatch_percent": 5.7871819270083336e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.02790697674418574,
+      "cost_reduction_percent": 0.20811654526534662,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1186541784077768,
+          "air_m3": 7.997234569963557,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4406729107961116,
+          "air_m3": 57272.37546150537,
+          "cost": 18.665116279069768
+        },
+        {
+          "offset": -0.3796369283150379,
+          "air_m3": 10590.065933891046,
+          "cost": 182.85116279069769
+        },
+        {
+          "offset": 0.030517991240536835,
+          "air_m3": 23361.37355086646,
+          "cost": 14.209302325581396
+        },
+        {
+          "offset": 0.12522598336774615,
+          "air_m3": 29050.456699451734,
+          "cost": 13.195348837209302
+        },
+        {
+          "offset": 0.09354686851509819,
+          "air_m3": 26875.404795519138,
+          "cost": 13.46046511627907
+        },
+        {
+          "offset": 0.09750988438697733,
+          "air_m3": 27133.762810067383,
+          "cost": 13.409302325581395
+        },
+        {
+          "offset": 0.09771910652216001,
+          "air_m3": 27147.516657238786,
+          "cost": 13.409302325581395
+        },
+        {
+          "offset": 0.09771410652215996,
+          "air_m3": 27147.18897477832,
+          "cost": 13.409302325581395
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 3,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 32120.578187684594,
+        "reward": -48.18086728152689,
+        "cost": 13.409302325581395,
+        "nh4_viol_pct": 4.5912000648245685,
+        "do_viol_pct": 0.08103071063933232,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 758.1067937366619
+      },
+      "base": {
+        "air_m3": 45289.861619661664,
+        "reward": -67.93479242949249,
+        "cost": 13.497674418604651,
+        "nh4_viol_pct": 4.696539988655701,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 455.4196707999967
+      },
+      "matched": {
+        "air_m3": 32120.57041578399,
+        "reward": -48.18085562367599,
+        "cost": 13.66046511627907,
+        "nh4_viol_pct": 4.75974394295438,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 75.34883720930232,
+        "n_episodes": 215
+      },
+      "offset": -0.1093228981576185,
+      "air_mismatch_percent": -2.4196017145428073e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.2511627906976752,
+      "cost_reduction_percent": 1.8386108273748758,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -0.9572028221438771,
+          "air_m3": 26.40914417976557,
+          "cost": 270.47441860465113
+        },
+        {
+          "offset": 0.5213985889280615,
+          "air_m3": 95073.34082884384,
+          "cost": 175.13023255813954
+        },
+        {
+          "offset": -0.4579285920998534,
+          "air_m3": 1440.0156788123668,
+          "cost": 257.06976744186045
+        },
+        {
+          "offset": 0.03173499841410404,
+          "air_m3": 48885.7990702513,
+          "cost": 13.981395348837209
+        },
+        {
+          "offset": -0.1412902456921714,
+          "air_m3": 28439.979710447235,
+          "cost": 18.948837209302326
+        },
+        {
+          "offset": -0.11014273143636304,
+          "air_m3": 32024.70204535034,
+          "cost": 13.734883720930233
+        },
+        {
+          "offset": -0.10931440432694287,
+          "air_m3": 32121.571506375032,
+          "cost": 13.66046511627907
+        },
+        {
+          "offset": -0.1093228981576185,
+          "air_m3": 32120.57041578399,
+          "cost": 13.66046511627907
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl",
+      "seed": 4,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 26482.37047429926,
+        "reward": -39.72355571144889,
+        "cost": 13.158139534883722,
+        "nh4_viol_pct": 4.536099181589822,
+        "do_viol_pct": 0.04861842638359938,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 811.9365108768618
+      },
+      "base": {
+        "air_m3": 31994.476127850485,
+        "reward": -47.99171419177573,
+        "cost": 15.134883720930233,
+        "nh4_viol_pct": 5.119520298193015,
+        "do_viol_pct": 0.1539583502147314,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 715.9348157885725
+      },
+      "matched": {
+        "air_m3": 26482.410277703475,
+        "reward": -39.72361541655521,
+        "cost": 17.316279069767443,
+        "nh4_viol_pct": 5.967101531480432,
+        "do_viol_pct": 0.0664451827242525,
+        "days_within_limit_pct": 74.88372093023256,
+        "n_episodes": 215
+      },
+      "offset": -0.08602016439948668,
+      "air_mismatch_percent": 0.00015030151570005756,
+      "matched_within_tolerance": true,
+      "cost_difference": -4.158139534883722,
+      "cost_reduction_percent": 24.01289282836423,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1402476931711094,
+          "air_m3": 22.26390284161235,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4298761534144453,
+          "air_m3": 70472.27970061376,
+          "cost": 35.97674418604651
+        },
+        {
+          "offset": -0.5505296662753001,
+          "air_m3": 2955.203893387964,
+          "cost": 262.0837209302326
+        },
+        {
+          "offset": -0.0603267564304274,
+          "air_m3": 27925.7923336021,
+          "cost": 16.441860465116278
+        },
+        {
+          "offset": -0.08866287663272254,
+          "air_m3": 26344.583480932222,
+          "cost": 17.38139534883721
+        },
+        {
+          "offset": -0.08619365898334706,
+          "air_m3": 26473.271474045836,
+          "cost": 17.32093023255814
+        },
+        {
+          "offset": -0.08602016439948668,
+          "air_m3": 26482.410277703475,
+          "cost": 17.316279069767443
+        },
+        {
+          "offset": -0.08602516439948671,
+          "air_m3": 26482.146508731814,
+          "cost": 17.316279069767443
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 0,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27221.482762760774,
+        "reward": -40.832224144141165,
+        "cost": 14.344186046511627,
+        "nh4_viol_pct": 4.99635361802123,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 799.2510183700618
+      },
+      "base": {
+        "air_m3": 27543.7705865036,
+        "reward": -41.3156558797554,
+        "cost": 14.12093023255814,
+        "nh4_viol_pct": 4.9153229073818965,
+        "do_viol_pct": 0.004861842638359939,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 793.2156358721426
+      },
+      "matched": {
+        "air_m3": 27221.483909966813,
+        "reward": -40.83222586495022,
+        "cost": 14.26046511627907,
+        "nh4_viol_pct": 4.965561947978283,
+        "do_viol_pct": 0.0032412284255732924,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.004510839956983207,
+      "air_mismatch_percent": 4.2143407430472735e-06,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.08372093023255722,
+      "cost_reduction_percent": -0.5870841487279677,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1162523527378552,
+          "air_m3": 28.76576037369957,
+          "cost": 270.5953488372093
+        },
+        {
+          "offset": 0.4418738236310724,
+          "air_m3": 68943.22681068911,
+          "cost": 36.437209302325584
+        },
+        {
+          "offset": -0.5014367752485819,
+          "air_m3": 5134.0682264446295,
+          "cost": 216.1813953488372
+        },
+        {
+          "offset": -0.02978147580875473,
+          "air_m3": 25582.06593555131,
+          "cost": 16.325581395348838
+        },
+        {
+          "offset": 0.0011165902898518688,
+          "air_m3": 27625.20862454909,
+          "cost": 14.111627906976745
+        },
+        {
+          "offset": -0.004988880674279044,
+          "air_m3": 27187.897951220875,
+          "cost": 14.274418604651164
+        },
+        {
+          "offset": -0.004519989553620843,
+          "air_m3": 27220.83895126603,
+          "cost": 14.26046511627907
+        },
+        {
+          "offset": -0.004510839956983207,
+          "air_m3": 27221.483909966813,
+          "cost": 14.26046511627907
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 1,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 30565.224687008606,
+        "reward": -45.847837030512906,
+        "cost": 13.186046511627907,
+        "nh4_viol_pct": 4.59444129325014,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 765.1991376714487
+      },
+      "base": {
+        "air_m3": 33096.73557960999,
+        "reward": -49.64510336941498,
+        "cost": 13.711627906976744,
+        "nh4_viol_pct": 4.7386759581881535,
+        "do_viol_pct": 0.03889474110687951,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 723.9268785201709
+      },
+      "matched": {
+        "air_m3": 30565.14941488876,
+        "reward": -45.84772412233315,
+        "cost": 13.534883720930232,
+        "nh4_viol_pct": 4.688436917591767,
+        "do_viol_pct": 0.027550441617372984,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": -0.03284305386773887,
+      "air_mismatch_percent": -0.0002462671896408253,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.3488372093023244,
+      "cost_reduction_percent": 2.577319587628857,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.0076974997800172,
+          "air_m3": 36.207293909649515,
+          "cost": 270.54418604651164
+        },
+        {
+          "offset": 0.4961512501099914,
+          "air_m3": 73718.65677764249,
+          "cost": 40.83255813953488
+        },
+        {
+          "offset": -0.3846044163705392,
+          "air_m3": 14182.602042306302,
+          "cost": 132.97674418604652
+        },
+        {
+          "offset": 0.13842471126947853,
+          "air_m3": 45209.4764237487,
+          "cost": 15.297674418604652
+        },
+        {
+          "offset": -0.10843773825231934,
+          "air_m3": 26185.717215192642,
+          "cost": 14.944186046511629
+        },
+        {
+          "offset": -0.05160691263372884,
+          "air_m3": 29285.243958950967,
+          "cost": 13.432558139534883
+        },
+        {
+          "offset": -0.03002446552927138,
+          "air_m3": 30769.23993734946,
+          "cost": 13.567441860465117
+        },
+        {
+          "offset": -0.032991554667704176,
+          "air_m3": 30554.475892135917,
+          "cost": 13.530232558139534
+        },
+        {
+          "offset": -0.03284305386773887,
+          "air_m3": 30565.14941488876,
+          "cost": 13.534883720930232
+        },
+        {
+          "offset": -0.03283805386773886,
+          "air_m3": 30565.509180297227,
+          "cost": 13.534883720930232
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 2,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27147.5009464861,
+        "reward": -40.72125141972914,
+        "cost": 13.38139534883721,
+        "nh4_viol_pct": 4.636577262782594,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 829.7799254905766
+      },
+      "base": {
+        "air_m3": 26798.19475211665,
+        "reward": -40.19729212817498,
+        "cost": 13.748837209302325,
+        "nh4_viol_pct": 4.785673770358966,
+        "do_viol_pct": 0.004861842638359939,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 841.2245228734724
+      },
+      "matched": {
+        "air_m3": 27147.4591483788,
+        "reward": -40.72118872256819,
+        "cost": 13.66046511627907,
+        "nh4_viol_pct": 4.7532614861032325,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215
+      },
+      "offset": 0.0061135132391223306,
+      "air_mismatch_percent": -0.00015396668512357436,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.27906976744186096,
+      "cost_reduction_percent": 2.0429009193054126,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1186541784077768,
+          "air_m3": 19.911247168400493,
+          "cost": 270.6511627906977
+        },
+        {
+          "offset": 0.4406729107961116,
+          "air_m3": 61583.30514230007,
+          "cost": 22.111627906976743
+        },
+        {
+          "offset": -0.43154479722241745,
+          "air_m3": 13681.382621743884,
+          "cost": 117.8
+        },
+        {
+          "offset": 0.05534212951180728,
+          "air_m3": 30255.02819792014,
+          "cost": 13.241860465116279
+        },
+        {
+          "offset": -0.03594824991856081,
+          "air_m3": 24929.595667597398,
+          "cost": 15.186046511627907
+        },
+        {
+          "offset": 0.002071838270988613,
+          "air_m3": 26916.405804292117,
+          "cost": 13.711627906976744
+        },
+        {
+          "offset": 0.006188026372877248,
+          "air_m3": 27151.761463072955,
+          "cost": 13.66046511627907
+        },
+        {
+          "offset": 0.0061135132391223306,
+          "air_m3": 27147.4591483788,
+          "cost": 13.66046511627907
+        },
+        {
+          "offset": 0.006118513239122333,
+          "air_m3": 27147.748334010586,
+          "cost": 13.66046511627907
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 3,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 32120.578187684594,
+        "reward": -48.18086728152689,
+        "cost": 13.409302325581395,
+        "nh4_viol_pct": 4.5912000648245685,
+        "do_viol_pct": 0.08103071063933232,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 758.1067937366619
+      },
+      "base": {
+        "air_m3": 34211.18441480681,
+        "reward": -51.31677662221022,
+        "cost": 12.776744186046512,
+        "nh4_viol_pct": 4.430759257758691,
+        "do_viol_pct": 0.0210679847662264,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 717.3079440937645
+      },
+      "matched": {
+        "air_m3": 32120.56990826084,
+        "reward": -48.18085486239126,
+        "cost": 13.293023255813953,
+        "nh4_viol_pct": 4.6236123490803,
+        "do_viol_pct": 0.00810307106393323,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215
+      },
+      "offset": -0.02135207348110752,
+      "air_mismatch_percent": -2.577607322029607e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": 0.11627906976744207,
+      "cost_reduction_percent": -0.8747375787263811,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -0.9572028221438771,
+          "air_m3": 16.279860337575276,
+          "cost": 270.5860465116279
+        },
+        {
+          "offset": 0.5213985889280615,
+          "air_m3": 81315.71694811186,
+          "cost": 81.4186046511628
+        },
+        {
+          "offset": -0.37331857264975377,
+          "air_m3": 5862.127832987512,
+          "cost": 231.69302325581396
+        },
+        {
+          "offset": 0.07404000813915385,
+          "air_m3": 41819.64805725702,
+          "cost": 13.506976744186046
+        },
+        {
+          "offset": -0.04662910654845456,
+          "air_m3": 29819.0440371055,
+          "cost": 14.6
+        },
+        {
+          "offset": -0.023486597395805314,
+          "air_m3": 31918.46368219848,
+          "cost": 13.325581395348838
+        },
+        {
+          "offset": -0.021304110670454682,
+          "air_m3": 32125.11970614221,
+          "cost": 13.288372093023256
+        },
+        {
+          "offset": -0.02135207348110752,
+          "air_m3": 32120.56990826084,
+          "cost": 13.293023255813953
+        },
+        {
+          "offset": -0.021347073481107513,
+          "air_m3": 32121.04478822083,
+          "cost": 13.293023255813953
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_actor",
+      "seed": 4,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 26482.37047429926,
+        "reward": -39.72355571144889,
+        "cost": 13.158139534883722,
+        "nh4_viol_pct": 4.536099181589822,
+        "do_viol_pct": 0.04861842638359938,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 811.9365108768618
+      },
+      "base": {
+        "air_m3": 27738.176661654725,
+        "reward": -41.607264992482094,
+        "cost": 13.13953488372093,
+        "nh4_viol_pct": 4.558787780568836,
+        "do_viol_pct": 0.019447370553439754,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 793.125396626422
+      },
+      "matched": {
+        "air_m3": 26482.37162359174,
+        "reward": -39.72355743538762,
+        "cost": 13.30232558139535,
+        "nh4_viol_pct": 4.621991734867514,
+        "do_viol_pct": 0.01296491370229317,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": -0.01917303617548268,
+      "air_mismatch_percent": 4.339839909661691e-06,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.1441860465116278,
+      "cost_reduction_percent": 1.083916083916081,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1402476931711094,
+          "air_m3": 12.555011945177418,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4298761534144453,
+          "air_m3": 65273.97204455017,
+          "cost": 23.330232558139535
+        },
+        {
+          "offset": -0.5034106405616463,
+          "air_m3": 1929.195025031881,
+          "cost": 264.10697674418606
+        },
+        {
+          "offset": -0.036767243573600505,
+          "air_m3": 25414.790913370227,
+          "cost": 13.688372093023256
+        },
+        {
+          "offset": -0.018932642889841342,
+          "air_m3": 26497.469218008853,
+          "cost": 13.30232558139535
+        },
+        {
+          "offset": -0.01918135948805276,
+          "air_m3": 26481.84769945147,
+          "cost": 13.30232558139535
+        },
+        {
+          "offset": -0.01917303617548268,
+          "air_m3": 26482.37162359174,
+          "cost": 13.30232558139535
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 0,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27221.482762760774,
+        "reward": -40.832224144141165,
+        "cost": 14.344186046511627,
+        "nh4_viol_pct": 4.99635361802123,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 799.2510183700618
+      },
+      "base": {
+        "air_m3": 24347.078140024383,
+        "reward": -36.520617210036576,
+        "cost": 32.12558139534884,
+        "nh4_viol_pct": 11.127137184993112,
+        "do_viol_pct": 0.06644518272425248,
+        "days_within_limit_pct": 62.32558139534884,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 763.7628258528579
+      },
+      "matched": {
+        "air_m3": 27221.356968645207,
+        "reward": -40.832035452967816,
+        "cost": 25.3953488372093,
+        "nh4_viol_pct": 8.686492180536423,
+        "do_viol_pct": 0.16206142127866463,
+        "days_within_limit_pct": 67.90697674418604,
+        "n_episodes": 215
+      },
+      "offset": 0.038667313078557496,
+      "air_mismatch_percent": -0.000462113385457652,
+      "matched_within_tolerance": true,
+      "cost_difference": -11.051162790697674,
+      "cost_reduction_percent": 43.51648351648352,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1162523527378552,
+          "air_m3": 15.876712447913116,
+          "cost": 270.6744186046512
+        },
+        {
+          "offset": 0.4418738236310724,
+          "air_m3": 73364.42464996676,
+          "cost": 33.43255813953488
+        },
+        {
+          "offset": -0.5383299790450237,
+          "air_m3": 584.9170614120571,
+          "cost": 269.9488372093023
+        },
+        {
+          "offset": -0.048228077706975625,
+          "air_m3": 21632.83624850329,
+          "cost": 41.283720930232555
+        },
+        {
+          "offset": 0.053654759649135506,
+          "air_m3": 28480.027288328416,
+          "cost": 22.12558139534884
+        },
+        {
+          "offset": 0.03492823566900322,
+          "air_m3": 26951.536850790064,
+          "cost": 26.05581395348837
+        },
+        {
+          "offset": 0.03823551746135748,
+          "air_m3": 27185.219558680703,
+          "cost": 25.441860465116278
+        },
+        {
+          "offset": 0.03873437219661849,
+          "air_m3": 27227.1145440638,
+          "cost": 25.3953488372093
+        },
+        {
+          "offset": 0.038667313078557496,
+          "air_m3": 27221.356968645207,
+          "cost": 25.3953488372093
+        },
+        {
+          "offset": 0.038672313078557514,
+          "air_m3": 27221.785717142764,
+          "cost": 25.3953488372093
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 1,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 30565.224687008606,
+        "reward": -45.847837030512906,
+        "cost": 13.186046511627907,
+        "nh4_viol_pct": 4.59444129325014,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 765.1991376714487
+      },
+      "base": {
+        "air_m3": 26731.937079196578,
+        "reward": -40.09790561879487,
+        "cost": 14.911627906976744,
+        "nh4_viol_pct": 5.185965480917268,
+        "do_viol_pct": 0.009723685276719877,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 788.0143880372536
+      },
+      "matched": {
+        "air_m3": 30565.29808598318,
+        "reward": -45.847947128974766,
+        "cost": 13.82325581395349,
+        "nh4_viol_pct": 4.775950085082246,
+        "do_viol_pct": 0.04051535531966616,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215
+      },
+      "offset": 0.05502810052259556,
+      "air_mismatch_percent": 0.00024013883530571434,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.6372093023255818,
+      "cost_reduction_percent": 4.6096904441453646,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.0076974997800172,
+          "air_m3": 26.588381538095394,
+          "cost": 270.66511627906976
+        },
+        {
+          "offset": 0.4961512501099914,
+          "air_m3": 68853.63611930101,
+          "cost": 26.623255813953488
+        },
+        {
+          "offset": -0.3404381658288125,
+          "air_m3": 14615.011783972266,
+          "cost": 141.10232558139535
+        },
+        {
+          "offset": 0.17456685700524877,
+          "air_m3": 41597.086388276985,
+          "cost": 14.53953488372093
+        },
+        {
+          "offset": -0.035997536974208516,
+          "air_m3": 25081.228089257493,
+          "cost": 17.195348837209302
+        },
+        {
+          "offset": 0.03391916970154581,
+          "air_m3": 28936.247558389292,
+          "cost": 13.888372093023255
+        },
+        {
+          "offset": 0.059661964966059106,
+          "air_m3": 30946.951912259756,
+          "cost": 13.832558139534884
+        },
+        {
+          "offset": 0.05477475925249144,
+          "air_m3": 30544.7889478083,
+          "cost": 13.82325581395349
+        },
+        {
+          "offset": 0.055023100522595535,
+          "air_m3": 30564.892199326507,
+          "cost": 13.82325581395349
+        },
+        {
+          "offset": 0.05502810052259556,
+          "air_m3": 30565.29808598318,
+          "cost": 13.82325581395349
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 2,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27147.5009464861,
+        "reward": -40.72125141972914,
+        "cost": 13.38139534883721,
+        "nh4_viol_pct": 4.636577262782594,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 829.7799254905766
+      },
+      "base": {
+        "air_m3": 24151.409503155523,
+        "reward": -36.22711425473329,
+        "cost": 15.102325581395348,
+        "nh4_viol_pct": 5.142208897172028,
+        "do_viol_pct": 0.11992545174621182,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 848.853650517697
+      },
+      "matched": {
+        "air_m3": 27147.500212591636,
+        "reward": -40.72125031888745,
+        "cost": 14.78139534883721,
+        "nh4_viol_pct": 4.8861518515517375,
+        "do_viol_pct": 0.2641601166842233,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215
+      },
+      "offset": 0.05732953546474402,
+      "air_mismatch_percent": -2.703359192057775e-06,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.4000000000000004,
+      "cost_reduction_percent": 9.471365638766526,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1186541784077768,
+          "air_m3": 17.30791274891343,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4406729107961116,
+          "air_m3": 59974.10943133885,
+          "cost": 23.35348837209302
+        },
+        {
+          "offset": -0.4130654234819463,
+          "air_m3": 16283.839617865955,
+          "cost": 50.78604651162791
+        },
+        {
+          "offset": -0.05900760134526345,
+          "air_m3": 22056.71786514306,
+          "cost": 16.506976744186048
+        },
+        {
+          "offset": 0.19226272186610138,
+          "air_m3": 37170.49164335395,
+          "cost": 16.04186046511628
+        },
+        {
+          "offset": 0.0256279588410447,
+          "air_m3": 25373.670141787316,
+          "cost": 14.813953488372093
+        },
+        {
+          "offset": 0.06408343221981255,
+          "air_m3": 27559.412858808457,
+          "cost": 14.92093023255814
+        },
+        {
+          "offset": 0.05683634524321825,
+          "air_m3": 27117.8007550682,
+          "cost": 14.786046511627907
+        },
+        {
+          "offset": 0.05732374101114223,
+          "air_m3": 27147.15170887147,
+          "cost": 14.78139534883721
+        },
+        {
+          "offset": 0.05732953546474402,
+          "air_m3": 27147.500212591636,
+          "cost": 14.78139534883721
+        },
+        {
+          "offset": 0.05733453546474405,
+          "air_m3": 27147.801864765184,
+          "cost": 14.78139534883721
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 3,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 32120.578187684594,
+        "reward": -48.18086728152689,
+        "cost": 13.409302325581395,
+        "nh4_viol_pct": 4.5912000648245685,
+        "do_viol_pct": 0.08103071063933232,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 758.1067937366619
+      },
+      "base": {
+        "air_m3": 44932.17286479393,
+        "reward": -67.39825929719089,
+        "cost": 13.902325581395349,
+        "nh4_viol_pct": 4.785673770358965,
+        "do_viol_pct": 0.05834211166031926,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 463.1104922722507
+      },
+      "matched": {
+        "air_m3": 32120.58303651884,
+        "reward": -48.180874554778256,
+        "cost": 20.27906976744186,
+        "nh4_viol_pct": 7.065877967749778,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 73.0232558139535,
+        "n_episodes": 215
+      },
+      "offset": -0.11231243970390027,
+      "air_mismatch_percent": 1.509572529201364e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -6.869767441860466,
+      "cost_reduction_percent": 33.87614678899082,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -0.9572028221438771,
+          "air_m3": 17.854539738144986,
+          "cost": 270.553488372093
+        },
+        {
+          "offset": 0.5213985889280615,
+          "air_m3": 93930.5227188177,
+          "cost": 175.46046511627907
+        },
+        {
+          "offset": -0.4517637434181794,
+          "air_m3": 2099.735532158105,
+          "cost": 250.41860465116278
+        },
+        {
+          "offset": 0.03481742275494104,
+          "air_m3": 48718.02974782826,
+          "cost": 14.33953488372093
+        },
+        {
+          "offset": -0.1384194464079365,
+          "air_m3": 29065.052183838783,
+          "cost": 27.441860465116278
+        },
+        {
+          "offset": -0.11148562649039342,
+          "air_m3": 32213.543968566857,
+          "cost": 20.23720930232558
+        },
+        {
+          "offset": -0.11228090364910226,
+          "air_m3": 32124.12802205645,
+          "cost": 20.27906976744186
+        },
+        {
+          "offset": -0.11231243970390027,
+          "air_m3": 32120.58303651884,
+          "cost": 20.27906976744186
+        },
+        {
+          "offset": -0.11231743970390032,
+          "air_m3": 32120.020126528285,
+          "cost": 20.27906976744186
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_critic",
+      "seed": 4,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 26482.37047429926,
+        "reward": -39.72355571144889,
+        "cost": 13.158139534883722,
+        "nh4_viol_pct": 4.536099181589822,
+        "do_viol_pct": 0.04861842638359938,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 811.9365108768618
+      },
+      "base": {
+        "air_m3": 32248.580360608248,
+        "reward": -48.37287054091237,
+        "cost": 15.64186046511628,
+        "nh4_viol_pct": 5.257272506279881,
+        "do_viol_pct": 0.19285309132161088,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 707.5338935388112
+      },
+      "matched": {
+        "air_m3": 26482.38530590437,
+        "reward": -39.72357795885656,
+        "cost": 14.953488372093023,
+        "nh4_viol_pct": 5.140588282959242,
+        "do_viol_pct": 0.06968641114982578,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.08969930262725134,
+      "air_mismatch_percent": 5.6005579729401234e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.7953488372093016,
+      "cost_reduction_percent": 12.006220839813375,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1402476931711094,
+          "air_m3": 18.275238839230795,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4298761534144453,
+          "air_m3": 71749.11275640015,
+          "cost": 46.223255813953486
+        },
+        {
+          "offset": -0.5609723292478269,
+          "air_m3": 1744.006260975387,
+          "cost": 267.7860465116279
+        },
+        {
+          "offset": -0.06554808791669081,
+          "air_m3": 27848.257200200427,
+          "cost": 15.204651162790698
+        },
+        {
+          "offset": -0.0914708158470692,
+          "air_m3": 26388.157277629354,
+          "cost": 14.953488372093023
+        },
+        {
+          "offset": -0.08979814740364882,
+          "air_m3": 26477.094510861836,
+          "cost": 14.953488372093023
+        },
+        {
+          "offset": -0.08969930262725134,
+          "air_m3": 26482.38530590437,
+          "cost": 14.953488372093023
+        },
+        {
+          "offset": -0.08970430262725139,
+          "air_m3": 26482.11775831012,
+          "cost": 14.953488372093023
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 0,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27221.482762760774,
+        "reward": -40.832224144141165,
+        "cost": 14.344186046511627,
+        "nh4_viol_pct": 4.99635361802123,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 799.2510183700618
+      },
+      "base": {
+        "air_m3": 33226.86243225178,
+        "reward": -49.84029364837767,
+        "cost": 14.18139534883721,
+        "nh4_viol_pct": 4.790535612997326,
+        "do_viol_pct": 0.15071712178915808,
+        "days_within_limit_pct": 77.20930232558139,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 706.8649444852375
+      },
+      "matched": {
+        "air_m3": 27221.5347076629,
+        "reward": -40.83230206149435,
+        "cost": 15.237209302325581,
+        "nh4_viol_pct": 5.27185803419496,
+        "do_viol_pct": 0.03727412689409286,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.09721323789336568,
+      "air_mismatch_percent": 0.00019082319129282155,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.8930232558139544,
+      "cost_reduction_percent": 5.860805860805862,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1162523527378552,
+          "air_m3": 27.0131972409034,
+          "cost": 270.6744186046512
+        },
+        {
+          "offset": 0.4418738236310724,
+          "air_m3": 74423.75659954177,
+          "cost": 60.07906976744186
+        },
+        {
+          "offset": -0.5467057174318507,
+          "air_m3": 5329.34363137844,
+          "cost": 214.29767441860466
+        },
+        {
+          "offset": -0.05241594690038914,
+          "air_m3": 29603.868008898793,
+          "cost": 14.488372093023257
+        },
+        {
+          "offset": -0.100927243695214,
+          "air_m3": 27037.97708896472,
+          "cost": 15.320930232558139
+        },
+        {
+          "offset": -0.09745784515769415,
+          "air_m3": 27209.339412059202,
+          "cost": 15.237209302325581
+        },
+        {
+          "offset": -0.09721323789336568,
+          "air_m3": 27221.5347076629,
+          "cost": 15.237209302325581
+        },
+        {
+          "offset": -0.09721823789336573,
+          "air_m3": 27221.284185569413,
+          "cost": 15.237209302325581
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 1,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 30565.224687008606,
+        "reward": -45.847837030512906,
+        "cost": 13.186046511627907,
+        "nh4_viol_pct": 4.59444129325014,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 765.1991376714487
+      },
+      "base": {
+        "air_m3": 40017.210426924095,
+        "reward": -60.02581564038613,
+        "cost": 14.61860465116279,
+        "nh4_viol_pct": 5.067660643383842,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 76.27906976744187,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 565.7159951291777
+      },
+      "matched": {
+        "air_m3": 30565.08720915678,
+        "reward": -45.84763081373517,
+        "cost": 13.804651162790698,
+        "nh4_viol_pct": 4.800259298274046,
+        "do_viol_pct": 0.009723685276719877,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.10303300768070901,
+      "air_mismatch_percent": -0.00044978518310978544,
+      "matched_within_tolerance": true,
+      "cost_difference": -0.6186046511627907,
+      "cost_reduction_percent": 4.481132075471694,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.0076974997800172,
+          "air_m3": 51.30260157030682,
+          "cost": 270.4418604651163
+        },
+        {
+          "offset": 0.4961512501099914,
+          "air_m3": 81032.24557039812,
+          "cost": 76.32093023255814
+        },
+        {
+          "offset": -0.44104166817169166,
+          "air_m3": 12858.911252968997,
+          "cost": 123.5906976744186
+        },
+        {
+          "offset": 0.13888435120935594,
+          "air_m3": 52800.03711386014,
+          "cost": 16.553488372093025
+        },
+        {
+          "offset": -0.1839544768021028,
+          "air_m3": 25471.80871930002,
+          "cost": 19.12558139534884
+        },
+        {
+          "offset": -0.09948560154375943,
+          "air_m3": 30865.584215053987,
+          "cost": 13.82325581395349
+        },
+        {
+          "offset": -0.1041893626712095,
+          "air_m3": 30466.75375415835,
+          "cost": 13.795348837209302
+        },
+        {
+          "offset": -0.10302800768070897,
+          "air_m3": 30565.513331223596,
+          "cost": 13.804651162790698
+        },
+        {
+          "offset": -0.10303300768070901,
+          "air_m3": 30565.08720915678,
+          "cost": 13.804651162790698
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 2,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 27147.5009464861,
+        "reward": -40.72125141972914,
+        "cost": 13.38139534883721,
+        "nh4_viol_pct": 4.636577262782594,
+        "do_viol_pct": 0.02592982740458634,
+        "days_within_limit_pct": 77.67441860465117,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 829.7799254905766
+      },
+      "base": {
+        "air_m3": 27931.07606819795,
+        "reward": -41.89661410229692,
+        "cost": 13.911627906976744,
+        "nh4_viol_pct": 4.8472571104448585,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 831.081719742039
+      },
+      "matched": {
+        "air_m3": 27147.50162247828,
+        "reward": -40.721252433717424,
+        "cost": 14.469767441860466,
+        "nh4_viol_pct": 5.041730815979256,
+        "do_viol_pct": 0.0,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215
+      },
+      "offset": -0.012849609546366771,
+      "air_mismatch_percent": 2.4900714823417047e-06,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.0883720930232563,
+      "cost_reduction_percent": 7.521697203471556,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1186541784077768,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 0.4406729107961116,
+          "air_m3": 61751.9987938709,
+          "cost": 26.441860465116278
+        },
+        {
+          "offset": -0.433140600598769,
+          "air_m3": 4701.549669384032,
+          "cost": 230.9813953488372
+        },
+        {
+          "offset": 0.0037661550986712866,
+          "air_m3": 28167.980232854672,
+          "cost": 13.734883720930233
+        },
+        {
+          "offset": -0.015233508827966865,
+          "air_m3": 27004.60505788467,
+          "cost": 14.544186046511628
+        },
+        {
+          "offset": -0.012899804346095405,
+          "air_m3": 27144.483456738988,
+          "cost": 14.469767441860466
+        },
+        {
+          "offset": -0.012849609546366771,
+          "air_m3": 27147.50162247828,
+          "cost": 14.469767441860466
+        },
+        {
+          "offset": -0.012854609546366776,
+          "air_m3": 27147.200584027534,
+          "cost": 14.469767441860466
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 3,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 32120.578187684594,
+        "reward": -48.18086728152689,
+        "cost": 13.409302325581395,
+        "nh4_viol_pct": 4.5912000648245685,
+        "do_viol_pct": 0.08103071063933232,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 758.1067937366619
+      },
+      "base": {
+        "air_m3": 55973.013414823734,
+        "reward": -83.9595201222356,
+        "cost": 28.311627906976746,
+        "nh4_viol_pct": 5.7142857142857135,
+        "do_viol_pct": 4.1503929989466,
+        "days_within_limit_pct": 49.76744186046512,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 578.4480824033404
+      },
+      "matched": {
+        "air_m3": 32120.250295529997,
+        "reward": -48.18037544329499,
+        "cost": 37.948837209302326,
+        "nh4_viol_pct": 11.819139453853008,
+        "do_viol_pct": 1.4034519082732355,
+        "days_within_limit_pct": 62.7906976744186,
+        "n_episodes": 215
+      },
+      "offset": -0.19841547151617528,
+      "air_mismatch_percent": -0.001020816476837716,
+      "matched_within_tolerance": true,
+      "cost_difference": -24.539534883720933,
+      "cost_reduction_percent": 64.6647873513911,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -0.9572028221438771,
+          "air_m3": 218.19692873215487,
+          "cost": 270.50697674418603
+        },
+        {
+          "offset": 0.5213985889280615,
+          "air_m3": 98410.66132252532,
+          "cost": 158.8372093023256
+        },
+        {
+          "offset": -0.4768105004187921,
+          "air_m3": 16935.082378706265,
+          "cost": 250.25581395348837
+        },
+        {
+          "offset": -0.12175947146487143,
+          "air_m3": 42090.95058723591,
+          "cost": 20.144186046511628
+        },
+        {
+          "offset": -0.26248174549531633,
+          "air_m3": 27018.98764903232,
+          "cost": 72.11627906976744
+        },
+        {
+          "offset": -0.21484976652118828,
+          "air_m3": 30428.691052963102,
+          "cost": 40.91627906976744
+        },
+        {
+          "offset": -0.19464368558788395,
+          "air_m3": 32620.91706454061,
+          "cost": 36.265116279069765
+        },
+        {
+          "offset": -0.19925538519661007,
+          "air_m3": 32025.1294657588,
+          "cost": 38.06976744186046
+        },
+        {
+          "offset": -0.19851656345131255,
+          "air_m3": 32105.90998466856,
+          "cost": 37.972093023255816
+        },
+        {
+          "offset": -0.19838622847035828,
+          "air_m3": 32124.821285141068,
+          "cost": 37.93488372093023
+        },
+        {
+          "offset": -0.19841547151617528,
+          "air_m3": 32120.250295529997,
+          "cost": 37.948837209302326
+        },
+        {
+          "offset": -0.1984104715161752,
+          "air_m3": 32120.98056265088,
+          "cost": 37.948837209302326
+        }
+      ]
+    },
+    {
+      "comparator": "fcsrl_extra_ppo",
+      "seed": 4,
+      "model": "mlp",
+      "extension": {
+        "air_m3": 26482.37047429926,
+        "reward": -39.72355571144889,
+        "cost": 13.158139534883722,
+        "nh4_viol_pct": 4.536099181589822,
+        "do_viol_pct": 0.04861842638359938,
+        "days_within_limit_pct": 76.74418604651163,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 811.9365108768618
+      },
+      "base": {
+        "air_m3": 29829.24955461116,
+        "reward": -44.74387433191675,
+        "cost": 14.051162790697674,
+        "nh4_viol_pct": 4.88939307997731,
+        "do_viol_pct": 0.006482456851146585,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215,
+        "aerobic_prior_departure_nm3h": 767.3867121981054
+      },
+      "matched": {
+        "air_m3": 26482.373728660885,
+        "reward": -39.72356059299132,
+        "cost": 14.720930232558139,
+        "nh4_viol_pct": 5.1276233692569475,
+        "do_viol_pct": 0.0016206142127866462,
+        "days_within_limit_pct": 75.81395348837209,
+        "n_episodes": 215
+      },
+      "offset": -0.06047642761181871,
+      "air_mismatch_percent": 1.2288785211644893e-05,
+      "matched_within_tolerance": true,
+      "cost_difference": -1.5627906976744175,
+      "cost_reduction_percent": 10.616113744075816,
+      "solver_note": null,
+      "evaluations": [
+        {
+          "offset": -2.0,
+          "air_m3": 0.0,
+          "cost": 270.6790697674419
+        },
+        {
+          "offset": 2.0,
+          "air_m3": 123209.30232558165,
+          "cost": 192.22790697674418
+        },
+        {
+          "offset": -1.1402476931711094,
+          "air_m3": 14.097361416779746,
+          "cost": 270.53953488372093
+        },
+        {
+          "offset": 0.4298761534144453,
+          "air_m3": 65104.15000148521,
+          "cost": 30.93953488372093
+        },
+        {
+          "offset": -0.5017712270007119,
+          "air_m3": 7209.431123779726,
+          "cost": 161.52093023255813
+        },
+        {
+          "offset": -0.03594753679313328,
+          "air_m3": 27760.19045782182,
+          "cost": 14.35813953488372
+        },
+        {
+          "offset": -0.0649118592529589,
+          "air_m3": 26262.965331457617,
+          "cost": 14.758139534883721
+        },
+        {
+          "offset": -0.060667393143816424,
+          "air_m3": 26472.856802695478,
+          "cost": 14.716279069767442
+        },
+        {
+          "offset": -0.06047642761181871,
+          "air_m3": 26482.373728660885,
+          "cost": 14.720930232558139
+        },
+        {
+          "offset": -0.06048142761181874,
+          "air_m3": 26482.124268344436,
+          "cost": 14.720930232558139
+        }
+      ]
+    }
+  ]
+}

@@ -45,8 +45,8 @@ def main(a):
                    'pi_epochs_sum': sum(r['pi_epochs'] for r in log),
                    'before_kl_sum': sum(r.get('preserve_before_kl', r['encoder_sync_kl']) for r in log),
                    'after_kl_sum': sum(r.get('preserve_after_kl', r['encoder_sync_kl']) for r in log),
-                   'before_value_error_sum': sum(r.get('preserve_before_value_mse', 0) for r in log),
-                   'after_value_error_sum': sum(r.get('preserve_after_value_mse', 0) for r in log),
+                   'before_value_error_sum': sum(r['preserve_before_value_mse'] for r in log) if 'preserve_before_value_mse' in log[0] else None,
+                   'after_value_error_sum': sum(r['preserve_after_value_mse'] for r in log) if 'preserve_after_value_mse' in log[0] else None,
                    'extra_selected_steps_sum': sum(r.get('preserve_step', 0) for r in log),
                    'extra_wall_seconds': sum(r['extra_wall_seconds'] for r in log) if 'extra_wall_seconds' in log[0] else None,
                    'extra_cpu_seconds': sum(r['extra_cpu_seconds'] for r in log) if 'extra_cpu_seconds' in log[0] else None,
@@ -102,7 +102,9 @@ def main(a):
     for method, rows in mechanism.items():
         avg = lambda key: float(np.mean([r[key] for r in rows]))
         cpu = f"{avg('extra_cpu_seconds'):.2f}" if rows[0]['extra_cpu_seconds'] is not None else '기록 없음'
-        md.append(f"| {method} | {avg('accepted_updates'):.1f} | {avg('before_kl_sum'):.5f} | {avg('after_kl_sum'):.5f} | {avg('before_value_error_sum'):.4f} | {avg('after_value_error_sum'):.4f} | {avg('elapsed_seconds'):.1f} | {cpu} |")
+        value_before = f"{avg('before_value_error_sum'):.4f}" if rows[0]['before_value_error_sum'] is not None else '측정 안 함'
+        value_after = f"{avg('after_value_error_sum'):.4f}" if rows[0]['after_value_error_sum'] is not None else '측정 안 함'
+        md.append(f"| {method} | {avg('accepted_updates'):.1f} | {avg('before_kl_sum'):.5f} | {avg('after_kl_sum'):.5f} | {value_before} | {value_after} | {avg('elapsed_seconds'):.1f} | {cpu} |")
     md += ['', '## 사전 대비 판정', '']
     for method in COMPARATORS:
         flags = {tag: comparisons[tag][method]['full_advantage_supported'] for tag in raw}

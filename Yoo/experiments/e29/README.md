@@ -71,4 +71,28 @@ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
  --out /home/jio/fcsrl_src/results/e29/pilot
 ```
 
-`verify.py`가 학습 전 실제 갱신의 원본 보존, 보정 대상 분리, 난수열 보존, e25 parity와 저장 복원을 확인한다. `match_air.py`는 data/model/gbm/prepared와 `--root` pilot, `--out` matched_air.json을 받는다. `report.py`는 `--root`, `--matches`, `--out` 보고서 폴더를 받는다. 실행 커밋, 명령 및 입력 해시는 runtime manifest와 보관한 launch.json에 기록한다. 실행 commit `543bb8b`, 2026-11-09 17:20 KST경 신규15개 학습 착수. 결과는 완료 후 추가한다. `--wait-for-runs`로 종료된 정책의 matched-air 평가를 먼저 처리할 수 있다. 학습4개와 평가4개를 병행하며 각 작업 thread1을 유지한다. `plot.py --summary <summary.json> --out <comparison.png>`로 그림을 만든다.
+`verify.py`가 학습 전 실제 갱신의 원본 보존, 보정 대상 분리, 난수열 보존, e25 parity와 저장 복원을 확인한다. `match_air.py`는 data/model/gbm/prepared와 `--root` pilot, `--out` matched_air.json을 받는다. `report.py`는 `--root`, `--matches`, `--out` 보고서 폴더를 받는다. 실행 커밋, 명령 및 입력 해시는 runtime manifest와 보관한 launch.json에 기록한다. 실행 commit `543bb8b`, 2026-11-09 17:20 KST경 신규15개 학습 착수. 완료 결과는 아래에 기록했다. `--wait-for-runs`로 종료된 정책의 matched-air 평가를 먼저 처리할 수 있다. 학습4개와 평가4개를 병행하며 각 작업 thread1을 유지한다. `plot.py --summary <summary.json> --out <comparison.png>`로 그림을 만든다.
+
+## 완료 결과와 해석
+
+2026-11-09 17:34:47 KST 신규 학습15개 정상 종료, 17:36:40 KST 같은 공기량 대조40건 완료. 총25개 마지막 정책을 비교했다. [전체 결과](results.md), [수치](summary.json), [같은 공기량 상세](matched_air.json), [그림](figures/comparison.png).
+
+| 방법 | MLP 공기량 Nm³/일 | MLP 비용 | MLP 한도 만족 seed | GBM 비용 |
+| --- | --- | --- | --- | --- |
+| 기본 FCSRL | 30,627 ± 8,936 | 16.68 ± 4.95 | 2/5 | 9.64 ± 2.99 |
+| Actor-only | 29,878 ± 3,487 | 13.50 ± 0.54 | 5/5 | 8.14 ± 0.57 |
+| Critic-only | 30,482 ± 8,714 | 18.34 ± 7.73 | 2/5 | 10.63 ± 5.21 |
+| Actor+Critic, e25 | 28,707 ± 2,485 | 13.50 ± 0.49 | 5/5 | 8.03 ± 0.41 |
+| 추가 PPO | 37,395 ± 11,360 | 17.01 ± 6.32 | 4/5 | 11.74 ± 8.90 |
+
+Actor-only도 e25와 같은 5/5 평균 비용 한도 충족과 작은 편차를 보였다. Critic-only는 가치 출력 오차를 줄였지만 그 안정성을 재현하지 못했다. 이는 Actor 출력 변화 억제가 중요한 단서임을 지지한다. 특정 head의 독립 인과 기여율을 입증하거나 Critic이 항상 불필요하다는 결론은 아니다.
+
+full 보정이 Actor-only보다 같은 공기량에서 줄인 비용은 MLP -0.114, 95% CI [-0.374, 0.146], GBM -0.386, CI [-0.747, -0.026]이다. GBM의 보정 전 p=0.0410이지만 사전6검정 Holm 보정 후 p=0.2460이고 MLP는 p=0.8667이다. Critic 추가의 효율 이점은 두 모델에서 확증하지 못했다. 두 구성이 동등하다고 증명한 것도 아니다.
+
+추가 PPO는 seed3에서 MLP 비용28.312, GBM27.628로 실패했다. 해당 하나의 seed를 제외하지 않고 모두 집계했다. full 대 추가 PPO의 같은 공기량 비용 차이는 MLP -5.740, CI [-18.796, 7.315], GBM -0.759, CI [-3.535, 2.017]로 불확실하다. 따라서 이 추가 학습 설정이 e25의 안정성을 재현하지 못했다고 말할 수 있지만, 추가 계산의 기여를 완전히 배제하거나 모든 추가 PPO 설정보다 우월하다고 주장할 수 없다.
+
+신규15개 모두 22번 추가 단계가 수용됐고 각 50회 시도, 총1100회였다. Actor-only의 22갱신 정책 KL 합은 seed 평균0.01672→0.00067, 가치 오차 합0.3249→0.3249였다. Critic-only는 KL0.01646→0.01646, 가치 오차0.2976→0.0064였다. 의도한 출력에만 보정이 작동했다. 추가 CPU 시간은 Actor-only9.80초, Critic-only9.71초, 추가 PPO11.38초였다. 기존 full 실행에는 이 구간만의 CPU 기록이 없고 전체 시간은 다른 서버 부하에서 측정했으므로 Actor-only의 계산 절감을 확정하지 않는다.
+
+이번 결과로 새 정책을 최종 채택하거나 e25의 기존 CI 실패 판정을 뒤집지 않는다. **다음 검증의 중심 후보는 Actor 출력 보정으로 좁힐 수 있고, 두 Critic까지 보정해야 한다는 주장은 보류한다.** 선행 PPG의 정책 보존과 가까워진 만큼, FCSRL의 EMA 시점 보정이라는 차이가 왜 필요한지를 기존 정책 보존 방식과 직접 비교하는 근거가 다음에 필요하다. 이는 다음 설계 제안이며 새 실험을 시작한 것은 아니다. Kaggle 환경 편향은 그대로 남아 있다.
+
+원 입력과 공유 소스 해시 일치, 25개 설정 일치, 원본 e25 갱신 parity, head 분리, 난수열 보존 및 저장 복원은 `verification.json`, `reuse_verification.json`에 기록했다. `postcheck.json`은 완료된 25개 실행의 해시, prior와 정규화 불변, 학습량, 두 모델의 val215개, 보정 규칙 및 KL 한도를 확인한다. `analysis_audit.json`은 결과 집계와 통계의 별도 검산을 보관한다. 현재 학습과 평가는 모두 종료됐다.
