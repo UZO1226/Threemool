@@ -1,0 +1,7 @@
+{
+  "checks_passed": true,
+  "independent_metric_checks": 16,
+  "disjoint_dates": true,
+  "calibration_targets_and_frozen_hashes": true,
+  "source_sha256": "f6bbf3ed868dab01cca6c61a4212bd3689e7e18c56a76e671c2ce060190fcf4f"
+}

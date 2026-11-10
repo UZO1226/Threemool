@@ -1,0 +1,19 @@
+{
+  "code_commit": "bc7c37ac9454541998a4212c21d65fc33c5738ad",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e37/main/trajectories.npz": "4ba18664aae433a7eed9bfca07465b17a29c5172a2a6c5158031d34306349f07",
+    "/home/jio/fcsrl_src/results/e37/main/results.json": "2fef2c082c52fa1420221ae4c47bf9683da75da5656a650fc241be8d4c0a5bb9"
+  },
+  "source_sha256": {
+    "run.py": "306fa1ee80e04251161949704397dd167309d3462b78d897c5cb002d5e1e09c1"
+  },
+  "protocol_sha256": "790f4f5355ef4daf09b5250cda48429b1c9bc6b34e507aa6e2b6ead8fc933eb0",
+  "started_at": "2026-11-10T09:37:39.610166+00:00",
+  "operating_sha256_before_validation": "5b5f98047255d1a3f7c59c67472ad7521d1d9e2d905309504f4b5d931ef4b77f",
+  "calibrators_sha256_before_validation": "48bc462b99280fb11451c4458b1e4d9985cda2443b150bc563dc02b26ca32da4",
+  "model_sha256": "fa8d0842064b85ac6c3572b0fb95390c2c4d2ca1fe0f132bd813b5717ac6333e",
+  "finished_at": "2026-11-10T09:38:30.227372+00:00",
+  "elapsed_seconds": 51.05274801608175,
+  "checks_passed": true
+}
