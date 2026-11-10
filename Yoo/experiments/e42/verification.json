@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "independent_metric_checks": 502,
+  "ordered_experts_and_mixture_identity": true,
+  "fixed_models_and_inputs": true,
+  "tree_budgets_and_class_support": true,
+  "date_separation": true
+}
