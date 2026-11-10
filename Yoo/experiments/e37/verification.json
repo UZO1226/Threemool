@@ -1,0 +1,7 @@
+{
+  "checks_passed": true,
+  "windows_verified": 918,
+  "events_verified": 132,
+  "aggregate_metric_rows_verified": 45,
+  "script_sha256": "a1eae90265b14ef723dc5b7af9b5dbab320e81f3512c54e560cadfa427105211"
+}

@@ -1,0 +1,71 @@
+{
+  "post_primary_descriptive_sensitivity": true,
+  "primary_nearest_then_filter_pairs": 4,
+  "events_with_ANY_eligible_crossday_control_by_max_iqr": {
+    "1.0": 9,
+    "2.0": 41,
+    "3.0": 85
+  },
+  "nearest_pair_feature_fail_counts_over_1iqr": {
+    "nh4": 27,
+    "no3": 30,
+    "do1": 23,
+    "do2": 50,
+    "do3": 2,
+    "trend_nh4": 51,
+    "trend_no3": 61,
+    "trend_do1": 69,
+    "trend_do2": 74,
+    "trend_do3": 52,
+    "q_in": 53,
+    "temp": 5,
+    "sin": 9,
+    "cos": 18,
+    "inf_s_nh": 24,
+    "inf_s_nd": 24,
+    "inf_x_nd": 28,
+    "inf_s_s": 20,
+    "inf_x_s": 8,
+    "previous_air": 24,
+    "previous_fraction_1": 26,
+    "previous_fraction_2": 13,
+    "previous_fraction_3": 16,
+    "previous_fraction_4": 16,
+    "previous_fraction_5": 4
+  },
+  "observed_action_context": {
+    "increase": {
+      "events": 67,
+      "initial_nh4_mean": 4.572294758454548,
+      "previous_hour_nh4_change_mean": 1.321206830239422,
+      "signed_average_air_change_vs_previous_at_15_60_180min": [
+        799.4024451354371,
+        1524.1957891144887,
+        1207.9783150669957
+      ],
+      "same_direction_average_exposure_pct": [
+        100.0,
+        100.0,
+        88.05970149253731
+      ]
+    },
+    "decrease": {
+      "events": 65,
+      "initial_nh4_mean": 1.0886459466083898,
+      "previous_hour_nh4_change_mean": -1.244597487260622,
+      "signed_average_air_change_vs_previous_at_15_60_180min": [
+        759.300860155566,
+        1049.4656929684265,
+        1248.7919083443717
+      ],
+      "same_direction_average_exposure_pct": [
+        100.0,
+        95.38461538461539,
+        92.3076923076923
+      ]
+    }
+  },
+  "primary_results_changed": false,
+  "warning": "Cutoffs 2 and 3 are post-primary diagnostics, not predeclared success thresholds or causal identification.",
+  "script_sha256": "d89301e7575c27c00c539876c20dd67fb12cf5951c0336f018f04d63e3817e97"
+}
