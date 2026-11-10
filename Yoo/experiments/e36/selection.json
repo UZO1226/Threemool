@@ -1,0 +1,57 @@
+{
+  "locked_at": "2026-11-10T08:17:25.538104+00:00",
+  "name": "bc_+0",
+  "offset_m3_h": 0.0,
+  "train_feasible": true,
+  "train_result": {
+    "environment": "corrected",
+    "split": "train",
+    "name": "bc_+0",
+    "kind": "bc_offset",
+    "offset_m3_h": 0.0,
+    "air_m3": 84897.46609123032,
+    "nh4_cost": 3.875531914893617,
+    "do_cost": 1.7595744680851064,
+    "nh4_viol_pct": 4.079507278835386,
+    "do_viol_pct": 1.8521836506159013,
+    "both_mean_limits": true,
+    "both_limits_episode_pct": 78.93617021276596,
+    "nh4_mean_mg_L": 1.4370851794173523,
+    "nh4_p95_mg_L": 3.5452087422614023,
+    "nh4_max_mg_L": 10.971353816986086,
+    "nh4_excess_integral_mg_h_L": 2.9131705973246755,
+    "nh4_episode_count_p95": 23.0,
+    "nh4_episode_count_max": 84,
+    "do_zone_means_mg_L": [
+      0.4598712293504548,
+      0.34615849133637805,
+      0.6694837592163418
+    ],
+    "n_episodes": 940,
+    "n_transitions_per_episode": 95,
+    "action_clip_pct": 0.0,
+    "worst_nh4_dates": [
+      {
+        "day": "2021-10-03",
+        "member_mean_count": 74.0
+      },
+      {
+        "day": "2021-10-12",
+        "member_mean_count": 40.6
+      },
+      {
+        "day": "2021-07-04",
+        "member_mean_count": 33.4
+      },
+      {
+        "day": "2021-10-06",
+        "member_mean_count": 29.8
+      },
+      {
+        "day": "2021-08-22",
+        "member_mean_count": 27.4
+      }
+    ]
+  },
+  "protocol_sha256": "5e54681814f6159478577dda633465111dd3ae3b100831e0102fdc404858a928"
+}

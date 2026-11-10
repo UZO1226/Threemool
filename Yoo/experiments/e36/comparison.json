@@ -1,0 +1,1046 @@
+{
+  "selection": {
+    "locked_at": "2026-11-10T08:17:25.538104+00:00",
+    "name": "bc_+0",
+    "offset_m3_h": 0.0,
+    "train_feasible": true,
+    "train_result": {
+      "environment": "corrected",
+      "split": "train",
+      "name": "bc_+0",
+      "kind": "bc_offset",
+      "offset_m3_h": 0.0,
+      "air_m3": 84897.46609123032,
+      "nh4_cost": 3.875531914893617,
+      "do_cost": 1.7595744680851064,
+      "nh4_viol_pct": 4.079507278835386,
+      "do_viol_pct": 1.8521836506159013,
+      "both_mean_limits": true,
+      "both_limits_episode_pct": 78.93617021276596,
+      "nh4_mean_mg_L": 1.4370851794173523,
+      "nh4_p95_mg_L": 3.5452087422614023,
+      "nh4_max_mg_L": 10.971353816986086,
+      "nh4_excess_integral_mg_h_L": 2.9131705973246755,
+      "nh4_episode_count_p95": 23.0,
+      "nh4_episode_count_max": 84,
+      "do_zone_means_mg_L": [
+        0.4598712293504548,
+        0.34615849133637805,
+        0.6694837592163418
+      ],
+      "n_episodes": 940,
+      "n_transitions_per_episode": 95,
+      "action_clip_pct": 0.0,
+      "worst_nh4_dates": [
+        {
+          "day": "2021-10-03",
+          "member_mean_count": 74.0
+        },
+        {
+          "day": "2021-10-12",
+          "member_mean_count": 40.6
+        },
+        {
+          "day": "2021-07-04",
+          "member_mean_count": 33.4
+        },
+        {
+          "day": "2021-10-06",
+          "member_mean_count": 29.8
+        },
+        {
+          "day": "2021-08-22",
+          "member_mean_count": 27.4
+        }
+      ]
+    },
+    "protocol_sha256": "5e54681814f6159478577dda633465111dd3ae3b100831e0102fdc404858a928"
+  },
+  "policy_comparisons": [
+    {
+      "environment": "legacy",
+      "policy": "ppo_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            -500.0,
+            0.0
+          ],
+          "weight_high_offset": 0.9913889331845002,
+          "baseline_air_m3": 102812.23925340406,
+          "policy_air_change_pct": -18.45638815858751,
+          "baseline_nh4_excess_mg_h_L": 6.686912318035711,
+          "policy_excess_minus_baseline": -2.4410328597697237
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -19174.371801770758,
+          "paired_7day_block_95ci": [
+            -23760.644952049915,
+            -13640.578562481563
+          ]
+        },
+        "air_change_pct": {
+          "mean": -18.6138736122748,
+          "paired_7day_block_95ci": [
+            -23.37218056293764,
+            -13.095580797435439
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.54,
+          "paired_7day_block_95ci": [
+            -2.5252499999999998,
+            2.8850000000000002
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 1.215,
+          "paired_7day_block_95ci": [
+            0.40499999999999997,
+            2.3752499999999985
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "policy": "ppo_s1",
+      "both_mean_limits": true,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            0.0,
+            500.0
+          ],
+          "weight_high_offset": 0.536321483771252,
+          "baseline_air_m3": 112191.72386460607,
+          "policy_air_change_pct": -22.277872656162266,
+          "baseline_nh4_excess_mg_h_L": 5.219634785189335,
+          "policy_excess_minus_baseline": -1.37651813805242
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -15813.390612734947,
+          "paired_7day_block_95ci": [
+            -20637.495972969686,
+            -10342.695181676894
+          ]
+        },
+        "air_change_pct": {
+          "mean": -15.351139390120617,
+          "paired_7day_block_95ci": [
+            -20.1142457995704,
+            -9.77192663431443
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -1.735,
+          "paired_7day_block_95ci": [
+            -4.405,
+            0.4102499999999986
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.9100000000000001,
+          "paired_7day_block_95ci": [
+            0.26,
+            1.8301249999999998
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "policy": "fcsrl_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            -500.0,
+            0.0
+          ],
+          "weight_high_offset": 0.6810715994259289,
+          "baseline_air_m3": 95642.820266,
+          "policy_air_change_pct": -10.133085433774935,
+          "baseline_nh4_excess_mg_h_L": 22.089163686172203,
+          "policy_excess_minus_baseline": -4.18900431634729
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -17059.933526856476,
+          "paired_7day_block_95ci": [
+            -21821.519743325116,
+            -11416.857880389116
+          ]
+        },
+        "air_change_pct": {
+          "mean": -16.561243819909134,
+          "paired_7day_block_95ci": [
+            -20.986511491686134,
+            -11.029791701330184
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 20.0,
+          "paired_7day_block_95ci": [
+            14.089874999999997,
+            25.895125
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.6849999999999999,
+          "paired_7day_block_95ci": [
+            0.23000000000000004,
+            1.2101249999999992
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "policy": "fcsrl_s1",
+      "both_mean_limits": true,
+      "same_nh4_crossings": [],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -7492.026383584016,
+          "paired_7day_block_95ci": [
+            -13733.103755414682,
+            -554.5602444895071
+          ]
+        },
+        "air_change_pct": {
+          "mean": -7.273022221827485,
+          "paired_7day_block_95ci": [
+            -13.309993330894438,
+            -0.5361920915374981
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -3.8,
+          "paired_7day_block_95ci": [
+            -6.34025,
+            -1.5997500000000013
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 1.7299999999999998,
+          "paired_7day_block_95ci": [
+            0.7848749999999999,
+            2.7501249999999993
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "policy": "fcsrl_actor_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            0.0,
+            500.0
+          ],
+          "weight_high_offset": 0.02472952086553325,
+          "baseline_air_m3": 103434.49524861074,
+          "policy_air_change_pct": -19.012631447805294,
+          "baseline_nh4_excess_mg_h_L": 6.211563499033941,
+          "policy_excess_minus_baseline": -2.153333177850336
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -19242.309226936195,
+          "paired_7day_block_95ci": [
+            -24629.672593743962,
+            -12953.224399554296
+          ]
+        },
+        "air_change_pct": {
+          "mean": -18.679825115596337,
+          "paired_7day_block_95ci": [
+            -24.25919781109185,
+            -12.425575302094472
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -0.0799999999999997,
+          "paired_7day_block_95ci": [
+            -2.62575,
+            2.1451249999999997
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 1.17,
+          "paired_7day_block_95ci": [
+            0.4798749999999999,
+            2.0851249999999992
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "policy": "fcsrl_actor_s1",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            0.0,
+            500.0
+          ],
+          "weight_high_offset": 0.4605873261205564,
+          "baseline_air_m3": 110895.33654683032,
+          "policy_air_change_pct": -23.19679771545966,
+          "baseline_nh4_excess_mg_h_L": 5.366476196000169,
+          "policy_excess_minus_baseline": -0.38678634821838553
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -17840.015451846994,
+          "paired_7day_block_95ci": [
+            -22179.75968104595,
+            -12741.485521153345
+          ]
+        },
+        "air_change_pct": {
+          "mean": -17.318522676766,
+          "paired_7day_block_95ci": [
+            -21.747039214672228,
+            -12.207860181681268
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -1.4899999999999998,
+          "paired_7day_block_95ci": [
+            -3.4,
+            -0.03499999999999992
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.48,
+          "paired_7day_block_95ci": [
+            0.185,
+            0.8399999999999999
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "ppo_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            -500.0,
+            0.0
+          ],
+          "weight_high_offset": 0.9902196435971818,
+          "baseline_air_m3": 103201.96606425299,
+          "policy_air_change_pct": -16.718600031519394,
+          "baseline_nh4_excess_mg_h_L": 6.583709443769232,
+          "policy_excess_minus_baseline": -2.044200828728914
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -17433.234909726307,
+          "paired_7day_block_95ci": [
+            -22050.676103207865,
+            -12130.900129416152
+          ]
+        },
+        "air_change_pct": {
+          "mean": -16.863048521319502,
+          "paired_7day_block_95ci": [
+            -22.031267643076035,
+            -11.424383681406496
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.5900000000000001,
+          "paired_7day_block_95ci": [
+            -2.7361249999999995,
+            3.045
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.62,
+          "paired_7day_block_95ci": [
+            0.04987499999999998,
+            1.4601249999999995
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -1.5464251783186156,
+          "paired_7day_block_95ci": [
+            -3.403275910167301,
+            -0.13143927536697966
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "ppo_s1",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            0.0,
+            500.0
+          ],
+          "weight_high_offset": 0.42657342657342645,
+          "baseline_air_m3": 111743.88388203052,
+          "policy_air_change_pct": -20.729490886083358,
+          "baseline_nh4_excess_mg_h_L": 5.462732264817763,
+          "policy_excess_minus_baseline": -1.2146175652796556
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -14801.331386083039,
+          "paired_7day_block_95ci": [
+            -21207.248465180397,
+            -7523.1993500997205
+          ]
+        },
+        "air_change_pct": {
+          "mean": -14.317226300002062,
+          "paired_7day_block_95ci": [
+            -21.163302946056593,
+            -7.1389977792622465
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -1.22,
+          "paired_7day_block_95ci": [
+            -3.870125,
+            0.8901249999999995
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.595,
+          "paired_7day_block_95ci": [
+            -0.060125000000000026,
+            1.4453749999999979
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -1.8378190938208263,
+          "paired_7day_block_95ci": [
+            -3.66148597454537,
+            -0.35140598403784545
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "fcsrl_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            -500.0,
+            0.0
+          ],
+          "weight_high_offset": 0.8938251139660174,
+          "baseline_air_m3": 101434.68921407909,
+          "policy_air_change_pct": -8.050238957405153,
+          "baseline_nh4_excess_mg_h_L": 11.489752506711355,
+          "policy_excess_minus_baseline": -1.6156229783675862
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -10112.322696388,
+          "paired_7day_block_95ci": [
+            -13021.518306774407,
+            -6880.220290008519
+          ]
+        },
+        "air_change_pct": {
+          "mean": -9.781580365058506,
+          "paired_7day_block_95ci": [
+            -13.049562075611538,
+            -6.493529210922124
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 6.4049999999999985,
+          "paired_7day_block_95ci": [
+            2.3144999999999993,
+            10.53525
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.029999999999999992,
+          "paired_7day_block_95ci": [
+            -0.505,
+            0.29000000000000004
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": 3.7881957349848348,
+          "paired_7day_block_95ci": [
+            0.9283187984940892,
+            6.872137379321644
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "fcsrl_s1",
+      "both_mean_limits": true,
+      "same_nh4_crossings": [],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -5283.200812806899,
+          "paired_7day_block_95ci": [
+            -11587.413862204157,
+            1907.2910393561453
+          ]
+        },
+        "air_change_pct": {
+          "mean": -5.110403898964966,
+          "paired_7day_block_95ci": [
+            -11.537272536866933,
+            1.7795869747492679
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -3.05,
+          "paired_7day_block_95ci": [
+            -5.825,
+            -0.7298750000000007
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 1.1649999999999998,
+          "paired_7day_block_95ci": [
+            0.4200000000000001,
+            2.160124999999999
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -2.010893232824167,
+          "paired_7day_block_95ci": [
+            -3.810106972411897,
+            -0.4014152161036716
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "fcsrl_actor_s0",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            -500.0,
+            0.0
+          ],
+          "weight_high_offset": 0.9876502279320348,
+          "baseline_air_m3": 103154.85894270924,
+          "policy_air_change_pct": -16.656753815614987,
+          "baseline_nh4_excess_mg_h_L": 6.714481012944812,
+          "policy_excess_minus_baseline": -2.1841135986956814
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -17408.6690032552,
+          "paired_7day_block_95ci": [
+            -22741.775683264,
+            -11144.542537686884
+          ]
+        },
+        "air_change_pct": {
+          "mean": -16.83928608853307,
+          "paired_7day_block_95ci": [
+            -22.570231935748023,
+            -10.472132013999722
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.7450000000000002,
+          "paired_7day_block_95ci": [
+            -2.3549999999999995,
+            3.390124999999999
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.8700000000000001,
+          "paired_7day_block_95ci": [
+            0.12500000000000003,
+            1.8502499999999986
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -1.5555663791098033,
+          "paired_7day_block_95ci": [
+            -3.5388782812938553,
+            0.008654247509509288
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "policy": "fcsrl_actor_s1",
+      "both_mean_limits": false,
+      "same_nh4_crossings": [
+        {
+          "offset_pair": [
+            0.0,
+            500.0
+          ],
+          "weight_high_offset": 0.33916083916083906,
+          "baseline_air_m3": 110030.23493961288,
+          "policy_air_change_pct": -21.305754261236398,
+          "baseline_nh4_excess_mg_h_L": 5.590437496076199,
+          "policy_excess_minus_baseline": -0.7140623730767226
+        }
+      ],
+      "grid_dominating_offsets": [],
+      "grid_dominating_including_severity": [],
+      "vs_train_selected_baseline": {
+        "air_m3": {
+          "mean_difference": -16793.81357271457,
+          "paired_7day_block_95ci": [
+            -20667.628851601752,
+            -12440.70820919356
+          ]
+        },
+        "air_change_pct": {
+          "mean": -16.244540649003735,
+          "paired_7day_block_95ci": [
+            -20.70041795182468,
+            -11.750048189811357
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -0.97,
+          "paired_7day_block_95ci": [
+            -3.705125,
+            1.2456249999999969
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.33999999999999997,
+          "paired_7day_block_95ci": [
+            0.144875,
+            0.5650000000000001
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -1.2095586703594567,
+          "paired_7day_block_95ci": [
+            -2.655220034655875,
+            -0.23080077937132412
+          ]
+        }
+      }
+    }
+  ],
+  "actor_vs_fcsrl": [
+    {
+      "environment": "legacy",
+      "seed": 0,
+      "actor_minus_fcsrl": {
+        "air_m3": {
+          "mean_difference": -2182.3757000797195,
+          "paired_7day_block_95ci": [
+            -5273.340401929017,
+            1011.3229392422776
+          ]
+        },
+        "air_change_pct": {
+          "mean": -2.539085423462617,
+          "paired_7day_block_95ci": [
+            -6.4012654125751025,
+            1.1490837218383076
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -20.080000000000002,
+          "paired_7day_block_95ci": [
+            -26.421499999999998,
+            -13.759875000000003
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.485,
+          "paired_7day_block_95ci": [
+            -0.24500000000000002,
+            1.415124999999999
+          ]
+        }
+      }
+    },
+    {
+      "environment": "legacy",
+      "seed": 1,
+      "actor_minus_fcsrl": {
+        "air_m3": {
+          "mean_difference": -10347.989068262978,
+          "paired_7day_block_95ci": [
+            -12455.644897494349,
+            -8242.960316703693
+          ]
+        },
+        "air_change_pct": {
+          "mean": -10.833417302750892,
+          "paired_7day_block_95ci": [
+            -12.234325923756824,
+            -9.183592608983233
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 2.31,
+          "paired_7day_block_95ci": [
+            1.075,
+            3.9599999999999995
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -1.2499999999999998,
+          "paired_7day_block_95ci": [
+            -2.3601250000000005,
+            -0.24975000000000136
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "seed": 0,
+      "actor_minus_fcsrl": {
+        "air_m3": {
+          "mean_difference": -7296.346306867199,
+          "paired_7day_block_95ci": [
+            -10203.447046343645,
+            -4078.491748186107
+          ]
+        },
+        "air_change_pct": {
+          "mean": -7.822909946807721,
+          "paired_7day_block_95ci": [
+            -11.46195845339286,
+            -4.138994964635837
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -5.659999999999999,
+          "paired_7day_block_95ci": [
+            -10.58025,
+            -1.4896250000000015
+          ]
+        },
+        "do_cost": {
+          "mean_difference": 0.9,
+          "paired_7day_block_95ci": [
+            0.09000000000000001,
+            1.9701249999999995
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": -5.343762114094638,
+          "paired_7day_block_95ci": [
+            -8.870064700592986,
+            -2.1904397306016814
+          ]
+        }
+      }
+    },
+    {
+      "environment": "corrected",
+      "seed": 1,
+      "actor_minus_fcsrl": {
+        "air_m3": {
+          "mean_difference": -11510.612759907672,
+          "paired_7day_block_95ci": [
+            -14683.072102849772,
+            -8279.673997516053
+          ]
+        },
+        "air_change_pct": {
+          "mean": -11.733780316846898,
+          "paired_7day_block_95ci": [
+            -14.021093181127965,
+            -9.043156553398195
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 2.0799999999999996,
+          "paired_7day_block_95ci": [
+            1.17,
+            3.2050000000000005
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.825,
+          "paired_7day_block_95ci": [
+            -1.8251249999999999,
+            -0.04499999999999997
+          ]
+        },
+        "nh4_excess_mg_h_L": {
+          "mean_difference": 0.8013345624647098,
+          "paired_7day_block_95ci": [
+            0.12123016602698203,
+            1.8946110011055763
+          ]
+        }
+      }
+    }
+  ],
+  "environment_sensitivity": [
+    {
+      "policy": "ppo_s0",
+      "old_feasible": false,
+      "new_feasible": false,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 2111.228831046028,
+          "paired_7day_block_95ci": [
+            67.38605373288739,
+            3697.2006650685503
+          ]
+        },
+        "air_change_pct": {
+          "mean": 2.5182598764033726,
+          "paired_7day_block_95ci": [
+            0.08513635991110825,
+            4.463524752997538
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -0.05500000000000018,
+          "paired_7day_block_95ci": [
+            -0.6600000000000003,
+            0.6449999999999999
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.8,
+          "paired_7day_block_95ci": [
+            -1.5851249999999997,
+            -0.225
+          ]
+        }
+      }
+    },
+    {
+      "policy": "ppo_s1",
+      "old_feasible": true,
+      "new_feasible": false,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 1382.1511656534858,
+          "paired_7day_block_95ci": [
+            -1691.8679125697818,
+            4209.865490963332
+          ]
+        },
+        "air_change_pct": {
+          "mean": 1.5850758310079094,
+          "paired_7day_block_95ci": [
+            -2.098850535642856,
+            4.486364648684968
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.41,
+          "paired_7day_block_95ci": [
+            -0.225,
+            0.9850000000000001
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.5199999999999999,
+          "paired_7day_block_95ci": [
+            -1.0899999999999999,
+            -0.06999999999999999
+          ]
+        }
+      }
+    },
+    {
+      "policy": "fcsrl_s0",
+      "old_feasible": false,
+      "new_feasible": false,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 7317.702769470052,
+          "paired_7day_block_95ci": [
+            3832.151461449117,
+            10409.377176693
+          ]
+        },
+        "air_change_pct": {
+          "mean": 8.513782679359338,
+          "paired_7day_block_95ci": [
+            4.367156992243656,
+            12.574927170449989
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": -13.7,
+          "paired_7day_block_95ci": [
+            -17.700125,
+            -10.059875
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.9200000000000002,
+          "paired_7day_block_95ci": [
+            -1.9852500000000002,
+            -0.21000000000000002
+          ]
+        }
+      }
+    },
+    {
+      "policy": "fcsrl_s1",
+      "old_feasible": true,
+      "new_feasible": true,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 2578.917509778694,
+          "paired_7day_block_95ci": [
+            1373.4228951813348,
+            3633.462286686043
+          ]
+        },
+        "air_change_pct": {
+          "mean": 2.699895543810582,
+          "paired_7day_block_95ci": [
+            1.5042319614371957,
+            3.675075052597992
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.6449999999999999,
+          "paired_7day_block_95ci": [
+            0.23500000000000004,
+            1.2499999999999996
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.7699999999999999,
+          "paired_7day_block_95ci": [
+            -1.64,
+            0.075
+          ]
+        }
+      }
+    },
+    {
+      "policy": "fcsrl_actor_s0",
+      "old_feasible": false,
+      "new_feasible": false,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 2203.7321626825724,
+          "paired_7day_block_95ci": [
+            963.3287796230579,
+            3465.65758562868
+          ]
+        },
+        "air_change_pct": {
+          "mean": 2.6307290620873003,
+          "paired_7day_block_95ci": [
+            1.1581238101038356,
+            4.134947826515442
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.72,
+          "paired_7day_block_95ci": [
+            0.17987499999999987,
+            1.295
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.5049999999999999,
+          "paired_7day_block_95ci": [
+            -0.9201249999999999,
+            -0.21999999999999997
+          ]
+        }
+      }
+    },
+    {
+      "policy": "fcsrl_actor_s1",
+      "old_feasible": false,
+      "new_feasible": false,
+      "corrected_minus_legacy": {
+        "air_m3": {
+          "mean_difference": 1416.2938181339996,
+          "paired_7day_block_95ci": [
+            -44.35849305399461,
+            2768.679376548562
+          ]
+        },
+        "air_change_pct": {
+          "mean": 1.6628793803322939,
+          "paired_7day_block_95ci": [
+            -0.05196508540119993,
+            3.2717680151433925
+          ]
+        },
+        "nh4_cost": {
+          "mean_difference": 0.41499999999999987,
+          "paired_7day_block_95ci": [
+            -0.41000000000000014,
+            1.2550000000000001
+          ]
+        },
+        "do_cost": {
+          "mean_difference": -0.345,
+          "paired_7day_block_95ci": [
+            -0.72,
+            -0.02000000000000001
+          ]
+        }
+      }
+    }
+  ],
+  "evaluation_commit": "d0f56615910b4e30ac61b87815f27e7f5bd0c5f9",
+  "report_sha256": "6e28c8cf2bd13d8692f2633e11f00dec40bb06004dd4479c57a41d6aa4a8e818",
+  "note": "All matches exploratory. No test evaluation, new training, physical adoption, or seed-level significance claim."
+}

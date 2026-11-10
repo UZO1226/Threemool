@@ -97,7 +97,7 @@ def main(out):
               'note': 'All matches exploratory. No test evaluation, new training, physical adoption, or seed-level significance claim.'}
     save(out / 'comparison.json', output)
     md = ['# e36 기존 정책 효율과 환경 민감도', '',
-          f"평가 실행 커밋: `{manifest['code_commit']}`. 학습/시험 분할 평가 없음. 소요 {manifest['elapsed_seconds']:.1f}초.",
+          f"평가 실행 커밋: `{manifest['code_commit']}`. 신규 학습 및 test 평가 없음. 소요 {manifest['elapsed_seconds']:.1f}초.",
           '검증40일 x 모델5구성원, 정책별seed2개. 공기는m³/23.75h, 비용은95개 중 초과 표본 수다.',
           '같은 NH4 비용은 같은 전체 수질을 뜻하지 않는다. DO 조건과 NH4 초과 강도도 함께 본다.', '',
           f"훈련에서 고정한 기준: BC {selection['offset_m3_h']:+.0f}m³/h. 훈련 평균 한도 충족: {selection['train_feasible']}.", '',
@@ -121,28 +121,35 @@ def main(out):
     for x in analyses:
         diff = x['vs_train_selected_baseline']
         a, n = diff['air_change_pct'], diff['nh4_cost']
-        md.append(f"| {x['environment']} | {x['policy']} | {a['mean']:+.2f} {a['paired_7day_block_95ci']} | {n['mean_difference']:+.3f} {n['paired_7day_block_95ci']} |")
+        md.append(f"| {x['environment']} | {x['policy']} | {a['mean']:+.2f} [{a['paired_7day_block_95ci'][0]:+.2f}, {a['paired_7day_block_95ci'][1]:+.2f}] | {n['mean_difference']:+.3f} [{n['paired_7day_block_95ci'][0]:+.3f}, {n['paired_7day_block_95ci'][1]:+.3f}] |")
     md += ['', '## 해석 범위', '',
            '잘못된 기존 환경은 민감도 확인용이다. 수정 환경 역시 기록 수질 재생 오차가 커 현장 평가기로 검증되지 않았다.',
            '실제 관측 수질과 모델 기록 행동 재생은 별도 행이다. 모든 정책은 동일한 일별 reset, 기록 외생 입력/구간 배분을 쓴다.',
            '정책 체크포인트와 준비 파일 SHA256 불변, BC 기존 평가 및 e35 기록 행동 재생 일치를 검산했다.',
            '개별 날짜/구성원 수치는 외부 결과 폴더의 episodes.json들, 나쁜 날짜는 rows.json에 있다.', '']
     (out / 'results.md').write_text('\n'.join(md))
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.5), sharey=True)
+    fig, axes = plt.subplots(2, 2, figsize=(12, 8))
     colors = {'ppo': 'tab:blue', 'fcsrl': 'tab:orange', 'fcsrl_actor': 'tab:green'}
-    for ax, env in zip(axes, ('legacy', 'corrected')):
+    for panel, ax in enumerate(axes.flat):
+        env = ('legacy', 'corrected')[panel % 2]
         b = sorted([r for r in val if r['environment'] == env and r['kind'] == 'bc_offset'], key=lambda r: r['offset_m3_h'])
         ax.plot([r['nh4_cost'] for r in b], [r['air_m3']/1000 for r in b], 'o-', color='gray', label='BC + fixed airflow')
         for method, color in colors.items():
             ps = [r for r in val if r['environment'] == env and r.get('method') == method and r['kind'] == 'policy']
             ax.scatter([r['nh4_cost'] for r in ps], [r['air_m3']/1000 for r in ps], color=color, s=55, label=method)
-            for r in ps:
-                ax.annotate(f"s{r['seed']}", (r['nh4_cost'], r['air_m3']/1000), xytext=(4,4), textcoords='offset points', fontsize=8)
+            if panel >= 2:
+                for r in ps:
+                    dy = {'ppo': -12, 'fcsrl': 6, 'fcsrl_actor': 8}[method]
+                    ax.annotate(f"s{r['seed']}", (r['nh4_cost'], r['air_m3']/1000), xytext=(4,dy), textcoords='offset points', fontsize=8)
         ax.axvline(6, linestyle=':', color='red', label='NH4 mean limit')
         ax.set(title=env, xlabel='Mean NH4 exceedance count / 95')
         ax.grid(alpha=.2)
-    axes[0].set_ylabel('Air volume (1000 m3 / 23.75 h)')
-    axes[1].legend(fontsize=8)
+        if panel >= 2:
+            ax.set_xlim(0, 32)
+            ax.set_ylim(75, 140)
+    axes[0, 0].set_ylabel('Air volume (1000 m3 / 23.75 h)')
+    axes[0, 1].legend(fontsize=8)
+    axes[1, 0].set_ylabel('Air volume (1000 m3 / 23.75 h)')
     fig.suptitle('Fixed policy screening in surrogate environments (DO constraint checked separately)')
     fig.tight_layout()
     fig.savefig(out / 'air_quality.png', dpi=160)
