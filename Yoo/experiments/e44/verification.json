@@ -1,0 +1,200 @@
+{
+  "passed": true,
+  "code_commit": "87166541fa1202b0023813a99eed87367991e686",
+  "records": [
+    {
+      "method": "ppo",
+      "mode": "padded",
+      "seconds": 44.26989633508492,
+      "parameters": 16004,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 7.59375,
+        "do_cost": 2.328125,
+        "raw_action_clip_percent": 1.7598684210526314
+      },
+      "update": {
+        "kl": 0.011022022770096859,
+        "pi_epochs": 10,
+        "std": 0.19974909722805023
+      }
+    },
+    {
+      "method": "ppo",
+      "mode": "previous",
+      "seconds": 40.263174691936,
+      "parameters": 16004,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 7.59375,
+        "do_cost": 2.328125,
+        "raw_action_clip_percent": 1.7598684210526314
+      },
+      "update": {
+        "kl": 0.011211475939489901,
+        "pi_epochs": 10,
+        "std": 0.1996917575597763
+      }
+    },
+    {
+      "method": "fcsrl",
+      "mode": "padded",
+      "seconds": 52.737557823071256,
+      "parameters": 593123,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 6.90625,
+        "do_cost": 2.109375,
+        "raw_action_clip_percent": 1.7434210526315788
+      },
+      "update": {
+        "encoder_sync_kl": 3.426510374993086e-06,
+        "encoder_dynamics": -0.8048340191443761,
+        "encoder_pred_feasi": 1.5503325949112574,
+        "encoder_pred_feasi_MSE": 0.1529776828829199,
+        "encoder": 1.1479155917962391,
+        "kl": 0.008968746376922354,
+        "pi_epochs": 10,
+        "std": 0.19935929775238037
+      }
+    },
+    {
+      "method": "fcsrl",
+      "mode": "previous",
+      "seconds": 46.12073049903847,
+      "parameters": 593123,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 6.90625,
+        "do_cost": 2.109375,
+        "raw_action_clip_percent": 1.7434210526315788
+      },
+      "update": {
+        "encoder_sync_kl": 3.1847157515585423e-06,
+        "encoder_dynamics": -0.8056667622178793,
+        "encoder_pred_feasi": 1.5478645225365957,
+        "encoder_pred_feasi_MSE": 0.15221849077691635,
+        "encoder": 1.1450311382611593,
+        "kl": 0.008970929115700224,
+        "pi_epochs": 10,
+        "std": 0.19937960803508759
+      }
+    },
+    {
+      "method": "fcsrl_actor",
+      "mode": "padded",
+      "seconds": 37.685146406060085,
+      "parameters": 593123,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 6.90625,
+        "do_cost": 2.109375,
+        "raw_action_clip_percent": 1.7434210526315788
+      },
+      "update": {
+        "preserve_before_kl": 3.5415687307249755e-06,
+        "preserve_after_kl": 4.777850790560478e-07,
+        "preserve_before_value_mse": 0.006650363095104694,
+        "preserve_after_value_mse": 0.006650363095104694,
+        "preserve_before_error": 0.006653903983533382,
+        "preserve_after_error": 0.006650840863585472,
+        "preserve_accepted": 1.0,
+        "preserve_step": 50.0,
+        "preserve_fit_samples": 2048.0,
+        "preserve_check_samples": 1024.0,
+        "extra_attempted_steps": 50.0,
+        "extra_anchor_kl": 3.0557578156731324e-06,
+        "before_reward_error": 0.004692920483648777,
+        "after_reward_error": 0.004692920483648777,
+        "before_cost_error": 0.0019574423786252737,
+        "after_cost_error": 0.0019574423786252737,
+        "extra_wall_seconds": 0.7390399019932374,
+        "extra_cpu_seconds": 0.7398237550000033,
+        "encoder_sync_kl": 4.777850790560478e-07,
+        "encoder_dynamics": -0.8048340191443761,
+        "encoder_pred_feasi": 1.5503325949112574,
+        "encoder_pred_feasi_MSE": 0.1529776828829199,
+        "encoder": 1.1479155917962391,
+        "kl": 0.008968746376922354,
+        "pi_epochs": 10,
+        "std": 0.19935929775238037
+      }
+    },
+    {
+      "method": "fcsrl_actor",
+      "mode": "previous",
+      "seconds": 44.86612309899647,
+      "parameters": 593123,
+      "finite_update": true,
+      "frozen_prior_and_norm": true,
+      "checkpoint_action_exact": true,
+      "train_diagnostic": {
+        "member": 4,
+        "nh4_cost": 6.90625,
+        "do_cost": 2.109375,
+        "raw_action_clip_percent": 1.7434210526315788
+      },
+      "update": {
+        "preserve_before_kl": 3.2843879580468638e-06,
+        "preserve_after_kl": 4.3381811565268436e-07,
+        "preserve_before_value_mse": 0.007644366007298231,
+        "preserve_after_value_mse": 0.007644366007298231,
+        "preserve_before_error": 0.007647650316357613,
+        "preserve_after_error": 0.007644800003618002,
+        "preserve_accepted": 1.0,
+        "preserve_step": 48.0,
+        "preserve_fit_samples": 2048.0,
+        "preserve_check_samples": 1024.0,
+        "extra_attempted_steps": 50.0,
+        "extra_anchor_kl": 2.517722350603435e-06,
+        "before_reward_error": 0.0057562715373933315,
+        "after_reward_error": 0.0057562715373933315,
+        "before_cost_error": 0.0018880944699048996,
+        "after_cost_error": 0.0018880944699048996,
+        "extra_wall_seconds": 1.2044163800310344,
+        "extra_cpu_seconds": 1.205417696999973,
+        "encoder_sync_kl": 4.3381811565268436e-07,
+        "encoder_dynamics": -0.8056667622178793,
+        "encoder_pred_feasi": 1.5478645225365957,
+        "encoder_pred_feasi_MSE": 0.15221849077691635,
+        "encoder": 1.1450311382611593,
+        "kl": 0.008970929115700224,
+        "pi_epochs": 10,
+        "std": 0.19937960803508759
+      }
+    }
+  ],
+  "input_boundary_checks": true,
+  "matched_initial_weights_and_rollout": true,
+  "source_sha256": {
+    "report.py": "0f9141262dd4983f14ebfc77fe0a5f808c74a9c4dfecf8898cc8fcb367789243",
+    "preflight.py": "9f899bfd99dcfc93c697775d61cd4faba6b0a57785a8e2f9af3dc8b49f90b1d8",
+    "command.py": "d656bc72fadeda3c075337b3ed73074a55a553ec363a7f2600790f0d6ac6fb8a",
+    "run.py": "3b32e895eaf382a5cc2c19b2c60871b7cdcc6f0b42d356b578aa1172e5df80db",
+    "train.py": "bf055babf02216156259bb3358d29febe2c0ff510b94cea16636129a8fdbd3db"
+  },
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e30/prepared/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e30/prepared/normalizer.json": "c8e8281d1a2cf28c1503f69cac4579dec8a83c0473a8b157b2daeebdd71658cf",
+    "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e"
+  },
+  "val_evaluated": false,
+  "test_evaluated": false,
+  "diagnostic_updates_per_arm": 1
+}
