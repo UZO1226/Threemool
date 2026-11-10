@@ -17,6 +17,12 @@ do_cap=True (Park/e11) 이면 DO 상한도 함께 본다. 후보는 정책 공�
 2. 없으면 (NH4 를 지키려면 DO 를 넘는 충돌) 실제 비용 기준인 1[NH4 > 4] + 1[DO > 2] 의 예측값이 가장 작은 후보,
    같으면 가장 작은 공기량. target 은 여유분이라서, 충돌할 때는 실제 비용 기준을 따른다
 do_cap=False 이면 Park/e10 과 같은 계산이다.
+
+trim=True (Park/e14) 이면 공기량을 내리기도 한다 (양방향). 먼저 e10 처럼 NH4 에 필요한 최소 공기량 r 을 구한다.
+1. 정책 공기량 < r 이면 r 로 올린다 (e10 과 같음, NH4 우선)
+2. 정책 공기량 >= r 이고 정책 공기량에서 1스텝 뒤 예측 구간 DO 최댓값 > 2 이면, r 이상 정책 공기량 이하의 격자 값 중
+   예측 DO <= 2 인 가장 큰 공기량으로 내린다. 없으면 r 로 내린다. r 이상이므로 예측 NH4 <= target 은 그대로 지킨다
+예측 DO 는 정책 공기량에서 먼저 계산하고, 넘는 에피소드만 격자 전체로 다시 계산한다. lowered_steps, steps 에 내린 횟수를 센다.
 """
 import numpy as np
 
@@ -24,11 +30,14 @@ from darrow_env import AIR_MAX, DO_MAX, NH4_MAX, STATE, action_to_air, air_to_ac
 
 
 class MinAirBrake:
-    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False):
+    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
-        self.do_cap = bool(do_cap)
+        self.do_cap, self.trim = bool(do_cap), bool(trim)
+        assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
+        assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
+        self.lowered_steps, self.steps = 0, 0
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -81,11 +90,39 @@ class MinAirBrake:
         pick = np.where(both.any(axis=1), both.argmax(axis=1), step_cost.argmin(axis=1))
         return cand[np.arange(len(cand)), pick]
 
+    def trimmed_air(self, obs, env, policy_air):
+        r = self.required_air(obs, env)
+        air = np.maximum(policy_air, r)
+        rows = np.flatnonzero(policy_air >= r)
+        if len(rows):
+            sub = _Rows(env, rows)
+            _, do = self._rollout(obs[rows], sub, policy_air[rows, None], len(STATE))
+            over = rows[do[:, 0] > DO_MAX]
+            if len(over):
+                _, do_grid = self._rollout(obs[over], _Rows(env, over), np.tile(self.grid, (len(over), 1)), len(STATE))
+                inside = (self.grid[None, :] >= r[over, None]) & (self.grid[None, :] <= policy_air[over, None])
+                ok = inside & (do_grid <= DO_MAX)
+                best = np.where(ok, self.grid[None, :], -np.inf).max(axis=1)
+                air[over] = np.where(np.isfinite(best), best, r[over])
+        return air
+
     def __call__(self, obs, a, env):
         policy_air = action_to_air(a)
         if self.do_cap:
             air = self.do_aware_air(obs, env, policy_air)
+        elif self.trim:
+            air = self.trimmed_air(obs, env, policy_air)
         else:
             air = np.maximum(policy_air, self.required_air(obs, env))
-        used = air > policy_air + 1e-9
+        used = np.abs(air - policy_air) > 1e-9
+        self.lowered_steps += int((air < policy_air - 1e-9).sum())
+        self.steps += len(air)
         return np.where(used, air_to_action(air), a), used
+
+
+class _Rows:
+    """환경의 일부 에피소드만 보는 얇은 보기 (_rollout 이 쓰는 t, x, prev_zone, member 만)."""
+
+    def __init__(self, env, rows):
+        self.t, self.member, self.prev_zone = env.t, env.member[rows], env.prev_zone[rows]
+        self.x = {k: env.x[k][rows] for k in ('exo', 'frac')}
