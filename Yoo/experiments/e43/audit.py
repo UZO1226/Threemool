@@ -28,7 +28,8 @@ def sha(path):
 
 def past_command_obs(env):
     """후보 관측만 구성한다. 기존 환경, 정책 및 학습기는 변경하지 않는다."""
-    return np.column_stack([env.obs(), env.prev_zone / AIR_MAX]).astype(np.float32)
+    extra = np.zeros_like(env.prev_zone) if env.t == 0 else env.prev_zone / AIR_MAX
+    return np.column_stack([env.obs(), extra]).astype(np.float32)
 
 
 def feedback_check(days, dates, dyn):
@@ -90,6 +91,7 @@ def missing_input_probe(days, dates, dyn):
     for t in (1, 48, 94):
         env = BatchEnv(days, dyn)
         env.reset(all_episodes(dates, dyn.n_members))
+        assert np.array_equal(past_command_obs(env)[:, 11:], np.zeros_like(env.prev_zone))
         env.t = t
         env.state = env.x['state'][:, t].copy()
         env.prev_zone = env.x['zone'][:, t - 1].copy()
@@ -141,6 +143,7 @@ def missing_input_probe(days, dates, dyn):
     return {'dates': dates, 'ticks': [1, 48, 94], 'donor': 'previous train date cyclically, same tick',
             'interpretation': 'Synthetic input sensitivity, not valid counterfactual outcomes or policy improvement.',
             'candidate_observation': {'dim': 16, 'original_11_exactly_preserved': True,
+                 'first_step_additional_inputs_zero': True,
                  'responds_to_previous_zone': True, 'future_water_and_current_allocation_invariant': True},
             'probes': result}
 
