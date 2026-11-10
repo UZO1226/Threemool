@@ -6,6 +6,10 @@
 다시 시작한다. 하루 끝은 시간 제한이라 가치를 이어 붙인다. 관측 정규화 통계는 학습 구간 실제 운전 재생으로
 한 번 정하고 고정한다 (Lee, Yoo 는 학습 중 갱신).
 
+--brake-theta 를 주면 학습 중에도 NH4 규칙 차단(Park/e08) 을 켠다 (Park/e09). 정책 입장에서 차단은 환경의 일부다.
+PPO 의 확률비는 정책이 뽑은 행동으로 계산하고, 보상, 비용, FCSRL 표현 학습은 실제로 넣은 행동을 쓴다.
+주지 않으면 Park/e08 과 완전히 같다.
+
     python train_darrow.py --method fcsrl --seed 0 --data ../data/darrow/darrow_15min.pkl \
         --surrogate ../data/darrow/darrow_surrogate_gbm.pkl --out <결과>/dw_fcsrl_s0
 """
@@ -21,10 +25,11 @@ import torch
 from tqdm import tqdm
 
 from agent import FCSRL, METHODS, Config, ObsNormalizer, feasibility_targets, gae
-from darrow_env import BatchEnv, Dynamics, all_episodes, evaluate, load_days
+from darrow_env import BatchEnv, Dynamics, action_to_air, air_to_action, all_episodes, evaluate, load_days
 
 HERE = Path(__file__).resolve().parent
 OBS_DIM, ACT_DIM = 11, 1
+BRAKE_AIR = 5800.0   # Park/e08 과 같은 차단 공기량 (학습 구간 기록 총 공기량 90% 분위수 반올림)
 
 
 def darrow_config():
@@ -41,13 +46,28 @@ def replay_observations(env, days):
     return np.concatenate(out)
 
 
+def nh4_brake(raw_obs, action, theta):
+    """NH4 측정값(관측 0번) >= theta 이면 공기량을 최소 BRAKE_AIR 로 올린 행동과 개입 여부. theta 가 None 이면 그대로."""
+    used = np.zeros(len(action), bool)
+    if theta is None:
+        return action, used
+    policy_air = action_to_air(action)
+    air = np.maximum(policy_air, np.where(raw_obs[:, 0] >= theta, BRAKE_AIR, 0.0))
+    used = air > policy_air + 1e-9
+    return np.where(used, air_to_action(air), action), used
+
+
+def brake_shield(theta):
+    return lambda obs, a, env: nh4_brake(obs, a, theta)
+
+
 @torch.no_grad()
 def agent_act(agent, obs):
     o = agent.tensor(agent.normalizer(obs))
     return agent.pi(agent.features(o)).clamp(-1, 1).numpy()[:, 0]
 
 
-def collect(agent, c, env, days, rng):
+def collect(agent, c, env, days, rng, brake_theta=None):
     T, N, D = c.horizon, c.n_env, env.T
     member = int(rng.integers(env.dyn.n_members))
     keys = ('logp', 'rew', 'cost', 'vr', 'vc', 'nvr', 'nvc', 'end', 'terminated', 'next_feasi')
@@ -56,7 +76,7 @@ def collect(agent, c, env, days, rng):
     b['act'], b['act_exec'] = np.zeros((T, N, ACT_DIM), np.float32), np.zeros((T, N, ACT_DIM), np.float32)
     new_days = lambda: [(days[i], member) for i in rng.integers(len(days), size=N)]  # noqa: E731
     raw = env.reset(new_days())
-    day_costs = []
+    day_costs, used_steps = [], 0
     for t in range(T):
         o = agent.normalizer(raw)
         with torch.no_grad():
@@ -67,7 +87,9 @@ def collect(agent, c, env, days, rng):
             vr, vc = agent.values(ot)
             b['vr'][t], b['vc'][t] = vr.numpy(), vc.numpy()
         b['obs'][t], b['act'][t] = o, act.numpy()
-        b['act_exec'][t] = np.clip(b['act'][t], -1, 1)
+        exec_a, used = nh4_brake(raw, np.clip(b['act'][t, :, 0], -1, 1), brake_theta)
+        b['act_exec'][t, :, 0] = exec_a
+        used_steps += int(used.sum())
         nxt, r, cost, trunc, _ = env.step(b['act_exec'][t, :, 0])
         b['rew'][t], b['cost'][t] = r, cost
         no = agent.normalizer(nxt)
@@ -88,7 +110,7 @@ def collect(agent, c, env, days, rng):
     b['feasi'] = feasibility_targets(b['cost'], b['end'], b['terminated'], b['next_feasi'], c.feasibility_discount)
     diag = {'member': member, 'daily_cost_mean': float(np.mean(day_costs)),
             'raw_action_clip_percent': float((np.abs(b['act']) > 1).mean() * 100),
-            'feasi_target_mean': float(b['feasi'].mean())}
+            'feasi_target_mean': float(b['feasi'].mean()), 'intervention_percent': 100 * used_steps / (T * N)}
     return {k: v.reshape(T * N, *v.shape[2:]) for k, v in b.items()}, diag
 
 
@@ -99,6 +121,7 @@ def main():
     for k in ('data', 'surrogate', 'out'):
         p.add_argument(f'--{k}', type=Path, required=True)
     p.add_argument('--updates', type=int, default=66)
+    p.add_argument('--brake-theta', type=float, default=None, help='학습 중 NH4 규칙 차단 기준 (Park/e09)')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
@@ -116,7 +139,7 @@ def main():
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=HERE, text=True).strip()
     except Exception:
         commit = None
-    (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'config': asdict(c),
+    (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'brake_theta': a.brake_theta, 'config': asdict(c),
                                                    'code_commit': commit, 'normalizer': normalizer.state()}, indent=2))
     val_env = BatchEnv(day_data, dyn)
     act = lambda obs: agent_act(agent, obs)  # noqa: E731
@@ -125,15 +148,16 @@ def main():
     rng = np.random.default_rng(a.seed)
     records = []
     for update in tqdm(range(1, c.updates + 1), desc=f'darrow {a.method} seed {a.seed}', mininterval=30):
-        buf, diag = collect(agent, c, env, splits['train'], rng)
+        buf, diag = collect(agent, c, env, splits['train'], rng, a.brake_theta)
         info = agent.update(buf)
         agent.update_lagrangian(diag['daily_cost_mean'])
         records.append({'update': update, 'lambda': agent.lagrangian, **diag, **info})
         (a.out / 'training.json').write_text(json.dumps(records, indent=1))
     agent.save(a.out / 'model_final')
     final = evaluate(val_env, splits['val'], act)
+    braked = None if a.brake_theta is None else evaluate(val_env, splits['val'], act, shield=brake_shield(a.brake_theta))
     (a.out / 'metrics.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'initial_val': initial,
-                                                    'final_val': final, 'elapsed_seconds': time.monotonic() - start},
+                                                    'final_val': final, 'final_val_brake': braked, 'elapsed_seconds': time.monotonic() - start},
                                                    indent=2))
     print('완료', a.out, json.dumps(final), flush=True)
 
