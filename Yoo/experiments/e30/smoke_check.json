@@ -1,0 +1,9 @@
+{
+  "phase": "complete",
+  "runs": 6,
+  "steps_per_run": 6080,
+  "root": "/home/jio/fcsrl_src/results/e30/smoke",
+  "source_commit": "b31f007f57fda94aeaed3d6c44bfbb76389b25af",
+  "training_and_validation_all_passed": true,
+  "not_main_results": true
+}
