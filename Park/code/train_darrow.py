@@ -9,6 +9,8 @@
 --brake-theta 를 주면 학습 중에도 NH4 규칙 차단(Park/e08) 을 켠다 (Park/e09). 정책 입장에서 차단은 환경의 일부다.
 PPO 의 확률비는 정책이 뽑은 행동으로 계산하고, 보상, 비용, FCSRL 표현 학습은 실제로 넣은 행동을 쓴다.
 주지 않으면 Park/e08 과 완전히 같다.
+--min-brake-target 을 주면 대신 최소 개입 차단(min_brake.py, 1스텝, 다른 구성원) 을 학습 중에 켠다 (Park/e12).
+--cost-limit 을 주면 학습의 하루 비용 한도(라그랑주 갱신 기준) 를 바꾼다. 평가의 한도 만족 % 는 언제나 12 기준이다.
 
     python train_darrow.py --method fcsrl --seed 0 --data ../data/darrow/darrow_15min.pkl \
         --surrogate ../data/darrow/darrow_surrogate_gbm.pkl --out <결과>/dw_fcsrl_s0
@@ -26,6 +28,7 @@ from tqdm import tqdm
 
 from agent import FCSRL, METHODS, Config, ObsNormalizer, feasibility_targets, gae
 from darrow_env import BatchEnv, Dynamics, action_to_air, air_to_action, all_episodes, evaluate, load_days
+from min_brake import MinAirBrake
 
 HERE = Path(__file__).resolve().parent
 OBS_DIM, ACT_DIM = 11, 1
@@ -67,7 +70,7 @@ def agent_act(agent, obs):
     return agent.pi(agent.features(o)).clamp(-1, 1).numpy()[:, 0]
 
 
-def collect(agent, c, env, days, rng, brake_theta=None):
+def collect(agent, c, env, days, rng, shield=None):
     T, N, D = c.horizon, c.n_env, env.T
     member = int(rng.integers(env.dyn.n_members))
     keys = ('logp', 'rew', 'cost', 'vr', 'vc', 'nvr', 'nvc', 'end', 'terminated', 'next_feasi')
@@ -87,7 +90,10 @@ def collect(agent, c, env, days, rng, brake_theta=None):
             vr, vc = agent.values(ot)
             b['vr'][t], b['vc'][t] = vr.numpy(), vc.numpy()
         b['obs'][t], b['act'][t] = o, act.numpy()
-        exec_a, used = nh4_brake(raw, np.clip(b['act'][t, :, 0], -1, 1), brake_theta)
+        exec_a = np.clip(b['act'][t, :, 0], -1, 1)
+        used = np.zeros(N, bool)
+        if shield is not None:
+            exec_a, used = shield(raw, exec_a, env)
         b['act_exec'][t, :, 0] = exec_a
         used_steps += int(used.sum())
         nxt, r, cost, trunc, _ = env.step(b['act_exec'][t, :, 0])
@@ -122,7 +128,10 @@ def main():
         p.add_argument(f'--{k}', type=Path, required=True)
     p.add_argument('--updates', type=int, default=66)
     p.add_argument('--brake-theta', type=float, default=None, help='학습 중 NH4 규칙 차단 기준 (Park/e09)')
+    p.add_argument('--min-brake-target', type=float, default=None, help='학습 중 최소 개입 차단 target (Park/e12)')
+    p.add_argument('--cost-limit', type=float, default=None, help='학습 하루 비용 한도 (기본 12)')
     a = p.parse_args()
+    assert a.brake_theta is None or a.min_brake_target is None, '차단은 하나만 고른다'
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
     torch.manual_seed(a.seed)
@@ -134,28 +143,36 @@ def main():
     c = darrow_config()
     if a.updates != c.updates:
         c = Config(**{**asdict(c), 'updates': a.updates})
+    if a.cost_limit is not None:
+        c = Config(**{**asdict(c), 'cost_limit': a.cost_limit})
     agent = METHODS[a.method](OBS_DIM, ACT_DIM, c, normalizer)
     try:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=HERE, text=True).strip()
     except Exception:
         commit = None
-    (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'brake_theta': a.brake_theta, 'config': asdict(c),
+    (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'brake_theta': a.brake_theta,
+                                                   'min_brake_target': a.min_brake_target, 'config': asdict(c),
                                                    'code_commit': commit, 'normalizer': normalizer.state()}, indent=2))
     val_env = BatchEnv(day_data, dyn)
     act = lambda obs: agent_act(agent, obs)  # noqa: E731
     start = time.monotonic()
     initial = evaluate(val_env, splits['val'], act)
     rng = np.random.default_rng(a.seed)
+    shield = None
+    if a.brake_theta is not None:
+        shield = brake_shield(a.brake_theta)
+    elif a.min_brake_target is not None:
+        shield = MinAirBrake(dyn, a.min_brake_target, 1, 'others')
     records = []
     for update in tqdm(range(1, c.updates + 1), desc=f'darrow {a.method} seed {a.seed}', mininterval=30):
-        buf, diag = collect(agent, c, env, splits['train'], rng, a.brake_theta)
+        buf, diag = collect(agent, c, env, splits['train'], rng, shield)
         info = agent.update(buf)
         agent.update_lagrangian(diag['daily_cost_mean'])
         records.append({'update': update, 'lambda': agent.lagrangian, **diag, **info})
         (a.out / 'training.json').write_text(json.dumps(records, indent=1))
     agent.save(a.out / 'model_final')
     final = evaluate(val_env, splits['val'], act)
-    braked = None if a.brake_theta is None else evaluate(val_env, splits['val'], act, shield=brake_shield(a.brake_theta))
+    braked = None if shield is None else evaluate(val_env, splits['val'], act, shield=shield)
     (a.out / 'metrics.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'initial_val': initial,
                                                     'final_val': final, 'final_val_brake': braked, 'elapsed_seconds': time.monotonic() - start},
                                                    indent=2))
