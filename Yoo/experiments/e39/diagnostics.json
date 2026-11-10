@@ -1,0 +1,60 @@
+{
+  "posthoc_descriptive_only": true,
+  "no_new_thresholds_applied_to_validation": true,
+  "periods": {
+    "fit": {
+      "dates": 140,
+      "nh4_exceedance_pct": 5.714285714285714,
+      "days_with_any_nh4_exceedance": 67,
+      "mean_daily_temperature": 20.098849595154256,
+      "min_daily_temperature": 15.088177603989495,
+      "max_daily_temperature": 22.14617496051477
+    },
+    "calibration": {
+      "dates": 48,
+      "nh4_exceedance_pct": 6.513157894736842,
+      "days_with_any_nh4_exceedance": 17,
+      "mean_daily_temperature": 18.59155144468958,
+      "min_daily_temperature": 15.863777635871593,
+      "max_daily_temperature": 21.215212817194857
+    },
+    "val": {
+      "dates": 40,
+      "nh4_exceedance_pct": 17.31578947368421,
+      "days_with_any_nh4_exceedance": 37,
+      "mean_daily_temperature": 15.96233209960659,
+      "min_daily_temperature": 12.189192027722767,
+      "max_daily_temperature": 18.039042857246127
+    }
+  },
+  "calibration_plateaus": {
+    "base": {
+      "distinct_calibrated_levels": 14,
+      "maximum_calibrated_probability": 0.1843137254901961,
+      "highest_probability_group_pct": 25.723684210526315,
+      "fpr_if_alert_highest_group_pct": 22.444288060051605,
+      "recall_if_alert_highest_group_pct": 72.79461279461279,
+      "calibration_raw_auc": 0.7491064053625629,
+      "calibration_isotonic_auc": 0.775979341463742,
+      "raw_score_fpr10_calibration_recall_pct": 0.0,
+      "raw_score_fpr10_calibration_fpr_pct": 0.0,
+      "raw_score_recall80_calibration_recall_pct": 80.0,
+      "raw_score_recall80_calibration_fpr_pct": 34.313863476425055
+    },
+    "history": {
+      "distinct_calibrated_levels": 20,
+      "maximum_calibrated_probability": 0.2996413433322465,
+      "highest_probability_group_pct": 13.451754385964913,
+      "fpr_if_alert_highest_group_pct": 10.077410274454609,
+      "recall_if_alert_highest_group_pct": 61.88552188552189,
+      "calibration_raw_auc": 0.816557853142418,
+      "calibration_isotonic_auc": 0.8300412523072622,
+      "raw_score_fpr10_calibration_recall_pct": 61.07744107744107,
+      "raw_score_fpr10_calibration_fpr_pct": 9.997654234107436,
+      "raw_score_recall80_calibration_recall_pct": 80.0,
+      "raw_score_recall80_calibration_fpr_pct": 28.304011259676283
+    }
+  },
+  "interpretation": "Quantization and period shifts are observed properties. They do not separately identify the causal contribution to validation failure or prove no useful classifier exists.",
+  "script_sha256": "c13f190ba1b2a17b532a63fb4fe077dd780229bd8b380882b2448d2129f6145c"
+}
