@@ -1,0 +1,82 @@
+{
+  "posthoc_diagnostic_only": true,
+  "truth_threshold_mg_L": 4.0,
+  "no_prediction_threshold_deployed": true,
+  "original_screen_unchanged": true,
+  "note": "Thresholds chosen on development validation outcomes describe ranking potential only. They are not trained calibration, independent performance estimates, or a change to the physical threshold.",
+  "models": {
+    "base": {
+      "auc": 0.7037465150069941,
+      "average_precision": 0.3114218059562834,
+      "at_prediction_threshold_4": {
+        "recall": 0.6182370820668693,
+        "fpr": 0.2966263526416295
+      },
+      "matched_recall": [
+        {
+          "target_recall": 0.6182370820668693,
+          "achieved_recall": 0.6182370820668693,
+          "fpr": 0.2962444302991725,
+          "exploratory_score_threshold": 4.003836339590095
+        },
+        {
+          "target_recall": 0.8,
+          "achieved_recall": 0.8,
+          "fpr": 0.5201782304264799,
+          "exploratory_score_threshold": 2.531777839981992
+        }
+      ],
+      "matched_fpr": [
+        {
+          "fpr_cap": 0.1,
+          "achieved_fpr": 0.1,
+          "recall": 0.2802431610942249
+        },
+        {
+          "fpr_cap": 0.2966263526416295,
+          "achieved_fpr": 0.2966263526416295,
+          "recall": 0.6185410334346505
+        }
+      ]
+    },
+    "history": {
+      "auc": 0.7597474166068502,
+      "average_precision": 0.45647290072012187,
+      "at_prediction_threshold_4": {
+        "recall": 0.24285714285714285,
+        "fpr": 0.041247612985359644
+      },
+      "matched_recall": [
+        {
+          "target_recall": 0.6182370820668693,
+          "achieved_recall": 0.6182370820668693,
+          "fpr": 0.22807129217059197,
+          "exploratory_score_threshold": 2.102160793595051
+        },
+        {
+          "target_recall": 0.8,
+          "achieved_recall": 0.8,
+          "fpr": 0.44296626352641627,
+          "exploratory_score_threshold": 1.41476441804162
+        }
+      ],
+      "matched_fpr": [
+        {
+          "fpr_cap": 0.1,
+          "achieved_fpr": 0.1,
+          "recall": 0.39969604863221886
+        },
+        {
+          "fpr_cap": 0.2966263526416295,
+          "achieved_fpr": 0.2966263526416295,
+          "recall": 0.6848024316109422
+        }
+      ]
+    }
+  },
+  "history_minus_base_auc_paired_7day_block_95ci": [
+    0.009583256944448813,
+    0.11649456098399191
+  ],
+  "script_sha256": "0eaa6c2ecdeb23c7826f6138b7adff5cfdf0b8a1806ecbf5006a0a77b7e0c5f1"
+}

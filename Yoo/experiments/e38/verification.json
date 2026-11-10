@@ -1,0 +1,7 @@
+{
+  "checks_passed": true,
+  "independent_aggregate_checks": 88,
+  "history_order_padding_shift_pass": true,
+  "input_protocol_candidate_hashes_pass": true,
+  "script_sha256": "aacc2cb5bc3c1f8a84d3b462b0937ef99d8038404b2417549c64ca2e94ba781c"
+}

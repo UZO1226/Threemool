@@ -1,0 +1,26 @@
+{
+  "locked_at": "2026-11-10T09:02:34.870277+00:00",
+  "changes": "NH4 GBM only: 4 lags x 5 water states added to existing 24 inputs (44 total). No architecture or hyperparameter sweep.",
+  "history_order": [
+    "15min",
+    "30min",
+    "45min",
+    "60min"
+  ],
+  "state_order": [
+    "nh4",
+    "no3",
+    "do1",
+    "do2",
+    "do3"
+  ],
+  "padding": "Within-day unavailable past repeats the first state, in training and cold-start evaluation.",
+  "training": "same 188 dates, all 95 transitions/day, same 80% row samples and GBM parameters/early-stopping RNG per member. NH4 unchanged-model refit must reproduce baseline exactly.",
+  "fixed": "NO3 and DO model weights, clipping, exogenous inputs, recorded actions, policy, reward and constraints unchanged.",
+  "validation": "40 dates; one-step teacher forcing descriptive, primary cold 95-step replay, secondary observed first-hour warm start then 91 free steps. No cross-mode comparisons.",
+  "events": "Same 132 e37 windows and 15/60/180min; only pre-start measured history, then predicted history.",
+  "screen": "Primary NH4 rollout MAE lower, NH4 recall not lower/FPR not higher; all three DO MAEs not higher, DO recall not lower/FPR not higher; NH4 response MAE not higher for both action directions at all three horizons. Zero tolerance point-estimate screen, no success guarantee; report paired uncertainty and all failures. Passing would still not certify causal control effects.",
+  "test_evaluated": false,
+  "RL_training": false,
+  "no_automatic_adoption": true
+}
