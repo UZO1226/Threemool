@@ -25,7 +25,7 @@
 | `train_avedore.py` | Avedøre 에서 PPO-Lag, FCSRL + PPO-Lag 학습 (Yoo/e05, e06 과 같은 설정) |
 | `darrow_env.py` | 팀 공식 데이터 Kaggle DARROW 폭기 환경, 배열 버전 (Park/e08). Lee 의 방법으로 만든 단조 제약 GBM 대리 모델을 읽는다 |
 | `check_darrow.py` | DARROW 환경이 같은 대리 모델의 Lee 코드 결과 15개를 재현하는지 검사한다 |
-| `train_darrow.py` | DARROW 에서 PPO-Lag, FCSRL + PPO-Lag 학습 (Lee/e07 과 같은 설정). `--brake-theta` 를 주면 학습 중에도 NH4 규칙 차단을 켠다 (Park/e09). `--min-brake-target` 는 최소 개입 차단을 학습 중에 켜고, `--cost-limit` 은 학습 비용 한도를 바꾼다 (Park/e12) |
+| `train_darrow.py` | DARROW 에서 PPO-Lag, FCSRL + PPO-Lag 학습 (Lee/e07 과 같은 설정). `--brake-theta` 를 주면 학습 중에도 NH4 규칙 차단을 켠다 (Park/e09). `--min-brake-target` 는 최소 개입 차단을 학습 중에 켜고, `--cost-limit` 은 학습 비용 한도를 바꾼다 (Park/e12). `--intervention-cost` 는 차단이 개입한 스텝마다 학습 비용을 더한다 (Park/e13) |
 | `min_brake.py` | DARROW 최소 개입 차단. 대리 모델로 앞을 내다보고 예측 NH4 를 기준 아래로 유지하는 데 필요한 만큼만 공기량을 올린다 (Park/e10). `do_cap=True` 이면 DO 상한도 함께 본다 (Park/e11) |
 
 2026-11-09 확인: `prepare.py` 의 MATLAB 정상상태 최대 절대 오차 8.68e-08, `check_env.py` 기준값 12개 모두 통과 (`../experiments/e01/check_env.json`). `train.py --updates 1` 과 차단기 3종의 연결 시험도 끝까지 돌았다. 연결 시험 수치는 결과가 아니다.
