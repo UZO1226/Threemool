@@ -1,4 +1,4 @@
-"""DARROW 최소 개입 차단: 예측 NH4 를 기준 아래로 유지하는 데 필요한 만큼만 공기량을 올린다 (Park 작성, Park/e10).
+"""DARROW 최소 개입 차단: 예측 NH4 를 기준 아래로 유지하는 데 필요한 만큼만 공기량을 올린다 (Park 작성, Park/e10, e11).
 
 Park/e08, e09 의 차단은 위험할 때 공기량을 언제나 5,800 Nm3/h 로 올렸다. 이 차단은 대리 모델로 앞을 내다보고
 "앞으로 horizon 스텝 동안 예측 NH4 최댓값 <= target" 을 만족하는 가장 작은 공기량을 찾아 정책 공기량과 비교한다.
@@ -11,17 +11,24 @@ Park/e08, e09 의 차단은 위험할 때 공기량을 언제나 5,800 Nm3/h 로
   members='same' 이면 환경과 같은 구성원을 쓴다 (정답 모델, 참고용)
 - 대리 모델의 NH4 변화량은 공기량에 대해 비증가로 강제돼 있어 horizon 1 에서는 조건이 공기량에 대해 단조다.
   horizon 이 2 이상이면 DO 를 거치므로 단조가 보장되지 않는다
+
+do_cap=True (Park/e11) 이면 DO 상한도 함께 본다. 후보는 정책 공기량과 그보다 큰 격자 값이다 (공기량은 올리기만 한다).
+1. 예측 NH4 최댓값 <= target 이고 예측 구간 DO 최댓값 <= 2 인 후보가 있으면 그중 가장 작은 공기량
+2. 없으면 (NH4 를 지키려면 DO 를 넘는 충돌) 실제 비용 기준인 1[NH4 > 4] + 1[DO > 2] 의 예측값이 가장 작은 후보,
+   같으면 가장 작은 공기량. target 은 여유분이라서, 충돌할 때는 실제 비용 기준을 따른다
+do_cap=False 이면 Park/e10 과 같은 계산이다.
 """
 import numpy as np
 
-from darrow_env import AIR_MAX, STATE, action_to_air, air_to_action
+from darrow_env import AIR_MAX, DO_MAX, NH4_MAX, STATE, action_to_air, air_to_action
 
 
 class MinAirBrake:
-    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0):
+    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
+        self.do_cap = bool(do_cap)
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -37,27 +44,48 @@ class MinAirBrake:
             weight[rows] += 1.0
         return out / weight[:, None]
 
-    def required_air(self, obs, env):
-        t, N, G = env.t, len(obs), len(self.grid)
-        rep = lambda v: np.repeat(v, G, axis=0)  # noqa: E731  (에피소드 하나에 후보 G 개)
+    def _rollout(self, obs, env, cand, n_states):
+        """후보 공기량 cand (N, K) 를 horizon 동안 유지했을 때 예측 NH4 최댓값과 구간 DO 최댓값 (N, K)."""
+        t, (N, K) = env.t, cand.shape
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731  (에피소드 하나에 후보 K 개)
         state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
         exo, frac, zone_prev = rep(env.x['exo'][:, t]), rep(env.x['frac'][:, t]), rep(env.prev_zone)
         member = rep(env.member)
-        zone = np.tile(self.grid, N)[:, None] * frac
-        n_states = 1 if self.horizon == 1 else len(STATE)   # 한 스텝만 보면 NH4 모델만 필요하다
-        worst = np.full(N * G, -np.inf)
+        zone = cand.reshape(-1)[:, None] * frac
+        worst_nh4 = np.full(N * K, -np.inf)
+        worst_do = np.full(N * K, -np.inf)
         for _ in range(self.horizon):
             x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
             delta = self._predict(x, member, n_states)
             nxt = state.copy()
             nxt[:, :n_states] = np.clip(state[:, :n_states] + delta, 0.0, self.dyn.hi[:n_states])
             state, zone_prev = nxt, zone
-            worst = np.maximum(worst, state[:, 0])
-        ok = (worst <= self.target).reshape(N, G)
+            worst_nh4 = np.maximum(worst_nh4, state[:, 0])
+            if n_states == len(STATE):
+                worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
+        return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
+
+    def required_air(self, obs, env):
+        N = len(obs)
+        n_states = 1 if self.horizon == 1 else len(STATE)   # 한 스텝만 보면 NH4 모델만 필요하다
+        nh4, _ = self._rollout(obs, env, np.tile(self.grid, (N, 1)), n_states)
+        ok = nh4 <= self.target
         return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], AIR_MAX)
+
+    def do_aware_air(self, obs, env, policy_air):
+        grid = self.grid[None, :]
+        cand = np.column_stack([policy_air, np.where(grid > policy_air[:, None], grid, policy_air[:, None])])
+        nh4, do = self._rollout(obs, env, cand, len(STATE))
+        both = (nh4 <= self.target) & (do <= DO_MAX)
+        step_cost = (nh4 > NH4_MAX).astype(int) + (do > DO_MAX).astype(int)
+        pick = np.where(both.any(axis=1), both.argmax(axis=1), step_cost.argmin(axis=1))
+        return cand[np.arange(len(cand)), pick]
 
     def __call__(self, obs, a, env):
         policy_air = action_to_air(a)
-        air = np.maximum(policy_air, self.required_air(obs, env))
+        if self.do_cap:
+            air = self.do_aware_air(obs, env, policy_air)
+        else:
+            air = np.maximum(policy_air, self.required_air(obs, env))
         used = air > policy_air + 1e-9
         return np.where(used, air_to_action(air), a), used
