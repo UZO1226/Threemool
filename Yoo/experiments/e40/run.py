@@ -171,6 +171,8 @@ def main(source, out):
                 for mode in MODES:
                     item = metrics(tr, apply(score_event, operating[name][mode]))
                     item.pop('day_counts')
+                    for prefix in ('predicted', 'observed'):
+                        item[prefix + '_count_per_window_member'] = item.pop(prefix + '_count_per_day_member')
                     events.append(dict(model=name, mode=mode, group=group, minutes=15 * step, windows=int(mask.sum()), **item))
     across = {mode: delta(val['base']['continuous_' + mode], val['history']['continuous_' + mode]) for mode in MODES}
     across_screen = {mode: dominates(val['history']['continuous_' + mode], val['base']['continuous_' + mode]) for mode in MODES}

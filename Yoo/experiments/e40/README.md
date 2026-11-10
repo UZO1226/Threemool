@@ -20,7 +20,7 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 /home/jio/fcsrl_src/.venv/bin/python Yoo/experiments/e40/run.py \
   --source /home/jio/fcsrl_src/results/e39/main \
-  --out /home/jio/fcsrl_src/results/e40/main
+  --out /home/jio/fcsrl_src/results/e40/main_v2
 ```
 
 기존 Python 3.10.19/numpy 1.23.5 환경에서 CPU 1스레드로 실행한다. 모델 추가 학습은 없고 저장된 40일 x 5구성원 x 95전이와 e39 공기 변화 구간을 평가한다. 원 데이터는 Kaggle dynamic-modeling-of-wastewater-treatment-process의 DARROW이며 e30 준비 자료와 e39 분할을 그대로 사용한다. 조건부 기록 재생이지 공기량의 인과 효과나 온라인 예측 성능이 아니다. 팀 공통 평가 조건 변경이 아닌 개인 진단이다.
