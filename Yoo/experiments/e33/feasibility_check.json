@@ -1,0 +1,52 @@
+{
+  "split": "train",
+  "limits": [
+    6.0,
+    6.0
+  ],
+  "references": [
+    {
+      "reference": "initial_BC_policy",
+      "air_m3": 84029.60499588132,
+      "nh4_cost": 3.4202127659574466,
+      "do_cost": 2.3627659574468085,
+      "cost": 5.782978723404256,
+      "both_mean_limits": true,
+      "both_limits_episode_pct": 77.23404255319149,
+      "n_episodes": 940
+    },
+    {
+      "reference": "historical_scale_0.95",
+      "air_m3": 85140.48273427755,
+      "nh4_cost": 6.607446808510638,
+      "do_cost": 5.8074468085106385,
+      "cost": 12.414893617021276,
+      "both_mean_limits": false,
+      "both_limits_episode_pct": 50.53191489361703,
+      "n_episodes": 940
+    },
+    {
+      "reference": "historical_scale_0.98",
+      "air_m3": 87829.12955746528,
+      "nh4_cost": 5.731914893617021,
+      "do_cost": 6.348936170212766,
+      "cost": 12.080851063829787,
+      "both_mean_limits": false,
+      "both_limits_episode_pct": 49.57446808510638,
+      "n_episodes": 940
+    },
+    {
+      "reference": "historical_scale_1.0",
+      "air_m3": 89621.56077292372,
+      "nh4_cost": 5.185106382978724,
+      "do_cost": 6.629787234042553,
+      "cost": 11.814893617021276,
+      "both_mean_limits": false,
+      "both_limits_episode_pct": 49.361702127659576,
+      "n_episodes": 940
+    }
+  ],
+  "initial_policy_feasible": true,
+  "any_reference_feasible": true,
+  "note": "Historical actions depend on recorded operations, not solely on simulated policy observations. Failure to find a witness is not proof of infeasibility."
+}
