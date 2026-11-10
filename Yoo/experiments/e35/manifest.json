@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-11-10T07:28:55.043688+00:00",
+  "code_commit": "9c2cc0946ae8ecc7d82a739785652faca8304204",
+  "source_sha256": {
+    "mapping.py": "e2e1a6e2ece4ae86a3d119d231cee2bd201a33dd64306a96ef719a36270d03fd",
+    "run.py": "1f34e512c93d655566d5270dde839e331b886394458d50632809f2f859b106ed"
+  },
+  "input_sha256": {
+    "surrogate.pkl": "d75cca80f7c7fadb7c8426d6954ff1ce9f0c5d292e555c9e64a4003f042d1b2c",
+    "data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38"
+  },
+  "mapping": {
+    "do1": "air3",
+    "do2": "air4",
+    "do3": "air5"
+  },
+  "features": [
+    "nh4",
+    "no3",
+    "do1",
+    "do2",
+    "do3",
+    "q_in",
+    "temp",
+    "sin",
+    "cos",
+    "inf_s_nh",
+    "inf_s_nd",
+    "inf_x_nd",
+    "inf_s_s",
+    "inf_x_s",
+    "current_air1",
+    "current_air2",
+    "current_air3",
+    "current_air4",
+    "current_air5",
+    "previous_air1",
+    "previous_air2",
+    "previous_air3",
+    "previous_air4",
+    "previous_air5"
+  ],
+  "members": 5,
+  "changed_models": "DO1/DO2/DO3 only; NH4 and NO3 retained exactly",
+  "selection": "fixed e30 hyperparameters, same train-only early stopping",
+  "train_days": 188,
+  "val_days": 40,
+  "test_evaluated": false,
+  "policy_training": false,
+  "legacy_refit_prediction_exact": true,
+  "finished_at": "2026-11-10T07:29:35.115580+00:00",
+  "elapsed_seconds": 40.53469945397228
+}

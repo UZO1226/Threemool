@@ -1,0 +1,575 @@
+{
+  "results": {
+    "legacy": {
+      "mae": {
+        "nh4": 2.382542488813197,
+        "no3": 1.690932431177852,
+        "do1": 0.45562643940411934,
+        "do2": 0.29661582716747037,
+        "do3": 0.25980218718318426
+      },
+      "rmse": {
+        "nh4": 3.4311236292006635,
+        "no3": 2.548215447477961,
+        "do1": 0.6313985344518307,
+        "do2": 0.4542674088562633,
+        "do3": 0.3854685847225956
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 1599,
+          "fp": 3519,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 48.60182370820669,
+          "fpr_pct": 22.399745385105028,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 26.93684210526316
+        },
+        "DO": {
+          "tp": 3,
+          "fp": 352,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 1.3636363636363635,
+          "fpr_pct": 1.8743343982960596,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 1.868421052631579
+        },
+        "DO1": {
+          "tp": 3,
+          "fp": 142,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 3.75,
+          "fpr_pct": 0.7505285412262156,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 0.763157894736842
+        },
+        "DO2": {
+          "tp": 0,
+          "fp": 190,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 0.0,
+          "fpr_pct": 1.0103695825578303,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 1.0
+        },
+        "DO3": {
+          "tp": 0,
+          "fp": 110,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.580168776371308,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.5789473684210527
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 25.59
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 1.775
+        }
+      },
+      "air_m3_per_23_75h": 84859.75950433375,
+      "upper_clip_pct": {
+        "nh4": 6.473684210526316,
+        "no3": 0.3105263157894737,
+        "do1": 0.0,
+        "do2": 0.0,
+        "do3": 0.0
+      }
+    },
+    "corrected": {
+      "mae": {
+        "nh4": 2.8528332581833733,
+        "no3": 1.2472981192402317,
+        "do1": 0.37156680737166814,
+        "do2": 0.28960627185485716,
+        "do3": 0.2059446255733219
+      },
+      "rmse": {
+        "nh4": 4.048664453140343,
+        "no3": 1.8484574567935057,
+        "do1": 0.5254238793011972,
+        "do2": 0.44969267963285764,
+        "do3": 0.2971091998552046
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 2034,
+          "fp": 4660,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 61.82370820668693,
+          "fpr_pct": 29.662635264162954,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 35.23157894736842
+        },
+        "DO": {
+          "tp": 4,
+          "fp": 419,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 1.8181818181818181,
+          "fpr_pct": 2.231096911608094,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 2.2263157894736842
+        },
+        "DO1": {
+          "tp": 0,
+          "fp": 271,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 0.0,
+          "fpr_pct": 1.4323467230443974,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 1.4263157894736842
+        },
+        "DO2": {
+          "tp": 0,
+          "fp": 151,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.8029779314012231,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 0.7947368421052632
+        },
+        "DO3": {
+          "tp": 0,
+          "fp": 25,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.13185654008438819,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.13157894736842105
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 33.47
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 2.115
+        }
+      },
+      "air_m3_per_23_75h": 84859.75950433375,
+      "upper_clip_pct": {
+        "nh4": 12.857894736842104,
+        "no3": 0.02631578947368421,
+        "do1": 0.0,
+        "do2": 0.0,
+        "do3": 0.0
+      }
+    },
+    "only_do1": {
+      "mae": {
+        "nh4": 2.6832599594159876,
+        "no3": 1.2104041858118622,
+        "do1": 0.35538415394481426,
+        "do2": 0.27145139227502024,
+        "do3": 0.29065049703043144
+      },
+      "rmse": {
+        "nh4": 3.83966496383807,
+        "no3": 1.7737487056402923,
+        "do1": 0.5066012560488535,
+        "do2": 0.44243668802787284,
+        "do3": 0.4224427164037493
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 1785,
+          "fp": 4188,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 54.255319148936174,
+          "fpr_pct": 26.658179503500953,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 31.436842105263157
+        },
+        "DO": {
+          "tp": 1,
+          "fp": 434,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 0.45454545454545453,
+          "fpr_pct": 2.3109691160809374,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 2.289473684210526
+        },
+        "DO1": {
+          "tp": 0,
+          "fp": 214,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 0.0,
+          "fpr_pct": 1.1310782241014798,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 1.1263157894736842
+        },
+        "DO2": {
+          "tp": 0,
+          "fp": 199,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 0.0,
+          "fpr_pct": 1.0582291943632012,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 1.0473684210526315
+        },
+        "DO3": {
+          "tp": 0,
+          "fp": 121,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.6381856540084389,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.6368421052631579
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 29.865
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 2.175
+        }
+      }
+    },
+    "only_do2": {
+      "mae": {
+        "nh4": 2.3345097326808477,
+        "no3": 1.652487993960288,
+        "do1": 0.45386834643892127,
+        "do2": 0.29900094708613717,
+        "do3": 0.262241303591375
+      },
+      "rmse": {
+        "nh4": 3.3739698067352593,
+        "no3": 2.4869267992872346,
+        "do1": 0.6300498730496243,
+        "do2": 0.46210110050609854,
+        "do3": 0.398205600564417
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 1703,
+          "fp": 3430,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 51.7629179331307,
+          "fpr_pct": 21.83322724379376,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 27.015789473684208
+        },
+        "DO": {
+          "tp": 10,
+          "fp": 472,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 4.545454545454546,
+          "fpr_pct": 2.5133120340788073,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 2.536842105263158
+        },
+        "DO1": {
+          "tp": 9,
+          "fp": 213,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 11.25,
+          "fpr_pct": 1.1257928118393234,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 1.168421052631579
+        },
+        "DO2": {
+          "tp": 0,
+          "fp": 235,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 0.0,
+          "fpr_pct": 1.249667641584685,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 1.236842105263158
+        },
+        "DO3": {
+          "tp": 0,
+          "fp": 126,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.6645569620253164,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.6631578947368421
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 25.665
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 2.41
+        }
+      }
+    },
+    "only_do3": {
+      "mae": {
+        "nh4": 2.6338940285122954,
+        "no3": 1.8572939432521276,
+        "do1": 0.49012054406016037,
+        "do2": 0.3028796401228075,
+        "do3": 0.18284519384167539
+      },
+      "rmse": {
+        "nh4": 3.743114622697361,
+        "no3": 2.7622264497395554,
+        "do1": 0.667797278636342,
+        "do2": 0.446877576987541,
+        "do3": 0.273453035432454
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 1799,
+          "fp": 4290,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 54.680851063829785,
+          "fpr_pct": 27.307447485677912,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 32.04736842105263
+        },
+        "DO": {
+          "tp": 4,
+          "fp": 317,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 1.8181818181818181,
+          "fpr_pct": 1.6879659211927582,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 1.6894736842105265
+        },
+        "DO1": {
+          "tp": 4,
+          "fp": 197,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 5.0,
+          "fpr_pct": 1.0412262156448202,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 1.0578947368421052
+        },
+        "DO2": {
+          "tp": 0,
+          "fp": 117,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.6221749534698219,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 0.6157894736842106
+        },
+        "DO3": {
+          "tp": 0,
+          "fp": 21,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 0.0,
+          "fpr_pct": 0.11075949367088607,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.11052631578947368
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 30.445
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 1.605
+        }
+      }
+    },
+    "oracle_DO_legacy": {
+      "mae": {
+        "nh4": 5.172862961780426,
+        "no3": 0.9155634200800256,
+        "do1": 0.10996960015215855,
+        "do2": 0.10588407328536961,
+        "do3": 0.05269942330637175
+      },
+      "rmse": {
+        "nh4": 6.27457673366,
+        "no3": 1.3106762271829029,
+        "do1": 0.16441089463918174,
+        "do2": 0.21631204804296486,
+        "do3": 0.09861114876312886
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 2990,
+          "fp": 9858,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 90.88145896656535,
+          "fpr_pct": 62.74984086569064,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 67.62105263157895
+        },
+        "DO": {
+          "tp": 63,
+          "fp": 10,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 28.636363636363637,
+          "fpr_pct": 0.05324813631522897,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 0.38421052631578945
+        },
+        "DO1": {
+          "tp": 50,
+          "fp": 4,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 62.5,
+          "fpr_pct": 0.021141649048625793,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 0.28421052631578947
+        },
+        "DO2": {
+          "tp": 5,
+          "fp": 2,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 2.5641025641025643,
+          "fpr_pct": 0.010635469290082425,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 0.0368421052631579
+        },
+        "DO3": {
+          "tp": 6,
+          "fp": 7,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 15.0,
+          "fpr_pct": 0.03691983122362869,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.06842105263157894
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 64.24
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 0.365
+        }
+      }
+    },
+    "oracle_DO_corrected": {
+      "mae": {
+        "nh4": 5.172862961780426,
+        "no3": 0.9155634200800256,
+        "do1": 0.11866724191438657,
+        "do2": 0.12339420249722959,
+        "do3": 0.05344190817223948
+      },
+      "rmse": {
+        "nh4": 6.27457673366,
+        "no3": 1.3106762271829029,
+        "do1": 0.17658994209058948,
+        "do2": 0.24691211128166585,
+        "do3": 0.10837364926797612
+      },
+      "confusion": {
+        "NH4": {
+          "tp": 2990,
+          "fp": 9858,
+          "positives": 3290,
+          "negatives": 15710,
+          "recall_pct": 90.88145896656535,
+          "fpr_pct": 62.74984086569064,
+          "observed_pct": 17.31578947368421,
+          "predicted_pct": 67.62105263157895
+        },
+        "DO": {
+          "tp": 54,
+          "fp": 5,
+          "positives": 220,
+          "negatives": 18780,
+          "recall_pct": 24.545454545454547,
+          "fpr_pct": 0.026624068157614485,
+          "observed_pct": 1.1578947368421053,
+          "predicted_pct": 0.3105263157894737
+        },
+        "DO1": {
+          "tp": 43,
+          "fp": 1,
+          "positives": 80,
+          "negatives": 18920,
+          "recall_pct": 53.75,
+          "fpr_pct": 0.005285412262156448,
+          "observed_pct": 0.42105263157894735,
+          "predicted_pct": 0.23157894736842108
+        },
+        "DO2": {
+          "tp": 5,
+          "fp": 2,
+          "positives": 195,
+          "negatives": 18805,
+          "recall_pct": 2.5641025641025643,
+          "fpr_pct": 0.010635469290082425,
+          "observed_pct": 1.0263157894736843,
+          "predicted_pct": 0.0368421052631579
+        },
+        "DO3": {
+          "tp": 5,
+          "fp": 3,
+          "positives": 40,
+          "negatives": 18960,
+          "recall_pct": 12.5,
+          "fpr_pct": 0.015822784810126583,
+          "observed_pct": 0.21052631578947367,
+          "predicted_pct": 0.042105263157894736
+        }
+      },
+      "episode_mean_counts": {
+        "NH4": {
+          "observed": 16.45,
+          "predicted": 64.24
+        },
+        "DO": {
+          "observed": 1.1,
+          "predicted": 0.295
+        }
+      }
+    }
+  },
+  "oracle_nh4_no3_exactly_equal": true,
+  "policy_training": false,
+  "test_evaluated": false,
+  "script_sha256": "1527fe08c182b7d5a34c57c7bbbc12a3c67a9668019be154932371665899b6c3",
+  "model_sha256": {
+    "legacy": "d75cca80f7c7fadb7c8426d6954ff1ce9f0c5d292e555c9e64a4003f042d1b2c",
+    "corrected": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e"
+  },
+  "interpretation": "Model-path diagnostic with recorded actions. Observed future DO is an evaluation oracle, not an available policy input. Single swaps do not add up when interactions exist."
+}
