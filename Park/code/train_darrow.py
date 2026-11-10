@@ -11,6 +11,7 @@ PPO 의 확률비는 정책이 뽑은 행동으로 계산하고, 보상, 비용,
 주지 않으면 Park/e08 과 완전히 같다.
 --min-brake-target 을 주면 대신 최소 개입 차단(min_brake.py, 1스텝, 다른 구성원) 을 학습 중에 켠다 (Park/e12).
 --cost-limit 을 주면 학습의 하루 비용 한도(라그랑주 갱신 기준) 를 바꾼다. 평가의 한도 만족 % 는 언제나 12 기준이다.
+--intervention-cost 를 주면 학습 중 차단이 개입한 스텝마다 그 값을 학습 비용에 더한다 (Park/e13). 평가 비용은 바꾸지 않는다.
 
     python train_darrow.py --method fcsrl --seed 0 --data ../data/darrow/darrow_15min.pkl \
         --surrogate ../data/darrow/darrow_surrogate_gbm.pkl --out <결과>/dw_fcsrl_s0
@@ -70,7 +71,7 @@ def agent_act(agent, obs):
     return agent.pi(agent.features(o)).clamp(-1, 1).numpy()[:, 0]
 
 
-def collect(agent, c, env, days, rng, shield=None):
+def collect(agent, c, env, days, rng, shield=None, intervention_cost=0.0):
     T, N, D = c.horizon, c.n_env, env.T
     member = int(rng.integers(env.dyn.n_members))
     keys = ('logp', 'rew', 'cost', 'vr', 'vc', 'nvr', 'nvc', 'end', 'terminated', 'next_feasi')
@@ -79,7 +80,8 @@ def collect(agent, c, env, days, rng, shield=None):
     b['act'], b['act_exec'] = np.zeros((T, N, ACT_DIM), np.float32), np.zeros((T, N, ACT_DIM), np.float32)
     new_days = lambda: [(days[i], member) for i in rng.integers(len(days), size=N)]  # noqa: E731
     raw = env.reset(new_days())
-    day_costs, used_steps = [], 0
+    day_costs, env_day_costs, used_steps = [], [], 0
+    env_cost = np.zeros((T, N), np.float32)
     for t in range(T):
         o = agent.normalizer(raw)
         with torch.no_grad():
@@ -97,7 +99,8 @@ def collect(agent, c, env, days, rng, shield=None):
         b['act_exec'][t, :, 0] = exec_a
         used_steps += int(used.sum())
         nxt, r, cost, trunc, _ = env.step(b['act_exec'][t, :, 0])
-        b['rew'][t], b['cost'][t] = r, cost
+        env_cost[t] = cost
+        b['rew'][t], b['cost'][t] = r, cost + intervention_cost * used
         no = agent.normalizer(nxt)
         b['obs_next'][t] = no
         b['end'][t] = float(trunc)
@@ -109,12 +112,13 @@ def collect(agent, c, env, days, rng, shield=None):
         raw = nxt
         if trunc:
             day_costs += b['cost'][t + 1 - D:t + 1].sum(0).tolist()
+            env_day_costs += env_cost[t + 1 - D:t + 1].sum(0).tolist()
             if t + 1 < T:
                 raw = env.reset(new_days())
     b['adv_r'], b['ret_r'] = gae(b['rew'], b['vr'], b['nvr'], b['end'], c.gamma, c.gae_lambda)
     b['adv_c'], b['ret_c'] = gae(b['cost'], b['vc'], b['nvc'], b['end'], c.gamma, c.gae_lambda)
     b['feasi'] = feasibility_targets(b['cost'], b['end'], b['terminated'], b['next_feasi'], c.feasibility_discount)
-    diag = {'member': member, 'daily_cost_mean': float(np.mean(day_costs)),
+    diag = {'member': member, 'daily_cost_mean': float(np.mean(day_costs)), 'env_daily_cost_mean': float(np.mean(env_day_costs)),
             'raw_action_clip_percent': float((np.abs(b['act']) > 1).mean() * 100),
             'feasi_target_mean': float(b['feasi'].mean()), 'intervention_percent': 100 * used_steps / (T * N)}
     return {k: v.reshape(T * N, *v.shape[2:]) for k, v in b.items()}, diag
@@ -130,8 +134,10 @@ def main():
     p.add_argument('--brake-theta', type=float, default=None, help='학습 중 NH4 규칙 차단 기준 (Park/e09)')
     p.add_argument('--min-brake-target', type=float, default=None, help='학습 중 최소 개입 차단 target (Park/e12)')
     p.add_argument('--cost-limit', type=float, default=None, help='학습 하루 비용 한도 (기본 12)')
+    p.add_argument('--intervention-cost', type=float, default=0.0, help='개입 스텝마다 학습 비용에 더할 값 (Park/e13)')
     a = p.parse_args()
     assert a.brake_theta is None or a.min_brake_target is None, '차단은 하나만 고른다'
+    assert a.intervention_cost == 0 or a.brake_theta is not None or a.min_brake_target is not None, '개입 비용은 차단과 함께 쓴다'
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
     torch.manual_seed(a.seed)
@@ -151,7 +157,8 @@ def main():
     except Exception:
         commit = None
     (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'brake_theta': a.brake_theta,
-                                                   'min_brake_target': a.min_brake_target, 'config': asdict(c),
+                                                   'min_brake_target': a.min_brake_target,
+                                                   'intervention_cost': a.intervention_cost, 'config': asdict(c),
                                                    'code_commit': commit, 'normalizer': normalizer.state()}, indent=2))
     val_env = BatchEnv(day_data, dyn)
     act = lambda obs: agent_act(agent, obs)  # noqa: E731
@@ -165,7 +172,7 @@ def main():
         shield = MinAirBrake(dyn, a.min_brake_target, 1, 'others')
     records = []
     for update in tqdm(range(1, c.updates + 1), desc=f'darrow {a.method} seed {a.seed}', mininterval=30):
-        buf, diag = collect(agent, c, env, splits['train'], rng, shield)
+        buf, diag = collect(agent, c, env, splits['train'], rng, shield, a.intervention_cost)
         info = agent.update(buf)
         agent.update_lagrangian(diag['daily_cost_mean'])
         records.append({'update': update, 'lambda': agent.lagrangian, **diag, **info})
