@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "completed": [
+    {
+      "method": "ppo",
+      "seed": 0,
+      "exit_code": 0
+    },
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "exit_code": 0
+    },
+    {
+      "method": "fcsrl_actor",
+      "seed": 0,
+      "exit_code": 0
+    }
+  ],
+  "steps_per_run": 6080,
+  "not_main_results": true
+}
