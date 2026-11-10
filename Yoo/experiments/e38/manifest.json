@@ -1,0 +1,19 @@
+{
+  "code_commit": "a7e1e6094b8e3ef912babf7fc8c1551b12afafae",
+  "source_sha256": {
+    "history.py": "1a99789b59a43692cba4fea203c8f3834415cf06152cab8454e57b74d5175e48",
+    "run.py": "a3ee4dfaf2b7432c7aae42b9714f2333e789dd10261818e4f79bc692f789b3d8"
+  },
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e",
+    "/home/jio/fcsrl_src/results/e37/main/trajectories.npz": "4ba18664aae433a7eed9bfca07465b17a29c5172a2a6c5158031d34306349f07",
+    "/home/jio/fcsrl_src/results/e37/main/results.json": "2fef2c082c52fa1420221ae4c47bf9683da75da5656a650fc241be8d4c0a5bb9"
+  },
+  "protocol_sha256": "a24e1099fd9fccd7b62d80a8168c2a4b9e849b30cc9a63b2f0912ca09ac132a3",
+  "started_at": "2026-11-10T09:02:34.913291+00:00",
+  "elapsed_seconds": 69.97837075998541,
+  "checks_passed": true,
+  "finished_at": "2026-11-10T09:03:44.418872+00:00",
+  "candidate_sha256": "76cfb2bde6c970718448ebd66ed6b8da08253edd43475275e7b7aeb3a2280566"
+}
