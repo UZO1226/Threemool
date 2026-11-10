@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "independent_metric_checks": 258,
+  "source_models_fixed": true,
+  "matched_training_settings": true,
+  "synthetic_residual_targets_and_recorded_inputs": true,
+  "disjoint_dates": true,
+  "frozen_hashes_unchanged": true
+}

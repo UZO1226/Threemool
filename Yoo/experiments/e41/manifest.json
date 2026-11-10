@@ -1,0 +1,26 @@
+{
+  "code_commit": "2fb2b45f89c7787a47a134f2a5a6bb09e71f071b",
+  "started_at": "2026-11-10T10:17:21.692613+00:00",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e39/main/models.pkl": "fa8d0842064b85ac6c3572b0fb95390c2c4d2ca1fe0f132bd813b5717ac6333e",
+    "/home/jio/fcsrl_src/results/e39/main/predictions.npz": "89bab3638fa033764c882ed6f2f6865a71c3f210fb8b6e0e921e8432817cb2e7",
+    "/home/jio/fcsrl_src/results/e39/main/protocol.json": "790f4f5355ef4daf09b5250cda48429b1c9bc6b34e507aa6e2b6ead8fc933eb0",
+    "/home/jio/fcsrl_src/results/e39/main/manifest.json": "dd42ef0948b80325f9ef6eadee396d46f494aeb804f53dc0f7a7a7ce3c59d800",
+    "/home/jio/fcsrl_src/results/e37/main/trajectories.npz": "4ba18664aae433a7eed9bfca07465b17a29c5172a2a6c5158031d34306349f07",
+    "/home/jio/fcsrl_src/results/e37/main/results.json": "2fef2c082c52fa1420221ae4c47bf9683da75da5656a650fc241be8d4c0a5bb9",
+    "/home/jio/threemool-e41/Yoo/experiments/e38/history.py": "1a99789b59a43692cba4fea203c8f3834415cf06152cab8454e57b74d5175e48",
+    "/home/jio/threemool-e41/Yoo/experiments/e30/surrogate_dw.py": "0ab56cf780ff06f6a42443d7b90daf78eeb3906557093130dcd257648e22ad72",
+    "/home/jio/threemool-e41/Yoo/experiments/e30/darrow_env.py": "dfd47aa9e596ff92c774665b357e6a09a76b3b66648b2631a38e03590b9aa97a"
+  },
+  "protocol_sha256": "14bf690b0b0022061cc4fd2465f50657d002ca2235400dd31189533fb840d5d1",
+  "source_sha256": {
+    "experiment.py": "fcf79fd09292b9b1d840d02099ece4fed09aabe0d55c63f9089771e867fb886a",
+    "preflight.py": "7ce2276aa69dad1b04820f8a297b249a91bff05042327aacf565e90358471385"
+  },
+  "candidate_sha256_before_evaluation": "0dfe7d7d0c29db2924e7824e05e3fbdf8aa838b501437591a9063af79d287e09",
+  "training_examples_sha256": "11c16a620cc01477f5d4e4547fe2c79ddcc7b8aabfdd38afb05530b88202d840",
+  "finished_at": "2026-11-10T10:18:55.973904+00:00",
+  "elapsed_seconds": 94.37510321103036,
+  "checks_passed": true
+}
