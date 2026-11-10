@@ -7,7 +7,7 @@
 FCSRL의 dynamics/feasibility 표현 학습은 유지하고, e25와 e29에서 시험한 출력 보정의 효과를 새 데이터에서 검증한다.
 데이터, 전이 모델, 초기 운전 정책과 정규화를 새로 만들었다. 이전 데이터의 가중치를 이식하지 않는다.
 
-현재: 데이터 준비, 환경 진단, 구현 검사와 6조건 시험 실행(각 6,080전이)을 완료했다. **2026-11-10 09:22 KST 본 학습 30개를 시작했다.** 2개씩 실행 중이며 본 학습 결과는 아직 없다.
+현재: **2026-11-10 12:52:59 KST 본 학습 30개와 평가/집계를 모두 완료했다.** 각 401,280전이, 모든 종료 코드 0이다. [결과 표](results.md), [seed별 지표와 통계](summary.json). PPO 평균 비용11.45, FCSRL16.58, Actor 보정13.68, 전체 보정14.01이다. 모든 비용 대비는 Holm 보정 후 유의하지 않으며 실제 공정 안전성을 주장하지 않는다.
 본 실행 코드 커밋은 `8b1bf00`, 정확한 코드와 입력 해시는 `main/manifest.json`에 기록했다.
 실행 상태 원본: `/home/jio/fcsrl_src/results/e30/`.
 
@@ -111,10 +111,10 @@ $PY Yoo/experiments/e30/run.py --prepared "$OUT/prepared" --out "$OUT/smoke" --u
 $PY Yoo/experiments/e30/run.py --prepared "$OUT/prepared" --out "$OUT/main" --jobs 2
 ```
 
-검증과 smoke가 모두 통과해 본 실행을 시작했다. 출력 경로가 이미 있으면 덮어쓰지 않는다.
+검증과 smoke를 통과한 본 실행은 종료됐다. 출력 경로가 이미 있으면 덮어쓰지 않는다.
 실행 커밋, 코드 및 입력 해시는 `main/manifest.json`, 전체 상태는 `main/status.json`,
 각 실행 진행률과 ETA는 `main/runs/<method>/seed_<n>/progress.json`, tqdm은 `main/<method>_s<n>.log`다.
 진행률 확인: `python3 Yoo/experiments/e30/status.py /home/jio/fcsrl_src/results/e30/main`.
-종료 후 `main/results.md`, `main/summary.json`이 자동 생성된다. 실패하면 실패 로그와 상태를 남기고 대기 작업을 중단한다.
+종료 후 `main/results.md`, `main/summary.json`이 자동 생성됐다. 실패하면 실패 로그와 상태를 남기고 대기 작업을 중단한다.
 검증 범위는 원시 행동 log probability, 시간 제한 경계, terminal 공기량 보존, 모든 조건의 같은 초기 행동,
 FCSRL encoder/EMA/RNG 유지, 비활성 head 불변, 추가 PPO KL 제한, 저장/복원 및 정규화/초기 정책 고정이다.
