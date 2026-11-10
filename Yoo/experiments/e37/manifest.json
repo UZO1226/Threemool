@@ -1,0 +1,16 @@
+{
+  "code_commit": "588d0a783dc48983959a845724d055960e28ce00",
+  "script_sha256": "b7cc7aa4b6c04e6aa7fdbb8a0c3792de40519f90f4df23b9822ea890b9df79d4",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e"
+  },
+  "protocol_sha256": "c4e34a73353dd6241037a943f5b73dfa142ff42600ddd545e42cb2bca90f7b94",
+  "train_days": 188,
+  "validation_days": 40,
+  "training_performed": false,
+  "test_evaluated": false,
+  "elapsed_seconds": 5.42473223793786,
+  "checks_passed": true,
+  "finished_at": "2026-11-10T08:48:58.240998+00:00"
+}
