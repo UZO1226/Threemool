@@ -108,3 +108,5 @@ DO1/DO2/DO3 MAE도 control 0.2534/0.2784/0.1419에서 split 0.2654/0.2834/0.1586
 혼합 식/구간 범위/변화량 어댑터/단조성 합성 검사, 실제 기준 모델과 모든 저장 예측 완전 일치, NO3/DO 가중치와 한 스텝 출력 불변, 미래 실측 999 교란 불변, 모든 군 공기 단조 방향 위반 0을 확인했다. 독립 집계 502개, 전문가 결합 식, 클래스 지원, 트리 예산, 날짜 분리와 해시 검사를 통과했다. 원 모델, 자료, 후보, 실행 코드 해시를 보관하며 후속 보고/검산 소스는 source_hashes.json에 따로 기록한다.
 
 원 산출물은 `/home/jio/fcsrl_src/results/e42/main`, 로그는 `/home/jio/fcsrl_src/results/e42-main.log`다. 같은 CPU1 환경에서 `verify.py --out /home/jio/fcsrl_src/results/e42/main --source /home/jio/fcsrl_src/results/e41/main`, `report.py --out /home/jio/fcsrl_src/results/e42/main`, `decompose.py --out /home/jio/fcsrl_src/results/e42/main`으로 검산/집계/분해를 재생성할 수 있다. 사용자 정의 모델 어댑터는 같은 폴더의 regime.py를 사용한다.
+
+이번 작업 중 공통 `Compare/PROTOCOL.md` v1(PR58)이 main에 반영되어 최신 main을 병합했다. v1은 e30의 학습188일/기존 환경과 정책 비교 조건이다. e42는 그 학습 날짜를140/48로 나눈 개인 환경 진단이고 e35 DO 대응 수정 이후 모델을 사용하므로 v1 정책 성과와 직접 우열을 비교하지 않는다. 공통 문서는 수정하지 않았다.
