@@ -105,3 +105,5 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_WAIT_POLICY=PASSI
 실행 커밋, 입력/코드 해시, 상태는 runtime manifest/status와 사전 검사 기록에 남긴다. 완료 시 `report.py`가 저장된 전체 수질/공기 경로를 독립 집계하여 JSON과 표를 자동 생성한다. 아직 최종 성과 수치는 없다.
 
 사전 검사 완료: 실행8716654, 6조건 모두 통과. 조건별 전체 검사 시간은44.27/40.26/52.74/46.12/37.69/44.87초다. 이는 학습1회뿐 아니라 초기화, 저장/복원 및 train1일5모델 평가를 포함한다. 순수 학습 업데이트 시간으로 쓰지 않는다. [검사 원본](verification.json). 사전 검사 로그는 `/home/jio/fcsrl_src/results/e44/preflight.log`다. 본 실험은 이 검사 통과 후 시작한다.
+
+본 실행 시작: 2026-11-10 20:25:33 KST, 커밋 `552b5ab`. 감독 PID 2491305, 작업2개씩 총12개를 실행한다. 시작 시 PPO padded/previous seed0 두 작업을 확인했다. 최종 결과는 아직 없다. 진행 상태는 `/home/jio/fcsrl_src/results/e44/main/status.json`, 각 작업의 `progress.json`과 tqdm 로그, 전체 로그 `/home/jio/fcsrl_src/results/e44/main.log`에서 확인한다. 완료 후 같은 runtime에 results.md/comparison.json이 생성된다.
