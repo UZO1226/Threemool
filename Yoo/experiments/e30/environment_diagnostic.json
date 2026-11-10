@@ -1,0 +1,33 @@
+{
+  "split": "val",
+  "days": 40,
+  "members": 5,
+  "one_step_delta_r2": {
+    "nh4": 0.24102117232310505,
+    "no3": 0.187677748642051,
+    "do1": 0.2102098223755925,
+    "do2": 0.5076826579535025,
+    "do3": 0.12716049413970631
+  },
+  "confusion": {
+    "NH4": {
+      "recall_pct": 48.60182370820669,
+      "fpr_pct": 22.399745385105028,
+      "observed_violation_pct": 17.31578947368421,
+      "predicted_violation_pct": 26.93684210526316
+    },
+    "DO": {
+      "recall_pct": 1.3636363636363635,
+      "fpr_pct": 1.8743343982960596,
+      "observed_violation_pct": 1.1578947368421053,
+      "predicted_violation_pct": 1.868421052631579
+    }
+  },
+  "observed_daily_cost": 17.55,
+  "model_replay_daily_cost": 27.365,
+  "historical_air_m3_per_episode": 84859.75950433375,
+  "nh4_mae": 2.3825424888131965,
+  "local_monotonicity_all_members": true,
+  "test_evaluated": false,
+  "interpretation": "Conditional surrogate benchmark; no real-plant safety or savings claim."
+}
