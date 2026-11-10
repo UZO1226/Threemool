@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "calibration_operating_points_independently_verified": 4,
+  "classification_checks": 34,
+  "daily_confusion_checks": 400,
+  "source_and_frozen_input_hashes_unchanged": true,
+  "disjoint_dates": true
+}

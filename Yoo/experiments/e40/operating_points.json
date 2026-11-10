@@ -1,0 +1,49 @@
+{
+  "locked_at": "2026-11-10T10:04:30.386192+00:00",
+  "models": {
+    "base": {
+      "recall80": {
+        "threshold": 2.8874759061880892,
+        "rule": "score>=threshold",
+        "tp": 1188,
+        "fp": 7314,
+        "positives": 1485,
+        "negatives": 21315,
+        "recall_pct": 80.0,
+        "fpr_pct": 34.313863476425055
+      },
+      "fpr10": {
+        "threshold": null,
+        "rule": "never_alert",
+        "tp": 0,
+        "fp": 0,
+        "positives": 1485,
+        "negatives": 21315,
+        "recall_pct": 0.0,
+        "fpr_pct": 0.0
+      }
+    },
+    "history": {
+      "recall80": {
+        "threshold": 2.527521574436249,
+        "rule": "score>=threshold",
+        "tp": 1188,
+        "fp": 6033,
+        "positives": 1485,
+        "negatives": 21315,
+        "recall_pct": 80.0,
+        "fpr_pct": 28.304011259676283
+      },
+      "fpr10": {
+        "threshold": 3.858403996124164,
+        "rule": "score>=threshold",
+        "tp": 907,
+        "fp": 2128,
+        "positives": 1485,
+        "negatives": 21315,
+        "recall_pct": 61.07744107744108,
+        "fpr_pct": 9.983579638752053
+      }
+    }
+  }
+}

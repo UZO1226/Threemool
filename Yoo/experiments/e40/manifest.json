@@ -1,0 +1,24 @@
+{
+  "code_commit": "218e70d0e4dfa2cc399399fad361bfdd9cd59052",
+  "started_at": "2026-11-10T10:04:30.368661+00:00",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e39/main/predictions.npz": "89bab3638fa033764c882ed6f2f6865a71c3f210fb8b6e0e921e8432817cb2e7",
+    "/home/jio/fcsrl_src/results/e39/main/models.pkl": "fa8d0842064b85ac6c3572b0fb95390c2c4d2ca1fe0f132bd813b5717ac6333e",
+    "/home/jio/fcsrl_src/results/e39/main/calibrators.pkl": "48bc462b99280fb11451c4458b1e4d9985cda2443b150bc563dc02b26ca32da4",
+    "/home/jio/fcsrl_src/results/e39/main/protocol.json": "790f4f5355ef4daf09b5250cda48429b1c9bc6b34e507aa6e2b6ead8fc933eb0",
+    "/home/jio/fcsrl_src/results/e39/main/operating_points.json": "5b5f98047255d1a3f7c59c67472ad7521d1d9e2d905309504f4b5d931ef4b77f",
+    "/home/jio/fcsrl_src/results/e39/main/comparison.json": "d4cafdf5467fb4cd301f0e6e93ca79ad358e478e566d0e5bf79c7f791245a38d",
+    "/home/jio/fcsrl_src/results/e39/main/manifest.json": "dd42ef0948b80325f9ef6eadee396d46f494aeb804f53dc0f7a7a7ce3c59d800"
+  },
+  "protocol_sha256": "9310f06f87aaa9b973953299095ce583fbf7a808f671c393fe7763db0e9bf113",
+  "source_sha256": {
+    "verify.py": "038bb0c99dd3737834c6706fb7f082cf47b20af9c5c7d7aad736ac63d216aad8",
+    "report.py": "a538e9ce0f042844ea1dc50906603f3e7e5dbc3fbaa968f83f7a5f3c8eeb794b",
+    "test_threshold.py": "301340b1f004a65741d85034dee470cc9c2b3c2072a60a75c78d7e80017539d8",
+    "run.py": "81561186caa5d830aa38794a1ab923594a3ef73dee8fe222f3f82de0df3ca0f4"
+  },
+  "operating_sha256_before_validation": "f8a030e7b5d660608c3da11bf9665d2adbcc0304654ab9939275a4c31696fec8",
+  "finished_at": "2026-11-10T10:04:30.490186+00:00",
+  "elapsed_seconds": 0.1642927679931745,
+  "checks_passed": true
+}
