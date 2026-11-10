@@ -1,0 +1,28 @@
+{
+  "retrieved_at": "2026-11-10T07:29:51.882885+00:00",
+  "source_url": "https://www.kaggle.com/competitions/dynamic-modeling-of-wastewater-treatment-process/data",
+  "public_read_api": "https://www.kaggle.com/api/i/competitions.PageService/ListPages",
+  "request_json": {
+    "competitionId": 56933
+  },
+  "page_id": 250695,
+  "post_id": 18809049,
+  "raw_sources_directory": "/home/jio/fcsrl_src/results/e35/sources",
+  "source_sha256": {
+    "layout_1.png": "bc84fa7b6d99b2164c0b4976d9ac4abc518a4570cf855ca8d25d81ed83a4e345",
+    "kaggle_pages.json": "d711841eb383a39c15ad1fb7b1e7659f7e1a577346101f0cc4a9a4577e265ec2",
+    "kaggle_data_description.md": "dccb05349217336741c1db9f69e796547e254cf6e74ec0a66d4e2b071abed1ff",
+    "layout_0.png": "6d73b929197f36dc1ebf4258d400b586fa4ed0477c6e3790953473bf3b253e18"
+  },
+  "air_unit_as_documented": "m3/h",
+  "quality_unit_as_documented": "mg/L",
+  "normal_reference_conditions_specified": false,
+  "do_air_mapping": {
+    "DO_1": "Q_air_3",
+    "DO_2": "Q_air_4",
+    "DO_3": "Q_air_5"
+  },
+  "nh4_sensor_location": "end of aerobic zone, before secondary settling",
+  "dynamic_influent_is_measured_online": false,
+  "field_do_upper_limit_confirmed": false
+}
