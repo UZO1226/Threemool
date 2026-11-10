@@ -1,0 +1,91 @@
+{
+  "started_at": "2026-11-10T05:26:01.506515+00:00",
+  "pid": 2244258,
+  "code_commit": "f91571be92e90ffb00b36c586b4e2d554c7f7471",
+  "upstream_commit": "d882b91054d52c7a63a18a21f7db67bbbed82b63",
+  "python": "/home/jio/fcsrl_src/.venv/bin/python",
+  "parallel_jobs": 2,
+  "methods": [
+    "ppo",
+    "fcsrl",
+    "fcsrl_actor"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "updates": 66,
+  "steps_per_run": 401280,
+  "constraint_limits": [
+    6.0,
+    6.0
+  ],
+  "evaluation_split": "val",
+  "selection": "last",
+  "source_sha256": {
+    "Yoo/experiments/e33/verify.py": "675056ebec11852d96f76795ee60241046727666030663b9e3e77c583c6e9da8",
+    "Yoo/experiments/e33/report.py": "b41f435953714957967ddf4dab48760324dcfeaead61ff603d714b1de17ec783",
+    "Yoo/experiments/e33/dual.py": "ef3dbe5dee0b77ef7ed7f9b11a8b97afef576fb0de0b6ddbef148d1c17ffc526",
+    "Yoo/experiments/e33/feasibility_check.py": "4a9cf29efbc139aafcb6a2defcd716b79a2dac514b01835c4d532f80bbbc664d",
+    "Yoo/experiments/e33/run.py": "ae69335f8b8d703a489c49cc7f819f84d2f9d474b0bdc8e18e7c7824995f6f3f",
+    "Yoo/experiments/e33/train.py": "61f616b81e8a3cbf65e4dc43851906b9be731a0e2cd8a31a6e7e6ea28cd02c16",
+    "Yoo/code/wwtp/plot.py": "311a101c2dd7884e0d7790a65e9e4ac6a7d99a145cd039727d09ff20d7335a05",
+    "Yoo/code/wwtp/surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "Yoo/code/wwtp/ppo_tail.py": "9a1452736d03ecaf22d0f6881d7f5104b67b30a32afdd942bdfbbee2865eaf7e",
+    "Yoo/code/wwtp/agents.py": "fd7fdcd1ce691d4a9ca581f900792c5da8e4b4ca4d6fbf6437d3b98318033319",
+    "Yoo/code/wwtp/evaluate.py": "87ecbfb5420275ccee3f26c6598fed984c4c3fd66388fd72930646d8a409942a",
+    "Yoo/code/wwtp/env.py": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5",
+    "Yoo/code/wwtp/prep.py": "24c0b3cb2934bcf39e5e334a00ac7dd18c8e302abafb5edeab751a88023dab0c",
+    "Yoo/code/wwtp/ppo_lag.py": "7636d777f89ac26504193f496d489a3b91970faeac23b8ab6f28da0d58393fab",
+    "Yoo/code/wwtp/surrogate_gbm.py": "321cfc0380ba0b5f3866f7412d531d4a2c2d9d4e1a2f39f60b5bd67806fdcc56",
+    "Yoo/code/wwtp/ppo_fcsrl.py": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66",
+    "Yoo/code/wwtp/ppo_config.py": "f1f6b5b6f6d58a6d43b06c8a69e3a8a5b26d48ac89b02d28bf9f784d89a0c3b9",
+    "Yoo/code/wwtp/train.py": "385aa40bf9fded744c793d34e2b06188cbd38724de5d787a086e829e5d68e27a",
+    "Yoo/experiments/e30/common.py": "63b24868374e38d98adb56d8660cceb2487eb569d2aeceb47a302bbe6504844f",
+    "Yoo/experiments/e30/darrow_env.py": "dfd47aa9e596ff92c774665b357e6a09a76b3b66648b2631a38e03590b9aa97a",
+    "Yoo/experiments/e29/ablation.py": "8ee3bc04d400a8f63e4f53bfa186b711046d3bdbbb99d448f4c3b488e3c03bf5",
+    "Yoo/experiments/e25/preserve.py": "d3567756f82a62a752dfd675392e5ce8e141ee775c70f1bbeaa0fa10da745f8b",
+    "Yoo/experiments/e23/behavior.py": "84479718ce15703bda28ebb6d6449da5c726156d010a01b5dc220463dc2722ca"
+  },
+  "input_sha256": {
+    "normalizer.json": "c8e8281d1a2cf28c1503f69cac4579dec8a83c0473a8b157b2daeebdd71658cf",
+    "prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "surrogate.pkl": "d75cca80f7c7fadb7c8426d6954ff1ce9f0c5d292e555c9e64a4003f042d1b2c",
+    "data_manifest.json": "fc3761425faca44e84ebfd49b1e468348fdb6b6cdefe88091ae6fb17349df3ca",
+    "preparation.json": "8f980dcfff756095f318f881781ee176280360a6d03af064308f8f81f4ee2095",
+    "surrogate_fit.json": "0fb21d57f435e41f0b5d47574b9fe15deaf127b01cb7ebdff068c2be5a70f607"
+  },
+  "commands": [
+    [
+      "/home/jio/fcsrl_src/.venv/bin/python",
+      "-u",
+      "/home/jio/사물/Yoo/experiments/e33/train.py",
+      "--method",
+      "ppo",
+      "--seed",
+      "0",
+      "--updates",
+      "66",
+      "--prepared",
+      "/home/jio/fcsrl_src/results/e30/prepared",
+      "--out",
+      "/home/jio/fcsrl_src/results/e33/main/runs/ppo/seed_0"
+    ],
+    [
+      "/home/jio/fcsrl_src/.venv/bin/python",
+      "-u",
+      "/home/jio/사물/Yoo/experiments/e33/train.py",
+      "--method",
+      "fcsrl",
+      "--seed",
+      "0",
+      "--updates",
+      "66",
+      "--prepared",
+      "/home/jio/fcsrl_src/results/e30/prepared",
+      "--out",
+      "/home/jio/fcsrl_src/results/e33/main/runs/fcsrl/seed_0"
+    ]
+  ]
+}
