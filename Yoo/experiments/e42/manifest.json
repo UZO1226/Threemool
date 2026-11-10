@@ -1,0 +1,29 @@
+{
+  "code_commit": "521b55caf08dfde8924b652a3e068af8c45cc8b5",
+  "started_at": "2026-11-10T10:38:22.285517+00:00",
+  "input_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e41/main/candidate.pkl": "0dfe7d7d0c29db2924e7824e05e3fbdf8aa838b501437591a9063af79d287e09",
+    "/home/jio/fcsrl_src/results/e41/main/training_examples.npz": "11c16a620cc01477f5d4e4547fe2c79ddcc7b8aabfdd38afb05530b88202d840",
+    "/home/jio/fcsrl_src/results/e41/main/training_row_ids.npy": "d3f135542d49f04aa7be12e9a192a7d6c548a99614c341083a70636dea5a6100",
+    "/home/jio/fcsrl_src/results/e41/main/predictions.npz": "333e741a2af5facf5f9126fa35bb7bcfab52d1ba0fb58ec77e4c76ee009ce408",
+    "/home/jio/fcsrl_src/results/e41/main/comparison.json": "ab7919a5c65d32a124bb4746e7f50f37f2245aabf90f3f7d12167c8f41f3f473",
+    "/home/jio/fcsrl_src/results/e41/main/manifest.json": "bac7b60a0afd6880ec061c0d0809b4f2f29853fb4fab434ec8625de28ab78862",
+    "/home/jio/fcsrl_src/results/e37/main/trajectories.npz": "4ba18664aae433a7eed9bfca07465b17a29c5172a2a6c5158031d34306349f07",
+    "/home/jio/fcsrl_src/results/e37/main/results.json": "2fef2c082c52fa1420221ae4c47bf9683da75da5656a650fc241be8d4c0a5bb9",
+    "/home/jio/threemool-e42/Yoo/experiments/e41/experiment.py": "fcf79fd09292b9b1d840d02099ece4fed09aabe0d55c63f9089771e867fb886a",
+    "/home/jio/threemool-e42/Yoo/experiments/e38/history.py": "1a99789b59a43692cba4fea203c8f3834415cf06152cab8454e57b74d5175e48",
+    "/home/jio/threemool-e42/Yoo/experiments/e30/surrogate_dw.py": "0ab56cf780ff06f6a42443d7b90daf78eeb3906557093130dcd257648e22ad72",
+    "/home/jio/threemool-e42/Yoo/experiments/e30/darrow_env.py": "dfd47aa9e596ff92c774665b357e6a09a76b3b66648b2631a38e03590b9aa97a"
+  },
+  "source_sha256": {
+    "preflight.py": "a0ad996c85ea66a9e5953c130b4edf1636e72e06779d723ff3c8ceb32bbecf9a",
+    "regime.py": "298cf26b21637f1ec5f93428f36878d5e22c296de4e3a28812e91b5a20b0581e",
+    "run.py": "f56908a4a67244936856c6e0c8be383f6654a7b1be0157c975e90cbdba5341d4"
+  },
+  "protocol_sha256": "60fe26b91e16eb85f0d84b19b3dc6c245f2fab19a0302ee4bcf6e360d1096ecb",
+  "candidate_sha256_before_eval": "e14322b5f227006b82e9b6a908977dfb4910095bdff4bb25087d29654ed9bcd9",
+  "finished_at": "2026-11-10T10:42:14.033160+00:00",
+  "elapsed_seconds": 232.00463076494634,
+  "checks_passed": true
+}

@@ -1,0 +1,88 @@
+{
+  "posthoc_only": true,
+  "no_new_predictions_or_thresholds": true,
+  "splits": {
+    "cold": {
+      "normal": {
+        "observed_mean": 1.646006945772859,
+        "predicted_mean": 3.976127167920163,
+        "mixture_bias": 2.330120222147304,
+        "corresponding_expert_bias": 0.40624547098116703,
+        "mixture_contribution_to_bias": 1.9238747511661367,
+        "corresponding_expert_mae": 1.400912986206486,
+        "mean_g": 0.3432966271240589
+      },
+      "violation": {
+        "observed_mean": 5.798247686298045,
+        "predicted_mean": 4.989831723585004,
+        "mixture_bias": -0.8084159627130405,
+        "corresponding_expert_bias": 1.165504466005152,
+        "mixture_contribution_to_bias": -1.9739204287181926,
+        "corresponding_expert_mae": 1.966622013118315,
+        "mean_g": 0.4577366117159115
+      }
+    },
+    "holdout": {
+      "normal": {
+        "observed_mean": 1.1119999528682438,
+        "predicted_mean": 3.257921753641352,
+        "mixture_bias": 2.145921800773108,
+        "corresponding_expert_bias": 0.8453093784782154,
+        "mixture_contribution_to_bias": 1.3006124222948927,
+        "corresponding_expert_mae": 1.1870004889271968,
+        "mean_g": 0.22263254953762276
+      },
+      "violation": {
+        "observed_mean": 6.8113211960491045,
+        "predicted_mean": 6.413582300739592,
+        "mixture_bias": -0.3977388953095123,
+        "corresponding_expert_bias": 0.9616462375913445,
+        "mixture_contribution_to_bias": -1.3593851329008568,
+        "corresponding_expert_mae": 2.0915367275435264,
+        "mean_g": 0.6531645979558233
+      }
+    },
+    "warm": {
+      "normal": {
+        "observed_mean": 1.6343980935438804,
+        "predicted_mean": 3.1671753658257304,
+        "mixture_bias": 1.53277727228185,
+        "corresponding_expert_bias": 0.14295893067209237,
+        "mixture_contribution_to_bias": 1.3898183416097578,
+        "corresponding_expert_mae": 1.3338644346640163,
+        "mean_g": 0.24909978624745127
+      },
+      "violation": {
+        "observed_mean": 5.763828615931805,
+        "predicted_mean": 4.088791731118122,
+        "mixture_bias": -1.6750368848136832,
+        "corresponding_expert_bias": 0.7845191523962024,
+        "mixture_contribution_to_bias": -2.459556037209886,
+        "corresponding_expert_mae": 1.8065190848687491,
+        "mean_g": 0.33714633018590484
+      }
+    },
+    "one_step": {
+      "normal": {
+        "observed_mean": 1.646006945772859,
+        "predicted_mean": 1.7023864295414841,
+        "mixture_bias": 0.05637948376862508,
+        "corresponding_expert_bias": -0.09623037194906588,
+        "mixture_contribution_to_bias": 0.15260985571769098,
+        "corresponding_expert_mae": 0.23355132153687713,
+        "mean_g": 0.05880833570984651
+      },
+      "violation": {
+        "observed_mean": 5.798247686298045,
+        "predicted_mean": 6.328244188392253,
+        "mixture_bias": 0.5299965020942081,
+        "corresponding_expert_bias": 0.8830371823754495,
+        "mixture_contribution_to_bias": -0.35304068028124147,
+        "corresponding_expert_mae": 0.992231966910585,
+        "mean_g": 0.8493615496240309
+      }
+    }
+  },
+  "interpretation": "Truth selects an evaluation subgroup and algebraic term only, never a deployed expert. Terms sum to realized bias, but this is not a causal allocation of model error or a proof that a perfect gate is attainable.",
+  "script_sha256": "803aa7ca2c36c5bc0eda3aa31656c8cbad48d5f8e78a40e64802fbb84e34228f"
+}
