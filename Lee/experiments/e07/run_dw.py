@@ -24,7 +24,14 @@ TRAIN = ROOT / 'Lee/code/darrow/train_dw.py'
 def save(path, value):
     tmp = path.with_suffix('.tmp')
     tmp.write_text(json.dumps(value, indent=2, allow_nan=False))
-    tmp.replace(path)
+    for attempt in range(40):
+        try:
+            tmp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 39:
+                raise
+            time.sleep(0.05)
 
 
 def parse(job):

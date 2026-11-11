@@ -1,0 +1,41 @@
+{
+  "equivalence": [
+    {
+      "model": "kaggle_data\\darrow_surrogate_gbm.pkl",
+      "max_absolute_error": 0.0,
+      "rows_per_member": 3800,
+      "members": 5,
+      "mixed_members_checked": true,
+      "perturbed_input_rows": 512,
+      "100_small_batch_seconds": {
+        "sklearn": 2.245413099999496,
+        "fast": 0.15290519999871321
+      }
+    },
+    {
+      "model": "results\\e14_audit\\direct_7.pkl",
+      "max_absolute_error": 0.0,
+      "rows_per_member": 3800,
+      "members": 5,
+      "mixed_members_checked": true,
+      "perturbed_input_rows": 512,
+      "100_small_batch_seconds": {
+        "sklearn": 1.5992634000012913,
+        "fast": 0.03251039999850036
+      }
+    },
+    {
+      "model": "results\\e14_audit\\direct_15.pkl",
+      "max_absolute_error": 0.0,
+      "rows_per_member": 3800,
+      "members": 5,
+      "mixed_members_checked": true,
+      "perturbed_input_rows": 512,
+      "100_small_batch_seconds": {
+        "sklearn": 1.4029182000012952,
+        "fast": 0.05060409999896365
+      }
+    }
+  ],
+  "curriculum_checks": "passed"
+}

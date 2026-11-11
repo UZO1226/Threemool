@@ -30,7 +30,14 @@ def write_json(path, data):
     path = Path(path)
     tmp = path.with_suffix(path.suffix + '.tmp')
     tmp.write_text(json.dumps(data, indent=2, allow_nan=False))
-    tmp.replace(path)
+    for attempt in range(40):
+        try:
+            tmp.replace(path)
+            return
+        except PermissionError:
+            if attempt == 39:
+                raise
+            time.sleep(0.05)
 
 
 def prefer(candidate, best, limit):

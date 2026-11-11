@@ -35,3 +35,16 @@ Failure and energy-safety trade-offs are preserved. Five seeds are exploratory.
 Environment selection is based on prediction metrics in e14. Controller results
 only compare methods within that frozen environment, and cannot establish
 real-plant performance or isolate gains due to changing the environment.
+
+## Execution notes
+
+The first run at results/e15_runs was interrupted by Windows refusing an
+atomic progress.json replacement while the runner was reading progress.
+No completed run metrics were produced. All partial artifacts are preserved
+and excluded. Bounded retries for transient PermissionError were added to
+training and runner JSON writes. The full comparison restarts from scratch
+at results/e15_runs_retry, with unchanged learning settings and random seeds.
+
+Frozen final policies are also evaluated without retuning on the old delta
+GBM and direct 15-leaf validation simulators. These are model sensitivity
+checks, not independent real-world validation. No test dates are used.
