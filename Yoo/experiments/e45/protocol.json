@@ -1,0 +1,1058 @@
+{
+  "created_at": "2026-11-11T07:36:20.491261+00:00",
+  "code_commit": "18739678f7ebd4845f2f19b0c1a22540b1443eb1",
+  "prepared": "/home/jio/fcsrl_src/results/e30/prepared",
+  "corrected": "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl",
+  "source": "/home/jio/fcsrl_src/results/e44/main",
+  "dates": {
+    "train": [
+      "2021-05-06",
+      "2021-05-07",
+      "2021-05-08",
+      "2021-05-09",
+      "2021-05-10",
+      "2021-05-11",
+      "2021-05-12",
+      "2021-05-13",
+      "2021-05-14",
+      "2021-05-15",
+      "2021-05-16",
+      "2021-05-17",
+      "2021-05-18",
+      "2021-05-19",
+      "2021-05-20",
+      "2021-05-21",
+      "2021-05-22",
+      "2021-05-23",
+      "2021-05-24",
+      "2021-05-25",
+      "2021-05-26",
+      "2021-05-27",
+      "2021-05-28",
+      "2021-05-29",
+      "2021-05-30",
+      "2021-05-31",
+      "2021-06-01",
+      "2021-06-02",
+      "2021-06-03",
+      "2021-06-04",
+      "2021-06-05",
+      "2021-06-06",
+      "2021-06-07",
+      "2021-06-08",
+      "2021-06-09",
+      "2021-06-10",
+      "2021-06-11",
+      "2021-06-12",
+      "2021-06-13",
+      "2021-06-14",
+      "2021-06-15",
+      "2021-06-16",
+      "2021-06-17",
+      "2021-06-18",
+      "2021-06-19",
+      "2021-06-20",
+      "2021-06-21",
+      "2021-06-22",
+      "2021-06-23",
+      "2021-06-24",
+      "2021-06-25",
+      "2021-06-26",
+      "2021-06-27",
+      "2021-06-28",
+      "2021-06-29",
+      "2021-06-30",
+      "2021-07-01",
+      "2021-07-02",
+      "2021-07-03",
+      "2021-07-04",
+      "2021-07-05",
+      "2021-07-06",
+      "2021-07-07",
+      "2021-07-08",
+      "2021-07-09",
+      "2021-07-10",
+      "2021-07-11",
+      "2021-07-12",
+      "2021-07-13",
+      "2021-07-14",
+      "2021-07-15",
+      "2021-07-16",
+      "2021-07-17",
+      "2021-07-18",
+      "2021-07-19",
+      "2021-07-20",
+      "2021-07-21",
+      "2021-07-22",
+      "2021-07-23",
+      "2021-07-24",
+      "2021-07-25",
+      "2021-07-26",
+      "2021-07-27",
+      "2021-07-28",
+      "2021-07-29",
+      "2021-07-30",
+      "2021-07-31",
+      "2021-08-01",
+      "2021-08-02",
+      "2021-08-03",
+      "2021-08-04",
+      "2021-08-05",
+      "2021-08-06",
+      "2021-08-07",
+      "2021-08-08",
+      "2021-08-09",
+      "2021-08-10",
+      "2021-08-11",
+      "2021-08-12",
+      "2021-08-13",
+      "2021-08-14",
+      "2021-08-15",
+      "2021-08-16",
+      "2021-08-17",
+      "2021-08-18",
+      "2021-08-19",
+      "2021-08-20",
+      "2021-08-21",
+      "2021-08-22",
+      "2021-08-23",
+      "2021-08-24",
+      "2021-08-25",
+      "2021-08-26",
+      "2021-08-27",
+      "2021-08-28",
+      "2021-08-29",
+      "2021-08-30",
+      "2021-08-31",
+      "2021-09-01",
+      "2021-09-02",
+      "2021-09-03",
+      "2021-09-04",
+      "2021-09-05",
+      "2021-09-06",
+      "2021-09-07",
+      "2021-09-08",
+      "2021-09-09",
+      "2021-09-10",
+      "2021-09-11",
+      "2021-09-12",
+      "2021-09-13",
+      "2021-09-14",
+      "2021-09-15",
+      "2021-09-16",
+      "2021-09-17",
+      "2021-09-18",
+      "2021-09-19",
+      "2021-09-20",
+      "2021-09-21",
+      "2021-09-22",
+      "2021-09-23",
+      "2021-09-24",
+      "2021-09-25",
+      "2021-09-26",
+      "2021-09-27",
+      "2021-09-28",
+      "2021-09-29",
+      "2021-09-30",
+      "2021-10-01",
+      "2021-10-02",
+      "2021-10-03",
+      "2021-10-04",
+      "2021-10-05",
+      "2021-10-06",
+      "2021-10-07",
+      "2021-10-08",
+      "2021-10-09",
+      "2021-10-10",
+      "2021-10-11",
+      "2021-10-12",
+      "2021-10-13",
+      "2021-10-14",
+      "2021-10-15",
+      "2021-10-16",
+      "2021-10-17",
+      "2021-10-18",
+      "2021-10-19",
+      "2021-10-20",
+      "2021-10-21",
+      "2021-10-22",
+      "2021-10-23",
+      "2021-10-24",
+      "2021-10-25",
+      "2021-10-26",
+      "2021-10-27",
+      "2021-10-28",
+      "2021-10-29",
+      "2021-10-30",
+      "2021-10-31",
+      "2021-11-01",
+      "2021-11-02",
+      "2021-11-03",
+      "2021-11-04",
+      "2021-11-05",
+      "2021-11-06",
+      "2021-11-07",
+      "2021-11-08",
+      "2021-11-09"
+    ],
+    "val": [
+      "2021-11-10",
+      "2021-11-11",
+      "2021-11-12",
+      "2021-11-13",
+      "2021-11-14",
+      "2021-11-15",
+      "2021-11-16",
+      "2021-11-17",
+      "2021-11-18",
+      "2021-11-19",
+      "2021-11-20",
+      "2021-11-21",
+      "2021-11-22",
+      "2021-11-23",
+      "2021-11-24",
+      "2021-11-25",
+      "2021-11-26",
+      "2021-11-27",
+      "2021-11-28",
+      "2021-11-29",
+      "2021-11-30",
+      "2021-12-01",
+      "2021-12-02",
+      "2021-12-03",
+      "2021-12-04",
+      "2021-12-05",
+      "2021-12-06",
+      "2021-12-07",
+      "2021-12-08",
+      "2021-12-09",
+      "2021-12-10",
+      "2021-12-11",
+      "2021-12-12",
+      "2021-12-13",
+      "2021-12-14",
+      "2021-12-15",
+      "2021-12-16",
+      "2021-12-17",
+      "2021-12-18",
+      "2021-12-19"
+    ]
+  },
+  "n_members": 5,
+  "policies": [
+    {
+      "id": "ppo_padded_s0",
+      "method": "ppo",
+      "mode": "padded",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0"
+    },
+    {
+      "id": "ppo_padded_s1",
+      "method": "ppo",
+      "mode": "padded",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1"
+    },
+    {
+      "id": "ppo_previous_s0",
+      "method": "ppo",
+      "mode": "previous",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0"
+    },
+    {
+      "id": "ppo_previous_s1",
+      "method": "ppo",
+      "mode": "previous",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1"
+    },
+    {
+      "id": "fcsrl_padded_s0",
+      "method": "fcsrl",
+      "mode": "padded",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0"
+    },
+    {
+      "id": "fcsrl_padded_s1",
+      "method": "fcsrl",
+      "mode": "padded",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1"
+    },
+    {
+      "id": "fcsrl_previous_s0",
+      "method": "fcsrl",
+      "mode": "previous",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0"
+    },
+    {
+      "id": "fcsrl_previous_s1",
+      "method": "fcsrl",
+      "mode": "previous",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1"
+    },
+    {
+      "id": "fcsrl_actor_padded_s0",
+      "method": "fcsrl_actor",
+      "mode": "padded",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0"
+    },
+    {
+      "id": "fcsrl_actor_padded_s1",
+      "method": "fcsrl_actor",
+      "mode": "padded",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1"
+    },
+    {
+      "id": "fcsrl_actor_previous_s0",
+      "method": "fcsrl_actor",
+      "mode": "previous",
+      "seed": 0,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0"
+    },
+    {
+      "id": "fcsrl_actor_previous_s1",
+      "method": "fcsrl_actor",
+      "mode": "previous",
+      "seed": 1,
+      "path": "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1"
+    }
+  ],
+  "jobs": [
+    {
+      "policy": "ppo_padded_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "ppo_padded_s0_val_det"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "ppo_padded_s0_val_45001"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "ppo_padded_s0_val_45002"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "ppo_padded_s0_val_45003"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "ppo_padded_s0_train_det"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "ppo_padded_s0_train_45001"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "ppo_padded_s0_train_45002"
+    },
+    {
+      "policy": "ppo_padded_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "ppo_padded_s0_train_45003"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "ppo_padded_s1_val_det"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "ppo_padded_s1_val_45001"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "ppo_padded_s1_val_45002"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "ppo_padded_s1_val_45003"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "ppo_padded_s1_train_det"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "ppo_padded_s1_train_45001"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "ppo_padded_s1_train_45002"
+    },
+    {
+      "policy": "ppo_padded_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "ppo_padded_s1_train_45003"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "ppo_previous_s0_val_det"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "ppo_previous_s0_val_45001"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "ppo_previous_s0_val_45002"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "ppo_previous_s0_val_45003"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "ppo_previous_s0_train_det"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "ppo_previous_s0_train_45001"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "ppo_previous_s0_train_45002"
+    },
+    {
+      "policy": "ppo_previous_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "ppo_previous_s0_train_45003"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "ppo_previous_s1_val_det"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "ppo_previous_s1_val_45001"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "ppo_previous_s1_val_45002"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "ppo_previous_s1_val_45003"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "ppo_previous_s1_train_det"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "ppo_previous_s1_train_45001"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "ppo_previous_s1_train_45002"
+    },
+    {
+      "policy": "ppo_previous_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "ppo_previous_s1_train_45003"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_padded_s0_val_det"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_padded_s0_val_45001"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_padded_s0_val_45002"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_padded_s0_val_45003"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_padded_s0_train_det"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_padded_s0_train_45001"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_padded_s0_train_45002"
+    },
+    {
+      "policy": "fcsrl_padded_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_padded_s0_train_45003"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_padded_s1_val_det"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_padded_s1_val_45001"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_padded_s1_val_45002"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_padded_s1_val_45003"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_padded_s1_train_det"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_padded_s1_train_45001"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_padded_s1_train_45002"
+    },
+    {
+      "policy": "fcsrl_padded_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_padded_s1_train_45003"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_previous_s0_val_det"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_previous_s0_val_45001"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_previous_s0_val_45002"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_previous_s0_val_45003"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_previous_s0_train_det"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_previous_s0_train_45001"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_previous_s0_train_45002"
+    },
+    {
+      "policy": "fcsrl_previous_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_previous_s0_train_45003"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_previous_s1_val_det"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_previous_s1_val_45001"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_previous_s1_val_45002"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_previous_s1_val_45003"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_previous_s1_train_det"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_previous_s1_train_45001"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_previous_s1_train_45002"
+    },
+    {
+      "policy": "fcsrl_previous_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_previous_s1_train_45003"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_actor_padded_s0_val_det"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_actor_padded_s0_val_45001"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_actor_padded_s0_val_45002"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_actor_padded_s0_val_45003"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_actor_padded_s0_train_det"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_actor_padded_s0_train_45001"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_actor_padded_s0_train_45002"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_actor_padded_s0_train_45003"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_actor_padded_s1_val_det"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_actor_padded_s1_val_45001"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_actor_padded_s1_val_45002"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_actor_padded_s1_val_45003"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_actor_padded_s1_train_det"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_actor_padded_s1_train_45001"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_actor_padded_s1_train_45002"
+    },
+    {
+      "policy": "fcsrl_actor_padded_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_actor_padded_s1_train_45003"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_actor_previous_s0_val_det"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_actor_previous_s0_val_45001"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_actor_previous_s0_val_45002"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_actor_previous_s0_val_45003"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_actor_previous_s0_train_det"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_actor_previous_s0_train_45001"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_actor_previous_s0_train_45002"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s0",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_actor_previous_s0_train_45003"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "val",
+      "repeat": null,
+      "id": "fcsrl_actor_previous_s1_val_det"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "val",
+      "repeat": 45001,
+      "id": "fcsrl_actor_previous_s1_val_45001"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "val",
+      "repeat": 45002,
+      "id": "fcsrl_actor_previous_s1_val_45002"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "val",
+      "repeat": 45003,
+      "id": "fcsrl_actor_previous_s1_val_45003"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "train",
+      "repeat": null,
+      "id": "fcsrl_actor_previous_s1_train_det"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "train",
+      "repeat": 45001,
+      "id": "fcsrl_actor_previous_s1_train_45001"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "train",
+      "repeat": 45002,
+      "id": "fcsrl_actor_previous_s1_train_45002"
+    },
+    {
+      "policy": "fcsrl_actor_previous_s1",
+      "split": "train",
+      "repeat": 45003,
+      "id": "fcsrl_actor_previous_s1_train_45003"
+    }
+  ],
+  "repetitions": [
+    45001,
+    45002,
+    45003
+  ],
+  "input_and_source_sha256": {
+    "/home/jio/threemool-e45/Yoo/experiments/e44/report.py": "0f9141262dd4983f14ebfc77fe0a5f808c74a9c4dfecf8898cc8fcb367789243",
+    "/home/jio/threemool-e45/Yoo/experiments/e44/preflight.py": "9f899bfd99dcfc93c697775d61cd4faba6b0a57785a8e2f9af3dc8b49f90b1d8",
+    "/home/jio/threemool-e45/Yoo/experiments/e44/command.py": "d656bc72fadeda3c075337b3ed73074a55a553ec363a7f2600790f0d6ac6fb8a",
+    "/home/jio/threemool-e45/Yoo/experiments/e44/run.py": "3b32e895eaf382a5cc2c19b2c60871b7cdcc6f0b42d356b578aa1172e5df80db",
+    "/home/jio/threemool-e45/Yoo/experiments/e44/train.py": "bf055babf02216156259bb3358d29febe2c0ff510b94cea16636129a8fdbd3db",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/plot.py": "311a101c2dd7884e0d7790a65e9e4ac6a7d99a145cd039727d09ff20d7335a05",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/ppo_tail.py": "9a1452736d03ecaf22d0f6881d7f5104b67b30a32afdd942bdfbbee2865eaf7e",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/agents.py": "fd7fdcd1ce691d4a9ca581f900792c5da8e4b4ca4d6fbf6437d3b98318033319",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/evaluate.py": "87ecbfb5420275ccee3f26c6598fed984c4c3fd66388fd72930646d8a409942a",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/env.py": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/prep.py": "24c0b3cb2934bcf39e5e334a00ac7dd18c8e302abafb5edeab751a88023dab0c",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/ppo_lag.py": "7636d777f89ac26504193f496d489a3b91970faeac23b8ab6f28da0d58393fab",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/surrogate_gbm.py": "321cfc0380ba0b5f3866f7412d531d4a2c2d9d4e1a2f39f60b5bd67806fdcc56",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/ppo_fcsrl.py": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/ppo_config.py": "f1f6b5b6f6d58a6d43b06c8a69e3a8a5b26d48ac89b02d28bf9f784d89a0c3b9",
+    "/home/jio/threemool-e45/Yoo/code/wwtp/train.py": "385aa40bf9fded744c793d34e2b06188cbd38724de5d787a086e829e5d68e27a",
+    "/home/jio/threemool-e45/Yoo/experiments/e30/common.py": "63b24868374e38d98adb56d8660cceb2487eb569d2aeceb47a302bbe6504844f",
+    "/home/jio/threemool-e45/Yoo/experiments/e30/darrow_env.py": "dfd47aa9e596ff92c774665b357e6a09a76b3b66648b2631a38e03590b9aa97a",
+    "/home/jio/threemool-e45/Yoo/experiments/e29/ablation.py": "8ee3bc04d400a8f63e4f53bfa186b711046d3bdbbb99d448f4c3b488e3c03bf5",
+    "/home/jio/threemool-e45/Yoo/experiments/e25/preserve.py": "d3567756f82a62a752dfd675392e5ce8e141ee775c70f1bbeaa0fa10da745f8b",
+    "/home/jio/threemool-e45/Yoo/experiments/e23/behavior.py": "84479718ce15703bda28ebb6d6449da5c726156d010a01b5dc220463dc2722ca",
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e30/prepared/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e30/prepared/normalizer.json": "c8e8281d1a2cf28c1503f69cac4579dec8a83c0473a8b157b2daeebdd71658cf",
+    "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e",
+    "/home/jio/threemool-e45/Yoo/experiments/e45/evaluate.py": "81e473f522cee45737d7b54853f2859f28b8c90c267dd8665014a4108c0c82da",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/model_final/constraints.json": "5e3f2ebf02f415cd0ce62b66ed1bbfd60f83e4a0d215f1f470c281cb4064413a",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/model_final/model.pt": "7459ee5b3f82fba93d1ca0d4c20b35c33f145b1c61780a086d9e1a29eb958c6b",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/val_rollout.npz": "40b20228be9fea0e45369184510253da77b1f1af7e915503c47f07adb6f1314f",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/metrics.json": "bc77d82d837ebb3e82199025ddfd05b86d66cd13f20b5665c9469eb43a9e2bc2",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/effective_config.json": "34c9843242411efdc277b214b84c64d07a0e2020d548ac7f67cb19e297b48f4b",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/model_final/constraints.json": "f4631a834a6c287ededc5f02685763d167f1b6ffcbb389334873f61de3f2c1fb",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/model_final/model.pt": "dc1389b270b4ab5b2be563b9091c65967718203a0bd3cf3fe9202fe75cbd4cbe",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/val_rollout.npz": "98b52fc776e6491d18be8ca68d2b2741fa01fab8de532accefa24ca72ccce045",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/metrics.json": "329cdbbc07bbf7049ec650f2ebb5265e4285315a10e2892bd91d6b5d4941b221",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/effective_config.json": "c73f7ac4743217ec3207a109a4712e5fb6650438e7f9a8dd04a08cdc7e9212e1",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/model_final/constraints.json": "e0d6a01e8947cbf8e75dac9b6de3c5fafacdcaeeb3dc6765f3ad298c2dc92384",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/model_final/model.pt": "dfd601f2eaf926c1db397d60e662c782fc14b4e05ce2c9e2d1f193db4a14ad41",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/val_rollout.npz": "eb58723eaaf5015755723c3f6c4805edbe66817c88e6d624a809e9905347ff9c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/metrics.json": "654c3af29e28718856cfd6919519e3911b71d373c72faadac3147771b551db65",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/effective_config.json": "53c52ddb7ddec0109dc6f5230c8080382b71c119c41e262ad4932e01aada3f94",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/model_final/constraints.json": "20285bf6827ed62ad33f0756cc17a35ada902f3853c4869e84e0d2a214d9ce8e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/model_final/model.pt": "cb2864b91d0e3110fdf4e1b7f7627c26da0f6098ba893880e814de3ded9c94f9",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/val_rollout.npz": "fa228d6481de586caf1d47663606e35c9db271adb0b4772205b037d4f94c39c1",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/metrics.json": "6238e5b2c2c5cc6596ee58f10fa5bbee88f74221fd95cb1660a90275a4d9bf26",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/effective_config.json": "410b86725dcdb4a198eb55df0c81857b5039b7301ef2aa3e1877d8140fb4abdf",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/constraints.json": "0164943f559c162793dcb5c0d8885b34911c794da98d7822619d2b417234fb44",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/model.pt": "6ca2c0962c9a2a49c8b3a256e57280256ba9b4ca84dd4a58211ad0eebcecdf5c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/model_final/representation.pt": "7b7cd5fef6948cb820eebb9ef6ae6a2c59003a2c02b525d965929cf2dadd211d",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/val_rollout.npz": "81869998742afd747826ea5d0d62d7a2ead08dfad879498f9cc1377cf71d8a09",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/metrics.json": "646e2a390d038b350f3dca8e4721f591d02af4b3daafa263e0a66c5dff6ddf2b",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/effective_config.json": "a38f9967c80467d20c1c3031de81b170a4fd079b7cde26c8842ee38c48f186c1",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/constraints.json": "fcab382345bd0810deb1b60cc2283a4a17648cdbff1ae2863f0d47b8dc422fe4",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/model.pt": "8a5cc7e8504b6b174230430b5e587fd7687abcdc2384411773367348e13655dd",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/model_final/representation.pt": "7ba9835bcdb111282e41a7d3c515bf75189d6edbfb404cfbac684753806ffff4",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/val_rollout.npz": "44a4b4b14e2117f19b2359eca89753440f922ec3e2c26d391efb56a851a84008",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/metrics.json": "84758f5c578ba69b4590f29f7402aedf56f5cf4fd22e53dbfd98614f8b3274ec",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/effective_config.json": "f6eed5f21293aa3cc50a652d347da200773c09e7c9d73268a9f680c90ea351cd",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/constraints.json": "7b29052c8691c0b898078dd3243a4908f6f813ab3f7b343f51567fd4b15aebbd",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/model.pt": "e577a95b8aa2171e24de84bd9eb658fcde415baaaa927b824ebfd3a903b6004b",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/model_final/representation.pt": "8a24adf1b8788a7471343db910430d0f4e0430a51384ed176457d50e40608c44",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/val_rollout.npz": "8817fae5fd29a0aaa136b5f478bcf1a7cb8fd5e7dd228a8f25ef6ad63a6d4106",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/metrics.json": "acce782fe3c05e675319ff55d235d084f26510ac2f1ad2297cbbebd15c85362c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/effective_config.json": "821ba6bafb8175a4aab594881836c03195f6432c0c7029a2eb2b4010853c9d70",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/constraints.json": "727f6bb7a71a7c8506a453651bcc930ae9814e140ea7fd6df5e697bf8c757e58",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/model.pt": "862fd567970ef21eca19f3e6a317010923e5a7c5bc8a805cf3fe0cd791dcbca6",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/model_final/representation.pt": "8ae0aeda5c99f186d1094f7caf0477509ff23294a05e6dcd4e9df471dec6dfa9",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/val_rollout.npz": "f3a46fe83ba9bca014a23144980b7a330bc946d209a05933d72d840b4cc22c57",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/metrics.json": "26a3c008d713dc9a311cc2f82fff7725e22564752718428d92008e13f4852179",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/effective_config.json": "7836cdd7dc79eca7ad705ff5b60658ec3e48652528ad5d5d817cddfecd80e3b4",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/constraints.json": "4f048c942abb1b77dfe2c9517ee7edd5b2c3cf535cee878d14e9bab29ba9a9a0",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/model.pt": "a5c8769b74ff464d4710a0668472baab95488bdc04c809ce04a21aa533c17675",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/model_final/representation.pt": "2e52340dceed4f19ae41446b426a552bfca7d3dca78f1c8ead4d172a4bf966b3",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/val_rollout.npz": "0133749a5c72b6e600176dcfd4d3c038a80f53005062223ffe5f841d482214ad",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/metrics.json": "1ea6306b3ef7dd96e54c68233fceb96ddc20e74acef4002e387c0cc3a37fecb2",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/effective_config.json": "3bca0ed046eafd72d75e221e0dfdfccdaf90049e63818c623b280a93fa12c2f9",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/constraints.json": "040c7f7f3a64ed805420d0a1127a4a48ac286ac32a3b1a07424332da8fdbb10a",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/model.pt": "7420b886540645eea487d5b0ff8139116c5f6173ea542709873e46461a4e1cb7",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/model_final/representation.pt": "6acb6eb71c1d18119b9cd5b71f121234c844a4442eca4bd9c537478b69276407",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/val_rollout.npz": "f59138a8c116a4691341a1820749ca16daf698a771c8a99d9691f9a3fc35a130",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/metrics.json": "54a4ca55af5aab94c3250c2715569093bfe0e65db293c31ac56a718c8d081c5c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/effective_config.json": "784bd6b712044d093a887f44b1ec1914b47b1adc7d6e73796c13b57f13275373",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/constraints.json": "e2b6689a7e834715e2288d12e4ae5715ad28b10ba917c3d867970fdd1aad5ab5",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/model.pt": "e44d7e3cbf4b8353d7b3cb53d6eb831f7a19b36f566a80e9938e1903abb3a58a",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/model_final/representation.pt": "9193afb674900d78273f706c5892214836aa08e60edc1fbc97e0a654c18a7fd1",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/val_rollout.npz": "25090fa651da3d2a3d640fe7d696c6fe827fb28367b0200f45ab56310026acc9",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/metrics.json": "173bc8df9d325752bd345b846695950899930206deec98eba4e4dfe149d2739c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/effective_config.json": "0b36a19f6521aaf49b5bbb3d51d918b60a74b22846e4b9a19bf4631c442275b2",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/constraints.json": "0fe85d5df68ce42e82f8eff2969e5e83059a4feba5e57f46bdff5009d80a3060",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/model.pt": "046eb90187b0b33a9f76f224401453e63f51e3a12a653223f2757963d9734231",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/normalizer.json": "e0c2e0c29b4a840172373c56c8bdc40358d17f49890c0056e3212feb319b06ba",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/model_final/representation.pt": "885bfb7814e8071fe995696163976f5ec82022c40af4798e8170da82879be914",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/val_rollout.npz": "a148b32b431233ccf6c94a82a4d3dea84bfa6fd7173e3a39b3968eb00d10ff18",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/metrics.json": "a5b899ba909bd8a760d5002c21288c880deffc06755e9182b7f7a93626ab8e2c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/effective_config.json": "1f9b7e9fdcc9d0b7af80f4145b8b0f08da9a8ee8a46ced1a4ae65ca56a19dc6a"
+  },
+  "test_evaluated": false,
+  "weight_updates": 0,
+  "costs": "NH4>4; max(DO)>2; 95 post-transition samples; limits 6/6",
+  "air_unit": "m3/23.75h",
+  "selection": "all twelve e44 final checkpoints",
+  "randomness": "SHA256(repeat,day,member) seeded standard Gaussian; common across policies"
+}
