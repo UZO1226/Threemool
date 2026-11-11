@@ -1,0 +1,298 @@
+{
+  "status": {
+    "phase": "complete",
+    "completed": [
+      {
+        "method": "ppo",
+        "mode": "padded",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "ppo",
+        "mode": "previous",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl",
+        "mode": "padded",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl",
+        "mode": "previous",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl_actor",
+        "mode": "padded",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl_actor",
+        "mode": "previous",
+        "seed": 0,
+        "exit_code": 0
+      },
+      {
+        "method": "ppo",
+        "mode": "previous",
+        "seed": 1,
+        "exit_code": 0
+      },
+      {
+        "method": "ppo",
+        "mode": "padded",
+        "seed": 1,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl",
+        "mode": "previous",
+        "seed": 1,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl",
+        "mode": "padded",
+        "seed": 1,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl_actor",
+        "mode": "previous",
+        "seed": 1,
+        "exit_code": 0
+      },
+      {
+        "method": "fcsrl_actor",
+        "mode": "padded",
+        "seed": 1,
+        "exit_code": 0
+      }
+    ],
+    "pending": [],
+    "running": [],
+    "updated_at": "2026-11-10T13:02:29.967283+00:00"
+  },
+  "means": {
+    "ppo/padded": {
+      "air_m3": 85432.44795421197,
+      "nh4_cost": 6.735,
+      "do_cost": 1.4975,
+      "nh4_excess_mg_h_L": 3.8949770260719028,
+      "worst_day_nh4_cost": 45.1
+    },
+    "ppo/previous": {
+      "air_m3": 83175.46320956462,
+      "nh4_cost": 7.0175,
+      "do_cost": 1.6749999999999998,
+      "nh4_excess_mg_h_L": 4.038394250688864,
+      "worst_day_nh4_cost": 44.8
+    },
+    "fcsrl/padded": {
+      "air_m3": 82488.53648865712,
+      "nh4_cost": 17.2275,
+      "do_cost": 0.995,
+      "nh4_excess_mg_h_L": 6.579444282570253,
+      "worst_day_nh4_cost": 55.0
+    },
+    "fcsrl/previous": {
+      "air_m3": 81242.79343346396,
+      "nh4_cost": 11.855,
+      "do_cost": 0.7975,
+      "nh4_excess_mg_h_L": 6.378043609782052,
+      "worst_day_nh4_cost": 67.1
+    },
+    "fcsrl_actor/padded": {
+      "air_m3": 80492.26879308117,
+      "nh4_cost": 10.822500000000002,
+      "do_cost": 0.9525,
+      "nh4_excess_mg_h_L": 7.835052234474363,
+      "worst_day_nh4_cost": 73.6
+    },
+    "fcsrl_actor/previous": {
+      "air_m3": 78101.26672579354,
+      "nh4_cost": 15.649999999999999,
+      "do_cost": 0.7975,
+      "nh4_excess_mg_h_L": 11.542492564823768,
+      "worst_day_nh4_cost": 86.1
+    }
+  },
+  "training_log_diagnostic": {
+    "runs/fcsrl/padded/seed_0": {
+      "last": {
+        "lambda_nh4": 0.08882812500000001,
+        "lambda_do": 0.0,
+        "nh4_cost": 5.84375,
+        "do_cost": 0.609375,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.6253124999999999
+    },
+    "runs/fcsrl/padded/seed_1": {
+      "last": {
+        "lambda_nh4": 0.12078124999999999,
+        "lambda_do": 0.0,
+        "nh4_cost": 5.703125,
+        "do_cost": 1.09375,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.5491406249999999
+    },
+    "runs/fcsrl/previous/seed_0": {
+      "last": {
+        "lambda_nh4": 0.205625,
+        "lambda_do": 0.0,
+        "nh4_cost": 7.703125,
+        "do_cost": 0.671875,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.60484375
+    },
+    "runs/fcsrl/previous/seed_1": {
+      "last": {
+        "lambda_nh4": 0.0,
+        "lambda_do": 0.0,
+        "nh4_cost": 5.59375,
+        "do_cost": 1.578125,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.5956250000000001
+    },
+    "runs/fcsrl_actor/padded/seed_0": {
+      "last": {
+        "lambda_nh4": 0.05421875,
+        "lambda_do": 0.0,
+        "nh4_cost": 6.921875,
+        "do_cost": 0.65625,
+        "preserve_accepted": 1.0
+      },
+      "max_lambda_nh4": 0.59859375
+    },
+    "runs/fcsrl_actor/padded/seed_1": {
+      "last": {
+        "lambda_nh4": 0.194609375,
+        "lambda_do": 0.0,
+        "nh4_cost": 3.8125,
+        "do_cost": 0.90625,
+        "preserve_accepted": 1.0
+      },
+      "max_lambda_nh4": 0.5900000000000001
+    },
+    "runs/fcsrl_actor/previous/seed_0": {
+      "last": {
+        "lambda_nh4": 0.14453125,
+        "lambda_do": 0.0,
+        "nh4_cost": 6.9375,
+        "do_cost": 0.78125,
+        "preserve_accepted": 1.0
+      },
+      "max_lambda_nh4": 0.597109375
+    },
+    "runs/fcsrl_actor/previous/seed_1": {
+      "last": {
+        "lambda_nh4": 0.23843749999999997,
+        "lambda_do": 0.0,
+        "nh4_cost": 3.296875,
+        "do_cost": 0.75,
+        "preserve_accepted": 1.0
+      },
+      "max_lambda_nh4": 0.64515625
+    },
+    "runs/ppo/padded/seed_0": {
+      "last": {
+        "lambda_nh4": 0.1396875,
+        "lambda_do": 0.0,
+        "nh4_cost": 7.25,
+        "do_cost": 0.6875,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.55765625
+    },
+    "runs/ppo/padded/seed_1": {
+      "last": {
+        "lambda_nh4": 0.13749999999999998,
+        "lambda_do": 0.0,
+        "nh4_cost": 3.484375,
+        "do_cost": 0.890625,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.474609375
+    },
+    "runs/ppo/previous/seed_0": {
+      "last": {
+        "lambda_nh4": 0.206484375,
+        "lambda_do": 0.0,
+        "nh4_cost": 8.3125,
+        "do_cost": 0.75,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.560390625
+    },
+    "runs/ppo/previous/seed_1": {
+      "last": {
+        "lambda_nh4": 0.192109375,
+        "lambda_do": 0.0,
+        "nh4_cost": 2.921875,
+        "do_cost": 1.015625,
+        "preserve_accepted": null
+      },
+      "max_lambda_nh4": 0.4990625
+    }
+  },
+  "sha256": {
+    "/home/jio/fcsrl_src/results/e44/main/status.json": "aba54ac66b87b6abda9ad79fafba1c15a00ffae0317e6f93b1f9c8f7dc0b5b80",
+    "/home/jio/fcsrl_src/results/e44/main/manifest.json": "8ef4f3db3c55ccc33542522c394fd9c6da7bb38e5ebaf2ead8688aff3a1f9fba",
+    "/home/jio/fcsrl_src/results/e44/main/comparison.json": "ef5adf15c7a28f677c12ebe83bfa9ed271b3d342fc75c4e35918bc1da97c1ede",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/train_log.json": "2262e52821674e4dc7d283372c1bdaad336facb780db340f743bd441bc67a1cf",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/train_log.json": "29d61ea6a8c56e1c260bc5462913b1429c5948ad66b2f659f2dc4296059525f3",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/train_log.json": "0cd9845534ad489d376dbc48b0ddb2a59cc8028448dc4c3bae1df1cbd0a5694d",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/train_log.json": "95649214e3ac8ca32ce12aae5287bba6b98f219cf2998b8ec9f6ee2724246328",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/train_log.json": "ddeb1c87a7139159f055a97d23eabbced878e197430559cc6a5e5b261ebf9a00",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/train_log.json": "30724ed1ebe1769a06ff156eceaf3ee82d657f8ecf766e0385f2943b608fc121",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/train_log.json": "9a315af51377e2e50e9a02f0efe5c550f0658182ceac2e29e1cd5a21d723475d",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/train_log.json": "3f4c3d4f87ae88578825b15954a31799822eaa736fea0bb0d50d9c1b84a9ee63",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/train_log.json": "6a05334a8170201e8c04b4f08e14b4134978c01836d6ec5e2aac1c154fc5cb09",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/train_log.json": "a4018c2a74a0bae528cfc7ad35f80c5a440a5d2f43588acff828522069117347",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/train_log.json": "47d56f507b168dcfd0b87c24a3e79239a0b43fa4fc3ce766cec65236c65384e4",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/train_log.json": "7074e9538c76a056c4820cb88eadf1fc5c37bbf668536b829128e7ab960042fd",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/metrics.json": "173bc8df9d325752bd345b846695950899930206deec98eba4e4dfe149d2739c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/metrics.json": "a5b899ba909bd8a760d5002c21288c880deffc06755e9182b7f7a93626ab8e2c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/metrics.json": "1ea6306b3ef7dd96e54c68233fceb96ddc20e74acef4002e387c0cc3a37fecb2",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/metrics.json": "54a4ca55af5aab94c3250c2715569093bfe0e65db293c31ac56a718c8d081c5c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/metrics.json": "654c3af29e28718856cfd6919519e3911b71d373c72faadac3147771b551db65",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/metrics.json": "6238e5b2c2c5cc6596ee58f10fa5bbee88f74221fd95cb1660a90275a4d9bf26",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/metrics.json": "bc77d82d837ebb3e82199025ddfd05b86d66cd13f20b5665c9469eb43a9e2bc2",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/metrics.json": "329cdbbc07bbf7049ec650f2ebb5265e4285315a10e2892bd91d6b5d4941b221",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/metrics.json": "acce782fe3c05e675319ff55d235d084f26510ac2f1ad2297cbbebd15c85362c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/metrics.json": "26a3c008d713dc9a311cc2f82fff7725e22564752718428d92008e13f4852179",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/metrics.json": "646e2a390d038b350f3dca8e4721f591d02af4b3daafa263e0a66c5dff6ddf2b",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/metrics.json": "84758f5c578ba69b4590f29f7402aedf56f5cf4fd22e53dbfd98614f8b3274ec",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_0/val_rollout.npz": "25090fa651da3d2a3d640fe7d696c6fe827fb28367b0200f45ab56310026acc9",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/previous/seed_1/val_rollout.npz": "a148b32b431233ccf6c94a82a4d3dea84bfa6fd7173e3a39b3968eb00d10ff18",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_0/val_rollout.npz": "0133749a5c72b6e600176dcfd4d3c038a80f53005062223ffe5f841d482214ad",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl_actor/padded/seed_1/val_rollout.npz": "f59138a8c116a4691341a1820749ca16daf698a771c8a99d9691f9a3fc35a130",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_0/val_rollout.npz": "eb58723eaaf5015755723c3f6c4805edbe66817c88e6d624a809e9905347ff9c",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/previous/seed_1/val_rollout.npz": "fa228d6481de586caf1d47663606e35c9db271adb0b4772205b037d4f94c39c1",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_0/val_rollout.npz": "40b20228be9fea0e45369184510253da77b1f1af7e915503c47f07adb6f1314f",
+    "/home/jio/fcsrl_src/results/e44/main/runs/ppo/padded/seed_1/val_rollout.npz": "98b52fc776e6491d18be8ca68d2b2741fa01fab8de532accefa24ca72ccce045",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_0/val_rollout.npz": "8817fae5fd29a0aaa136b5f478bcf1a7cb8fd5e7dd228a8f25ef6ad63a6d4106",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/previous/seed_1/val_rollout.npz": "f3a46fe83ba9bca014a23144980b7a330bc946d209a05933d72d840b4cc22c57",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_0/val_rollout.npz": "81869998742afd747826ea5d0d62d7a2ead08dfad879498f9cc1377cf71d8a09",
+    "/home/jio/fcsrl_src/results/e44/main/runs/fcsrl/padded/seed_1/val_rollout.npz": "44a4b4b14e2117f19b2359eca89753440f922ec3e2c26d391efb56a851a84008"
+  },
+  "verification": {
+    "independent_metric_checks": 120,
+    "source_hashes": 22,
+    "input_hashes": 4,
+    "preflight_hash": true,
+    "all_12_steps_401280": true
+  },
+  "adopted": false,
+  "new_training_started": false
+}
