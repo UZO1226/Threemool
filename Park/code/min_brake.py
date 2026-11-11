@@ -32,6 +32,11 @@ Park/e16 의 두 가지 (trim=True 와 함께 쓴다).
 - do_limit: trim 이 공기량을 내릴 때 쓰는 예측 DO 기준 (기본 2). 2 보다 작게 두면 예측 오차로 DO 가 넘는 것을 줄인다
 - futile=True: 공기량 9,000 에서도 예측 NH4 (다른 구성원 평균) 가 4 를 넘어 다음 스텝 NH4 위반을 못 막는데 차단이
   공기량을 올린 경우, 정책 공기량 이상에서 예측 DO <= 2 인 가장 큰 격자 값까지만 올린다 (없으면 정책 공기량)
+
+recover=(H, lim) (Park/e17) 이면 회복 가능성 검사를 더한다. 격자 후보마다 지금은 그 공기량, 그 뒤 H-1 스텝은 9,000 으로
+H 스텝을 굴려 (다른 구성원 평균, 외부 입력 지속 예측) 2 ~ H 스텝의 예측 NH4 최댓값 <= lim 인 가장 작은 후보 rr 을 구한다.
+required_air 는 max(r, rr) 이다. 지금 공기를 아끼면 나중에 최대 공기로도 NH4 를 못 되돌리는 연쇄 위반을 미리 막는 것이다.
+9,000 으로도 회복이 안 되는 에피소드는 rr = r 로 둔다 (헛수고를 하지 않는다)
 """
 import numpy as np
 
@@ -44,7 +49,7 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
-                 do_limit=DO_MAX, futile=False):
+                 do_limit=DO_MAX, futile=False, recover=None):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -56,6 +61,8 @@ class MinAirBrake:
         self.do_limit, self.futile = float(do_limit), bool(futile)
         assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
         assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
+        self.recover = None if recover is None else (int(recover[0]), float(recover[1]))
+        assert self.recover is None or self.recover[0] >= 2, 'recover 의 H 는 2 이상'
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -110,7 +117,33 @@ class MinAirBrake:
             margin = np.where(sigma < upper, m, margin)
         return (mu + margin <= NH4_MAX).reshape(N, K)
 
+    def _recover_air(self, obs, env):
+        """회복 가능한 가장 작은 격자 공기량 (N,). 회복 불가면 nan."""
+        H, lim = self.recover
+        t, N, K = env.t, len(obs), len(self.grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
+        exo, frac, zone_prev, member = rep(env.x['exo'][:, t]), rep(env.x['frac'][:, t]), rep(env.prev_zone), rep(env.member)
+        worst = np.full(N * K, -np.inf)
+        for h in range(H):
+            air = np.tile(self.grid, N) if h == 0 else np.full(N * K, AIR_MAX)
+            zone = air[:, None] * frac
+            x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
+            state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
+            zone_prev = zone
+            if h >= 1:
+                worst = np.maximum(worst, state[:, 0])
+        ok = (worst <= lim).reshape(N, K)
+        return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], np.nan)
+
     def required_air(self, obs, env):
+        r = self._base_required_air(obs, env)
+        if self.recover is None:
+            return r
+        rr = self._recover_air(obs, env)
+        return np.where(np.isnan(rr), r, np.maximum(r, rr))
+
+    def _base_required_air(self, obs, env):
         N = len(obs)
         if self.margins is not None:
             ok = self._adaptive_ok(obs, env)
