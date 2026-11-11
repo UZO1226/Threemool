@@ -23,14 +23,22 @@ trim=True (Park/e14) 이면 공기량을 내리기도 한다 (양방향). 먼저
 2. 정책 공기량 >= r 이고 정책 공기량에서 1스텝 뒤 예측 구간 DO 최댓값 > 2 이면, r 이상 정책 공기량 이하의 격자 값 중
    예측 DO <= 2 인 가장 큰 공기량으로 내린다. 없으면 r 로 내린다. r 이상이므로 예측 NH4 <= target 은 그대로 지킨다
 예측 DO 는 정책 공기량에서 먼저 계산하고, 넘는 에피소드만 격자 전체로 다시 계산한다. lowered_steps, steps 에 내린 횟수를 센다.
+
+margins (Park/e15) 를 주면 고정 target 대신 예측 불확실성에 맞춘 여유를 쓴다. 1스텝, 다른 구성원 4개의 NH4 예측 평균 mu 와
+표준편차 sigma 를 구하고, mu + 여유(sigma) <= NH4_MAX 인 가장 작은 공기량을 r 로 둔다. margins 는 [(sigma 상한, 여유), ...] 로,
+sigma 가 처음으로 상한보다 작은 칸의 여유를 쓴다 (마지막 칸 상한은 inf). target 인자는 쓰지 않는다.
 """
 import numpy as np
 
 from darrow_env import AIR_MAX, DO_MAX, NH4_MAX, STATE, action_to_air, air_to_action
 
 
+# Park/e15 여유 표: 학습 구간 기록 운전 재생에서, 경계 근처(mu 3.0 ~ 4.5) 1스텝 NH4 예측 오차의 99% 분위수를 sigma 칸별로 구해 올림
+E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
+
+
 class MinAirBrake:
-    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False):
+    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -38,6 +46,8 @@ class MinAirBrake:
         assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
         assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
         self.lowered_steps, self.steps = 0, 0
+        self.margins = None if margins is None else [(float(u), float(m)) for u, m in margins]
+        assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -74,8 +84,29 @@ class MinAirBrake:
                 worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
         return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
 
+    def _adaptive_ok(self, obs, env):
+        """격자 후보마다 mu + 여유(sigma) <= NH4_MAX 인지 (N, K)."""
+        t, N, K = env.t, len(obs), len(self.grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
+        zone = np.tile(self.grid, N)[:, None] * rep(env.x['frac'][:, t])
+        x = np.column_stack([state, rep(env.x['exo'][:, t]), zone / 1000.0, rep(env.prev_zone) / 1000.0])
+        pred = np.stack([np.clip(state[:, 0] + self.dyn.models[m][0].predict(x), 0.0, self.dyn.hi[0])
+                         for m in range(self.dyn.n_members)])
+        keep = np.arange(self.dyn.n_members)[:, None] != rep(env.member)[None, :]
+        n = keep.sum(axis=0)
+        mu = np.where(keep, pred, 0.0).sum(axis=0) / n
+        sigma = np.sqrt(np.where(keep, (pred - mu) ** 2, 0.0).sum(axis=0) / n)
+        margin = np.full(len(mu), self.margins[-1][1])
+        for upper, m in reversed(self.margins):
+            margin = np.where(sigma < upper, m, margin)
+        return (mu + margin <= NH4_MAX).reshape(N, K)
+
     def required_air(self, obs, env):
         N = len(obs)
+        if self.margins is not None:
+            ok = self._adaptive_ok(obs, env)
+            return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], AIR_MAX)
         n_states = 1 if self.horizon == 1 else len(STATE)   # 한 스텝만 보면 NH4 모델만 필요하다
         nh4, _ = self._rollout(obs, env, np.tile(self.grid, (N, 1)), n_states)
         ok = nh4 <= self.target

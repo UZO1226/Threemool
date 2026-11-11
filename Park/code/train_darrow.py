@@ -13,6 +13,7 @@ PPO 의 확률비는 정책이 뽑은 행동으로 계산하고, 보상, 비용,
 --cost-limit 을 주면 학습의 하루 비용 한도(라그랑주 갱신 기준) 를 바꾼다. 평가의 한도 만족 % 는 언제나 12 기준이다.
 --intervention-cost 를 주면 학습 중 차단이 개입한 스텝마다 그 값을 학습 비용에 더한다 (Park/e13). 평가 비용은 바꾸지 않는다.
 --brake-trim 을 주면 최소 개입 차단이 DO 가 넘을 때 공기량을 내리기도 한다 (min_brake.py 의 trim, Park/e14).
+--adaptive-margin 을 주면 고정 target 대신 예측 불확실성에 맞춘 여유(min_brake.E15_MARGINS) 를 쓴다 (Park/e15).
 
     python train_darrow.py --method fcsrl --seed 0 --data ../data/darrow/darrow_15min.pkl \
         --surrogate ../data/darrow/darrow_surrogate_gbm.pkl --out <결과>/dw_fcsrl_s0
@@ -30,7 +31,7 @@ from tqdm import tqdm
 
 from agent import FCSRL, METHODS, Config, ObsNormalizer, feasibility_targets, gae
 from darrow_env import BatchEnv, Dynamics, action_to_air, air_to_action, all_episodes, evaluate, load_days
-from min_brake import MinAirBrake
+from min_brake import E15_MARGINS, MinAirBrake
 
 HERE = Path(__file__).resolve().parent
 OBS_DIM, ACT_DIM = 11, 1
@@ -137,9 +138,11 @@ def main():
     p.add_argument('--cost-limit', type=float, default=None, help='학습 하루 비용 한도 (기본 12)')
     p.add_argument('--intervention-cost', type=float, default=0.0, help='개입 스텝마다 학습 비용에 더할 값 (Park/e13)')
     p.add_argument('--brake-trim', action='store_true', help='최소 개입 차단이 공기량을 내리기도 한다 (Park/e14)')
+    p.add_argument('--adaptive-margin', action='store_true', help='불확실성에 맞춘 여유를 쓴다 (Park/e15)')
     a = p.parse_args()
     assert a.brake_theta is None or a.min_brake_target is None, '차단은 하나만 고른다'
     assert not a.brake_trim or a.min_brake_target is not None, 'trim 은 최소 개입 차단과 함께 쓴다'
+    assert not a.adaptive_margin or a.min_brake_target is not None, '여유 표는 최소 개입 차단과 함께 쓴다'
     assert a.intervention_cost == 0 or a.brake_theta is not None or a.min_brake_target is not None, '개입 비용은 차단과 함께 쓴다'
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
@@ -161,7 +164,8 @@ def main():
         commit = None
     (a.out / 'config.json').write_text(json.dumps({'method': a.method, 'seed': a.seed, 'brake_theta': a.brake_theta,
                                                    'min_brake_target': a.min_brake_target,
-                                                   'intervention_cost': a.intervention_cost, 'brake_trim': a.brake_trim, 'config': asdict(c),
+                                                   'intervention_cost': a.intervention_cost, 'brake_trim': a.brake_trim,
+                                                   'adaptive_margin': a.adaptive_margin, 'config': asdict(c),
                                                    'code_commit': commit, 'normalizer': normalizer.state()}, indent=2))
     val_env = BatchEnv(day_data, dyn)
     act = lambda obs: agent_act(agent, obs)  # noqa: E731
@@ -172,7 +176,8 @@ def main():
     if a.brake_theta is not None:
         shield = brake_shield(a.brake_theta)
     elif a.min_brake_target is not None:
-        shield = MinAirBrake(dyn, a.min_brake_target, 1, 'others', trim=a.brake_trim)
+        shield = MinAirBrake(dyn, a.min_brake_target, 1, 'others', trim=a.brake_trim,
+                             margins=E15_MARGINS if a.adaptive_margin else None)
     records = []
     for update in tqdm(range(1, c.updates + 1), desc=f'darrow {a.method} seed {a.seed}', mininterval=30):
         buf, diag = collect(agent, c, env, splits['train'], rng, shield, a.intervention_cost)
