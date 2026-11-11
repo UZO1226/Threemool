@@ -39,4 +39,13 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_WAIT_POLICY=PASSI
 
 runtime protocol.json에 실행 코드 커밋, 날짜, 입력/코드/checkpoint 해시를 저장한다. status.json은 완료 수, 소요 시간, 남은 예상 시간을 기록한다. 각 job의 전체 경로는 jobs 아래 rollout.npz, episodes.json, metrics.json에 보존하며 큰 자료는 Git에 넣지 않는다. 로그는 `/home/jio/fcsrl_src/results/e45/main.log`다.
 
-이 문서 작성 시점에는 평가 전이며 결과는 없다.
+## 진행 상태
+
+2026-11-11 16:36:32 KST에 실행 커밋 `1873967`로 평가를 시작했다. PID 3141182, CPU 한 스레드다. [사전 고정 명세](protocol.json)에 96개 작업과 날짜/소스 해시를 보관한다. 첫 두 정책의 결정적 개발 평가는 e44 원 경로와 집계를 재현했다. 아직 전체 결과는 없으며 초기 진행에서 완료까지 약 15~20분으로 예상했다. 실제 종료 시각은 runtime status.json을 따른다.
+
+평가 완료 후 `report.py`가 저장한 경로를 독립 재집계한다. 자동 집계 명령은 다음과 같으며 실패하면 성공 결과를 생성하지 않는다.
+
+```bash
+OPENBLAS_NUM_THREADS=1 /home/jio/fcsrl_src/.venv/bin/python -u \
+  Yoo/experiments/e45/report.py --root /home/jio/fcsrl_src/results/e45/main --wait
+```
