@@ -1,0 +1,22 @@
+{
+  "splits": {
+    "train": {
+      "days": 188,
+      "first": "2021-05-06",
+      "last": "2021-11-09"
+    },
+    "val": {
+      "days": 40,
+      "first": "2021-11-10",
+      "last": "2021-12-19"
+    },
+    "test": {
+      "days": 41,
+      "first": "2021-12-20",
+      "last": "2022-01-29"
+    }
+  },
+  "chronological_and_disjoint": true,
+  "train_val_finite": true,
+  "test_values_checked": false
+}

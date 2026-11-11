@@ -1,0 +1,384 @@
+{
+  "split": "val",
+  "retuned": false,
+  "models": {
+    "kaggle_data\\darrow_surrogate_gbm.pkl": {
+      "per_seed": [
+        {
+          "method": "ppolag",
+          "seed": 0,
+          "air_m3": 79834.99069832152,
+          "reward": -35.48221808814289,
+          "cost": 24.46,
+          "nh4_viol_pct": 23.473684210526315,
+          "do_viol_pct": 2.2736842105263158,
+          "days_within_limit_pct": 14.000000000000002,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 1,
+          "air_m3": 90817.94495408425,
+          "reward": -40.363531090704114,
+          "cost": 32.06,
+          "nh4_viol_pct": 31.810526315789474,
+          "do_viol_pct": 1.9368421052631577,
+          "days_within_limit_pct": 20.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 2,
+          "air_m3": 85618.78294466298,
+          "reward": -38.05279241985021,
+          "cost": 13.685,
+          "nh4_viol_pct": 12.226315789473682,
+          "do_viol_pct": 2.1789473684210527,
+          "days_within_limit_pct": 44.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 3,
+          "air_m3": 111500.1167327492,
+          "reward": -49.55560743677741,
+          "cost": 20.2,
+          "nh4_viol_pct": 7.8,
+          "do_viol_pct": 13.463157894736842,
+          "days_within_limit_pct": 54.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 4,
+          "air_m3": 82139.82918286232,
+          "reward": -36.506590747938816,
+          "cost": 13.475,
+          "nh4_viol_pct": 11.589473684210525,
+          "do_viol_pct": 2.5947368421052635,
+          "days_within_limit_pct": 52.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 0,
+          "air_m3": 90586.6414460214,
+          "reward": -40.26072953156507,
+          "cost": 8.77,
+          "nh4_viol_pct": 7.031578947368421,
+          "do_viol_pct": 2.1999999999999997,
+          "days_within_limit_pct": 69.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 1,
+          "air_m3": 55094.806805716384,
+          "reward": -24.486580802540615,
+          "cost": 50.185,
+          "nh4_viol_pct": 51.92631578947368,
+          "do_viol_pct": 0.9,
+          "days_within_limit_pct": 22.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 2,
+          "air_m3": 109104.67319257559,
+          "reward": -48.49096586336693,
+          "cost": 8.825,
+          "nh4_viol_pct": 4.368421052631579,
+          "do_viol_pct": 4.921052631578948,
+          "days_within_limit_pct": 80.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 3,
+          "air_m3": 72232.72731312785,
+          "reward": -32.10343436139016,
+          "cost": 16.335,
+          "nh4_viol_pct": 15.947368421052632,
+          "do_viol_pct": 1.2473684210526315,
+          "days_within_limit_pct": 68.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 4,
+          "air_m3": 90173.6214421381,
+          "reward": -40.077165085394725,
+          "cost": 9.425,
+          "nh4_viol_pct": 8.34736842105263,
+          "do_viol_pct": 1.5736842105263158,
+          "days_within_limit_pct": 88.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 0,
+          "air_m3": 78422.62421861874,
+          "reward": -34.85449965271945,
+          "cost": 41.74,
+          "nh4_viol_pct": 42.44736842105263,
+          "do_viol_pct": 1.4894736842105263,
+          "days_within_limit_pct": 5.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 1,
+          "air_m3": 83217.44670863032,
+          "reward": -36.98553187050237,
+          "cost": 31.04,
+          "nh4_viol_pct": 30.594736842105267,
+          "do_viol_pct": 2.0789473684210527,
+          "days_within_limit_pct": 33.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 2,
+          "air_m3": 94716.60338837655,
+          "reward": -42.0962681726118,
+          "cost": 11.955,
+          "nh4_viol_pct": 10.505263157894738,
+          "do_viol_pct": 2.0789473684210527,
+          "days_within_limit_pct": 62.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 3,
+          "air_m3": 85891.8824686669,
+          "reward": -38.17416998607418,
+          "cost": 22.835,
+          "nh4_viol_pct": 21.69473684210526,
+          "do_viol_pct": 2.3421052631578947,
+          "days_within_limit_pct": 35.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 4,
+          "air_m3": 85070.35801504507,
+          "reward": -37.8090480066867,
+          "cost": 24.36,
+          "nh4_viol_pct": 24.252631578947366,
+          "do_viol_pct": 1.3894736842105262,
+          "days_within_limit_pct": 24.5,
+          "n_episodes": 200
+        }
+      ],
+      "means": {
+        "ppolag": {
+          "air_m3": 89982.33290253606,
+          "cost": 20.776,
+          "nh4_viol_pct": 17.380000000000003,
+          "do_viol_pct": 4.489473684210526
+        },
+        "ppolag_fcsrl": {
+          "air_m3": 83438.49403991587,
+          "cost": 18.708000000000002,
+          "nh4_viol_pct": 17.52421052631579,
+          "do_viol_pct": 2.1684210526315786
+        },
+        "ppolag_fcsrl_curriculum": {
+          "air_m3": 85463.78295986752,
+          "cost": 26.386000000000003,
+          "nh4_viol_pct": 25.89894736842105,
+          "do_viol_pct": 1.8757894736842105
+        }
+      }
+    },
+    "results\\e14_audit\\direct_15.pkl": {
+      "per_seed": [
+        {
+          "method": "ppolag",
+          "seed": 0,
+          "air_m3": 54424.774453880986,
+          "reward": -24.188788646169332,
+          "cost": 13.455,
+          "nh4_viol_pct": 12.7,
+          "do_viol_pct": 1.463157894736842,
+          "days_within_limit_pct": 47.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 1,
+          "air_m3": 73515.9756882093,
+          "reward": -32.67376697253747,
+          "cost": 15.34,
+          "nh4_viol_pct": 15.157894736842104,
+          "do_viol_pct": 0.9894736842105263,
+          "days_within_limit_pct": 59.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 2,
+          "air_m3": 67665.99260892488,
+          "reward": -30.073774492855506,
+          "cost": 7.84,
+          "nh4_viol_pct": 6.742105263157895,
+          "do_viol_pct": 1.5105263157894737,
+          "days_within_limit_pct": 72.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 3,
+          "air_m3": 97798.77411499155,
+          "reward": -43.466121828885136,
+          "cost": 6.145,
+          "nh4_viol_pct": 5.057894736842105,
+          "do_viol_pct": 1.4105263157894736,
+          "days_within_limit_pct": 79.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag",
+          "seed": 4,
+          "air_m3": 65117.06843106544,
+          "reward": -28.94091930269575,
+          "cost": 7.65,
+          "nh4_viol_pct": 7.147368421052631,
+          "do_viol_pct": 0.905263157894737,
+          "days_within_limit_pct": 78.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 0,
+          "air_m3": 73329.41593354802,
+          "reward": -32.590851526021346,
+          "cost": 8.845,
+          "nh4_viol_pct": 7.3052631578947365,
+          "do_viol_pct": 2.005263157894737,
+          "days_within_limit_pct": 70.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 1,
+          "air_m3": 49637.02607816786,
+          "reward": -22.060900479185715,
+          "cost": 32.52,
+          "nh4_viol_pct": 34.07368421052632,
+          "do_viol_pct": 0.15789473684210525,
+          "days_within_limit_pct": 44.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 2,
+          "air_m3": 105099.34674747523,
+          "reward": -46.71082077665565,
+          "cost": 3.125,
+          "nh4_viol_pct": 2.9842105263157896,
+          "do_viol_pct": 0.30526315789473685,
+          "days_within_limit_pct": 91.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 3,
+          "air_m3": 52789.88094877221,
+          "reward": -23.462169310565432,
+          "cost": 12.89,
+          "nh4_viol_pct": 13.110526315789475,
+          "do_viol_pct": 0.4578947368421053,
+          "days_within_limit_pct": 78.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl",
+          "seed": 4,
+          "air_m3": 90699.66063653704,
+          "reward": -40.31096028290535,
+          "cost": 7.2,
+          "nh4_viol_pct": 5.610526315789473,
+          "do_viol_pct": 1.9684210526315793,
+          "days_within_limit_pct": 88.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 0,
+          "air_m3": 61450.44885741549,
+          "reward": -27.311310603295773,
+          "cost": 27.38,
+          "nh4_viol_pct": 27.936842105263157,
+          "do_viol_pct": 0.8842105263157894,
+          "days_within_limit_pct": 29.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 1,
+          "air_m3": 64508.01639613232,
+          "reward": -28.670229509392144,
+          "cost": 23.425,
+          "nh4_viol_pct": 23.857894736842105,
+          "do_viol_pct": 0.8,
+          "days_within_limit_pct": 50.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 2,
+          "air_m3": 84153.49945086754,
+          "reward": -37.40155531149669,
+          "cost": 7.015,
+          "nh4_viol_pct": 6.710526315789473,
+          "do_viol_pct": 0.6736842105263158,
+          "days_within_limit_pct": 77.0,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 3,
+          "air_m3": 63860.45623106768,
+          "reward": -28.382424991585637,
+          "cost": 14.815,
+          "nh4_viol_pct": 15.0,
+          "do_viol_pct": 0.5947368421052632,
+          "days_within_limit_pct": 58.5,
+          "n_episodes": 200
+        },
+        {
+          "method": "ppolag_fcsrl_curriculum",
+          "seed": 4,
+          "air_m3": 71137.7229342994,
+          "reward": -31.616765748577514,
+          "cost": 21.195,
+          "nh4_viol_pct": 21.484210526315792,
+          "do_viol_pct": 0.8263157894736842,
+          "days_within_limit_pct": 36.5,
+          "n_episodes": 200
+        }
+      ],
+      "means": {
+        "ppolag": {
+          "air_m3": 71704.51705941443,
+          "cost": 10.086,
+          "nh4_viol_pct": 9.361052631578948,
+          "do_viol_pct": 1.2557894736842106
+        },
+        "ppolag_fcsrl": {
+          "air_m3": 74311.06606890008,
+          "cost": 12.916,
+          "nh4_viol_pct": 12.616842105263157,
+          "do_viol_pct": 0.9789473684210528
+        },
+        "ppolag_fcsrl_curriculum": {
+          "air_m3": 69022.02877395648,
+          "cost": 18.766000000000002,
+          "nh4_viol_pct": 18.997894736842106,
+          "do_viol_pct": 0.7557894736842106
+        }
+      }
+    }
+  }
+}

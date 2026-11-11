@@ -33,6 +33,13 @@ models. The direction is imposed as prior knowledge. It does not identify
 the real causal response. Persistence has zero action response and cannot
 serve as a controller training environment.
 
+Additional fixed-air trajectory checks are in action_response.json. With
+recorded air scaled from 0.5 to 1.5 and clipped to the action range, direct 7
+reduces mean NH4 from 6.89 to 1.09, but mean DO3 also falls from 0.359 to 0.265.
+Thus the single-step DO monotonic prior does not carry through recursive
+cross-state dynamics. This unresolved behavior is another reason not to
+treat simulated policy gains as demonstrated process improvements.
+
 Training-only replay gives daily cost 10.74894, rounded to limit 11. The same
 limit is used for every e15 method. This differs from protocol v1's old-model
 limit 12, so e15 does not replace official team results. The old calibration
@@ -48,6 +55,11 @@ default and retains sklearn inference as fallback. For old GBM and both direct
 candidates, predictions match sklearn exactly on all 3800 validation transitions,
 all five ensemble members, and mixed-member batches (maximum absolute error 0).
 See fast_equivalence.json. This optimization changes computation, not the model.
+
+fast_equivalence_stress.json additionally checks 512 perturbed state and air
+inputs for every model. The selected model's small-batch inference is about
+49 times faster in that local timing; training speedup is smaller and is not
+a learning-method improvement.
 
 ## Reproduction and provenance
 

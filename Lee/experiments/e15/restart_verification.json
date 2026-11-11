@@ -1,0 +1,26 @@
+{
+  "comparison": "interrupted and restarted PPO logs",
+  "learning_unchanged_by_write_retry": true,
+  "per_seed": [
+    {
+      "seed": 0,
+      "identical_update_prefix": 56
+    },
+    {
+      "seed": 1,
+      "identical_update_prefix": 59
+    },
+    {
+      "seed": 2,
+      "identical_update_prefix": 60
+    },
+    {
+      "seed": 3,
+      "identical_update_prefix": 59
+    },
+    {
+      "seed": 4,
+      "identical_update_prefix": 61
+    }
+  ]
+}
