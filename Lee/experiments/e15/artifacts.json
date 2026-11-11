@@ -875,5 +875,17 @@
     "name": "lee_e14_e15_artifacts.zip",
     "bytes": 56729466,
     "sha256": "da4b859ec16b32c607280c5d1f4d021770e074b76d77cc5bb3b5417bffba32c5"
+  },
+  "storage": {
+    "provider": "GitHub draft release",
+    "release_url": "https://github.com/UZO1226/Threemool/releases/tag/untagged-41981e6f231673198ab9",
+    "release_tag": "lee-e14-e15-audit-20261111",
+    "asset_api_url": "https://api.github.com/repos/UZO1226/Threemool/releases/assets/735416484",
+    "asset_state": "uploaded",
+    "is_draft": true,
+    "remote_digest": "sha256:da4b859ec16b32c607280c5d1f4d021770e074b76d77cc5bb3b5417bffba32c5",
+    "remote_digest_matches_local": true,
+    "source_data_included": false,
+    "user_explicitly_approved": true
   }
 }

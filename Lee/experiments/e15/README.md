@@ -1,5 +1,16 @@
 # Lee/e15: Risk-stratified FCSRL training after environment audit
 
+## Shared reproduction artifacts
+
+[Download the model and log archive from the draft release](https://github.com/UZO1226/Threemool/releases/tag/untagged-41981e6f231673198ab9).
+Draft release access requires repository write access. The 56,729,466-byte
+archive contains final and selected checkpoints for all 15 runs, environment
+models and full successful-run logs, without original DARROW observations.
+GitHub reports the same SHA256 as the local archive:
+`da4b859ec16b32c607280c5d1f4d021770e074b76d77cc5bb3b5417bffba32c5`.
+File-level checksums and storage details are in artifacts.json. The attachment
+was uploaded with explicit user approval and remains a draft.
+
 This is an exploratory personal experiment, not a change to Compare/PROTOCOL v1.
 It uses the e14 selected model. No test dates are evaluated: PROTOCOL reserves
 them for the team's one final comparison. The selection statement in the initial
