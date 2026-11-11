@@ -47,7 +47,7 @@ def make_agent(a, c):
     r = RepresentationConfig()
     if a.method == 'ppolag':
         return PPOLagAgent(OBS_DIM, 1, config=c), r
-    if a.method == 'ppolag_fcsrl':
+    if a.method in ('ppolag_fcsrl', 'ppolag_fcsrl_curriculum'):
         return PPOFCSRLAgent(OBS_DIM, 1, config=c, repr_config=r), r
     if a.method == 'ppolag_fcsrl_fpen':
         return PPOFCSRLFeasibilityPenaltyAgent(
@@ -74,12 +74,16 @@ def train(a):
     agent, r = make_agent(a, c)
     dyn = GBMDynamics(a.surrogate)
     env = VecAerationEnv(a.data, None, split='train', n_env=c.n_env, seed=a.seed * 1000, dynamics=dyn)
+    curriculum = None
+    if a.method == 'ppolag_fcsrl_curriculum':
+        from curriculum_dw import risk_day_weights
+        env.day_weights, curriculum = risk_day_weights(env.table, env.days)
     write_json(run / 'effective_config.json', {
         'method': a.method, 'seed': a.seed, 'config': c.to_dict(), 'pid_mult': a.pid_mult,
         'representation': asdict(r) if isinstance(agent, PPOFCSRLAgent) else None,
         'feasibility_penalty': asdict(agent.feasibility_penalty) if hasattr(agent, 'feasibility_penalty') else None,
         'cost_limit': a.limit, 'data': str(a.data.resolve()), 'surrogate': str(a.surrogate.resolve()),
-        'actual_steps': c.actual_steps})
+        'actual_steps': c.actual_steps, 'curriculum': curriculum})
     obs = env.reset()
     agent.obs_normalizer.update(obs)
     ep_cost, ep_reward = np.zeros(c.n_env), np.zeros(c.n_env)
@@ -179,7 +183,7 @@ def train(a):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('--method', choices=['ppolag', 'ppolag_fcsrl', 'ppolag_fcsrl_fpen'], required=True)
+    p.add_argument('--method', choices=['ppolag', 'ppolag_fcsrl', 'ppolag_fcsrl_fpen', 'ppolag_fcsrl_curriculum'], required=True)
     p.add_argument('--seed', type=int, required=True)
     p.add_argument('--steps', type=int, default=400_000)
     p.add_argument('--evaluations', type=int, default=5)

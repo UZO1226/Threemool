@@ -51,7 +51,9 @@ class VecAerationEnv:
             day, member = self.fixed[self._k % len(self.fixed)]
             self._k += 1
         else:
-            day = self.days[self.rng.integers(len(self.days))]
+            weights = getattr(self, 'day_weights', None)
+            index = self.rng.integers(len(self.days)) if weights is None else self.rng.choice(len(self.days), p=weights)
+            day = self.days[index]
             member = int(self.rng.integers(self.dyn.n_members)) if self.fix_member is None else int(self.fix_member)
         a = self.day_arrays[day]
         self.day[i], self.member[i], self.t[i] = day, member, 0
