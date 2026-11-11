@@ -27,6 +27,11 @@ trim=True (Park/e14) 이면 공기량을 내리기도 한다 (양방향). 먼저
 margins (Park/e15) 를 주면 고정 target 대신 예측 불확실성에 맞춘 여유를 쓴다. 1스텝, 다른 구성원 4개의 NH4 예측 평균 mu 와
 표준편차 sigma 를 구하고, mu + 여유(sigma) <= NH4_MAX 인 가장 작은 공기량을 r 로 둔다. margins 는 [(sigma 상한, 여유), ...] 로,
 sigma 가 처음으로 상한보다 작은 칸의 여유를 쓴다 (마지막 칸 상한은 inf). target 인자는 쓰지 않는다.
+
+Park/e16 의 두 가지 (trim=True 와 함께 쓴다).
+- do_limit: trim 이 공기량을 내릴 때 쓰는 예측 DO 기준 (기본 2). 2 보다 작게 두면 예측 오차로 DO 가 넘는 것을 줄인다
+- futile=True: 공기량 9,000 에서도 예측 NH4 (다른 구성원 평균) 가 4 를 넘어 다음 스텝 NH4 위반을 못 막는데 차단이
+  공기량을 올린 경우, 정책 공기량 이상에서 예측 DO <= 2 인 가장 큰 격자 값까지만 올린다 (없으면 정책 공기량)
 """
 import numpy as np
 
@@ -38,15 +43,18 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 
 
 class MinAirBrake:
-    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None):
+    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
+                 do_limit=DO_MAX, futile=False):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
         self.do_cap, self.trim = bool(do_cap), bool(trim)
         assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
         assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
-        self.lowered_steps, self.steps = 0, 0
+        self.lowered_steps, self.steps, self.futile_steps = 0, 0, 0
         self.margins = None if margins is None else [(float(u), float(m)) for u, m in margins]
+        self.do_limit, self.futile = float(do_limit), bool(futile)
+        assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
         assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
 
     def _predict(self, x, member, n_states):
@@ -128,13 +136,24 @@ class MinAirBrake:
         if len(rows):
             sub = _Rows(env, rows)
             _, do = self._rollout(obs[rows], sub, policy_air[rows, None], len(STATE))
-            over = rows[do[:, 0] > DO_MAX]
+            over = rows[do[:, 0] > self.do_limit]
             if len(over):
                 _, do_grid = self._rollout(obs[over], _Rows(env, over), np.tile(self.grid, (len(over), 1)), len(STATE))
                 inside = (self.grid[None, :] >= r[over, None]) & (self.grid[None, :] <= policy_air[over, None])
-                ok = inside & (do_grid <= DO_MAX)
+                ok = inside & (do_grid <= self.do_limit)
                 best = np.where(ok, self.grid[None, :], -np.inf).max(axis=1)
                 air[over] = np.where(np.isfinite(best), best, r[over])
+        if self.futile:
+            up = np.flatnonzero(air > policy_air + 1e-9)
+            if len(up):
+                nh_max, _ = self._rollout(obs[up], _Rows(env, up), np.full((len(up), 1), AIR_MAX), 1)
+                fut = up[nh_max[:, 0] > NH4_MAX]
+                if len(fut):
+                    _, do_grid = self._rollout(obs[fut], _Rows(env, fut), np.tile(self.grid, (len(fut), 1)), len(STATE))
+                    safe = (self.grid[None, :] >= policy_air[fut, None]) & (do_grid <= DO_MAX)
+                    top = np.where(safe, self.grid[None, :], -np.inf).max(axis=1)
+                    air[fut] = np.where(np.isfinite(top), np.maximum(top, policy_air[fut]), policy_air[fut])
+                    self.futile_steps += len(fut)
         return air
 
     def __call__(self, obs, a, env):
