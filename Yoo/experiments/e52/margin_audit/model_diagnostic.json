@@ -2,7 +2,7 @@
   "source_sha256": {
     "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
     "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e",
-    "/home/jio/threemool-e53-margin-audit/Yoo/experiments/e52/margin_audit/diagnose_model.py": "8cb3e867480605d95646a9c07c42c6d91b373e2cd50874f8947dc9bfd071addb"
+    "/home/jio/threemool-e53-margin-audit/Yoo/experiments/e52/margin_audit/diagnose_model.py": "520dd9508bc63d5962131d0334755ac663ad312755a5aef52ae7e58e4cafa15a"
   },
   "test_evaluated": false,
   "weight_updates": 0,
@@ -44,6 +44,24 @@
           "false_negative": 3138,
           "actual_bad": 5285
         }
+      },
+      "margin_alarm_stats": {
+        "fixed": {
+          "cost": 5.6191489361702125,
+          "false_positive_rate_pct": 3.439861929417366,
+          "recall_pct": 45.260170293282876,
+          "added_true_alarms": 245,
+          "added_false_alarms": 800,
+          "added_alarm_precision_pct": 23.444976076555022
+        },
+        "adaptive": {
+          "cost": 5.618085106382979,
+          "false_positive_rate_pct": 3.336308992441826,
+          "recall_pct": 46.88741721854305,
+          "added_true_alarms": 331,
+          "added_false_alarms": 713,
+          "added_alarm_precision_pct": 31.704980842911876
+        }
       }
     },
     "val": {
@@ -81,6 +99,24 @@
           "false_positive": 4660,
           "false_negative": 1256,
           "actual_bad": 3290
+        }
+      },
+      "margin_alarm_stats": {
+        "fixed": {
+          "cost": 38.29,
+          "false_positive_rate_pct": 34.665817950350096,
+          "recall_pct": 67.23404255319149,
+          "added_true_alarms": 178,
+          "added_false_alarms": 786,
+          "added_alarm_precision_pct": 18.46473029045643
+        },
+        "adaptive": {
+          "cost": 37.72,
+          "false_positive_rate_pct": 34.09293443666454,
+          "recall_pct": 66.50455927051672,
+          "added_true_alarms": 154,
+          "added_false_alarms": 696,
+          "added_alarm_precision_pct": 18.11764705882353
         }
       }
     }

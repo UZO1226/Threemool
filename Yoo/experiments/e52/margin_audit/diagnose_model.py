@@ -49,10 +49,19 @@ def run(a):
         repeated_sd=np.repeat(sd[:,None,:],5,axis=1)
         with np.load(a.calibration/f'{split}_recorded_replay.npz') as z:
             rollout=z['nh4'].reshape(-1,5,95);rsd=z['sd'].reshape(-1,5,95)
+        alarm_stats={}
+        for name,margin in [('fixed',.45),('adaptive',10*rsd)]:
+            flag=rollout+margin>4;bad=truth>4;added=flag&~(rollout>4)
+            alarm_stats[name]=dict(cost=float(flag.sum(-1).mean()),
+                false_positive_rate_pct=float(100*(flag&~bad).sum()/(~bad).sum()),
+                recall_pct=float(100*(flag&bad).sum()/bad.sum()),
+                added_true_alarms=int((added&bad).sum()),added_false_alarms=int((added&~bad).sum()),
+                added_alarm_precision_pct=float(100*(added&bad).sum()/max(1,added.sum())))
         air=np.concatenate(all_air)
         out['splits'][split]=dict(n_days=len(actual),recorded_action_clipping_pct=float(100*np.mean((air<0)|(air>9000))),
                                   observed_state_one_step=summarize(pred,truth,repeated_sd),
-                                  recursive_recorded_action=summarize(rollout,truth,rsd))
+                                  recursive_recorded_action=summarize(rollout,truth,rsd),
+                                  margin_alarm_stats=alarm_stats)
         print(split,json.dumps(out['splits'][split],ensure_ascii=False),flush=True)
     assert all(sha(p)==v for p,v in out['source_sha256'].items())
     save(a.out,out)
