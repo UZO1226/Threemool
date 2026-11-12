@@ -1,0 +1,14 @@
+{
+  "zero_temperature_coefficients_match": true,
+  "equilibrium_matches": true,
+  "all_observed_head_gradients_nonzero": true,
+  "gradient_magnitudes": [
+    0.0732693076133728,
+    0.04701779782772064,
+    0.01677144505083561,
+    0.015038232319056988,
+    0.02235586568713188
+  ],
+  "cap": 1.05,
+  "test_evaluated": false
+}
