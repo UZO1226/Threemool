@@ -31,7 +31,8 @@ def main(root, out):
     d_air = [100 * (val['fcsrl_actor'][s]['air_m3'] / val['fcsrl'][s]['air_m3'] - 1) for s in seeds]
     h1 = {'cost_diff_by_seed': d_cost, 'air_diff_pct_by_seed': d_air,
           'seeds_cost_lower': int(sum(d < 0 for d in d_cost)), 'mean_cost_diff': float(np.mean(d_cost)),
-          'mean_air_diff_pct': float(np.mean(d_air))}
+          'mean_paired_air_diff_pct': float(np.mean(d_air)),
+          'mean_air_diff_pct': float(100 * (summary['fcsrl_actor']['air_m3']['mean'] / summary['fcsrl']['air_m3']['mean'] - 1))}
     h1['supported'] = bool(h1['seeds_cost_lower'] >= 4 and h1['mean_cost_diff'] < 0 and h1['mean_air_diff_pct'] <= 2)
     order_now = sorted(METHODS, key=lambda m: summary[m]['cost']['mean'])
     order_e30 = sorted(METHODS, key=lambda m: E30[m])
@@ -40,7 +41,7 @@ def main(root, out):
     (out / 'summary.json').write_text(json.dumps(result, indent=1, ensure_ascii=False))
     md = ['검증 40일 x 구성원 5개 = 200 에피소드, 결정적 행동, 마지막 정책, seed 0 ~ 4 평균 ± 표준편차(ddof=0). '
           '학습 예산 401,280 전이. 기준 대리 모델(scikit-learn 1.9.1) 환경.', '',
-          '| 방법 | 공기량 (Nm3/일) | 하루 비용 | NH4 위반 % | DO 위반 % | 한도 이하 에피소드 % | 평균 비용 <= 12 seed | e30 평균 비용 (1.7.2 모델) |',
+          '| 방법 | 공기량 (m3/23.75h) | 하루 비용 | NH4 위반 % | DO 위반 % | 한도 이하 에피소드 % | 평균 비용 <= 12 seed | e30 평균 비용 (1.7.2 모델) |',
           '| --- | --- | --- | --- | --- | --- | --- | --- |']
     for m, name in METHODS.items():
         s = summary[m]
