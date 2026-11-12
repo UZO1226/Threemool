@@ -24,7 +24,9 @@ def sequences(data,days):
     return [torch.tensor(v,dtype=torch.float32) for v in values]
 
 
-def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None):
+def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
+        epochs=80,checkpoints=(20,40,80),warm_start_dir=None,
+        warm_start_epoch=80,learning_rate=.001):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
@@ -34,10 +36,13 @@ def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None):
     scoring_sd=data.sd if score_sd is None else np.asarray(score_sd)
     for member in range(5):
         torch.manual_seed(member);model=model_class(data.sd,data.mean,data.mean_air,data.hi)
-        opt=torch.optim.Adam(model.parameters(),lr=.001)
+        if warm_start_dir is not None:
+            model.load_state_dict(torch.load(Path(warm_start_dir)/f'epoch{warm_start_epoch}_m{member}.pt',weights_only=True))
+        opt=torch.optim.Adam(model.parameters(),lr=learning_rate)
+        if 0 in checkpoints:torch.save(model.state_dict(),a.out/f'epoch0_m{member}.pt')
         ids=np.random.RandomState(member).choice(len(fit),int(.8*len(fit)),replace=False)
         days=[fit[k] for k in ids];s,c,e,air,target=sequences(data,days);trace=[]
-        for epoch in range(1,81):
+        for epoch in range(1,epochs+1):
             order=torch.randperm(len(s));total=0.
             for k in range(0,len(order),16):
                 idx=order[k:k+16];pred=model(s[idx],c[idx],e[idx],air[idx])
@@ -51,10 +56,10 @@ def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None):
             trace.append(total/len(s))
             assert all(torch.isfinite(value).all() for value in model.parameters())
             if epoch%10==0:print('TRAIN',member,epoch,trace[-1],flush=True)
-            if epoch in [20,40,80]:torch.save(model.state_dict(),a.out/f'epoch{epoch}_m{member}.pt')
+            if epoch in checkpoints:torch.save(model.state_dict(),a.out/f'epoch{epoch}_m{member}.pt')
         logs[str(member)]=trace;(a.out/'train_losses.json').write_text(json.dumps(logs,indent=2))
     inner_mean={};metadata={};caches={};biases={};ensembles={}
-    for epoch in [20,40,80]:
+    for epoch in checkpoints:
         models=[]
         for member in range(5):
             model=model_class(data.sd,data.mean,data.mean_air,data.hi)
