@@ -1,0 +1,9 @@
+{
+  "native_checkpoint_replay_passed": true,
+  "head_checkpoint_loading_passed": true,
+  "training_source_hashes_verified": true,
+  "freeze_identity_verified": true,
+  "smoke_only": true,
+  "real_policy_performance_proven": false,
+  "test_evaluated": false
+}

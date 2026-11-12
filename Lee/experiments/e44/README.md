@@ -27,3 +27,22 @@ metrics, all policy seeds and paired10000-resample seed bootstrap intervals.
 Policy seeds, model members, noise draws and dates are distinct uncertainty
 units. Preserve final test41 and the limitations of the repeatedly reused
 validation40 and frozen surrogate.
+
+The primary simulation criterion requires all five seed pairs to match air
+within1 percent, paired95 percent seed-bootstrap upper bounds strictly below
+zero for total cost and NH4, and a DO upper bound no greater than zero. The
+report independently recomputes air mismatch rather than trusting a matching
+flag. Native and adjusted results, sample SD with ddof1 and every seed remain
+visible even when the criterion fails. No test data or intermediate-policy
+selection enters this report. A passing simulation criterion is not an
+independent real-plant performance claim.
+
+evaluate_pair.py loads model_final only, verifies full401280-transition budgets,
+matching seed/configuration, frozen inputs and training-source hashes. Its
+native checkpoint replay must reproduce the saved final validation metrics
+when evaluated in its training environment. Different-model evaluations are
+explicit cross-model sensitivities. native_eval.py stores reusable native
+evaluations with checkpoint and freeze identities so the same baseline need
+not be recomputed for every comparison. Query trajectories remain outside Git;
+compact summaries and scripts are committed. Smoke evaluations are explicitly
+marked and rejected by the five-seed report.
