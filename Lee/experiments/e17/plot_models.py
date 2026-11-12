@@ -26,7 +26,7 @@ for label,rows,color in groups:
             marker='D' if 'cal' in name else 'o',s=45)
 axes[0].axhline(5,color='black',ls=':')
 axes[0].axvline(.9*c['validation']['old']['mae']['nh4'],color='black',ls=':')
-axes[0].set(xlabel='NH4 recursive MAE (mg N/L)',ylabel='NH4 violation frequency error (percentage points)',title='NH4: lower left is better')
+axes[0].set(xlabel='NH4 recursive MAE (mg/L)',ylabel='NH4 violation frequency error (percentage points)',title='NH4: lower left is better')
 axes[0].legend(fontsize=8)
 axes[1].axhline(c['validation']['old']['do_violation']['absolute_error_pp'],color='black',ls=':')
 axes[1].axvline(.9*c['validation']['old']['normalized_mae'],color='black',ls=':')

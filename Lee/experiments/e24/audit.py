@@ -1,6 +1,7 @@
 """Reconstruct selected forecasts and quantify date-block uncertainty."""
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -11,6 +12,7 @@ import torch
 ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Lee/experiments/e22'))
 from latent import Data,LatentModel,precompute,simulate,forcing,noise_paths,summarize
+from cooperative import arrays,recursive,GBMDynamics
 
 p=argparse.ArgumentParser()
 p.add_argument('--data',type=Path,required=True)
@@ -35,6 +37,13 @@ noise=noise_paths(residual,days);bias=np.array(source['bias']);scale=np.array(so
 traj=simulate(cache,bias,noise,scale);truth=cache['true'][:,1:]
 score=summarize(traj,cache['true'],data.sd)
 np.testing.assert_allclose(score['normalized_mae'],source['validation']['normalized_mae'],rtol=1e-12)
+references={}
+original=json.loads((ROOT/'Lee/experiments/e16/summary.json').read_text())
+for name in ['old','persistence']:
+    os.environ['DARROW_FAST_DYNAMICS']='0' if name=='persistence' else '1'
+    path=Path(original['model_paths'][name]) if name=='old' else a.runs.parent/'e16_cooperative/persistence.pkl'
+    reference_traj=recursive(GBMDynamics(path),arrays(raw['data'],days))
+    references[name]=summarize(reference_traj[:,None],cache['true'],data.sd)
 
 # Independent Torch forward and cached NumPy rollout must agree for a full day.
 probe=precompute(models,data,days[:1],16);positions=data.positions[days[0]][:95][None]
@@ -72,5 +81,5 @@ result={'selected_epoch':source['selected_epoch'],'selected_scale':source['selec
     'torch_numpy_agreement_passed':True,'reconstruction_passed':True,'test_evaluated':False,
     'uncertainty_unit':'dates, circular five-day blocks, exploratory reused validation, not policy seeds',
     'date_intervals':intervals,'reset_diagnostic':reset,'daily':{k:v.tolist() for k,v in daily.items()},
-    'simple_persistence':reference['validation']['persistence'] if 'persistence' in reference['validation'] else None}
+    'reference_scores':references}
 a.out.write_text(json.dumps(result,indent=2,allow_nan=False));print(json.dumps(intervals),flush=True)
