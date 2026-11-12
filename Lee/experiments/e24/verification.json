@@ -1,0 +1,25 @@
+{
+  "checked_result_commit": "39f7e7d",
+  "branch": "lee/darrow-safety-calibration",
+  "scope_check": {
+    "command": "python scripts/check_scope.py lee/darrow-safety-calibration",
+    "exit_code": 0,
+    "changed_files_at_check": 94
+  },
+  "paper_check": {
+    "command": "python scripts/build_paper.py --check",
+    "exit_code": 0,
+    "existing_warnings": "Unwritten paper sections and metadata, no generated file written."
+  },
+  "initialization_regression": "passed, including deliberately broken control",
+  "full_day_torch_numpy_agreement": "passed, rtol and atol 2e-4",
+  "selected_score_reconstruction": "passed",
+  "zero_anchor_reconstruction": "passed",
+  "archive_crc_and_per_file_sha256": "passed",
+  "github_asset_size_and_remote_sha256": "passed, asset 739119705, 79870927 bytes, f502115e2c040108243306b2dae812973c855adbc168c9f212129c0958d24296",
+  "new_policy_training": false,
+  "same_air_agent_improvement_verified": false,
+  "environment_adopted": false,
+  "official_test_evaluated": false,
+  "stopping_condition": "Current selected environments fail NH4 safety calibration. Existing observations provide no independent outcomes for alternative aeration actions, so a reliable same-air controller improvement is not established. This is not an impossibility proof for other models."
+}

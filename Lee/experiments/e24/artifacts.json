@@ -350,6 +350,14 @@
       "sha256": "a001a23fda90d11528ba5b76ce1b1a1bf6481bb6f0ded27a6d7e113b0a0ea5a6"
     }
   },
+  "github_draft_release": {
+    "id": 442816841,
+    "tag_name": "lee-e16-e25-environment-audit-20261112",
+    "url": "https://github.com/UZO1226/Threemool/releases/tag/untagged-3b5bcbd278f6b739f913",
+    "asset_id": 739119705,
+    "draft": true,
+    "uploaded_size_and_remote_sha256_verified": true
+  },
   "archive": {
     "name": "lee-e16-e25-environment-audit.zip",
     "bytes": 79870927,

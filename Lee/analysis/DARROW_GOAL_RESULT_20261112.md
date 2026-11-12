@@ -113,6 +113,7 @@ changes as separate factors. Until then a claim of beating FCSRL is unsupported.
 
 Code, configurations, failed summaries and checks are in the personal work
 branch lee/darrow-safety-calibration. Model artifacts and optimization logs
-are separate draft-release attachments with SHA256 manifests; raw DARROW files
+are [separate draft-release attachments](https://github.com/UZO1226/Threemool/releases/tag/untagged-3b5bcbd278f6b739f913)
+with SHA256 manifests; raw DARROW files
 and residual banks are excluded. Source data must be obtained through the
 team's authorized route to regenerate residual banks.
