@@ -1,0 +1,10 @@
+{
+  "source_url": "https://www.unav.edu/documents/d/instituto-de-ciencia-de-los-datos-e-inteligencia-artificial/4-2-reduced_order_models_2026-pdf",
+  "retrieval_status": 200,
+  "sha256": "8ce765ed9a34aa93fa75cf71f1304fba57e4e43a13e69007d85653311dceef04",
+  "bytes": 2841587,
+  "pages": 19,
+  "embedded_links": [],
+  "parser": "pypdf 7.0.1, isolated .tools target",
+  "full_source_redistributed_in_git": false
+}
