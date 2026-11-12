@@ -5,6 +5,32 @@ failures are evidence for further experiments, not sufficient goal completion.
 No environment or agent improvement has yet met the requested verification.
 No genuine external condition currently prevents useful work.
 
+## Latest execution status, 2026-11-13
+
+The goal controller reports usageLimited. This is a controller limit, not a
+successful research outcome. The user explicitly requested that work resume.
+Ordinary tool execution resumed e40 from committed source d31b068. Its actual
+Python process started and reported completed median fits. Do not infer ongoing
+execution from this historical entry; inspect the live process or tool session.
+
+e34 to e37 completed without passing the original adoption gate. The joint
+teacher/recursive model predicts NH4 violations9.11 percent, proper calibration
+7.66 percent, and the two causal innovation variants5.86 percent, against actual
+17.32 percent. Retain the independent audits and failed results.
+
+e38 conditional quantiles predict NH4 frequency16.43 percent but DO2.69 percent
+against actual1.16 percent. Recursive air ordering fails, despite exact agreement
+between fast and sklearn inference. An independent synthetic example reproduces
+monotonicity violations in quantile leaf updates. e40 restores ancestral split
+bounds during fitting only and repeats e38 with unchanged selection and gates.
+The synthetic correction removes the observed reversals; this does not establish
+that the full wastewater model is suitable. Its full experiment is pending.
+
+e39's implicit saturating NH4 reaction predicts violations4.57 percent and also
+fails adoption. An independent fitted-model audit is being run. No new policy
+training has occurred, no final test outcomes were used, and no improvement over
+FCSRL has been established. Earlier in-progress descriptions below are historical.
+
 ![Recorded-air safety frequency audit](figures/darrow_environment_progress.png)
 
 The plot shows ensemble frequency criteria only. Member ranges are not confidence

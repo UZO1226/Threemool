@@ -15,10 +15,10 @@ def read(experiment):
     return json.loads((ROOT/f'Lee/experiments/{experiment}/summary.json').read_text())
 
 old=read('e16')['validation'];rows=[('Persistence',old['persistence']),('Original',old['old']),('e24',read('e24')['validation'])]
-for experiment in ['e26','e27','e28','e29','e30','e31','e32','e33']:
+for experiment in [f'e{k}' for k in range(26,40)]:
     if not (ROOT/f'Lee/experiments/{experiment}/summary.json').exists():continue
     source=read(experiment);value=source['validation']
-    if experiment=='e26':value=value[source['selected']]
+    if 'normalized_mae' not in value:value=value[source['selected']]
     rows.append((experiment,value))
 
 fig,axes=plt.subplots(1,2,figsize=(14,5.3),layout='constrained')

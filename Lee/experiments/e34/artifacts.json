@@ -1,0 +1,122 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e34_joint_teacher",
+    "e35_assimilation",
+    "e36_proper_calibration",
+    "e37_centered_assimilation"
+  ],
+  "files": {
+    "e34_joint_teacher/epoch20_calibration.json": {
+      "bytes": 16322,
+      "sha256": "732ce3d43fed0ccd880cc68cdf14d1b2b4762c89342787fd0154e13d9dd4d653"
+    },
+    "e34_joint_teacher/epoch20_m0.pt": {
+      "bytes": 239733,
+      "sha256": "d3e38f8b9d8106a6520fcb6f5a3d5594d567d88dc32ef491ea1b2dbbdbf72f0f"
+    },
+    "e34_joint_teacher/epoch20_m1.pt": {
+      "bytes": 239733,
+      "sha256": "d5ba75075a534329b9a1489ee6bb806c61591463bfe478f7d9869a4364b423c5"
+    },
+    "e34_joint_teacher/epoch20_m2.pt": {
+      "bytes": 239733,
+      "sha256": "fb55692219389ae28ce673927a6da15e283d4002e43c7f0744973dd48795401c"
+    },
+    "e34_joint_teacher/epoch20_m3.pt": {
+      "bytes": 239733,
+      "sha256": "e45a39e72a531715b84e6785869840f9188ba7b745689d7156e99400079e5b14"
+    },
+    "e34_joint_teacher/epoch20_m4.pt": {
+      "bytes": 239733,
+      "sha256": "377c8780a00e8b0eedfa260830cb3cf8bef0e2123dc213640c92a7091a7b84d0"
+    },
+    "e34_joint_teacher/epoch40_calibration.json": {
+      "bytes": 16163,
+      "sha256": "c1989c0ffadfb90d0f6f20be962e6049d9a650b808f708f2178f129645ed5107"
+    },
+    "e34_joint_teacher/epoch40_m0.pt": {
+      "bytes": 239733,
+      "sha256": "0843244294b5138499df1a989b4cd9529889cae5e0c4ce6c059008185c066c10"
+    },
+    "e34_joint_teacher/epoch40_m1.pt": {
+      "bytes": 239733,
+      "sha256": "2c434b5f43eb1c5a63391e4a15db782f740f36f3c10d3bde952f1c200af4b427"
+    },
+    "e34_joint_teacher/epoch40_m2.pt": {
+      "bytes": 239733,
+      "sha256": "788bc7efcaf354c0a4fab58cc0a04eded188cacac72c2f604ac89d34ab01ce2b"
+    },
+    "e34_joint_teacher/epoch40_m3.pt": {
+      "bytes": 239733,
+      "sha256": "deeb7e74e6c14d42a330b1f86769babadafef264a3472a649c2abc53803e3ed8"
+    },
+    "e34_joint_teacher/epoch40_m4.pt": {
+      "bytes": 239733,
+      "sha256": "c16fbd24a5ad643d70bae84a76de8cfeb0d687928cbe3ec41396fd9ba3fd1270"
+    },
+    "e34_joint_teacher/epoch80_calibration.json": {
+      "bytes": 15836,
+      "sha256": "18c1fb4603b095bcfc01b282dec02969dd44d4bdea6f6385733ee19f17809cc5"
+    },
+    "e34_joint_teacher/epoch80_m0.pt": {
+      "bytes": 239733,
+      "sha256": "192366b073f672caaddb8a755224c36a3cce68cae7710d78fdb7b4961d93ca31"
+    },
+    "e34_joint_teacher/epoch80_m1.pt": {
+      "bytes": 239733,
+      "sha256": "e473500ecc8b7ca4bed078c37c80c7af9ed231fa113255fbf16fded40d2b0337"
+    },
+    "e34_joint_teacher/epoch80_m2.pt": {
+      "bytes": 239733,
+      "sha256": "7da4ab7258a8ec725033428b39326f61071311d11ac189348542eedb60815757"
+    },
+    "e34_joint_teacher/epoch80_m3.pt": {
+      "bytes": 239733,
+      "sha256": "51d2bf44bbb4d7bd857da5fba6d23a919aefa188313c284aa75801dd43ecf072"
+    },
+    "e34_joint_teacher/epoch80_m4.pt": {
+      "bytes": 239733,
+      "sha256": "1808c2455f8d396cd00f5cd73f72eaa2806b728939d378a0572446222cfc57ff"
+    },
+    "e34_joint_teacher/summary.json": {
+      "bytes": 71760,
+      "sha256": "1bdce1ef95cd306274bc07759655b75ad825d47513dcb540845e65b2300dc6da"
+    },
+    "e34_joint_teacher/train_losses.json": {
+      "bytes": 10239,
+      "sha256": "7ac14d0e57aa8e9dd7ef9abd4bab2885523c71aa8797c27c2e4b9ed69c0d9eb0"
+    },
+    "e35_assimilation/summary.json": {
+      "bytes": 73638,
+      "sha256": "c7885aaf2a599ed13241b8f97c6084f483bfb243b7ab2ac0cc7dcdfbab1d6b89"
+    },
+    "e36_proper_calibration/calibration_trace.json": {
+      "bytes": 41701,
+      "sha256": "14da60fcf27cb0f8c6e7980841a4f5d8156d2f93cce1d9523be0666b84d5d369"
+    },
+    "e36_proper_calibration/summary.json": {
+      "bytes": 18433,
+      "sha256": "20ca9b3d4e8fe8c4f1626277192977aba9015a6a4b04429a44bf5f3a01168de8"
+    },
+    "e37_centered_assimilation/summary.json": {
+      "bytes": 74606,
+      "sha256": "7f4476feefd75850d184ad47f6f6bf6cb56d1ae911f8c3ea44f9052f51b91b27"
+    }
+  },
+  "archive": {
+    "name": "lee-e34-e37-followup.zip",
+    "bytes": 3333699,
+    "sha256": "d0c60b64c397313aa66b2f964890aac10b81d4573c1fcfae682787573a0e2a9b"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 740281147,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

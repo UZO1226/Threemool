@@ -14,7 +14,7 @@ for name in a.experiments:
     assert Path(name).name==name
     folder=a.results/name;assert (folder/'summary.json').exists()
     for path in folder.iterdir():
-        if path.is_file() and path.suffix in ['.pt','.json','.log']:
+        if path.is_file() and path.suffix in ['.pt','.pkl','.json','.log']:
             files[f'{name}/{path.name}']=path
 manifest={'source_data_included':False,'residual_banks_included':False,'new_policy_training':False,
     'experiments':a.experiments,'files':{name:{'bytes':path.stat().st_size,
