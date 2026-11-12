@@ -1,0 +1,7 @@
+{
+  "step0_alignment": true,
+  "targets_and_fixed_context_match": true,
+  "later_prediction_difference": 4.551264762878418,
+  "finite_nonzero_teacher_gradient": true,
+  "test_evaluated": false
+}
