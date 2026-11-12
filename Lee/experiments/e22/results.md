@@ -1,5 +1,10 @@
 # Lee/e22 results
 
+Correction: e24 identifies a NO3 initialization defect in this implementation.
+The NO3 head was permanently clamped to zero. These historical numbers remain
+reproducible, but must not be used to conclude that the correctly initialized
+neural model family failed. See ../e24/README.md and initialization_check.json.
+
 Inner proper scoring selects history 16 and innovation scales NH4 1, DO 1.
 The unchanged gate still fails. No agent is trained on this model and test
 observations remain unused.

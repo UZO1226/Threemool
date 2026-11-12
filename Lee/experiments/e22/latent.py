@@ -45,6 +45,7 @@ class LatentModel(nn.Module):
         with torch.no_grad():
             self.forcing[-1].weight.zero_();self.forcing[-1].bias.zero_()
             self.forcing[-1].bias[7:]=-5.
+            self.forcing[-1].bias[17:27]=0.
             scaled=torch.tensor(np.r_[mean,mean[0],mean[0]],dtype=torch.float32)*self.sign/self.sd
             A=.995*torch.sigmoid(self.gate_base)[:,None]*torch.softmax(w.masked_fill(~mask,-1e9),dim=-1)
             gain=torch.full((7,10),float(F.softplus(torch.tensor(-5.))))
