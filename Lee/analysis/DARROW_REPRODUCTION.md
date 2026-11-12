@@ -113,3 +113,56 @@ require the training-time leaf wrapper after the trees have been saved.
 Before pushing the personal branch, run scripts/check_scope.py with its branch
 name and scripts/build_paper.py --check from Threemool. Keep changes under Lee/,
 preserve final test41 and all failed runs, and do not push directly to main.
+
+## Frozen-environment policy comparisons
+
+The separate draft release id443333191, tag
+lee-e42-e44-policy-comparison-20261113, contains completed policy subsets and
+generated simulation evaluations. Draft assets require repository access;
+their presence does not establish an improvement. Stable release id and tag
+are recorded because GitHub may change its untagged draft URL after edits.
+
+| Archive | Index with verified remote size and SHA256 |
+| --- | --- |
+| lee-e42-original-model-baselines.zip | [Five original-model FCSRL policies](../experiments/e42/old_baseline_artifacts.json) |
+| lee-e42-frozen-model-fcsrl-baselines.zip | [Five frozen-model FCSRL policies](../experiments/e42/new_fcsrl_artifacts.json) |
+| lee-e42-frozen-model-ppo-baselines.zip | [Five frozen-model PPO policies](../experiments/e42/new_ppo_artifacts.json) |
+| lee-e43-split-five-seed-policies.zip | [Five split policies](../experiments/e43/split_artifacts.json) |
+| lee-e43-capacity-five-seed-policies.zip | [Five capacity-control policies](../experiments/e43/capacity_artifacts.json) |
+| lee-e44-split-five-seed-evaluations.zip | [All split air queries and evaluation cases](../experiments/e44/split_evaluation_artifacts.json) |
+| lee-e44-capacity-five-seed-evaluations.zip | [All capacity air queries and evaluation cases](../experiments/e44/capacity_evaluation_artifacts.json) |
+
+Policy archives preserve results-relative run folders, final and diagnostic
+checkpoints, logs, settings, source manifests and the original Apache license.
+Evaluation archives instead contain seed_0 through seed_4, including native,
+matched and every intermediate air-query JSON, plus five_seed_report.json.
+Those rows are generated simulator metrics by date/member/noise draw, not
+original plant observations. Neither archive type includes source data or
+calibration banks. Verify archive and internal hashes before loading weights.
+
+Restore the environment and excluded PIT bank first. e42/train_policy.py,
+e43/train_split.py and e45/train_severity.py then use the same frozen adapter,
+reward, cost limit12, corrected terminal air accounting and401280 transitions.
+Full commands and runtime provenance are in each experiment README and run
+manifest. Restore exact source files from the corresponding implementation
+commit when replaying a historical run: checkpoint loading verifies its
+training-source hashes, including all Python files pinned by that runner.
+CRLF and LF text identities are handled explicitly, while binary hashes must
+match exactly. Do not weaken source checks to accommodate unrelated edits.
+
+For final-policy comparisons, e44/evaluate_pair.py uses common five-member,
+eight-noise-draw and40-date validation cases. It verifies native replay,
+actual training budget and checkpoint/freeze identity. Its air-only selector
+adjusts candidate actions without reading water quality. Report both native
+and adjusted metrics, using exactly five policy seed pairs in e44/report.py.
+e44/capacity_contrast.py additionally checks that split and capacity variants
+share the same original FCSRL checkpoint references and mutually matched air.
+Do not pool1600 simulator cases as1600 policy seeds or select a favorable
+intermediate checkpoint. e43 fails the prespecified improvement criterion;
+retain both complete reports and their uncertainty intervals.
+
+e45 is a separate severity-supervision candidate. Its short smoke/replay and
+unit/environment checks are not full policy performance seeds. Five full
+policy seeds are running in results/e45_full at this snapshot, so no full
+e45 archive or improvement result is listed here yet. Inspect actual processes
+before inferring whether any recorded run is still active.
