@@ -58,3 +58,23 @@ d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0, preserved unmodified.
 See ../../code/darrow/FCSRL_LICENSE. Frozen environment, five policy seeds,
 401280 transitions and the existing matched-air criterion remain the proposed
 comparison. Final test41 must remain reserved.
+
+## Queued final-policy evaluation
+
+A separate local shell waits on the five verified training process IDs, then
+runs the existing guarded matching batch below and writes comparison.json
+with report.py only after all five matching jobs succeed. This is queued,
+not an executed evaluation result at this snapshot. The batch rejects missing
+or incomplete final checkpoints and budgets other than401280. A training or
+evaluation failure must be investigated in its retained folder, not restarted
+under another seed or concealed by a partial report.
+
+```powershell
+python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-roots results/e45_full/new_ppolag_fcsrl_severity --seeds 0 1 2 3 4 --out results/e45_comparison --parallel 3
+python Threemool/Lee/experiments/e44/report.py --pairs results/e45_comparison/seed_0/summary.json results/e45_comparison/seed_1/summary.json results/e45_comparison/seed_2/summary.json results/e45_comparison/seed_3/summary.json results/e45_comparison/seed_4/summary.json --out Threemool/Lee/experiments/e45/comparison.json
+```
+
+Do not launch a second copy while the queued shell or matching batch is alive.
+Waiting for an existing process does not count as policy training or an
+improvement. Native metrics, matching traces, five seed uncertainty and all
+failed results remain required before deciding on another experiment.

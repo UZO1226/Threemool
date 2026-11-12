@@ -77,6 +77,10 @@ Five full severity seeds launch in results/e45_full with implementation
 commit c2b48aa, five workers and401280 transitions each. Inspect the real
 runner before waiting or restarting. After training, use unchanged air-only
 matching against the five frozen-model FCSRL references and report all seeds.
+A separate queued shell already waits on the verified five training process
+IDs and will launch results/e45_comparison with three workers, then write
+e45/comparison.json only if the full batch succeeds. Do not launch a duplicate.
+Check both the training runner and queued evaluation shell for actual liveness.
 Never count smoke results as policy improvement. All e45 Python files are pinned
 by the runner; do not edit them until the runner exits.
 
