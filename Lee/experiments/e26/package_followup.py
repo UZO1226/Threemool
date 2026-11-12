@@ -16,7 +16,7 @@ for name in a.experiments:
     for path in folder.iterdir():
         if path.is_file() and path.suffix in ['.pt','.pkl','.json','.log']:
             files[f'{name}/{path.name}']=path
-manifest={'source_data_included':False,'residual_banks_included':False,'new_policy_training':False,
+manifest={'source_data_included':False,'residual_banks_included':False,'pit_banks_included':False,'new_policy_training':False,
     'experiments':a.experiments,'files':{name:{'bytes':path.stat().st_size,
         'sha256':hashlib.sha256(path.read_bytes()).hexdigest()} for name,path in sorted(files.items())}}
 a.out.parent.mkdir(parents=True,exist_ok=True)

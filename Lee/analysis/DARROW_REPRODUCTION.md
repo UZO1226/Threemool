@@ -1,7 +1,9 @@
 # DARROW follow-up reproduction
 
 These are exploratory environment experiments. None of e26 to e39 passes all
-adoption criteria. Environment-member seeds are not policy-training seeds.
+adoption criteria. e40 passes the original point-estimate gates and independent
+reconstruction, with the event timing and uncertainty limits in its results.md.
+Environment-member seeds are not policy-training seeds.
 The official final test41 remains unused. Repeated validation40 is not an
 independent confirmation set.
 
@@ -46,6 +48,7 @@ Draft access requires an authorized repository account.
 | lee-e31-e33-followup.zip | [e31](../experiments/e31/artifacts.json) |
 | lee-e34-e37-followup.zip | [e34](../experiments/e34/artifacts.json) |
 | lee-e38-e39-followup.zip | [e38](../experiments/e38/artifacts.json) |
+| lee-e40-frozen-environment.zip | [e40](../experiments/e40/artifacts.json) |
 
 Download with an authorized GitHub CLI session, for example:
 
@@ -71,6 +74,15 @@ copy it to the expected path only after verifying that archive's manifest.
 e16 also generates the persistence baseline. Paths stored in historical JSON
 may be absolute Windows paths and need an explicit local-path adjustment when
 running on another machine. Do not edit the recorded historical summaries.
+
+For the frozen e40 environment, e42/rebuild_bank.py regenerates the excluded
+PIT bank from authorized input and the five downloaded quantile checkpoints.
+It rejects an existing output and requires the regenerated SHA256 to match
+environment_freeze.json. A separate output results/e42_rebuilt_pit.npz was
+tested to reproduce the frozen bank exactly. Restore the bank to its frozen
+path before running FrozenDynamics. e42 also corrects terminal reward/air
+accounting for both old-model and new-model policies; historical policies
+remain separate sensitivity references.
 
 ## Execution and independent audits
 

@@ -15,7 +15,7 @@ def read(experiment):
     return json.loads((ROOT/f'Lee/experiments/{experiment}/summary.json').read_text())
 
 old=read('e16')['validation'];rows=[('Persistence',old['persistence']),('Original',old['old']),('e24',read('e24')['validation'])]
-for experiment in [f'e{k}' for k in range(26,40)]:
+for experiment in [f'e{k}' for k in range(26,41)]:
     if not (ROOT/f'Lee/experiments/{experiment}/summary.json').exists():continue
     source=read(experiment);value=source['validation']
     if 'normalized_mae' not in value:value=value[source['selected']]

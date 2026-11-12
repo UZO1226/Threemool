@@ -10,6 +10,26 @@ No genuine external condition currently prevents useful work.
 The controller previously reported usageLimited and the user subsequently
 reactivated the goal. That interruption was not a successful research outcome.
 The user explicitly requested that work resume.
+
+e40 has now completed and passes all original point-estimate adoption gates.
+Its independent sklearn/full-day interpolation reconstruction passes. Selected
+pit_b95_a0.5 forecasts NH4/DO violation frequencies13.4993/.7211 percent versus
+observed17.3158/1.1579. Normalized MAE.775476 and NH4 MAE1.977722 both improve
+over the old model. Four members pass and sixteen-draw sensitivity retains
+ensemble frequency tolerances. Rare DO event timing remains weak and date-bias
+intervals extend beyond the point tolerances. Treat this as a frozen exploratory
+research simulator, not independent or real-plant validation.
+
+e42 freezes exact checkpoints, PIT bank and inputs. Its20-episode full-day
+adapter check agrees with the forecast runner; noise, terminal observations,
+reward/cost/air and test rejection checks pass. A distinct historical terminal
+reward/air alias is independently reproduced and corrected in both new-model
+and original-model wrappers. Historical code/results remain preserved. Paired
+old/new FCSRL baselines must both use this correction and cost limit12.
+The first one-update old-model training smoke is running, not a full policy
+result. e41 remains a prepared alternative and is not fitted while the
+validated environment is frozen for agent comparisons. Earlier statuses below
+are historical and must not trigger duplicate runs.
 Ordinary tool execution resumed e40 from committed source d31b068. Its actual
 Python process started and reported completed median fits. Do not infer ongoing
 execution from this historical entry; inspect the live process or tool session.

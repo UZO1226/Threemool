@@ -1,0 +1,48 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e40_monotone_quantile"
+  ],
+  "files": {
+    "e40_monotone_quantile/quantile_0.05.pkl": {
+      "bytes": 9793717,
+      "sha256": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4"
+    },
+    "e40_monotone_quantile/quantile_0.25.pkl": {
+      "bytes": 9793717,
+      "sha256": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30"
+    },
+    "e40_monotone_quantile/quantile_0.5.pkl": {
+      "bytes": 9793717,
+      "sha256": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e"
+    },
+    "e40_monotone_quantile/quantile_0.75.pkl": {
+      "bytes": 9793717,
+      "sha256": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5"
+    },
+    "e40_monotone_quantile/quantile_0.95.pkl": {
+      "bytes": 9792485,
+      "sha256": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8"
+    },
+    "e40_monotone_quantile/summary.json": {
+      "bytes": 78447,
+      "sha256": "e3aa4e4e8e9c652f3661571e14617170e62ce197756576d0418a57a59b6c32fe"
+    }
+  },
+  "archive": {
+    "name": "lee-e40-frozen-environment.zip",
+    "bytes": 20436665,
+    "sha256": "ad6ac44047a9a644f4030348ec0056b46443bda336eb7114ad8d3c937587420a"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 740404690,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}
