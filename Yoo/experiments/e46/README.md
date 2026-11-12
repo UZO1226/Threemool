@@ -78,3 +78,9 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_WAIT_POLICY=PASSI
 ```
 
 runtime manifest.json에 실제 코드 커밋, 경계/그룹별 날짜 수, 입력/소스 해시, 실행 명령을 기록한다. status.json은 전체 진행, 각 실행의 progress.json과 tqdm 로그는 갱신 수와 예상 시간을 기록한다. 전체 로그는 `/home/jio/fcsrl_src/results/e46/main.log`, 큰 checkpoint와 경로는 runtime에만 보관한다. 이 문서 작성 시점에는 사전 검사 전이며 최종 결과는 없다.
+
+## 사전 검사 완료
+
+실행 커밋 `f7d026e`,105.73초에 모든 사전 검사를 통과했다. [검사 원본](verification.json). 두 군의 초기 가중치, 원 수집 경로, 승수0에서의 전체 업데이트 가중치가 정확히 일치했다. 동일 NH4 승수의 기존 advantage 환원,64개 에피소드의 그룹별 독립 집계, Encoder/EMA 갱신, prior/normalizer 동결, 조건별 승수 활성화와 미관측 그룹 skip, checkpoint 복원을 확인했다. 미래 수온을 교란해도 그룹 정의가 그대로였다. 검사에는 train만 사용했다.
+
+확정 경계는 시작 수온18.2049575434°C, 학습은 cold47일/normal141일이다. 이 경계를 그대로 개발 날짜에 적용하면 cold39일/normal1일이다. 일반 조건의 개발 성과는 하루뿐이므로 안정적 일반화 근거로 해석하지 않는다. 경계나 그룹 수를 개발 결과에 맞춰 바꾸지 않는다. 사전 검사의3회 진단 업데이트는 폐기하고 본 실행은 같은 초기 정책에서 새로 시작한다.
