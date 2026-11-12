@@ -1,0 +1,99 @@
+{
+  "method": "ppolag",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 91094.79214826481,
+        "cost": 16.45875,
+        "nh4_viol_pct": 16.767105263157895,
+        "do_viol_pct": 0.5578947368421052,
+        "reward": -40.486574288117694,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 68.0
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_ppo_native\\new_ppolag_s0_eval_new.json",
+      "evaluation_sha256": "8c81918a19de9043e9cb491e5a908049bbac9e74817d32578dbe6f96ba046d64"
+    },
+    {
+      "policy_seed": 1,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 70812.57747934185,
+        "cost": 24.61625,
+        "nh4_viol_pct": 25.907236842105263,
+        "do_viol_pct": 0.004605263157894736,
+        "reward": -31.472256657485268,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 57.8125
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_ppo_native\\new_ppolag_s1_eval_new.json",
+      "evaluation_sha256": "82cf82a8bafb8871965cdf44853ea1071becee91363de47a7bbb5e202c8d6fc0"
+    },
+    {
+      "policy_seed": 2,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 79851.20001895877,
+        "cost": 18.823125,
+        "nh4_viol_pct": 19.69934210526316,
+        "do_viol_pct": 0.1144736842105263,
+        "reward": -35.489422230648344,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 60.8125
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_ppo_native\\new_ppolag_s2_eval_new.json",
+      "evaluation_sha256": "7b36854327b3fc9fb16577fe6115c212c29743fb06af0a92e2c51bfee50bfcf1"
+    },
+    {
+      "policy_seed": 3,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 76521.73114152774,
+        "cost": 20.633125,
+        "nh4_viol_pct": 21.614473684210523,
+        "do_viol_pct": 0.10460526315789474,
+        "reward": -34.009658285123436,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 63.9375
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_ppo_native\\new_ppolag_s3_eval_new.json",
+      "evaluation_sha256": "a8ef04f6366a403d27e91bd4866d0b44bfe31af1ef71ce704defaaeb4da889e5"
+    },
+    {
+      "policy_seed": 4,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 62157.158006444515,
+        "cost": 21.79125,
+        "nh4_viol_pct": 22.59342105263158,
+        "do_viol_pct": 0.3447368421052632,
+        "reward": -27.625403558419784,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 62.18749999999999
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_ppo_native\\new_ppolag_s4_eval_new.json",
+      "evaluation_sha256": "8080dd5be0aa412dcbb569008176a203e14f6daf77645466fb114e95c48d3c98"
+    }
+  ],
+  "test_evaluated": false,
+  "scope": "Original PPO baseline final policies on the frozen simulator, no agent-extension claim."
+}

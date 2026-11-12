@@ -75,3 +75,22 @@ cost occurs at substantially greater air. See split_seed0.json for exact
 checkpoint identities and the quality-blind matching trace. This negative
 single-seed result is retained; remaining seeds and the capacity control are
 still required before a method-level judgment.
+
+Independent action replay reproduces that failed pair exactly. Zero-air
+fractions are.36542 for FCSRL and.35470 for adjusted split, and mean absolute
+step air changes are341.17 versus313.10m3/h. The candidate's matched failure
+therefore is not evidence of more frequent shutdown or sharper action changes
+than this baseline. The offset clips35.47 percent of candidate commands, but
+that observation alone does not establish a causal explanation. Conditional
+state/action statistics use different resulting trajectories. See
+split_seed0_action_diagnosis.json; no policy or matching rule was changed.
+
+The capacity-control seed0 also fails: matched cost28.294375 versus24.121875,
+NH4 percentage29.74211 versus25.35855, DO.04145 versus.03289, with air47157.57
+versus47194.44m3. These two negative single-seed comparisons remain separate
+from the pending five-seed reports. See capacity_seed0.json.
+
+The four remaining split seeds are evaluated in results/e44_split_remaining
+with two workers. Capacity seed1 is evaluated in results/e44_capacity_seed1;
+seed0 is already in results/e44_capacity_first. Do not duplicate these pairs
+when capacity seeds2..4 complete. Use a fresh later output for those seeds.

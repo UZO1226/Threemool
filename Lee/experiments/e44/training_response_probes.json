@@ -1,0 +1,649 @@
+{
+  "training_observations_only": true,
+  "probe_rows": 1024,
+  "test_evaluated": false,
+  "policy_refit": false,
+  "scope": "Counterfactual nearby observation responses, not measured process effects, causal attribution or an optimal-policy monotonicity theorem. No actor regularizer is fitted.",
+  "policies": [
+    {
+      "method": "ppolag_fcsrl",
+      "policy_seed": 0,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.4482421875,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.13154712319374084,
+            "negative_fraction": 0.177734375,
+            "positive_fraction": 0.822265625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.08236867189407349,
+            "negative_fraction": 0.126953125,
+            "positive_fraction": 0.4873046875,
+            "near_zero_fraction": 0.3857421875
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.04061906039714813,
+            "negative_fraction": 0.53125,
+            "positive_fraction": 0.46875,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.022262461483478546,
+            "negative_fraction": 0.306640625,
+            "positive_fraction": 0.2431640625,
+            "near_zero_fraction": 0.4501953125
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.08605818450450897,
+            "negative_fraction": 0.603515625,
+            "positive_fraction": 0.3896484375,
+            "near_zero_fraction": 0.0068359375
+          },
+          "executed_action": {
+            "mean_change": -0.08319300413131714,
+            "negative_fraction": 0.4228515625,
+            "positive_fraction": 0.1435546875,
+            "near_zero_fraction": 0.43359375
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.08518281579017639,
+            "negative_fraction": 0.8271484375,
+            "positive_fraction": 0.1728515625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.04720747470855713,
+            "negative_fraction": 0.439453125,
+            "positive_fraction": 0.0966796875,
+            "near_zero_fraction": 0.4638671875
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "policy_seed": 1,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.5712890625,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.12883348762989044,
+            "negative_fraction": 0.375,
+            "positive_fraction": 0.625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.10024191439151764,
+            "negative_fraction": 0.064453125,
+            "positive_fraction": 0.3720703125,
+            "near_zero_fraction": 0.5634765625
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.17973239719867706,
+            "negative_fraction": 0.8134765625,
+            "positive_fraction": 0.1865234375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.06166049838066101,
+            "negative_fraction": 0.314453125,
+            "positive_fraction": 0.083984375,
+            "near_zero_fraction": 0.6015625
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.13650476932525635,
+            "negative_fraction": 0.822265625,
+            "positive_fraction": 0.169921875,
+            "near_zero_fraction": 0.0078125
+          },
+          "executed_action": {
+            "mean_change": -0.05370360612869263,
+            "negative_fraction": 0.306640625,
+            "positive_fraction": 0.0888671875,
+            "near_zero_fraction": 0.6044921875
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.06343090534210205,
+            "negative_fraction": 0.7900390625,
+            "positive_fraction": 0.2099609375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.03440486639738083,
+            "negative_fraction": 0.3095703125,
+            "positive_fraction": 0.0732421875,
+            "near_zero_fraction": 0.6171875
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "policy_seed": 2,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.3623046875,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.15565134584903717,
+            "negative_fraction": 0.1298828125,
+            "positive_fraction": 0.8701171875,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.11827507615089417,
+            "negative_fraction": 0.1005859375,
+            "positive_fraction": 0.580078125,
+            "near_zero_fraction": 0.3193359375
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.03325290605425835,
+            "negative_fraction": 0.630859375,
+            "positive_fraction": 0.369140625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.02207348309457302,
+            "negative_fraction": 0.4111328125,
+            "positive_fraction": 0.2158203125,
+            "near_zero_fraction": 0.373046875
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.06153474003076553,
+            "negative_fraction": 0.6455078125,
+            "positive_fraction": 0.345703125,
+            "near_zero_fraction": 0.0087890625
+          },
+          "executed_action": {
+            "mean_change": -0.0607176348567009,
+            "negative_fraction": 0.4853515625,
+            "positive_fraction": 0.1591796875,
+            "near_zero_fraction": 0.35546875
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.04277617484331131,
+            "negative_fraction": 0.41015625,
+            "positive_fraction": 0.58984375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.027397243306040764,
+            "negative_fraction": 0.3017578125,
+            "positive_fraction": 0.3486328125,
+            "near_zero_fraction": 0.349609375
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "policy_seed": 3,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.666015625,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.23961102962493896,
+            "negative_fraction": 0.07421875,
+            "positive_fraction": 0.92578125,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.13719698786735535,
+            "negative_fraction": 0.029296875,
+            "positive_fraction": 0.390625,
+            "near_zero_fraction": 0.580078125
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.14277687668800354,
+            "negative_fraction": 0.716796875,
+            "positive_fraction": 0.2802734375,
+            "near_zero_fraction": 0.0029296875
+          },
+          "executed_action": {
+            "mean_change": -0.064459428191185,
+            "negative_fraction": 0.275390625,
+            "positive_fraction": 0.0595703125,
+            "near_zero_fraction": 0.6650390625
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.3692750334739685,
+            "negative_fraction": 0.9228515625,
+            "positive_fraction": 0.0634765625,
+            "near_zero_fraction": 0.013671875
+          },
+          "executed_action": {
+            "mean_change": -0.15205758810043335,
+            "negative_fraction": 0.32421875,
+            "positive_fraction": 0.0029296875,
+            "near_zero_fraction": 0.6728515625
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.07833395898342133,
+            "negative_fraction": 0.263671875,
+            "positive_fraction": 0.736328125,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.024589164182543755,
+            "negative_fraction": 0.109375,
+            "positive_fraction": 0.23046875,
+            "near_zero_fraction": 0.66015625
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl",
+      "policy_seed": 4,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.53515625,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.1265496462583542,
+            "negative_fraction": 0.2763671875,
+            "positive_fraction": 0.7236328125,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.08431591093540192,
+            "negative_fraction": 0.125,
+            "positive_fraction": 0.4208984375,
+            "near_zero_fraction": 0.4541015625
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.03621012344956398,
+            "negative_fraction": 0.3857421875,
+            "positive_fraction": 0.6142578125,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.0134876798838377,
+            "negative_fraction": 0.232421875,
+            "positive_fraction": 0.2861328125,
+            "near_zero_fraction": 0.4814453125
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.2581877112388611,
+            "negative_fraction": 0.88671875,
+            "positive_fraction": 0.1025390625,
+            "near_zero_fraction": 0.0107421875
+          },
+          "executed_action": {
+            "mean_change": -0.13572251796722412,
+            "negative_fraction": 0.4384765625,
+            "positive_fraction": 0.021484375,
+            "near_zero_fraction": 0.5400390625
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.04656096547842026,
+            "negative_fraction": 0.390625,
+            "positive_fraction": 0.609375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.033926498144865036,
+            "negative_fraction": 0.1767578125,
+            "positive_fraction": 0.3349609375,
+            "near_zero_fraction": 0.48828125
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl_split",
+      "policy_seed": 0,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.2587890625,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.050122104585170746,
+            "negative_fraction": 0.416015625,
+            "positive_fraction": 0.583984375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.04766486585140228,
+            "negative_fraction": 0.2177734375,
+            "positive_fraction": 0.45703125,
+            "near_zero_fraction": 0.3251953125
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.23305031657218933,
+            "negative_fraction": 0.8837890625,
+            "positive_fraction": 0.1162109375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.1832139939069748,
+            "negative_fraction": 0.6357421875,
+            "positive_fraction": 0.0576171875,
+            "near_zero_fraction": 0.306640625
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.09932766854763031,
+            "negative_fraction": 0.841796875,
+            "positive_fraction": 0.1513671875,
+            "near_zero_fraction": 0.0068359375
+          },
+          "executed_action": {
+            "mean_change": -0.07485146075487137,
+            "negative_fraction": 0.583984375,
+            "positive_fraction": 0.0869140625,
+            "near_zero_fraction": 0.3291015625
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.02141113393008709,
+            "negative_fraction": 0.6474609375,
+            "positive_fraction": 0.3525390625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.01479174755513668,
+            "negative_fraction": 0.435546875,
+            "positive_fraction": 0.25,
+            "near_zero_fraction": 0.314453125
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl_split",
+      "policy_seed": 1,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.435546875,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.1198451817035675,
+            "negative_fraction": 0.275390625,
+            "positive_fraction": 0.724609375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.10298691689968109,
+            "negative_fraction": 0.0859375,
+            "positive_fraction": 0.5185546875,
+            "near_zero_fraction": 0.3955078125
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.0567607581615448,
+            "negative_fraction": 0.4228515625,
+            "positive_fraction": 0.5771484375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.04694870859384537,
+            "negative_fraction": 0.208984375,
+            "positive_fraction": 0.392578125,
+            "near_zero_fraction": 0.3984375
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.14433540403842926,
+            "negative_fraction": 0.82421875,
+            "positive_fraction": 0.16796875,
+            "near_zero_fraction": 0.0078125
+          },
+          "executed_action": {
+            "mean_change": -0.08515797555446625,
+            "negative_fraction": 0.4814453125,
+            "positive_fraction": 0.0869140625,
+            "near_zero_fraction": 0.431640625
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": 3.2779760658741e-05,
+            "negative_fraction": 0.5703125,
+            "positive_fraction": 0.4287109375,
+            "near_zero_fraction": 0.0009765625
+          },
+          "executed_action": {
+            "mean_change": 0.0081189488992095,
+            "negative_fraction": 0.2900390625,
+            "positive_fraction": 0.2607421875,
+            "near_zero_fraction": 0.44921875
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl_split",
+      "policy_seed": 2,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.375,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.24178078770637512,
+            "negative_fraction": 0.07421875,
+            "positive_fraction": 0.92578125,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.15740248560905457,
+            "negative_fraction": 0.0390625,
+            "positive_fraction": 0.5625,
+            "near_zero_fraction": 0.3984375
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.12843836843967438,
+            "negative_fraction": 0.708984375,
+            "positive_fraction": 0.291015625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.09866495430469513,
+            "negative_fraction": 0.4501953125,
+            "positive_fraction": 0.1259765625,
+            "near_zero_fraction": 0.423828125
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.14155234396457672,
+            "negative_fraction": 0.8330078125,
+            "positive_fraction": 0.158203125,
+            "near_zero_fraction": 0.0087890625
+          },
+          "executed_action": {
+            "mean_change": -0.10590726137161255,
+            "negative_fraction": 0.5478515625,
+            "positive_fraction": 0.0302734375,
+            "near_zero_fraction": 0.421875
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.031086083501577377,
+            "negative_fraction": 0.564453125,
+            "positive_fraction": 0.435546875,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.015337095595896244,
+            "negative_fraction": 0.314453125,
+            "positive_fraction": 0.2568359375,
+            "near_zero_fraction": 0.4287109375
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl_split",
+      "policy_seed": 3,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.732421875,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.33821848034858704,
+            "negative_fraction": 0.0087890625,
+            "positive_fraction": 0.9912109375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.14612403512001038,
+            "negative_fraction": 0.0,
+            "positive_fraction": 0.3125,
+            "near_zero_fraction": 0.6875
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.006454957649111748,
+            "negative_fraction": 0.5146484375,
+            "positive_fraction": 0.4853515625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.00716477632522583,
+            "negative_fraction": 0.1142578125,
+            "positive_fraction": 0.1220703125,
+            "near_zero_fraction": 0.763671875
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.21095527708530426,
+            "negative_fraction": 0.8291015625,
+            "positive_fraction": 0.15625,
+            "near_zero_fraction": 0.0146484375
+          },
+          "executed_action": {
+            "mean_change": -0.09470425546169281,
+            "negative_fraction": 0.2431640625,
+            "positive_fraction": 0.0009765625,
+            "near_zero_fraction": 0.755859375
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.13645987212657928,
+            "negative_fraction": 0.2900390625,
+            "positive_fraction": 0.7099609375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.036848124116659164,
+            "negative_fraction": 0.0966796875,
+            "positive_fraction": 0.154296875,
+            "near_zero_fraction": 0.7490234375
+          }
+        }
+      }
+    },
+    {
+      "method": "ppolag_fcsrl_split",
+      "policy_seed": 4,
+      "training_environment": "new",
+      "native_zero_action_fraction_on_probe": 0.375,
+      "responses": {
+        "nh4_plus_half": {
+          "raw_mean": {
+            "mean_change": 0.0892954170703888,
+            "negative_fraction": 0.337890625,
+            "positive_fraction": 0.662109375,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.07530032098293304,
+            "negative_fraction": 0.1689453125,
+            "positive_fraction": 0.4921875,
+            "near_zero_fraction": 0.3388671875
+          }
+        },
+        "do1_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.10907505452632904,
+            "negative_fraction": 0.2958984375,
+            "positive_fraction": 0.7041015625,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": 0.06735686957836151,
+            "negative_fraction": 0.197265625,
+            "positive_fraction": 0.5029296875,
+            "near_zero_fraction": 0.2998046875
+          }
+        },
+        "do2_plus_point2": {
+          "raw_mean": {
+            "mean_change": 0.028295189142227173,
+            "negative_fraction": 0.3681640625,
+            "positive_fraction": 0.625,
+            "near_zero_fraction": 0.0068359375
+          },
+          "executed_action": {
+            "mean_change": 0.02348511293530464,
+            "negative_fraction": 0.2080078125,
+            "positive_fraction": 0.41796875,
+            "near_zero_fraction": 0.3740234375
+          }
+        },
+        "do3_plus_point2": {
+          "raw_mean": {
+            "mean_change": -0.04731084406375885,
+            "negative_fraction": 0.6328125,
+            "positive_fraction": 0.3671875,
+            "near_zero_fraction": 0.0
+          },
+          "executed_action": {
+            "mean_change": -0.035379815846681595,
+            "negative_fraction": 0.4208984375,
+            "positive_fraction": 0.201171875,
+            "near_zero_fraction": 0.3779296875
+          }
+        }
+      }
+    }
+  ]
+}

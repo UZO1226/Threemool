@@ -51,19 +51,41 @@ prepared causal-history alternative with unit checks, not a fitted result.
   and common-reference capacity contrast are implemented. Reports reject smoke
   runs, missing/duplicate seeds, mixed references and excessive actual air gaps.
 
-## Running and next actions
+## Latest verified continuation
 
-- results/e43_first_pair manages capacity-control seed0, still running at this
-  snapshot. Split seed0 in that folder is already complete; do not duplicate it.
+All split policy seeds are trained. Matched evaluations for seeds0..3 finish;
+seed4 is running in results/e44_split_remaining. Capacity seeds0 and1 finish
+both training and matching. Capacity seeds2..4 remain in the original runner,
+observed at update52 of66. Do not duplicate these jobs.
+
+Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
+Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
+increases.17566 to.22697 percent. These are retained mixed single-seed results,
+not a five-seed improvement. Finish the original complete comparisons.
+
+Both ten-case cross-model evaluation batches and the five PPO checkpoint
+replays finish. New validation JSONs and model_sensitivity.json preserve the
+strong simulator dependence. The sensitivity figure compares native air and
+does not establish matched-air dominance. Split artifacts for all five seeds
+are uploaded to the existing draft with verified size and SHA256.
+
+Action diagnosis does not support more zero-air actions or sharper air changes
+as the split seed0 failure explanation. Encoder synchronization logs do not
+demonstrate a large single-update shock. Training-only observation probes are
+descriptive, not causal. DARROW_NEXT_HYPOTHESIS.md records a prospective
+severity-aware auxiliary target; no such policy is trained yet.
+
+## Prior launch record and next actions
+
+- results/e43_first_pair contains completed split and capacity-control seed0.
+  Do not duplicate either job.
 - results/e43_remaining launches the required eight split/capacity seed1..4
   jobs with five workers. Inspect its real runner and status before acting.
-- results/e44_new_policy_cross is evaluating the five completed frozen-model
-  FCSRL policies on both simulators. After that one-worker batch finishes,
-  independently replay the five PPO final policies on the frozen environment.
-- When capacity seed0 completes, run its original-FCSRL-reference matched pair
-  in a fresh results/e44_capacity_first folder. When remaining split seeds
-  complete, run seeds1..4 in results/e44_split_remaining. Run capacity seeds1..4
-  similarly after their final checkpoints finish. Exact runner commands and
+- results/e44_new_policy_cross and results/e44_ppo_native are complete.
+- Capacity seed0 matching finishes in results/e44_capacity_first, seed1 in
+  results/e44_capacity_seed1. Run capacity seeds2..4 in a fresh
+  results/e44_capacity_later after their final checkpoints finish. Split
+  seeds1..4 matching uses results/e44_split_remaining. Exact runner commands and
   definitions are in e42/e43/e44 READMEs. Never overwrite a prior result folder.
 - Assemble exactly five seed pairs for each variant with e44/report.py, then
   use capacity_contrast.py on both sets matched to the same FCSRL reference air.

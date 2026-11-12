@@ -1,0 +1,107 @@
+{
+  "rows": [
+    {
+      "method": "old_ppolag_fcsrl",
+      "policy_seed": 0,
+      "probe_kl_median": 0.0008272642735391855,
+      "probe_kl_maximum": 0.002021587686613202,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 13.605,
+      "log_sha256": "c2b0382793cd7c9055cde3c7ccb91eca91d2a19a3d8dbbc8fed88299eb7c1fa0"
+    },
+    {
+      "method": "old_ppolag_fcsrl",
+      "policy_seed": 1,
+      "probe_kl_median": 0.0013668534811586142,
+      "probe_kl_maximum": 0.006829580292105675,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 16.125,
+      "log_sha256": "e9ade9ba0ffddb67639120586d0e7674cb5fd229503e6d87925b9e0e41bf257e"
+    },
+    {
+      "method": "old_ppolag_fcsrl",
+      "policy_seed": 2,
+      "probe_kl_median": 0.0005491884949151427,
+      "probe_kl_maximum": 0.0012444497551769018,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 8.685,
+      "log_sha256": "65d3b8505d963c116eeeb20cf3948e0622c800b3239f657a2cefbe55f831c226"
+    },
+    {
+      "method": "old_ppolag_fcsrl",
+      "policy_seed": 3,
+      "probe_kl_median": 0.0012105563073419034,
+      "probe_kl_maximum": 0.0028542159125208855,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 22.455,
+      "log_sha256": "1c86272de03ce816c5d8025515b66c853b4355c078a05bc0fb227c7b601cad0f"
+    },
+    {
+      "method": "old_ppolag_fcsrl",
+      "policy_seed": 4,
+      "probe_kl_median": 0.0009610713459551334,
+      "probe_kl_maximum": 0.0030101598240435123,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 9.58,
+      "log_sha256": "102aa8489d42fb75dc25cba60766de552a73b82c32a265f2acb4e44ffb4ceaf7"
+    },
+    {
+      "method": "new_ppolag_fcsrl",
+      "policy_seed": 0,
+      "probe_kl_median": 0.0008773393637966365,
+      "probe_kl_maximum": 0.0017768866382539272,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 24.121875,
+      "log_sha256": "169e406d30f9d830ed0ccd858baead16f4b47308410b0f39cff17f915e48f9ff"
+    },
+    {
+      "method": "new_ppolag_fcsrl",
+      "policy_seed": 1,
+      "probe_kl_median": 0.0012312530889175832,
+      "probe_kl_maximum": 0.003168136579915881,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 13.33625,
+      "log_sha256": "6ac749c3be03dc7f45607f951e38a5adec60f8e73e93fc434cc9ecc66397d33f"
+    },
+    {
+      "method": "new_ppolag_fcsrl",
+      "policy_seed": 2,
+      "probe_kl_median": 0.0008864609117154032,
+      "probe_kl_maximum": 0.0025228476151823997,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 34.500625,
+      "log_sha256": "4b1706edca2bf89a93c433d68a6b1f74cd01bd10afe47f71af6bfc24f42bc457"
+    },
+    {
+      "method": "new_ppolag_fcsrl",
+      "policy_seed": 3,
+      "probe_kl_median": 0.000918854377232492,
+      "probe_kl_maximum": 0.002943317871540785,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 9.950625,
+      "log_sha256": "085121cdb5a538056de169e5355c52b8224b02eaade0bb74a4e975f8932c7aee"
+    },
+    {
+      "method": "new_ppolag_fcsrl",
+      "policy_seed": 4,
+      "probe_kl_median": 0.0008638233121018857,
+      "probe_kl_maximum": 0.002474997192621231,
+      "configured_ppo_target_kl": 0.02,
+      "ema_tau": 0.05,
+      "final_validation_cost": 30.41125,
+      "log_sha256": "cf956e73307e5fb18b7ac66d959a4577cb7a868c254b99b7e2ef7785e46cb140"
+    }
+  ],
+  "test_evaluated": false,
+  "policy_refit": false,
+  "interpretation": "Logged analytic encoder-sync probe KL is small relative to the configured PPO sampled-action KL reference. Different estimators and a limited probe do not establish a global trust-region bound. These logs do not support a large single-update EMA shock as the demonstrated failure mechanism."
+}

@@ -1,0 +1,141 @@
+{
+  "policy_seed": 0,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "ppolag_fcsrl",
+  "candidate_method": "ppolag_fcsrl_capacity",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 47194.437990665756,
+    "cost": 24.121875,
+    "nh4_viol_pct": 25.35855263157895,
+    "do_viol_pct": 0.03289473684210526,
+    "reward": -20.975305773629223,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 50.6875
+  },
+  "candidate_native": {
+    "air_m3": 78162.60254831417,
+    "cost": 13.073125,
+    "nh4_viol_pct": 13.201973684210525,
+    "do_viol_pct": 0.5592105263157894,
+    "reward": -34.73893446591741,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 68.8125
+  },
+  "candidate_matched": {
+    "air_m3": 47157.568975731265,
+    "cost": 28.294375,
+    "nh4_viol_pct": 29.742105263157896,
+    "do_viol_pct": 0.041447368421052636,
+    "reward": -20.95891954476945,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 30.625000000000004
+  },
+  "matching": {
+    "offset": -0.5595703125,
+    "target_air_m3": 47194.437990665756,
+    "achieved_air_m3": 47157.568975731265,
+    "air_error_m3": -36.86901493449113,
+    "relative_air_error": -0.0007812152555303908,
+    "matched_within_one_percent": true,
+    "strict_tolerance_reached": true,
+    "callback_queries": 11,
+    "trace": [
+      {
+        "offset": -2.0,
+        "air_m3": 0.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 0.0,
+        "air_m3": 78162.60254831417,
+        "source": "native"
+      },
+      {
+        "offset": 2.0,
+        "air_m3": 213750.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": -1.0,
+        "air_m3": 23095.352594680153,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.5,
+        "air_m3": 51057.35138738528,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.75,
+        "air_m3": 35334.56389101455,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.625,
+        "air_m3": 42842.88853327045,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.5625,
+        "air_m3": 46969.304497197736,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.53125,
+        "air_m3": 48964.751066397876,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.546875,
+        "air_m3": 48008.848589470144,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.5546875,
+        "air_m3": 47500.04154542461,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.55859375,
+        "air_m3": 47255.772073441185,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.560546875,
+        "air_m3": 47097.43851414649,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.5595703125,
+        "air_m3": 47157.568975731265,
+        "source": "air-only callback"
+      }
+    ]
+  },
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "baseline_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "candidate_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "8a26f6330c0d4ef3f462447653f3e7f3caea91dd8b680a588a5edce6cadff4b5",
+    "normalizer.json": "92982ee69094390df696d6e7781ad7d57537d838d2a4f539f72411046ba9273f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "51fabb1665adfd03ec322ebc26c887a3e4a587a616f77db9703b81aa52338859",
+    "second_head.pt": "dcd3004192d281484d003fa2b894045911e861ec7165f215f8642ad5840626ab",
+    "two_head.json": "05e13e7baf07b5cd2bd94a4b0c4c960131260887617cdba58dce07687e79de1b"
+  },
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "checkpoint_replay_verified": true,
+  "scope": "Exploratory reused validation, frozen surrogate, final policies. Matching changes candidate actions using air only.",
+  "interpretation": "Single capacity-control policy seed only. No five-seed or constraint-identity conclusion is justified."
+}

@@ -105,3 +105,27 @@ lee-e42-frozen-model-fcsrl-baselines.zip,65,793,083 bytes, SHA256
 8ce417b78a2a2ffaafaab5007f6f2975dabaf96eb95148e39db16d1e8df71739.
 Remote size and digest match new_fcsrl_artifacts.json in the same draft release.
 This is a completed baseline subset, not an extension-performance conclusion.
+
+## Completed FCSRL cross-model sensitivity
+
+All20 final-policy evaluations across the two training and two evaluation
+simulators complete. Own-environment checkpoint replay matches stored final
+metrics. new_fcsrl_validation.json and model_sensitivity.json retain every
+policy seed. Within each figure row, the evaluation simulator is held fixed.
+Air is not matched between policies in this sensitivity figure, so the native
+cost/air differences are not evidence of agent dominance. The large transfer
+differences also prevent treating one simulator's scores as real-plant truth.
+
+![Final-policy model sensitivity](figures/model_sensitivity.png)
+
+Dots are five policy seeds and black whiskers are sample SD, not confidence
+intervals. The dashed cost reference is12 counts per simulated daily episode.
+The simulated episode count includes model/noise cases and is not the number
+of independent policy seeds or a count of actual compliant calendar days.
+
+The logged encoder-sync KL diagnostic is also descriptive. Maximum analytic
+probe KL is.00683 for original-model FCSRL and.00317 for frozen-model FCSRL,
+against the configured PPO target reference.02. These different estimators
+and the limited1024-state probe do not establish a global trust-region bound,
+but they do not demonstrate a large single-update EMA shock as the failure
+mechanism. See encoder_sync_diagnostic.json. No hyperparameter was retuned.

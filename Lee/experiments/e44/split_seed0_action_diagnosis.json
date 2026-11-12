@@ -1,0 +1,47 @@
+{
+  "policy_seed": 0,
+  "test_evaluated": false,
+  "policy_refit": false,
+  "matching_rule_changed": false,
+  "scope": "Descriptive action diagnostics, not causal attribution or a five-seed performance conclusion.",
+  "policies": {
+    "baseline": {
+      "offset": 0.0,
+      "replayed_metrics": {
+        "air_m3": 47194.43799066577,
+        "cost": 24.121875,
+        "nh4_viol_pct": 25.358552631578945,
+        "do_viol_pct": 0.03289473684210526
+      },
+      "zero_air_fraction": 0.3654210526315789,
+      "maximum_air_fraction": 0.00375,
+      "offset_clipped_fraction": 0.0,
+      "mean_absolute_air_change_m3_per_hour": 341.1718112376192,
+      "conditional_mean_air_m3_per_hour": {
+        "nh4_high": 313.2694665872252,
+        "nh4_low": 2550.879459278863,
+        "do_high": 3320.4014676902443,
+        "do_low": 1986.6955121215954
+      }
+    },
+    "candidate_matched": {
+      "offset": -0.7275390625,
+      "replayed_metrics": {
+        "air_m3": 47206.55790107092,
+        "cost": 28.468125,
+        "nh4_viol_pct": 29.96644736842105,
+        "do_viol_pct": 0.0
+      },
+      "zero_air_fraction": 0.35469736842105265,
+      "maximum_air_fraction": 0.0,
+      "offset_clipped_fraction": 0.35469736842105265,
+      "mean_absolute_air_change_m3_per_hour": 313.0975077029793,
+      "conditional_mean_air_m3_per_hour": {
+        "nh4_high": 756.1519700335251,
+        "nh4_low": 2512.0769545251255,
+        "do_high": null,
+        "do_low": 1987.6445432029861
+      }
+    }
+  }
+}
