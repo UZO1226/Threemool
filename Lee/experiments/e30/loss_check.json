@@ -1,0 +1,6 @@
+{
+  "rare_to_ordinary_gradient_ratio": 4.0,
+  "equal_error_regression": 0.20000000298023224,
+  "no_event_baseline_equivalence": true,
+  "checks_passed": true
+}

@@ -11,8 +11,10 @@ import torch
 
 ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Lee/experiments/e22'))
+sys.path.insert(0,str(ROOT/'Lee/experiments/e26'))
 from latent import Data,LatentModel,precompute,simulate,forcing,noise_paths,summarize
 from cooperative import arrays,recursive,GBMDynamics
+from correlated import event_diagnostics
 
 p=argparse.ArgumentParser()
 p.add_argument('--data',type=Path,required=True)
@@ -20,22 +22,30 @@ p.add_argument('--reference-summary',type=Path,required=True)
 p.add_argument('--runs',type=Path,required=True)
 p.add_argument('--old-diagnosis',type=Path,required=True)
 p.add_argument('--out',type=Path,required=True)
+p.add_argument('--model-kind',choices=['base','slow'],default='base')
 a=p.parse_args();torch.set_num_threads(1)
 source=json.loads((a.runs/'summary.json').read_text())
 reference=json.loads(a.reference_summary.read_text())
 old=json.loads(a.old_diagnosis.read_text())
 raw=pd.read_pickle(a.data);data=Data(raw,reference['fit_days']);days=raw['days']['val']
+scoring_sd=np.array(reference.get('scoring_sd',data.sd))
+model_class=LatentModel;cap=.995
+if a.model_kind=='slow':
+    sys.path.insert(0,str(ROOT/'Lee/experiments/e27'))
+    from slow_memory import SlowMemoryModel
+    model_class=SlowMemoryModel;cap=SlowMemoryModel.cap
+assert source.get('state_row_sum_cap',.995)==cap
 assert days==old['days']
 models=[]
 for member in range(5):
-    model=LatentModel(data.sd,data.mean,data.mean_air,data.hi)
+    model=model_class(data.sd,data.mean,data.mean_air,data.hi)
     model.load_state_dict(torch.load(a.runs/f"epoch{source['selected_epoch']}_m{member}.pt",weights_only=True))
     model.eval();models.append(model)
-cache=precompute(models,data,days,16)
+cache=precompute(models,data,days,16,row_sum_bound=cap)
 residual=np.load(a.runs/'residual_bank.npz')['residual']
 noise=noise_paths(residual,days);bias=np.array(source['bias']);scale=np.array(source['scale'])
 traj=simulate(cache,bias,noise,scale);truth=cache['true'][:,1:]
-score=summarize(traj,cache['true'],data.sd)
+score=summarize(traj,cache['true'],scoring_sd)
 np.testing.assert_allclose(score['normalized_mae'],source['validation']['normalized_mae'],rtol=1e-12)
 references={}
 original=json.loads((ROOT/'Lee/experiments/e16/summary.json').read_text())
@@ -43,10 +53,10 @@ for name in ['old','persistence']:
     os.environ['DARROW_FAST_DYNAMICS']='0' if name=='persistence' else '1'
     path=Path(original['model_paths'][name]) if name=='old' else a.runs.parent/'e16_cooperative/persistence.pkl'
     reference_traj=recursive(GBMDynamics(path),arrays(raw['data'],days))
-    references[name]=summarize(reference_traj[:,None],cache['true'],data.sd)
+    references[name]=summarize(reference_traj[:,None],cache['true'],scoring_sd)
 
 # Independent Torch forward and cached NumPy rollout must agree for a full day.
-probe=precompute(models,data,days[:1],16);positions=data.positions[days[0]][:95][None]
+probe=precompute(models,data,days[:1],16,row_sum_bound=cap);positions=data.positions[days[0]][:95][None]
 exo=torch.tensor(data.exohistory(positions,16),dtype=torch.float32)
 context=torch.tensor(data.past(positions[:,0],16),dtype=torch.float32)
 state=torch.tensor(data.state[positions[:,0]],dtype=torch.float32)
@@ -57,7 +67,7 @@ with torch.no_grad():
         np.testing.assert_allclose(prediction[member,0],model(state,context,exo,air).numpy(),rtol=2e-4,atol=2e-4)
 
 mae=np.abs(traj-truth[None,None]).mean((0,1,3))
-daily={'normalized_mae':(mae/data.sd).mean(1),'nh4_mae':mae[:,0],
+daily={'normalized_mae':(mae/scoring_sd).mean(1),'nh4_mae':mae[:,0],
     'nh4_bias_pp':(traj[...,0]>4).mean((0,1,3))*100-(truth[...,0]>4).mean(1)*100,
     'do_bias_pp':(traj[...,2:].max(-1)>2).mean((0,1,3))*100-(truth[...,2:].max(-1)>2).mean(1)*100}
 daily['normalized_mae_difference_from_old']=daily['normalized_mae']-np.array(old['metrics']['old']['per_day_normalized_mae'])
@@ -75,9 +85,15 @@ for horizon in [1,4,16,48,95]:
         if t%horizon==0:s[...,:5]=cache['true'][None,None,:,t]
         s=np.einsum('mdjk,mrdk->mrdj',cache['V'][:,:,t],s)+f[:,None,:,t]+np.r_[bias,0,0]
         s[...,:5]+=innov[:,:,:,t]*scale;s=np.clip(s,0,cache['hi']);values.append(s[...,:5].copy())
-    reset[str(horizon)]=summarize(np.stack(values,3),cache['true'],data.sd)
+    reset[str(horizon)]=summarize(np.stack(values,3),cache['true'],scoring_sd)
 np.testing.assert_allclose(reset['95']['normalized_mae'],score['normalized_mae'],rtol=1e-8)
+conversion=models[0].sd.numpy()*models[0].sign.numpy()
+transformed=cache['V']*conversion[None,None,None,None,:]/conversion[None,None,None,:,None]
+row_sums=transformed.sum(-1)
 result={'selected_epoch':source['selected_epoch'],'selected_scale':source['selected_scale'],
+    'model_kind':a.model_kind,'scoring_sd':scoring_sd.tolist(),
+    'matrix_row_sum_max':float(row_sums.max()),'matrix_rows_above_one':int((row_sums>1).sum()),
+    'event_diagnostics':event_diagnostics(traj,cache['true']),
     'torch_numpy_agreement_passed':True,'reconstruction_passed':True,'test_evaluated':False,
     'uncertainty_unit':'dates, circular five-day blocks, exploratory reused validation, not policy seeds',
     'date_intervals':intervals,'reset_diagnostic':reset,'daily':{k:v.tolist() for k,v in daily.items()},

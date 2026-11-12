@@ -26,7 +26,7 @@ def sequences(data,days):
 
 def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
         epochs=80,checkpoints=(20,40,80),warm_start_dir=None,
-        warm_start_epoch=80,learning_rate=.001):
+        warm_start_epoch=80,learning_rate=.001,loss_function=None):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
@@ -51,6 +51,7 @@ def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
                 pn=torch.sigmoid((pred[:,:,0]-4)/.25);pd_=torch.sigmoid((pred[:,:,2:].max(-1).values-2)/.1)
                 loss=loss+.5*((pn-(target[idx,:,0]>4).float()).square().mean()
                     +(pd_-(target[idx,:,2:].max(-1).values>2).float()).square().mean())
+                if loss_function is not None:loss=loss_function(pred,target[idx],model)
                 opt.zero_grad();loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),5);opt.step()
                 total+=float(loss.detach())*len(idx)
             trace.append(total/len(s))
