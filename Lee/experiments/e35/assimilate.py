@@ -17,7 +17,7 @@ from latent import Data,LatentModel,precompute,simulate,noise_paths,summarize,ga
 from correlated import event_diagnostics
 
 
-def innovations(models,data,days,bias):
+def innovations(models,data,days,bias,return_raw=False):
     starts=np.array([data.positions[day][0] for day in days])
     p=starts[:,None]+np.arange(-16,0)
     assert p.min()>0 and np.all(p+1<=starts[:,None])
@@ -42,7 +42,7 @@ def innovations(models,data,days,bias):
             result.append(np.stack(residual,1))
     residual=np.stack(result);mean=residual.mean(2);mean[...,1]=0
     bounded=np.clip(mean,-np.array([.5,0,.25,.25,.25]),np.array([.5,0,.25,.25,.25]))
-    return bounded,{'earliest_history_position':int(p.min()),'last_target_not_after_start':True,
+    return (mean if return_raw else bounded),{'earliest_history_position':int(p.min()),'last_target_not_after_start':True,
         'mean_residual_by_output':residual.mean((0,1,2)).tolist(),
         'rms_residual_by_output':np.sqrt((residual**2).mean((0,1,2))).tolist(),
         'clipped_fraction':float((np.abs(mean-bounded)>1e-12).mean())}
@@ -55,7 +55,7 @@ def corrected(cache,innovation,nh4_gain,do_gain):
     return out
 
 
-def main():
+def main(centered=False):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--parent',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True);a=p.parse_args()
@@ -70,7 +70,13 @@ def main():
         model.load_state_dict(torch.load(path,weights_only=True));model.eval();models.append(model)
     bias=np.array(source['bias']);scale=np.array(source['scale'])
     bank=np.load(a.parent/'residual_bank.npz')['residual'];cal=ref['calibration_days']
-    ci,cal_diag=innovations(models,data,cal,bias)
+    ci,cal_diag=innovations(models,data,cal,bias,return_raw=centered)
+    center=ci.mean(1) if centered else np.zeros((len(models),5))
+    bounds=np.array([.5,0,.25,.25,.25])
+    if centered:
+        difference=ci-center[:,None]
+        ci=np.clip(difference,-bounds,bounds)
+        cal_diag['centered_clipped_fraction']=float((np.abs(ci-difference)>1e-12).mean())
     # Negative control for target leakage: only the future is scrambled.
     probe=cal[:1];before,_=innovations(models,data,probe,bias)
     positions=data.positions[probe[0]][1:];saved=data.state[positions].copy()
@@ -87,7 +93,11 @@ def main():
             print('INNER',key,inner[key]['proper_selection_score'],flush=True)
     np.testing.assert_allclose(inner['n0_d0']['proper_selection_score'],source['inner_scales'][source['selected_scale']]['proper_selection_score'],rtol=1e-12)
     selected=min(inner,key=lambda key:inner[key]['proper_selection_score']);n,d=settings[selected]
-    days=raw['days']['val'];vi,val_diag=innovations(models,data,days,bias)
+    days=raw['days']['val'];vi,val_diag=innovations(models,data,days,bias,return_raw=centered)
+    if centered:
+        difference=vi-center[:,None]
+        vi=np.clip(difference,-bounds,bounds)
+        val_diag['centered_clipped_fraction']=float((np.abs(vi-difference)>1e-12).mean())
     cache=precompute(models,data,days,16);noise=noise_paths(bank,days);validation={}
     trajectories={}
     for key in dict.fromkeys(['n0_d0',selected]):
@@ -109,6 +119,7 @@ def main():
     result={'selected':selected,'gains':{'nh4':n,'do':d},'gate':gate(validation[selected],ref['validation']['old']),
         'inner':inner,'validation':validation,'sixteen_draw_sensitivity':sensitivity,
         'innovation_diagnostics':{'inner':cal_diag,'development':val_diag},
+        'innovation_centering':centered,'training_only_center_by_member':center.tolist(),
         'checks':{'future_target_scrambling_invariance':True,'zero_gain_inner_and_development_reconstruction':True},
         'date_block_intervals':{key:np.quantile(value[idx].mean(1),[.025,.975]).tolist() for key,value in daily.items()},
         'code_commit':commit,'test_evaluated':False,
