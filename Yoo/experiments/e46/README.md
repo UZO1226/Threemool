@@ -84,3 +84,7 @@ runtime manifest.json에 실제 코드 커밋, 경계/그룹별 날짜 수, 입�
 실행 커밋 `f7d026e`,105.73초에 모든 사전 검사를 통과했다. [검사 원본](verification.json). 두 군의 초기 가중치, 원 수집 경로, 승수0에서의 전체 업데이트 가중치가 정확히 일치했다. 동일 NH4 승수의 기존 advantage 환원,64개 에피소드의 그룹별 독립 집계, Encoder/EMA 갱신, prior/normalizer 동결, 조건별 승수 활성화와 미관측 그룹 skip, checkpoint 복원을 확인했다. 미래 수온을 교란해도 그룹 정의가 그대로였다. 검사에는 train만 사용했다.
 
 확정 경계는 시작 수온18.2049575434°C, 학습은 cold47일/normal141일이다. 이 경계를 그대로 개발 날짜에 적용하면 cold39일/normal1일이다. 일반 조건의 개발 성과는 하루뿐이므로 안정적 일반화 근거로 해석하지 않는다. 경계나 그룹 수를 개발 결과에 맞춰 바꾸지 않는다. 사전 검사의3회 진단 업데이트는 폐기하고 본 실행은 같은 초기 정책에서 새로 시작한다.
+
+## 본 실행 시작
+
+실행 커밋 `a8a5e0f7e95211b8a21cd62263a6efc02b014a56`, 시작 UTC `2026-11-12T05:42:20.302035+00:00` (한국 시각14시42분경), 감독 PID 3923824. baseline/conditional seed0을 먼저 실행 중이며 이어 seed1을 실행한다. source/input/검사 해시는 runtime manifest.json에 고정했다. 완료 후 report.py를 자동 실행한다. 진행 상태는 runtime status.json과 각 run의 progress.json을 따른다.
