@@ -1,0 +1,7 @@
+{
+  "method": "ppolag_fcsrl",
+  "seed": 0,
+  "checkpoint_reloaded": true,
+  "saved_final_metrics_reproduced": true,
+  "evaluation_split": "val"
+}

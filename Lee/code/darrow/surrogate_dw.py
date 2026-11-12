@@ -150,14 +150,22 @@ class GBMDynamics:
         with open(path, 'rb') as f:
             z = pickle.load(f)
         self.models, self.hi, self.n_members = z['models'], z['hi'], len(z['models'])
+        self.bias = np.asarray(z.get('bias', np.zeros(len(STATE))), dtype=float)
+        import os
+        self.fast = None
+        if os.environ.get('DARROW_FAST_DYNAMICS') == '1':
+            from fast_gbm import FastPredictor
+            self.fast = FastPredictor(self.models)
 
     def delta(self, x, member):
+        if self.fast is not None:
+            return self.fast(x, member) + self.bias
         out = np.zeros((len(x), len(STATE)))
         for m in np.unique(member):
             rows = np.flatnonzero(member == m)
             for j in range(len(STATE)):
                 out[rows, j] = self.models[int(m)][j].predict(x[rows])
-        return out
+        return out + self.bias
 
     def step(self, state, exo, zone, zone_prev, member):
         x = features(state, exo, zone, zone_prev)

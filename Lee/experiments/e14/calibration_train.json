@@ -1,0 +1,15 @@
+{
+  "train": {
+    "air_m3": 89636.23727917817,
+    "reward": -39.83832767963474,
+    "cost": 10.748936170212765,
+    "nh4_viol_pct": 6.685330347144458,
+    "do_viol_pct": 4.6293393057110865,
+    "days_within_limit_pct": 100.0,
+    "n_episodes": 940
+  },
+  "cost_limit": 11.0,
+  "splits_evaluated": [
+    "train"
+  ]
+}
