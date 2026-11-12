@@ -294,6 +294,8 @@
     0.5091489361702126,
     3.8279787234042537
    ],
+   "mean_air_change_pct": -0.3577305744164483,
+   "mean_paired_air_change_pct": -0.36061306797911713,
    "nh4_route": false,
    "air_route": false,
    "H1": false,
@@ -320,6 +322,8 @@
     0.07053191489361677,
     -1.9795744680851057
    ],
+   "mean_air_change_pct": -0.7758035817356901,
+   "mean_paired_air_change_pct": -0.5751144193981261,
    "nh4_route": true,
    "air_route": false,
    "H1": true,

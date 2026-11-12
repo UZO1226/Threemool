@@ -89,6 +89,7 @@ def main(a):
         v['H2_gap_smaller']=bool(np.mean(h2)<0);v['gap_differences']=h2
         v['nh4_severity_worse_seeds']=sum(p['nh4_excess_mg_h_L']>0 for p in paired)
         v['worst_nh4_worse_seeds']=sum(p['worst_day_nh4_cost']>0 for p in paired)
+        v['leave_one_seed_out_nh4_diff']=[float(np.mean([p['nh4_cost'] for p in paired if p['seed']!=s])) for s in range(3)]
         v['all_three_means_lower']=all(means['k10'][k]<means['d045'][k] for k in KEYS[:3])
         output['comparisons'][m]=dict(means=means,sds=sds,paired=paired,verdict=v)
         md += [f'## {m.upper()}','', '| 조건 | 공기량 평균 | NH4 평균 | DO 평균 | NH4 초과 적분 | DO 초과 적분 | 최악 날짜 NH4 평균 | 최악 날짜 DO 평균 | 두 평균 한도 충족 seed |',
@@ -100,6 +101,7 @@ def main(a):
         for s,d in enumerate(paired):
             md.append(f"| {s} | {v['d_air_pct'][s]:+.3f} | "+' | '.join(f'{d[k]:+.3f}' for k in KEYS[1:])+' |')
         md += ['', f"집단 평균 공기량 변화 {v['mean_air_change_pct']:+.3f}%. seed별 변화율 평균 {v['mean_paired_air_change_pct']:+.3f}%.",
+               f"seed 하나씩 제외한 평균 NH4 차이: {v['leave_one_seed_out_nh4_diff']}.",
                f"H1 수정 집계: {v['H1']}. 원 집계: {v['original_report_H1']}. H2 격차 감소: {v['H2_gap_smaller']}.",
                f"불확실성 여유가 고정 여유보다 NH4 초과 적분이 큰 seed {v['nh4_severity_worse_seeds']}/3, 최악 날짜 NH4가 큰 seed {v['worst_nh4_worse_seeds']}/3.",
                'H1 지지는 제한된 탐색 기준의 통과이며 실측 안전 보장이나 전체 지표 우월성을 뜻하지 않는다. '
