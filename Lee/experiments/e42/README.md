@@ -99,3 +99,9 @@ Its65,789,399 bytes and SHA2562905f91736a475cb0b6400971e6c8bda9f5ef25e2c51072d2b
 match GitHub. See old_baseline_artifacts.json and old_baseline_validation.json.
 Archive presence is not an improvement claim. Frozen-model PPO remains a
 separate baseline job group and must also finish before the full report.
+
+All five frozen-model FCSRL runs also complete. Their separate archive is
+lee-e42-frozen-model-fcsrl-baselines.zip,65,793,083 bytes, SHA256
+8ce417b78a2a2ffaafaab5007f6f2975dabaf96eb95148e39db16d1e8df71739.
+Remote size and digest match new_fcsrl_artifacts.json in the same draft release.
+This is a completed baseline subset, not an extension-performance conclusion.

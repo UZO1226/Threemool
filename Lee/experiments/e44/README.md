@@ -66,3 +66,12 @@ in a separate fresh output, then supply exactly five summary.json files to
 report.py. capacity_contrast.py takes five split and five capacity primary
 pair files matched to the same FCSRL reference. It rejects mixed references
 and independently checks both reference and mutual air differences.
+
+The completed first seed fails the matched-air comparison: FCSRL cost24.121875
+versus split28.468125, with air47194.44 versus47206.56m3, a.02568 percent
+mismatch. NH4 rises25.35855 to29.96645 percent; DO falls.03289 to0 percent.
+The native split policy uses84893.57m3 and cost12.1325, so its lower native
+cost occurs at substantially greater air. See split_seed0.json for exact
+checkpoint identities and the quality-blind matching trace. This negative
+single-seed result is retained; remaining seeds and the capacity control are
+still required before a method-level judgment.
