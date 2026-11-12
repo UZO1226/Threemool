@@ -26,7 +26,8 @@ def sequences(data,days):
 
 def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
         epochs=80,checkpoints=(20,40,80),warm_start_dir=None,
-        warm_start_epoch=80,learning_rate=.001,loss_function=None):
+        warm_start_epoch=80,learning_rate=.001,loss_function=None,
+        auxiliary_factory=None):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
@@ -42,6 +43,7 @@ def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
         if 0 in checkpoints:torch.save(model.state_dict(),a.out/f'epoch0_m{member}.pt')
         ids=np.random.RandomState(member).choice(len(fit),int(.8*len(fit)),replace=False)
         days=[fit[k] for k in ids];s,c,e,air,target=sequences(data,days);trace=[]
+        auxiliary=None if auxiliary_factory is None else auxiliary_factory(data,days)
         for epoch in range(1,epochs+1):
             order=torch.randperm(len(s));total=0.
             for k in range(0,len(order),16):
@@ -52,6 +54,7 @@ def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
                 loss=loss+.5*((pn-(target[idx,:,0]>4).float()).square().mean()
                     +(pd_-(target[idx,:,2:].max(-1).values>2).float()).square().mean())
                 if loss_function is not None:loss=loss_function(pred,target[idx],model)
+                if auxiliary is not None:loss=.5*loss+.5*auxiliary(model,idx)
                 opt.zero_grad();loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),5);opt.step()
                 total+=float(loss.detach())*len(idx)
             trace.append(total/len(s))
