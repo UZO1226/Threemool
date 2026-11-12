@@ -215,6 +215,8 @@
     0.44999999999999996,
     -0.44500000000000006
    ],
+   "mean_air_change_pct": 6.094559922403864,
+   "mean_paired_air_change_pct": 6.054066399215382,
    "H1": true,
    "H2": true,
    "air_up_over_5pct": true,
@@ -241,6 +243,8 @@
     -0.615,
     0.02499999999999991
    ],
+   "mean_air_change_pct": 15.134503321856796,
+   "mean_paired_air_change_pct": 15.373311677187894,
    "H1": true,
    "H2": true,
    "air_up_over_5pct": true,

@@ -224,7 +224,8 @@
   ],
   "seeds_cost_lower": 2,
   "mean_cost_diff": -1.0170000000000003,
-  "mean_air_diff_pct": -5.501131953321254,
+  "mean_paired_air_diff_pct": -5.501131953321254,
+  "mean_air_diff_pct": -5.730673170651146,
   "supported": false
  },
  "Q2_cost_order": {
