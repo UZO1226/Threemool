@@ -78,3 +78,24 @@ d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0. Existing wrappers are
 the DARROW application, not a reproduction of every paper hyperparameter.
 No original source or official protocol modification. Raw data, checkpoints
 and full logs remain outside Git and are archived with checksums.
+
+## Executed commands
+
+Run from the workspace above Threemool with the recorded Python runtime and
+OMP_NUM_THREADS, OPENBLAS_NUM_THREADS, MKL_NUM_THREADS and NUMBA_NUM_THREADS=1.
+
+```powershell
+python Threemool/Lee/experiments/e42/check_reset.py --data kaggle_data/darrow_15min.pkl --out Threemool/Lee/experiments/e42/reset_alias_check.json
+python Threemool/Lee/experiments/e42/check_env.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out Threemool/Lee/experiments/e42/environment_check.json
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e42_baselines --parallel 5 --jobs old:ppolag_fcsrl:0 old:ppolag_fcsrl:1 old:ppolag_fcsrl:2 old:ppolag_fcsrl:3 old:ppolag_fcsrl:4 new:ppolag_fcsrl:0 new:ppolag_fcsrl:1 new:ppolag_fcsrl:2 new:ppolag_fcsrl:3 new:ppolag_fcsrl:4 new:ppolag:0 new:ppolag:1 new:ppolag:2 new:ppolag:3 new:ppolag:4
+```
+
+Use a fresh output path on reproduction. Original-model final policies all
+complete and are independently evaluated on both simulators. Their final and
+intermediate checkpoints/logs are in a [draft release](https://github.com/UZO1226/Threemool/releases),
+tag lee-e42-e44-policy-comparison-20261113, release id443333191. Only the five
+listed original-model runs are in lee-e42-original-model-baselines.zip.
+Its65,789,399 bytes and SHA2562905f91736a475cb0b6400971e6c8bda9f5ef25e2c51072d2b3db4c5ac1093da
+match GitHub. See old_baseline_artifacts.json and old_baseline_validation.json.
+Archive presence is not an improvement claim. Frozen-model PPO remains a
+separate baseline job group and must also finish before the full report.

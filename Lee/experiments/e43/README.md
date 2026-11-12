@@ -61,3 +61,17 @@ Use fresh output/checkpoint paths when reproducing checks. The full experiment
 uses the same runner with400000 requested steps,401280 actual, five evaluations
 and all five seeds for each of the two variants. Keep the full frozen original
 FCSRL comparison from e42 as the primary baseline.
+
+The first full pair is executed with one additional worker while the five
+e42 baseline workers run:
+
+```powershell
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e43/train_split.py --out results/e43_first_pair --parallel 1 --jobs new:ppolag_fcsrl_split:0 new:ppolag_fcsrl_capacity:0
+```
+
+The remaining eight jobs are still required. The following is the planned
+continuation when baseline workers free CPU resources, not a completed run:
+
+```powershell
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e43/train_split.py --out results/e43_remaining --parallel 5 --jobs new:ppolag_fcsrl_split:1 new:ppolag_fcsrl_split:2 new:ppolag_fcsrl_split:3 new:ppolag_fcsrl_split:4 new:ppolag_fcsrl_capacity:1 new:ppolag_fcsrl_capacity:2 new:ppolag_fcsrl_capacity:3 new:ppolag_fcsrl_capacity:4
+```

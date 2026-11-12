@@ -12,6 +12,17 @@ The controller previously reported usageLimited and the user subsequently
 reactivated the goal. That interruption was not a successful research outcome.
 The user explicitly requested that work resume.
 
+Current policy checkpoint: both original-model and frozen-model FCSRL have
+completed all five401280-transition seeds. Frozen-model PPO is still running.
+Split-supervision seed0 is complete and capacity-control seed0 is running in
+results/e43_first_pair. The other eight extension jobs remain required.
+The first actual matched-air split/FCSRL seed0 comparison is running in
+results/e44_split_first. Do not infer improvement from a single seed.
+All ten cross-model evaluations of the five original-model policies complete
+in results/e44_old_policy_cross, and their own-environment replay reproduces
+stored final metrics. Report and capacity-contrast checks reject missing seeds,
+smokes, mixed references and excessive actual air differences.
+
 e40 has now completed and passes all original point-estimate adoption gates.
 Its independent sklearn/full-day interpolation reconstruction passes. Selected
 pit_b95_a0.5 forecasts NH4/DO violation frequencies13.4993/.7211 percent versus

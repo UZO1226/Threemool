@@ -54,3 +54,15 @@ common stochastic cases. This separates supervision identity at a shared
 reference air. The optional kind=capacity comparison instead uses the
 capacity policy's native air as its target and is a distinct secondary probe;
 it must not replace the common-reference contrast after seeing its outcomes.
+
+The first formal matched pair uses completed seed0 final policies:
+
+```powershell
+python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-roots results/e43_first_pair/new_ppolag_fcsrl_split --seeds 0 --out results/e44_split_first --parallel 1
+```
+
+This single pair cannot support the five-seed criterion. Continue seeds1..4
+in a separate fresh output, then supply exactly five summary.json files to
+report.py. capacity_contrast.py takes five split and five capacity primary
+pair files matched to the same FCSRL reference. It rejects mixed references
+and independently checks both reference and mutual air differences.
