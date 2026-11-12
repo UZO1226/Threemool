@@ -28,6 +28,8 @@ class FastPredictor:
         nodes,roots,offsets,baseline=[],[],[0],[]
         self.direct=[]
         coefficients=[]
+        temperature_coefficients=[]
+        temperature_centers=[]
         n=0
         for row in models:
             for wrapped in row:
@@ -38,6 +40,8 @@ class FastPredictor:
                 baseline.append(float(model._baseline_prediction[0,0]))
                 self.direct.append(direct)
                 coefficients.append(float(getattr(wrapped,'state_coefficient',0)))
+                temperature_coefficients.append(float(getattr(wrapped,'temperature_coefficient',0)))
+                temperature_centers.append(float(getattr(wrapped,'temperature_center',0)))
                 for predictors in model._predictors:
                     if len(predictors)!=1:
                         raise ValueError('Expected a single regressor tree per iteration')
@@ -53,9 +57,13 @@ class FastPredictor:
             ('feature_idx','num_threshold','left','right','value','is_leaf')],np.asarray(baseline)]
         self.direct=np.asarray(self.direct).reshape(len(models),5)
         self.coefficients=np.asarray(coefficients).reshape(len(models),5)
+        self.temperature_coefficients=np.asarray(temperature_coefficients).reshape(len(models),5)
+        self.temperature_centers=np.asarray(temperature_centers).reshape(len(models),5)
 
     def __call__(self,x,members):
         if not np.isfinite(x).all():
             raise ValueError('Fast inference requires finite input')
         out=predict(np.asarray(x,dtype=np.float64),members,*self.args)
-        return out+self.coefficients[members]*x[:,:5]-np.where(self.direct[members],x[:,:5],0)
+        return (out+self.coefficients[members]*x[:,:5]
+                +self.temperature_coefficients[members]*(x[:,6:7]-self.temperature_centers[members])
+                -np.where(self.direct[members],x[:,:5],0))

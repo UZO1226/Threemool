@@ -24,3 +24,14 @@ class LeakyDirectDeltaRegressor:
 
     def predict(self, x):
         return self.model.predict(x) + self.state_coefficient * x[:, self.target] - x[:, self.target]
+
+
+class TemperatureForcingRegressor(LeakyDirectDeltaRegressor):
+    def __init__(self, model, target, state_coefficient, temperature_coefficient, temperature_center):
+        super().__init__(model, target, state_coefficient)
+        self.temperature_coefficient = temperature_coefficient
+        self.temperature_center = temperature_center
+
+    def predict(self, x):
+        return (self.model.predict(x) + self.state_coefficient * x[:, self.target]
+                + self.temperature_coefficient * (x[:, 6] - self.temperature_center) - x[:, self.target])
