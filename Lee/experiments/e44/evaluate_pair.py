@@ -12,7 +12,9 @@ import torch
 ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Lee/experiments/e42'))
 sys.path.insert(0,str(ROOT/'Lee/experiments/e43'))
+sys.path.insert(0,str(ROOT/'Lee/experiments/e45'))
 from split_feasibility import TwoHeadFCSRL
+from severity_agent import SeverityFCSRL
 from quantile_env import FrozenDynamics,evaluate,WORKSPACE,frozen_digest
 from ppo_fcsrl import PPOFCSRLAgent,RepresentationConfig
 from ppo_lag import PPOLagAgent
@@ -52,6 +54,7 @@ def load_run(folder,freeze_path,allow_smoke=False):
     torch.manual_seed(0)
     if method=='ppolag':agent=PPOLagAgent(11,1,config=c)
     elif method=='ppolag_fcsrl':agent=PPOFCSRLAgent(11,1,config=c,repr_config=r)
+    elif method=='ppolag_fcsrl_severity':agent=SeverityFCSRL(11,1,config=c,repr_config=r)
     else:
         modes={'ppolag_fcsrl_split':'split','ppolag_fcsrl_capacity':'capacity'}
         agent=TwoHeadFCSRL(11,1,config=c,repr_config=r,mode=modes[method])
@@ -79,7 +82,7 @@ def main():
         assert a.environment=='new'
         assert bc['experiment_metadata']['environment']==cc['experiment_metadata']['environment']=='new'
         assert bc['representation']==cc['representation']
-        if a.kind=='agent':assert bc['method']=='ppolag_fcsrl' and cc['method'] in ('ppolag_fcsrl_split','ppolag_fcsrl_capacity')
+        if a.kind=='agent':assert bc['method']=='ppolag_fcsrl' and cc['method'] in ('ppolag_fcsrl_split','ppolag_fcsrl_capacity','ppolag_fcsrl_severity')
         else:assert bc['method']=='ppolag_fcsrl_capacity' and cc['method']=='ppolag_fcsrl_split'
     if a.kind=='environment':
         assert bc['method']==cc['method']=='ppolag_fcsrl'

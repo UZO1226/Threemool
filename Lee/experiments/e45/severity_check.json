@@ -1,0 +1,15 @@
+{
+  "initial_parameters_and_rng_exact": true,
+  "safe_boundary_severe_labels_pass": true,
+  "terminal_adapter_outputs_unchanged_under_mock": true,
+  "terminal_not_reset_labels_pass": true,
+  "hand_computed_reset_termination_targets_pass": true,
+  "actual_buffer_cost_unchanged": true,
+  "original_label_objective_and_gradients_exact": true,
+  "nonzero_finite_gradients": true,
+  "checkpoint_roundtrip_exact": true,
+  "policy_training": false,
+  "real_environment_equivalence_checked": false,
+  "policy_performance_tested": false,
+  "test_evaluated": false
+}

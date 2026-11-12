@@ -99,5 +99,27 @@ capacity-control weights by capacity_artifacts.json, each with remote SHA256
 verification in the existing draft release. All generated native,
 matched and intermediate air-query evaluation rows are separately archived
 and indexed in ../e44/split_evaluation_artifacts.json. No original plant data
-or calibration banks are included. Capacity-control comparisons remain
-separate and must finish before attributing behavior to split supervision.
+or calibration banks are included.
+
+## Complete capacity comparison and common-reference contrast
+
+All five capacity-control evaluations complete. Every seed matches its
+original-FCSRL reference air within1 percent. Mean matched cost is24.6515
+versus22.464125, paired difference+2.187375 with95 percent seed-bootstrap
+interval[-1.900625,5.8275]. NH4 is25.60618 versus23.20868 percent, difference
++2.3975 points with interval[-1.69355,6.16566]. DO is.34276 versus.43776
+percent, difference-.095 points with interval[-.30711,.08145]. This variant
+also fails all three quality conditions. See capacity_comparison.json.
+
+The primary common-reference contrast uses both variants adjusted to the same
+FCSRL air, and their mutual air differences also pass1 percent. Split minus
+capacity cost has interval[-8.186875,8.451875], NH4[-8.66908,8.81855] points
+and DO[-.05303,.24] points. The criterion for a constraint-identity benefit
+fails. Additional heads and split supervision therefore do not establish an
+improvement in this experiment; uncertainty does not establish equivalence.
+See capacity_contrast.json. Full capacity evaluation rows and all air queries
+are remotely verified in ../e44/capacity_evaluation_artifacts.json.
+
+The next recorded candidate is e45 single-head severity supervision. It keeps
+network capacity unchanged and tests a different auxiliary label. Its results
+must be reported separately rather than replacing the retained e43 failures.

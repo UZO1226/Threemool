@@ -60,11 +60,23 @@ to25.57026 and DO percentage.43776 to.40987. All three paired uncertainty
 intervals cross zero. Every seed matches air within1 percent. This neither
 proves improvement nor establishes consistent worsening.
 
-Capacity seeds0 and1 finish training and matching. Capacity seeds2..4 are
-launched in results/e44_capacity_later with three workers after the training
-runner exits successfully. Inspect that batch before waiting or restarting.
-Do not duplicate any completed pair. Full split evaluation queries are uploaded
-to the existing draft; e44/split_evaluation_artifacts.json verifies remote SHA.
+All five capacity comparisons finish, with matched mean cost24.6515 versus
+baseline22.464125. Its three quality uncertainty intervals cross zero and the
+prespecified improvement criterion fails. The split/capacity common-reference
+contrast also fails. Both match-reference and mutual air checks pass. These
+are retained negative or inconclusive results, not an external blocker.
+capacity_comparison.json and capacity_contrast.json hold full five-seed data.
+Both methods' generated evaluation queries and weights are uploaded to the
+existing draft with verified remote size/SHA256 in the artifact indexes.
+
+e45 prepares a single-head severity-supervision candidate. Training-only label
+and support checks, original objective/gradient/RNG equivalence, serialization
+and380 actual environment-transition equivalence checks pass. A6080-step smoke
+is running in results/e45_smoke. Inspect its real process before waiting.
+Next: finish smoke, independently replay its final checkpoint, then commit
+and execute five full severity policy seeds if the pipeline passes. Never
+count smoke results as policy improvement. All e45 Python files are pinned
+by the runner; do not edit them until the runner exits.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
