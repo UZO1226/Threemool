@@ -139,6 +139,7 @@ def main():
     p.add_argument('--intervention-cost', type=float, default=0.0, help='개입 스텝마다 학습 비용에 더할 값 (Park/e13)')
     p.add_argument('--brake-trim', action='store_true', help='최소 개입 차단이 공기량을 내리기도 한다 (Park/e14)')
     p.add_argument('--adaptive-margin', action='store_true', help='불확실성에 맞춘 여유를 쓴다 (Park/e15)')
+    p.add_argument('--save-every', type=int, default=0, help='이 업데이트 간격마다 중간 정책을 model_u<번호> 로 저장 (Park/e21, 0 이면 안 함)')
     a = p.parse_args()
     assert a.brake_theta is None or a.min_brake_target is None, '차단은 하나만 고른다'
     assert not a.brake_trim or a.min_brake_target is not None, 'trim 은 최소 개입 차단과 함께 쓴다'
@@ -185,6 +186,8 @@ def main():
         agent.update_lagrangian(diag['daily_cost_mean'])
         records.append({'update': update, 'lambda': agent.lagrangian, **diag, **info})
         (a.out / 'training.json').write_text(json.dumps(records, indent=1))
+        if a.save_every and update % a.save_every == 0 and update < c.updates:
+            agent.save(a.out / f'model_u{update}')
     agent.save(a.out / 'model_final')
     final = evaluate(val_env, splits['val'], act)
     braked = None if shield is None else evaluate(val_env, splits['val'], act, shield=shield)
