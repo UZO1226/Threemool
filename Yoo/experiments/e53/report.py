@@ -37,7 +37,7 @@ def main(root, e52, out):
                              'val_both_limits': bool(v['nh4_cost'] <= 6 and v['do_cost'] <= 6),
                              'gap_nh4': v['nh4_cost'] - t['nh4_cost']})
     md = ['검증 40일 x 구성원 5개 = 200 에피소드와 학습 188일 x 5 = 940 에피소드, 결정적 행동, 마지막 정책, 평가 비용은 여유 없이 원래대로. '
-          'NH4, DO 비용은 하루 위반 스텝 수 (95 스텝 중), 한도 각 6.', '',
+          '공기량 단위는 m3/23.75h이며 평균 변화는 평균의 비율이다. NH4, DO 비용은 하루 위반 스텝 수 (95 스텝 중), 한도 각 6.', '',
           '| 방법 | 조건 | seed | 검증 공기량 | 검증 NH4 | 검증 DO | 검증 NH4 초과 적분 | 최악 날짜 NH4 | 학습 공기량 | 학습 NH4 | 격차 (검증 − 학습 NH4) |',
           '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
     for r in rows:
@@ -59,9 +59,11 @@ def main(root, e52, out):
         d_air = [100 * (y['val_air_m3'] / x['val_air_m3'] - 1) for x, y in zip(a, b)]
         d_do = [y['val_do_cost'] - x['val_do_cost'] for x, y in zip(a, b)]
         d_gap = [y['gap_nh4'] - x['gap_nh4'] for x, y in zip(a, b)]
-        nh4_route = sum(x < 0 for x in d_nh4) >= 2 and np.mean(d_nh4) < 0 and np.mean(d_air) <= 2
-        air_route = sum(x < 0 for x in d_air) >= 2 and np.mean(d_air) <= -2 and np.mean(d_nh4) <= 0
+        mean_air_pct = float(100 * (np.mean([y['val_air_m3'] for y in b]) / np.mean([x['val_air_m3'] for x in a]) - 1))
+        nh4_route = sum(x < 0 for x in d_nh4) >= 2 and np.mean(d_nh4) < 0 and mean_air_pct <= 2
+        air_route = sum(x < 0 for x in d_air) >= 2 and mean_air_pct <= -2 and np.mean(d_nh4) <= 0
         verdict[m] = {'d_val_nh4_by_seed': d_nh4, 'd_air_pct_by_seed': d_air, 'd_val_do_by_seed': d_do, 'd_gap_by_seed': d_gap,
+                      'mean_air_change_pct': mean_air_pct, 'mean_paired_air_change_pct': float(np.mean(d_air)),
                       'nh4_route': bool(nh4_route), 'air_route': bool(air_route), 'H1': bool(nh4_route or air_route),
                       'H2_gap_smaller': bool(np.mean(d_gap) < 0)}
     md += ['', '주 비교: 불일치 여유 (e52 kappa 10) − 고정 여유 (e53 delta 0.45), seed 짝.', '',
@@ -71,7 +73,7 @@ def main(root, e52, out):
         j = lambda xs: ', '.join(f'{x:+.2f}' for x in xs)  # noqa: E731
         route = '지지 (NH4 경로)' if v['nh4_route'] else '지지 (공기량 경로)' if v['air_route'] else '지지 안 됨'
         md.append(f"| {NAMES[m]} | {j(v['d_val_nh4_by_seed'])} | {j(v['d_air_pct_by_seed'])} | {j(v['d_val_do_by_seed'])} | "
-                  f"{np.mean(v['d_val_nh4_by_seed']):+.2f} | {np.mean(v['d_air_pct_by_seed']):+.2f} | {route} | {'예' if v['H2_gap_smaller'] else '아니오'} |")
+                  f"{np.mean(v['d_val_nh4_by_seed']):+.2f} | {v['mean_air_change_pct']:+.2f} | {route} | {'예' if v['H2_gap_smaller'] else '아니오'} |")
     (out / 'summary.json').write_text(json.dumps({'delta': DELTA, 'rows': rows, 'verdict': verdict}, indent=1, ensure_ascii=False))
     (out / 'results.md').write_text('\n'.join(md) + '\n')
     print('\n'.join(md))

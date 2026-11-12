@@ -1,0 +1,124 @@
+{
+  "source_sha256": {
+    "/home/jio/fcsrl_src/results/e30/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl": "c5e4c5d28e8255802e6d500dee5b91858c3b96008c65ded2ff3bea6f46b0179e",
+    "/home/jio/threemool-e53-margin-audit/Yoo/experiments/e52/margin_audit/diagnose_model.py": "520dd9508bc63d5962131d0334755ac663ad312755a5aef52ae7e58e4cafa15a"
+  },
+  "test_evaluated": false,
+  "weight_updates": 0,
+  "purpose": "posthoc diagnostic, not policy or hyperparameter selection",
+  "splits": {
+    "train": {
+      "n_days": 188,
+      "recorded_action_clipping_pct": 0.0,
+      "observed_state_one_step": {
+        "predicted_cost": 5.509574468085106,
+        "actual_cost": 5.622340425531915,
+        "false_positive_rate_pct": 0.2380527286794025,
+        "recall_pct": 94.2100283822138,
+        "mae": 0.11959317742720406,
+        "signed_error": 0.0004443612291216019,
+        "underprediction_mae": 0.05957440809904122,
+        "overprediction_mae": 0.060018769328162816,
+        "sd_absolute_error_spearman": 0.4449858561052708,
+        "sd_underprediction_spearman": 0.15809553236224533,
+        "counts": {
+          "false_positive": 200,
+          "false_negative": 306,
+          "actual_bad": 5285
+        }
+      },
+      "recursive_recorded_action": {
+        "predicted_cost": 4.507446808510639,
+        "actual_cost": 5.622340425531915,
+        "false_positive_rate_pct": 2.487651014699756,
+        "recall_pct": 40.6244087038789,
+        "mae": 0.9839239251051475,
+        "signed_error": -0.22113719493829923,
+        "underprediction_mae": 0.6025305600217233,
+        "overprediction_mae": 0.3813933650834241,
+        "sd_absolute_error_spearman": 0.30981325955298117,
+        "sd_underprediction_spearman": -0.007024281682653804,
+        "counts": {
+          "false_positive": 2090,
+          "false_negative": 3138,
+          "actual_bad": 5285
+        }
+      },
+      "margin_alarm_stats": {
+        "fixed": {
+          "cost": 5.6191489361702125,
+          "false_positive_rate_pct": 3.439861929417366,
+          "recall_pct": 45.260170293282876,
+          "added_true_alarms": 245,
+          "added_false_alarms": 800,
+          "added_alarm_precision_pct": 23.444976076555022
+        },
+        "adaptive": {
+          "cost": 5.618085106382979,
+          "false_positive_rate_pct": 3.336308992441826,
+          "recall_pct": 46.88741721854305,
+          "added_true_alarms": 331,
+          "added_false_alarms": 713,
+          "added_alarm_precision_pct": 31.704980842911876
+        }
+      }
+    },
+    "val": {
+      "n_days": 40,
+      "recorded_action_clipping_pct": 0.0,
+      "observed_state_one_step": {
+        "predicted_cost": 17.6,
+        "actual_cost": 16.45,
+        "false_positive_rate_pct": 3.0617441120305537,
+        "recall_pct": 92.37082066869301,
+        "mae": 0.2804072214516484,
+        "signed_error": 0.09060709390985025,
+        "underprediction_mae": 0.09490006377089905,
+        "overprediction_mae": 0.18550715768074932,
+        "sd_absolute_error_spearman": 0.3766093423029642,
+        "sd_underprediction_spearman": -0.2048468369794711,
+        "counts": {
+          "false_positive": 481,
+          "false_negative": 251,
+          "actual_bad": 3290
+        }
+      },
+      "recursive_recorded_action": {
+        "predicted_cost": 33.47,
+        "actual_cost": 16.45,
+        "false_positive_rate_pct": 29.662635264162954,
+        "recall_pct": 61.82370820668693,
+        "mae": 2.8528332581833715,
+        "signed_error": 1.938556710764655,
+        "underprediction_mae": 0.45713827370935817,
+        "overprediction_mae": 2.3956949844740136,
+        "sd_absolute_error_spearman": 0.5263505047323199,
+        "sd_underprediction_spearman": -0.40678513841189806,
+        "counts": {
+          "false_positive": 4660,
+          "false_negative": 1256,
+          "actual_bad": 3290
+        }
+      },
+      "margin_alarm_stats": {
+        "fixed": {
+          "cost": 38.29,
+          "false_positive_rate_pct": 34.665817950350096,
+          "recall_pct": 67.23404255319149,
+          "added_true_alarms": 178,
+          "added_false_alarms": 786,
+          "added_alarm_precision_pct": 18.46473029045643
+        },
+        "adaptive": {
+          "cost": 37.72,
+          "false_positive_rate_pct": 34.09293443666454,
+          "recall_pct": 66.50455927051672,
+          "added_true_alarms": 154,
+          "added_false_alarms": 696,
+          "added_alarm_precision_pct": 18.11764705882353
+        }
+      }
+    }
+  }
+}
