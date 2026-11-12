@@ -169,7 +169,7 @@ def precompute(models,data,days,history,row_sum_bound=.995):
     conversion=np.r_[data.sd,data.sd[0],data.sd[0]]*np.array([-1,1,1,1,1,-1,-1])
     transformed=matrices*conversion[None,None,None,None,:]/conversion[None,None,None,:,None]
     assert np.isfinite(matrices).all() and transformed.min()>=-1e-8
-    assert transformed.sum(-1).max()<=row_sum_bound+2e-7
+    if row_sum_bound is not None:assert transformed.sum(-1).max()<=row_sum_bound+2e-7
     return {'V':matrices,'f':np.stack(fs),'g':np.stack(gs),'initial':np.stack(initial),
         'zone':data.zone[p],'previous_zone':np.concatenate([data.zone[p[:,:1]],data.zone[p[:,:-1]]],1),
         'true':data.state[positions],'hi':np.r_[data.hi,data.hi[0],data.hi[0]],'days':days}

@@ -22,7 +22,7 @@ p.add_argument('--reference-summary',type=Path,required=True)
 p.add_argument('--runs',type=Path,required=True)
 p.add_argument('--old-diagnosis',type=Path,required=True)
 p.add_argument('--out',type=Path,required=True)
-p.add_argument('--model-kind',choices=['base','slow','context'],default='base')
+p.add_argument('--model-kind',choices=['base','slow','context','kinetic'],default='base')
 a=p.parse_args();torch.set_num_threads(1)
 source=json.loads((a.runs/'summary.json').read_text())
 reference=json.loads(a.reference_summary.read_text())
@@ -38,8 +38,13 @@ if a.model_kind=='context':
     sys.path.insert(0,str(ROOT/'Lee/experiments/e32'))
     from persistent_context import PersistentContextModel
     model_class=PersistentContextModel
+if a.model_kind=='kinetic':
+    sys.path.insert(0,str(ROOT/'Lee/experiments/e33'))
+    from kinetic_scaling import KineticScalingModel
+    model_class=lambda sd,mean,mean_air,hi:KineticScalingModel(sd,mean,mean_air,hi,data.em[1],data.es[1])
+    cap=None
 assert source.get('state_row_sum_cap',.995)==cap
-assert source.get('model_kind','slow' if cap>1 else 'base')==a.model_kind
+assert source.get('model_kind','slow' if cap is not None and cap>1 else 'base')==a.model_kind
 assert days==old['days']
 models=[]
 for member in range(5):

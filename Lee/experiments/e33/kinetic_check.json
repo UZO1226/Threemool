@@ -1,0 +1,17 @@
+{
+  "reference15_identity": true,
+  "cold_fixed_coefficient_retention": [
+    0.8316928148269653,
+    0.534730076789856
+  ],
+  "air_direction_and_self_retention_checks": true,
+  "full_day_torch_cache_agreement": true,
+  "observed_head_gradients": [
+    0.42987754940986633,
+    4.913541316986084,
+    -0.0439738892018795,
+    -0.04851754754781723,
+    0.211302250623703
+  ],
+  "test_evaluated": false
+}
