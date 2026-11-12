@@ -1,5 +1,6 @@
 """Conditional stochastic transitions, with signs shared by all quantiles."""
 import argparse
+from contextlib import nullcontext
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
@@ -122,7 +123,7 @@ def rollout(dyn,batch,u,alpha,draws=8,air_scale=1.):
     return np.stack(values,1).reshape(5,draws,n,95,5)
 
 
-def checks(dyn,x):
+def checks(dyn,x,strict_order=False):
     rng=np.random.default_rng(38);values=np.sort(rng.uniform(0,5,(5,80,5)),axis=0);u=rng.random((80,5))
     expected=np.array([[np.interp(u[i,j],LEVELS,values[:,i,j]) for j in range(5)] for i in range(80)])
     np.testing.assert_allclose(interpolate(values,u),expected,atol=1e-12)
@@ -138,16 +139,30 @@ def checks(dyn,x):
             for j in range(5):slow[mask,j]=model.models[m][j].predict(probe[mask])
         fast=model.delta(probe,members);np.testing.assert_allclose(fast,slow,rtol=1e-9,atol=1e-9)
         maximum=max(maximum,float(np.abs(fast-slow).max()))
-    return {'interpolation_numpy_reference':True,'endpoint_atom_cdf_intervals':True,'fast_sklearn_max_difference':maximum}
+    small=probe[:64];ids=members[:64];base=dyn.quantiles(small,ids);order=0.
+    for feature in [0,2,3,4,*range(14,24)]:
+        changed=small.copy();changed[:,feature]+=.2*np.maximum(np.abs(changed[:,feature]),.1)
+        higher=dyn.quantiles(changed,ids)
+        if feature==0:
+            violation=max(float(np.maximum(base[...,0]-higher[...,0],0).max()),float(np.maximum(higher[...,2:]-base[...,2:],0).max()))
+        else:
+            violation=max(float(np.maximum(higher[...,0]-base[...,0],0).max()),float(np.maximum(base[...,2:]-higher[...,2:],0).max()))
+        order=max(order,violation)
+    if strict_order:assert order<1e-8
+    return {'interpolation_numpy_reference':True,'endpoint_atom_cdf_intervals':True,
+        'fast_sklearn_max_difference':maximum,'coordinate_order_max_violation':order}
 
 
-def main():
+def main(training_context=None,strict_order=False):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);os.environ['DARROW_FAST_DYNAMICS']='1'
     commit=subprocess.check_output(['git','-c',f'safe.directory={ROOT.as_posix()}','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     raw=pd.read_pickle(a.data);ref=json.loads(a.reference_summary.read_text());fit_days=ref['fit_days'];cal=ref['calibration_days']
-    x,hi=fit(raw,fit_days,a.out);dyn=QuantileDynamics(a.out);verification=checks(dyn,x)
+    with (nullcontext() if training_context is None else training_context()) as training_info:
+        x,hi=fit(raw,fit_days,a.out)
+    dyn=QuantileDynamics(a.out);verification=checks(dyn,x,strict_order=strict_order)
+    if training_info is not None:verification['leaf_bound_enforcement']=training_info
     xc,delta=build_arrays(raw['data'],cal);members=np.repeat(np.arange(5),len(xc))
     values=dyn.quantiles(np.tile(xc,(5,1)),members);target=np.tile(xc[:,:5]+delta,(5,1))
     bank=pit(values,target,np.random.default_rng(3801)).reshape(5,len(xc),5);bank[...,1]=.5

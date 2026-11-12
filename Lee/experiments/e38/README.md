@@ -1,5 +1,11 @@
 # Lee/e38: Conditional quantile transitions with a calibrated residual copula
 
+Historical result correction: the installed quantile leaf-update behavior does
+not preserve all nominal feature constraints. e38 fails recursive air ordering
+despite exact fast/sklearn agreement. The sorting argument below is conditional
+on component monotonicity and does not repair that missing premise. See e40's
+independent reproduction and bounded-update correction. No e38 model is adopted.
+
 ## Hypothesis and factual diagnostic
 
 e34 misses NH4 events both when initial NH4 is safe and when it is unsafe.
