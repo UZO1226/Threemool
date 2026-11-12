@@ -16,3 +16,9 @@ preserved by the installed quantile leaf updates. e40 independently reproduces
 this behavior on synthetic data and tests a scoped correction. Retain this run
 as the unchanged implementation control rather than retrospectively replacing
 its saved results. See summary.json for all member and event diagnostics.
+
+The independent full-day sklearn inference and NumPy interpolation audit
+reconstructs the selected forecast. Date-block95 percent intervals for NH4
+frequency bias are[-3.77786,1.99095] percentage points and DO bias
+[.17171,3.25789]. These intervals use exploratory validation dates. They do not
+repair the action-order failure or establish policy improvement. See audit.json.
