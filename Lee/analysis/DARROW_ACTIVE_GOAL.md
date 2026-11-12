@@ -7,8 +7,9 @@ No genuine external condition currently prevents useful work.
 
 ## Latest execution status, 2026-11-13
 
-The goal controller reports usageLimited. This is a controller limit, not a
-successful research outcome. The user explicitly requested that work resume.
+The controller previously reported usageLimited and the user subsequently
+reactivated the goal. That interruption was not a successful research outcome.
+The user explicitly requested that work resume.
 Ordinary tool execution resumed e40 from committed source d31b068. Its actual
 Python process started and reported completed median fits. Do not infer ongoing
 execution from this historical entry; inspect the live process or tool session.
@@ -27,9 +28,17 @@ The synthetic correction removes the observed reversals; this does not establish
 that the full wastewater model is suitable. Its full experiment is pending.
 
 e39's implicit saturating NH4 reaction predicts violations4.57 percent and also
-fails adoption. An independent fitted-model audit is being run. No new policy
+fails adoption. Its independent fitted-model audit passes reconstruction and
+reports NH4 bias95 percent interval[-15.69,-9.41] percentage points. No new policy
 training has occurred, no final test outcomes were used, and no improvement over
 FCSRL has been established. Earlier in-progress descriptions below are historical.
+
+e41 is prepared as a distinct causal-history hypothesis if e40 fails. It adds
+strictly past24h/72h/7d summaries to the e34 joint model, preserving its initial
+prediction through a zero output head. It requires direct-slice, future-row
+scrambling, common initialization/RNG and independent rollout checks before
+execution. Preparation is not a fitted result, and its added capacity needs a
+matched control before any successful effect is attributed to longer history.
 
 ![Recorded-air safety frequency audit](figures/darrow_environment_progress.png)
 

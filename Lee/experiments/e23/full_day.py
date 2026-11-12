@@ -27,13 +27,13 @@ def sequences(data,days):
 def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None,
         epochs=80,checkpoints=(20,40,80),warm_start_dir=None,
         warm_start_epoch=80,learning_rate=.001,loss_function=None,
-        auxiliary_factory=None):
+        auxiliary_factory=None,data_class=Data):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
     commit=subprocess.check_output(['git','-c',f'safe.directory={ROOT.as_posix()}','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     raw=pd.read_pickle(a.data);ref=json.loads(a.reference_summary.read_text())
-    fit,cal=ref['fit_days'],ref['calibration_days'];data=Data(raw,fit);logs={}
+    fit,cal=ref['fit_days'],ref['calibration_days'];data=data_class(raw,fit);logs={}
     scoring_sd=data.sd if score_sd is None else np.asarray(score_sd)
     for member in range(5):
         torch.manual_seed(member);model=model_class(data.sd,data.mean,data.mean_air,data.hi)

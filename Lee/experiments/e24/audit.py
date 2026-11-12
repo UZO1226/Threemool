@@ -24,15 +24,20 @@ p.add_argument('--runs',type=Path,required=True)
 p.add_argument('--parent-runs',type=Path)
 p.add_argument('--old-diagnosis',type=Path,required=True)
 p.add_argument('--out',type=Path,required=True)
-p.add_argument('--model-kind',choices=['base','slow','context','kinetic','monod'],default='base')
+p.add_argument('--model-kind',choices=['base','slow','context','kinetic','monod','long_context'],default='base')
 a=p.parse_args();torch.set_num_threads(1)
 source=json.loads((a.runs/'summary.json').read_text())
 weights_dir=a.parent_runs or a.runs
 reference=json.loads(a.reference_summary.read_text())
 old=json.loads(a.old_diagnosis.read_text())
 raw=pd.read_pickle(a.data);data=Data(raw,reference['fit_days']);days=raw['days']['val']
+if a.model_kind=='long_context':
+    sys.path.insert(0,str(ROOT/'Lee/experiments/e41'))
+    from long_context import LongContextData,LongContextModel
+    data=LongContextData(raw,reference['fit_days'])
 scoring_sd=np.array(reference.get('scoring_sd',data.sd))
 model_class=LatentModel;cap=.995
+if a.model_kind=='long_context':model_class=LongContextModel
 if a.model_kind=='slow':
     sys.path.insert(0,str(ROOT/'Lee/experiments/e27'))
     from slow_memory import SlowMemoryModel
