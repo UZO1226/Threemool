@@ -1,0 +1,12 @@
+{
+  "root_equation": true,
+  "slower_fractional_clearance_at_high_nh4": true,
+  "mean_equilibrium": true,
+  "torch_numpy_full_day_agreement": true,
+  "air_order": true,
+  "reaction_head_gradients": [
+    0.25024667382240295,
+    -0.13100402057170868
+  ],
+  "test_evaluated": false
+}

@@ -155,7 +155,7 @@ def precompute(models,data,days,history,row_sum_bound=.995):
     e=torch.tensor(data.exohistory(p,history).reshape(-1,144),dtype=torch.float32)
     c=torch.tensor(data.past(positions[:,0],history),dtype=torch.float32)
     s=torch.tensor(data.state[positions[:,0]],dtype=torch.float32)
-    Vs=[];fs=[];gs=[];initial=[]
+    Vs=[];fs=[];gs=[];initial=[];reactions=[]
     with torch.no_grad():
         for model in models:
             if hasattr(model,'episode_coefficients'):
@@ -165,14 +165,20 @@ def precompute(models,data,days,history,row_sum_bound=.995):
             fs.append(f.numpy().reshape(len(days),95,7).astype(float))
             gs.append(g.numpy().reshape(len(days),95,7,10).astype(float))
             initial.append(model.initial(s,c).numpy().astype(float))
+            if hasattr(model,'reaction_parameters'):
+                reactions.append({key:value.numpy().astype(float) for key,value in model.reaction_parameters(e,c,95).items()})
     matrices=np.stack(Vs)
     conversion=np.r_[data.sd,data.sd[0],data.sd[0]]*np.array([-1,1,1,1,1,-1,-1])
     transformed=matrices*conversion[None,None,None,None,:]/conversion[None,None,None,:,None]
     assert np.isfinite(matrices).all() and transformed.min()>=-1e-8
     if row_sum_bound is not None:assert transformed.sum(-1).max()<=row_sum_bound+2e-7
-    return {'V':matrices,'f':np.stack(fs),'g':np.stack(gs),'initial':np.stack(initial),
+    result={'V':matrices,'f':np.stack(fs),'g':np.stack(gs),'initial':np.stack(initial),
         'zone':data.zone[p],'previous_zone':np.concatenate([data.zone[p[:,:1]],data.zone[p[:,:-1]]],1),
         'true':data.state[positions],'hi':np.r_[data.hi,data.hi[0],data.hi[0]],'days':days}
+    if reactions:
+        assert len(reactions)==len(models)
+        result['reaction']={key:np.stack([row[key] for row in reactions]) for key in reactions[0]}
+    return result
 
 
 def forcing(cache,air_scale):
@@ -183,6 +189,21 @@ def forcing(cache,air_scale):
     return cache['f']+np.einsum('mdtja,dta->mdtj',cache['g'],action)
 
 
+def apply_reaction(cache,previous,new,bias,t):
+    if 'reaction' not in cache:return new
+    r=cache['reaction'];assert previous.ndim in [3,4]
+    shape=(-1,)+(1,)*(previous.ndim-2)
+    load=r['load'][:,:,t];vmax=r['vmax'][:,:,t]
+    if previous.ndim==4:load=load[:,None];vmax=vmax[:,None]
+    knh=r['knh'].reshape(shape);kdo=r['kdo'].reshape(shape)
+    available=np.maximum(r['retention'].reshape(shape)*previous[...,0]+load+bias[0],0)
+    oxygen=np.clip(new[...,2:5],0,cache['hi'][2:5]).mean(-1)
+    extent=vmax*oxygen/(kdo+oxygen)
+    a=knh+extent-available;root=np.sqrt(a*a+4*available*knh)
+    new[...,0]=np.where(a>=0,2*available*knh/np.maximum(root+a,1e-12),.5*(root-a))
+    return new
+
+
 def simulate(cache,bias,noise=None,scale=None,air_scale=1.):
     m,d,_=cache['initial'].shape;r=1 if noise is None else len(noise)//(m*d)
     state=np.repeat(cache['initial'][:,None],r,1)
@@ -190,7 +211,9 @@ def simulate(cache,bias,noise=None,scale=None,air_scale=1.):
     if noise is not None:noise=noise.reshape(m,r,d,95,5)
     padded=np.r_[bias,0,0]
     for t in range(95):
+        previous=state
         state=np.einsum('mdjk,mrdk->mrdj',cache['V'][:,:,t],state)+f[:,None,:,t]+padded
+        state=apply_reaction(cache,previous,state,bias,t)
         if noise is not None:state[...,:5]+=noise[:,:,:,t]*scale
         state=np.clip(state,0,cache['hi'])
         values.append(state[...,:5].copy())
@@ -219,6 +242,7 @@ def residual_bank(cache,bias):
     for t in range(95):
         state[...,:5]=cache['true'][None,:,t]
         pred=np.einsum('mdjk,mdk->mdj',cache['V'][:,:,t],state)+f[:,:,t]+np.r_[bias,0,0]
+        pred=apply_reaction(cache,state,pred,bias,t)
         bank.append(cache['true'][None,:,t+1]-pred[...,:5]);state=np.clip(pred,0,cache['hi'])
     residual=np.stack(bank,2).reshape(len(state),-1,5)
     residual-=residual.mean(1,keepdims=True);residual[...,1]=0

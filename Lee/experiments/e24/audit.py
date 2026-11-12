@@ -13,7 +13,7 @@ import torch
 ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT/'Lee/experiments/e22'))
 sys.path.insert(0,str(ROOT/'Lee/experiments/e26'))
-from latent import Data,LatentModel,precompute,simulate,forcing,noise_paths,summarize
+from latent import Data,LatentModel,precompute,simulate,forcing,noise_paths,summarize,apply_reaction
 from cooperative import arrays,recursive,GBMDynamics
 from correlated import event_diagnostics
 
@@ -24,7 +24,7 @@ p.add_argument('--runs',type=Path,required=True)
 p.add_argument('--parent-runs',type=Path)
 p.add_argument('--old-diagnosis',type=Path,required=True)
 p.add_argument('--out',type=Path,required=True)
-p.add_argument('--model-kind',choices=['base','slow','context','kinetic'],default='base')
+p.add_argument('--model-kind',choices=['base','slow','context','kinetic','monod'],default='base')
 a=p.parse_args();torch.set_num_threads(1)
 source=json.loads((a.runs/'summary.json').read_text())
 weights_dir=a.parent_runs or a.runs
@@ -45,6 +45,11 @@ if a.model_kind=='kinetic':
     sys.path.insert(0,str(ROOT/'Lee/experiments/e33'))
     from kinetic_scaling import KineticScalingModel
     model_class=lambda sd,mean,mean_air,hi:KineticScalingModel(sd,mean,mean_air,hi,data.em[1],data.es[1])
+    cap=None
+if a.model_kind=='monod':
+    sys.path.insert(0,str(ROOT/'Lee/experiments/e39'))
+    from monod_hybrid import MonodModel
+    model_class=lambda sd,mean,mean_air,hi:MonodModel(sd,mean,mean_air,hi,data.em[1],data.es[1])
     cap=None
 assert source.get('state_row_sum_cap',.995)==cap
 assert source.get('model_kind','slow' if cap is not None and cap>1 else 'base')==a.model_kind
@@ -98,7 +103,9 @@ for horizon in [1,4,16,48,95]:
     s=np.repeat(cache['initial'][:,None],r,1);values=[]
     for t in range(95):
         if t%horizon==0:s[...,:5]=cache['true'][None,None,:,t]
+        previous=s
         s=np.einsum('mdjk,mrdk->mrdj',cache['V'][:,:,t],s)+f[:,None,:,t]+np.r_[bias,0,0]
+        s=apply_reaction(cache,previous,s,bias,t)
         s[...,:5]+=innov[:,:,:,t]*scale;s=np.clip(s,0,cache['hi']);values.append(s[...,:5].copy())
     reset[str(horizon)]=summarize(np.stack(values,3),cache['true'],scoring_sd)
 np.testing.assert_allclose(reset['95']['normalized_mae'],score['normalized_mae'],rtol=1e-8)
