@@ -1,0 +1,16 @@
+{
+  "ppolag_fcsrl_split": {
+    "steps": 6080,
+    "complete_training_save_and_validation": true,
+    "metrics_finite": true,
+    "elapsed_seconds": 92.59400000001187
+  },
+  "ppolag_fcsrl_capacity": {
+    "steps": 6080,
+    "complete_training_save_and_validation": true,
+    "metrics_finite": true,
+    "elapsed_seconds": 92.35899999999674
+  },
+  "policy_performance_proven": false,
+  "test_evaluated": false
+}

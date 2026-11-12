@@ -45,8 +45,19 @@ limit, EMA behavior and checkpoint round trips. Then run a single-update
 pipeline smoke for both variants. These checks are not policy seeds or proof
 of performance. Source attribution is in split_feasibility.py; original FCSRL
 commit d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0, remains unmodified.
+The original [license](../../code/darrow/FCSRL_LICENSE) is included in the repository.
 
 e42's terminal accounting correction applies to every method. Frozen model
 quality limits, reused validation and final test reservation also remain.
 No hyperparameter search is authorized by this experiment's definition; a
 different candidate requires a separately recorded hypothesis.
+
+```powershell
+python Threemool/Lee/experiments/e43/check_split.py --out Threemool/Lee/experiments/e43/split_check.json --checkpoint results/e43_unit_checkpoint
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e43/train_split.py --out results/e43_smoke --steps 6080 --evaluations 1 --parallel 1 --jobs new:ppolag_fcsrl_split:0 new:ppolag_fcsrl_capacity:0
+```
+
+Use fresh output/checkpoint paths when reproducing checks. The full experiment
+uses the same runner with400000 requested steps,401280 actual, five evaluations
+and all five seeds for each of the two variants. Keep the full frozen original
+FCSRL comparison from e42 as the primary baseline.

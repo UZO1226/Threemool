@@ -1,0 +1,25 @@
+{
+  "quality_scores_are_not_inputs": true,
+  "smooth_and_nonmonotone_cases": {
+    "linear": {
+      "offset": 0.51953125,
+      "relative_air_error": -0.00018601190476190475,
+      "queries": 9
+    },
+    "curved": {
+      "offset": 1.17578125,
+      "relative_air_error": 0.0005542210170200893,
+      "queries": 9
+    },
+    "nonmonotone": {
+      "offset": 0.505859375,
+      "relative_air_error": -0.0009405931841480395,
+      "queries": 10
+    }
+  },
+  "analytic_saturation_endpoints_passed": true,
+  "unattainable_discontinuity_reported": true,
+  "query_budget_enforced": true,
+  "nonfinite_callback_rejected": true,
+  "policy_performance_tested": false
+}

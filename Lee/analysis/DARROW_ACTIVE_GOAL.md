@@ -26,8 +26,22 @@ reward/cost/air and test rejection checks pass. A distinct historical terminal
 reward/air alias is independently reproduced and corrected in both new-model
 and original-model wrappers. Historical code/results remain preserved. Paired
 old/new FCSRL baselines must both use this correction and cost limit12.
-The first one-update old-model training smoke is running, not a full policy
-result. e41 remains a prepared alternative and is not fitted while the
+Both one-update original FCSRL smokes complete, with6080 transitions each,
+checkpoint saving and validation in both simulators. Full paired baselines
+are now running in results/e42_baselines: five original-model FCSRL seeds,
+then five frozen-model FCSRL seeds and five frozen-model PPO seeds, each
+401280 transitions and cost limit12. Poll the live runner or child processes,
+not this record, before deciding whether they are still running.
+
+e43 implements constraint-wise feasibility supervision plus an independently
+initialized two-head summed-cost capacity control. Its hand-computed boundary,
+common initialization/RNG, original-loss limit, gradient, EMA and serialization
+checks pass. A one-update smoke for both variants is running in results/e43_smoke.
+It is not a five-seed performance result. Do not modify the e42/darrow Python
+sources while the baseline runner is active: their hashes are locked and later
+job launches deliberately fail if the implementation changes.
+
+e41 remains a prepared alternative and is not fitted while the
 validated environment is frozen for agent comparisons. Earlier statuses below
 are historical and must not trigger duplicate runs.
 Ordinary tool execution resumed e40 from committed source d31b068. Its actual
