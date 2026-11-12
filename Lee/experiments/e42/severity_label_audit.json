@@ -1,0 +1,58 @@
+{
+  "training_only": true,
+  "training_days": 188,
+  "transitions": 17860,
+  "test_evaluated": false,
+  "validation_evaluated": false,
+  "policy_training": false,
+  "label": "c + max(NH4/4-1,0) + max(maxDO/2-1,0)",
+  "same_zero_cost_set": true,
+  "actual_cost_groups": [
+    {
+      "actual_cost": 0,
+      "count": 16005,
+      "auxiliary_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "actual_cost": 1,
+      "count": 1708,
+      "auxiliary_quantiles": [
+        1.0002522357243961,
+        1.060364112492559,
+        1.304797742222437,
+        1.8421378465975655,
+        3.004340410232544
+      ]
+    },
+    {
+      "actual_cost": 2,
+      "count": 147,
+      "auxiliary_quantiles": [
+        2.02903412656344,
+        2.3916677863734677,
+        2.7225071351012895,
+        3.4132059406095285,
+        4.326672671608884
+      ]
+    }
+  ],
+  "maximum_auxiliary": 4.326672671608884,
+  "environment_clip_hi": [
+    10.971353816986086,
+    10.079929163283893,
+    4.35780653944628,
+    6.609548902511597,
+    5.909955788181058
+  ],
+  "maximum_new_state_label_bound": 6.04761290550232,
+  "distribution_original_scale_high": 53.598150033144236,
+  "discounted_max_target_upper_bound": 48.23833502982981,
+  "labels_within_existing_distribution_support": true,
+  "scope": "Factual training distribution and conservative clipped-state label bound. No policy improvement or causal effect claim. Clip bounds reconstructed from the verified environment fit days and existing1.1 rule."
+}

@@ -51,3 +51,23 @@ criterion. Any effect includes the changed target magnitude; do not attribute
 it exclusively to information content without another appropriate control.
 This candidate remains prospective until the current complete results justify
 executing a separate recorded experiment.
+
+## Training-only feasibility preflight
+
+audit_severity_labels.py evaluates17860 observed transitions from188 training
+days, excluding initial states. No validation/test observations or fitted
+policy are used. There are16005 zero-cost,1708 single-violation and147
+double-violation transitions. Within cost1, auxiliary quartiles are1.06036,
+1.30480 and1.84214; its range is1.00025 to3.00434. Thus the proposed target
+actually distinguishes some severities currently sharing the same cost label.
+This does not establish that the extra supervision helps the actor.
+
+The factual maximum is4.32667. Reconstructing the frozen environment's existing
+clipping rule from its verified fit-day list gives a conservative new-state
+label bound6.04761. Existing distribution buckets are in symlog space, so their
+upper endpoint4 corresponds to53.59815 on the original scale. With discount.9,
+the maximum recurrence target is bounded by48.23834, including the largest
+possible predicted bootstrap. The proposed labels therefore fit the existing
+distribution support without changing bucket count or range. This checks
+numeric compatibility, not representational accuracy or policy improvement.
+Compact evidence: ../experiments/e42/severity_label_audit.json.
