@@ -1,5 +1,6 @@
 """Reconstruct selected forecasts and quantify date-block uncertainty."""
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -20,11 +21,13 @@ p=argparse.ArgumentParser()
 p.add_argument('--data',type=Path,required=True)
 p.add_argument('--reference-summary',type=Path,required=True)
 p.add_argument('--runs',type=Path,required=True)
+p.add_argument('--parent-runs',type=Path)
 p.add_argument('--old-diagnosis',type=Path,required=True)
 p.add_argument('--out',type=Path,required=True)
 p.add_argument('--model-kind',choices=['base','slow','context','kinetic'],default='base')
 a=p.parse_args();torch.set_num_threads(1)
 source=json.loads((a.runs/'summary.json').read_text())
+weights_dir=a.parent_runs or a.runs
 reference=json.loads(a.reference_summary.read_text())
 old=json.loads(a.old_diagnosis.read_text())
 raw=pd.read_pickle(a.data);data=Data(raw,reference['fit_days']);days=raw['days']['val']
@@ -49,10 +52,12 @@ assert days==old['days']
 models=[]
 for member in range(5):
     model=model_class(data.sd,data.mean,data.mean_air,data.hi)
-    model.load_state_dict(torch.load(a.runs/f"epoch{source['selected_epoch']}_m{member}.pt",weights_only=True))
+    checkpoint=weights_dir/f"epoch{source['selected_epoch']}_m{member}.pt"
+    assert hashlib.sha256(checkpoint.read_bytes()).hexdigest()==source['checkpoint_hashes'][checkpoint.name]
+    model.load_state_dict(torch.load(checkpoint,weights_only=True))
     model.eval();models.append(model)
 cache=precompute(models,data,days,16,row_sum_bound=cap)
-residual=np.load(a.runs/'residual_bank.npz')['residual']
+residual=np.load(weights_dir/'residual_bank.npz')['residual']
 noise=noise_paths(residual,days);bias=np.array(source['bias']);scale=np.array(source['scale'])
 traj=simulate(cache,bias,noise,scale);truth=cache['true'][:,1:]
 score=summarize(traj,cache['true'],scoring_sd)
