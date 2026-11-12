@@ -36,6 +36,10 @@ def save(p, x):
 
 
 def jobs(exp):
+    if exp == 'e53':
+        return [dict(id=f'{m}_d045_s{s}', method=m, seed=s, delta=0.45,
+                     path=str(RESULTS / 'e53/main/runs' / m / 'd0.45' / f'seed_{s}'))
+                for m in ('ppo', 'fcsrl') for s in range(3)]
     if exp == 'e50':
         return [dict(id=f'{m}_s{s}', method=m, seed=s, path=str(RESULTS / exp / 'main/runs' / m / f'seed_{s}'))
                 for m in ('ppo', 'fcsrl', 'fcsrl_actor') for s in range(5)]
@@ -91,7 +95,7 @@ def run(a):
             action = agent.act_det(obs)[:,0]
             air = action_to_air(action)
             arrays['pre_states'].append(env.state.copy())
-            if a.experiment == 'e52':
+            if a.experiment in ('e52', 'e53'):
                 zone = air[:,None] * env.x['frac'][:,t]
                 x = np.column_stack([env.state,env.x['exo'][:,t],zone/1000.,env.prev_zone/1000.])
                 sd = np.stack([member[0].predict(x) for member in dyn.models]).std(0)
@@ -129,7 +133,7 @@ def run(a):
 
 if __name__ == '__main__':
     p=argparse.ArgumentParser()
-    p.add_argument('--experiment',choices=['e50','e52'],required=True)
+    p.add_argument('--experiment',choices=['e50','e52','e53'],required=True)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--air-atol',type=float,default=1e-7)
     args=p.parse_args()
