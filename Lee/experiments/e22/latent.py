@@ -91,7 +91,7 @@ class Data:
         self.days=data['days'];self.table=data['data'].loc[:self.days['val'][-1]]
         self.state=self.table[STATE].to_numpy(float);self.exo=self.table[EXO].to_numpy(float)
         self.zone=self.table[ZONES].to_numpy(float)
-        self.positions={day:self.table.index.get_indexer(data['data'].loc[day].index) for day in fit_days+self.days['train'][-30:]+self.days['val']}
+        self.positions={day:self.table.index.get_indexer(data['data'].loc[day].index) for day in self.days['train']+self.days['val']}
         rows=np.concatenate([self.positions[day] for day in fit_days])
         self.sd=self.state[rows].std(0);self.mean=self.state[rows].mean(0);self.hi=self.state[rows].max(0)*1.1
         self.em=self.exo[rows].mean(0);self.es=self.exo[rows].std(0)+1e-6

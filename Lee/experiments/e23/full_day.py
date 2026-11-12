@@ -24,13 +24,14 @@ def sequences(data,days):
     return [torch.tensor(v,dtype=torch.float32) for v in values]
 
 
-def main(model_class=LatentModel,precompute_fn=precompute):
+def main(model_class=LatentModel,precompute_fn=precompute,score_sd=None):
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True)
     p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);torch.set_num_threads(1)
     commit=subprocess.check_output(['git','-c',f'safe.directory={ROOT.as_posix()}','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     raw=pd.read_pickle(a.data);ref=json.loads(a.reference_summary.read_text())
     fit,cal=ref['fit_days'],ref['calibration_days'];data=Data(raw,fit);logs={}
+    scoring_sd=data.sd if score_sd is None else np.asarray(score_sd)
     for member in range(5):
         torch.manual_seed(member);model=model_class(data.sd,data.mean,data.mean_air,data.hi)
         opt=torch.optim.Adam(model.parameters(),lr=.001)
@@ -58,8 +59,8 @@ def main(model_class=LatentModel,precompute_fn=precompute):
         for member in range(5):
             model=model_class(data.sd,data.mean,data.mean_air,data.hi)
             model.load_state_dict(torch.load(a.out/f'epoch{epoch}_m{member}.pt',weights_only=True));model.eval();models.append(model)
-        cache=precompute_fn(models,data,cal,16);bias,calibration=calibrate(cache,data.sd)
-        inner_mean[epoch]=summarize(simulate(cache,bias),cache['true'],data.sd)
+        cache=precompute_fn(models,data,cal,16);bias,calibration=calibrate(cache,scoring_sd)
+        inner_mean[epoch]=summarize(simulate(cache,bias),cache['true'],scoring_sd)
         metadata[epoch]=calibration;caches[epoch]=cache;biases[epoch]=bias;ensembles[epoch]=models
         (a.out/f'epoch{epoch}_calibration.json').write_text(json.dumps(calibration,indent=2))
         print('CHECKPOINT',epoch,inner_mean[epoch]['proper_selection_score'],flush=True)
@@ -69,15 +70,15 @@ def main(model_class=LatentModel,precompute_fn=precompute):
     for n in [0,.25,.5,1]:
         for d in [0,.5,1,1.5]:
             key=f'n{n}_d{d}';scale=np.array([n,0,d,d,d]);scales[key]=scale
-            inner[key]=summarize(simulate(cache,bias,noise,scale),cache['true'],data.sd)
+            inner[key]=summarize(simulate(cache,bias,noise,scale),cache['true'],scoring_sd)
             print('INNER',key,inner[key]['proper_selection_score'],flush=True)
     selected=min(inner,key=lambda k:inner[k]['proper_selection_score']);scale=scales[selected]
     vc=precompute_fn(ensembles[epoch],data,raw['days']['val'],16);vn=noise_paths(residual,raw['days']['val'])
-    score=summarize(simulate(vc,bias,vn,scale),vc['true'],data.sd)
+    score=summarize(simulate(vc,bias,vn,scale),vc['true'],scoring_sd)
     low=simulate(vc,bias,vn,scale,.75);high=simulate(vc,bias,vn,scale,1.25)
     score['recursive_order']={'nh4_max_order_violation':float(np.maximum(high[...,0]-low[...,0],0).max()),
         'do_max_order_violation':float(np.maximum(low[...,2:]-high[...,2:],0).max())}
-    sensitivity=summarize(simulate(vc,bias,noise_paths(residual,raw['days']['val'],draws=16),scale),vc['true'],data.sd)
+    sensitivity=summarize(simulate(vc,bias,noise_paths(residual,raw['days']['val'],draws=16),scale),vc['true'],scoring_sd)
     for value in metadata.values():value.pop('trace',None)
     result={'selected_epoch':epoch,'selected_scale':selected,'scale':scale.tolist(),'bias':bias.tolist(),
         'gate':gate(score,ref['validation']['old']),'validation':score,'sixteen_draw_sensitivity':sensitivity,
