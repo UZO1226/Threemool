@@ -69,9 +69,35 @@ e42 baseline workers run:
 python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e43/train_split.py --out results/e43_first_pair --parallel 1 --jobs new:ppolag_fcsrl_split:0 new:ppolag_fcsrl_capacity:0
 ```
 
-The remaining eight jobs are still required. The following is the planned
-continuation when baseline workers free CPU resources, not a completed run:
+The remaining eight jobs complete in the following continuation:
 
 ```powershell
 python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e43/train_split.py --out results/e43_remaining --parallel 5 --jobs new:ppolag_fcsrl_split:1 new:ppolag_fcsrl_split:2 new:ppolag_fcsrl_split:3 new:ppolag_fcsrl_split:4 new:ppolag_fcsrl_capacity:1 new:ppolag_fcsrl_capacity:2 new:ppolag_fcsrl_capacity:3 new:ppolag_fcsrl_capacity:4
 ```
+
+## Complete split comparison
+
+All five split final policies and formal matched-air evaluations complete.
+See split_comparison.json. Native mean air rises from52020.58 to68459.37m3,
+while native cost falls22.464125 to12.345. This operating-point change does
+not establish improvement at equal air.
+
+After air-only adjustment, mean air is52007.16m3 versus52020.58m3 and every
+seed is within1 percent of its reference. Mean cost increases22.464125 to
+24.681125. The paired difference is+2.217 with95 percent seed-bootstrap
+interval[-2.49825,6.59325]. NH4 rises23.20868 to25.57026 percent, a+2.36158
+percentage-point difference with interval[-2.81868,7.15316]. DO falls.43776
+to.40987 percent, a-.02789 point difference with interval[-.28184,.25421].
+The prespecified improvement criterion fails for all three quality conditions.
+These intervals neither establish improvement nor a consistent worsening.
+There are five policy seeds;1600 simulated cases per seed are not1600 seeds.
+Validation is repeatedly reused and the frozen model has weak DO event
+ranking, so this is exploratory simulation evidence. Final test41 is unused.
+
+Full split weights are indexed by split_artifacts.json and all five completed
+capacity-control weights by capacity_artifacts.json, each with remote SHA256
+verification in the existing draft release. All generated native,
+matched and intermediate air-query evaluation rows are separately archived
+and indexed in ../e44/split_evaluation_artifacts.json. No original plant data
+or calibration banks are included. Capacity-control comparisons remain
+separate and must finish before attributing behavior to split supervision.

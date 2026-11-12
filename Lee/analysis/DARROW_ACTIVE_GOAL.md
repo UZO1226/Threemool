@@ -53,10 +53,18 @@ prepared causal-history alternative with unit checks, not a fitted result.
 
 ## Latest verified continuation
 
-All split policy seeds are trained. Matched evaluations for seeds0..3 finish;
-seed4 is running in results/e44_split_remaining. Capacity seeds0 and1 finish
-both training and matching. Capacity seeds2..4 remain in the original runner,
-observed at update52 of66. Do not duplicate these jobs.
+All ten split/capacity policies finish401280 transitions. All five split
+matched evaluations finish. split_comparison.json fails the prespecified
+criterion: matched mean cost22.464125 to24.681125, NH4 percentage23.20868
+to25.57026 and DO percentage.43776 to.40987. All three paired uncertainty
+intervals cross zero. Every seed matches air within1 percent. This neither
+proves improvement nor establishes consistent worsening.
+
+Capacity seeds0 and1 finish training and matching. Capacity seeds2..4 are
+launched in results/e44_capacity_later with three workers after the training
+runner exits successfully. Inspect that batch before waiting or restarting.
+Do not duplicate any completed pair. Full split evaluation queries are uploaded
+to the existing draft; e44/split_evaluation_artifacts.json verifies remote SHA.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
