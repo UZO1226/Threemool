@@ -32,7 +32,7 @@ def main(root, out):
                              'val_both_limits': bool(r['val']['nh4_cost'] <= 6 and r['val']['do_cost'] <= 6),
                              'gap_nh4': r['val']['nh4_cost'] - r['train']['nh4_cost']})
     md = ['검증 40일 x 구성원 5개 = 200 에피소드와 학습 188일 x 5 = 940 에피소드, 결정적 행동, 마지막 정책, 평가 비용은 비관 없이 원래대로. '
-          'NH4, DO 비용은 하루 위반 스텝 수 (95 스텝 중), 한도 각 6.', '',
+          '공기량 단위 m3/23.75h. 평균 공기량 판정은 평균의 비율이며 seed별 변화율 평균과 구분한다. NH4, DO 비용은 하루 위반 스텝 수 (95 스텝 중), 한도 각 6.', '',
           '| 방법 | kappa | seed | 검증 공기량 | 검증 NH4 | 검증 DO | 검증 NH4 초과 적분 | 최악 날짜 NH4 | 학습 NH4 | 격차 (검증 − 학습 NH4) | 출처 |',
           '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
     for r in rows:
@@ -51,11 +51,14 @@ def main(root, out):
         d_gap = [b['gap_nh4'] - a['gap_nh4'] for a, b in zip(g[0], g[10])]
         d_air = [100 * (b['val_air_m3'] / a['val_air_m3'] - 1) for a, b in zip(g[0], g[10])]
         d_do = [b['val_do_cost'] - a['val_do_cost'] for a, b in zip(g[0], g[10])]
+        mean_air_pct = float(100 * (np.mean([r['val_air_m3'] for r in g[10]]) / np.mean([r['val_air_m3'] for r in g[0]]) - 1))
         verdict[m] = {'d_val_nh4_by_seed': d_nh4, 'd_gap_by_seed': d_gap, 'd_air_pct_by_seed': d_air, 'd_val_do_by_seed': d_do,
+                      'mean_air_change_pct': mean_air_pct,
+                      'mean_paired_air_change_pct': float(np.mean(d_air)),
                       'H1': bool(sum(x < 0 for x in d_nh4) >= 2 and np.mean(d_nh4) < 0),
                       'H2': bool(np.mean(d_gap) < 0),
-                      'air_up_over_5pct': bool(np.mean(d_air) > 5),
-                      'all_three_lower_mean': bool(np.mean(d_nh4) < 0 and np.mean(d_air) < 0 and np.mean(d_do) < 0)}
+                      'air_up_over_5pct': bool(mean_air_pct > 5),
+                      'all_three_lower_mean': bool(np.mean(d_nh4) < 0 and mean_air_pct < 0 and np.mean(d_do) < 0)}
     md += ['', '| 방법 | seed별 검증 NH4 차이 (kappa 10 − 0) | seed별 공기량 차이 % | seed별 DO 차이 | H1 | H2 격차 감소 | 공기량 +5% 초과 | 세 지표 평균 모두 감소 |',
            '| --- | --- | --- | --- | --- | --- | --- | --- |']
     for m, v in verdict.items():
