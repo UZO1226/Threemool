@@ -27,6 +27,7 @@ class FastPredictor:
     def __init__(self, models):
         nodes,roots,offsets,baseline=[],[],[0],[]
         self.direct=[]
+        coefficients=[]
         n=0
         for row in models:
             for wrapped in row:
@@ -36,6 +37,7 @@ class FastPredictor:
                     raise ValueError('Fast inference only supports numeric trees')
                 baseline.append(float(model._baseline_prediction[0,0]))
                 self.direct.append(direct)
+                coefficients.append(float(getattr(wrapped,'state_coefficient',0)))
                 for predictors in model._predictors:
                     if len(predictors)!=1:
                         raise ValueError('Expected a single regressor tree per iteration')
@@ -50,9 +52,10 @@ class FastPredictor:
         self.args=[np.asarray(offsets),np.asarray(roots),*[np.ascontiguousarray(all_nodes[k]) for k in
             ('feature_idx','num_threshold','left','right','value','is_leaf')],np.asarray(baseline)]
         self.direct=np.asarray(self.direct).reshape(len(models),5)
+        self.coefficients=np.asarray(coefficients).reshape(len(models),5)
 
     def __call__(self,x,members):
         if not np.isfinite(x).all():
             raise ValueError('Fast inference requires finite input')
         out=predict(np.asarray(x,dtype=np.float64),members,*self.args)
-        return out-np.where(self.direct[members],x[:,:5],0)
+        return out+self.coefficients[members]*x[:,:5]-np.where(self.direct[members],x[:,:5],0)
