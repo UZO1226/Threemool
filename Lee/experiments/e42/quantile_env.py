@@ -14,6 +14,12 @@ from env_dw import VecAerationEnv,OBS_DIM,T_STEPS,AIR_MAX,NH4_MAX,DO_MAX
 from surrogate_dw import ZONES
 
 
+def frozen_digest(path):
+    payload=path.read_bytes()
+    if path.suffix in ('.py','.json'):payload=payload.replace(b'\r\n',b'\n')
+    return hashlib.sha256(payload).hexdigest()
+
+
 def install_training_fallback(env,data_path):
     import pandas as pd
     training_days=pd.read_pickle(data_path)['days']['train']
@@ -31,7 +37,7 @@ class FrozenDynamics:
         for name,digest in {**self.manifest['frozen_files_sha256'],
                 **self.manifest.get('frozen_inference_sources_sha256',{})}.items():
             p=Path(name);p=p if p.is_absolute() else WORKSPACE/p
-            assert hashlib.sha256(p.read_bytes()).hexdigest()==digest,f'Frozen input changed: {name}'
+            assert frozen_digest(p)==digest,f'Frozen input changed: {name}'
         os.environ['DARROW_FAST_DYNAMICS']='1'
         self.path=WORKSPACE/self.manifest['environment_run']
         self.model=QuantileDynamics(self.path);self.n_members=5;self.hi=self.model.hi

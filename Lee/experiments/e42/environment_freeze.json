@@ -8,14 +8,14 @@
   "noise_draws_sensitivity": 16,
   "model_members": 5,
   "frozen_files_sha256": {
-    "results\\e40_monotone_quantile\\summary.json": "e3aa4e4e8e9c652f3661571e14617170e62ce197756576d0418a57a59b6c32fe",
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
     "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
     "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
     "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
     "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
     "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
     "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
-    "Threemool\\Lee\\experiments\\e40\\audit.json": "86d717795b63bea6b7a8632c862e70daa566170406bf691d050688d7d1b8b6e1",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
     "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
   },
   "gate": {
@@ -60,9 +60,10 @@
   "original_environment_path": "kaggle_data\\darrow_surrogate_gbm.pkl",
   "frozen_inference_sources_sha256": {
     "Threemool\\Lee\\experiments\\e38\\quantile_dynamics.py": "6fc3b06ce17a122c021b106c559bb457adf6eb5dac7919db447f8d7c949877e9",
-    "Threemool\\Lee\\code\\darrow\\direct_dynamics.py": "d0d58bd70d2cbec678a6b1818caad6a6ee6b34f22443d368d1bd5779a628617a",
-    "Threemool\\Lee\\code\\darrow\\fast_gbm.py": "2aceeb34c5013857affab218f6d5e615f15d68ecc523b409afd1b9569292c312",
-    "Threemool\\Lee\\code\\darrow\\surrogate_dw.py": "15f9fc2d2c6d30230538367ad2764354159e9ababb835abff5032f280fd7f963",
-    "Threemool\\Lee\\code\\darrow\\env_dw.py": "a1a78f1e36b196f3ba60ac00134a3461e7b0ec062478ff0a7d82ca819eed6ce8"
-  }
+    "Threemool\\Lee\\code\\darrow\\direct_dynamics.py": "8309333e35512aa155c0bdf0347e5b04bb7303bcb131f5d8b535e35ad53e52f4",
+    "Threemool\\Lee\\code\\darrow\\fast_gbm.py": "1e4beb94bde95fea2070c96878a1c819ff5903c3af58dfcb05086409a61adb03",
+    "Threemool\\Lee\\code\\darrow\\surrogate_dw.py": "8ec21ac58cf2eddfd5c2eaf3c6b9fdda2c2620b10d7c7f2a3533315b8037e8c1",
+    "Threemool\\Lee\\code\\darrow\\env_dw.py": "0e0eb3922f28dca96dc36be9302fefb310e564edf531081447cd361eb4130cec"
+  },
+  "text_hashing": "UTF-8 bytes with CRLF normalized to LF for .py and .json; binary files unchanged"
 }
