@@ -1,0 +1,29 @@
+{
+  "phase": "complete",
+  "completed": [
+    {
+      "arm": "conditional",
+      "seed": 0,
+      "exit_code": 0
+    },
+    {
+      "arm": "baseline",
+      "seed": 0,
+      "exit_code": 0
+    },
+    {
+      "arm": "conditional",
+      "seed": 1,
+      "exit_code": 0
+    },
+    {
+      "arm": "baseline",
+      "seed": 1,
+      "exit_code": 0
+    }
+  ],
+  "pending": [],
+  "running": [],
+  "elapsed_seconds": 4196.413667544024,
+  "updated_at": "2026-11-12T06:52:16.715698+00:00"
+}
