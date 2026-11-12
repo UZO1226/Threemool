@@ -1,0 +1,243 @@
+{
+ "summary": {
+  "ppo": {
+   "air_m3": {
+    "mean": 82144.03758659656,
+    "sd": 1643.3421910872385
+   },
+   "cost": {
+    "mean": 14.374,
+    "sd": 2.006089230318532
+   },
+   "nh4_viol_pct": {
+    "mean": 13.32842105263158,
+    "sd": 2.108099668072246
+   },
+   "do_viol_pct": {
+    "mean": 1.8021052631578947,
+    "sd": 0.27223502962943763
+   },
+   "days_within_limit_pct": {
+    "mean": 55.8,
+    "sd": 10.721940122944167
+   },
+   "seeds_mean_cost_within_12": 1,
+   "reward_per_day": {
+    "mean": -36.508461149598475
+   }
+  },
+  "fcsrl": {
+   "air_m3": {
+    "mean": 89684.86643375689,
+    "sd": 5218.052106819951
+   },
+   "cost": {
+    "mean": 11.338,
+    "sd": 6.294001588814544
+   },
+   "nh4_viol_pct": {
+    "mean": 9.936842105263157,
+    "sd": 6.644129310423512
+   },
+   "do_viol_pct": {
+    "mean": 1.9978947368421054,
+    "sd": 0.34398028675075293
+   },
+   "days_within_limit_pct": {
+    "mean": 68.9,
+    "sd": 22.61061697521764
+   },
+   "seeds_mean_cost_within_12": 3,
+   "reward_per_day": {
+    "mean": -39.859940637225286
+   }
+  },
+  "fcsrl_actor": {
+   "air_m3": {
+    "mean": 84545.31985490327,
+    "sd": 3225.510631587186
+   },
+   "cost": {
+    "mean": 10.321000000000002,
+    "sd": 2.565009551639136
+   },
+   "nh4_viol_pct": {
+    "mean": 9.258947368421053,
+    "sd": 2.924223788382643
+   },
+   "do_viol_pct": {
+    "mean": 1.605263157894737,
+    "sd": 0.4571742668275496
+   },
+   "days_within_limit_pct": {
+    "mean": 78.6,
+    "sd": 6.945502141674135
+   },
+   "seeds_mean_cost_within_12": 4,
+   "reward_per_day": {
+    "mean": -37.57569771329034
+   }
+  }
+ },
+ "per_seed": {
+  "ppo": {
+   "0": {
+    "air_m3": 83498.48075415823,
+    "cost": 10.51,
+    "nh4_viol_pct": 9.33157894736842,
+    "do_viol_pct": 1.7315789473684209,
+    "days_within_limit_pct": 75.5,
+    "n_episodes": 200
+   },
+   "1": {
+    "air_m3": 80390.15180746908,
+    "cost": 14.46,
+    "nh4_viol_pct": 13.6,
+    "do_viol_pct": 1.6210526315789473,
+    "days_within_limit_pct": 55.50000000000001,
+    "n_episodes": 200
+   },
+   "2": {
+    "air_m3": 80105.23983897641,
+    "cost": 15.14,
+    "nh4_viol_pct": 13.65263157894737,
+    "do_viol_pct": 2.2842105263157895,
+    "days_within_limit_pct": 54.50000000000001,
+    "n_episodes": 200
+   },
+   "3": {
+    "air_m3": 82507.87071368191,
+    "cost": 16.055,
+    "nh4_viol_pct": 15.405263157894737,
+    "do_viol_pct": 1.494736842105263,
+    "days_within_limit_pct": 50.0,
+    "n_episodes": 200
+   },
+   "4": {
+    "air_m3": 84218.44481869716,
+    "cost": 15.705,
+    "nh4_viol_pct": 14.652631578947366,
+    "do_viol_pct": 1.878947368421053,
+    "days_within_limit_pct": 43.5,
+    "n_episodes": 200
+   }
+  },
+  "fcsrl": {
+   "0": {
+    "air_m3": 91687.55160958857,
+    "cost": 5.765,
+    "nh4_viol_pct": 4.510526315789473,
+    "do_viol_pct": 1.5578947368421052,
+    "days_within_limit_pct": 89.0,
+    "n_episodes": 200
+   },
+   "1": {
+    "air_m3": 89423.23203532957,
+    "cost": 15.815,
+    "nh4_viol_pct": 14.16842105263158,
+    "do_viol_pct": 2.4789473684210526,
+    "days_within_limit_pct": 42.5,
+    "n_episodes": 200
+   },
+   "2": {
+    "air_m3": 80266.21232178644,
+    "cost": 21.585,
+    "nh4_viol_pct": 21.068421052631578,
+    "do_viol_pct": 1.6526315789473685,
+    "days_within_limit_pct": 40.0,
+    "n_episodes": 200
+   },
+   "3": {
+    "air_m3": 96157.7995245927,
+    "cost": 6.985,
+    "nh4_viol_pct": 5.178947368421052,
+    "do_viol_pct": 2.1736842105263157,
+    "days_within_limit_pct": 87.0,
+    "n_episodes": 200
+   },
+   "4": {
+    "air_m3": 90889.5366774872,
+    "cost": 6.54,
+    "nh4_viol_pct": 4.757894736842105,
+    "do_viol_pct": 2.1263157894736846,
+    "days_within_limit_pct": 86.0,
+    "n_episodes": 200
+   }
+  },
+  "fcsrl_actor": {
+   "0": {
+    "air_m3": 86142.31695526394,
+    "cost": 8.12,
+    "nh4_viol_pct": 6.394736842105263,
+    "do_viol_pct": 2.1526315789473682,
+    "days_within_limit_pct": 85.5,
+    "n_episodes": 200
+   },
+   "1": {
+    "air_m3": 88636.81602185592,
+    "cost": 7.935,
+    "nh4_viol_pct": 6.368421052631579,
+    "do_viol_pct": 1.9842105263157896,
+    "days_within_limit_pct": 84.0,
+    "n_episodes": 200
+   },
+   "2": {
+    "air_m3": 81246.50634899503,
+    "cost": 14.55,
+    "nh4_viol_pct": 13.621052631578948,
+    "do_viol_pct": 1.6947368421052633,
+    "days_within_limit_pct": 66.5,
+    "n_episodes": 200
+   },
+   "3": {
+    "air_m3": 86431.98920847733,
+    "cost": 9.015,
+    "nh4_viol_pct": 8.194736842105263,
+    "do_viol_pct": 1.294736842105263,
+    "days_within_limit_pct": 81.5,
+    "n_episodes": 200
+   },
+   "4": {
+    "air_m3": 80268.97073992412,
+    "cost": 11.985,
+    "nh4_viol_pct": 11.715789473684211,
+    "do_viol_pct": 0.9,
+    "days_within_limit_pct": 75.5,
+    "n_episodes": 200
+   }
+  }
+ },
+ "H1_actor_vs_fcsrl": {
+  "cost_diff_by_seed": [
+   2.3549999999999995,
+   -7.88,
+   -7.035,
+   2.0300000000000002,
+   5.444999999999999
+  ],
+  "air_diff_pct_by_seed": [
+   -6.047968952139316,
+   -0.8794314358520849,
+   1.2213034586440852,
+   -10.114426873535054,
+   -11.685135963723903
+  ],
+  "seeds_cost_lower": 2,
+  "mean_cost_diff": -1.0170000000000003,
+  "mean_air_diff_pct": -5.501131953321254,
+  "supported": false
+ },
+ "Q2_cost_order": {
+  "e50": [
+   "fcsrl_actor",
+   "fcsrl",
+   "ppo"
+  ],
+  "e30": [
+   "ppo",
+   "fcsrl_actor",
+   "fcsrl"
+  ],
+  "same": false
+ }
+}
