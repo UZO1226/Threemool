@@ -66,6 +66,7 @@ def run(a):
                     numpy=np.__version__, torch=torch.__version__, created_at=datetime.now(timezone.utc).isoformat(),
                     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                     selection='all final checkpoints, deterministic, validation only',
+                    metric_tolerance=dict(rtol=1e-9,atol=1e-7,air_atol=a.air_atol),
                     test_evaluated=False, weight_updates=0, air_unit='m3/23.75h',
                     disagreement='population SD of five raw delta predictions, before state clipping, identical to e52')
     save(a.out / 'manifest.json', manifest)
@@ -111,7 +112,7 @@ def run(a):
         checked = []
         for key,value in previous.items():
             if key in summary:
-                assert np.isclose(summary[key],value,rtol=1e-9,atol=1e-7), (j['id'],key,summary[key],value)
+                assert np.isclose(summary[key],value,rtol=1e-9,atol=a.air_atol if key=='air_m3' else 1e-7), (j['id'],key,summary[key],value)
                 checked.append(key)
         dest = a.out / j['id']
         dest.mkdir()
@@ -130,4 +131,11 @@ if __name__ == '__main__':
     p=argparse.ArgumentParser()
     p.add_argument('--experiment',choices=['e50','e52'],required=True)
     p.add_argument('--out',type=Path,required=True)
-    run(p.parse_args())
+    p.add_argument('--air-atol',type=float,default=1e-7)
+    args=p.parse_args()
+    try:
+        run(args)
+    except BaseException as exc:
+        if args.out.exists():
+            save(args.out/'failure.json',dict(error=repr(exc),phase='failed'))
+        raise
