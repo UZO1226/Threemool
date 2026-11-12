@@ -36,8 +36,15 @@ not this record, before deciding whether they are still running.
 e43 implements constraint-wise feasibility supervision plus an independently
 initialized two-head summed-cost capacity control. Its hand-computed boundary,
 common initialization/RNG, original-loss limit, gradient, EMA and serialization
-checks pass. A one-update smoke for both variants is running in results/e43_smoke.
-It is not a five-seed performance result. Do not modify the e42/darrow Python
+checks pass. Both one-update smokes complete in results/e43_smoke. Full split
+seed0 is running in results/e43_first_pair, with full capacity-control seed0
+queued in the same one-worker runner. This uses the sixth CPU core while the
+five baseline workers run. Seeds1..4 for each extension variant are still
+required; launch them into a fresh result folder when baseline workers free
+the available cores, and do not duplicate the seed0 jobs. e44's air-only
+selector checks pass, but actual matched-policy evaluation and paired seed
+analysis are still required. No agent improvement has been established.
+Do not modify the e42/darrow Python
 sources while the baseline runner is active: their hashes are locked and later
 job launches deliberately fail if the implementation changes.
 
