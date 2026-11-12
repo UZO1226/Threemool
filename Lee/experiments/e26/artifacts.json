@@ -335,6 +335,14 @@
       "sha256": "ab680b2fca09beb38411c4a6a7722ea75cb8ee4449bb87cadbefedf1170fc0f9"
     }
   },
+  "github_draft_release": {
+    "id": 442901392,
+    "tag_name": "lee-e26-e30-followup-20261112",
+    "url": "https://github.com/UZO1226/Threemool/releases/tag/untagged-5322d2890e2cffbff442",
+    "asset_id": 739362785,
+    "draft": true,
+    "uploaded_size_and_remote_sha256_verified": true
+  },
   "archive": {
     "name": "lee-e26-e30-followup.zip",
     "bytes": 8775610,

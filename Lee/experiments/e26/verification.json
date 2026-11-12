@@ -1,0 +1,23 @@
+{
+  "checked_result_commit": "195e5b1",
+  "branch": "lee/darrow-safety-calibration",
+  "scope_check_exit_code": 0,
+  "scope_changed_files_at_check": 136,
+  "paper_check_exit_code": 0,
+  "paper_warnings": "Existing unwritten sections and metadata, no generated files written.",
+  "initialization_regressions": "e24 and e27 pass after reusable-runner changes",
+  "e26_original_noise_and_score_reconstruction": true,
+  "e27_full_day_torch_numpy_and_reconstruction": true,
+  "e28_full_day_torch_numpy_and_reconstruction": true,
+  "e29_full_day_torch_numpy_and_reconstruction": true,
+  "e30_full_day_torch_numpy_and_reconstruction": true,
+  "archive_crc_and_all_file_sha256": true,
+  "remote_archive_size_and_sha256": true,
+  "release_id": 442901392,
+  "asset_id": 739362785,
+  "raw_data_uploaded": false,
+  "official_test_evaluated": false,
+  "environment_adopted": false,
+  "new_policy_training": false,
+  "goal_status": "active, alternative experiments continue"
+}
