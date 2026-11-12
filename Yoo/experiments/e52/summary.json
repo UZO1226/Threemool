@@ -1,0 +1,250 @@
+{
+ "rows": [
+  {
+   "method": "ppo",
+   "kappa": 0,
+   "seed": 0,
+   "source": "e44 정책, e45 결정적 평가",
+   "val_air_m3": 84737.04443862547,
+   "val_nh4_cost": 6.36,
+   "val_do_cost": 1.57,
+   "val_nh4_excess_mg_h_L": 3.831082904815583,
+   "val_worst_day_nh4_cost": 43.6,
+   "train_air_m3": 61726.65336472218,
+   "train_nh4_cost": 4.207446808510638,
+   "train_do_cost": 0.9148936170212766,
+   "val_both_limits": false,
+   "gap_nh4": 2.1525531914893623
+  },
+  {
+   "method": "ppo",
+   "kappa": 0,
+   "seed": 1,
+   "source": "e44 정책, e45 결정적 평가",
+   "val_air_m3": 86127.85146979848,
+   "val_nh4_cost": 7.11,
+   "val_do_cost": 1.425,
+   "val_nh4_excess_mg_h_L": 3.958871147328223,
+   "val_worst_day_nh4_cost": 46.6,
+   "train_air_m3": 62512.31561996256,
+   "train_nh4_cost": 4.6617021276595745,
+   "train_do_cost": 0.9904255319148936,
+   "val_both_limits": false,
+   "gap_nh4": 2.448297872340426
+  },
+  {
+   "method": "ppo",
+   "kappa": 0,
+   "seed": 2,
+   "source": "e52",
+   "val_air_m3": 81273.8108738407,
+   "val_nh4_cost": 14.56,
+   "val_do_cost": 1.185,
+   "val_nh4_excess_mg_h_L": 6.365309038451037,
+   "val_worst_day_nh4_cost": 53.8,
+   "train_air_m3": 60453.71691470005,
+   "train_nh4_cost": 5.176595744680851,
+   "train_do_cost": 0.9574468085106383,
+   "val_both_limits": false,
+   "gap_nh4": 9.38340425531915
+  },
+  {
+   "method": "ppo",
+   "kappa": 10,
+   "seed": 0,
+   "source": "e52",
+   "val_air_m3": 91874.61264916841,
+   "val_nh4_cost": 3.945,
+   "val_do_cost": 1.7,
+   "val_nh4_excess_mg_h_L": 3.6053318641072014,
+   "val_worst_day_nh4_cost": 43.0,
+   "train_air_m3": 72957.80985363638,
+   "train_nh4_cost": 1.9436170212765957,
+   "train_do_cost": 0.9297872340425531,
+   "val_both_limits": true,
+   "gap_nh4": 2.001382978723404
+  },
+  {
+   "method": "ppo",
+   "kappa": 10,
+   "seed": 1,
+   "source": "e52",
+   "val_air_m3": 91697.87010818487,
+   "val_nh4_cost": 4.565,
+   "val_do_cost": 1.875,
+   "val_nh4_excess_mg_h_L": 3.9582327435072004,
+   "val_worst_day_nh4_cost": 45.4,
+   "train_air_m3": 72821.90572767112,
+   "train_nh4_cost": 3.023404255319149,
+   "train_do_cost": 1.0691489361702127,
+   "val_both_limits": true,
+   "gap_nh4": 1.5415957446808513
+  },
+  {
+   "method": "ppo",
+   "kappa": 10,
+   "seed": 2,
+   "source": "e52",
+   "val_air_m3": 83932.96859733062,
+   "val_nh4_cost": 12.79,
+   "val_do_cost": 0.74,
+   "val_nh4_excess_mg_h_L": 7.7945124264208925,
+   "val_worst_day_nh4_cost": 61.0,
+   "train_air_m3": 71815.73982225097,
+   "train_nh4_cost": 2.945744680851064,
+   "train_do_cost": 1.1882978723404256,
+   "val_both_limits": false,
+   "gap_nh4": 9.844255319148935
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 0,
+   "seed": 0,
+   "source": "e44 정책, e45 결정적 평가",
+   "val_air_m3": 84237.44193970111,
+   "val_nh4_cost": 6.305,
+   "val_do_cost": 1.02,
+   "val_nh4_excess_mg_h_L": 5.05745123968944,
+   "val_worst_day_nh4_cost": 52.6,
+   "train_air_m3": 59607.27960363741,
+   "train_nh4_cost": 4.408510638297872,
+   "train_do_cost": 0.8117021276595745,
+   "val_both_limits": false,
+   "gap_nh4": 1.8964893617021277
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 0,
+   "seed": 1,
+   "source": "e44 정책, e45 결정적 평가",
+   "val_air_m3": 80739.63103761314,
+   "val_nh4_cost": 28.15,
+   "val_do_cost": 0.97,
+   "val_nh4_excess_mg_h_L": 8.101437325451066,
+   "val_worst_day_nh4_cost": 57.4,
+   "train_air_m3": 61436.36206728252,
+   "train_nh4_cost": 4.998936170212766,
+   "train_do_cost": 1.0797872340425532,
+   "val_both_limits": false,
+   "gap_nh4": 23.151063829787233
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 0,
+   "seed": 2,
+   "source": "e52",
+   "val_air_m3": 78080.71354407293,
+   "val_nh4_cost": 23.245,
+   "val_do_cost": 1.09,
+   "val_nh4_excess_mg_h_L": 8.61857152642505,
+   "val_worst_day_nh4_cost": 63.4,
+   "train_air_m3": 60294.90298822874,
+   "train_nh4_cost": 6.26063829787234,
+   "train_do_cost": 1.1872340425531915,
+   "val_both_limits": false,
+   "gap_nh4": 16.98436170212766
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 10,
+   "seed": 0,
+   "source": "e52",
+   "val_air_m3": 87081.06030879251,
+   "val_nh4_cost": 6.32,
+   "val_do_cost": 0.585,
+   "val_nh4_excess_mg_h_L": 5.156373767961652,
+   "val_worst_day_nh4_cost": 52.4,
+   "train_air_m3": 69887.09142422477,
+   "train_nh4_cost": 2.1861702127659575,
+   "train_do_cost": 0.8180851063829787,
+   "val_both_limits": false,
+   "gap_nh4": 4.133829787234043
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 10,
+   "seed": 1,
+   "source": "e52",
+   "val_air_m3": 97956.33953486131,
+   "val_nh4_cost": 4.555,
+   "val_do_cost": 0.355,
+   "val_nh4_excess_mg_h_L": 4.685746120487733,
+   "val_worst_day_nh4_cost": 51.8,
+   "train_air_m3": 72480.6380200012,
+   "train_nh4_cost": 2.4414893617021276,
+   "train_do_cost": 0.7819148936170213,
+   "val_both_limits": true,
+   "gap_nh4": 2.113510638297872
+  },
+  {
+   "method": "fcsrl",
+   "kappa": 10,
+   "seed": 2,
+   "source": "e52",
+   "val_air_m3": 94805.97545284427,
+   "val_nh4_cost": 4.9,
+   "val_do_cost": 1.115,
+   "val_nh4_excess_mg_h_L": 4.497751467537326,
+   "val_worst_day_nh4_cost": 48.0,
+   "train_air_m3": 71654.6593236961,
+   "train_nh4_cost": 2.34468085106383,
+   "train_do_cost": 1.05,
+   "val_both_limits": true,
+   "gap_nh4": 2.5553191489361704
+  }
+ ],
+ "verdict": {
+  "ppo": {
+   "d_val_nh4_by_seed": [
+    -2.4150000000000005,
+    -2.545,
+    -1.7700000000000014
+   ],
+   "d_gap_by_seed": [
+    -0.1511702127659582,
+    -0.9067021276595746,
+    0.4608510638297858
+   ],
+   "d_air_pct_by_seed": [
+    8.423197030093066,
+    6.467151500162016,
+    3.271850667391063
+   ],
+   "d_val_do_by_seed": [
+    0.1299999999999999,
+    0.44999999999999996,
+    -0.44500000000000006
+   ],
+   "H1": true,
+   "H2": true,
+   "air_up_over_5pct": true,
+   "all_three_lower_mean": false
+  },
+  "fcsrl": {
+   "d_val_nh4_by_seed": [
+    0.015000000000000568,
+    -23.595,
+    -18.345
+   ],
+   "d_gap_by_seed": [
+    2.237340425531915,
+    -21.037553191489362,
+    -14.42904255319149
+   ],
+   "d_air_pct_by_seed": [
+    3.375717856113103,
+    21.3237393780356,
+    21.420477797414982
+   ],
+   "d_val_do_by_seed": [
+    -0.43500000000000005,
+    -0.615,
+    0.02499999999999991
+   ],
+   "H1": true,
+   "H2": true,
+   "air_up_over_5pct": true,
+   "all_three_lower_mean": false
+  }
+ }
+}
