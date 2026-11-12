@@ -19,7 +19,7 @@ HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[2]
 sys.path.insert(0,str(ROOT/'Lee/code/darrow'))
 from direct_dynamics import DirectDeltaRegressor,PersistenceRegressor
-from surrogate_dw import GBMDynamics,STATE,EXO,ZONES,build_arrays
+from surrogate_dw import GBMDynamics,STATE,EXO,ZONES,build_arrays,features
 
 
 def arrays(table,days):
@@ -35,12 +35,16 @@ def recursive(dyn,batch,scale=1.,bias=None):
     members=np.repeat(np.arange(dyn.n_members),n)
     state=np.tile(true[:,0],(dyn.n_members,1))
     exo=np.tile(exo,(dyn.n_members,1,1))
-    zone=np.tile(np.clip(zone*scale,0,None),(dyn.n_members,1,1))
+    zone=np.clip(zone*scale,0,None)
+    zone*=np.minimum(1.,9000/np.maximum(zone.sum(-1,keepdims=True),1.))
+    zone=np.tile(zone,(dyn.n_members,1,1))
     values=[]
     for t in range(95):
-        state=dyn.step(state,exo[:,t],zone[:,t],zone[:,max(0,t-1)],members)
-        if bias is not None:
-            state=np.clip(state+bias,0,dyn.hi)
+        if bias is None:
+            state=dyn.step(state,exo[:,t],zone[:,t],zone[:,max(0,t-1)],members)
+        else:
+            x=features(state,exo[:,t],zone[:,t],zone[:,max(0,t-1)])
+            state=np.clip(state+dyn.delta(x,members)+bias,0,dyn.hi)
         values.append(state.copy())
     return np.stack(values,1).reshape(dyn.n_members,n,95,5)
 
@@ -67,8 +71,7 @@ def evaluate(dyn,data,days,sd):
     true=x[:,:5]+delta
     result['one_step_mae']=dict(zip(STATE,np.abs(pred-delta).mean(0).tolist()))
     result['next_concentration_r2']=dict(zip(STATE,(1-((pred-delta)**2).sum(0)/((true-true.mean(0))**2).sum(0)).tolist()))
-    # The same scalar applies to all zone inputs. No action clipping is used in
-    # this mathematical order check; the exercised air range is reported.
+    # Preserve recorded fractions and clip the total to the actual action range.
     low=recursive(dyn,batch,.75)
     high=recursive(dyn,batch,1.25)
     result['recursive_order']={
