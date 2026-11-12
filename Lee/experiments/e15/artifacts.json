@@ -1,0 +1,891 @@
+{
+  "source_data_included": false,
+  "all_final_and_selected_checkpoints": true,
+  "files": {
+    "agent_runs/manifest.json": {
+      "sha256": "94322a30f93598846345d6db7cc0254377b0c2ff0d2c6d0ad2cb20ddb8899937",
+      "bytes": 4782
+    },
+    "agent_runs/ppolag/seed_0/effective_config.json": {
+      "sha256": "5a4cbee3f9664af4ffebfa24571861ad5e7b67b17e7ae41aaf6c87a65af6df69",
+      "bytes": 892
+    },
+    "agent_runs/ppolag/seed_0/metrics.json": {
+      "sha256": "5815936d26e704fcbbc28714b4e2bc7d85b38750631116298c1df87430c46f9d",
+      "bytes": 727
+    },
+    "agent_runs/ppolag/seed_0/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_0/model/epoch_5/model.pt": {
+      "sha256": "f73e0af302f5c23ccdad27f14d6d2375c7a1edfe876afee7b9f4b6d59bc020e4",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_0/model/epoch_5/normalizer.json": {
+      "sha256": "9dee5f875fc9dfce117132b4eb4ae000556d6aa137459e04198b191812c6700d",
+      "bytes": 474
+    },
+    "agent_runs/ppolag/seed_0/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_0/model_final/model.pt": {
+      "sha256": "f73e0af302f5c23ccdad27f14d6d2375c7a1edfe876afee7b9f4b6d59bc020e4",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_0/model_final/normalizer.json": {
+      "sha256": "9dee5f875fc9dfce117132b4eb4ae000556d6aa137459e04198b191812c6700d",
+      "bytes": 474
+    },
+    "agent_runs/ppolag/seed_0/progress.json": {
+      "sha256": "31b462731867cb46397b8f3659a9acd2c05c6f96e272035c6d86d3fbff3cd7ba",
+      "bytes": 114
+    },
+    "agent_runs/ppolag/seed_0/train_log.json": {
+      "sha256": "d133f72c27a41d6d194210d3e96fe4ec2d69e7892d0eb8210fca78f2f046ee6a",
+      "bytes": 14585
+    },
+    "agent_runs/ppolag/seed_1/effective_config.json": {
+      "sha256": "713d2f79c6e9875aec64b5280d9505053895a70f3e78026e9eca44990ffa0348",
+      "bytes": 892
+    },
+    "agent_runs/ppolag/seed_1/metrics.json": {
+      "sha256": "0f83f22f8ca1c02fc508bfb1d27761183b85665fab8402d88efac998a74d67f0",
+      "bytes": 728
+    },
+    "agent_runs/ppolag/seed_1/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_1/model/epoch_5/model.pt": {
+      "sha256": "094b781dd50770f4cfe8b0c00f460551f29615bbc831672f3c9345bf054fc531",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_1/model/epoch_5/normalizer.json": {
+      "sha256": "3c8a0b124a006ecccf5a0bd0c03ffb0b9db05709be117233d43d4199613b4f8e",
+      "bytes": 476
+    },
+    "agent_runs/ppolag/seed_1/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_1/model_final/model.pt": {
+      "sha256": "094b781dd50770f4cfe8b0c00f460551f29615bbc831672f3c9345bf054fc531",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_1/model_final/normalizer.json": {
+      "sha256": "3c8a0b124a006ecccf5a0bd0c03ffb0b9db05709be117233d43d4199613b4f8e",
+      "bytes": 476
+    },
+    "agent_runs/ppolag/seed_1/progress.json": {
+      "sha256": "16a472495dac718f8e3b15d430a6b3b1ee27461719ca5b0218ea5f25bf53dc4b",
+      "bytes": 115
+    },
+    "agent_runs/ppolag/seed_1/train_log.json": {
+      "sha256": "370ceabc97bac124ff582a91d3409e58ffb5041fbd32068ca8e82dcb09c2abdb",
+      "bytes": 14937
+    },
+    "agent_runs/ppolag/seed_2/effective_config.json": {
+      "sha256": "1e14925e6278f9a91e8bd014a4fe7e7547f79bca210430fb3b91fa64cbf8792c",
+      "bytes": 892
+    },
+    "agent_runs/ppolag/seed_2/metrics.json": {
+      "sha256": "aebfe139e7e1e0670f414d2df7031c2c5b868ee720a00d1e1b677b748344d400",
+      "bytes": 728
+    },
+    "agent_runs/ppolag/seed_2/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_2/model/epoch_5/model.pt": {
+      "sha256": "fef64310928557c72b9d7388feaf74069e7ea71c705e494d48c1473cdd452467",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_2/model/epoch_5/normalizer.json": {
+      "sha256": "4706a3152987eb7f987e6e1716e15b3c0d729b9e5ee69f3c085dfc425d34240b",
+      "bytes": 478
+    },
+    "agent_runs/ppolag/seed_2/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_2/model_final/model.pt": {
+      "sha256": "fef64310928557c72b9d7388feaf74069e7ea71c705e494d48c1473cdd452467",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_2/model_final/normalizer.json": {
+      "sha256": "4706a3152987eb7f987e6e1716e15b3c0d729b9e5ee69f3c085dfc425d34240b",
+      "bytes": 478
+    },
+    "agent_runs/ppolag/seed_2/progress.json": {
+      "sha256": "854b46ce5c212863a4cda4ad9c2395105cb53a56466a4fe7358f94544072ba8d",
+      "bytes": 115
+    },
+    "agent_runs/ppolag/seed_2/train_log.json": {
+      "sha256": "772360b6d20f31dedd1d81f65eeb1fe4fddef6f8865f193d6840b7c350f8862e",
+      "bytes": 14596
+    },
+    "agent_runs/ppolag/seed_3/effective_config.json": {
+      "sha256": "f0b7fafcac8171b111a2ac8ffa9a6b8699f43c4ffa66d2b4e82a25771c4a81dd",
+      "bytes": 892
+    },
+    "agent_runs/ppolag/seed_3/metrics.json": {
+      "sha256": "9fef6c95d2d0964a689fa60c24acd1a5158d2f2f8af78014fa29b96eb0aa48d5",
+      "bytes": 730
+    },
+    "agent_runs/ppolag/seed_3/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_3/model/epoch_5/model.pt": {
+      "sha256": "493ff511a9e0aa898cc9e3d031f4f22cde031a6e9eb41c6db394637385561360",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_3/model/epoch_5/normalizer.json": {
+      "sha256": "0ed941f73706006710654a1ec7346d55626d72b8e353c31d44a842f22b52b76e",
+      "bytes": 475
+    },
+    "agent_runs/ppolag/seed_3/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_3/model_final/model.pt": {
+      "sha256": "493ff511a9e0aa898cc9e3d031f4f22cde031a6e9eb41c6db394637385561360",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_3/model_final/normalizer.json": {
+      "sha256": "0ed941f73706006710654a1ec7346d55626d72b8e353c31d44a842f22b52b76e",
+      "bytes": 475
+    },
+    "agent_runs/ppolag/seed_3/progress.json": {
+      "sha256": "2d305d57ddee8c0401ce62368af84c7cd66fec6b710eb857e51d4e8d861177d5",
+      "bytes": 115
+    },
+    "agent_runs/ppolag/seed_3/train_log.json": {
+      "sha256": "59ee2a8b7b75b707415023ef2cd1c3eee29225f58672d7f618d39f381a52eca8",
+      "bytes": 14966
+    },
+    "agent_runs/ppolag/seed_4/effective_config.json": {
+      "sha256": "ea4dd4bf0c2c03c99836f68671a67a8ba6408e904542bef534a7083e57ba665d",
+      "bytes": 892
+    },
+    "agent_runs/ppolag/seed_4/metrics.json": {
+      "sha256": "4bb0335c8bfff1b9f721462bde7655b299f8542fd19bf2147da1a1c642997d88",
+      "bytes": 730
+    },
+    "agent_runs/ppolag/seed_4/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_4/model/epoch_5/model.pt": {
+      "sha256": "15259186a1edebb231ee2d01f1b3254fd63b30dcf26fe175e08c00878209e938",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_4/model/epoch_5/normalizer.json": {
+      "sha256": "30b1445364bb098c8b89aa904f81358ce59c9cabe8aac6a769e3fcf58c144bd8",
+      "bytes": 479
+    },
+    "agent_runs/ppolag/seed_4/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag/seed_4/model_final/model.pt": {
+      "sha256": "15259186a1edebb231ee2d01f1b3254fd63b30dcf26fe175e08c00878209e938",
+      "bytes": 65400
+    },
+    "agent_runs/ppolag/seed_4/model_final/normalizer.json": {
+      "sha256": "30b1445364bb098c8b89aa904f81358ce59c9cabe8aac6a769e3fcf58c144bd8",
+      "bytes": 479
+    },
+    "agent_runs/ppolag/seed_4/progress.json": {
+      "sha256": "7580d81be8d978969b28c910464f8c1054800d240d00a1ec3537d039cc596803",
+      "bytes": 115
+    },
+    "agent_runs/ppolag/seed_4/train_log.json": {
+      "sha256": "3703c4e4cf96241dae9b1b74b5f460f9793bd8d79a284042424676d619fa225d",
+      "bytes": 14684
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/effective_config.json": {
+      "sha256": "6ee35695b67fa1f1ba93724a3c97c49e446501c3f143b679be4a5592fdc57cb0",
+      "bytes": 1114
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/metrics.json": {
+      "sha256": "2acb291b03a2a978609ffe883934cfc453806e693619a731908acc231a2e0496",
+      "bytes": 703
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model/epoch_5/model.pt": {
+      "sha256": "6cd0abf52e93509f2a152d0439ec35880425026553cfc454fbda552c98afcece",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model/epoch_5/normalizer.json": {
+      "sha256": "735d7a8bbeeb0eb2a2d2c5d01872620334b5e34a3f20447b498571aeb640de7e",
+      "bytes": 481
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model/epoch_5/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model/epoch_5/representation.pt": {
+      "sha256": "8579cf4e9cee556e4df7b01f2a96b148a99f8083bb4b5f8af83786ca5814efd5",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model_final/model.pt": {
+      "sha256": "6cd0abf52e93509f2a152d0439ec35880425026553cfc454fbda552c98afcece",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model_final/normalizer.json": {
+      "sha256": "735d7a8bbeeb0eb2a2d2c5d01872620334b5e34a3f20447b498571aeb640de7e",
+      "bytes": 481
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/model_final/representation.pt": {
+      "sha256": "8579cf4e9cee556e4df7b01f2a96b148a99f8083bb4b5f8af83786ca5814efd5",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/progress.json": {
+      "sha256": "e0bf428f907da6241f01b77984d2fbdd36a4d6ffec729fc2662f82676093de9d",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl/seed_0/train_log.json": {
+      "sha256": "92a1407542ecd3076c802bba37b0ecec945b0c73ea22b5f0441b95c1e87378d4",
+      "bytes": 29976
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/effective_config.json": {
+      "sha256": "c84d3330b7700c632ad95a1a1b9e9eb4fb4ec8d54de7667266b6738a5469a187",
+      "bytes": 1114
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/metrics.json": {
+      "sha256": "1143ab3986a7ebcc7e9db56f5cef0fa3b1c24a3fbade01eccebb1a0f10e2eaa0",
+      "bytes": 727
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model/epoch_3/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model/epoch_3/model.pt": {
+      "sha256": "b6940377a40b848c1a74c727e5d3bb5daf3427a907275038b7277d0ed5cc2c32",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model/epoch_3/normalizer.json": {
+      "sha256": "fc578f7ab62c733a3129478ced55be708670febcce79313b530876552a73bcca",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model/epoch_3/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model/epoch_3/representation.pt": {
+      "sha256": "fdbe18a45ce9aeea4f8583b26b0e398e3ad68db993715e29d152a727e34638f4",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model_final/model.pt": {
+      "sha256": "1de7aefdbf322ec29cced4b061360557e65fe9c4708e42ffa3caf7e616ec2491",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model_final/normalizer.json": {
+      "sha256": "6fccfadc8440a70d0969a4f39c6358581d217b4d4b54f15b491434707862456e",
+      "bytes": 474
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/model_final/representation.pt": {
+      "sha256": "7f40b9bfb02cb7e6409c5bae32163619d094bbe31fe280cca73f17113116717c",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/progress.json": {
+      "sha256": "2d8b336100b6522e8e769221a4f3c1e3e71a8f51673318c0744e6e97c7f0cf0e",
+      "bytes": 104
+    },
+    "agent_runs/ppolag_fcsrl/seed_1/train_log.json": {
+      "sha256": "9681bb1d4863f9761bdfbb4864c1b32afe313138499a53dbfe028b5268c1b53a",
+      "bytes": 29523
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/effective_config.json": {
+      "sha256": "5979cba3297e221e652edb8be12c9f61be0fd4b4a16b962486a2cedbbecaaf0f",
+      "bytes": 1114
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/metrics.json": {
+      "sha256": "5688bbbe467eee5dd06b21a3f1b1b4b81200627b6303cc1683eee477eb93df03",
+      "bytes": 703
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model/epoch_5/model.pt": {
+      "sha256": "5a5d1b0fe57112e40281e2a6c95867abd035c86ec85c9891b39bfa88aede7670",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model/epoch_5/normalizer.json": {
+      "sha256": "1d90fbeb132fefdaca71c35e8fec2737eac082fab1d3f7d7776f3968b7e28227",
+      "bytes": 477
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model/epoch_5/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model/epoch_5/representation.pt": {
+      "sha256": "e8a774ecdf4b68b354d232b90f2b5d421cbab3f6f48ef4a9604673690d8162f0",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model_final/model.pt": {
+      "sha256": "5a5d1b0fe57112e40281e2a6c95867abd035c86ec85c9891b39bfa88aede7670",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model_final/normalizer.json": {
+      "sha256": "1d90fbeb132fefdaca71c35e8fec2737eac082fab1d3f7d7776f3968b7e28227",
+      "bytes": 477
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/model_final/representation.pt": {
+      "sha256": "e8a774ecdf4b68b354d232b90f2b5d421cbab3f6f48ef4a9604673690d8162f0",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/progress.json": {
+      "sha256": "0e30883018f4ce68ce16d3692169cb829402a0abc362a9fd779e01451d7838bc",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl/seed_2/train_log.json": {
+      "sha256": "e22415ab2a34d905ab508a0c21d0f249ce245e0e1ee0141226aa7bc216a4cec4",
+      "bytes": 29955
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/effective_config.json": {
+      "sha256": "00fe5e03c4306c49097b9f2d9414dda46c67d8226781ca9059002c5c7b502a64",
+      "bytes": 1114
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/metrics.json": {
+      "sha256": "b9179a970a9b8dae38b36e4b2efd752d31ccb5ced56f0856b73ac226ccf75885",
+      "bytes": 739
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model/epoch_2/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model/epoch_2/model.pt": {
+      "sha256": "94e2bd8f497121f0dd22118e671b6023b8fbcabafd8ee20698f32e8618834fca",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model/epoch_2/normalizer.json": {
+      "sha256": "6d3a638bf1491df0e340ca1a90e9fcb52191bdaf84512350e498be136aa276a1",
+      "bytes": 474
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model/epoch_2/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model/epoch_2/representation.pt": {
+      "sha256": "9fc1e4e29856017c54be76eaf4b138fb6111cd3f7204c6dc4593f2d6fb44226c",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model_final/model.pt": {
+      "sha256": "0ec75b9af84edfadc0cd836d82d2a0eb98a4a19162f96f779edbd612fd322869",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model_final/normalizer.json": {
+      "sha256": "caef582bc1f62014882a3d1484c6163309d887fd52888045b664bff4e92bc9ca",
+      "bytes": 477
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/model_final/representation.pt": {
+      "sha256": "2184c61b649decb34d39336bfae4a281f87d1c9938d0be9d9e0515e69b26f97b",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/progress.json": {
+      "sha256": "9c28c7eb9cfe9053b13e9b5c37c56fd94f638df1fb85ea5b5a88a4e1783a123f",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl/seed_3/train_log.json": {
+      "sha256": "6090935861a29717319b908837420009f1e8f970072da5e46145c848b03eeb2c",
+      "bytes": 29922
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/effective_config.json": {
+      "sha256": "ec3b3a1b43b4b80979abb4429a6a357f4a9b1860491b593c5e04e077ab875335",
+      "bytes": 1114
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/metrics.json": {
+      "sha256": "6a4cda5f838aca65418684dde54a8b4742050034450a03f52f7f312126038ffb",
+      "bytes": 731
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model/epoch_3/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model/epoch_3/model.pt": {
+      "sha256": "cd83db893ddd5543e09c8c4c6b49efa62c38733a088bea700346f9e6683d4928",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model/epoch_3/normalizer.json": {
+      "sha256": "89bae11efe107dff7bb4f37fb8379fd62f1227bfbbede5e473d9aa83652c05f7",
+      "bytes": 473
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model/epoch_3/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model/epoch_3/representation.pt": {
+      "sha256": "86c2f57f359c6f8db77a882e74422ac7f274ebb26e4001295783c780b7107841",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model_final/model.pt": {
+      "sha256": "d0b923dd061f62af7d46ad3effef60fcf0ba055c544104755adbf8fa0fc5eaee",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model_final/normalizer.json": {
+      "sha256": "36c6cfff4b9fcaf44a603e04516f45b7eb4d987095d8d1081f969d38963fa8ff",
+      "bytes": 478
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/model_final/representation.pt": {
+      "sha256": "cef5ba792bdb7d7769d7be140725a0c2d4736481024cd85a453ad2a53f1947f3",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/progress.json": {
+      "sha256": "5013217fbd422be7b4cae044d1a8fcd1813a1cd4c65c3cbca9d4b62798315c0d",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl/seed_4/train_log.json": {
+      "sha256": "f1ca6e13375a70c6779b9c5d5d468f7b7bba63fbd5cc0d303dae4ddc9a99ba7c",
+      "bytes": 29953
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/effective_config.json": {
+      "sha256": "83199b74e714d7ee7d42bce3e9637356c7ec76bfb6747cc1760ff3eaec5503fe",
+      "bytes": 7885
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/metrics.json": {
+      "sha256": "67cc837487452a45584670fe51320d5b461ab6b9659dfba6d87d892f77f1c6c8",
+      "bytes": 730
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model/epoch_3/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model/epoch_3/model.pt": {
+      "sha256": "63389ebaad643de28f847dab4272739fa983ac1873e8e95f58b003ee2cf16355",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model/epoch_3/normalizer.json": {
+      "sha256": "f2ef3485ed00831436dc796a14e88b3c7a695e65c7c464a22c68f0e1b9492689",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model/epoch_3/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model/epoch_3/representation.pt": {
+      "sha256": "44cbc3a1f59774d7677988f2fdae22eb2fb4dbd01720b251aa2e1a68e87c6205",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model_final/model.pt": {
+      "sha256": "3f1868f49ee7db33d97a2674f54381909dea353683e0b33130eeb750b7892aac",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model_final/normalizer.json": {
+      "sha256": "e24004cb6783177808f230978369bdf7878d338f8c3320daf1adc737c2e4ca02",
+      "bytes": 480
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/model_final/representation.pt": {
+      "sha256": "756afddf62385a78ce9cf4cd7cf62a5496617210515ce49bc43eb67a1b1db444",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/progress.json": {
+      "sha256": "c7b62ba15ac4317722a54bdcc74e302aa753c887f531f81e32cefb0cfd20a5da",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_0/train_log.json": {
+      "sha256": "2b54a5266ac87d5be82ffb281b36c9e29101c34aaa44e737d78177e121b3859d",
+      "bytes": 29690
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/effective_config.json": {
+      "sha256": "8c27f6b68f9e09acdc7a9f5360d5cdfcf2420ea6c035578c04a4d0a043c6420f",
+      "bytes": 7885
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/metrics.json": {
+      "sha256": "5f7575f33d21605d529f697e9d1bea20b4aa9c9306d39a970fbf6abb3c9c10aa",
+      "bytes": 747
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model/epoch_4/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model/epoch_4/model.pt": {
+      "sha256": "71e5588b23142e0dc0e5999e92e58c642dc785bdfd761b8a59bb17ebfc322898",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model/epoch_4/normalizer.json": {
+      "sha256": "7405e7b7cbfcbda0e12c4cc3a336c0f5663812f220ee24b5b286e349f4ca8fe8",
+      "bytes": 474
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model/epoch_4/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model/epoch_4/representation.pt": {
+      "sha256": "469c9f430d91113e8e941edb49a6a38d5657164c2152c5c9cd4e03f107ee4d03",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model_final/model.pt": {
+      "sha256": "4d4723ad6aadf27c53662e97e784d5a9294be7ee5784b171352a61687116a17e",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model_final/normalizer.json": {
+      "sha256": "6ff0d0e67d1e34e16905c6acd5d60a63732d3bbd2aad7d3952cb30f7f148e779",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/model_final/representation.pt": {
+      "sha256": "9d3bf1b31054eaf0ebcf94bdeff301d3850cee3f82eee39fe4a6e771ee125bba",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/progress.json": {
+      "sha256": "4e7d39e95a0a62707d268490e2da2fdb36c48dbf415e2d3de7359319d1d9e086",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_1/train_log.json": {
+      "sha256": "3b5a4722c7ae5ff439fbdcb8d25e5107d2410184da21f2cb925f258db6127f42",
+      "bytes": 29695
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/effective_config.json": {
+      "sha256": "104c695cb84264a7ab66e0bc14a1954b77a53aaf7b93491b8a8675b7fed4bf0d",
+      "bytes": 7885
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/metrics.json": {
+      "sha256": "05a1145b7aeda43ad469cae10df5141f5823a348a4efbed8f32f10e027119f1a",
+      "bytes": 742
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model/epoch_5/model.pt": {
+      "sha256": "25d5870baa280edf4192854d8576d13829d09dc65ca24a2ded0c8379e47995ac",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model/epoch_5/normalizer.json": {
+      "sha256": "a6d737d6d2aad768c9bf378a8607542bab19d636daa321093321bd8061ed539b",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model/epoch_5/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model/epoch_5/representation.pt": {
+      "sha256": "f903f86038fd04785b9fea01c0367ccc50dafabfb8994496c30d0b354613e4aa",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model_final/model.pt": {
+      "sha256": "25d5870baa280edf4192854d8576d13829d09dc65ca24a2ded0c8379e47995ac",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model_final/normalizer.json": {
+      "sha256": "a6d737d6d2aad768c9bf378a8607542bab19d636daa321093321bd8061ed539b",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/model_final/representation.pt": {
+      "sha256": "f903f86038fd04785b9fea01c0367ccc50dafabfb8994496c30d0b354613e4aa",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/progress.json": {
+      "sha256": "527724657ddd0b9dee51c802a5a5c3673bfa0f48d8945bd699478705456d7dde",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_2/train_log.json": {
+      "sha256": "f15acf12ef9e102f590766074c1890c461c4d3f90ba1a7eddd89f7ac21fc280c",
+      "bytes": 29937
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/effective_config.json": {
+      "sha256": "813a84fa5b650f0b7d436911c29abf64c964ad47e6917101de73eed94da72f48",
+      "bytes": 7885
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/metrics.json": {
+      "sha256": "cca87866b978f6dd1bca1cb2f3069ad29c0ae0c0e30a25c81ebd51e0b2f5d93c",
+      "bytes": 744
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model/epoch_5/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model/epoch_5/model.pt": {
+      "sha256": "2a30f3dc0a442f438ee41d3379f28dcc8948d1198318f03307066811562b4f08",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model/epoch_5/normalizer.json": {
+      "sha256": "aff7dd5b0b69bf1754fb57c91e1ccc5420b736c56eaf1951e12a8b9316f68b63",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model/epoch_5/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model/epoch_5/representation.pt": {
+      "sha256": "ac4f80387a5a5fa93e8f6554d4fcda2aa1776cb58187b48186543aaac77b4da2",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model_final/model.pt": {
+      "sha256": "2a30f3dc0a442f438ee41d3379f28dcc8948d1198318f03307066811562b4f08",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model_final/normalizer.json": {
+      "sha256": "aff7dd5b0b69bf1754fb57c91e1ccc5420b736c56eaf1951e12a8b9316f68b63",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/model_final/representation.pt": {
+      "sha256": "ac4f80387a5a5fa93e8f6554d4fcda2aa1776cb58187b48186543aaac77b4da2",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/progress.json": {
+      "sha256": "2984b643702cab1d196fa98a5721a5aef3cf9e019cf466ffb194948ac9fe811c",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_3/train_log.json": {
+      "sha256": "2c8448879c29de7d4dd1012526cfea02364f2ec4570a449f1a2e6d918eb09853",
+      "bytes": 29936
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/effective_config.json": {
+      "sha256": "860e243fe37240a03215fbdd0402594724a1d8f2e85f8166df3170734a9427c3",
+      "bytes": 7885
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/metrics.json": {
+      "sha256": "d76f5ae9885510ae663be3f03b07cb7f3f1524a2ad8b72ff5d2149c99c3ff28e",
+      "bytes": 733
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model/epoch_3/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model/epoch_3/model.pt": {
+      "sha256": "ffd8cfd9c61d3c228d90b0eb004fdc863913a608400113125e1957358dd81ad0",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model/epoch_3/normalizer.json": {
+      "sha256": "00ba1417fbb721f010390d91f27de8790b8407503e3d1fcc1f74296f5261da2f",
+      "bytes": 476
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model/epoch_3/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model/epoch_3/representation.pt": {
+      "sha256": "30eadfd293ba1d74bdd03952d9287d1ac282aa8134180d2972c37510e8c625c0",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model_final/config.json": {
+      "sha256": "b38e94e03b31d3336a4b54f909639a75591915bb7db0613bb878eb432b2c03fc",
+      "bytes": 461
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model_final/model.pt": {
+      "sha256": "58955713b9c04a0a4eee6033a4a86195425cbf55668d649704b4226ff720f3d6",
+      "bytes": 114552
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model_final/normalizer.json": {
+      "sha256": "08221f4548ae92e485b2907c47fb53c2a6e60ea0f5dedc43d4f440f08346bb29",
+      "bytes": 478
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model_final/representation.json": {
+      "sha256": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+      "bytes": 200
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/model_final/representation.pt": {
+      "sha256": "a9687692ad0e406b582a768d20610024ad81e03e6d8d9dac0c3b0a989342cc09",
+      "bytes": 2266513
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/progress.json": {
+      "sha256": "f68c8f8749a1af9e1102dfc74a929ed4ff8f887a83f39dcadafc0e04460d206c",
+      "bytes": 114
+    },
+    "agent_runs/ppolag_fcsrl_curriculum/seed_4/train_log.json": {
+      "sha256": "79c4cc73772001fe73dc0b450b068844f09fa65b34f76ec5f2743b5afee6a7db",
+      "bytes": 29902
+    },
+    "agent_runs/ppolag_fcsrl_curriculum_s0.log": {
+      "sha256": "2e8bcc27ff85aceb100d563b2fb1a0dea08d6cc1e47ab8837f13f99bafdb0034",
+      "bytes": 17733
+    },
+    "agent_runs/ppolag_fcsrl_curriculum_s1.log": {
+      "sha256": "501702d6464ffd2a0f7b74c8ab31ba83f996401ed63185e2cd8436b43375a0d4",
+      "bytes": 17703
+    },
+    "agent_runs/ppolag_fcsrl_curriculum_s2.log": {
+      "sha256": "c9c5cea0077b09f9d5e57e1283fd675d40d8b388b15a5adb6d231fae23c43a96",
+      "bytes": 17823
+    },
+    "agent_runs/ppolag_fcsrl_curriculum_s3.log": {
+      "sha256": "c1d513c5e1b09fe85c94bc12483b77f6ba4c4a8ec85aa38c808016a030c13d7b",
+      "bytes": 17843
+    },
+    "agent_runs/ppolag_fcsrl_curriculum_s4.log": {
+      "sha256": "6e76d9a8e39dd58bf0e8d89018cd7c13d29c01fa9f1fded6a2fbe65c24a4542c",
+      "bytes": 17840
+    },
+    "agent_runs/ppolag_fcsrl_s0.log": {
+      "sha256": "a0351f722f9ff8ca836e542de61c986948287a98bef30bda67cb2ba21109ae8b",
+      "bytes": 15476
+    },
+    "agent_runs/ppolag_fcsrl_s1.log": {
+      "sha256": "aa367386ebc8be0ffa7f4520f422dc9ef043b843a2d0e27256f59d4c0ae8516a",
+      "bytes": 15359
+    },
+    "agent_runs/ppolag_fcsrl_s2.log": {
+      "sha256": "d179d44c5e3acf9638110b866f4f772beaa2daf95fe4a425978e68da71d8d91e",
+      "bytes": 15504
+    },
+    "agent_runs/ppolag_fcsrl_s3.log": {
+      "sha256": "d31c5c17cd1e792568bd7c2ab27b1c0a8fb203a5920122cf7e11c96691bc16ab",
+      "bytes": 15498
+    },
+    "agent_runs/ppolag_fcsrl_s4.log": {
+      "sha256": "b5a09121ae880df3b229d9f9fc02da57f031e6b6b90b716dd5ab926ded8c5ea3",
+      "bytes": 15481
+    },
+    "agent_runs/ppolag_s0.log": {
+      "sha256": "d33da4179ba51f6da7be12c3bbb3467924fb872b0f7ce352edbb4371ae09e57f",
+      "bytes": 8360
+    },
+    "agent_runs/ppolag_s1.log": {
+      "sha256": "f53d25d2d076421a98b6638944b58be3b1e53588b455c47d4b8c6942e7bc2e3a",
+      "bytes": 8382
+    },
+    "agent_runs/ppolag_s2.log": {
+      "sha256": "2a0fa860d7a8c95b6d5622d41d5d0a050cf3fc48eba322e6a419aadd6d257259",
+      "bytes": 8354
+    },
+    "agent_runs/ppolag_s3.log": {
+      "sha256": "1fe898aba045efa7ad5df374df05cd74f8c5e1daa4aedde7c24646d410d83a5b",
+      "bytes": 8383
+    },
+    "agent_runs/ppolag_s4.log": {
+      "sha256": "14d627d2c749a3f1dfd070ad831cbf5348da62b8e3af527a28da060ad4dde614",
+      "bytes": 8460
+    },
+    "agent_runs/status.json": {
+      "sha256": "d1db3aabd5ab7ab7d801bfeb931fae8e0fc3eef825fee17739a80bb2d994c05f",
+      "bytes": 1517
+    },
+    "environment/action_response.json": {
+      "sha256": "4622eba670d230407daa75c710a917a64abc6fc98f1494dd257bc3db94f0cbbd",
+      "bytes": 2050
+    },
+    "environment/calibration_train.json": {
+      "sha256": "e770d5e89428f1e61664f648113f0cd6753989945bc5e19a31c9ad233f996d70",
+      "bytes": 332
+    },
+    "environment/direct_15.pkl": {
+      "sha256": "86163c906c593c25d09769846131678a6e529782b2c769b15a75526903e045bc",
+      "bytes": 9864810
+    },
+    "environment/direct_7.pkl": {
+      "sha256": "53014c889c58a32f5a4f1a3c803b1573e8dabf6edc3f66edd342fc4677abb709",
+      "bytes": 5384216
+    },
+    "environment/fast_equivalence.json": {
+      "sha256": "b37820ba8698aff6fa6261fb8c8c09321148e52334aba2e6f7bd26915c555e7d",
+      "bytes": 1008
+    },
+    "environment/fast_equivalence_stress.json": {
+      "sha256": "a94ff9038ac37d395006323573b8946cc74a721994a861b442b24d9abfdf00ce",
+      "bytes": 1117
+    },
+    "environment/old_delta_gbm.pkl": {
+      "sha256": "cddf40c09f05f9582eb8daf440f1e71cbeab3045366da050d09cdf5982464a5b",
+      "bytes": 13676526
+    },
+    "environment/persistence.pkl": {
+      "sha256": "1c27f8bb2ad12f64e719ef2f946b0bd64808d2ecc7f5eabc2cc05cc71d7962b6",
+      "bytes": 278
+    },
+    "environment/report.json": {
+      "sha256": "d89d966939f94986b8d516a6009220e8eafe00c9dce591540b8bc862936329bb",
+      "bytes": 6083
+    },
+    "licenses/FCSRL_LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  },
+  "archive": {
+    "name": "lee_e14_e15_artifacts.zip",
+    "bytes": 56729466,
+    "sha256": "da4b859ec16b32c607280c5d1f4d021770e074b76d77cc5bb3b5417bffba32c5"
+  },
+  "storage": {
+    "provider": "GitHub draft release",
+    "release_url": "https://github.com/UZO1226/Threemool/releases/tag/untagged-41981e6f231673198ab9",
+    "release_tag": "lee-e14-e15-audit-20261111",
+    "asset_api_url": "https://api.github.com/repos/UZO1226/Threemool/releases/assets/735416484",
+    "asset_state": "uploaded",
+    "is_draft": true,
+    "remote_digest": "sha256:da4b859ec16b32c607280c5d1f4d021770e074b76d77cc5bb3b5417bffba32c5",
+    "remote_digest_matches_local": true,
+    "source_data_included": false,
+    "user_explicitly_approved": true
+  }
+}
