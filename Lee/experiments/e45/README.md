@@ -3,8 +3,17 @@
 Both e43 variants fail their complete five-seed criterion and the primary
 common-air contrast does not support a split-supervision benefit. These
 failures motivate this separate candidate, without identifying a unique cause.
-Short6080-transition smoke training is launched in results/e45_smoke after
-the checks below pass. No full e45 policy seed or improvement result exists yet.
+Short6080-transition smoke training completes in results/e45_smoke. Independent
+final-checkpoint replay reproduces all final validation metrics over1600
+cases; pipeline_check.json is explicitly diagnostic/smoke and has no matched
+comparison. No full e45 policy seed or improvement result exists yet.
+
+Five full seeds0..4 are launched in results/e45_full with five workers,
+400000 requested and401280 actual transitions per seed, five intermediate
+diagnostic evaluations and final-policy primary selection. Implementation
+commit is c2b48aa; source hashes and exact command are in the run manifest.
+The smoke was executed before the implementation commit, with bb3860a as
+its Git head plus the exact uncommitted source hashes pinned in its manifest.
 
 The hypothesis is that supervising violation magnitude can help a single-head
 FCSRL representation distinguish recovery conditions. Auxiliary labels are
@@ -41,6 +50,7 @@ sources. Do not edit those files while any e45 runner is active.
 python Threemool/Lee/experiments/e45/check_severity.py --out Threemool/Lee/experiments/e45/severity_check.json --checkpoint results/e45_unit_checkpoint
 python Threemool/Lee/experiments/e45/check_environment.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out Threemool/Lee/experiments/e45/environment_check.json
 python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e45/train_severity.py --out results/e45_smoke --steps 6080 --evaluations 1 --parallel 1 --jobs new:ppolag_fcsrl_severity:0
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e45/train_severity.py --out results/e45_full --parallel 5 --jobs new:ppolag_fcsrl_severity:0 new:ppolag_fcsrl_severity:1 new:ppolag_fcsrl_severity:2 new:ppolag_fcsrl_severity:3 new:ppolag_fcsrl_severity:4
 ```
 
 Original encoder implementation: czp16/FCSRL commit

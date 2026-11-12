@@ -72,16 +72,18 @@ existing draft with verified remote size/SHA256 in the artifact indexes.
 e45 prepares a single-head severity-supervision candidate. Training-only label
 and support checks, original objective/gradient/RNG equivalence, serialization
 and380 actual environment-transition equivalence checks pass. A6080-step smoke
-is running in results/e45_smoke. Inspect its real process before waiting.
-Next: finish smoke, independently replay its final checkpoint, then commit
-and execute five full severity policy seeds if the pipeline passes. Never
-count smoke results as policy improvement. All e45 Python files are pinned
+and its independent1600-case final-checkpoint replay finish successfully.
+Five full severity seeds launch in results/e45_full with implementation
+commit c2b48aa, five workers and401280 transitions each. Inspect the real
+runner before waiting or restarting. After training, use unchanged air-only
+matching against the five frozen-model FCSRL references and report all seeds.
+Never count smoke results as policy improvement. All e45 Python files are pinned
 by the runner; do not edit them until the runner exits.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
 increases.17566 to.22697 percent. These are retained mixed single-seed results,
-not a five-seed improvement. Finish the original complete comparisons.
+not a five-seed improvement. Complete five-seed reports now retain these cases.
 
 Both ten-case cross-model evaluation batches and the five PPO checkpoint
 replays finish. New validation JSONs and model_sensitivity.json preserve the
@@ -92,23 +94,20 @@ are uploaded to the existing draft with verified size and SHA256.
 Action diagnosis does not support more zero-air actions or sharper air changes
 as the split seed0 failure explanation. Encoder synchronization logs do not
 demonstrate a large single-update shock. Training-only observation probes are
-descriptive, not causal. DARROW_NEXT_HYPOTHESIS.md records a prospective
-severity-aware auxiliary target; no such policy is trained yet.
+descriptive, not causal. DARROW_NEXT_HYPOTHESIS.md records the severity-aware
+auxiliary rationale; e45 now contains its checked implementation and smoke.
 
 ## Prior launch record and next actions
 
 - results/e43_first_pair contains completed split and capacity-control seed0.
   Do not duplicate either job.
-- results/e43_remaining launches the required eight split/capacity seed1..4
-  jobs with five workers. Inspect its real runner and status before acting.
+- results/e43_remaining completes all eight split/capacity seed1..4 jobs.
 - results/e44_new_policy_cross and results/e44_ppo_native are complete.
 - Capacity seed0 matching finishes in results/e44_capacity_first, seed1 in
-  results/e44_capacity_seed1. Run capacity seeds2..4 in a fresh
-  results/e44_capacity_later after their final checkpoints finish. Split
-  seeds1..4 matching uses results/e44_split_remaining. Exact runner commands and
+  results/e44_capacity_seed1 and seeds2..4 in results/e44_capacity_later. Split
+  seeds1..4 matching finishes in results/e44_split_remaining. Exact commands and
   definitions are in e42/e43/e44 READMEs. Never overwrite a prior result folder.
-- Assemble exactly five seed pairs for each variant with e44/report.py, then
-  use capacity_contrast.py on both sets matched to the same FCSRL reference air.
+- Both five-seed reports and the common-reference capacity contrast finish.
   Keep native results and actual air mismatch visible. Seed counts, members,
   noise draws and dates are different uncertainty units. Matching changes
   candidate actions using air only; it is not a native-policy dominance claim.
