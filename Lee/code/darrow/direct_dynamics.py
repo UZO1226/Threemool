@@ -35,3 +35,13 @@ class TemperatureForcingRegressor(LeakyDirectDeltaRegressor):
     def predict(self, x):
         return (self.model.predict(x) + self.state_coefficient * x[:, self.target]
                 + self.temperature_coefficient * (x[:, 6] - self.temperature_center) - x[:, self.target])
+
+
+class CoupledForcingRegressor:
+    def __init__(self, model, target, state_weights):
+        self.model = model
+        self.target = target
+        self.state_weights = np.asarray(state_weights)
+
+    def predict(self, x):
+        return self.model.predict(x) + x[:, :5] @ self.state_weights - x[:, self.target]
