@@ -60,13 +60,14 @@ def main(a):
         '공기량 m3/23.75h, NH4와 DO 비용은 95전이 중 위반 횟수, 초과 적분 mg h/L. '
         '같은 seed, 검증 날짜 40개, 대리 모델 구성원 5개, 결정적 최종 정책을 비교한다. '
         '원래 한도는 NH4와 DO 각각 6이며 평가에 안전 여유를 더하지 않는다. 새 학습과 test 평가 없음.', '',
-        '주 비교의 차이는 불확실성 여유(kappa 10)에서 고정 여유(delta 0.45)를 뺀 값이다. '
+        '표는 seed 평균과 표준편차(ddof=0)다. 주 비교의 차이는 불확실성 여유(kappa 10)에서 고정 여유(delta 0.45)를 뺀 값이다. '
         '집단 평균 공기량 변화와 seed별 변화율 평균을 구분한다. 원 H1과 수정된 집계 H1을 모두 보존한다. '
         'NH4 심각도와 DO 추가 분석은 사후 해석으로 구분한다.', '']
     for m in ['ppo','fcsrl']:
         subset=frame[frame.method==m]
         groups={c:subset[subset.condition==c].sort_values('seed').to_dict('records') for c in LABELS}
         means={c:{k:float(np.mean([r[k] for r in rs])) for k in KEYS} for c,rs in groups.items()}
+        sds={c:{k:float(np.std([r[k] for r in rs],ddof=0)) for k in KEYS} for c,rs in groups.items()}
         v=decision(groups['d045'],groups['k10'])
         paired=[]
         for s in range(3):
@@ -89,11 +90,11 @@ def main(a):
         v['nh4_severity_worse_seeds']=sum(p['nh4_excess_mg_h_L']>0 for p in paired)
         v['worst_nh4_worse_seeds']=sum(p['worst_day_nh4_cost']>0 for p in paired)
         v['all_three_means_lower']=all(means['k10'][k]<means['d045'][k] for k in KEYS[:3])
-        output['comparisons'][m]=dict(means=means,paired=paired,verdict=v)
+        output['comparisons'][m]=dict(means=means,sds=sds,paired=paired,verdict=v)
         md += [f'## {m.upper()}','', '| 조건 | 공기량 평균 | NH4 평균 | DO 평균 | NH4 초과 적분 | DO 초과 적분 | 최악 날짜 NH4 평균 | 최악 날짜 DO 평균 | 두 평균 한도 충족 seed |',
                '| --- | --- | --- | --- | --- | --- | --- | --- | --- |']
         for c,z in means.items():
-            md.append('| '+LABELS[c]+' | '+' | '.join(f'{z[k]:.3f}' for k in KEYS)+f" | {sum(r['both_limits'] for r in groups[c])}/3 |")
+            md.append('| '+LABELS[c]+' | '+' | '.join(f'{z[k]:.3f} ± {sds[c][k]:.3f}' for k in KEYS)+f" | {sum(r['both_limits'] for r in groups[c])}/3 |")
         md += ['', '| seed | 공기량 차이 % | NH4 차이 | DO 차이 | NH4 초과 적분 차이 | DO 초과 적분 차이 | 최악 날짜 NH4 차이 | 최악 날짜 DO 차이 |',
                '| --- | --- | --- | --- | --- | --- | --- | --- |']
         for s,d in enumerate(paired):
