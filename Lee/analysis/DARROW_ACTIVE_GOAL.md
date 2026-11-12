@@ -48,23 +48,41 @@ e32's persistent-context model completes, with better inner proper score but
 NH4 frequency8.37 percent and just one calibrated member. Independent initial,
 full-day reconstruction and uncertainty checks pass; the safety gate fails.
 
-e33 tests explicit NH4 kinetic temperature scaling informed by the primary
-BSM2-Python ASM1 implementation. It is not the calibrated Tilburg process model.
-Its15C identity, cold-depletion direction, air signs, observed-head gradients
-and full-day Torch/cache agreement pass before fitting. Poll
+e33 completes the explicit kinetic prior comparison: NH4 frequency8.58 percent
+and zero calibrated members still fail. Initial and independent full-day checks
+pass. Its result does not establish a calibrated Tilburg process model.
+
+e34 tests joint recursive and teacher-forced losses in the e32 context model,
+holding the episode context fixed and carrying hidden coordinates through the
+teacher-forced sequence. It changes training only. Independent step0, target,
+fixed-context and gradient checks pass before fitting. Poll
 its actual live tool session, not this file or the presence of checkpoints.
-Output is results/e33_kinetic_scaling outside Git. Do not start a duplicate run
+Output is results/e34_joint_teacher outside Git. Do not start a duplicate run
 because a status observation times out.
 
-After completion, run the general e24 audit with kinetic model kind and the original
+After completion, run the general e24 audit with context model kind and the original
 e17 reference. Retain gate/16-draw sensitivity and separate event metrics, and
 archive e31 to e33 separately from completed e26 to e30. e29's audit uses the slow-cap
 class and its epoch0 control must reconstruct e27.
 
-Completed e26 to e30 checkpoints/logs are in a [draft release](https://github.com/UZO1226/Threemool/releases/tag/untagged-5322d2890e2cffbff442).
+A distinct executable next hypothesis if e34 fails is causal pre-episode
+innovation assimilation: replay only the last16 already-observed transitions,
+using recorded past air and observed past states to estimate a member-specific
+mean transition residual. Add a training-calibrated shrinkage of that residual
+as a fixed future bias, without reading any observations after episode start.
+Use a frozen parent, e24 as the simple first control, and choose NH4/DO gains
+on inner30 dates only, preserving all gates and common-noise action ordering.
+Check that scrambling future concentration targets leaves the estimated bias
+unchanged, and that zero gain exactly reconstructs the parent. The parent
+initializer's past-window/time-of-day support and residual persistence need
+explicit diagnostics. This is a new hypothesis, not yet a demonstrated fix.
+
+Completed e26 to e33 checkpoints/logs are in a [draft release](https://github.com/UZO1226/Threemool/releases/tag/untagged-a6e857f0f8bb43d06f44).
 Remote byte count and SHA256 match the local manifest. Source data, residual
-banks and downloaded publications are excluded. e31 and e32 are not claimed
-as present in that already-frozen attachment.
+banks and downloaded publications are excluded. The first attachment contains
+e26 to e30; the second separately contains e31 to e33. Neither claims to contain
+ongoing e34. Draft release id442901392 is stable; GitHub may regenerate its
+temporary untagged URL after title/description edits.
 If a candidate passes, freeze the exact model/noise/budget and implement the
 neural environment adapter before any paired-seed agent comparison. If it
 fails, examine the failure and pursue another justified model hypothesis.
