@@ -158,7 +158,9 @@ def precompute(models,data,days,history,row_sum_bound=.995):
     Vs=[];fs=[];gs=[];initial=[]
     with torch.no_grad():
         for model in models:
-            V,f,g=model.coefficients(e)
+            if hasattr(model,'episode_coefficients'):
+                V,f,g=model.episode_coefficients(e,c,95)
+            else:V,f,g=model.coefficients(e)
             Vs.append(V.numpy().reshape(len(days),95,7,7).astype(float))
             fs.append(f.numpy().reshape(len(days),95,7).astype(float))
             gs.append(g.numpy().reshape(len(days),95,7,10).astype(float))
