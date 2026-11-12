@@ -139,6 +139,8 @@ def main():
     p.add_argument('--intervention-cost', type=float, default=0.0, help='개입 스텝마다 학습 비용에 더할 값 (Park/e13)')
     p.add_argument('--brake-trim', action='store_true', help='최소 개입 차단이 공기량을 내리기도 한다 (Park/e14)')
     p.add_argument('--adaptive-margin', action='store_true', help='불확실성에 맞춘 여유를 쓴다 (Park/e15)')
+    p.add_argument('--actor-lr', type=float, default=None, help='정책 학습률 (기본 3e-4, Park/e24)')
+    p.add_argument('--epochs', type=int, default=None, help='업데이트마다 같은 자료를 도는 횟수 (기본 10, Park/e24)')
     p.add_argument('--save-every', type=int, default=0, help='이 업데이트 간격마다 중간 정책을 model_u<번호> 로 저장 (Park/e21, 0 이면 안 함)')
     a = p.parse_args()
     assert a.brake_theta is None or a.min_brake_target is None, '차단은 하나만 고른다'
@@ -158,6 +160,10 @@ def main():
         c = Config(**{**asdict(c), 'updates': a.updates})
     if a.cost_limit is not None:
         c = Config(**{**asdict(c), 'cost_limit': a.cost_limit})
+    if a.actor_lr is not None:
+        c = Config(**{**asdict(c), 'actor_lr': a.actor_lr})
+    if a.epochs is not None:
+        c = Config(**{**asdict(c), 'epochs': a.epochs})
     agent = METHODS[a.method](OBS_DIM, ACT_DIM, c, normalizer)
     try:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=HERE, text=True).strip()
