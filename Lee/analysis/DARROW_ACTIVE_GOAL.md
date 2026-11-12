@@ -2,7 +2,8 @@
 
 The user explicitly resumed the full objective. Prior e16 to e25 validation
 failures are evidence for further experiments, not sufficient goal completion.
-No environment or agent improvement has yet met the requested verification.
+No agent improvement over FCSRL has yet been verified. The exploratory
+environment point-gate result and its remaining limits are recorded below.
 No genuine external condition currently prevents useful work.
 
 ## Latest execution status, 2026-11-13
@@ -20,6 +21,14 @@ ensemble frequency tolerances. Rare DO event timing remains weak and date-bias
 intervals extend beyond the point tolerances. Treat this as a frozen exploratory
 research simulator, not independent or real-plant validation.
 
+The additional frozen event-reference audit improves NH4 AP.30003 to.42675
+and both Brier errors versus the old model, but NH4 onset recall within one
+hour drops10/89 to3/89. DO AP.01149 and AUC.48475 are near chance and no new
+DO onset is matched. DO Brier is worse than persistence, with date-block
+difference interval[.000046,.004223]. Do not equate passing average-frequency
+gates with validated onset prediction. Keep these negative results in any
+policy conclusion and do not change the model midway through a paired study.
+
 e42 freezes exact checkpoints, PIT bank and inputs. Its20-episode full-day
 adapter check agrees with the forecast runner; noise, terminal observations,
 reward/cost/air and test rejection checks pass. A distinct historical terminal
@@ -28,10 +37,19 @@ and original-model wrappers. Historical code/results remain preserved. Paired
 old/new FCSRL baselines must both use this correction and cost limit12.
 Both one-update original FCSRL smokes complete, with6080 transitions each,
 checkpoint saving and validation in both simulators. Full paired baselines
-are now running in results/e42_baselines: five original-model FCSRL seeds,
-then five frozen-model FCSRL seeds and five frozen-model PPO seeds, each
+are in results/e42_baselines: five original-model FCSRL seeds have completed,
+followed by five frozen-model FCSRL seeds and five frozen-model PPO seeds, each
 401280 transitions and cost limit12. Poll the live runner or child processes,
 not this record, before deciding whether they are still running.
+
+The five completed original-model policies were archived with full logs and
+checkpoints, no raw inputs or stochastic banks. Draft release id443333191,
+tag lee-e42-e44-policy-comparison-20261113, asset740540715 has verified remote
+byte count and SHA256. See e42/old_baseline_artifacts.json. e44 native checkpoint
+replay and source-hash checks pass on the completed short smokes, which the
+report rejects as performance evidence. Cross-model evaluation of all five
+completed original policies is in results/e44_old_policy_cross. The actual
+matched-air final-policy comparisons and five-seed reports remain outstanding.
 
 e43 implements constraint-wise feasibility supervision plus an independently
 initialized two-head summed-cost capacity control. Its hand-computed boundary,

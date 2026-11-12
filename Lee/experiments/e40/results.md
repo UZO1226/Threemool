@@ -39,6 +39,23 @@ less frequent than observed. Quantile intervals are not claimed to have nominal
 90 percent coverage; NO3 is a deterministic median by design. See summary.json
 and audit.json for complete reliability, horizon, member and event diagnostics.
 
+A separate fixed-model event audit compares ranking and explicit new onsets
+against both original and persistence references. NH4 average precision rises
+from.30003 to.42675 and ROC AUC from.67821 to.71631, while recall at probability
+.5 drops from.53191 to.18997. Within one hour, only3 of89 true new NH4 onsets
+are matched versus10 for the original model. Ongoing initial violations are
+excluded and matching is one-to-one; no diagnostic threshold was tuned.
+
+DO average precision is.01149 versus.01452 original and prevalence.01158;
+ROC AUC.48475 is near chance. No new DO onset is matched by either model.
+The date-paired Brier difference intervals are[-.13744,-.05248] for NH4 and
+[-.01451,-.00203] for DO versus the original, but DO is worse than persistence,
+with difference interval[.000046,.004223]. These reused-date diagnostics
+confirm an improvement in probability error relative to the original while
+contradicting any claim that event onset prediction or DO ranking is solved.
+See event_reference_audit.json and onset_check.json. The frozen policy study
+must retain this model limitation and cannot establish real-plant safety.
+
 This is the first tested environment candidate to satisfy the predefined
 exploratory gates, not evidence that an agent extension beats FCSRL. Baseline
 and extension must now use this exact same environment, cost definition and

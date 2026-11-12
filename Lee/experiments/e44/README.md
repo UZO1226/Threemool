@@ -46,3 +46,11 @@ evaluations with checkpoint and freeze identities so the same baseline need
 not be recomputed for every comparison. Query trajectories remain outside Git;
 compact summaries and scripts are committed. Smoke evaluations are explicitly
 marked and rejected by the five-seed report.
+
+The primary capacity contrast compares both two-head variants after each is
+matched to the same original FCSRL seed's native air. Reuse the two primary
+pair outputs, verifying identical baseline checkpoint hashes, targets and
+common stochastic cases. This separates supervision identity at a shared
+reference air. The optional kind=capacity comparison instead uses the
+capacity policy's native air as its target and is a distinct secondary probe;
+it must not replace the common-reference contrast after seeing its outcomes.
