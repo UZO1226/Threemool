@@ -45,9 +45,13 @@ Its README is fixed before e56 outcomes. Target checks pass on all original
 pass, including both held-error reconstructions, serialized native replays,
 fixed-air matching,152000 independent action choices per horizon and a full-day
 constant-rate null. These use update1/2 and the full seed0 base policy, not
-full regressor trials. The e56 source-pinned batch is ready to fit both fixed
-horizons on52 updates, audit14 held updates, compare all five policy seeds,
-independently audit actions and report the primary/control contrast.
+full regressor trials. The e56 source-pinned batch launches under source0054e89 in results/e56_study.
+All ten fixed-horizon regressor fits finish with exact fast/sklearn agreement
+and zero tested coordinate-order violation. The same parent runs14-update
+held audits, then ten native/matched pairs, independent action audits and both
+five-seed reports plus the primary/control contrast. Do not duplicate the
+queued jobs or edit pinned Python sources. Inspect actual process handles
+before waiting or restarting. No full controller conclusion is available yet.
 The goal is active; reasonable alternatives remain and no external blocker
 prevents meaningful work. Preserve all pinned historical Python sources.
 

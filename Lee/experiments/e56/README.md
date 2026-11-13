@@ -124,3 +124,12 @@ independently audits actual actions, then invokes the unchanged e44 reports
 and a same-base/capture/reference-air horizon contrast. Preserve all logs and
 partial outputs; do not duplicate a live queued study. The full-regressor
 results are not yet complete. No original e55 Python source is edited.
+
+The complete study launches under source0054e89 in results/e56_study. All ten
+full regressor fits finish and pass their real-data fast/sklearn and order
+checks. Held-error audits and subsequent queued comparisons/actions/reports
+remain in progress. Preserve the pinned Python sources and inspect actual
+process handles before waiting or restarting. The two horizons predict
+different target variables, so lower held MSE across horizons alone does not
+prove a better predictor or controller; compare each against its own controls
+and use the unchanged physical-cost matched-air reports for adoption.
