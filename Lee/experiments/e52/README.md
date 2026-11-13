@@ -65,7 +65,9 @@ environment draft with verified checksums. Source/license, data hashes, units,
 generated-influent and observational-control caveats follow e40/e42. Historical
 policy comparisons remain frozen and final test stays unused.
 
-Status: implementation and initial preflight pass. preflight.json records
+Status: source2232e48 completes calibration and independent audit, failing
+the original joint adoption gate. See results.md, summary.json and audit.json.
+No controller is trained on this candidate. preflight.json records
 tail signs/support, calibration algebra, zero NO3 tail, all four block samplers
 and exact zero-tail day reconstruction. preflight_air.json additionally checks
 the nonzero-tail common-noise air ordering before the full outcome evaluation.

@@ -165,6 +165,15 @@ size/SHA256. The selected PIT bank is excluded; e51/calibrate_blend.py recreates
 it. e51 passes the point gate but does not improve DO probability prediction;
 do not interpret this archive as adoption or an FCSRL extension result.
 
+lee-e52-tail-innovation.zip preserves the fixed-weight tail candidate and full
+console log, indexed in [e52 artifacts](../experiments/e52/artifacts.json).
+The paired PIT/tail bank is excluded and recreated by calibrate_tail.py;
+use the e52-specific auditor rather than the PIT-only auditor. It fails the
+joint gate. lee-e53-history-full-range-probe.zip contains the30 training-only
+diagnostic classifiers and log, indexed in [e53 artifacts](../experiments/e53/artifacts.json).
+Generated arrays are excluded and recreated by probe_history.py. Neither
+archive establishes a policy improvement. Both remote sizes/SHA256 verify.
+
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
 Evaluation archives instead contain seed_0 through seed_4, including native,

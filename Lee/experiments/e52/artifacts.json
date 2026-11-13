@@ -1,0 +1,56 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e52_tail_innovation"
+  ],
+  "files": {
+    "e52_tail_innovation/inner_progress.json": {
+      "bytes": 51886,
+      "sha256": "d0e43f2750bd4699dca2f87c03e1f5b95965f6b5f9af5bfab6c640b146da64e5"
+    },
+    "e52_tail_innovation/quantile_0.05.pkl": {
+      "bytes": 9793717,
+      "sha256": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4"
+    },
+    "e52_tail_innovation/quantile_0.25.pkl": {
+      "bytes": 9793717,
+      "sha256": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30"
+    },
+    "e52_tail_innovation/quantile_0.5.pkl": {
+      "bytes": 9793717,
+      "sha256": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e"
+    },
+    "e52_tail_innovation/quantile_0.75.pkl": {
+      "bytes": 9793717,
+      "sha256": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5"
+    },
+    "e52_tail_innovation/quantile_0.95.pkl": {
+      "bytes": 9792485,
+      "sha256": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8"
+    },
+    "e52_tail_innovation/summary.json": {
+      "bytes": 86308,
+      "sha256": "0c853e1065027fe5455d105215a19bc5351c73966fc923e7c1ab0d30aa42dcd8"
+    },
+    "e52_tail_innovation/train.log": {
+      "bytes": 2102,
+      "sha256": "33a3f3da818647d274c6af6ed912a63aedfc098e0e176590b44b7da4a9df315d"
+    }
+  },
+  "archive": {
+    "name": "lee-e52-tail-innovation.zip",
+    "bytes": 20450897,
+    "sha256": "506b6b925090b0eb1b3c156a9bb41d8f773fbbaea7f7bc05d2516830bc54e182"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 742792078,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

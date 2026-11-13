@@ -47,9 +47,11 @@ Finish e52 and choose any subsequent environment solely by environment
 evidence, never by favorable controller outcomes. Historical e40 policies and
 all failures remain fixed. No full policy training or adoption is automatic.
 
-Status: specified and implemented before generated outcomes. No controller
-is trained. Generated input/action/label arrays remain local for independent
-reconstruction and are excluded from Git and model/log archives.
+Status: the full-range source9fcf818 run and independent reconstruction
+complete. See results.md, summary.json, audit.json and artifacts.json.
+The lower-air follow-up runs under source2af8bfc; inspect the actual process
+before waiting or restarting. No controller is trained. Generated arrays stay
+local and are excluded from Git and model/log archives.
 
 ```powershell
 python Threemool/Lee/experiments/e53/probe_history.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e53_history_probe

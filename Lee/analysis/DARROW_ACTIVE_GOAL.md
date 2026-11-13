@@ -8,6 +8,22 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e52 completes the original20-setting search and independent tail-specific
+audit. Selected pit_b95_a0.75 fails DO frequency/member agreement: NH4/DO
+18.790789/6.565789 percent versus actual17.315789/1.157895. Brier worsens
+versus e40 for both labels. Zero-tail e51 full validation replay, independent
+indices/slow day and common-noise air ordering pass. Preserve the failure and
+verified artifact archive; historical e40 remains frozen with its known limits.
+
+e53's separate training-only recent-observation probe completes30 classifier
+fits and exact independent reconstruction under source9fcf818. History reduces
+both Brier scores slightly, repeated-current predictions equal current-only,
+but there are only4 new NH4 events in the held-training subset. This is not
+policy learning or agent improvement. A prospectively fixed lower-air coverage
+follow-up runs under source2af8bfc, with actions uniform[-1,0], all other
+settings unchanged and both reports retained. No validation/test episode is
+generated. Finish its independent audit before defining a full policy trial.
+
 e52 implements fixed full-strength safety tail innovations paired with the
 alpha-matched PIT rows. Existing weights and physical clip bounds remain.
 Preflights pass tail signs, zero inside support, zero NO3 tail, calibration
