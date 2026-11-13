@@ -68,3 +68,22 @@ episode has finite strictly past initial context and that the history table
 ends at validation, before fitting. The operating-history assumption and
 extra-capacity caveat above remain. Model-member seeds are not policy seeds;
 date-block intervals describe exploratory reused validation only.
+
+The launched training source commit is982124f. Its output folder is
+results/e41_long_context and console log is results/e41_long_context_run.log.
+The same shell runs e24/audit.py with model-kind long_context after training
+success, reconstructing selected forecasts independently. Training model seeds
+0..4 are sequential and distinct from policy seeds. Do not duplicate this run
+based on a quiet log. No checkpoints or raw inputs enter Git.
+
+After reconstruction, execute the fixed event audit:
+
+```powershell
+python Threemool/Lee/analysis/audit_long_history_events.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e41_long_context --control results/e34_joint_teacher --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out Threemool/Lee/experiments/e41/event_reference_audit.json
+```
+
+It reconstructs selected e41 and e34 checkpoints with hash checks, verifies
+date/target identity and reproduces e40/persistence Brier, AP and AUC before
+reporting e41 comparisons. Threshold.5, onset tolerances0/1/4 and10000 circular
+five-day paired Brier intervals match the earlier event audit. Onset/ranking
+diagnostics do not select epochs or tune probabilities on validation.
