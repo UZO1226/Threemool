@@ -8,6 +8,21 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e51 completes fixed calibration, both audits and its post-primary2x2 diagnostic.
+The original point gate passes5/5 members. NH4/DO frequency16.686842/.963816
+percent is closer to actual17.315789/1.157895, and one-hour NH4 onset matches
+rise3/89 to10/89. However DO still matches0/25 onsets and its Brier worsens
+versus frozen e40, difference+.000890 with exploratory interval
+[.000002956,.002084725]. NH4 Brier difference is uncertain. At fixed alpha,
+PIT-change Brier intervals cross zero. Primary selection stays unchanged;
+no complete environment replacement or agent improvement is claimed.
+
+Next specify a fixed tail-innovation candidate addressing observed calibration
+outcomes outside the bounded quantile support. Keep weights and physical clip
+bounds fixed, preserve a zero-tail reconstruction, action-independent paired
+noise, original20-setting search/gate and final test exclusion. Do not select
+a favorable decomposition cell or declare the earlier design a coding bug.
+
 e51 implements matching PIT to the actual alpha-blended clipped transition,
 with frozen e40 weights and unchanged20-setting search/gate. A preflight
 assumption fails for14 observed NO3 states above fitting-only clip bounds;

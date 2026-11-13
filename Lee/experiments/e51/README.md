@@ -61,13 +61,13 @@ preflight.json checks the corrected kernel, and preflight_support.json adds
 the actual out-of-bound NO3 inputs and CDF endpoints to interpolation probes.
 All corrected preflights pass. No transition weights are fitted.
 
-Execution snapshot: source1a2634d runs the fixed inner20 comparison in
-results/e51_blended_pit, with log results/e51_blended_pit_run.log. The same
-shell runs both independent audits on success. Initial uniform-alpha0/.25
-controls reconstruct the parent's metrics within the required numeric
-tolerance. Remaining controls and outcomes are pending at this snapshot.
-Inspect the actual process/tool handle before waiting or restarting; do not
-duplicate a quiet run. No adoption or controller improvement is claimed.
+Status: source1a2634d completes inner20, all eight original-control
+reconstructions, validation and both independent audits. The original point
+gate passes with five members. DO Brier worsens versus e40 and onset prediction
+remains weak; no complete replacement or controller improvement is claimed.
+source58253c4 completes the fixed post-primary decomposition without changing
+the primary summary. See results.md, decomposition.json and artifacts.json.
+Full logs are results/e51_blended_pit_run.log and results/e51_decomposition_run.log.
 
 ```powershell
 python Threemool/Lee/experiments/e51/calibrate_blend.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --preflight-out Threemool/Lee/experiments/e51/preflight_support.json

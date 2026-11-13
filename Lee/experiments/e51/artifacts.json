@@ -1,0 +1,60 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e51_blended_pit"
+  ],
+  "files": {
+    "e51_blended_pit/decomposition.log": {
+      "bytes": 2722,
+      "sha256": "bf17630066d5c3926be72e9264e999096290fddf33c96c65ed22b1e2dcb63cf2"
+    },
+    "e51_blended_pit/inner_progress.json": {
+      "bytes": 51901,
+      "sha256": "5df0ee64addd62ebd0913aa1db0d9c9b6958c9eb8d165a9d46038de502f1e135"
+    },
+    "e51_blended_pit/quantile_0.05.pkl": {
+      "bytes": 9793717,
+      "sha256": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4"
+    },
+    "e51_blended_pit/quantile_0.25.pkl": {
+      "bytes": 9793717,
+      "sha256": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30"
+    },
+    "e51_blended_pit/quantile_0.5.pkl": {
+      "bytes": 9793717,
+      "sha256": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e"
+    },
+    "e51_blended_pit/quantile_0.75.pkl": {
+      "bytes": 9793717,
+      "sha256": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5"
+    },
+    "e51_blended_pit/quantile_0.95.pkl": {
+      "bytes": 9792485,
+      "sha256": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8"
+    },
+    "e51_blended_pit/summary.json": {
+      "bytes": 82115,
+      "sha256": "ed5c8056dec2629225a4610395beaed23b0beb6b9f7842018801cb8475233678"
+    },
+    "e51_blended_pit/train.log": {
+      "bytes": 2098,
+      "sha256": "dcbc3f555a6a8efaa067b6e19938343528ba56b0b523c1483b34a35181db6698"
+    }
+  },
+  "archive": {
+    "name": "lee-e51-blended-pit.zip",
+    "bytes": 20450603,
+    "sha256": "a01ecb49ad2677d2aac1768ab5e8e8558a44f54b8073ca856c47c3098fc48ea1"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 742683953,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

@@ -158,6 +158,13 @@ verifies remote size/SHA256. Re-run e50/exposure.py to regenerate its excluded
 PIT bank. Both independent audit commands are in the e50 README. This candidate
 fails adoption despite lower MAE; preserve its failed event predictions.
 
+lee-e51-blended-pit.zip in the same environment draft preserves identical
+copied e40 checkpoints, calibration/decomposition console logs and compact
+runtime summaries. [Its index](../experiments/e51/artifacts.json) verifies remote
+size/SHA256. The selected PIT bank is excluded; e51/calibrate_blend.py recreates
+it. e51 passes the point gate but does not improve DO probability prediction;
+do not interpret this archive as adoption or an FCSRL extension result.
+
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
 Evaluation archives instead contain seed_0 through seed_4, including native,
