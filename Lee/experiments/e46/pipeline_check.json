@@ -1,0 +1,49 @@
+{
+  "policy_seed": 0,
+  "kind": "diagnostic",
+  "evaluation_environment": "new",
+  "baseline_method": "ppolag_fcsrl_cold",
+  "candidate_method": "ppolag_fcsrl_cold",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 106869.4084996001,
+    "cost": 8.913125,
+    "nh4_viol_pct": 5.826315789473685,
+    "do_viol_pct": 3.555921052631579,
+    "reward": -47.49751488871116,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 78.625
+  },
+  "candidate_native": {
+    "air_m3": 106869.4084996001,
+    "cost": 8.913125,
+    "nh4_viol_pct": 5.826315789473685,
+    "do_viol_pct": 3.555921052631579,
+    "reward": -47.49751488871116,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 78.625
+  },
+  "candidate_matched": null,
+  "matching": null,
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "baseline_checkpoint_hashes": {
+    "config.json": "454a1ca595898a810add7b55132190db5716d4076f70563c4dbec21ce55ccaaf",
+    "model.pt": "e929d785c1208bf9adb5ddee90af6a538e28ba73721c9250ea11906cb1648c6e",
+    "normalizer.json": "8876637753bb01cbb97eb68a2767b1e93965b9a40607e8df06ab51db56ff5f9d",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "dc9f2340320a6c9851fc7385262f75983ee0ab16690a026fafeef7ec8ec8a86d"
+  },
+  "candidate_checkpoint_hashes": {
+    "config.json": "454a1ca595898a810add7b55132190db5716d4076f70563c4dbec21ce55ccaaf",
+    "model.pt": "e929d785c1208bf9adb5ddee90af6a538e28ba73721c9250ea11906cb1648c6e",
+    "normalizer.json": "8876637753bb01cbb97eb68a2767b1e93965b9a40607e8df06ab51db56ff5f9d",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "dc9f2340320a6c9851fc7385262f75983ee0ab16690a026fafeef7ec8ec8a86d"
+  },
+  "training_steps": 6080,
+  "test_evaluated": false,
+  "smoke_only": true,
+  "checkpoint_replay_verified": true,
+  "scope": "Exploratory reused validation, frozen surrogate, final policies. Matching changes candidate actions using air only."
+}

@@ -1,7 +1,7 @@
 # Colder-day exposure with unchanged FCSRL
 
 This separate sampling hypothesis follows e43 and e45, which fail their
-complete five-seed matched-air criteria. No e46 policy result exists yet.
+complete five-seed matched-air criteria. No full e46 policy result exists yet.
 The existing risk-day sampler failed in e15 on a different model. We do not
 erase that failure, repeat it under another name or claim a new RL algorithm.
 
@@ -41,3 +41,38 @@ Sampling metadata is written to sampling.json alongside every run config.
 
 Original FCSRL d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0, is
 preserved. This remains exploratory personal work, not a team protocol change.
+
+## Checks and full execution
+
+sampling_check.json passes fixed-case380-transition output equivalence,
+training-only support, stable ties, nonfinite input rejection and1024 actual
+reset draws. The observed cold fraction is.52930 versus the specified.5;
+this is a sampling check, not a performance seed. The6080-transition smoke
+finishes in results/e46_smoke, and an independent1600-case final-checkpoint
+replay reproduces all recorded validation metrics. pipeline_check.json is
+explicitly smoke/diagnostic and has no matched performance comparison.
+
+Five full seeds0..4 launch in results/e46_full with source commit98ad497,
+five workers,400000 requested/401280 actual transitions,66 updates and five
+diagnostic evaluations. Only final policies determine the primary comparison.
+The smoke ran at Git head b5e72d1 plus uncommitted sources pinned exactly by
+its manifest. Full source files are committed and hashed by the full runner.
+Do not edit e46/common training Python sources while that runner is active.
+
+The same shell chains the guarded final-policy matching batch and report
+after successful training. Failure stops the chain and preserves logs. Do
+not launch another copy because a status file is old or observation times out.
+
+```powershell
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e46/train_cold.py --out results/e46_full --parallel 5 --jobs new:ppolag_fcsrl_cold:0 new:ppolag_fcsrl_cold:1 new:ppolag_fcsrl_cold:2 new:ppolag_fcsrl_cold:3 new:ppolag_fcsrl_cold:4
+python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-roots results/e46_full/new_ppolag_fcsrl_cold --seeds 0 1 2 3 4 --out results/e46_comparison --parallel 3
+python Threemool/Lee/experiments/e44/report.py --pairs results/e46_comparison/seed_0/summary.json results/e46_comparison/seed_1/summary.json results/e46_comparison/seed_2/summary.json results/e46_comparison/seed_3/summary.json results/e46_comparison/seed_4/summary.json --out Threemool/Lee/experiments/e46/comparison.json
+```
+
+Use fresh output paths to reproduce. Runtime and prepared-input hashes,
+188/40/41 chronological splits, preprocessing and e40 freeze reconstruction
+are in [the reproduction guide](../../analysis/DARROW_REPRODUCTION.md) and
+[e42](../e42/README.md). Recorded runtime is Python3.11.15, sklearn1.9.1,
+Torch2.15.0 CPU with one numerical-library thread per worker. Air is volume
+in m3 over23.75h, not measured electricity. Uniform evaluation uses1600
+member/date/noise cases per policy, not1600 independent policy seeds.
