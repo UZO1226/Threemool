@@ -133,3 +133,11 @@ python Threemool/Lee/experiments/e54/run_comparisons.py --data kaggle_data/darro
 After all completed pairs, use e44/report.py for each variant and
 history_contrast.py for the secondary comparison. Do not summarize smokes as
 five full seeds or stop a variant because its first seed looks unfavorable.
+
+Execution snapshot: source5f901a2 launches all ten full jobs in
+results/e54_full, with five history seeds first and five repeated-current
+seeds pending. The same live shell queues both five-seed comparison batches,
+then both e44 reports and history_contrast.json after successful training.
+Do not start duplicate comparison folders while this pipeline is active.
+Read actual process/tool state before waiting or restarting. All pinned
+Python sources stay unchanged; documentation snapshots are not live monitors.

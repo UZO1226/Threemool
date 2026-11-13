@@ -13,8 +13,12 @@ independent native replays pass. Both real air-matching smokes pass; actual
 new actor/encoder columns learn. pipeline_check.json and baseline_reuse_check.json
 record the evidence, with all five original401280-step baseline source/budget/
 config/checkpoint loads valid. No performance claim follows from the smokes.
-Launch ten full jobs in results/e54_full, five policy seeds per variant, then
-both matched-air reports and the secondary common-reference contrast. Preserve
+Ten full jobs launch under source5f901a2 in results/e54_full. Five history
+seeds are running, then five repeated-current seeds follow. The same live shell
+already queues results/e54_history_comparison and e54_repeated_comparison,
+then both primary JSON reports and history_contrast.json. Do not duplicate
+these queued jobs. Verify actual process/tool state before waiting/restarting.
+Preserve
 all Python sources pinned by run manifests while those jobs are active.
 
 e54 now implements17-input history/repeated-current agents and scoped collector/
