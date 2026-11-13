@@ -49,7 +49,7 @@ and independent1600-case final-checkpoint replay both complete successfully
 in results/e48_smoke and results/e48_smoke_replay. pipeline_check.json is
 explicitly smoke/diagnostic, not an independent performance seed.
 
-Five full seeds0..4 launch in results/e48_full at implementation commit3f584a9,
+Five full seeds0..4 complete in results/e48_full at implementation commit3f584a9,
 five workers and401280 transitions each, with five diagnostic evaluations.
 The same shell chains guarded final-policy matching in results/e48_comparison
 with five workers, followed by comparison.json only after successful completion.
@@ -64,3 +64,12 @@ python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_1
 python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e48/train_finite.py --out results/e48_full --parallel 5 --jobs new:ppolag_fcsrl_finite_day:0 new:ppolag_fcsrl_finite_day:1 new:ppolag_fcsrl_finite_day:2 new:ppolag_fcsrl_finite_day:3 new:ppolag_fcsrl_finite_day:4
 python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-roots results/e48_full/new_ppolag_fcsrl_finite_day --seeds 0 1 2 3 4 --out results/e48_comparison --parallel 5
 ```
+
+All training jobs finish successfully at401280 transitions each. The five
+matched-air evaluations are now running, and no complete performance report
+exists yet. All final/diagnostic checkpoints and training logs are uploaded
+to the existing draft release, with remote size/SHA256 verification in
+artifacts.json. The65,810,152-byte archive SHA256 is
+100d1e6e5725a9a7b93cf3fb51fb3fc984d83b2a89ccbe85fa343f637a99af72.
+Original data and stochastic calibration banks are excluded. Archive presence
+is not evidence that the new auxiliary objective improves the policy.
