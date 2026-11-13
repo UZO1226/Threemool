@@ -1,7 +1,7 @@
 # Colder-day exposure with unchanged FCSRL
 
 This separate sampling hypothesis follows e43 and e45, which fail their
-complete five-seed matched-air criteria. No full e46 policy result exists yet.
+complete five-seed matched-air criteria. No complete e46 matched-air result exists yet.
 The existing risk-day sampler failed in e15 on a different model. We do not
 erase that failure, repeat it under another name or claim a new RL algorithm.
 
@@ -76,3 +76,13 @@ are in [the reproduction guide](../../analysis/DARROW_REPRODUCTION.md) and
 Torch2.15.0 CPU with one numerical-library thread per worker. Air is volume
 in m3 over23.75h, not measured electricity. Uniform evaluation uses1600
 member/date/noise cases per policy, not1600 independent policy seeds.
+
+All five full training jobs now complete successfully. The guarded evaluation
+batch is running in results/e46_comparison. No method-level decision is made
+before all five matched pairs and their paired intervals finish. Final
+checkpoints, diagnostic checkpoints, sampling settings and full training logs
+are uploaded to the existing policy draft release and verified remotely in
+artifacts.json. The65,799,004-byte archive SHA256 is
+13a93a5c68fd3726343f1b4cc5cdeafdca1bf8481d52ccf5f595849dc2053617.
+No original data or calibration banks are included. Archive existence does
+not imply improvement and the reserved final test remains unused.

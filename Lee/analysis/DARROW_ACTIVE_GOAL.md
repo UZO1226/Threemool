@@ -99,13 +99,15 @@ sampling intervention, not evidence of a causal mechanism or novelty. Run its
 real-transition/reset checks and smoke/replay before any full training.
 
 e46 now passes those checks and6080-step smoke/independent1600-case replay.
-Five full seeds launch in results/e46_full, source commit98ad497, with the
-same401280-transition budget. A single shell automatically chains guarded
-matching in results/e46_comparison and e46/comparison.json after successful
-training. Do not duplicate this pipeline. Check its actual live handle or
-processes before waiting, restarting or claiming completion. Next after the
-full result: inspect all five matched pairs, preserve failures/uncertainty,
-archive completed weights and generated evaluation rows, then push summaries.
+All five full seeds complete in results/e46_full, source commit98ad497, with
+the same401280-transition budget. The same shell launches guarded matching
+in results/e46_comparison, initially three workers and seeds3/4 pending.
+e46/comparison.json is written only after all five pairs succeed. Do not
+duplicate this pipeline. Completed weights/logs are remotely verified in
+e46/artifacts.json. Archive presence is not performance evidence. Check the
+actual live evaluation handle before waiting, restarting or claiming completion.
+Next after the full result: inspect all five matched pairs, preserve failures
+and uncertainty, archive generated evaluation rows, then push summaries.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
