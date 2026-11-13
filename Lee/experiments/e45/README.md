@@ -1,4 +1,4 @@
-# Prepared severity-aware auxiliary supervision
+# Severity-aware auxiliary supervision
 
 Both e43 variants fail their complete five-seed criterion and the primary
 common-air contrast does not support a split-supervision benefit. These
@@ -6,9 +6,10 @@ failures motivate this separate candidate, without identifying a unique cause.
 Short6080-transition smoke training completes in results/e45_smoke. Independent
 final-checkpoint replay reproduces all final validation metrics over1600
 cases; pipeline_check.json is explicitly diagnostic/smoke and has no matched
-comparison. No full e45 policy seed or improvement result exists yet.
+comparison. All five full policy seeds and matched comparisons now finish;
+the complete result below fails the improvement criterion.
 
-Five full seeds0..4 are launched in results/e45_full with five workers,
+Five full seeds0..4 complete in results/e45_full with five workers,
 400000 requested and401280 actual transitions per seed, five intermediate
 diagnostic evaluations and final-policy primary selection. Implementation
 commit is c2b48aa; source hashes and exact command are in the run manifest.
@@ -61,10 +62,9 @@ comparison. Final test41 must remain reserved.
 
 ## Queued final-policy evaluation
 
-A separate local shell waits on the five verified training process IDs, then
-runs the existing guarded matching batch below and writes comparison.json
-with report.py only after all five matching jobs succeed. This is queued,
-not an executed evaluation result at this snapshot. The batch rejects missing
+A separate local shell waited on the five verified training process IDs, then
+completed the guarded matching batch below and wrote comparison.json
+with report.py after all five matching jobs succeeded. The batch rejects missing
 or incomplete final checkpoints and budgets other than401280. A training or
 evaluation failure must be investigated in its retained folder, not restarted
 under another seed or concealed by a partial report.
