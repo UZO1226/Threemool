@@ -174,6 +174,12 @@ diagnostic classifiers and log, indexed in [e53 artifacts](../experiments/e53/ar
 Generated arrays are excluded and recreated by probe_history.py. Neither
 archive establishes a policy improvement. Both remote sizes/SHA256 verify.
 
+The fixed lower-air e53 follow-up has a separate verified archive,
+lee-e53-history-low-air-probe.zip, indexed in
+[low-air artifacts](../experiments/e53/low_air_artifacts.json). Regenerate
+excluded arrays with probe_low_air.py and verify with audit_probe.py. Preserve
+both action-range reports; neither is a full FCSRL policy comparison.
+
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
 Evaluation archives instead contain seed_0 through seed_4, including native,

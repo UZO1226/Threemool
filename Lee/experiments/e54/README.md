@@ -1,0 +1,92 @@
+# Lee/e54: Causal previous-observation FCSRL and repeated-current control
+
+## Prospective full-policy hypothesis
+
+e53 finds a small training-only history benefit beyond current information,
+with stronger NH4 coverage under fixed lower-air actions. This does not prove
+an RL effect. Test one previous public observation in FCSRL, rather than another
+auxiliary cost definition. The frozen environment has an unobserved member
+and temporally correlated noise; recent changes may help infer conditions.
+Any benefit can be simulator-specific and is not proof of plant observability.
+
+Keep the existing e42 e40 freeze for this comparison. It passes the original
+joint point gate, independent reconstruction and action-order checks. e51's
+frequency/onset partial benefit does not dominate its DO probability error;
+e52 fails the joint gate and worsens both Briers. Keeping e40 follows forecast
+evidence and preserves separation from agent effects, not favorable controller
+outcomes. Its unresolved DO ranking/onset and reused-validation limitations
+remain explicit. Do not declare the model perfect or the full goal complete.
+
+## Two variants and unchanged control
+
+Use the same11 current observations and append the previous observed NH4,
+NO3,DO1,DO2,DO3 and previous observed prior-air feature, giving17 inputs.
+At episode start repeat current values. Do not read earlier factual rows,
+hidden member/noise, extra exogenous fields or future concentrations.
+Maintain history from actual observations after executed clipped actions.
+Terminal next-observation history uses the last current observation; auto-reset
+next-observation history repeats its new initial observation. Never cross days.
+
+The repeated-current control has the exact same17-input networks but appends
+the corresponding current six values, adding no information. Keep both this
+control and the original11-input FCSRL baseline. Preserve actual environment
+costs/rewards, action limits, PID, feasibility recurrence/discount, projection,
+EMA, bucket support, optimizer settings, budgets and reset sampling.
+
+Construct the original11-input agent under each policy seed, then expand only
+the observation-input columns in actor/critics and state encoders. Insert six
+zero columns, copy all old weights/biases and preserve Torch RNG. Shift the
+actor/critic latent columns after the appended observation block. Rebuild
+optimizer references to include new parameters; keep fixed-encoder gradients
+disabled. Report numerical initialization agreement rather than assuming
+bitwise GEMM identity after a width change. Both variants share this procedure.
+First11 observation-normalizer updates remain the original computations.
+
+Use process-scoped trainer/environment adapters under Lee/e54. Preserve
+historical e42 and common source files because their hashes guard prior
+checkpoints. Training buffers receive17 features through a scoped dimension
+override; the underlying11-input environment is unchanged. Restore patched
+globals on exit. Serialize feature mode/dimension and verify it on loading.
+
+## Checks before full training
+
+Require paired real-environment steps to preserve all physical observations,
+costs, rewards, air, days and reset/terminal outputs. Check strict history
+indices for multiple episodes in both modes. Check common initial parameters,
+actor/value/encoder outputs, RNG, new-column gradients, frozen encoder and
+optimizer membership. Save/load replay must agree. Run separate6080-step
+smokes and independent checkpoint replay; smoke seeds are not full results.
+Complete the comparison/evaluation adapters before launching pinned batches.
+
+## Full comparison fixed before outcomes
+
+Train history and repeated-current policy seeds0..4,401280 actual transitions
+each, using the existing400000-step request,8 environments,760-step rollouts
+and five diagnostic evaluations. All final policies are primary. Reuse the
+already complete five original FCSRL baselines only after source/freeze,
+budget, seed/config and independent native-replay guards pass. Do not omit
+an unfavorable seed or choose an intermediate checkpoint.
+
+Evaluate every final policy on the same five-member/eight-draw/40-date cases.
+Reinitialize history for every replay and air query. The existing air-only
+offset matcher chooses candidate actions without reading water quality, using
+the same brackets, tie rules, query cap and per-seed1-percent tolerance.
+History must reflect executed offset/clipped actions, not unexecuted means.
+Retain native and adjusted results and all generated query outputs.
+
+Use the unchanged five-seed bootstrap criterion: all air matches pass, cost
+and NH4 difference interval upper endpoints are below zero, DO upper endpoint
+is at most zero. Report both variants against original FCSRL. A secondary
+common-reference history-minus-repeated comparison checks history-specific
+attribution with the same paired metrics. No architecture-only or unique
+history claim follows from beating the original baseline alone.
+
+Model members/noise draws/dates are not policy seeds. Reused validation and
+multiple tested hypotheses remain exploratory. Final test41 stays untouched.
+No official team protocol, Paper or other member files change. Preserve raw
+data/banks outside Git; save code/compact results under Lee/e54 and checkpoint/
+log archives in the existing verified draft. Record original FCSRL commit
+d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache license and all modified paths.
+The active goal continues through full comparison and diagnosis if it fails.
+
+Status: specified after e52/e53 results, before policy implementation or training.

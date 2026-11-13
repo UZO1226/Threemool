@@ -8,6 +8,16 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+Both e53 action ranges now complete and independently reconstruct. Lower-air
+history-minus-current NH4 Brier difference-.001271 has held-training-date
+interval[-.001678,-.000868]; DO interval crosses zero and has only3 new events.
+These are feature diagnostics, not agent wins. e54 prospectively specifies a
+17-input causal previous-observation FCSRL and same-size repeated-current
+control, with unchanged costs/PPO/PID/representation targets and all five
+final policy seeds. Implement and check initialization, history/reset/terminal
+adapters, serialization, smoke and comparison pipeline before full training.
+Keep e40 frozen and disclose unresolved DO forecast limits. No external blocker.
+
 e52 completes the original20-setting search and independent tail-specific
 audit. Selected pit_b95_a0.75 fails DO frequency/member agreement: NH4/DO
 18.790789/6.565789 percent versus actual17.315789/1.157895. Brier worsens

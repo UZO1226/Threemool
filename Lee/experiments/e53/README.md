@@ -49,8 +49,9 @@ all failures remain fixed. No full policy training or adoption is automatic.
 
 Status: the full-range source9fcf818 run and independent reconstruction
 complete. See results.md, summary.json, audit.json and artifacts.json.
-The lower-air follow-up runs under source2af8bfc; inspect the actual process
-before waiting or restarting. No controller is trained. Generated arrays stay
+The lower-air follow-up and its independent audit also complete under
+source2af8bfc. See low_air_summary.json, low_air_audit.json and
+low_air_artifacts.json. No controller is trained. Generated arrays stay
 local and are excluded from Git and model/log archives.
 
 ```powershell
