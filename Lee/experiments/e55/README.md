@@ -97,5 +97,66 @@ checksums in the existing private draft. Original source d882b91054d52c7a63a18a2
 and Apache license remain. No final test, team-protocol, Paper or other-member
 changes. Continue the active objective if this fixed hypothesis fails.
 
-Status: specified after the complete e54 failure, before implementation or
-capture/model outcomes. No new policy job has started for e55.
+## Implementation and smoke status
+
+The prospective specification was committed at921e865 before implementation
+or correction-model outcomes. Passive capture and fixed slow correction were
+committed atdfee498. Subsequent inference, loading, audit and batch adapters
+are recorded by their execution source hashes. No result changes the fixed
+candidate list, penalty, fit/held update split, five policy seeds or criterion.
+
+capture_check.json establishes190 vector steps (1520 transitions), two complete
+episodes per environment, exact physical outputs and unchanged RNG. The
+6080-transition original-policy smoke finishes with every final policy,
+representation and normalizer file SHA256 exactly equal to the historical
+e54 original-policy smoke. Its final native validation metrics are also exact.
+capture_smoke_check.json records this limited result; it is not a full-budget
+equivalence claim.
+
+The smoke cost model uses only4560 fitting and1520 held transitions from that
+one update, rather than pretending to have52/14 full updates. This special
+partition verifies the pipeline only and is explicitly excluded from the
+five-seed performance report. Held public features, terminal executed air,
+physical threshold labels and saved metrics reconstruct exactly. Fast logits
+equal sklearn and maximum probability discrepancy is1.12e-16; tested state
+and action order violation is zero. Held-date uncertainty, new-event counts
+and simple persistence/fit-prevalence controls are diagnostic, not tuning data.
+
+compare.py verifies unchanged base checkpoint/config/source/budget identity,
+replays its original native metrics and independently reloads/replays the
+corrected policy. The smoke additionally checks full-day constant-risk null
+identity and equality of every fast/sklearn correction decision. audit_correction.py
+independently constructs public features and fixed candidate scores, preserving
+all correction frequencies, clipping and predicted-risk differences.
+
+The complete study is run from the workspace with the threemool Python
+environment and one OMP, OPENBLAS, MKL and NUMBA thread per process:
+
+```powershell
+python Threemool/Lee/experiments/e55/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baselines results/e42_baselines/new_ppolag_fcsrl --out results/e55_study
+```
+
+The runner requires a completed smoke_pipeline.json, pins all runtime sources
+and retains process logs/status. It trains all five captured original policies,
+requires byte-identical full reference checkpoints before fitting, fits the
+fixed classifiers, reconstructs held-stream diagnostics, evaluates both native
+controllers and matched air, independently audits actual correction choices,
+then invokes the unchanged e44 five-seed report. No extra environment training
+transition is collected for a classifier. Supervised fitting and evaluation
+compute are additional and separately recorded.
+
+Capture files remain local under each policy's transitions directory. These
+generated training arrays, original data and stochastic banks must be excluded
+from artifacts. Re-running the identical collector reconstructs the training
+stream; capture-file SHA256 values are recorded in fit_summary.json. Reproduction
+must preserve source hashes, the e42 freeze and package versions. Final risk
+model pickles are necessary controller artifacts alongside the base checkpoint;
+the older policy-only archive helper does not include them automatically.
+
+Status: smoke_pipeline.json passes all capture, checkpoint, held-model,
+serialized replay, constant-risk full-day null,152000 fast/sklearn action and
+independent public-feature/choice checks. The unchanged air matcher takes8
+queries and reaches relative air error-.0001811442. No full policy seed is
+complete yet. All five full captured-policy runs and subsequent fixed fits,
+audits and comparisons can now launch through run_study.py. Inspect actual
+handles and generated summaries rather than inferring liveness from this note.

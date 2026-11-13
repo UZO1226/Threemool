@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "policy_seed": 0,
+  "training_steps": 6080,
+  "test_evaluated": false,
+  "base_checkpoint_files_exact": true,
+  "base_native_metrics_exact": true,
+  "fast_sklearn_probability_and_logit_check": {
+    "passed": true,
+    "probe_rows": 1520,
+    "max_fast_probability_difference": 1.1102230246251565e-16,
+    "max_fast_logit_difference": 0.0,
+    "max_coordinate_order_violation": 0.0
+  },
+  "independent_held_stream_audit_passed": true,
+  "independent_public_feature_and_action_choice_audit_passed": true,
+  "native_full_day_checks": {
+    "base_checkpoint_files_exact": true,
+    "base_native_replay": true,
+    "corrected_serialized_independent_native_replay_exact": true,
+    "constant_risk_null_full_day_exact": true,
+    "fast_sklearn_full_day_actions_exact": true,
+    "checked_action_rows": 152000
+  },
+  "air_matching": {
+    "offset": 0.0078125,
+    "target_air_m3": 110290.8982925149,
+    "achieved_air_m3": 110270.91973640563,
+    "air_error_m3": -19.978556109272176,
+    "relative_air_error": -0.0001811441961084114,
+    "matched_within_one_percent": true,
+    "strict_tolerance_reached": true,
+    "callback_queries": 8,
+    "trace": [
+      {
+        "offset": -2.0,
+        "air_m3": 0.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 0.0,
+        "air_m3": 109645.85409356818,
+        "source": "native"
+      },
+      {
+        "offset": 2.0,
+        "air_m3": 213750.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 1.0,
+        "air_m3": 196248.1264558276,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.5,
+        "air_m3": 149857.30157330938,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.25,
+        "air_m3": 128990.68196610708,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.125,
+        "air_m3": 119251.88989114207,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.0625,
+        "air_m3": 114527.22754787742,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.03125,
+        "air_m3": 112137.6173695097,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.015625,
+        "air_m3": 110895.16437177504,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.0078125,
+        "air_m3": 110270.91973640563,
+        "source": "air-only callback"
+      }
+    ]
+  },
+  "native_action_diagnostics": {
+    "passed": true,
+    "policy_seed": 0,
+    "test_evaluated": false,
+    "smoke_only": true,
+    "native_replay_exact": true,
+    "independent_sklearn_choice_exact": true,
+    "action_count": 152000,
+    "changed_action_fraction": 0.03555263157894737,
+    "candidate_choice_counts": [
+      146596,
+      4134,
+      2,
+      1268,
+      0
+    ],
+    "candidate_clipped_fraction": 0.0,
+    "mean_predicted_risk_change": -0.0022667235250960083,
+    "mean_squared_adjustment": 0.0009465460526315789,
+    "scope": "Native final-controller public-feature audit, no fitting or parameter selection. Predicted risk improvement is not measured water-quality improvement."
+  },
+  "full_policy_seeds_completed": [],
+  "scope": "Pipeline evidence only. One6080-step policy and a smoke fitting split do not establish an extension improvement. Full52/14-update split and five final policy seeds remain required.",
+  "runtime_sources": {
+    "audit_correction.py": "5aed75fdc9a8cd98fb6627c524dacfd3c7ac88b2ab7b22fffc4b1e47ea03c136",
+    "audit_cost_models.py": "61a1a99e536e6452be81dad55aeb511e94e0747779f13fc1afa854ffc5283ec3",
+    "capture_env.py": "62baa4aac54194c903c21e0de435848d328cd55ff6b4de2cafc67b3e5ae1e099",
+    "check_capture.py": "60a6f70d86b547d99988f9c98b44fe07425558f66b87f28aa55a71f3d0baa43a",
+    "compare.py": "9771a029052ca53f03f646d8da09d16e2fcc478a541f646fb987c9e3742d91c4",
+    "cost_model.py": "becb625243ab925f3ba1b4dd9be8c4fe8185ad36fa785cda55fa08d5882dae56",
+    "fast_cost.py": "b3377b142f0f4907409e5e3aa8551ed9ec01726aad6734fdea78f61c60a98dc6",
+    "fit_models.py": "5cc066f78c65ba048f2043dd0685d8283ce30476223c0166226394efd61783cb",
+    "policy_io.py": "bfd3c64125a71be7df075f8b775209af4519a77d97ee97da93e8afb79f769514",
+    "run_study.py": "eec41865c4bb57b6c5d6083fc4e920873f8c5ad7b51e9714ee9342a7c9951459",
+    "train_capture.py": "c2550e2258dd0711d62d01f0b96643768b0444973a8ad499103f5c750578f0c5",
+    "train_stream.py": "27d6335554f83b783aac0be08a5a30247b3d0f6bbb9da758bdaf2f22181217ba",
+    "verify_base.py": "8512eef891e926ae5b3facd0aa5f25b836977f8fb1e64475d104b34a951c7c3d"
+  },
+  "batch_runner_scope": "Batch orchestration is compiled and source pinned; smoke evidence covers the underlying training, fitting, replay, null, matching and audit operations."
+}

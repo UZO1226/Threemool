@@ -18,17 +18,22 @@ all failures and four verified artifact indexes. No process remains queued.
 
 The separate environment summary/figure records why frequency improvement is
 not complete safety prediction: DARROW_ENVIRONMENT_TRADEOFFS.md. The goal is
-still active. Next specify a learned one-step cost/action correction that
-uses the same PPO training transitions, preserves the base policy and counts
-auxiliary-model fitting separately. No extra environment data, favorable seed
-or changed air criterion should create an apparent gain.
+still active. e55 implements a fixed one-step cost/action correction using
+only the same passively recorded PPO transitions. A6080-step smoke has byte-exact
+original checkpoint/normalizer/representation files and identical native metrics.
+The cost-model public-feature/terminal-label, fast/sklearn probability/logit,
+state/action-order and held-stream reconstruction checks pass. Its full-day
+serialized/null-controller/air-matching smoke is being checked before all five
+401280-step captured-policy re-runs. Extra supervised compute is disclosed; no
+extra environment data, favorable seed or changed air criterion creates a gain.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,
 independent native replay and real air-matching checks all passed before full
 training. Both full variants nevertheless failed. No e54 training or matching
 job remains pending. Historical e54 runtime sources remain pinned for replay.
-The prospective e55 README fixes the next hypothesis and controls before any
-new captured-data or correction-model outcome. Implementation is next.
+The prospective e55 README fixed the next hypothesis and controls at921e865
+before new captured-data or correction-model outcomes. Sources and actual
+process handles, not historical planning notes, establish the current state.
 
 ## Prior evidence and historical planning notes
 

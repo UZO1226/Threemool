@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "training_steps": 6080,
+  "policy_seed": 0,
+  "all_final_checkpoint_files_sha256_equal": {
+    "config.json": true,
+    "model.pt": true,
+    "normalizer.json": true,
+    "representation.json": true,
+    "representation.pt": true
+  },
+  "final_native_metrics_exact": true,
+  "baseline": "results/e54_smoke/new_ppolag_fcsrl/seed_0",
+  "candidate": "results/e55_capture_smoke/policy",
+  "test_evaluated": false,
+  "scope": "One update smoke, not the full401280-step equivalence check"
+}
