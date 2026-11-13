@@ -25,7 +25,12 @@ def row(label, vals):
 def main(a):
     protocol = json.loads((HERE / 'protocol.json').read_text())
     methods, seeds = protocol['methods'], protocol['seeds']
-    M = {(m, s): json.loads((a.root / 'runs' / m / f'seed_{s}' / 'metrics.json').read_text()) for m in methods for s in seeds}
+    M = {}
+    for m in methods:
+        for s in seeds:
+            found = [r / 'runs' / m / f'seed_{s}' / 'metrics.json' for r in a.root if (r / 'runs' / m / f'seed_{s}' / 'metrics.json').exists()]
+            assert len(found) == 1, (m, s, found)
+            M[(m, s)] = json.loads(found[0].read_text())
     e59 = json.loads((HERE.parent / 'e59' / 'summary.json').read_text())
     zero = e59['means']['zero|park_e19']
     park = protocol['references_same_environment']
@@ -88,7 +93,7 @@ def main(a):
             L.append(f"| Park {k} | {v['air_m3']:,} | {v['cost']:.2f} |")
     L.append(f"| Yoo e59 공기 0 + park_e19 | {zero['air_m3']:,.0f} | {zero['cost']:.2f} |")
     L += ['', '반복 사용한 개발 val 의 seed 5 탐색이며 통계적 확증이나 공식 채택을 주장하지 않는다. Park 값은 seed 평균이라 짝 비교가 아니다.']
-    summary.update(judgement=J, root=str(a.root))
+    summary.update(judgement=J, root=[str(r) for r in a.root])
     (a.out / 'results.md').write_text('\n'.join(L) + '\n')
     (a.out / 'summary.json').write_text(json.dumps(summary, indent=1, ensure_ascii=False))
     print('\n'.join(L))
@@ -96,6 +101,6 @@ def main(a):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('--root', type=Path, required=True)
+    p.add_argument('--root', type=Path, nargs='+', required=True)
     p.add_argument('--out', type=Path, default=HERE)
     main(p.parse_args())

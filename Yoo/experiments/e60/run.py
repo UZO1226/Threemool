@@ -25,6 +25,11 @@ def run(a):
                     gpus=subprocess.check_output(['nvidia-smi', '--query-gpu=index,uuid,name', '--format=csv,noheader'], text=True))
     base.save(a.out / 'manifest.json', manifest)
     pending = [(m, s) for s in protocol['seeds'] for m in protocol['methods']]
+    if a.only:
+        keep = {(x.split(':')[0], int(x.split(':')[1])) for x in a.only.split(',')}
+        pending = [j for j in pending if j in keep]
+        manifest['only'] = sorted(map(list, keep))
+        base.save(a.out / 'manifest.json', manifest)
     active, complete = [], []
     env = dict(os.environ, CUDA_VISIBLE_DEVICES='1', CUBLAS_WORKSPACE_CONFIG=':4096:8', OMP_NUM_THREADS='1', OMP_WAIT_POLICY='PASSIVE',
                OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1')
@@ -55,7 +60,7 @@ def run(a):
     failed = [c for c in complete if c['exit'] != 0]
     status('failed' if failed else 'complete')
     assert all(base.sha(p) == v for p, v in checks['hashes'].items())
-    if not failed:
+    if not failed and not a.only:
         subprocess.run([sys.executable, str(HERE / 'report.py'), '--root', str(a.out), '--out', str(HERE)], check=True)
     print('COMPLETE' if not failed else f'FAILED {failed}', flush=True)
 
@@ -65,4 +70,5 @@ if __name__ == '__main__':
     p.add_argument('--check', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--jobs', type=int, default=3)
+    p.add_argument('--only', default=None, help='method:seed 목록. 일부 작업만 실행하고 집계는 하지 않는다')
     run(p.parse_args())
