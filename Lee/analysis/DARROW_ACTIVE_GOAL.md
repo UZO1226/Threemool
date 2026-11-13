@@ -25,11 +25,15 @@ The cost-model public-feature/terminal-label, fast/sklearn probability/logit,
 state/action-order and held-stream reconstruction checks pass. Full-day
 serialization/null identity,152000 fast/sklearn action choices and independent
 public-feature/action audits pass. Eight air-only smoke queries match within
-.019 percent. All five401280-step captured-policy jobs launch under source
-bdd9c82 in results/e55_study. The same parent queues unchanged-reference
-equivalence, fixed fitting, model audits, matched-air comparisons, independent
-action audits and the final five-seed report. Do not duplicate these jobs;
-verify live process handles before waiting or restarting. Extra supervised compute is disclosed; no
+.019 percent. All five401280-step captured-policy jobs finish under source
+bdd9c82 in results/e55_study. Full final files,66 training records and five
+original native evaluations per seed exactly match the original references.
+All five fixed cost fits and independent held-stream audits pass. Each fit
+uses316160 training transitions and85120 held transitions, with no extra
+environment training sample. The same parent now runs corrected native and
+matched-air comparisons, then independent action audits and the final five-seed
+report. Do not duplicate these jobs; verify live process handles before waiting
+or restarting. Extra supervised compute is disclosed; no
 extra environment data, favorable seed or changed air criterion creates a gain.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,

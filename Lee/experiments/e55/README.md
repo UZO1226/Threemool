@@ -163,3 +163,16 @@ equivalence, fixed cost fits, held-stream model audits, matched-air comparisons,
 independent action audits and the unchanged five-seed report. Do not duplicate
 the queued jobs. Inspect actual handles and generated summaries rather than
 inferring liveness from this note. Preserve pinned Python sources for replay.
+
+All five full captured policies now finish and pass exact reference equivalence.
+training_control_check.json verifies every final checkpoint file, all66 training
+records and all five original native evaluation records per seed. Both cost
+models per seed finish using316160 fitting and85120 held transitions. Independent
+held-stream audits pass for all seeds; fast logits are exact, probability error
+is at most2.23e-16 and tested coordinate-order violation is zero. The full native
+and matched-air corrected-controller comparisons are running. Predictive AP,
+source parity and held-data checks do not establish an agent improvement.
+Regenerate this compact check from the workspace using
+Threemool/Lee/analysis/summarize_correction_training.py
+with --study results/e55_study, --baselines results/e42_baselines/new_ppolag_fcsrl
+and --out Threemool/Lee/experiments/e55/training_control_check.json.
