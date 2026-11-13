@@ -110,6 +110,17 @@ Next: e47 compares the existing five PPO final policies at the same original
 FCSRL air, kind=diagnostic. No fitting or new extension claim is involved.
 This missing matched-air ablation can inform whether another representation
 intervention is justified. Preserve all existing criteria, seeds and failures.
+The e47 five-worker diagnostic launches in results/e47_ppo_diagnostic at
+source commit34b9f26 and chains its report after successful completion.
+Its policies are already trained; no new extension or causal attribution is
+claimed. Inspect the actual batch handle before waiting or restarting.
+
+![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
+
+The figure shows all five paired seed differences and each mean/bootstrap
+interval from the four complete reports. Intervals are unadjusted exploratory
+summaries under repeated validation, not independent confirmation or a
+population guarantee. All four candidates fail the full criterion.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO

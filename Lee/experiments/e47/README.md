@@ -32,3 +32,10 @@ Original policy artifacts are in ../e42/new_ppo_artifacts.json and
 new_fcsrl_artifacts.json. Source/data/runtime/freeze provenance follows e42
 and ../../analysis/DARROW_REPRODUCTION.md. Air is m3 over23.75h, not measured
 electricity. This is personal diagnostic work, not a team protocol change.
+
+The five-worker batch is launched in results/e47_ppo_diagnostic at source
+commit34b9f26. Its shell writes comparison.json only after all five pairs
+finish successfully. No new policy training occurs. Do not duplicate the
+running batch or infer completion from an old status file. PPO architecture
+and initialization differ from representation-augmented FCSRL, so this does
+not isolate the encoder objective as the sole possible cause of a difference.

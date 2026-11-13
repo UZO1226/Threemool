@@ -134,6 +134,7 @@ are recorded because GitHub may change its untagged draft URL after edits.
 | lee-e45-severity-five-seed-policies.zip | [Five severity policies](../experiments/e45/artifacts.json) |
 | lee-e45-severity-five-seed-evaluations.zip | [All severity air queries and evaluation cases](../experiments/e45/evaluation_artifacts.json) |
 | lee-e46-cold-five-seed-policies.zip | [Five cold-sampling policies](../experiments/e46/artifacts.json) |
+| lee-e46-cold-five-seed-evaluations.zip | [All cold-sampling air queries and evaluation cases](../experiments/e46/evaluation_artifacts.json) |
 
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
@@ -167,6 +168,8 @@ retain both complete reports and their uncertainty intervals.
 e45 is a separate severity-supervision candidate. All five full seeds and
 matched-air comparisons finish and fail the improvement criterion. Its short
 smoke/replay and unit checks are not additional policy performance seeds.
-e46 prepares a distinct colder-training-day sampling intervention; its checks
-and short smoke are not full performance results. Inspect actual processes
+e46 completes a distinct colder-training-day sampling intervention, with a
+DO-only benefit but a failed full criterion. Its checks and short smoke are
+not additional performance seeds. e47 next reuses existing PPO policies for
+a matched-air diagnostic, not a new extension. Inspect actual processes
 before inferring whether any recorded run is still active.
