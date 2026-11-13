@@ -97,6 +97,8 @@ def run(out):
         one=np.clip(current[None,:]+delta,0,dyn.hi[0]).reshape(5,len(dates),95).transpose(1,0,2)
         groups={'all':np.ones_like(temp,dtype=bool),'below_train':temp<lo,
                 'inside_train':(temp>=lo)&(temp<=hi),'above_train':temp>hi}
+        groups['never_below_day'] = np.repeat((temp.min(1)>=lo)[:,None],95,axis=1)
+        groups['no_low_so_far'] = ~np.maximum.accumulate(temp<lo,axis=1)
         assert sum(int(groups[k].sum()) for k in ['below_train','inside_train','above_train'])==temp.size
         summary=dict(n_days=len(dates), n_transitions=temp.size, input_temp_min=float(temp.min()),
                      input_temp_max=float(temp.max()), all_96_row_temp_min=float(min(days[d].temp.min() for d in dates)),
@@ -125,6 +127,13 @@ def run(out):
             increasing_nh4_pct=float(100*(change>1e-10).mean()),
             decreasing_nh4_pct=float(100*(change < -1e-10).mean()),
             zero_pct=float(100*(abs(change)<=1e-10).mean()))
+        curve=[]
+        for target in np.linspace(lo,hi,8):
+            changed=x.copy();changed[:,ti]=target
+            response=np.stack([m.predict(changed) for m in models])
+            curve.append(dict(temperature=float(target),mean_nh4_delta=float(response.mean())))
+        summary['temperature_response_curve']=curve
+        summary['never_below_day_count']=int((temp.min(1)>=lo).sum())
         result['splits'][split]=summary
         print(split,json.dumps(summary),flush=True)
     assert all(sha(p)==h for p,h in hashes.items())
