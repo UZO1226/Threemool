@@ -1,5 +1,12 @@
 # Lee/e50: Quantile training exposed to accumulated state error
 
+Execution snapshot: sourcee3a0e9d has completed all105 model fits in
+results/e50_quantile_exposure. The same live shell is evaluating the fixed
+inner20 settings and then runs independent reconstruction and event audits
+on success. Console log is results/e50_quantile_exposure_run.log. This is not
+a live monitor or an adoption result; inspect the actual process/tool handle
+before waiting or restarting. Never duplicate because a log is quiet.
+
 ## Fixed hypothesis
 
 e49 demonstrates useful observed-state NH4 prediction but much poorer daily
