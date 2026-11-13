@@ -89,6 +89,22 @@ alpha.5,9 of26 actual new DO events have no supporting member, even with
 arbitrary within-support noise. This is not a free-running impossibility
 claim or a new acceptance criterion. It does not change the ongoing search.
 
+## Post-primary effect decomposition
+
+The primary inner choice is pit_b95_a0.25 and passes the unchanged point gate.
+It changes both bank calibration and alpha from e40's selected.5. After this
+primary outcome, define a separate fixed2x2 diagnostic: original/matched bank
+crossed with alpha.25/.5, all with block95 and identical weights/row keys.
+decompose.py records this post-outcome timing and verifies both primary cells
+reconstruct their existing metrics. Report all four cells and date-paired
+Brier contrasts. Do not select a replacement alpha or bank from these cells;
+the primary summary hash must remain unchanged. Full event audit is still
+required and a point pass alone does not establish improved DO prediction.
+
+```powershell
+python Threemool/Lee/experiments/e51/decompose.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --freeze Threemool/Lee/experiments/e42/environment_freeze.json --runs results/e51_blended_pit --out Threemool/Lee/experiments/e51/decomposition.json
+```
+
 ## Preflight implementation correction
 
 The initial preflight assumption that every observed calibration state lies
