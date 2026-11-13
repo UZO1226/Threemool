@@ -1,0 +1,847 @@
+{
+ "means": {
+  "ppo|val_park_e19": {
+   "air_m3": 78901.96973098326,
+   "nh4_cost": 3.2619999999999996,
+   "do_cost": 1.484,
+   "cost": 4.7459999999999996,
+   "nh4_excess_mg_h_L": 2.773613605157427,
+   "do_excess_mg_h_L": 0.16377439934032217,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.1,
+   "intervention_pct": 13.64736842105263
+  },
+  "fcsrl|val_park_e19": {
+   "air_m3": 81368.48325585341,
+   "nh4_cost": 3.2659999999999996,
+   "do_cost": 1.503,
+   "cost": 4.769,
+   "nh4_excess_mg_h_L": 2.7743785623171124,
+   "do_excess_mg_h_L": 0.16612120624190213,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.3,
+   "intervention_pct": 14.977894736842106
+  },
+  "ppo|val_park_e10": {
+   "air_m3": 82193.90856522415,
+   "nh4_cost": 3.188,
+   "do_cost": 1.831,
+   "cost": 5.019,
+   "nh4_excess_mg_h_L": 2.761795851219015,
+   "do_excess_mg_h_L": 0.2034422875743494,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.0,
+   "intervention_pct": 15.657894736842104
+  },
+  "fcsrl|val_park_e10": {
+   "air_m3": 84225.56860884931,
+   "nh4_cost": 3.2479999999999998,
+   "do_cost": 1.7790000000000004,
+   "cost": 5.027,
+   "nh4_excess_mg_h_L": 2.7856537160232664,
+   "do_excess_mg_h_L": 0.17928930317255934,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.0,
+   "intervention_pct": 17.786315789473683
+  },
+  "ppo|val_none": {
+   "air_m3": 80569.46292449604,
+   "nh4_cost": 35.197,
+   "do_cost": 2.747,
+   "cost": 37.944,
+   "nh4_excess_mg_h_L": 15.376908986424246,
+   "do_excess_mg_h_L": 0.19209251761805488,
+   "worst_day_nh4_cost": 63.36,
+   "days_within_limit_pct": 7.1,
+   "intervention_pct": 0.0
+  },
+  "fcsrl|val_none": {
+   "air_m3": 82375.16766447143,
+   "nh4_cost": 31.338,
+   "do_cost": 2.3839999999999995,
+   "cost": 33.722,
+   "nh4_excess_mg_h_L": 16.374326633243037,
+   "do_excess_mg_h_L": 0.1709209844247353,
+   "worst_day_nh4_cost": 72.6,
+   "days_within_limit_pct": 22.6,
+   "intervention_pct": 0.0
+  },
+  "ppo|train_park_e10": {
+   "air_m3": 67122.53476724356,
+   "nh4_cost": 1.1848936170212765,
+   "do_cost": 1.1129787234042552,
+   "cost": 2.297872340425532,
+   "nh4_excess_mg_h_L": 0.6811194893212592,
+   "do_excess_mg_h_L": 0.07919709379111517,
+   "worst_day_nh4_cost": 22.800000000000004,
+   "days_within_limit_pct": 93.29787234042553,
+   "intervention_pct": 18.516685330347144
+  },
+  "fcsrl|train_park_e10": {
+   "air_m3": 68984.91328690828,
+   "nh4_cost": 1.1291489361702127,
+   "do_cost": 1.1459574468085105,
+   "cost": 2.2751063829787235,
+   "nh4_excess_mg_h_L": 0.656734773722733,
+   "do_excess_mg_h_L": 0.08379982519772879,
+   "worst_day_nh4_cost": 22.68,
+   "days_within_limit_pct": 93.42553191489363,
+   "intervention_pct": 15.245016797312427
+  },
+  "ppo|train_none": {
+   "air_m3": 66476.16758992922,
+   "nh4_cost": 33.149787234042556,
+   "do_cost": 3.6806382978723406,
+   "cost": 36.8304255319149,
+   "nh4_excess_mg_h_L": 14.138268149408026,
+   "do_excess_mg_h_L": 0.4170913602922292,
+   "worst_day_nh4_cost": 62.080000000000005,
+   "days_within_limit_pct": 2.531914893617021,
+   "intervention_pct": 0.0
+  },
+  "fcsrl|train_none": {
+   "air_m3": 66872.40255985479,
+   "nh4_cost": 24.2468085106383,
+   "do_cost": 2.7251063829787237,
+   "cost": 26.97191489361702,
+   "nh4_excess_mg_h_L": 10.265477791319494,
+   "do_excess_mg_h_L": 0.2642999786682855,
+   "worst_day_nh4_cost": 61.839999999999996,
+   "days_within_limit_pct": 17.574468085106382,
+   "intervention_pct": 0.0
+  }
+ },
+ "seed_level": {
+  "ppo|val_park_e19": [
+   {
+    "air_m3": 78788.13962603104,
+    "nh4_cost": 3.21,
+    "do_cost": 1.55,
+    "cost": 4.76,
+    "nh4_excess_mg_h_L": 2.7463193375450192,
+    "do_excess_mg_h_L": 0.17493926591030867,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 9.921052631578947
+   },
+   {
+    "air_m3": 74564.30334138335,
+    "nh4_cost": 3.27,
+    "do_cost": 1.665,
+    "cost": 4.935,
+    "nh4_excess_mg_h_L": 2.7670935378547177,
+    "do_excess_mg_h_L": 0.17393220233552942,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 18.289473684210527
+   },
+   {
+    "air_m3": 74784.73654236062,
+    "nh4_cost": 3.325,
+    "do_cost": 1.555,
+    "cost": 4.88,
+    "nh4_excess_mg_h_L": 2.7941335853147167,
+    "do_excess_mg_h_L": 0.1636009111655138,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.0,
+    "intervention_pct": 19.157894736842106
+   },
+   {
+    "air_m3": 84185.15395677881,
+    "nh4_cost": 3.19,
+    "do_cost": 1.295,
+    "cost": 4.485,
+    "nh4_excess_mg_h_L": 2.765502233528391,
+    "do_excess_mg_h_L": 0.15166144094383716,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 7.984210526315789
+   },
+   {
+    "air_m3": 82187.51518836245,
+    "nh4_cost": 3.315,
+    "do_cost": 1.355,
+    "cost": 4.67,
+    "nh4_excess_mg_h_L": 2.7950193315442906,
+    "do_excess_mg_h_L": 0.1547381763464218,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 12.884210526315789
+   }
+  ],
+  "fcsrl|val_park_e19": [
+   {
+    "air_m3": 79147.74166089017,
+    "nh4_cost": 3.38,
+    "do_cost": 1.67,
+    "cost": 5.05,
+    "nh4_excess_mg_h_L": 2.799425552689264,
+    "do_excess_mg_h_L": 0.17007643015343551,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 15.631578947368421
+   },
+   {
+    "air_m3": 76404.92609429057,
+    "nh4_cost": 3.155,
+    "do_cost": 1.65,
+    "cost": 4.805,
+    "nh4_excess_mg_h_L": 2.724075390613414,
+    "do_excess_mg_h_L": 0.17844372349804272,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 21.073684210526316
+   },
+   {
+    "air_m3": 87085.72234899622,
+    "nh4_cost": 3.145,
+    "do_cost": 1.22,
+    "cost": 4.365,
+    "nh4_excess_mg_h_L": 2.769045838716195,
+    "do_excess_mg_h_L": 0.1535585121182062,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 4.821052631578947
+   },
+   {
+    "air_m3": 83466.83736837935,
+    "nh4_cost": 3.33,
+    "do_cost": 1.38,
+    "cost": 4.71,
+    "nh4_excess_mg_h_L": 2.786935934942686,
+    "do_excess_mg_h_L": 0.15561310267147563,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 11.847368421052632
+   },
+   {
+    "air_m3": 80737.18880671076,
+    "nh4_cost": 3.32,
+    "do_cost": 1.595,
+    "cost": 4.915,
+    "nh4_excess_mg_h_L": 2.7924100946240036,
+    "do_excess_mg_h_L": 0.17291426276835048,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 21.51578947368421
+   }
+  ],
+  "ppo|val_park_e10": [
+   {
+    "air_m3": 81141.83383361204,
+    "nh4_cost": 3.18,
+    "do_cost": 1.795,
+    "cost": 4.975,
+    "nh4_excess_mg_h_L": 2.728069367744831,
+    "do_excess_mg_h_L": 0.22162218337899603,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 11.057894736842105
+   },
+   {
+    "air_m3": 78745.85882187821,
+    "nh4_cost": 3.175,
+    "do_cost": 1.88,
+    "cost": 5.055,
+    "nh4_excess_mg_h_L": 2.751950196397404,
+    "do_excess_mg_h_L": 0.1939972903506194,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.0,
+    "intervention_pct": 24.16842105263158
+   },
+   {
+    "air_m3": 79135.97566949669,
+    "nh4_cost": 3.245,
+    "do_cost": 1.81,
+    "cost": 5.055,
+    "nh4_excess_mg_h_L": 2.781035293237792,
+    "do_excess_mg_h_L": 0.18695209126623685,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 23.110526315789475
+   },
+   {
+    "air_m3": 86666.94499684383,
+    "nh4_cost": 3.17,
+    "do_cost": 1.95,
+    "cost": 5.12,
+    "nh4_excess_mg_h_L": 2.787240339782576,
+    "do_excess_mg_h_L": 0.24945936820636366,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 7.58421052631579
+   },
+   {
+    "air_m3": 85278.92950429,
+    "nh4_cost": 3.17,
+    "do_cost": 1.72,
+    "cost": 4.89,
+    "nh4_excess_mg_h_L": 2.7606840589324713,
+    "do_excess_mg_h_L": 0.16518050466953102,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 12.368421052631579
+   }
+  ],
+  "fcsrl|val_park_e10": [
+   {
+    "air_m3": 82522.10677728755,
+    "nh4_cost": 3.35,
+    "do_cost": 1.985,
+    "cost": 5.335,
+    "nh4_excess_mg_h_L": 2.811515663579938,
+    "do_excess_mg_h_L": 0.18158087885068663,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.0,
+    "intervention_pct": 15.93157894736842
+   },
+   {
+    "air_m3": 80014.72363016917,
+    "nh4_cost": 3.135,
+    "do_cost": 1.935,
+    "cost": 5.07,
+    "nh4_excess_mg_h_L": 2.7368319529090446,
+    "do_excess_mg_h_L": 0.20518157260704456,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 28.926315789473684
+   },
+   {
+    "air_m3": 88881.82143065262,
+    "nh4_cost": 3.215,
+    "do_cost": 1.485,
+    "cost": 4.7,
+    "nh4_excess_mg_h_L": 2.789139533864204,
+    "do_excess_mg_h_L": 0.1619241067797701,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 4.810526315789474
+   },
+   {
+    "air_m3": 85344.93480617761,
+    "nh4_cost": 3.305,
+    "do_cost": 1.69,
+    "cost": 4.995,
+    "nh4_excess_mg_h_L": 2.805061273519249,
+    "do_excess_mg_h_L": 0.17398294432559858,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 11.310526315789474
+   },
+   {
+    "air_m3": 84364.25639995954,
+    "nh4_cost": 3.235,
+    "do_cost": 1.8,
+    "cost": 5.035,
+    "nh4_excess_mg_h_L": 2.7857201562438973,
+    "do_excess_mg_h_L": 0.17377701329969675,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 27.95263157894737
+   }
+  ],
+  "ppo|val_none": [
+   {
+    "air_m3": 82148.00401952234,
+    "nh4_cost": 25.835,
+    "do_cost": 2.03,
+    "cost": 27.865,
+    "nh4_excess_mg_h_L": 10.06070406087999,
+    "do_excess_mg_h_L": 0.1573397433133702,
+    "worst_day_nh4_cost": 55.8,
+    "days_within_limit_pct": 24.0,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 77257.65540876891,
+    "nh4_cost": 44.66,
+    "do_cost": 2.21,
+    "cost": 46.87,
+    "nh4_excess_mg_h_L": 18.733889419177306,
+    "do_excess_mg_h_L": 0.14882835149462842,
+    "worst_day_nh4_cost": 73.0,
+    "days_within_limit_pct": 1.0,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 77479.92215662496,
+    "nh4_cost": 41.09,
+    "do_cost": 2.63,
+    "cost": 43.72,
+    "nh4_excess_mg_h_L": 16.83495459587941,
+    "do_excess_mg_h_L": 0.223268275618005,
+    "worst_day_nh4_cost": 65.6,
+    "days_within_limit_pct": 1.0,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 83485.62778017833,
+    "nh4_cost": 25.405,
+    "do_cost": 2.485,
+    "cost": 27.89,
+    "nh4_excess_mg_h_L": 10.45628275778704,
+    "do_excess_mg_h_L": 0.1661411164903793,
+    "worst_day_nh4_cost": 45.6,
+    "days_within_limit_pct": 8.5,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 82476.10525738564,
+    "nh4_cost": 38.995,
+    "do_cost": 4.38,
+    "cost": 43.375,
+    "nh4_excess_mg_h_L": 20.798714098397486,
+    "do_excess_mg_h_L": 0.2648851011738914,
+    "worst_day_nh4_cost": 76.8,
+    "days_within_limit_pct": 1.0,
+    "intervention_pct": 0.0
+   }
+  ],
+  "fcsrl|val_none": [
+   {
+    "air_m3": 78545.29014740721,
+    "nh4_cost": 34.42,
+    "do_cost": 2.94,
+    "cost": 37.36,
+    "nh4_excess_mg_h_L": 18.161309402033012,
+    "do_excess_mg_h_L": 0.2349881642875876,
+    "worst_day_nh4_cost": 76.4,
+    "days_within_limit_pct": 7.5,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 79389.78339126043,
+    "nh4_cost": 40.89,
+    "do_cost": 2.125,
+    "cost": 43.015,
+    "nh4_excess_mg_h_L": 19.933228225356626,
+    "do_excess_mg_h_L": 0.17487707583681464,
+    "worst_day_nh4_cost": 83.8,
+    "days_within_limit_pct": 13.5,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 86428.29496700667,
+    "nh4_cost": 9.245,
+    "do_cost": 1.935,
+    "cost": 11.18,
+    "nh4_excess_mg_h_L": 3.862843077358284,
+    "do_excess_mg_h_L": 0.1820812268197175,
+    "worst_day_nh4_cost": 40.0,
+    "days_within_limit_pct": 71.0,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 85969.55118723564,
+    "nh4_cost": 26.065,
+    "do_cost": 2.505,
+    "cost": 28.57,
+    "nh4_excess_mg_h_L": 14.269833675134239,
+    "do_excess_mg_h_L": 0.07797680549563943,
+    "worst_day_nh4_cost": 70.2,
+    "days_within_limit_pct": 15.0,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 81542.91862944723,
+    "nh4_cost": 46.07,
+    "do_cost": 2.415,
+    "cost": 48.485,
+    "nh4_excess_mg_h_L": 25.644418786333027,
+    "do_excess_mg_h_L": 0.18468164968391726,
+    "worst_day_nh4_cost": 92.6,
+    "days_within_limit_pct": 6.0,
+    "intervention_pct": 0.0
+   }
+  ],
+  "ppo|train_park_e10": [
+   {
+    "air_m3": 67325.30562655574,
+    "nh4_cost": 1.1340425531914893,
+    "do_cost": 1.0063829787234042,
+    "cost": 2.1404255319148935,
+    "nh4_excess_mg_h_L": 0.6527123317509529,
+    "do_excess_mg_h_L": 0.06723143724878278,
+    "worst_day_nh4_cost": 21.4,
+    "days_within_limit_pct": 93.93617021276596,
+    "intervention_pct": 17.367301231802912
+   },
+   {
+    "air_m3": 67456.91372390412,
+    "nh4_cost": 1.1574468085106382,
+    "do_cost": 1.2436170212765958,
+    "cost": 2.401063829787234,
+    "nh4_excess_mg_h_L": 0.6649633008327918,
+    "do_excess_mg_h_L": 0.11059062517989852,
+    "worst_day_nh4_cost": 22.8,
+    "days_within_limit_pct": 92.5531914893617,
+    "intervention_pct": 24.47256438969765
+   },
+   {
+    "air_m3": 66424.8173746377,
+    "nh4_cost": 1.2521276595744681,
+    "do_cost": 1.0159574468085106,
+    "cost": 2.2680851063829786,
+    "nh4_excess_mg_h_L": 0.7055048297528685,
+    "do_excess_mg_h_L": 0.0627780464891683,
+    "worst_day_nh4_cost": 23.2,
+    "days_within_limit_pct": 93.51063829787233,
+    "intervention_pct": 17.356103023516237
+   },
+   {
+    "air_m3": 67244.65437115473,
+    "nh4_cost": 1.101063829787234,
+    "do_cost": 1.2095744680851064,
+    "cost": 2.3106382978723405,
+    "nh4_excess_mg_h_L": 0.653633622038636,
+    "do_excess_mg_h_L": 0.0830101916866879,
+    "worst_day_nh4_cost": 22.4,
+    "days_within_limit_pct": 93.40425531914893,
+    "intervention_pct": 17.968645016797314
+   },
+   {
+    "air_m3": 67160.9827399655,
+    "nh4_cost": 1.2797872340425531,
+    "do_cost": 1.0893617021276596,
+    "cost": 2.369148936170213,
+    "nh4_excess_mg_h_L": 0.7287833622310468,
+    "do_excess_mg_h_L": 0.07237516835103834,
+    "worst_day_nh4_cost": 24.2,
+    "days_within_limit_pct": 93.08510638297872,
+    "intervention_pct": 15.418812989921612
+   }
+  ],
+  "fcsrl|train_park_e10": [
+   {
+    "air_m3": 69284.2704394525,
+    "nh4_cost": 1.148936170212766,
+    "do_cost": 1.2329787234042553,
+    "cost": 2.3819148936170214,
+    "nh4_excess_mg_h_L": 0.6547355198117781,
+    "do_excess_mg_h_L": 0.10312480180790132,
+    "worst_day_nh4_cost": 19.4,
+    "days_within_limit_pct": 93.08510638297872,
+    "intervention_pct": 9.517357222844344
+   },
+   {
+    "air_m3": 68596.40479568564,
+    "nh4_cost": 1.0723404255319149,
+    "do_cost": 1.0202127659574467,
+    "cost": 2.092553191489362,
+    "nh4_excess_mg_h_L": 0.6615201706526731,
+    "do_excess_mg_h_L": 0.06857093737835754,
+    "worst_day_nh4_cost": 22.4,
+    "days_within_limit_pct": 93.61702127659575,
+    "intervention_pct": 16.175811870100784
+   },
+   {
+    "air_m3": 69763.63342911935,
+    "nh4_cost": 1.1872340425531915,
+    "do_cost": 1.1542553191489362,
+    "cost": 2.3414893617021275,
+    "nh4_excess_mg_h_L": 0.669662685759257,
+    "do_excess_mg_h_L": 0.08381069683909614,
+    "worst_day_nh4_cost": 22.2,
+    "days_within_limit_pct": 93.51063829787233,
+    "intervention_pct": 14.479283314669653
+   },
+   {
+    "air_m3": 68475.69532554071,
+    "nh4_cost": 1.1659574468085105,
+    "do_cost": 1.2319148936170212,
+    "cost": 2.3978723404255318,
+    "nh4_excess_mg_h_L": 0.6626763765101035,
+    "do_excess_mg_h_L": 0.08198124808970353,
+    "worst_day_nh4_cost": 25.0,
+    "days_within_limit_pct": 93.29787234042554,
+    "intervention_pct": 17.762597984322507
+   },
+   {
+    "air_m3": 68804.56244474316,
+    "nh4_cost": 1.0712765957446808,
+    "do_cost": 1.0904255319148937,
+    "cost": 2.1617021276595745,
+    "nh4_excess_mg_h_L": 0.6350791158798536,
+    "do_excess_mg_h_L": 0.08151144187358539,
+    "worst_day_nh4_cost": 24.4,
+    "days_within_limit_pct": 93.61702127659575,
+    "intervention_pct": 18.29003359462486
+   }
+  ],
+  "ppo|train_none": [
+   {
+    "air_m3": 66135.13585582619,
+    "nh4_cost": 30.75851063829787,
+    "do_cost": 2.720212765957447,
+    "cost": 33.47872340425532,
+    "nh4_excess_mg_h_L": 10.990767142170034,
+    "do_excess_mg_h_L": 0.22894841208447156,
+    "worst_day_nh4_cost": 63.0,
+    "days_within_limit_pct": 5.212765957446808,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 67100.96806875193,
+    "nh4_cost": 34.62978723404255,
+    "do_cost": 5.215957446808511,
+    "cost": 39.84574468085106,
+    "nh4_excess_mg_h_L": 14.973159990890325,
+    "do_excess_mg_h_L": 0.9356989384242941,
+    "worst_day_nh4_cost": 69.8,
+    "days_within_limit_pct": 1.702127659574468,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 66699.37157309664,
+    "nh4_cost": 32.12659574468085,
+    "do_cost": 2.947872340425532,
+    "cost": 35.07446808510638,
+    "nh4_excess_mg_h_L": 12.68299648255584,
+    "do_excess_mg_h_L": 0.23934370858871312,
+    "worst_day_nh4_cost": 69.0,
+    "days_within_limit_pct": 2.553191489361702,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 67116.4800751402,
+    "nh4_cost": 31.738297872340425,
+    "do_cost": 3.668085106382979,
+    "cost": 35.40638297872341,
+    "nh4_excess_mg_h_L": 13.25860472534164,
+    "do_excess_mg_h_L": 0.38237232909783914,
+    "worst_day_nh4_cost": 50.8,
+    "days_within_limit_pct": 2.7659574468085104,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 65328.882376831076,
+    "nh4_cost": 36.49574468085106,
+    "do_cost": 3.851063829787234,
+    "cost": 40.3468085106383,
+    "nh4_excess_mg_h_L": 18.78581240608229,
+    "do_excess_mg_h_L": 0.29909341326582806,
+    "worst_day_nh4_cost": 57.8,
+    "days_within_limit_pct": 0.425531914893617,
+    "intervention_pct": 0.0
+   }
+  ],
+  "fcsrl|train_none": [
+   {
+    "air_m3": 68184.66500183716,
+    "nh4_cost": 23.967021276595744,
+    "do_cost": 2.9468085106382977,
+    "cost": 26.913829787234043,
+    "nh4_excess_mg_h_L": 10.287253846961752,
+    "do_excess_mg_h_L": 0.2427937940793442,
+    "worst_day_nh4_cost": 53.8,
+    "days_within_limit_pct": 11.48936170212766,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 65758.62843714161,
+    "nh4_cost": 18.697872340425533,
+    "do_cost": 1.7627659574468084,
+    "cost": 20.46063829787234,
+    "nh4_excess_mg_h_L": 7.020907673153909,
+    "do_excess_mg_h_L": 0.15716860312139275,
+    "worst_day_nh4_cost": 82.4,
+    "days_within_limit_pct": 35.53191489361702,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 68985.86257326546,
+    "nh4_cost": 22.114893617021277,
+    "do_cost": 2.651063829787234,
+    "cost": 24.76595744680851,
+    "nh4_excess_mg_h_L": 8.022447456376977,
+    "do_excess_mg_h_L": 0.2500952040540982,
+    "worst_day_nh4_cost": 37.8,
+    "days_within_limit_pct": 17.76595744680851,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 65510.78165981218,
+    "nh4_cost": 26.42127659574468,
+    "do_cost": 3.3191489361702127,
+    "cost": 29.740425531914894,
+    "nh4_excess_mg_h_L": 12.623856885107013,
+    "do_excess_mg_h_L": 0.39345392698600734,
+    "worst_day_nh4_cost": 53.6,
+    "days_within_limit_pct": 16.063829787234045,
+    "intervention_pct": 0.0
+   },
+   {
+    "air_m3": 65922.07512721751,
+    "nh4_cost": 30.032978723404256,
+    "do_cost": 2.945744680851064,
+    "cost": 32.97872340425532,
+    "nh4_excess_mg_h_L": 13.37292309499782,
+    "do_excess_mg_h_L": 0.27798836510058467,
+    "worst_day_nh4_cost": 81.6,
+    "days_within_limit_pct": 7.021276595744681,
+    "intervention_pct": 0.0
+   }
+  ]
+ },
+ "judgement": {
+  "J0_ppo": {
+   "bound_seeds": 5,
+   "lambda_max": [
+    0.313046875,
+    0.27312500000000006,
+    0.20125000000000004,
+    0.258671875,
+    0.253046875
+   ],
+   "lambda_last": [
+    0.26640625000000007,
+    0.24203124999999998,
+    0.135078125,
+    0.1915625,
+    0.20234375
+   ],
+   "train_cost_last10": [
+    2.5421875,
+    2.2125,
+    2.28125,
+    2.0640625,
+    2.678125
+   ],
+   "e60_train_cost_last10": [
+    2.7859375,
+    2.0703125,
+    2.490625,
+    2.315625,
+    2.725
+   ],
+   "binding": true
+  },
+  "J0_fcsrl": {
+   "bound_seeds": 5,
+   "lambda_max": [
+    0.3865625,
+    0.21601562500000002,
+    0.254765625,
+    0.19984375000000001,
+    0.17671875
+   ],
+   "lambda_last": [
+    0.35765625,
+    0.154609375,
+    0.20679687500000002,
+    0.157265625,
+    0.085
+   ],
+   "train_cost_last10": [
+    2.94375,
+    1.9640625,
+    2.63125,
+    2.2546875,
+    2.21875
+   ],
+   "e60_train_cost_last10": [
+    3.0875,
+    1.8078125,
+    2.6484375,
+    3.284375,
+    2.3953125
+   ],
+   "binding": true
+  },
+  "J1_ppo": {
+   "paired": [
+    {
+     "air_m3": -1096.1888455459848,
+     "cost": -0.19500000000000028,
+     "nh4_cost": -0.125,
+     "do_cost": -0.07000000000000006
+    },
+    {
+     "air_m3": -1608.5459861869458,
+     "cost": -0.10000000000000053,
+     "nh4_cost": -0.004999999999999893,
+     "do_cost": -0.09499999999999997
+    },
+    {
+     "air_m3": -3264.83049891307,
+     "cost": 0.09999999999999964,
+     "nh4_cost": 0.0950000000000002,
+     "do_cost": 0.004999999999999893
+    },
+    {
+     "air_m3": 1466.7702969280072,
+     "cost": -0.1299999999999999,
+     "nh4_cost": -0.004999999999999893,
+     "do_cost": -0.125
+    },
+    {
+     "air_m3": 2212.8484971169382,
+     "cost": -0.01499999999999968,
+     "nh4_cost": 0.09499999999999975,
+     "do_cost": -0.1100000000000001
+    }
+   ],
+   "mean": {
+    "air_m3": -457.9893073202111,
+    "cost": -0.06800000000000014,
+    "nh4_cost": 0.011000000000000032,
+    "do_cost": -0.07900000000000004
+   },
+   "both_lower_seeds": 2,
+   "verdict": "개선 없음"
+  },
+  "J1_fcsrl": {
+   "paired": [
+    {
+     "air_m3": -3505.58759594569,
+     "cost": 0.20000000000000018,
+     "nh4_cost": -0.020000000000000018,
+     "do_cost": 0.21999999999999997
+    },
+    {
+     "air_m3": -7485.782073013252,
+     "cost": 0.3649999999999993,
+     "nh4_cost": 0.0349999999999997,
+     "do_cost": 0.32999999999999985
+    },
+    {
+     "air_m3": -662.5114881025947,
+     "cost": -0.1349999999999998,
+     "nh4_cost": 0.004999999999999893,
+     "do_cost": -0.14000000000000012
+    },
+    {
+     "air_m3": 5787.268082163064,
+     "cost": -0.17499999999999982,
+     "nh4_cost": 0.06499999999999995,
+     "do_cost": -0.2400000000000002
+    },
+    {
+     "air_m3": 4604.342120614601,
+     "cost": -0.17999999999999972,
+     "nh4_cost": 0.02499999999999991,
+     "do_cost": -0.20500000000000007
+    }
+   ],
+   "mean": {
+    "air_m3": -252.45419085677423,
+    "cost": 0.015000000000000036,
+    "nh4_cost": 0.021999999999999888,
+    "do_cost": -0.007000000000000117
+   },
+   "both_lower_seeds": 1,
+   "verdict": "교환 (공기 감소, 비용 증가)"
+  },
+  "J2_ppo": {
+   "seeds": 3,
+   "candidate": false
+  },
+  "J3_ppo": false,
+  "J2_fcsrl": {
+   "seeds": 2,
+   "candidate": false
+  },
+  "J3_fcsrl": false
+ },
+ "root": "/home/jio/fcsrl_src/results/e61/main"
+}
