@@ -61,7 +61,7 @@ def check(out):
     for key in original:
         np.testing.assert_array_equal(original[key],buf[key])
     assert all(od[k]==bd[k] for k in od)
-    assert bd['severity_valid_fraction']==92/95
+    np.testing.assert_allclose(bd['severity_valid_fraction'],92/95,rtol=0,atol=1e-7)
     post_collect_rng = torch.get_rng_state()
     initial_hashes = hashes()
     result = dict(passed=False,checks=dict(target_boundary=True,balanced_loss=True,
