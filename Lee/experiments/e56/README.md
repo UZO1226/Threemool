@@ -95,6 +95,32 @@ target_check.json now passes on all2,006,400 original captured transitions.
 Horizon1 equals recorded costs exactly; horizon4 matches independent explicit
 sums on updates1/52/53/66 per seed, including terminal partial windows and
 reset/future perturbation exclusion. Public inputs retain current NO3 exactly.
-No regressor fit or controller performance outcome has been generated yet.
-Next implement and verify bounded regression inference, serialization and the
-null/candidate controller, then run both fixed horizons for all policy seeds.
+The core regression/inference implementation is committed atad32767.
+model_check.json passes synthetic raw/clipped sklearn agreement, serialization,
+monotonicity, constant-target fallback and independent fixed-candidate choice.
+Both actual small-data smoke fits now pass: fit update1 and diagnose update2,
+6080 transitions each, attached to the existing401280-step seed0 base policy.
+This differs from the older6080-step PPO smokes and does not supply a full
+regressor trial. No PPO learning or environment transition is added.
+
+smoke_pipeline.json requires both held-error reconstructions, serialized
+independent native replays, fixed-air matching and152000 independently rebuilt
+action choices per horizon. The horizon4 constant-rate null also matches the
+original full-day policy exactly. Both native smoke policies already fall
+inside the original strict air tolerance, so these smokes use zero extra air
+queries; nonzero offset operations remain the unchanged verified e55 matcher.
+No smoke quality point estimate selects a parameter or replaces a full result.
+
+The full fixed study runs from the workspace as follows:
+
+```powershell
+python Threemool/Lee/experiments/e56/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --captures results/e55_study/policies/new_ppolag_fcsrl --baselines results/e42_baselines/new_ppolag_fcsrl --out results/e56_study
+```
+
+The runner pins original/common/e55/e56 Python sources and queues both horizons
+for all five original policy seeds, with horizon4 primary. It fits20 scalar
+regressors, audits held data, runs ten final-controller native/matched pairs,
+independently audits actual actions, then invokes the unchanged e44 reports
+and a same-base/capture/reference-air horizon contrast. Preserve all logs and
+partial outputs; do not duplicate a live queued study. The full-regressor
+results are not yet complete. No original e55 Python source is edited.

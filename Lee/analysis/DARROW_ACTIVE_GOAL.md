@@ -40,9 +40,14 @@ one-step regression control, reusing the same five exact original policies
 and captured training streams with no new environment-training transitions.
 The longer horizon is a hypothesis for slower NH4 consequences, not an
 established cause. Do not substitute a favorable control if the primary fails.
-Its README is specified before any e56 labels, fitting or outcomes. Implement
-and independently verify day/lane/update/split-safe targets, numeric inference,
-null-controller identity and fixed candidate choice before fitting/evaluation.
+Its README is fixed before e56 outcomes. Target checks pass on all original
+2,006,400 transitions. Synthetic regression and two real small-data smoke fits
+pass, including both held-error reconstructions, serialized native replays,
+fixed-air matching,152000 independent action choices per horizon and a full-day
+constant-rate null. These use update1/2 and the full seed0 base policy, not
+full regressor trials. The e56 source-pinned batch is ready to fit both fixed
+horizons on52 updates, audit14 held updates, compare all five policy seeds,
+independently audit actions and report the primary/control contrast.
 The goal is active; reasonable alternatives remain and no external blocker
 prevents meaningful work. Preserve all pinned historical Python sources.
 
