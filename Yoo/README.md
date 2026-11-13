@@ -2,7 +2,7 @@
 
 **FCSRL 공개 구현체 구동과 원 논문 재현 실험을 완료했다. 현재 연구는 Kaggle DARROW 폐수처리 데이터에 FCSRL을 적용하고, 핵심 구조를 유지한 제한적 확장을 검증하는 단계다.**
 
-최종 갱신: 2026-11-13. e56 prior 제거 대조 10개는 **11:03에 모두 종료했고 동시 개선 실패로 미채택**이다. e57 고정 표현 진단도 완료했다. Lee/Park 선행 실험과 중복을 검토했다. 사용자는 중복 방지를 요청한 것이며 새 시도는 허용했다. **12:06부터 e58 연속 NH4 초과 크기 보조망 대조15개를 학습 중**이다. 기본형/보조망/경사 차단 각5seed, CPU1 수집과 GPU1 갱신, 동시3개다. [설계와 실행](experiments/e58/README.md), [논문 검토](experiments/e58/LITERATURE.md). [팀 실험 대조](analysis/TEAM_EXPERIMENT_REVIEW_20261113.md), [e57 결과](experiments/e57/README.md).
+최종 갱신: 2026-11-13 20:00. **Park 의 모델 예측 최소 개입 차단을 Yoo 파이프라인에 가져와 처음으로 교환선을 벗어났다.** e59 는 기존 정책에 차단을 실행 시점에만 걸어 비용을 11 ~ 14 에서 4.5 ~ 4.6 으로 낮췄다. e60 은 차단을 학습 중에도 켜서 PPO-Lag 가 공기 79,360 m³/23.75h, 합산 비용 4.81 (seed 5 평균) 에 도달했다. Park 단일 정책 대표 (80,748 / 4.98) 보다 두 평균이 모두 낮지만 seed 기준은 3/5 로 사전 기준 미달이다. [e59](experiments/e59/README.md), [e60](experiments/e60/README.md). e58 연속 NH4 초과 보조망 15개는 14:03 에 모두 끝났다. severity 는 NH4 비용 14.09 에서 8.33 으로 줄었지만 공기가 5.1% 늘어 사전 동시 개선 판정을 통과하지 못했다. detached 는 baseline 과 비트 단위로 같았다. 결과 원본은 `/home/jio/fcsrl_src/results/e58/main/results.md` 이며 문서 정리는 아직 하지 않았다.
 
 ## 연구 범위와 목표
 
@@ -23,6 +23,8 @@
 | e44~e46 관측과 조건별 제약 | 평균 개선 사례는 있으나 seed별 상충과 최악 날짜 악화로 미채택. e45의 같은 12개 정책은 학습 날짜 12/12, 개발 날짜 0/12가 평균 두 한도를 충족했다 | [e44](experiments/e44/README.md), [e45](experiments/e45/README.md), [e46](experiments/e46/README.md) |
 | e50 공통 모델 재학습 | 대리 모델 버전에 따라 방법 순위가 바뀌었다. Actor 보정은 평균 공기량과 비용이 낮아졌으나 비용 개선은 2/5 seed, NH4 초과 적분과 최악 날짜가 악화해 채택 유보 | [e50](experiments/e50/README.md), [상세 검산](experiments/e52/audit/README.md) |
 | e52~e54 NH4 여유 | 불확실성 여유, 고정 여유, 날짜 분할 여유를 비교했다. 안전과 공기량의 교환관계가 남아 전체 개선으로 미채택. 이 계열의 추가 강도 탐색은 중단 | [e52](experiments/e52/README.md), [e53 검산](experiments/e52/margin_audit/README.md), [e54](experiments/e54/README.md) |
+| e59 Park 차단 적용 | 기존 정책에 Park 의 최소 개입 차단을 실행 시점에만 걸면 모든 정책의 NH4 비용이 바닥 (3.1 ~ 3.4) 으로 내려가 교환선 아래로 이동. 차단 아래 정책 기여는 DO 와 공기의 교환 | [e59](experiments/e59/README.md) |
+| e60 학습 중 차단 | PPO-Lag 79,360 / 4.81. 정책 없는 모델 제어기보다 공기와 비용 모두 낮은 seed 4/5. Park 단일 정책 대표 대비 3/5. 승수 0, 차단 의존 | [e60](experiments/e60/README.md) |
 
 ### 최신 정책 결과: e52 대 e54
 

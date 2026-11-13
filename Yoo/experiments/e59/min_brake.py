@@ -1,0 +1,284 @@
+"""DARROW 최소 개입 차단: 예측 NH4 를 기준 아래로 유지하는 데 필요한 만큼만 공기량을 올린다 (Park 작성, Park/e10, e11).
+
+Park/e08, e09 의 차단은 위험할 때 공기량을 언제나 5,800 Nm3/h 로 올렸다. 이 차단은 대리 모델로 앞을 내다보고
+"앞으로 horizon 스텝 동안 예측 NH4 최댓값 <= target" 을 만족하는 가장 작은 공기량을 찾아 정책 공기량과 비교한다.
+
+- 후보 공기량은 0 ~ 9,000 을 grid_step 간격으로 나눈 격자다. 실행 공기량 = max(정책 공기량, 조건을 만족하는 가장
+  작은 후보). 조건을 만족하는 후보가 없으면 9,000 이다
+- 예측에는 관측한 현재 상태(관측 0 ~ 4번), 그 시각의 외부 입력과 구간 배분, 직전 구간 공기량을 쓴다. 미래 외부
+  입력은 모르므로 horizon 동안 현재 값이 이어진다고 둔다 (지속 예측). 후보 공기량도 horizon 동안 같게 둔다
+- members='others' 이면 환경이 그 에피소드에 쓰는 구성원을 빼고 나머지 4개 예측의 평균을 쓴다 (모델 오차를 흉내).
+  members='same' 이면 환경과 같은 구성원을 쓴다 (정답 모델, 참고용)
+- 대리 모델의 NH4 변화량은 공기량에 대해 비증가로 강제돼 있어 horizon 1 에서는 조건이 공기량에 대해 단조다.
+  horizon 이 2 이상이면 DO 를 거치므로 단조가 보장되지 않는다
+
+do_cap=True (Park/e11) 이면 DO 상한도 함께 본다. 후보는 정책 공기량과 그보다 큰 격자 값이다 (공기량은 올리기만 한다).
+1. 예측 NH4 최댓값 <= target 이고 예측 구간 DO 최댓값 <= 2 인 후보가 있으면 그중 가장 작은 공기량
+2. 없으면 (NH4 를 지키려면 DO 를 넘는 충돌) 실제 비용 기준인 1[NH4 > 4] + 1[DO > 2] 의 예측값이 가장 작은 후보,
+   같으면 가장 작은 공기량. target 은 여유분이라서, 충돌할 때는 실제 비용 기준을 따른다
+do_cap=False 이면 Park/e10 과 같은 계산이다.
+
+trim=True (Park/e14) 이면 공기량을 내리기도 한다 (양방향). 먼저 e10 처럼 NH4 에 필요한 최소 공기량 r 을 구한다.
+1. 정책 공기량 < r 이면 r 로 올린다 (e10 과 같음, NH4 우선)
+2. 정책 공기량 >= r 이고 정책 공기량에서 1스텝 뒤 예측 구간 DO 최댓값 > 2 이면, r 이상 정책 공기량 이하의 격자 값 중
+   예측 DO <= 2 인 가장 큰 공기량으로 내린다. 없으면 r 로 내린다. r 이상이므로 예측 NH4 <= target 은 그대로 지킨다
+예측 DO 는 정책 공기량에서 먼저 계산하고, 넘는 에피소드만 격자 전체로 다시 계산한다. lowered_steps, steps 에 내린 횟수를 센다.
+
+margins (Park/e15) 를 주면 고정 target 대신 예측 불확실성에 맞춘 여유를 쓴다. 1스텝, 다른 구성원 4개의 NH4 예측 평균 mu 와
+표준편차 sigma 를 구하고, mu + 여유(sigma) <= NH4_MAX 인 가장 작은 공기량을 r 로 둔다. margins 는 [(sigma 상한, 여유), ...] 로,
+sigma 가 처음으로 상한보다 작은 칸의 여유를 쓴다 (마지막 칸 상한은 inf). target 인자는 쓰지 않는다.
+
+Park/e16 의 두 가지 (trim=True 와 함께 쓴다).
+- do_limit: trim 이 공기량을 내릴 때 쓰는 예측 DO 기준 (기본 2). 2 보다 작게 두면 예측 오차로 DO 가 넘는 것을 줄인다
+- futile=True: 공기량 9,000 에서도 예측 NH4 (다른 구성원 평균) 가 4 를 넘어 다음 스텝 NH4 위반을 못 막는데 차단이
+  공기량을 올린 경우, 정책 공기량 이상에서 예측 DO <= 2 인 가장 큰 격자 값까지만 올린다 (없으면 정책 공기량)
+
+recover=(H, lim) (Park/e17) 이면 회복 가능성 검사를 더한다. 격자 후보마다 지금은 그 공기량, 그 뒤 H-1 스텝은 9,000 으로
+H 스텝을 굴려 (다른 구성원 평균, 외부 입력 지속 예측) 2 ~ H 스텝의 예측 NH4 최댓값 <= lim 인 가장 작은 후보 rr 을 구한다.
+required_air 는 max(r, rr) 이다. 지금 공기를 아끼면 나중에 최대 공기로도 NH4 를 못 되돌리는 연쇄 위반을 미리 막는 것이다.
+9,000 으로도 회복이 안 되는 에피소드는 rr = r 로 둔다 (헛수고를 하지 않는다)
+
+conflict=m (Park/e19, trim=True 와 함께) 이면 NH4 여유와 DO 가 부딪칠 때 여유를 줄인다. 차단이 공기량을 올렸는데 그
+공기량에서 예측 DO > do_limit 이면, 여유를 모든 sigma 칸에서 m 으로 둔 필요 공기량 (conflict_recover=True 이면 회복
+검사도 함께, 정책 공기량 이상) 과 원래 공기량 사이에서 예측 DO <= do_limit 인 가장 큰 격자 값으로 내린다. 없으면 그대로다.
+conflict_steps 에 내린 횟수를 센다
+
+Park/e27 정책 앙상블 의견 차이 차단. EnsemblePolicy 는 구성원 행동을 평균하고, 구성원 공기량의 표준편차 (Nm3/h) 를
+spread 에 남긴다. DisagreementBrake 는 그 값으로 에피소드마다 NH4 여유를 더하거나 뺀다 (extra). spread >= hi 이면
+여유 + up (의견이 갈리면 조심), spread <= lo 이면 여유 - down (의견이 같으면 공기를 덜 올리고 더 내린다), 그 사이는 0.
+extra 는 margins 가 쓰이는 모든 곳 (기본 필요 공기량, conflict 의 줄인 여유) 에 더한다
+"""
+import numpy as np
+
+from darrow_env import AIR_MAX, DO_MAX, NH4_MAX, STATE, action_to_air, air_to_action
+
+
+# Park/e15 여유 표: 학습 구간 기록 운전 재생에서, 경계 근처(mu 3.0 ~ 4.5) 1스텝 NH4 예측 오차의 99% 분위수를 sigma 칸별로 구해 올림
+E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
+
+
+class MinAirBrake:
+    def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
+                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True):
+        assert members in ('others', 'same')
+        self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
+        self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
+        self.do_cap, self.trim = bool(do_cap), bool(trim)
+        assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
+        assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
+        self.lowered_steps, self.steps, self.futile_steps = 0, 0, 0
+        self.margins = None if margins is None else [(float(u), float(m)) for u, m in margins]
+        self.do_limit, self.futile = float(do_limit), bool(futile)
+        assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
+        assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
+        self.recover = None if recover is None else (int(recover[0]), float(recover[1]))
+        assert self.recover is None or self.recover[0] >= 2, 'recover 의 H 는 2 이상'
+        self.conflict, self.conflict_recover, self.conflict_steps = conflict, bool(conflict_recover), 0
+        assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
+        self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
+
+    def _predict(self, x, member, n_states):
+        """구성원 가중 평균 예측 변화량 (행, n_states)."""
+        out = np.zeros((len(x), n_states))
+        weight = np.zeros(len(x))
+        for m in range(self.dyn.n_members):
+            w = (member != m) if self.members == 'others' else (member == m)
+            if not w.any():
+                continue
+            rows = np.flatnonzero(w)
+            for j in range(n_states):
+                out[rows, j] += self.dyn.models[m][j].predict(x[rows])
+            weight[rows] += 1.0
+        return out / weight[:, None]
+
+    def _rollout(self, obs, env, cand, n_states):
+        """후보 공기량 cand (N, K) 를 horizon 동안 유지했을 때 예측 NH4 최댓값과 구간 DO 최댓값 (N, K)."""
+        t, (N, K) = env.t, cand.shape
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731  (에피소드 하나에 후보 K 개)
+        state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
+        exo, frac, zone_prev = rep(env.x['exo'][:, t]), rep(env.x['frac'][:, t]), rep(env.prev_zone)
+        member = rep(env.member)
+        zone = cand.reshape(-1)[:, None] * frac
+        worst_nh4 = np.full(N * K, -np.inf)
+        worst_do = np.full(N * K, -np.inf)
+        for _ in range(self.horizon):
+            x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
+            delta = self._predict(x, member, n_states)
+            nxt = state.copy()
+            nxt[:, :n_states] = np.clip(state[:, :n_states] + delta, 0.0, self.dyn.hi[:n_states])
+            state, zone_prev = nxt, zone
+            worst_nh4 = np.maximum(worst_nh4, state[:, 0])
+            if n_states == len(STATE):
+                worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
+        return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
+
+    def _adaptive_ok(self, obs, env, rows=None):
+        """격자 후보마다 mu + 여유(sigma) + extra <= NH4_MAX 인지 (N, K). rows 는 extra 에서 고를 에피소드."""
+        t, N, K = env.t, len(obs), len(self.grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
+        zone = np.tile(self.grid, N)[:, None] * rep(env.x['frac'][:, t])
+        x = np.column_stack([state, rep(env.x['exo'][:, t]), zone / 1000.0, rep(env.prev_zone) / 1000.0])
+        pred = np.stack([np.clip(state[:, 0] + self.dyn.models[m][0].predict(x), 0.0, self.dyn.hi[0])
+                         for m in range(self.dyn.n_members)])
+        keep = np.arange(self.dyn.n_members)[:, None] != rep(env.member)[None, :]
+        n = keep.sum(axis=0)
+        mu = np.where(keep, pred, 0.0).sum(axis=0) / n
+        sigma = np.sqrt(np.where(keep, (pred - mu) ** 2, 0.0).sum(axis=0) / n)
+        margin = np.full(len(mu), self.margins[-1][1])
+        for upper, m in reversed(self.margins):
+            margin = np.where(sigma < upper, m, margin)
+        if self.extra is not None:
+            margin = margin + rep(self.extra if rows is None else self.extra[rows])
+        return (mu + margin <= NH4_MAX).reshape(N, K)
+
+    def _recover_air(self, obs, env):
+        """회복 가능한 가장 작은 격자 공기량 (N,). 회복 불가면 nan."""
+        H, lim = self.recover
+        t, N, K = env.t, len(obs), len(self.grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
+        exo, frac, zone_prev, member = rep(env.x['exo'][:, t]), rep(env.x['frac'][:, t]), rep(env.prev_zone), rep(env.member)
+        worst = np.full(N * K, -np.inf)
+        for h in range(H):
+            air = np.tile(self.grid, N) if h == 0 else np.full(N * K, AIR_MAX)
+            zone = air[:, None] * frac
+            x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
+            state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
+            zone_prev = zone
+            if h >= 1:
+                worst = np.maximum(worst, state[:, 0])
+        ok = (worst <= lim).reshape(N, K)
+        return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], np.nan)
+
+    def required_air(self, obs, env):
+        r = self._base_required_air(obs, env)
+        if self.recover is None:
+            return r
+        rr = self._recover_air(obs, env)
+        return np.where(np.isnan(rr), r, np.maximum(r, rr))
+
+    def _base_required_air(self, obs, env):
+        N = len(obs)
+        if self.margins is not None:
+            ok = self._adaptive_ok(obs, env)
+            return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], AIR_MAX)
+        n_states = 1 if self.horizon == 1 else len(STATE)   # 한 스텝만 보면 NH4 모델만 필요하다
+        nh4, _ = self._rollout(obs, env, np.tile(self.grid, (N, 1)), n_states)
+        ok = nh4 <= self.target
+        return np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], AIR_MAX)
+
+    def do_aware_air(self, obs, env, policy_air):
+        grid = self.grid[None, :]
+        cand = np.column_stack([policy_air, np.where(grid > policy_air[:, None], grid, policy_air[:, None])])
+        nh4, do = self._rollout(obs, env, cand, len(STATE))
+        both = (nh4 <= self.target) & (do <= DO_MAX)
+        step_cost = (nh4 > NH4_MAX).astype(int) + (do > DO_MAX).astype(int)
+        pick = np.where(both.any(axis=1), both.argmax(axis=1), step_cost.argmin(axis=1))
+        return cand[np.arange(len(cand)), pick]
+
+    def trimmed_air(self, obs, env, policy_air):
+        r = self.required_air(obs, env)
+        air = np.maximum(policy_air, r)
+        rows = np.flatnonzero(policy_air >= r)
+        if len(rows):
+            sub = _Rows(env, rows)
+            _, do = self._rollout(obs[rows], sub, policy_air[rows, None], len(STATE))
+            over = rows[do[:, 0] > self.do_limit]
+            if len(over):
+                _, do_grid = self._rollout(obs[over], _Rows(env, over), np.tile(self.grid, (len(over), 1)), len(STATE))
+                inside = (self.grid[None, :] >= r[over, None]) & (self.grid[None, :] <= policy_air[over, None])
+                ok = inside & (do_grid <= self.do_limit)
+                best = np.where(ok, self.grid[None, :], -np.inf).max(axis=1)
+                air[over] = np.where(np.isfinite(best), best, r[over])
+        if self.futile:
+            up = np.flatnonzero(air > policy_air + 1e-9)
+            if len(up):
+                nh_max, _ = self._rollout(obs[up], _Rows(env, up), np.full((len(up), 1), AIR_MAX), 1)
+                fut = up[nh_max[:, 0] > NH4_MAX]
+                if len(fut):
+                    _, do_grid = self._rollout(obs[fut], _Rows(env, fut), np.tile(self.grid, (len(fut), 1)), len(STATE))
+                    safe = (self.grid[None, :] >= policy_air[fut, None]) & (do_grid <= DO_MAX)
+                    top = np.where(safe, self.grid[None, :], -np.inf).max(axis=1)
+                    air[fut] = np.where(np.isfinite(top), np.maximum(top, policy_air[fut]), policy_air[fut])
+                    self.futile_steps += len(fut)
+        if self.conflict is not None:
+            air = self._resolve_conflict(obs, env, policy_air, air)
+        return air
+
+    def _resolve_conflict(self, obs, env, policy_air, air):
+        up = np.flatnonzero(air > policy_air + 1e-9)
+        if not len(up):
+            return air
+        _, do = self._rollout(obs[up], _Rows(env, up), air[up, None], len(STATE))
+        c = up[do[:, 0] > self.do_limit]
+        if not len(c):
+            return air
+        sub, full = _Rows(env, c), self.margins
+        self.margins = [(u, float(self.conflict)) for u, _ in full]
+        ok = self._adaptive_ok(obs[c], sub, rows=c)
+        self.margins = full
+        relaxed = np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], air[c])
+        if self.conflict_recover and self.recover is not None:
+            rr = self._recover_air(obs[c], sub)
+            relaxed = np.where(np.isnan(rr), relaxed, np.maximum(relaxed, rr))
+        relaxed = np.maximum(relaxed, policy_air[c])
+        _, do_grid = self._rollout(obs[c], sub, np.tile(self.grid, (len(c), 1)), len(STATE))
+        g = self.grid[None, :]
+        inside = (g >= relaxed[:, None]) & (g <= air[c, None]) & (do_grid <= self.do_limit)
+        best = np.where(inside, g, -np.inf).max(axis=1)
+        new = np.where(np.isfinite(best), best, air[c])
+        self.conflict_steps += int((new < air[c] - 1e-9).sum())
+        air = air.copy()
+        air[c] = new
+        return air
+
+    def __call__(self, obs, a, env):
+        policy_air = action_to_air(a)
+        if self.do_cap:
+            air = self.do_aware_air(obs, env, policy_air)
+        elif self.trim:
+            air = self.trimmed_air(obs, env, policy_air)
+        else:
+            air = np.maximum(policy_air, self.required_air(obs, env))
+        used = np.abs(air - policy_air) > 1e-9
+        self.lowered_steps += int((air < policy_air - 1e-9).sum())
+        self.steps += len(air)
+        return np.where(used, air_to_action(air), a), used
+
+
+class EnsemblePolicy:
+    """구성원 행동 평균 (Park/e20 ~ e23 과 같음). 마지막 호출의 구성원 공기량 표준편차를 spread 에 남긴다 (Park/e27)."""
+
+    def __init__(self, act_fns):
+        self.act_fns, self.spread = list(act_fns), None
+
+    def __call__(self, obs):
+        acts = np.stack([np.asarray(f(obs), dtype=float).reshape(len(obs)) for f in self.act_fns])
+        self.spread = action_to_air(acts).std(axis=0)
+        return acts.mean(axis=0)
+
+
+class DisagreementBrake:
+    """앙상블 의견 차이로 MinAirBrake 의 NH4 여유를 바꾼다 (Park/e27). policy 는 같은 스텝에 먼저 불린 EnsemblePolicy."""
+
+    def __init__(self, brake, policy, lo, hi, up, down):
+        self.brake, self.policy = brake, policy
+        self.lo, self.hi, self.up, self.down = float(lo), float(hi), float(up), float(down)
+        self.high_steps = self.low_steps = 0
+
+    def __call__(self, obs, a, env):
+        d = self.policy.spread
+        high, low = d >= self.hi, d <= self.lo
+        self.high_steps += int(high.sum())
+        self.low_steps += int(low.sum())
+        self.brake.extra = np.where(high, self.up, np.where(low, -self.down, 0.0))
+        return self.brake(obs, a, env)
+
+
+class _Rows:
+    """환경의 일부 에피소드만 보는 얇은 보기 (_rollout 이 쓰는 t, x, prev_zone, member 만)."""
+
+    def __init__(self, env, rows):
+        self.t, self.member, self.prev_zone = env.t, env.member[rows], env.prev_zone[rows]
+        self.x = {k: env.x[k][rows] for k in ('exo', 'frac')}
