@@ -19,7 +19,7 @@ limitations follow e40/e42. No policy training is part of this experiment.
 
 For each original alpha0,.25,.5,.75, evaluate the frozen conditional quantiles
 on observed inner-calibration inputs. Transform every quantile to
-alpha*current_state+(1-alpha)*quantile, then estimate PIT of actual next state
+clip(alpha*current_state+(1-alpha)*quantile,0,original_hi), then estimate PIT of actual next state
 under those transformed quantiles using the original tie RNG seed3801.
 Preserve NO3 PIT.5 and all original endpoint/interpolation conventions.
 Estimate a separate bank for each alpha. No state-dependent neighbor selection,
@@ -55,4 +55,35 @@ draft, with verified checksums and reconstruction commands. The active goal
 continues if this alternative fails. Historical e40 policy comparisons remain
 frozen, and no final test date is used for development.
 
-Status: plan specified after e50, before e51 implementation or evaluation.
+Status: implementation and kernel preflights complete before outcome evaluation.
+preflight_initial_failure.json preserves the initial assumption failure,
+preflight.json checks the corrected kernel, and preflight_support.json adds
+the actual out-of-bound NO3 inputs and CDF endpoints to interpolation probes.
+All corrected preflights pass. No transition weights are fitted.
+
+```powershell
+python Threemool/Lee/experiments/e51/calibrate_blend.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --preflight-out Threemool/Lee/experiments/e51/preflight_support.json
+python Threemool/Lee/experiments/e51/calibrate_blend.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e51_blended_pit
+python Threemool/Lee/experiments/e40/audit_quantiles.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e51_blended_pit --out Threemool/Lee/experiments/e51/audit.json
+python Threemool/Lee/analysis/audit_quantile_events.py --data kaggle_data/darrow_15min.pkl --runs results/e51_blended_pit --freeze Threemool/Lee/experiments/e42/environment_freeze.json --audit Threemool/Lee/experiments/e51/audit.json --out Threemool/Lee/experiments/e51/event_reference_audit.json
+```
+
+Use fresh output paths for repeating a recorded command. Correcting PIT does
+not expand the distribution's bounded quantile support. At alpha.5, observed
+inner NH4 central-interval coverage is only.61565 versus.82737 at alpha0.
+These are model-member pooled diagnostic coverage rates, not independent
+samples or a claim of nominal90-percent coverage. Preserve this limitation
+even if a subsequent frequency gate passes.
+
+## Preflight implementation correction
+
+The initial preflight assumption that every observed calibration state lies
+inside the model's fitting-only clip bounds fails:14 of2850 observed NO3 states
+exceed its original upper bound. All NH4/DO inputs are inside their bounds.
+Do not change data, clip bounds or the adoption gate. Include original final
+clipping when transforming conditional quantiles. NO3 quantiles are exactly
+equal at all levels and its PIT stays.5, so interpolation and clipping commute
+for that deterministic channel. Verify that equality and actual clipped-kernel
+interpolation numerically; retain an explicit in-bounds assertion for safety
+states where the stochastic argument requires it. This corrects a preflight
+assumption in e51, not the parent model or a failed outcome criterion.

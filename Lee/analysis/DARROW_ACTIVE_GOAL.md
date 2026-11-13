@@ -8,6 +8,15 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e51 implements matching PIT to the actual alpha-blended clipped transition,
+with frozen e40 weights and unchanged20-setting search/gate. A preflight
+assumption fails for14 observed NO3 states above fitting-only clip bounds;
+the failure is recorded. Original final clipping and exactly deterministic
+NO3 quantiles resolve it without changing data, weights or criteria. Corrected
+kernel interpolation, alpha0-bank identity, finite PIT and endpoint/outside-NO3
+probes pass. Run the full calibration and both audits next. Quantile support
+still shrinks under blending, so recalibration cannot recover missing tails.
+
 e50 now completes105 fits, selection and both audits. MAE improves, but NH4
 frequency5.117763 versus17.315789 percent fails the unchanged gate. NH4 Brier
 is worse than e40 by+.017702, interval[.002202,.033407]. DO point frequency
