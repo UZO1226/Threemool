@@ -8,28 +8,33 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
-e54's original baseline/history/repeated6080-step smokes and all three
-independent native replays pass. Both real air-matching smokes pass; actual
-new actor/encoder columns learn. pipeline_check.json and baseline_reuse_check.json
-record the evidence, with all five original401280-step baseline source/budget/
-config/checkpoint loads valid. No performance claim follows from the smokes.
-Ten full jobs launch under source5f901a2 in results/e54_full. Five history
-seeds are running, then five repeated-current seeds follow. The same live shell
-already queues results/e54_history_comparison and e54_repeated_comparison,
-then both primary JSON reports and history_contrast.json. Do not duplicate
-these queued jobs. Verify actual process/tool state before waiting/restarting.
-Preserve
-all Python sources pinned by run manifests while those jobs are active.
+e54's entire queued pipeline finishes: ten401280-step policies, both five-seed
+matched-air evaluations and the secondary contrast. All air matches/native
+replays/source/budget guards pass. Both variants fail all quality conditions.
+History cost23.627375 versus22.464125 has paired interval[.174750,2.239000];
+NH4 difference+1.169605 points has interval[.099342,2.490395]. Repeated-current
+quality intervals cross zero, as do history-minus-repeated contrasts. Preserve
+all failures and four verified artifact indexes. No process remains queued.
 
-e54 now implements17-input history/repeated-current agents and scoped collector/
-evaluation adapters without modifying historical/common sources. preflight.json
-passes bitwise initial action/value/encoder equivalence, RNG, gradients,
-optimizer membership, normalizer/serialization and190 paired physical steps
-with reset/terminal histories per mode. Both variants have406755 trainable
-parameters. Comparison/loading guards and batch/secondary-report adapters are
-implemented. Next run the original6080-step baseline and both variant smokes,
-then independent native replay and unchanged air-matching smoke before full
-ten-policy training. Model/probe seeds are not policy result seeds.
+The separate environment summary/figure records why frequency improvement is
+not complete safety prediction: DARROW_ENVIRONMENT_TRADEOFFS.md. The goal is
+still active. Next specify a learned one-step cost/action correction that
+uses the same PPO training transitions, preserves the base policy and counts
+auxiliary-model fitting separately. No extra environment data, favorable seed
+or changed air criterion should create an apparent gain.
+
+The original baseline/history/repeated smoke, serialization, physical trajectory,
+independent native replay and real air-matching checks all passed before full
+training. Both full variants nevertheless failed. No e54 training or matching
+job remains pending. Historical e54 runtime sources remain pinned for replay.
+The prospective e55 README fixes the next hypothesis and controls before any
+new captured-data or correction-model outcome. Implementation is next.
+
+## Prior evidence and historical planning notes
+
+The notes below retain earlier experiments and decisions. Any historical
+running/planned state below is superseded by the completed e54 snapshot above.
+Actual process state must always be checked separately.
 
 Both e53 action ranges now complete and independently reconstruct. Lower-air
 history-minus-current NH4 Brier difference-.001271 has held-training-date

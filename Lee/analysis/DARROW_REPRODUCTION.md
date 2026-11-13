@@ -180,6 +180,15 @@ lee-e53-history-low-air-probe.zip, indexed in
 excluded arrays with probe_low_air.py and verify with audit_probe.py. Preserve
 both action-range reports; neither is a full FCSRL policy comparison.
 
+The policy draft id443333191 contains four e54 archives, all with verified
+remote size/SHA256: [history policies](../experiments/e54/history_artifacts.json),
+[repeated-current policies](../experiments/e54/repeated_artifacts.json),
+[history evaluations](../experiments/e54/history_evaluation_artifacts.json) and
+[repeated-current evaluations](../experiments/e54/repeated_evaluation_artifacts.json).
+These preserve every full seed, intermediate/final checkpoints and all air-only
+queries. Both complete methods fail the unchanged criterion. The e54 README
+records source, commands, native replay and primary/secondary reports.
+
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
 Evaluation archives instead contain seed_0 through seed_4, including native,

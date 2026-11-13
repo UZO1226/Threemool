@@ -96,7 +96,10 @@ log archives in the existing verified draft. Record original FCSRL commit
 d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache license and all modified paths.
 The active goal continues through full comparison and diagnosis if it fails.
 
-Status: implementation, preflight and all three6080-step smokes pass. preflight.json
+Status: all ten full policies, both five-seed matched-air comparisons and the
+secondary contrast complete and fail the original improvement criterion.
+See results.md and the three full reports. Preflights and all smokes pass.
+preflight.json
 records exact initial actor/value/encoder outputs and RNG, both new-column
 gradients, optimizer references, frozen encoder, first11 normalizer statistics,
 serialization, scoped-global restoration and190 paired environment steps per
@@ -134,10 +137,8 @@ After all completed pairs, use e44/report.py for each variant and
 history_contrast.py for the secondary comparison. Do not summarize smokes as
 five full seeds or stop a variant because its first seed looks unfavorable.
 
-Execution snapshot: source5f901a2 launches all ten full jobs in
-results/e54_full, with five history seeds first and five repeated-current
-seeds pending. The same live shell queues both five-seed comparison batches,
-then both e44 reports and history_contrast.json after successful training.
-Do not start duplicate comparison folders while this pipeline is active.
-Read actual process/tool state before waiting or restarting. All pinned
-Python sources stay unchanged; documentation snapshots are not live monitors.
+Execution record: source5f901a2 completes all ten full jobs in results/e54_full,
+then both comparison batches and all three reports. No job remains queued.
+Do not duplicate these completed runs. Four artifact indexes identify verified
+policy/log and evaluation/query archives for both complete variants. Original
+Python sources remain pinned for independent replay.
