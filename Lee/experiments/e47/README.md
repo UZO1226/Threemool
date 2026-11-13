@@ -39,3 +39,29 @@ finish successfully. No new policy training occurs. Do not duplicate the
 running batch or infer completion from an old status file. PPO architecture
 and initialization differ from representation-augmented FCSRL, so this does
 not isolate the encoder objective as the sole possible cause of a difference.
+
+## Complete diagnostic result
+
+All five pairs finish and match air within1 percent. Native PPO air is
+76087.49 versus FCSRL52020.58m3. At matched air52013.01 versus52020.58m3,
+PPO cost is32.399375 versus22.464125, paired difference+9.93525 with95 percent
+seed-bootstrap interval[4.779375,14.518875]. NH4 is34.09303 versus23.20868
+percent, difference+10.88434 points with interval[5.16092,15.88987]. All
+five cost and NH4 differences are positive. DO is.01158 versus.43776 percent,
+difference-.42618 points with interval[-.94197,-.06553]. The full criterion
+fails, and the trade-off must remain visible rather than claiming dominance
+on both constraints.
+
+This does not support replacing FCSRL with raw PPO as the solution. It also
+does not prove representation learning is the sole cause, because architecture
+and initialization differ. No extension improvement or real-plant safety is
+established. comparison.json retains every seed and native/adjusted metrics.
+All generated evaluation queries are remotely verified in
+evaluation_artifacts.json. No new weights or original data are uploaded.
+
+Before selecting another actor intervention, audit existing learned feasibility
+scores on fixed training-day rollouts, including their relationship to observed
+discounted-max targets and the contribution of day-end continuation bootstraps.
+This diagnostic does not fit a policy, change the fixed environment, modify
+targets in an existing run, or use final test dates. A finite-day alternative
+is a different objective, not automatically a bug fix to the existing code.

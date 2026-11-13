@@ -111,9 +111,18 @@ FCSRL air, kind=diagnostic. No fitting or new extension claim is involved.
 This missing matched-air ablation can inform whether another representation
 intervention is justified. Preserve all existing criteria, seeds and failures.
 The e47 five-worker diagnostic launches in results/e47_ppo_diagnostic at
-source commit34b9f26 and chains its report after successful completion.
-Its policies are already trained; no new extension or causal attribution is
-claimed. Inspect the actual batch handle before waiting or restarting.
+source commit34b9f26 and now finishes successfully with all five pairs.
+Matched PPO cost32.399375 versus22.464125 and NH4 percentage34.09303 versus
+23.20868 are worse in every seed, with paired intervals strictly positive.
+DO decreases.01158 versus.43776 percent. The full criterion fails; the result
+does not support removing representation learning as the solution, nor does
+it isolate the sole cause. Queries are archived in e47/evaluation_artifacts.json.
+
+Next: audit existing feasibility predictions and day-end bootstrap effects
+on fixed training-only rollouts before selecting another actor intervention.
+audit_feasibility_targets.py is launched against the five frozen FCSRL policies,
+16 training dates, five members and two draws per seed. No fit or test data
+is involved; do not interpret these as independent performance seeds.
 
 ![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
 
