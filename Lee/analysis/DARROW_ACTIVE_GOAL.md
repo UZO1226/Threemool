@@ -56,12 +56,17 @@ air is clipped only for the filter; the original NN observation is unchanged.
 Gain1 is a strict identity null. Units/bounds, serialization, actual
 executed-air/reset/terminal feedback and full gain1 native replay now pass in
 preflight.json. Nonzero-offset identity also preserves the original dtype.
-No gain.5 validation performance is evaluated yet. Next implement guarded
-paired comparison and independent primary replay, then all five policy seeds. Match air after filtering with the unchanged quality-blind rule,
+Guarded comparison and independent primary replay are implemented. The seed0
+native-only smoke passes serialization, original replay, executed-volume
+accounting and152000 independent primary actions. This is not adoption or a
+matched-air performance result. The full five-seed study launches under source
+e664aca in results/e57_study, queuing actual air matching, independent native
+and matched executed-feedback audits and the unchanged five-seed report. Match air after filtering with the unchanged quality-blind rule,
 retain all five seeds and the original full criterion. Smaller command changes
 alone are not adoption. The README was committed at390659c before implementation or outcomes.
-No e57 process remains live after the successful preflight; do not assume
-that a full comparison has already launched.
+The e57 parent and five comparator workers are live at launch. Do not duplicate
+these queued jobs or edit pinned Python sources. Verify actual process handles
+before waiting, restarting or declaring a stage stopped.
 The goal is active; reasonable alternatives remain and no external blocker
 prevents useful work. Preserve historical sources and never use final test41.
 

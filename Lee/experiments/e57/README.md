@@ -97,3 +97,10 @@ the unchanged e44 five-seed report. No gain search, NN learning or supervised
 fit is added. Native and matched command variation is descriptive and cannot
 replace the original cost/NH4/DO criterion. Do not duplicate live queued jobs
 or edit their pinned Python sources. Full results are not complete yet.
+
+The full study launches under sourcee664aca in results/e57_study. Five fixed
+gain.5 comparisons are running, followed by both native and matched independent
+executed-feedback audits and the unchanged final five-seed report. No new
+policy training or fitted predictor is queued. Preserve the original NN and
+all pinned Python sources; inspect actual handles rather than restarting from
+this status note.
