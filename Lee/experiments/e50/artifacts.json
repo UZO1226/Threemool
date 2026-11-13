@@ -1,0 +1,56 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e50_quantile_exposure"
+  ],
+  "files": {
+    "e50_quantile_exposure/exposure_check.json": {
+      "bytes": 761,
+      "sha256": "a7911886375c8df2d17b531d171efc08175feffb61b5b61e71cc4b9d8ec61732"
+    },
+    "e50_quantile_exposure/quantile_0.05.pkl": {
+      "bytes": 9794453,
+      "sha256": "67fe0c51524d9f1d52e12bac3496b77c9071d396804ba361fe9e2ca0ac8b687b"
+    },
+    "e50_quantile_exposure/quantile_0.25.pkl": {
+      "bytes": 9794453,
+      "sha256": "b06e9b3c2a5feef74d1a173a4400921610cfd3e34a10901a9608f89c8165df16"
+    },
+    "e50_quantile_exposure/quantile_0.5.pkl": {
+      "bytes": 9794453,
+      "sha256": "e581b7678d382d99cda7ee727b9d80ed5a9d4db68c6ab6c7212f025989d42df3"
+    },
+    "e50_quantile_exposure/quantile_0.75.pkl": {
+      "bytes": 9794453,
+      "sha256": "b516abacc52c628af2f2e1cca611a0309bdcab610e25ccbb6af87751b8f24eb4"
+    },
+    "e50_quantile_exposure/quantile_0.95.pkl": {
+      "bytes": 9794453,
+      "sha256": "a45b6c75923952919caced188a9e8e5a1932a481cf0081ace72a7fcc0e0d2037"
+    },
+    "e50_quantile_exposure/summary.json": {
+      "bytes": 78499,
+      "sha256": "ce1dcae1083ad31a467c2327758eddf0d3caff2b5c68499de202c35a406575f9"
+    },
+    "e50_quantile_exposure/train.log": {
+      "bytes": 2886,
+      "sha256": "ddb521ac61601adbeb0cd647ba451011bd663f5ff8f6ac086073fec448223bae"
+    }
+  },
+  "archive": {
+    "name": "lee-e50-quantile-exposure.zip",
+    "bytes": 20735029,
+    "sha256": "a1c1cad5cf350de26e1bda529946b67231a081a5eb9ae2deab96795c5cde5e5a"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 742586783,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

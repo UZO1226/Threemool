@@ -1,11 +1,10 @@
 # Lee/e50: Quantile training exposed to accumulated state error
 
-Execution snapshot: sourcee3a0e9d has completed all105 model fits in
-results/e50_quantile_exposure. The same live shell is evaluating the fixed
-inner20 settings and then runs independent reconstruction and event audits
-on success. Console log is results/e50_quantile_exposure_run.log. This is not
-a live monitor or an adoption result; inspect the actual process/tool handle
-before waiting or restarting. Never duplicate because a log is quiet.
+Status: sourcee3a0e9d completes105 fits, inner20 settings, independent
+reconstruction and event audits. The original joint adoption gate fails.
+See results.md and all compact JSON reports. Console log is
+results/e50_quantile_exposure_run.log; artifacts.json records the verified
+checkpoint/log draft archive. No controller is trained on this candidate.
 
 ## Fixed hypothesis
 

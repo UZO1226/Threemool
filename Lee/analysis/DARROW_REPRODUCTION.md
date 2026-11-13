@@ -152,6 +152,12 @@ arrays. Re-run e49/diagnose.py to recreate the arrays, then e49/audit.py to
 independently reconstruct probabilities and metrics. This is a diagnostic,
 not a replacement environment or a policy improvement.
 
+The environment draft also contains lee-e50-quantile-exposure.zip with all
+quantile checkpoints and complete console log. Its [index](../experiments/e50/artifacts.json)
+verifies remote size/SHA256. Re-run e50/exposure.py to regenerate its excluded
+PIT bank. Both independent audit commands are in the e50 README. This candidate
+fails adoption despite lower MAE; preserve its failed event predictions.
+
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
 Evaluation archives instead contain seed_0 through seed_4, including native,

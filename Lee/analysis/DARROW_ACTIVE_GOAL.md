@@ -8,7 +8,20 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
-e50 implements one fixed50/50 observed/exposed-state refit of e40 safety quantiles.
+e50 now completes105 fits, selection and both audits. MAE improves, but NH4
+frequency5.117763 versus17.315789 percent fails the unchanged gate. NH4 Brier
+is worse than e40 by+.017702, interval[.002202,.033407]. DO point frequency
+passes but onset/ranking remains weak; no member passes both tolerances.
+All checked implementation/reconstruction/action-order paths pass. Keep this
+failure and its remotely verified artifacts; do not replace e40.
+
+Next keep e40 weights fixed and test PIT calibration against the actual
+alpha-blended conditional distribution, rather than the unblended quantiles
+currently used to estimate PIT. Preserve alpha0 exact identity, original
+selection/gate, event metrics and test exclusion. This is a new calibration
+hypothesis, not a declaration that the earlier design is a coding bug.
+
+e50 implemented one fixed50/50 observed/exposed-state refit of e40 safety quantiles.
 Its preflight passes zero-change array reconstruction, true initial states,
 future-concentration scrambling invariance and finite/capped training inputs.
 Exposure uses158 fitting dates, deterministic median rollouts and no PIT bank
