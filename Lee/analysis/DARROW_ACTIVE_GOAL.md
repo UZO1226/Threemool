@@ -73,16 +73,30 @@ e45 prepares a single-head severity-supervision candidate. Training-only label
 and support checks, original objective/gradient/RNG equivalence, serialization
 and380 actual environment-transition equivalence checks pass. A6080-step smoke
 and its independent1600-case final-checkpoint replay finish successfully.
-Five full severity seeds launch in results/e45_full with implementation
-commit c2b48aa, five workers and401280 transitions each. Inspect the real
-runner before waiting or restarting. After training, use unchanged air-only
-matching against the five frozen-model FCSRL references and report all seeds.
-A separate queued shell already waits on the verified five training process
-IDs and will launch results/e45_comparison with three workers, then write
-e45/comparison.json only if the full batch succeeds. Do not launch a duplicate.
-Check both the training runner and queued evaluation shell for actual liveness.
-Never count smoke results as policy improvement. All e45 Python files are pinned
-by the runner; do not edit them until the runner exits.
+All five full severity seeds and the queued matched-air comparison finish
+successfully. Both runner handles exit0. comparison.json fails all three
+quality conditions: mean matched cost22.771375 versus22.464125, NH4 percentage
+23.26632 versus23.20868 and DO percentage.70355 versus.43776. All paired
+uncertainty intervals cross zero and all air matches pass1 percent. No
+improvement is established. Full weights/logs and generated query evaluations
+are remotely verified in e45/artifacts.json and evaluation_artifacts.json.
+Never count the earlier smoke as performance evidence or restart these jobs.
+
+Next investigate train/validation distribution and final training-cost gaps.
+The existing risk-stratified sampling rule already failed in e15 on another
+environment; do not present it as untested or invent a novelty claim. A repeat
+on the fixed e40 model would be a separate model-sensitive controlled test,
+only justified after the diagnostic. Preserve the current criteria and all
+earlier failures; reasonable alternatives remain and there is no blocker.
+
+The completed diagnostic finds training/validation mean temperature19.714
+versus15.962C and initial NH4 violation fractions.07447 versus.3. The old risk
+sampler barely changes temperature to19.605C. e46 instead prepares a fixed
+coldest-training-quarter half-probability sampler, with no validation-fitted
+cutoff/probability, unchanged FCSRL and uniform matched-air evaluation.
+Its weighted mean temperature18.801C still leaves a gap. This is a different
+sampling intervention, not evidence of a causal mechanism or novelty. Run its
+real-transition/reset checks and smoke/replay before any full training.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO

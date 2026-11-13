@@ -131,6 +131,8 @@ are recorded because GitHub may change its untagged draft URL after edits.
 | lee-e43-capacity-five-seed-policies.zip | [Five capacity-control policies](../experiments/e43/capacity_artifacts.json) |
 | lee-e44-split-five-seed-evaluations.zip | [All split air queries and evaluation cases](../experiments/e44/split_evaluation_artifacts.json) |
 | lee-e44-capacity-five-seed-evaluations.zip | [All capacity air queries and evaluation cases](../experiments/e44/capacity_evaluation_artifacts.json) |
+| lee-e45-severity-five-seed-policies.zip | [Five severity policies](../experiments/e45/artifacts.json) |
+| lee-e45-severity-five-seed-evaluations.zip | [All severity air queries and evaluation cases](../experiments/e45/evaluation_artifacts.json) |
 
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
@@ -161,8 +163,9 @@ Do not pool1600 simulator cases as1600 policy seeds or select a favorable
 intermediate checkpoint. e43 fails the prespecified improvement criterion;
 retain both complete reports and their uncertainty intervals.
 
-e45 is a separate severity-supervision candidate. Its short smoke/replay and
-unit/environment checks are not full policy performance seeds. Five full
-policy seeds are running in results/e45_full at this snapshot, so no full
-e45 archive or improvement result is listed here yet. Inspect actual processes
+e45 is a separate severity-supervision candidate. All five full seeds and
+matched-air comparisons finish and fail the improvement criterion. Its short
+smoke/replay and unit checks are not additional policy performance seeds.
+e46 prepares a distinct colder-training-day sampling intervention; its checks
+and short smoke are not full performance results. Inspect actual processes
 before inferring whether any recorded run is still active.

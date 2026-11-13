@@ -53,7 +53,7 @@ def load_run(folder,freeze_path,allow_smoke=False):
     method=config['method'];r=RepresentationConfig(**config['representation']) if config['representation'] else None
     torch.manual_seed(0)
     if method=='ppolag':agent=PPOLagAgent(11,1,config=c)
-    elif method=='ppolag_fcsrl':agent=PPOFCSRLAgent(11,1,config=c,repr_config=r)
+    elif method in ('ppolag_fcsrl','ppolag_fcsrl_cold'):agent=PPOFCSRLAgent(11,1,config=c,repr_config=r)
     elif method=='ppolag_fcsrl_severity':agent=SeverityFCSRL(11,1,config=c,repr_config=r)
     else:
         modes={'ppolag_fcsrl_split':'split','ppolag_fcsrl_capacity':'capacity'}
@@ -82,7 +82,7 @@ def main():
         assert a.environment=='new'
         assert bc['experiment_metadata']['environment']==cc['experiment_metadata']['environment']=='new'
         assert bc['representation']==cc['representation']
-        if a.kind=='agent':assert bc['method']=='ppolag_fcsrl' and cc['method'] in ('ppolag_fcsrl_split','ppolag_fcsrl_capacity','ppolag_fcsrl_severity')
+        if a.kind=='agent':assert bc['method']=='ppolag_fcsrl' and cc['method'] in ('ppolag_fcsrl_split','ppolag_fcsrl_capacity','ppolag_fcsrl_severity','ppolag_fcsrl_cold')
         else:assert bc['method']=='ppolag_fcsrl_capacity' and cc['method']=='ppolag_fcsrl_split'
     if a.kind=='environment':
         assert bc['method']==cc['method']=='ppolag_fcsrl'

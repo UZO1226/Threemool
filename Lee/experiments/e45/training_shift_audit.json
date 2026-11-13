@@ -1,0 +1,83 @@
+{
+  "test_evaluated": false,
+  "validation_used_for_diagnosis": true,
+  "policy_refit": false,
+  "sampling_rule_modified": false,
+  "historical_rule_source": "Lee/code/darrow/curriculum_dw.py, used in e15",
+  "training_days": 188,
+  "validation_days": 40,
+  "observed_uniform_train": {
+    "nh4_viol_pct": 5.918253079507277,
+    "do_viol_pct": 5.291153415453523,
+    "initial_nh4_violation_fraction": 0.07446808510638298,
+    "initial_do_violation_fraction": 0.0851063829787234,
+    "nh4_mean": 1.512849304603726,
+    "maximum_zone_do_mean": 0.778540986845655,
+    "inflow_mean": 2273.342721199877,
+    "temperature_mean": 19.714007514184548
+  },
+  "observed_uniform_validation": {
+    "nh4_viol_pct": 17.315789473684212,
+    "do_viol_pct": 1.1578947368421058,
+    "initial_nh4_violation_fraction": 0.3,
+    "initial_do_violation_fraction": 0.0,
+    "nh4_mean": 2.376045042397121,
+    "maximum_zone_do_mean": 0.6435275892823796,
+    "inflow_mean": 2312.4686366700234,
+    "temperature_mean": 15.962332099606588
+  },
+  "observed_curriculum_weighted_train": {
+    "nh4_viol_pct": 10.656961552818212,
+    "do_viol_pct": 6.707726763717809,
+    "initial_nh4_violation_fraction": 0.09929078014184398,
+    "initial_do_violation_fraction": 0.08510638297872342,
+    "nh4_mean": 1.7930388931963752,
+    "maximum_zone_do_mean": 0.8194719970386382,
+    "inflow_mean": 2600.8074773959356,
+    "temperature_mean": 19.605065103717433
+  },
+  "observed_cold_weighted_train": {
+    "nh4_viol_pct": 6.3195222097797705,
+    "do_viol_pct": 5.87905935050392,
+    "initial_nh4_violation_fraction": 0.07801418439716311,
+    "initial_do_violation_fraction": 0.08510638297872339,
+    "nh4_mean": 1.5539244969453392,
+    "maximum_zone_do_mean": 0.7580260575070774,
+    "inflow_mean": 2449.9061883564873,
+    "temperature_mean": 18.80128257588569
+  },
+  "cold_rule": "Coldest training-day temperature quarter receives half probability; rest half. Stable date-order ties. No validation-selected temperature cutoff.",
+  "sampling_weight_range": [
+    0.0035460992907801418,
+    0.010638297872340425
+  ],
+  "sampling_effective_number_of_days": 141.0000000000001,
+  "baseline_policy_diagnostics": [
+    {
+      "seed": 0,
+      "last10_training_rollout_cost_mean": 8.446875,
+      "final_uniform_validation_cost": 24.121875
+    },
+    {
+      "seed": 1,
+      "last10_training_rollout_cost_mean": 10.259375,
+      "final_uniform_validation_cost": 13.33625
+    },
+    {
+      "seed": 2,
+      "last10_training_rollout_cost_mean": 7.3140625,
+      "final_uniform_validation_cost": 34.500625
+    },
+    {
+      "seed": 3,
+      "last10_training_rollout_cost_mean": 5.99375,
+      "final_uniform_validation_cost": 9.950625
+    },
+    {
+      "seed": 4,
+      "last10_training_rollout_cost_mean": 9.5875,
+      "final_uniform_validation_cost": 30.41125
+    }
+  ],
+  "limitations": "Observed split averages and changing-policy rollout costs are descriptive, not causal or independent confirmation. Weighting changes the training/PID distribution. The unchanged e15 rule previously failed on another simulator; no retry success is assumed."
+}

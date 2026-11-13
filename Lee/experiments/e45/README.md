@@ -78,3 +78,29 @@ Do not launch a second copy while the queued shell or matching batch is alive.
 Waiting for an existing process does not count as policy training or an
 improvement. Native metrics, matching traces, five seed uncertainty and all
 failed results remain required before deciding on another experiment.
+
+## Complete five-seed result
+
+The training runner and queued evaluation both finish successfully. All five
+final policies use401280 transitions and all air matches pass1 percent.
+comparison.json fails the prespecified three quality conditions. Native mean
+air is60305.53 versus52020.58m3 and native cost18.01575 versus22.464125; native
+DO increases to1.48368 from.43776 percent. Native quality differences are not
+an equal-air result.
+
+After air-only adjustment, mean air is52020.36 versus52020.58m3. Mean cost is
+22.771375 versus22.464125, paired difference+.30725 with95 percent seed-bootstrap
+interval[-3.697,4.03225]. NH4 is23.26632 versus23.20868 percent, paired
+difference+.05763 points with interval[-4.28947,4.40474]. DO is.70355 versus
+.43776 percent, paired difference+.26579 points with interval[-.52618,.82171].
+These intervals cross zero. The result does not establish improvement or
+consistent worsening. Validation reuse, five policy seeds and the frozen
+model's weak DO onset prediction limit any inference. Final test41 is unused.
+
+The target and pipeline checks passed, but that does not establish the
+severity-supervision performance hypothesis. Per-seed directions are mixed.
+Changing auxiliary labels alone did not produce a verified benefit here;
+this is not evidence that every such label or longer training must fail.
+Weights/full training logs and all generated air-query evaluations are in the
+existing draft release, remotely verified in artifacts.json and
+evaluation_artifacts.json. Original data and calibration banks are excluded.
