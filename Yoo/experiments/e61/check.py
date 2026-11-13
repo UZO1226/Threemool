@@ -114,7 +114,7 @@ def run(a):
             m = json.loads((smoke / method / 'metrics.json').read_text())
             entry.update(config_limit=cfg['config']['cost_limit'], lambda_u1=log[0]['lambda'],
                          lambda_matches_loop=log[0]['lambda'] == checks[method]['limit2_lambda_u1'],
-                         evaluations=sorted(k for k in m if k.startswith(('val_', 'train_')) and k != 'val_final'))
+                         evaluations=sorted(k for k in m if k.startswith(('val_', 'train_')) and k != 'val_final' and isinstance(m[k], dict)))
         checks[f'entry_{method}'] = entry
     shutil.rmtree(smoke, ignore_errors=True)
     checks['passed'] = bool(
