@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "smoke_artifact_only": true,
+  "relocated_regressor_loaded_with_unchanged_binary_sha256": true,
+  "incorrect_rate_source_sha256_rejected": true,
+  "verified_source_records": 30,
+  "original_runtime_files_modified": false,
+  "test_evaluated": false,
+  "adapter_sha256": "e3b2c664de23b5aa53835bbf545f68439bc4c0ce9582fa87c21cbaf79a6cecb8",
+  "scope": "Relocated metadata fixture and original smoke regressor binary. Source-mapping checks only; no new controller evaluation or claim of full trial success.",
+  "missing_rate_and_shared_source_locations_supported": true
+}

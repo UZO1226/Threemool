@@ -296,3 +296,59 @@ historical paths, an existing stale checkout, rejection of changed hashes and
 repository traversal, plus exact152000-action smoke-audit replay. This is a
 Windows reproduction check, not a full-budget performance result or evidence
 that every operating system has been tested.
+
+## e56 controlled horizon comparison
+
+The [fixed e56 specification](../experiments/e56/README.md) compares a four-step
+rate regressor with a matching one-step regression control. Both use the same
+five original401280-step policies and captured e55 streams, with first52
+updates for fitting and last14 for diagnostics. No new PPO run or environment
+training transition is added. Regressor seeds5600/5601 are not policy seeds.
+The full source0054e89 study in results/e56_study is already queued; inspect
+its actual process before starting anything. This recipe is not a completion
+claim or an instruction to duplicate that live study.
+
+The full command is in the e56 README. Its smokes deliberately fit update1 and
+diagnose update2 of a full-budget base policy. They must not be mistaken for
+the earlier6080-step PPO smokes or for complete52/14-update regression trials.
+The horizon4 label is a mean of up to four violation indicators before day
+termination, not the chance of at least one event. Its rate MSE is not binary
+event Brier, and MSE values across different target horizons cannot by
+themselves establish better prediction. Physical cost/NH4/DO at matched actual
+air remain the adoption quantities; the horizon1 control cannot replace a
+failed primary horizon4 result.
+
+After the entire study completes, use the dedicated archive helper:
+
+```powershell
+python Threemool/Lee/analysis/package_rate_artifacts.py --results results --study results/e56_study --captures results/e55_study/policies/new_ppolag_fcsrl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/artifacts/lee-e56-rate-correction.zip --index Threemool/Lee/experiments/e56/artifacts.json
+```
+
+It preserves both horizons' fitted models, full logs, generated native/matched/
+all-query outputs, independent audits and final reports, plus the five unchanged
+final base checkpoints and necessary original configurations/source manifests.
+Results-relative e55_study/e56_study paths allow restoration under results.
+Original observations, captured arrays and stochastic banks are excluded.
+The [incomplete-study guard check](rate_artifact_guard_check.json) confirms that
+a live incomplete study is rejected without writing an archive or index.
+Actual final archive CRC, file hashes, exclusions and remote digest still
+require verification when the study finishes.
+
+For relocated source paths, the [rate-controller adapter](replay_rate_portable.py)
+maps both the inherited base-policy loader and the new regressor loader to
+current repository files, retaining exact source/model checksums and all
+original configuration, budget, freeze and replay guards. Example after
+restoring completed controllers and the matching references:
+
+```powershell
+python Threemool/Lee/analysis/replay_rate_portable.py --operation compare --horizon 4 --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --out results/e56_relocated_replay/h4/seed_0
+```
+
+--operation audit dispatches the original audit_rates.py arguments; --phase
+actions replays controllers without the excluded captures. --phase held
+requires regenerating those original captured training streams first.
+[The source-mapping check](portable_rate_check.json) loads the unchanged smoke
+regressor binary using synthetic historical source paths and rejects altered
+source hashes. It is a metadata-location fixture check, not another controller
+performance seed or a claim of testing every operating system. Reproduction
+still requires the pinned library versions and original environment artifacts.
