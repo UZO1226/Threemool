@@ -1,0 +1,16 @@
+{
+  "purpose": "Audit temperature support and NH4 prediction errors before changing the surrogate",
+  "scope": "Exploratory diagnosis, not causal attribution or a model selection test",
+  "prepared": "/home/jio/fcsrl_src/results/e30/prepared/data.pkl",
+  "model": "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl",
+  "replay": "/home/jio/fcsrl_src/results/e54_uncertainty_gate_20261112",
+  "splits": ["train", "val"],
+  "temperature_groups": "Input temperature at transition t: below train minimum, inside train min/max, above train maximum",
+  "predictions": ["one step from observed state", "existing 95-step recorded-action recursive trajectory"],
+  "metrics": ["NH4 MAE", "signed error", "FPR", "recall", "false negatives", "absolute-error and alarm-error shares"],
+  "interventions": "Hold all other observed input features fixed, replace temperature only; diagnostic model response, not real process intervention",
+  "test_rows_extracted": false,
+  "policy_training": false,
+  "surrogate_training": false,
+  "decision": "Determine whether low-temperature extrapolation alone is a sufficient explanation. Do not tune thresholds or change environment based on a scalar error reduction alone."
+}
