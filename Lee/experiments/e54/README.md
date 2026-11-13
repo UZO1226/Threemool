@@ -96,4 +96,21 @@ log archives in the existing verified draft. Record original FCSRL commit
 d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache license and all modified paths.
 The active goal continues through full comparison and diagnosis if it fails.
 
-Status: specified after e52/e53 results, before policy implementation or training.
+Status: implementation and preflight pass, before policy training. preflight.json
+records exact initial actor/value/encoder outputs and RNG, both new-column
+gradients, optimizer references, frozen encoder, first11 normalizer statistics,
+serialization, scoped-global restoration and190 paired environment steps per
+mode. Both variants have406755 trainable parameters. Historical files stay
+unchanged. The comparison uses e44's existing matcher and five-seed report;
+history_contrast.py adds the secondary same-reference contrast.
+
+```powershell
+python Threemool/Lee/experiments/e54/check_history.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out Threemool/Lee/experiments/e54/preflight.json
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e54/train_history.py --out results/e54_smoke --jobs new:ppolag_fcsrl:0 new:ppolag_fcsrl_history:0 new:ppolag_fcsrl_repeated:0 --parallel 3 --steps 6080 --evaluations 1
+```
+
+All output folders are fresh. Before full training, independently replay each
+smoke with native_replay.py and allow-smoke, then compare both variants with
+compare.py at the same6080-step original smoke baseline. Do not modify pinned
+Python sources while those batches or future full policy batches run. Keep
+smoke results separate from the401280-step five-seed performance reports.

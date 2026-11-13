@@ -8,6 +8,16 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e54 now implements17-input history/repeated-current agents and scoped collector/
+evaluation adapters without modifying historical/common sources. preflight.json
+passes bitwise initial action/value/encoder equivalence, RNG, gradients,
+optimizer membership, normalizer/serialization and190 paired physical steps
+with reset/terminal histories per mode. Both variants have406755 trainable
+parameters. Comparison/loading guards and batch/secondary-report adapters are
+implemented. Next run the original6080-step baseline and both variant smokes,
+then independent native replay and unchanged air-matching smoke before full
+ten-policy training. Model/probe seeds are not policy result seeds.
+
 Both e53 action ranges now complete and independently reconstruct. Lower-air
 history-minus-current NH4 Brier difference-.001271 has held-training-date
 interval[-.001678,-.000868]; DO interval crosses zero and has only3 new events.
