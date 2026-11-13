@@ -1,6 +1,8 @@
 # e56: 고정 모방 prior 사용 여부 대조
 
-**2026-11-13 09:40 KST 본 학습 시작, 10:02 GPU1 전환 실행 시작.** prior-off PPO/FCSRL 각 seed5개, 총10개다. 먼저 돌던 3개는 보존하고 대기 7개만 CPU1 수집/FCSRL GPU1 갱신으로 넘겼다. 최종 결과는 아직 없으며 현재 전체 상태는 `main_hybrid/status.json`에서 확인한다. [전환 검증과 장치별 해석 제한](HYBRID.md). [고정 조건](protocol.json).
+**2026-11-13 11:03 KST, 신규 학습 10개 모두 정상 종료.** PPO와 FCSRL 모두 사전 동시 개선 기준을 통과하지 못해 prior-off를 채택하지 않는다. FCSRL은 공기량이 4.25% 줄었지만 NH4 비용은 9.440에서 10.955, 초과 적분은 4.460에서 11.812 mg h/L로 증가했다. PPO는 NH4 위반 횟수가 줄어도 공기량과 초과 적분이 늘었다. [전체 결과와 seed별 수치](results.md), [기계 판독 요약](summary.json).
+
+기존 3개는 CPU4, 후속 7개는 CPU1 수집과 FCSRL GPU1 갱신으로 완료했다. 장치가 섞였으므로 prior만의 인과 효과라고 확정하지 않는다. [장치 검증과 해석 제한](HYBRID.md), [사전 조건](protocol.json).
 
 ## 질문과 단일 변경
 
@@ -60,5 +62,5 @@ export OMP_NUM_THREADS=1 OMP_WAIT_POLICY=PASSIVE OPENBLAS_NUM_THREADS=1 MKL_NUM_
 ```
 
 사전 검사: `/home/jio/fcsrl_src/results/e56/preflight/`.
-원 실행: `/home/jio/fcsrl_src/results/e56/main/`, 커밋 `a173e3b`. **현재 실행:** `/home/jio/fcsrl_src/results/e56/main_hybrid/`, 커밋 `670ccd3`, tmux 세션 `yoo-e56-hybrid`. 기존 3개는 원 경로를 가리킨다. 기존 배차는 추가 작업을 시작하지 않으며 원 학습이 모두 끝나면 종료한다. 10:03 기준 종료 추정은 11:10~11:30 KST이며 서버 부하에 따라 달라진다.
+원 실행: `/home/jio/fcsrl_src/results/e56/main/`, 커밋 `a173e3b`. **완료된 후속 실행:** `/home/jio/fcsrl_src/results/e56/main_hybrid/`, 커밋 `670ccd3`, tmux 세션 `yoo-e56-hybrid`. 기존 3개는 원 경로를 가리킨다. 기존 배차는 원 학습 종료 뒤 정리됐고, 원 상태는 `superseded`, 후속 상태는 `complete`다. 10개 모두 exit code 0이며 11:03:41 KST에 집계를 완료했다.
 위 명령은 원 CPU 실행의 재현용이다. 현재 이관 실행의 조건과 명령은 [HYBRID.md](HYBRID.md)를 따른다. 실행 커밋과 입력/소스 해시, 정확한 시작/종료 시각은 각 manifest에 남긴다. `status.json`이 전체 진행, 각 `runs/<method>/seed_<n>/progress.json`이 개별 진행이다. 완료 후 같은 루트에 `summary.json`과 `results.md`를 자동 생성한다.
