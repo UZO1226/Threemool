@@ -55,6 +55,15 @@ def same(a, b, skip=()):
     return all(k in a and k in b and a[k] == b[k] for k in keys), sorted(k for k in keys if a.get(k) != b.get(k))
 
 
+def plain(x):
+    """numpy 값(np.bool_, np.float64 등)을 JSON 에 쓸 수 있는 파이썬 기본형으로 바꾼다."""
+    if isinstance(x, dict):
+        return {k: plain(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [plain(v) for v in x]
+    return x.item() if isinstance(x, np.generic) else x
+
+
 def hashes():
     files = [se.PREPARED / 'data.pkl', se.PREPARED / 'surrogate.pkl', se.HERE / 'min_brake.py', se.HERE / 'shield_eval.py',
              HERE.parent / 'e60/train_shielded.py', HERE / 'train_limit.py', HERE.parent / 'e56/hybrid.py', HERE.parent / 'e56/train.py',
@@ -116,6 +125,7 @@ def run(a):
                 and len(checks[f'entry_{m}']['evaluations']) == 5 for m in ('ppo', 'fcsrl')))
     checks['limit'] = a.limit
     checks['hashes'] = hashes()
+    checks = plain(checks)
     base.save(a.out / 'checks.json', checks)
     print(json.dumps({k: v for k, v in checks.items() if k != 'hashes'}, indent=1, ensure_ascii=False))
 
