@@ -42,6 +42,13 @@ disabled. Report numerical initialization agreement rather than assuming
 bitwise GEMM identity after a width change. Both variants share this procedure.
 First11 observation-normalizer updates remain the original computations.
 
+Compute the original-width linear contribution and added-column contribution
+separately in the expanded input layers. With zero added weights this retains
+the original arithmetic path while allowing nonzero new-column gradients.
+Both history and repeated-current variants use the same implementation and
+parameter count. Verify output/RNG agreement explicitly and retain any measured
+floating-point differences in the preflight report.
+
 Use process-scoped trainer/environment adapters under Lee/e54. Preserve
 historical e42 and common source files because their hashes guard prior
 checkpoints. Training buffers receive17 features through a scoped dimension
