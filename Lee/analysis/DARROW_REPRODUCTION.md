@@ -137,6 +137,7 @@ are recorded because GitHub may change its untagged draft URL after edits.
 | lee-e46-cold-five-seed-evaluations.zip | [All cold-sampling air queries and evaluation cases](../experiments/e46/evaluation_artifacts.json) |
 | lee-e47-ppo-five-seed-diagnostic.zip | [All equal-air PPO diagnostic cases and queries](../experiments/e47/evaluation_artifacts.json) |
 | lee-e48-finite-day-five-seed-policies.zip | [Five finite-day auxiliary policies](../experiments/e48/artifacts.json) |
+| lee-e48-finite-day-evaluations.zip | [Five completed evaluations and preserved interrupted outputs](../experiments/e48/evaluation_artifacts.json) |
 
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
@@ -174,5 +175,7 @@ e46 completes a distinct colder-training-day sampling intervention, with a
 DO-only benefit but a failed full criterion. Its checks and short smoke are
 not additional performance seeds. e47 completes its existing-PPO matched-air
 diagnostic, not a new extension. e48 finishes five full daily-horizon auxiliary
-policies; their matched-air comparison is running at this snapshot. Inspect actual processes
-before inferring whether any recorded run is still active.
+policies and all five matched-air comparisons, failing the full improvement
+criterion. Its interrupted evaluation outputs remain archived; the retry
+matches all144105 overlapping numeric values exactly without retraining.
+Inspect actual processes before inferring whether a recorded run is active.

@@ -18,6 +18,11 @@ p.add_argument('--reference-summary',type=Path,required=True);p.add_argument('--
 a=p.parse_args();torch.set_num_threads(1)
 raw=pd.read_pickle(a.data);ref=json.loads(a.reference_summary.read_text())
 data=LongContextData(raw,ref['fit_days']);base_data=Data(raw,ref['fit_days'])
+all_days=ref['fit_days']+ref['calibration_days']+raw['days']['val']
+all_positions=np.array([data.positions[day][0] for day in all_days])
+assert np.all(all_positions>0)
+assert np.isfinite(data.past(all_positions,16)).all()
+assert data.table.index.max()<pd.Timestamp(raw['days']['val'][-1])+pd.Timedelta(days=1)
 days=raw['days']['val'][:2];positions=np.array([data.positions[d][0] for d in days])
 context=data.past(positions,16)
 probes=np.r_[1,16,96,288,672,positions];expected=[]
@@ -63,6 +68,7 @@ numpy_prediction=simulate(cache,np.zeros(5))[0,0]
 np.testing.assert_allclose(numpy_prediction,predictions.detach().numpy(),rtol=2e-4,atol=2e-4)
 delta=float(model.long_encoder(c[:,304:]).detach().abs().max());assert delta>0
 result={'direct_slice_statistics_passed':True,'short_context_unchanged':True,
+    'all_fit_cal_validation_initial_contexts_finite':True,'history_table_stops_at_validation_end':True,
     'future_validation_scrambling_passed':True,'initial_parent_predictions_exact':True,
     'common_parameters_exact':True,'common_rng_preserved':True,'new_head_gradient_max':float(gradient.abs().max()),
     'nonzero_long_offset_after_update':delta,'teacher_first_step_matches_recursive':True,

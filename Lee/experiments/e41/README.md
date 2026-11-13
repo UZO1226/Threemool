@@ -43,3 +43,28 @@ of Git.
 python Threemool/Lee/experiments/e41/check_context.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --out Threemool/Lee/experiments/e41/context_check.json
 python Threemool/Lee/experiments/e41/long_context.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --out results/e41_long_context
 ```
+
+## Execution rationale after frozen-policy studies
+
+The earlier e40 point-gate pass does not settle its event-timing limitations:
+DO AUC.48475 and AP.01149 are near chance, and no DO onset is matched within
+an hour at probability threshold.5. These forecast limits were measured
+independently of policy outcomes. e43/e45/e46/e48 do not establish a complete
+policy-extension improvement, but those failures must not be used to select a
+more favorable simulator. e40 remains the frozen historical policy environment.
+
+Now execute the previously prepared e41 forecasting hypothesis as a separate
+model experiment. Keep the e34 control,158 fitting/30 inner-calibration dates,
+five model-member seeds,80 epochs,20/40/80 shared-checkpoint selection and
+16 inner noise settings unchanged. The existing e16 gate is not relaxed.
+Compare reconstruction, errors, frequency, Brier and uncertainty with e34,
+e40 and persistence. Event diagnostics retain threshold.5 and onset tolerances
+0/1/4 steps from the existing audit. Point-frequency gates alone cannot justify
+replacing e40. No policy training or new environment freeze is automated.
+
+context_recheck.json reproduces the earlier causal/gradient/independent rollout
+checks. A further preflight also verifies every fit/calibration/validation
+episode has finite strictly past initial context and that the history table
+ends at validation, before fitting. The operating-history assumption and
+extra-capacity caveat above remain. Model-member seeds are not policy seeds;
+date-block intervals describe exploratory reused validation only.

@@ -1,0 +1,87 @@
+{
+  "all_overlapping_generated_files_pass": true,
+  "matching_manifests_identical": true,
+  "original_files_unchanged": true,
+  "files": [
+    {
+      "path": "seed_0/baseline_native.json",
+      "original_sha256": "bdcd37d5ed14568d41ee6d974971688685aba57db24d7bf26f62e837b02eafea",
+      "retry_sha256": "bdcd37d5ed14568d41ee6d974971688685aba57db24d7bf26f62e837b02eafea"
+    },
+    {
+      "path": "seed_0/candidate_native.json",
+      "original_sha256": "fcdf05188a7f077c384d1adda4cca28f1c6a56b6ec494ab0254d83df112c7b66",
+      "retry_sha256": "fcdf05188a7f077c384d1adda4cca28f1c6a56b6ec494ab0254d83df112c7b66"
+    },
+    {
+      "path": "seed_0/query_01.json",
+      "original_sha256": "d623c90d083d1b7e10a0720239d31e85d9e2acf3a969dd30a13370bce01d3300",
+      "retry_sha256": "d623c90d083d1b7e10a0720239d31e85d9e2acf3a969dd30a13370bce01d3300"
+    },
+    {
+      "path": "seed_1/baseline_native.json",
+      "original_sha256": "86268e8f5b64399093c510aeebf087a7d4df14a00e75f37fd3991f1be21b79e8",
+      "retry_sha256": "86268e8f5b64399093c510aeebf087a7d4df14a00e75f37fd3991f1be21b79e8"
+    },
+    {
+      "path": "seed_1/candidate_native.json",
+      "original_sha256": "d5a5d4db0c149f6642f4b9ccfcca36c2e031fc2dc65f2814ceb39185706123ac",
+      "retry_sha256": "d5a5d4db0c149f6642f4b9ccfcca36c2e031fc2dc65f2814ceb39185706123ac"
+    },
+    {
+      "path": "seed_1/query_01.json",
+      "original_sha256": "6767700bf0f5716d719de51dd787b5ad7bb568955f5ece589e0707d1e91f0630",
+      "retry_sha256": "6767700bf0f5716d719de51dd787b5ad7bb568955f5ece589e0707d1e91f0630"
+    },
+    {
+      "path": "seed_2/baseline_native.json",
+      "original_sha256": "f541e599c498f328ab00b39d0ec9912ed77fd7f27ccc03428d34de92cec04546",
+      "retry_sha256": "f541e599c498f328ab00b39d0ec9912ed77fd7f27ccc03428d34de92cec04546"
+    },
+    {
+      "path": "seed_2/candidate_native.json",
+      "original_sha256": "8f5c4172a813ed6814145b2c453997ff406ee9a11907e47cc4f4b091cc096b9d",
+      "retry_sha256": "8f5c4172a813ed6814145b2c453997ff406ee9a11907e47cc4f4b091cc096b9d"
+    },
+    {
+      "path": "seed_2/query_01.json",
+      "original_sha256": "15de115c657e3473c4ba53b0b72fb4f7882f7ab8404ebe73d0b6f82e7ac5299c",
+      "retry_sha256": "15de115c657e3473c4ba53b0b72fb4f7882f7ab8404ebe73d0b6f82e7ac5299c"
+    },
+    {
+      "path": "seed_3/baseline_native.json",
+      "original_sha256": "a1c7b00954838d3c535bc8501ede2a286d48c45b03a131152f061ec423914bc8",
+      "retry_sha256": "a1c7b00954838d3c535bc8501ede2a286d48c45b03a131152f061ec423914bc8"
+    },
+    {
+      "path": "seed_3/candidate_native.json",
+      "original_sha256": "bc4f6a4759d1cbb1b500b4327007468fdaf0e3d513a7fca93b5d70ef4fe72361",
+      "retry_sha256": "bc4f6a4759d1cbb1b500b4327007468fdaf0e3d513a7fca93b5d70ef4fe72361"
+    },
+    {
+      "path": "seed_3/query_01.json",
+      "original_sha256": "7b40f0ab2e9ad7046e047897531dbcaeacf1876d4992871c1e1d0d735d54b1b1",
+      "retry_sha256": "7b40f0ab2e9ad7046e047897531dbcaeacf1876d4992871c1e1d0d735d54b1b1"
+    },
+    {
+      "path": "seed_4/baseline_native.json",
+      "original_sha256": "43011c7023acd68e6a9e60f0d54bf15055af1ecd7c37af9a369df54c294f8ca0",
+      "retry_sha256": "43011c7023acd68e6a9e60f0d54bf15055af1ecd7c37af9a369df54c294f8ca0"
+    },
+    {
+      "path": "seed_4/candidate_native.json",
+      "original_sha256": "d91e28b68a9adc6d1aa896eea4933ae2a1cfc5f1828c43a1ffb984b5528b67de",
+      "retry_sha256": "d91e28b68a9adc6d1aa896eea4933ae2a1cfc5f1828c43a1ffb984b5528b67de"
+    },
+    {
+      "path": "seed_4/query_01.json",
+      "original_sha256": "fd8494092be9bdbb7781ad3f636e698a22d1a308c840777d9bba9e4bc78ae219",
+      "retry_sha256": "fd8494092be9bdbb7781ad3f636e698a22d1a308c840777d9bba9e4bc78ae219"
+    }
+  ],
+  "numeric_values_compared": 144105,
+  "maximum_absolute_numeric_difference": 0.0,
+  "policy_retraining": false,
+  "test_evaluated": false,
+  "scope": "Interruption recovery equivalence only, not a policy improvement or full-result completion claim."
+}

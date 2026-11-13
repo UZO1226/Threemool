@@ -66,8 +66,8 @@ python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow
 ```
 
 All training jobs finish successfully at401280 transitions each. The five
-matched-air evaluations are now running, and no complete performance report
-exists yet. All final/diagnostic checkpoints and training logs are uploaded
+matched-air evaluations also finish after the recovery below. All final and
+diagnostic checkpoints and training logs are uploaded
 to the existing draft release, with remote size/SHA256 verification in
 artifacts.json. The65,810,152-byte archive SHA256 is
 100d1e6e5725a9a7b93cf3fb51fb3fc984d83b2a89ccbe85fa343f637a99af72.
@@ -89,3 +89,27 @@ batch uses source head0882614 and chains the five-seed report on success.
 interruption.json records the recovery. Before accepting a report, verify
 checkpoint replay and compare retained overlapping partial evaluations with
 the replacement. No outcome-based seed or checkpoint selection is allowed.
+
+retry_verification.json passes: the job/source/freeze manifests agree and
+all144105 numeric values in overlapping generated outputs match exactly.
+The original files remain unchanged. All five replacement evaluations finish.
+The full archive in evaluation_artifacts.json includes both completed retry
+outputs and the original interrupted partial outputs, with CRC/file hashes
+and remote size/SHA256 verification. There is no policy retraining.
+
+## Complete five-seed result
+
+All reference-air matches pass1 percent. Mean air is52027.88 versus52020.58m3.
+Cost is24.266875 versus22.464125, paired difference+1.80275 with95 percent
+seed-bootstrap interval[-2.82475,6.78725]. NH4 is24.97171 versus23.20868
+percent, difference+1.76303 points with interval[-3.09224,7.16039]. DO is.57237
+versus.43776 percent, difference+.13461 points with interval[-.16605,.44053].
+All intervals cross zero, and all three quality conditions fail. Neither an
+improvement nor consistent worsening is established. See comparison.json for
+every seed and the native results. Reused validation, five policy seeds and
+the surrogate's weak DO event ranking remain material limitations.
+
+Changing this measured day-end target effect did not establish a better
+controller here. The result does not prove that continuation is always better
+or that every finite-horizon representation must fail. Original criteria and
+final test reservation remain unchanged.

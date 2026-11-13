@@ -6,6 +6,26 @@ reasonable alternatives. No external blocker currently prevents useful work.
 This is an execution snapshot, not a live process monitor. Inspect the actual
 runner/child processes before waiting, restarting or declaring a run stopped.
 
+## Current continuation
+
+e48's recovered five-seed evaluation is complete and fails all three quality
+conditions. Matched cost24.266875, NH4 violation24.97171053 percent and DO
+violation.57236842 percent compare with baseline22.464125,23.20868421 and
+.43776316. All paired intervals cross zero. Recovery verification matches
+all144105 overlapping numeric values exactly. Policies were not retrained;
+interrupted partial outputs and completed retry are archived together.
+
+The next separate forecasting experiment is the previously prepared e41
+long causal operating history. Its new preflight passes finite initial context
+for every fit/calibration/validation episode, exclusion of final test, future
+scrambling, zero-head parent equivalence and full-day Torch/NumPy agreement.
+Keep the e34 control and original selection/gate unchanged. Compare onset,
+ranking, Brier and date uncertainty as well as aggregate error/frequency before
+any adoption decision. e40 remains frozen for historical policy comparisons.
+No automatic environment replacement or policy training follows an e41 point
+gate pass. Extra capacity requires a matched control before a history-specific
+causal claim. The goal remains active with no external blocker.
+
 ## Frozen environment and limits
 
 e40 passes all unchanged e16 point-estimate gates and independent sklearn/full-day
