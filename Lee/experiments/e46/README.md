@@ -86,3 +86,27 @@ artifacts.json. The65,799,004-byte archive SHA256 is
 13a93a5c68fd3726343f1b4cc5cdeafdca1bf8481d52ccf5f595849dc2053617.
 No original data or calibration banks are included. Archive existence does
 not imply improvement and the reserved final test remains unused.
+
+## Complete matched-air result
+
+All five comparisons now finish successfully. Every reference-air match is
+within1 percent. Mean air is52014.09 versus52020.58m3. Cost is24.65 versus
+22.464125, difference+2.185875 with95 percent paired seed-bootstrap interval
+[-2.295875,6.667625]. NH4 is25.64921 versus23.20868 percent, difference
++2.44053 points with interval[-2.20618,7.08724]. DO is.29816 versus.43776
+percent, difference-.13961 points with interval[-.3025,-.01921]. Thus DO's
+condition passes, but total cost and NH4 do not. The full criterion fails.
+Do not describe the DO-only benefit as a complete improvement.
+
+Native mean air increases65136.17 versus52020.58m3, and its paired air
+interval is strictly positive. Lower native cost does not establish a better
+equal-air operating curve. The temperature exposure intervention changes the
+training/PID distribution and does not identify the sole cause of any effect.
+All seed directions, native results and paired intervals are retained in
+comparison.json. Five seeds and repeatedly reused validation do not establish
+real-plant safety or a population confidence guarantee.
+
+Full generated air queries and evaluation cases are remotely verified in
+evaluation_artifacts.json. Final test41 remains unused. e47 next evaluates
+the existing PPO checkpoints at the same FCSRL air as a diagnostic ablation,
+without training or calling PPO a new FCSRL extension.

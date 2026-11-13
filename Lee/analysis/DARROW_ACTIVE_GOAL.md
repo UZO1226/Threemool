@@ -99,15 +99,17 @@ sampling intervention, not evidence of a causal mechanism or novelty. Run its
 real-transition/reset checks and smoke/replay before any full training.
 
 e46 now passes those checks and6080-step smoke/independent1600-case replay.
-All five full seeds complete in results/e46_full, source commit98ad497, with
-the same401280-transition budget. The same shell launches guarded matching
-in results/e46_comparison, initially three workers and seeds3/4 pending.
-e46/comparison.json is written only after all five pairs succeed. Do not
-duplicate this pipeline. Completed weights/logs are remotely verified in
-e46/artifacts.json. Archive presence is not performance evidence. Check the
-actual live evaluation handle before waiting, restarting or claiming completion.
-Next after the full result: inspect all five matched pairs, preserve failures
-and uncertainty, archive generated evaluation rows, then push summaries.
+All five full seeds and matched evaluations complete, and the pipeline exits0.
+e46/comparison.json fails the full criterion: cost24.65 versus22.464125,
+NH4 percentage25.64921 versus23.20868 and DO percentage.29816 versus.43776.
+Only the DO paired interval lies below zero. All reference-air matches pass.
+Weights/logs and complete generated evaluation queries are remotely verified
+in e46/artifacts.json and evaluation_artifacts.json. Do not restart these jobs.
+
+Next: e47 compares the existing five PPO final policies at the same original
+FCSRL air, kind=diagnostic. No fitting or new extension claim is involved.
+This missing matched-air ablation can inform whether another representation
+intervention is justified. Preserve all existing criteria, seeds and failures.
 
 Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
 Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
