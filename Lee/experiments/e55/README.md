@@ -157,6 +157,9 @@ Status: smoke_pipeline.json passes all capture, checkpoint, held-model,
 serialized replay, constant-risk full-day null,152000 fast/sklearn action and
 independent public-feature/choice checks. The unchanged air matcher takes8
 queries and reaches relative air error-.0001811442. No full policy seed is
-complete yet. All five full captured-policy runs and subsequent fixed fits,
-audits and comparisons can now launch through run_study.py. Inspect actual
-handles and generated summaries rather than inferring liveness from this note.
+complete at launch. The complete queued study starts under sourcebdd9c82 in
+results/e55_study: five full captured-policy runs, then unchanged-reference
+equivalence, fixed cost fits, held-stream model audits, matched-air comparisons,
+independent action audits and the unchanged five-seed report. Do not duplicate
+the queued jobs. Inspect actual handles and generated summaries rather than
+inferring liveness from this note. Preserve pinned Python sources for replay.

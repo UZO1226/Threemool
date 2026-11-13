@@ -22,9 +22,14 @@ still active. e55 implements a fixed one-step cost/action correction using
 only the same passively recorded PPO transitions. A6080-step smoke has byte-exact
 original checkpoint/normalizer/representation files and identical native metrics.
 The cost-model public-feature/terminal-label, fast/sklearn probability/logit,
-state/action-order and held-stream reconstruction checks pass. Its full-day
-serialized/null-controller/air-matching smoke is being checked before all five
-401280-step captured-policy re-runs. Extra supervised compute is disclosed; no
+state/action-order and held-stream reconstruction checks pass. Full-day
+serialization/null identity,152000 fast/sklearn action choices and independent
+public-feature/action audits pass. Eight air-only smoke queries match within
+.019 percent. All five401280-step captured-policy jobs launch under source
+bdd9c82 in results/e55_study. The same parent queues unchanged-reference
+equivalence, fixed fitting, model audits, matched-air comparisons, independent
+action audits and the final five-seed report. Do not duplicate these jobs;
+verify live process handles before waiting or restarting. Extra supervised compute is disclosed; no
 extra environment data, favorable seed or changed air criterion creates a gain.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,
