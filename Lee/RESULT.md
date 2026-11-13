@@ -31,6 +31,9 @@ e54는 관측 이력과 같은 크기의 대조군을 각각5개 정책 seed로 
 [전체 실패 결과](experiments/e54/results.md)와 모든 seed를 보존했다.
 [환경 비교 표와 그림](analysis/DARROW_ENVIRONMENT_TRADEOFFS.md)은 정책 결과와
 분리해 환경 예측의 빈도, 확률 오차와 발생 시점 한계를 정리한다.
+[완료한 확장 전체 비교](analysis/DARROW_AGENT_TRIALS.md)는 대조군과 실패를 포함한
+7개 방법의 공통 기준 정책, 공기량, NH4와 DO, 정책 seed별 차이를 함께 보존한다.
+실행 중인 e55는5개 seed 전체 비교가 끝나기 전까지 완료 결과에 넣지 않는다.
 진행 상태와 재개할 작업은 [활성 목표 기록](analysis/DARROW_ACTIVE_GOAL.md)에 정리한다.
 
 고정 환경에서 정책 학습 seed0부터4까지, 각401280개 전이로 분리 예측 기법과
