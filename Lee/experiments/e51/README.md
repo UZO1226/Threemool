@@ -83,6 +83,12 @@ These are model-member pooled diagnostic coverage rates, not independent
 samples or a claim of nominal90-percent coverage. Preserve this limitation
 even if a subsequent frequency gate passes.
 
+support_audit.json and support_results.md quantify the observed-state event
+support limitation on inner30 only, independently of outcome selection. At
+alpha.5,9 of26 actual new DO events have no supporting member, even with
+arbitrary within-support noise. This is not a free-running impossibility
+claim or a new acceptance criterion. It does not change the ongoing search.
+
 ## Preflight implementation correction
 
 The initial preflight assumption that every observed calibration state lies
