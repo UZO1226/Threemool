@@ -133,3 +133,8 @@ process handles before waiting or restarting. The two horizons predict
 different target variables, so lower held MSE across horizons alone does not
 prove a better predictor or controller; compare each against its own controls
 and use the unchanged physical-cost matched-air reports for adoption.
+
+proposal_diagnostic.md records prediction flatness and the fixed penalty's
+effect on held logged-state candidate choices. It adds no simulator label or
+parameter selection. Its risk-only alternatives are not evaluated controllers
+and must not be interpreted as safer actions or evidence for tuning a penalty.
