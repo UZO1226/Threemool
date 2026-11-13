@@ -24,6 +24,8 @@ def main():
     x, target, current, days = [generated[name] for name in ('x', 'target', 'current', 'row_days')]
     assert x.shape == (89300, 18) and target.shape == current.shape == (89300, 2)
     assert np.isfinite(x).all() and np.all(np.abs(x[:, 17]) <= 1)
+    bounds = summary.get('action_bounds', [-1, 1])
+    assert np.all(x[:, 17] >= bounds[0]) and np.all(x[:, 17] <= bounds[1])
     fit, held = summary['fit_days'], summary['held_training_days']
     assert len(fit) == 158 and len(held) == 30 and set(fit).isdisjoint(held)
     np.testing.assert_array_equal(days, np.tile(np.array((fit + held) * 5), 95))
