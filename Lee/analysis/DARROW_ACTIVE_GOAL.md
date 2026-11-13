@@ -135,6 +135,14 @@ pass. A6080-step smoke plus independent replay is launched in results/e48_smoke
 and results/e48_smoke_replay. Inspect that real chain before waiting/restarting.
 Full fitting must wait for a successful smoke and checkpoint replay.
 
+Both e48 smoke and its independent1600-case final-checkpoint replay now pass.
+Five full seeds launch in results/e48_full at source commit3f584a9,401280
+transitions each. One shell chains training, five-worker matched-air evaluation
+in results/e48_comparison and its five-seed report. Do not launch another copy.
+Inspect the live pipeline before waiting or restarting, and preserve its pinned
+training/evaluation Python sources until all jobs finish. The full improvement
+criterion, fixed environment and final test reservation remain unchanged.
+
 ![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
 
 The figure shows all five paired seed differences and each mean/bootstrap

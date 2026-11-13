@@ -44,12 +44,23 @@ Then run a6080-step smoke and independent final-checkpoint replay. Unit/smoke
 results are not full policy performance seeds. Full training must wait for
 those checks. Log source commit and immutable source hashes in the runner.
 
-finite_check.json now passes all specified unit checks. The6080-transition
-smoke and subsequent diagnostic checkpoint replay are launched in
-results/e48_smoke and results/e48_smoke_replay. The shell stops if either
-fails. No full e48 policy seed or performance result exists yet.
+finite_check.json passes all specified unit checks. The6080-transition smoke
+and independent1600-case final-checkpoint replay both complete successfully
+in results/e48_smoke and results/e48_smoke_replay. pipeline_check.json is
+explicitly smoke/diagnostic, not an independent performance seed.
+
+Five full seeds0..4 launch in results/e48_full at implementation commit3f584a9,
+five workers and401280 transitions each, with five diagnostic evaluations.
+The same shell chains guarded final-policy matching in results/e48_comparison
+with five workers, followed by comparison.json only after successful completion.
+No full e48 improvement result exists yet. Do not duplicate the live pipeline.
+The smoke ran at Git head1fd3f20 plus uncommitted sources pinned exactly in
+its manifest. The full runner pins committed e48/common source files; do not
+edit them while it is active.
 
 ```powershell
 python Threemool/Lee/experiments/e48/check_finite.py --out Threemool/Lee/experiments/e48/finite_check.json --checkpoint results/e48_unit_checkpoint
 python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e48/train_finite.py --out results/e48_smoke --steps 6080 --evaluations 1 --parallel 1 --jobs new:ppolag_fcsrl_finite_day:0
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e48/train_finite.py --out results/e48_full --parallel 5 --jobs new:ppolag_fcsrl_finite_day:0 new:ppolag_fcsrl_finite_day:1 new:ppolag_fcsrl_finite_day:2 new:ppolag_fcsrl_finite_day:3 new:ppolag_fcsrl_finite_day:4
+python Threemool/Lee/experiments/e44/run_pair_batch.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-roots results/e48_full/new_ppolag_fcsrl_finite_day --seeds 0 1 2 3 4 --out results/e48_comparison --parallel 5
 ```
