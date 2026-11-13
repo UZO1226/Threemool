@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "policy_seed": 0,
+  "base_training_steps": 401280,
+  "test_evaluated": false,
+  "primary_performance_evaluated": false,
+  "synthetic_conversion_clipping_and_convex_combination_exact": true,
+  "original_nn_observation_unchanged": true,
+  "identity_action_and_dtype_exact": true,
+  "config_roundtrip_exact_and_operation_order_tamper_rejected": true,
+  "identity_offset_reset_terminal_rollout_steps": 190,
+  "primary_executed_air_feedback_rollout_steps": 190,
+  "primary_episode_resets_checked": 6,
+  "full_identity_native_metrics_match_original_tolerance": 1e-10,
+  "base_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "extra_environment_training_steps": 0,
+  "diagnostic_environment_transitions": 153710,
+  "source_sha256": {
+    "air_filter.py": "d0d8e048f5ea22440fccd59a9c008a09b6fbf1425446c1e4613e1ac6035b0539",
+    "check_filter.py": "7f851703d0b734e96fe6128197b16f6c4984a537e73239dfb686024f716189d1"
+  },
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "scope": "Synthetic and training-rollout filter checks, original gain1 native validation replay. No gain.5 validation outcome, new PPO fit or parameter selection."
+}

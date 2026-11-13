@@ -53,11 +53,15 @@ Next e57 prospectively specifies fixed executed-air smoothing, gain.5, of
 exactly the same original five FCSRL policies. This distinct actuator mechanism
 adds no PPO, supervised fit or environment-training sample. Public previous
 air is clipped only for the filter; the original NN observation is unchanged.
-Gain1 is a strict identity null. Verify units/bounds, serialization, real
-executed-air/reset/terminal feedback and full null/native replay before primary
-outcomes. Match air after filtering with the unchanged quality-blind rule,
+Gain1 is a strict identity null. Units/bounds, serialization, actual
+executed-air/reset/terminal feedback and full gain1 native replay now pass in
+preflight.json. Nonzero-offset identity also preserves the original dtype.
+No gain.5 validation performance is evaluated yet. Next implement guarded
+paired comparison and independent primary replay, then all five policy seeds. Match air after filtering with the unchanged quality-blind rule,
 retain all five seeds and the original full criterion. Smaller command changes
-alone are not adoption. The README precedes any e57 implementation or outcome.
+alone are not adoption. The README was committed at390659c before implementation or outcomes.
+No e57 process remains live after the successful preflight; do not assume
+that a full comparison has already launched.
 The goal is active; reasonable alternatives remain and no external blocker
 prevents useful work. Preserve historical sources and never use final test41.
 

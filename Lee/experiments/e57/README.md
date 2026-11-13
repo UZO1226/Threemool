@@ -70,5 +70,13 @@ limitations. No final test, team protocol, Paper or other-member change.
 Preserve all failures and necessary original base/config/log/evaluation
 artifacts without uploading source observations, captures or stochastic banks.
 
-Status: specified after complete e56 verification, before e57 implementation,
-smoke or performance outcomes. No e57 job is running.
+The specification was committed at390659c after complete e56 verification,
+before e57 implementation, smoke or performance outcomes. air_filter.py now
+implements only the fixed gain.5 primary and gain1 identity null. preflight.json
+passes synthetic units/bounds/unchanged-NN-input/dtype/serialization checks,
+190-step identity rollouts with nonzero offset, primary executed-air feedback
+and reset/terminal checks, and original full native gain1 replay. Final base
+files remain unchanged. These diagnostic queries add no training transition.
+No gain.5 validation performance has been evaluated. Next implement the
+source/config-guarded paired comparison and independent replay, then run all
+five seeds with the unchanged matching/quality criterion. No e57 job is live.
