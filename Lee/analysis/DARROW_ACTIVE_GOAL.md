@@ -8,6 +8,14 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e52 implements fixed full-strength safety tail innovations paired with the
+alpha-matched PIT rows. Existing weights and physical clip bounds remain.
+Preflights pass tail signs, zero inside support, zero NO3 tail, calibration
+algebra, independent paired indices for all four blocks, exact zero-tail
+e51 day replay and nonzero-tail common-noise air order. These are implementation
+checks, not generalization evidence. Run the unchanged20-setting search and
+tail-specific independent audit next; do not use the PIT-only auditor.
+
 e51 completes fixed calibration, both audits and its post-primary2x2 diagnostic.
 The original point gate passes5/5 members. NH4/DO frequency16.686842/.963816
 percent is closer to actual17.315789/1.157895, and one-hour NH4 onset matches

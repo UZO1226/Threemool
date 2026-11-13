@@ -65,4 +65,22 @@ environment draft with verified checksums. Source/license, data hashes, units,
 generated-influent and observational-control caveats follow e40/e42. Historical
 policy comparisons remain frozen and final test stays unused.
 
-Status: plan specified after e51's full report, before e52 implementation.
+Status: implementation and initial preflight pass. preflight.json records
+tail signs/support, calibration algebra, zero NO3 tail, all four block samplers
+and exact zero-tail day reconstruction. preflight_air.json additionally checks
+the nonzero-tail common-noise air ordering before the full outcome evaluation.
+The algebraic calibration replay is not a validation performance result.
+
+```powershell
+python Threemool/Lee/experiments/e52/calibrate_tail.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --e51-runs results/e51_blended_pit --preflight-out Threemool/Lee/experiments/e52/preflight_air.json
+python Threemool/Lee/experiments/e52/calibrate_tail.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --e51-runs results/e51_blended_pit --out results/e52_tail_innovation
+python Threemool/Lee/experiments/e52/audit.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e52_tail_innovation --freeze Threemool/Lee/experiments/e42/environment_freeze.json --e51-runs results/e51_blended_pit --out Threemool/Lee/experiments/e52/audit.json
+```
+
+Use fresh output paths when repeating a recorded command. paired_bank.npz
+contains both PIT and tail arrays and is excluded from Git. The tail-specific
+auditor is required; the older PIT-only auditor would omit the new innovation.
+It independently reconstructs sampled indices and a full sklearn day, verifies
+the entire zero-tail e51 validation replay, and compares all fixed references.
+Statistics pooling calibration members refer to14250 member rows from2850
+actual transitions, not14250 independent observations or new policy seeds.
