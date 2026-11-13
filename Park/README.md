@@ -4,7 +4,7 @@
 
 | 위치 | 내용 |
 | --- | --- |
-| `analysis/` | 논문 분석 노트 |
+| `analysis/` | 논문 분석 노트. 최신 정리는 [e12 ~ e27 정리](analysis/e12_e27_정리.md) |
 | `code/` | 구현 코드 (FCSRL 재현, 환경, 확장 기법) |
 | `experiments/<실험ID>/README.md` | 실험 기록. 실험 ID 는 e01, e02 처럼 이 폴더 안에서 겹치지 않게 붙인다 |
 | `RESULT.md` | 결과 비교용 요약 |
