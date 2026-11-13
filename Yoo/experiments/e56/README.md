@@ -1,6 +1,6 @@
 # e56: 고정 모방 prior 사용 여부 대조
 
-**2026-11-13 09:40 KST 본 학습 시작.** prior-off PPO/FCSRL 각 seed5개, 총10개를 3개씩 병렬 실행 중이다. 아직 최종 결과는 없다. [고정 조건](protocol.json).
+**2026-11-13 09:40 KST 본 학습 시작, 10:02 GPU1 전환 실행 시작.** prior-off PPO/FCSRL 각 seed5개, 총10개다. 먼저 돌던 3개는 보존하고 대기 7개만 CPU1 수집/FCSRL GPU1 갱신으로 넘겼다. 최종 결과는 아직 없으며 현재 전체 상태는 `main_hybrid/status.json`에서 확인한다. [전환 검증과 장치별 해석 제한](HYBRID.md). [고정 조건](protocol.json).
 
 ## 질문과 단일 변경
 
@@ -50,7 +50,7 @@
 
 ## 실행과 기록
 
-기존 환경 `/home/jio/fcsrl_src/.venv-skl191`을 사용하고 PyTorch를 변경하지 않는다. 서버의 다른 작업을 고려해 3개만 병렬 실행하며 각 작업은 CPU1스레드다. 학습 중 현재 갱신과 잔여 시간은 각 `progress.json`과 tqdm 로그에 저장하고, 10개가 끝나면 자동으로 표를 만든다.
+기존 환경 `/home/jio/fcsrl_src/.venv-skl191`을 사용하고 PyTorch를 변경하지 않는다. 서버의 다른 작업을 고려해 기존 작업을 포함하여 동시 학습 3개만 실행한다. **정정:** 원 실행은 `DeviceConfig`가 PyTorch 스레드를 4로 다시 설정했다. 신규 backend는 CPU1을 명시적으로 검사하고 FCSRL 갱신에만 GPU1을 사용한다. 학습 중 현재 갱신과 잔여 시간은 각 `progress.json`과 tqdm 로그에 저장하고, 10개가 끝나면 자동으로 표를 만든다.
 
 ```bash
 cd /home/jio/threemool-prior-ablation
@@ -60,5 +60,5 @@ export OMP_NUM_THREADS=1 OMP_WAIT_POLICY=PASSIVE OPENBLAS_NUM_THREADS=1 MKL_NUM_
 ```
 
 사전 검사: `/home/jio/fcsrl_src/results/e56/preflight/`.
-본 실행: `/home/jio/fcsrl_src/results/e56/main/`. 실행 커밋 `a173e3b`, tmux 세션 `yoo-e56`. 09:40 기준 사전 검사 속도와 3개 병렬 대기열을 고려한 종료 추정은 11:10~11:40 KST이며 서버 부하에 따라 달라진다.
-실행 커밋과 입력/소스 해시, 정확한 시작/종료 시각은 본 실행 manifest에 남긴다. `status.json`이 전체 진행, 각 `runs/<method>/seed_<n>/progress.json`이 개별 진행이다. 완료 후 같은 루트에 `summary.json`과 `results.md`를 자동 생성한다.
+원 실행: `/home/jio/fcsrl_src/results/e56/main/`, 커밋 `a173e3b`. **현재 실행:** `/home/jio/fcsrl_src/results/e56/main_hybrid/`, 커밋 `670ccd3`, tmux 세션 `yoo-e56-hybrid`. 기존 3개는 원 경로를 가리킨다. 기존 배차는 추가 작업을 시작하지 않으며 원 학습이 모두 끝나면 종료한다. 10:03 기준 종료 추정은 11:10~11:30 KST이며 서버 부하에 따라 달라진다.
+위 명령은 원 CPU 실행의 재현용이다. 현재 이관 실행의 조건과 명령은 [HYBRID.md](HYBRID.md)를 따른다. 실행 커밋과 입력/소스 해시, 정확한 시작/종료 시각은 각 manifest에 남긴다. `status.json`이 전체 진행, 각 `runs/<method>/seed_<n>/progress.json`이 개별 진행이다. 완료 후 같은 루트에 `summary.json`과 `results.md`를 자동 생성한다.
