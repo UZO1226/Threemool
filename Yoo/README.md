@@ -25,6 +25,7 @@
 | e52~e54 NH4 여유 | 불확실성 여유, 고정 여유, 날짜 분할 여유를 비교했다. 안전과 공기량의 교환관계가 남아 전체 개선으로 미채택. 이 계열의 추가 강도 탐색은 중단 | [e52](experiments/e52/README.md), [e53 검산](experiments/e52/margin_audit/README.md), [e54](experiments/e54/README.md) |
 | e59 Park 차단 적용 | 기존 정책에 Park 의 최소 개입 차단을 실행 시점에만 걸면 모든 정책의 NH4 비용이 바닥 (3.1 ~ 3.4) 으로 내려가 교환선 아래로 이동. 차단 아래 정책 기여는 DO 와 공기의 교환 | [e59](experiments/e59/README.md) |
 | e60 학습 중 차단 | PPO-Lag 79,360 / 4.81. 정책 없는 모델 제어기보다 공기와 비용 모두 낮은 seed 4/5. Park 단일 정책 대표 대비 3/5. 승수 0, 차단 의존 | [e60](experiments/e60/README.md) |
+| e61 학습 한도 2.0 | 승수 5/5 seed 결속 (약 0.2), 학습 비용 2.48 에서 2.36. PPO-Lag 78,902 / 4.75 로 평균은 조금 낮지만 e60 대비 짝 개선 2/5, FCSRL 1/5. 개선 없음 | [e61](experiments/e61/README.md) |
 
 ### 최신 정책 결과: e52 대 e54
 
