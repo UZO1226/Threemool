@@ -1,6 +1,6 @@
 # e56: 고정 모방 prior 사용 여부 대조
 
-2026-11-13 사전 검사 완료, 본 실행 준비. 본 실행 상태와 확인 시각은 아래에 갱신한다. [고정 조건](protocol.json).
+**2026-11-13 09:40 KST 본 학습 시작.** prior-off PPO/FCSRL 각 seed5개, 총10개를 3개씩 병렬 실행 중이다. 아직 최종 결과는 없다. [고정 조건](protocol.json).
 
 ## 질문과 단일 변경
 
@@ -60,5 +60,5 @@ export OMP_NUM_THREADS=1 OMP_WAIT_POLICY=PASSIVE OPENBLAS_NUM_THREADS=1 MKL_NUM_
 ```
 
 사전 검사: `/home/jio/fcsrl_src/results/e56/preflight/`.
-본 실행 예정: `/home/jio/fcsrl_src/results/e56/main/`.
+본 실행: `/home/jio/fcsrl_src/results/e56/main/`. 실행 커밋 `a173e3b`, tmux 세션 `yoo-e56`. 09:40 기준 사전 검사 속도와 3개 병렬 대기열을 고려한 종료 추정은 11:10~11:40 KST이며 서버 부하에 따라 달라진다.
 실행 커밋과 입력/소스 해시, 정확한 시작/종료 시각은 본 실행 manifest에 남긴다. `status.json`이 전체 진행, 각 `runs/<method>/seed_<n>/progress.json`이 개별 진행이다. 완료 후 같은 루트에 `summary.json`과 `results.md`를 자동 생성한다.
