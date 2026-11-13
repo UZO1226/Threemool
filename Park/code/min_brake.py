@@ -42,6 +42,11 @@ conflict=m (Park/e19, trim=True 와 함께) 이면 NH4 여유와 DO 가 부딪�
 공기량에서 예측 DO > do_limit 이면, 여유를 모든 sigma 칸에서 m 으로 둔 필요 공기량 (conflict_recover=True 이면 회복
 검사도 함께, 정책 공기량 이상) 과 원래 공기량 사이에서 예측 DO <= do_limit 인 가장 큰 격자 값으로 내린다. 없으면 그대로다.
 conflict_steps 에 내린 횟수를 센다
+
+Park/e27 정책 앙상블 의견 차이 차단. EnsemblePolicy 는 구성원 행동을 평균하고, 구성원 공기량의 표준편차 (Nm3/h) 를
+spread 에 남긴다. DisagreementBrake 는 그 값으로 에피소드마다 NH4 여유를 더하거나 뺀다 (extra). spread >= hi 이면
+여유 + up (의견이 갈리면 조심), spread <= lo 이면 여유 - down (의견이 같으면 공기를 덜 올리고 더 내린다), 그 사이는 0.
+extra 는 margins 가 쓰이는 모든 곳 (기본 필요 공기량, conflict 의 줄인 여유) 에 더한다
 """
 import numpy as np
 
@@ -70,6 +75,7 @@ class MinAirBrake:
         assert self.recover is None or self.recover[0] >= 2, 'recover 의 H 는 2 이상'
         self.conflict, self.conflict_recover, self.conflict_steps = conflict, bool(conflict_recover), 0
         assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
+        self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -106,8 +112,8 @@ class MinAirBrake:
                 worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
         return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
 
-    def _adaptive_ok(self, obs, env):
-        """격자 후보마다 mu + 여유(sigma) <= NH4_MAX 인지 (N, K)."""
+    def _adaptive_ok(self, obs, env, rows=None):
+        """격자 후보마다 mu + 여유(sigma) + extra <= NH4_MAX 인지 (N, K). rows 는 extra 에서 고를 에피소드."""
         t, N, K = env.t, len(obs), len(self.grid)
         rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
         state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
@@ -122,6 +128,8 @@ class MinAirBrake:
         margin = np.full(len(mu), self.margins[-1][1])
         for upper, m in reversed(self.margins):
             margin = np.where(sigma < upper, m, margin)
+        if self.extra is not None:
+            margin = margin + rep(self.extra if rows is None else self.extra[rows])
         return (mu + margin <= NH4_MAX).reshape(N, K)
 
     def _recover_air(self, obs, env):
@@ -208,7 +216,7 @@ class MinAirBrake:
             return air
         sub, full = _Rows(env, c), self.margins
         self.margins = [(u, float(self.conflict)) for u, _ in full]
-        ok = self._adaptive_ok(obs[c], sub)
+        ok = self._adaptive_ok(obs[c], sub, rows=c)
         self.margins = full
         relaxed = np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], air[c])
         if self.conflict_recover and self.recover is not None:
@@ -237,6 +245,35 @@ class MinAirBrake:
         self.lowered_steps += int((air < policy_air - 1e-9).sum())
         self.steps += len(air)
         return np.where(used, air_to_action(air), a), used
+
+
+class EnsemblePolicy:
+    """구성원 행동 평균 (Park/e20 ~ e23 과 같음). 마지막 호출의 구성원 공기량 표준편차를 spread 에 남긴다 (Park/e27)."""
+
+    def __init__(self, act_fns):
+        self.act_fns, self.spread = list(act_fns), None
+
+    def __call__(self, obs):
+        acts = np.stack([np.asarray(f(obs), dtype=float).reshape(len(obs)) for f in self.act_fns])
+        self.spread = action_to_air(acts).std(axis=0)
+        return acts.mean(axis=0)
+
+
+class DisagreementBrake:
+    """앙상블 의견 차이로 MinAirBrake 의 NH4 여유를 바꾼다 (Park/e27). policy 는 같은 스텝에 먼저 불린 EnsemblePolicy."""
+
+    def __init__(self, brake, policy, lo, hi, up, down):
+        self.brake, self.policy = brake, policy
+        self.lo, self.hi, self.up, self.down = float(lo), float(hi), float(up), float(down)
+        self.high_steps = self.low_steps = 0
+
+    def __call__(self, obs, a, env):
+        d = self.policy.spread
+        high, low = d >= self.hi, d <= self.lo
+        self.high_steps += int(high.sum())
+        self.low_steps += int(low.sum())
+        self.brake.extra = np.where(high, self.up, np.where(low, -self.down, 0.0))
+        return self.brake(obs, a, env)
 
 
 class _Rows:
