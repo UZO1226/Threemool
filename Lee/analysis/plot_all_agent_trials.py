@@ -19,6 +19,8 @@ TRIALS = [
     ('Previous observation', 'ppolag_fcsrl_history', 'e54/history_comparison.json'),
     ('Repeated-current control', 'ppolag_fcsrl_repeated', 'e54/repeated_comparison.json'),
     ('One-step correction', 'ppolag_fcsrl_one_step_correction', 'e55/comparison.json'),
+    ('Four-step rate correction', 'ppolag_fcsrl_rate_h4', 'e56/h4_comparison.json'),
+    ('One-step regression control', 'ppolag_fcsrl_rate_h1', 'e56/h1_comparison.json'),
 ]
 KEYS = ('cost', 'nh4_viol_pct', 'do_viol_pct')
 
@@ -28,10 +30,7 @@ def load_reports():
     for name, method, relative in TRIALS:
         path = ROOT / 'experiments' / relative
         if not path.exists():
-            if not relative.startswith('e55/'):
-                raise FileNotFoundError(f'Previously completed trial is missing: {path}')
-            pending.append(name)
-            continue
+            raise FileNotFoundError(f'Previously completed trial is missing: {path}')
         report = json.loads(path.read_text())
         assert report['candidate_method'] == method and report['baseline_method'] == 'ppolag_fcsrl'
         assert report['policy_seeds'] == list(range(5)) and not report['test_evaluated']

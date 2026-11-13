@@ -304,9 +304,12 @@ rate regressor with a matching one-step regression control. Both use the same
 five original401280-step policies and captured e55 streams, with first52
 updates for fitting and last14 for diagnostics. No new PPO run or environment
 training transition is added. Regressor seeds5600/5601 are not policy seeds.
-The full source0054e89 study in results/e56_study is already queued; inspect
-its actual process before starting anything. This recipe is not a completion
-claim or an instruction to duplicate that live study.
+The full source0054e89 study in results/e56_study completes all ten controllers,
+held audits, native/matched comparisons, independent action audits, both reports
+and the horizon contrast. Neither horizon passes the complete original-FCSRL
+criterion. The primary's cost/NH4 benefit relative to its regression control
+does not establish superiority over original FCSRL. Preserve these failed
+components and the separate DO benefit. No e56 job remains queued.
 
 The full command is in the e56 README. Its smokes deliberately fit update1 and
 diagnose update2 of a full-budget base policy. They must not be mistaken for
@@ -331,8 +334,11 @@ Results-relative e55_study/e56_study paths allow restoration under results.
 Original observations, captured arrays and stochastic banks are excluded.
 The [incomplete-study guard check](rate_artifact_guard_check.json) confirms that
 a live incomplete study is rejected without writing an archive or index.
-Actual final archive CRC, file hashes, exclusions and remote digest still
-require verification when the study finishes.
+The [completed artifact index](../experiments/e56/artifacts.json) verifies
+lee-e56-rate-correction.zip,15,403,571 bytes, in policy draft443333191,
+asset743519310. Archive/internal CRC and file hashes, source-array exclusions
+and remote size/SHA256 all verify. This archive preserves failures and partial
+effects; it does not mean that the primary was adopted.
 
 For relocated source paths, the [rate-controller adapter](replay_rate_portable.py)
 maps both the inherited base-policy loader and the new regressor loader to

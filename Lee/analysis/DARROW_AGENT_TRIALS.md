@@ -16,6 +16,8 @@ All methods use policy seeds0..4 and401280 transitions per seed, the same frozen
 | [Previous observation](../experiments/e54/history_comparison.json) | 23.627375 | 24.378289 | 0.492632 | [0.174750,2.239000] | [0.099342,2.490395] | [-0.133947,0.250395] | Fail |
 | [Repeated-current control](../experiments/e54/repeated_comparison.json) | 22.150750 | 22.857368 | 0.459211 | [-4.941375,4.892500] | [-5.312237,5.402763] | [-0.455789,0.578816] | Fail |
 | [One-step correction](../experiments/e55/comparison.json) | 22.323750 | 23.141184 | 0.357500 | [-0.250625,-0.030125] | [-0.215000,0.110526] | [-0.163947,-0.022368] | Fail |
+| [Four-step rate correction](../experiments/e56/h4_comparison.json) | 22.422125 | 23.242500 | 0.359737 | [-0.103375,0.011875] | [-0.054474,0.156447] | [-0.151974,-0.028289] | Fail |
+| [One-step regression control](../experiments/e56/h1_comparison.json) | 22.503000 | 23.321053 | 0.366316 | [-0.043750,0.163750] | [0.016842,0.291184] | [-0.123158,-0.031579] | Fail |
 
 Differences are candidate minus its paired FCSRL reference; negative quality differences favor the candidate. NH4/DO intervals use percentage points. Cost is the95-step sum of the two violation indicators, not electricity or money. The complete criterion requires cost and NH4 upper endpoints below zero, DO upper endpoint at most zero and all five air matches.
 
@@ -35,5 +37,7 @@ Pending registered reports: none. No partial seed or smoke outcome is inserted a
 - Previous observation, e54/history_comparison.json, SHA256 9febcb63de23fb4182b5e1f7866d0a3681bb4cdb50ca17df382a60a198c255a0
 - Repeated-current control, e54/repeated_comparison.json, SHA256 f6e372eac3df65d5fd18781df1318dc726c9766021ff42faaa39183041e8afe8
 - One-step correction, e55/comparison.json, SHA256 de7705e507d53c9ca7f451268b0b3dddd3609b9fb69085a3a110412cfa8f81de
+- Four-step rate correction, e56/h4_comparison.json, SHA256 94b95c0c31ae9e32ac8083027d98587326436ab337c4dcd6535ad925bcce997f
+- One-step regression control, e56/h1_comparison.json, SHA256 9051a5c3ec9dee75279a2e5395580a32e23db4edbf312c2a01d85cf1d122efbc
 
 Regenerate with Lee/analysis/plot_all_agent_trials.py. All inputs are compact generated summaries; no source observations, stochastic banks or final test metrics are read.

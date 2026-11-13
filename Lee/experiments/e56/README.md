@@ -127,9 +127,14 @@ results are not yet complete. No original e55 Python source is edited.
 
 The complete study launches under source0054e89 in results/e56_study. All ten
 full regressor fits finish and pass their real-data fast/sklearn and order
-checks. Held-error audits and subsequent queued comparisons/actions/reports
-remain in progress. Preserve the pinned Python sources and inspect actual
-process handles before waiting or restarting. The two horizons predict
+checks. All held audits, comparisons, independent action audits, both full
+reports and the secondary contrast now finish. Neither horizon passes the
+complete original-FCSRL improvement criterion. Primary horizon4 improves DO
+only; its cost/NH4 intervals cross zero. It improves cost/NH4 versus the
+matching regression control, but this does not establish original-FCSRL
+superiority or the complete horizon-specific criterion. results.md preserves
+all failures and partial effects. No e56 job remains queued. Preserve the
+pinned Python sources for replay. The two horizons predict
 different target variables, so lower held MSE across horizons alone does not
 prove a better predictor or controller; compare each against its own controls
 and use the unchanged physical-cost matched-air reports for adoption.
@@ -138,3 +143,10 @@ proposal_diagnostic.md records prediction flatness and the fixed penalty's
 effect on held logged-state candidate choices. It adds no simulator label or
 parameter selection. Its risk-only alternatives are not evaluated controllers
 and must not be interpreted as safer actions or evidence for tuning a penalty.
+
+artifacts.json verifies the combined15,403,571-byte archive in policy draft
+443333191, asset743519310, SHA256
+072be5a2fef3b64c52e447166e07d65bc9d797cc746a3590d3b4442537f3ece1.
+It preserves both fitted horizons, full logs, every generated evaluation and
+audit, final reports, source manifests and the five unchanged final base
+checkpoints. Original data, captures and stochastic banks are excluded.

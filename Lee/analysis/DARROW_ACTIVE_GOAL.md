@@ -32,28 +32,34 @@ The complete e55 archive is remotely size/SHA verified in draft443333191,
 asset743367629. It preserves checkpoints, correction models, logs, generated
 native/matched/all-query outputs and audits while excluding source data,
 captured training arrays and stochastic banks. No e55 job remains queued.
-All eight completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
+All ten completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
 Known e40 DO onset/ranking, reused-validation and plant-model limitations remain.
 
-Next e56 prospectively specifies a four-step cost-rate target and matching
-one-step regression control, reusing the same five exact original policies
-and captured training streams with no new environment-training transitions.
-The longer horizon is a hypothesis for slower NH4 consequences, not an
-established cause. Do not substitute a favorable control if the primary fails.
-Its README is fixed before e56 outcomes. Target checks pass on all original
-2,006,400 transitions. Synthetic regression and two real small-data smoke fits
-pass, including both held-error reconstructions, serialized native replays,
-fixed-air matching,152000 independent action choices per horizon and a full-day
-constant-rate null. These use update1/2 and the full seed0 base policy, not
-full regressor trials. The e56 source-pinned batch launches under source0054e89 in results/e56_study.
-All ten fixed-horizon regressor fits finish with exact fast/sklearn agreement
-and zero tested coordinate-order violation. The same parent runs14-update
-held audits, then ten native/matched pairs, independent action audits and both
-five-seed reports plus the primary/control contrast. Do not duplicate the
-queued jobs or edit pinned Python sources. Inspect actual process handles
-before waiting or restarting. No full controller conclusion is available yet.
+e56 completes its entire source0054e89 pipeline, including twenty rate
+regressors, ten held audits, ten native/matched comparisons, ten independent
+action audits, both five-seed reports and the same-base/capture horizon contrast.
+Primary horizon4 cost22.422125 has difference interval[-.103375,.011875] and
+NH4 difference+.033816 points has interval[-.054474,.156447], both failing.
+DO difference-.078026 has interval[-.151974,-.028289], a partial benefit.
+The horizon1 regression control also fails, with unfavorable NH4 interval.
+Horizon4 improves cost/NH4 versus that control but not versus original FCSRL;
+its secondary DO interval crosses zero, so no complete horizon-specific benefit.
+The complete15,403,571-byte archive is remotely size/SHA verified in policy
+draft443333191, asset743519310. No e56 job remains queued. All pinned original
+sources and every failure remain preserved. Proposal geometry is exploratory
+held-state evidence, not safer counterfactual actions or a reason to tune gains.
+
+Next e57 prospectively specifies fixed executed-air smoothing, gain.5, of
+exactly the same original five FCSRL policies. This distinct actuator mechanism
+adds no PPO, supervised fit or environment-training sample. Public previous
+air is clipped only for the filter; the original NN observation is unchanged.
+Gain1 is a strict identity null. Verify units/bounds, serialization, real
+executed-air/reset/terminal feedback and full null/native replay before primary
+outcomes. Match air after filtering with the unchanged quality-blind rule,
+retain all five seeds and the original full criterion. Smaller command changes
+alone are not adoption. The README precedes any e57 implementation or outcome.
 The goal is active; reasonable alternatives remain and no external blocker
-prevents meaningful work. Preserve all pinned historical Python sources.
+prevents useful work. Preserve historical sources and never use final test41.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,
 independent native replay and real air-matching checks all passed before full
