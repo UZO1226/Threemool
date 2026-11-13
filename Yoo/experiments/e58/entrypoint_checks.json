@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "code_commit": "540aaa842ec226ce30af6488f41ccb55afdc7563",
+  "source": "/home/jio/fcsrl_src/results/e58/smoke",
+  "steps": 6080,
+  "val_episodes": 200,
+  "train_episodes": 940,
+  "elapsed_seconds": 39.17761801904999,
+  "normalizer_and_prior_frozen": true,
+  "test_evaluated": false,
+  "checkpoint_roundtrip": "asserted by train_severity.py",
+  "source_hashes_unchanged": "asserted at entry and exit"
+}
