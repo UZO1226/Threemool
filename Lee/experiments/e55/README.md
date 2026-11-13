@@ -170,8 +170,11 @@ records and all five original native evaluation records per seed. Both cost
 models per seed finish using316160 fitting and85120 held transitions. Independent
 held-stream audits pass for all seeds; fast logits are exact, probability error
 is at most2.23e-16 and tested coordinate-order violation is zero. The full native
-and matched-air corrected-controller comparisons are running. Predictive AP,
-source parity and held-data checks do not establish an agent improvement.
+and matched-air comparisons and all independent action audits finish. Same-air
+cost and DO intervals are below zero, but the NH4 interval crosses zero, so the
+complete criterion fails. comparison.json and results.md preserve this partial
+benefit and failed full criterion. No e55 job remains queued. Predictive AP,
+source parity and held-data checks do not establish a complete improvement.
 Regenerate this compact check from the workspace using
 Threemool/Lee/analysis/summarize_correction_training.py
 with --study results/e55_study, --baselines results/e42_baselines/new_ppolag_fcsrl

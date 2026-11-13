@@ -1,6 +1,6 @@
 # Active DARROW research goal
 
-The goal remains active. No agent extension improvement over FCSRL is verified.
+The goal remains active. No extension passes the complete predefined criterion.
 Previous environment failures and the negative first policy pair do not exhaust
 reasonable alternatives. No external blocker currently prevents useful work.
 This is an execution snapshot, not a live process monitor. Inspect the actual
@@ -17,24 +17,34 @@ quality intervals cross zero, as do history-minus-repeated contrasts. Preserve
 all failures and four verified artifact indexes. No process remains queued.
 
 The separate environment summary/figure records why frequency improvement is
-not complete safety prediction: DARROW_ENVIRONMENT_TRADEOFFS.md. The goal is
-still active. e55 implements a fixed one-step cost/action correction using
-only the same passively recorded PPO transitions. A6080-step smoke has byte-exact
-original checkpoint/normalizer/representation files and identical native metrics.
-The cost-model public-feature/terminal-label, fast/sklearn probability/logit,
-state/action-order and held-stream reconstruction checks pass. Full-day
-serialization/null identity,152000 fast/sklearn action choices and independent
-public-feature/action audits pass. Eight air-only smoke queries match within
-.019 percent. All five401280-step captured-policy jobs finish under source
-bdd9c82 in results/e55_study. Full final files,66 training records and five
-original native evaluations per seed exactly match the original references.
-All five fixed cost fits and independent held-stream audits pass. Each fit
-uses316160 training transitions and85120 held transitions, with no extra
-environment training sample. The same parent now runs corrected native and
-matched-air comparisons, then independent action audits and the final five-seed
-report. Do not duplicate these jobs; verify live process handles before waiting
-or restarting. Extra supervised compute is disclosed; no
-extra environment data, favorable seed or changed air criterion creates a gain.
+not complete safety prediction: DARROW_ENVIRONMENT_TRADEOFFS.md. e55 now
+finishes the entire sourcebdd9c82 study: five401280-step unchanged base policies,
+full original file/66-update/five-native-evaluation parity, fixed cost fits,
+held-stream audits, matched-air comparisons and independent action audits.
+Every air match and native/serialized/action-choice guard passes. Same-air
+cost22.323750 versus22.464125 has difference interval[-.250625,-.030125].
+DO difference-.080263 percentage points has interval[-.163947,-.022368].
+NH4 difference-.067500 has interval[-.215000,.110526], failing its required
+upper endpoint. Preserve this partial benefit and complete-criterion failure.
+No favorable seed, threshold or revised criterion rescues the trial.
+
+The complete e55 archive is remotely size/SHA verified in draft443333191,
+asset743367629. It preserves checkpoints, correction models, logs, generated
+native/matched/all-query outputs and audits while excluding source data,
+captured training arrays and stochastic banks. No e55 job remains queued.
+All eight completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
+Known e40 DO onset/ranking, reused-validation and plant-model limitations remain.
+
+Next e56 prospectively specifies a four-step cost-rate target and matching
+one-step regression control, reusing the same five exact original policies
+and captured training streams with no new environment-training transitions.
+The longer horizon is a hypothesis for slower NH4 consequences, not an
+established cause. Do not substitute a favorable control if the primary fails.
+Its README is specified before any e56 labels, fitting or outcomes. Implement
+and independently verify day/lane/update/split-safe targets, numeric inference,
+null-controller identity and fixed candidate choice before fitting/evaluation.
+The goal is active; reasonable alternatives remain and no external blocker
+prevents meaningful work. Preserve all pinned historical Python sources.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,
 independent native replay and real air-matching checks all passed before full

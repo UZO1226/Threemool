@@ -266,7 +266,13 @@ package_correction_artifacts.py only after the entire study completes. It
 preserves all five base policies, correction models, logs, diagnostic/source
 manifests and generated comparisons, with file/archive hashes and the original
 FCSRL license. It explicitly excludes captures, source observations and banks.
-No e55 full-result archive is claimed merely because this recipe exists.
+The completed [e55 artifact index](../experiments/e55/artifacts.json) verifies
+lee-e55-one-step-correction.zip in policy draft443333191, asset743367629.
+It includes all five base checkpoints and fitted risk-model pickles, source
+manifests, complete logs and all generated evaluations/audits. Original data,
+captured arrays and stochastic banks are excluded. All five comparisons finish;
+cost and DO components improve, but NH4 uncertainty makes the complete
+criterion fail. Preserve this partial result rather than calling it adoption.
 
 Historical e55 loaders verify recorded source paths. On a relocated checkout,
 use the [portable source adapter](replay_correction_portable.py) to resolve

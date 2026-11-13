@@ -15,6 +15,7 @@ All methods use policy seeds0..4 and401280 transitions per seed, the same frozen
 | [Daily auxiliary target](../experiments/e48/comparison.json) | 24.266875 | 24.971711 | 0.572368 | [-2.824750,6.787250] | [-3.092237,7.160395] | [-0.166053,0.440526] | Fail |
 | [Previous observation](../experiments/e54/history_comparison.json) | 23.627375 | 24.378289 | 0.492632 | [0.174750,2.239000] | [0.099342,2.490395] | [-0.133947,0.250395] | Fail |
 | [Repeated-current control](../experiments/e54/repeated_comparison.json) | 22.150750 | 22.857368 | 0.459211 | [-4.941375,4.892500] | [-5.312237,5.402763] | [-0.455789,0.578816] | Fail |
+| [One-step correction](../experiments/e55/comparison.json) | 22.323750 | 23.141184 | 0.357500 | [-0.250625,-0.030125] | [-0.215000,0.110526] | [-0.163947,-0.022368] | Fail |
 
 Differences are candidate minus its paired FCSRL reference; negative quality differences favor the candidate. NH4/DO intervals use percentage points. Cost is the95-step sum of the two violation indicators, not electricity or money. The complete criterion requires cost and NH4 upper endpoints below zero, DO upper endpoint at most zero and all five air matches.
 
@@ -22,7 +23,7 @@ Intervals use10000 paired policy-seed resamples. Model members, noise draws, dat
 
 Native metrics, all air-only queries, sample SDs and seed values remain in the linked full reports/artifact indexes. The plot does not replace their source/checkpoint/replay guards. The e47 PPO diagnostic is documented separately because it is not a new FCSRL extension.
 
-Pending registered reports: One-step correction. No partial seed or smoke outcome is inserted as a complete result.
+Pending registered reports: none. No partial seed or smoke outcome is inserted as a complete result.
 
 ## Report checksums
 
@@ -33,5 +34,6 @@ Pending registered reports: One-step correction. No partial seed or smoke outcom
 - Daily auxiliary target, e48/comparison.json, SHA256 32e80e0afa21b4c13dd40d02998744e4d113f4f5e52ae47c56b52aa144747fa7
 - Previous observation, e54/history_comparison.json, SHA256 9febcb63de23fb4182b5e1f7866d0a3681bb4cdb50ca17df382a60a198c255a0
 - Repeated-current control, e54/repeated_comparison.json, SHA256 f6e372eac3df65d5fd18781df1318dc726c9766021ff42faaa39183041e8afe8
+- One-step correction, e55/comparison.json, SHA256 de7705e507d53c9ca7f451268b0b3dddd3609b9fb69085a3a110412cfa8f81de
 
 Regenerate with Lee/analysis/plot_all_agent_trials.py. All inputs are compact generated summaries; no source observations, stochastic banks or final test metrics are read.
