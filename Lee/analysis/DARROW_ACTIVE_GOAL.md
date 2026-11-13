@@ -8,6 +8,15 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e50 implements one fixed50/50 observed/exposed-state refit of e40 safety quantiles.
+Its preflight passes zero-change array reconstruction, true initial states,
+future-concentration scrambling invariance and finite/capped training inputs.
+Exposure uses158 fitting dates, deterministic median rollouts and no PIT bank
+values or later labels. Original105 fits, constraints, inner20 settings and
+adoption gate remain. Run the independent full-day and event audits after fit.
+No model adoption or policy training is automatic. See e50/README.md for the
+supervision-validity and effective-leaf-support caveats.
+
 e49's next-step diagnostic completes20 fixed classifier fits, both report
 splits and independent prediction/metric reconstruction. NH4 current-state
 information is useful: observed-e40 Brier.028417 versus daily free.126486,
