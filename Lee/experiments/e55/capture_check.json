@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "identical_physical_steps": 190,
+  "transitions": 1520,
+  "completed_episodes": 16,
+  "rng_unchanged": true,
+  "terminal_labels_exact": true,
+  "constant_risk_null_action_identity": true,
+  "scope": "capture and constant-risk actions only; not full training or learned predictor",
+  "runtime_sources": {
+    "capture_env.py": "62baa4aac54194c903c21e0de435848d328cd55ff6b4de2cafc67b3e5ae1e099",
+    "cost_model.py": "becb625243ab925f3ba1b4dd9be8c4fe8185ad36fa785cda55fa08d5882dae56",
+    "check_capture.py": "60a6f70d86b547d99988f9c98b44fe07425558f66b87f28aa55a71f3d0baa43a"
+  }
+}
