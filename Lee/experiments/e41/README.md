@@ -1,5 +1,9 @@
 # Lee/e41: Longer causal operating history
 
+Status: all five model members, unchanged gate, independent reconstruction and
+fixed event audit are complete. The adoption gate fails. See results.md and
+the compact JSON reports. No controller is trained on this candidate.
+
 ## Hypothesis and paired control
 
 e34's local/full-day joint model still underpredicts NH4 violations. Its initial

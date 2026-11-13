@@ -8,6 +8,20 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e41 now completes all five model members and both audits. It fails the original
+adoption gate: NH4 frequency9.14145 versus17.31579 percent and DO2.55592 versus
+1.15789 percent. NH4 Brier is not clearly better than e34, and all25 DO onsets
+remain missed within an hour. Independent reconstruction and action ordering
+pass; no implementation fault was identified by these checks. Results and
+remotely verified checkpoint/log artifacts are in e41. e40 is not replaced.
+
+Next, separate next-step event learnability from accumulated forecast drift.
+Use fitting dates only for a diagnostic event predictor, preserve calibration
+and validation separation, compare current-state persistence, and explicitly
+distinguish observed-state prediction from free-running simulation. This is
+a diagnostic hypothesis, not an adopted probability model or policy result.
+No external blocker prevents this next useful action.
+
 e48's recovered five-seed evaluation is complete and fails all three quality
 conditions. Matched cost24.266875, NH4 violation24.97171053 percent and DO
 violation.57236842 percent compare with baseline22.464125,23.20868421 and
@@ -15,7 +29,7 @@ violation.57236842 percent compare with baseline22.464125,23.20868421 and
 all144105 overlapping numeric values exactly. Policies were not retrained;
 interrupted partial outputs and completed retry are archived together.
 
-The next separate forecasting experiment is the previously prepared e41
+The separate forecasting experiment launched was the previously prepared e41
 long causal operating history. Its new preflight passes finite initial context
 for every fit/calibration/validation episode, exclusion of final test, future
 scrambling, zero-head parent equivalence and full-day Torch/NumPy agreement.
@@ -46,8 +60,8 @@ not establish accurate onset prediction or real-plant causal safety.
 
 The bands show point-frequency criteria only. Member ranges are not confidence
 intervals and do not establish agent improvement. Failed e16 to e39 experiments
-remain in their experiment folders and archived checkpoints/logs. e41 is a
-prepared causal-history alternative with unit checks, not a fitted result.
+remain in their experiment folders and archived checkpoints/logs. e41's causal
+history alternative is now fitted and fails adoption; its full audit is retained.
 
 ## Completed work
 
