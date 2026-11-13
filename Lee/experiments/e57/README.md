@@ -77,6 +77,23 @@ passes synthetic units/bounds/unchanged-NN-input/dtype/serialization checks,
 190-step identity rollouts with nonzero offset, primary executed-air feedback
 and reset/terminal checks, and original full native gain1 replay. Final base
 files remain unchanged. These diagnostic queries add no training transition.
-No gain.5 validation performance has been evaluated. Next implement the
-source/config-guarded paired comparison and independent replay, then run all
-five seeds with the unchanged matching/quality criterion. No e57 job is live.
+The source/config-guarded comparison and independent formula replay are now
+implemented. A seed0 native-only verification under source81a9772 passes
+original native replay, serialized primary replay, executed-volume accounting
+and152000 independently rebuilt gain.5 actions. pipeline_check.json excludes
+this smoke from adoption and explicitly records that matching is not exercised
+there. Actual nonzero-offset/reset/terminal feedback is checked in preflight;
+the unchanged common air matcher is pinned for the full study.
+
+From the workspace, run the full fixed five-policy-seed study with:
+
+```powershell
+python Threemool/Lee/experiments/e57/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --policies results/e55_study/policies/new_ppolag_fcsrl --baselines results/e42_baselines/new_ppolag_fcsrl --out results/e57_study
+```
+
+The runner preserves all source hashes/logs and queues five actual matched-air
+comparisons, then independent native and matched executed-feedback replays and
+the unchanged e44 five-seed report. No gain search, NN learning or supervised
+fit is added. Native and matched command variation is descriptive and cannot
+replace the original cost/NH4/DO criterion. Do not duplicate live queued jobs
+or edit their pinned Python sources. Full results are not complete yet.
