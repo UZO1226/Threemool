@@ -14,6 +14,7 @@ p=argparse.ArgumentParser()
 p.add_argument('--pairs',type=Path,nargs='+',required=True)
 p.add_argument('--out',type=Path,required=True)
 p.add_argument('--index',type=Path,required=True)
+p.add_argument('--interrupted-roots',type=Path,nargs='*',default=[])
 a=p.parse_args()
 if a.out.exists():raise FileExistsError(a.out)
 pairs=[json.loads(path.read_text()) for path in a.pairs]
@@ -30,11 +31,24 @@ for path,pair in zip(a.pairs,pairs):
     if log.exists():files[f'seed_{seed}/runner.log']=log
     manifest=path.parent.parent/'manifest.json'
     if manifest.exists():files[f'seed_{seed}/run_manifest.json']=manifest
+interrupted=[]
+for number,root in enumerate(a.interrupted_roots):
+    assert not list(root.glob('seed_*/summary.json')),'Use completed seed pairs for finished evaluations'
+    retained=[]
+    for item in sorted(root.rglob('*')):
+        if item.is_file():
+            assert item.suffix in ('.json','.log'),f'Unexpected partial evaluation file: {item}'
+            name=f'interrupted_{number}/{item.relative_to(root).as_posix()}'
+            files[name]=item;retained.append(name)
+    assert retained
+    interrupted.append({'root':str(root),'files':retained,
+        'scope':'Retained incomplete outputs. Their old running status is not a liveness claim.'})
 metadata={'source_data_included':False,'residual_banks_included':False,
     'pit_banks_included':False,'new_policy_training':False,
     'scope':'Generated frozen-surrogate evaluation rows and all air-only queries. Not source plant data.',
     'policy_seeds':report['policy_seeds'],'candidate_method':report['candidate_method'],
     'meets_prespecified_simulation_criterion':report['meets_prespecified_simulation_criterion'],
+    'interrupted_outputs':interrupted,
     'files':{name:{'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
         for name,path in sorted(files.items())}}
 a.out.parent.mkdir(parents=True,exist_ok=True)

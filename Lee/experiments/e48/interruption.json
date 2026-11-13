@@ -1,0 +1,17 @@
+{
+  "original_evaluation": "results/e48_comparison",
+  "original_tool_handle_missing": true,
+  "original_live_evaluation_python_processes_found": 0,
+  "original_seed_summaries_present": [],
+  "status_file_was_stale_running": true,
+  "cause": "Not established. Observation was interrupted, then the original handle was missing and no matching Python process remained. Some old PIDs belonged to unrelated processes and were not acted on.",
+  "partial_outputs_preserved": true,
+  "policy_retraining": false,
+  "source_or_frozen_input_change": false,
+  "matching_rule_or_criterion_change": false,
+  "resume_output": "results/e48_comparison_retry",
+  "resume_policy_seeds": [0, 1, 2, 3, 4],
+  "resume_source_head": "0882614",
+  "required_followup": "Verify native checkpoint replay and compare retained overlapping partial evaluations with the retry before accepting its full report.",
+  "test_evaluated": false
+}

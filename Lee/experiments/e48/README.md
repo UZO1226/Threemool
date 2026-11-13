@@ -73,3 +73,19 @@ artifacts.json. The65,810,152-byte archive SHA256 is
 100d1e6e5725a9a7b93cf3fb51fb3fc984d83b2a89ccbe85fa343f637a99af72.
 Original data and stochastic calibration banks are excluded. Archive presence
 is not evidence that the new auxiliary objective improves the policy.
+
+## Interrupted evaluation recovery
+
+The initial evaluation tool handle disappears after an interrupted observation.
+An actual process query finds no e48 evaluation Python jobs; some recorded PIDs
+now belong to unrelated processes. The old status.json still says running and
+is not evidence of liveness. No seed summary exists in that partial folder.
+The interruption cause is not established. Those files/logs remain untouched.
+
+Only evaluation restarts in results/e48_comparison_retry, with the same five
+completed policies, frozen inputs, seeds, air selector, cases and criterion.
+No policy is retrained and no unrelated process is stopped. The replacement
+batch uses source head0882614 and chains the five-seed report on success.
+interruption.json records the recovery. Before accepting a report, verify
+checkpoint replay and compare retained overlapping partial evaluations with
+the replacement. No outcome-based seed or checkpoint selection is allowed.

@@ -146,6 +146,14 @@ restarting, and preserve its pinned training/evaluation Python sources until
 all jobs finish. The full criterion, fixed environment and final test
 reservation remain unchanged. No e48 performance improvement is established.
 
+The original e48 evaluation is subsequently verified stopped: its tool handle
+is missing, no matching Python jobs remain, and its recorded PIDs are stale.
+There are no completed seed summaries. Keep results/e48_comparison untouched.
+Evaluation only restarts in results/e48_comparison_retry, same policies/inputs
+and criteria, source head0882614, five workers and chained report. No training
+is repeated. See e48/interruption.json. Inspect the replacement batch, not the
+old handle/PIDs, and compare overlapping partial outputs before accepting it.
+
 ![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
 
 The figure shows all five paired seed differences and each mean/bootstrap
