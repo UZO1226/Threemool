@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "test_evaluated": false,
+  "full_policy_seeds_completed": [],
+  "initial_collector_mean_cost_equal": {
+    "baseline": 7.15625,
+    "history": 7.15625,
+    "repeated": 7.15625
+  },
+  "variants": {
+    "baseline": {
+      "native_replay_passed": true,
+      "checkpoint_hashes_exact": true,
+      "steps": 6080
+    },
+    "history": {
+      "native_replay_passed": true,
+      "checkpoint_hashes_exact": true,
+      "steps": 6080,
+      "new_actor_columns_learned_max": 0.016978170722723007,
+      "new_encoder_columns_learned_max": 0.02035883255302906,
+      "air_matching_smoke_passed": true,
+      "air_only_callback_queries": 9,
+      "relative_air_error": 0.0005116330330670219
+    },
+    "repeated": {
+      "native_replay_passed": true,
+      "checkpoint_hashes_exact": true,
+      "steps": 6080,
+      "new_actor_columns_learned_max": 0.013778486289083958,
+      "new_encoder_columns_learned_max": 0.019015856087207794,
+      "air_matching_smoke_passed": true,
+      "air_only_callback_queries": 10,
+      "relative_air_error": 6.0758074171887894e-05
+    }
+  },
+  "scope": "Pipeline checks only. One6080-step smoke per method is not an extension performance result."
+}

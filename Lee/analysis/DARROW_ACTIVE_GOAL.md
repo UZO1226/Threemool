@@ -8,6 +8,15 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e54's original baseline/history/repeated6080-step smokes and all three
+independent native replays pass. Both real air-matching smokes pass; actual
+new actor/encoder columns learn. pipeline_check.json and baseline_reuse_check.json
+record the evidence, with all five original401280-step baseline source/budget/
+config/checkpoint loads valid. No performance claim follows from the smokes.
+Launch ten full jobs in results/e54_full, five policy seeds per variant, then
+both matched-air reports and the secondary common-reference contrast. Preserve
+all Python sources pinned by run manifests while those jobs are active.
+
 e54 now implements17-input history/repeated-current agents and scoped collector/
 evaluation adapters without modifying historical/common sources. preflight.json
 passes bitwise initial action/value/encoder equivalence, RNG, gradients,

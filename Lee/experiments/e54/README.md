@@ -96,12 +96,18 @@ log archives in the existing verified draft. Record original FCSRL commit
 d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache license and all modified paths.
 The active goal continues through full comparison and diagnosis if it fails.
 
-Status: implementation and preflight pass, before policy training. preflight.json
+Status: implementation, preflight and all three6080-step smokes pass. preflight.json
 records exact initial actor/value/encoder outputs and RNG, both new-column
 gradients, optimizer references, frozen encoder, first11 normalizer statistics,
 serialization, scoped-global restoration and190 paired environment steps per
 mode. Both variants have406755 trainable parameters. Historical files stay
-unchanged. The comparison uses e44's existing matcher and five-seed report;
+unchanged. pipeline_check.json confirms all saved-policy native replays,
+learned new columns and both air-only matching smokes. Initial collector mean
+cost is7.15625 for all three methods. History/repeated air errors are.05116
+and.00608 percent, with9/10 callbacks. These are pipeline results, not method
+performance. baseline_reuse_check.json validates all five existing full-budget
+baseline loads; each final comparison still independently checks native replay.
+The comparison uses e44's existing matcher and five-seed report;
 history_contrast.py adds the secondary same-reference contrast.
 
 ```powershell
@@ -114,3 +120,16 @@ smoke with native_replay.py and allow-smoke, then compare both variants with
 compare.py at the same6080-step original smoke baseline. Do not modify pinned
 Python sources while those batches or future full policy batches run. Keep
 smoke results separate from the401280-step five-seed performance reports.
+
+The smoke implementation commit is915fe38. Full training runs both variants
+from fresh initialization, without warm-starting smoke checkpoints:
+
+```powershell
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --trainer Threemool/Lee/experiments/e54/train_history.py --out results/e54_full --jobs new:ppolag_fcsrl_history:0 new:ppolag_fcsrl_history:1 new:ppolag_fcsrl_history:2 new:ppolag_fcsrl_history:3 new:ppolag_fcsrl_history:4 new:ppolag_fcsrl_repeated:0 new:ppolag_fcsrl_repeated:1 new:ppolag_fcsrl_repeated:2 new:ppolag_fcsrl_repeated:3 new:ppolag_fcsrl_repeated:4 --parallel 5 --steps 400000 --evaluations 5
+python Threemool/Lee/experiments/e54/run_comparisons.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-root results/e54_full/new_ppolag_fcsrl_history --seeds 0 1 2 3 4 --out results/e54_history_comparison --parallel 5
+python Threemool/Lee/experiments/e54/run_comparisons.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline-root results/e42_baselines/new_ppolag_fcsrl --candidate-root results/e54_full/new_ppolag_fcsrl_repeated --seeds 0 1 2 3 4 --out results/e54_repeated_comparison --parallel 5
+```
+
+After all completed pairs, use e44/report.py for each variant and
+history_contrast.py for the secondary comparison. Do not summarize smokes as
+five full seeds or stop a variant because its first seed looks unfavorable.
