@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "policy_seeds": [
+    {
+      "policy_seed": 0,
+      "transitions_checked": 401280,
+      "fit_updates": 52,
+      "held_updates": 14,
+      "independent_explicit_updates": [
+        1,
+        52,
+        53,
+        66
+      ]
+    },
+    {
+      "policy_seed": 1,
+      "transitions_checked": 401280,
+      "fit_updates": 52,
+      "held_updates": 14,
+      "independent_explicit_updates": [
+        1,
+        52,
+        53,
+        66
+      ]
+    },
+    {
+      "policy_seed": 2,
+      "transitions_checked": 401280,
+      "fit_updates": 52,
+      "held_updates": 14,
+      "independent_explicit_updates": [
+        1,
+        52,
+        53,
+        66
+      ]
+    },
+    {
+      "policy_seed": 3,
+      "transitions_checked": 401280,
+      "fit_updates": 52,
+      "held_updates": 14,
+      "independent_explicit_updates": [
+        1,
+        52,
+        53,
+        66
+      ]
+    },
+    {
+      "policy_seed": 4,
+      "transitions_checked": 401280,
+      "fit_updates": 52,
+      "held_updates": 14,
+      "independent_explicit_updates": [
+        1,
+        52,
+        53,
+        66
+      ]
+    }
+  ],
+  "test_evaluated": false,
+  "horizon1_exact_cost_identity": true,
+  "horizon4_explicit_sums_exact": true,
+  "terminal_partial_windows_correct": true,
+  "reset_future_perturbation_excluded": true,
+  "constant_targets_correct": true,
+  "public_current_features_exact_no3_retained": true,
+  "source_sha256": {
+    "targets.py": "51286d96f6f597380ae087653f1ddff3e2a3e40a7ee6120a1775fc3e72d33053",
+    "check_targets.py": "9775d9dc5405d8315c50fa55d3ab6b34751c5a28b3ab6177cdd62c52941bc9eb"
+  },
+  "scope": "Target construction on the original captured training streams only. No regressor fitting, validation/controller outcome or claim of horizon improvement."
+}

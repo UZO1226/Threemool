@@ -89,5 +89,12 @@ confirmation from these exploratory comparisons. Captures and original data
 remain outside Git and archives; fitted controller models/logs and reproducible
 source/summary hashes belong in the authorized draft artifacts.
 
-Status: specified after complete e55 verification and before any e56 label
-generation, fitting, smoke or performance outcome. No e56 job has started.
+The specification was committed atc94654d after complete e55 verification and
+before any e56 label generation, fitting, smoke or performance outcome.
+target_check.json now passes on all2,006,400 original captured transitions.
+Horizon1 equals recorded costs exactly; horizon4 matches independent explicit
+sums on updates1/52/53/66 per seed, including terminal partial windows and
+reset/future perturbation exclusion. Public inputs retain current NO3 exactly.
+No regressor fit or controller performance outcome has been generated yet.
+Next implement and verify bounded regression inference, serialization and the
+null/candidate controller, then run both fixed horizons for all policy seeds.
