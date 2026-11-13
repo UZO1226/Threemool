@@ -1,6 +1,6 @@
 # e58: 연속 NH4 초과 크기 보조 표현 학습
 
-**본 학습 전 검사 완료, 실행 준비.** 사용자는 팀과 겹치는 실험을 피하되 새 아이디어는 실행하도록 지시했다. Lee/Park 문서 대조와 원 논문 방법 검토를 끝냈다. [중복 검토](../../analysis/TEAM_EXPERIMENT_REVIEW_20261113.md), [논문과 구현 대응](LITERATURE.md), [고정 조건](protocol.json).
+**2026-11-13 12:06:40 KST 본 학습 시작.** 세 조건 각5seed, 총15개를 동시3개씩 실행한다. 아직 최종 성능 결과는 없다. 사용자는 팀과 겹치는 실험을 피하되 새 아이디어는 실행하도록 지시했다. Lee/Park 문서 대조와 원 논문 방법 검토를 끝냈다. [중복 검토](../../analysis/TEAM_EXPERIMENT_REVIEW_20261113.md), [논문과 구현 대응](LITERATURE.md), [고정 조건](protocol.json).
 
 ## 질문과 변경 범위
 
@@ -50,3 +50,7 @@ export CUDA_VISIBLE_DEVICES=1 CUBLAS_WORKSPACE_CONFIG=:4096:8
 첫 검사에서는 유효 창 비율의 float32 값을92/95와 비트 단위로 비교해 실패했다. 창 개수/인덱스는 맞았으며 검사 허용오차만1e-7로 고쳐 전부 다시 검사했다. 원 실패 경로도 보존했다. 학습 목표나 성능 조건을 바꾼 수정은 아니다.
 
 실제 학습 진입점도 severity seed0, 1갱신6,080전이, 마지막 정책 저장/복원과 개발200/학습940 에피소드 평가까지39.22초에 완료했다. [진입점 검사](entrypoint_checks.json). 이는 본66갱신 결과에 포함하지 않는다. 보고서의 동일값 거절, 공기량 악화 교환관계 거절, 세 지표와 tail 개선 통과를 인공 결과로 검사했다. [집계 검사](report_checks.json).
+
+## 본 실행 상태
+
+실행 커밋 `d4b068c`, `/home/jio/fcsrl_src/results/e58/main/`, supervisor `/home/jio/fcsrl_src/results/e58/supervisor.log`, tmux `yoo-e58-severity`. 12:06:40 KST에 baseline/severity/detached seed0을 시작했고 나머지12개는 대기한다. 원 코드/데이터 해시는 manifest에 고정했으며 완료 시 다시 검사한다. 문서 이후 상태는 runtime의 status/progress를 확인한다.
