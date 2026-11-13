@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "checks": {
+    "target_boundary": true,
+    "balanced_loss": true,
+    "same_initial_weights_and_rng": true,
+    "original_collection_exact": true,
+    "detached_full_update_matches_baseline": true,
+    "severity_changes_encoder": true,
+    "checkpoint_roundtrip": true,
+    "next_update_resume_exact": true,
+    "hashes_unchanged": true
+  },
+  "collection": {
+    "member": 4,
+    "daily_cost_mean": 11.953125,
+    "raw_action_clip_percent": 2.368421052631579,
+    "reward_mean": -0.4517782926559448,
+    "severity_valid_fraction": 0.9684210419654846,
+    "severity_target_mean": 0.0502934604883194,
+    "severity_positive_fraction": 0.09799592391304347
+  },
+  "updates": {
+    "baseline": {
+      "info": {
+        "encoder_sync_kl": 2.669228706508875e-06,
+        "encoder_dynamics": -0.7948596078902483,
+        "encoder_pred_feasi": 1.7291122903426488,
+        "encoder_pred_feasi_MSE": 0.17157653570175171,
+        "encoder": 1.331682485838731,
+        "kl": 0.010510130319744349,
+        "pi_epochs": 10,
+        "std": 0.1987767070531845
+      },
+      "diagnostics": {},
+      "seconds": 3.537934487918392
+    },
+    "severity": {
+      "info": {
+        "encoder_sync_kl": 1.993379555642605e-06,
+        "encoder_dynamics": -0.7881297902514537,
+        "encoder_pred_feasi": 1.746883108218511,
+        "encoder_pred_feasi_MSE": 0.17041754891785482,
+        "encoder": 1.3811914642651877,
+        "original_encoder_loss": 1.3528182099262873,
+        "severity_mse": 0.028373255460367848,
+        "kl": 0.010510130319744349,
+        "pi_epochs": 10,
+        "std": 0.1987767070531845
+      },
+      "diagnostics": {
+        "aux_gradient_norm_ratio": 0.18433690071105957,
+        "aux_gradient_cosine": -0.04785489663481712
+      },
+      "seconds": 2.9949958950746804
+    },
+    "detached": {
+      "info": {
+        "encoder_sync_kl": 2.669228706508875e-06,
+        "encoder_dynamics": -0.7948596078902483,
+        "encoder_pred_feasi": 1.7291122903426488,
+        "encoder_pred_feasi_MSE": 0.17157653570175171,
+        "encoder": 1.4484050785501799,
+        "original_encoder_loss": 1.331682485838731,
+        "severity_mse": 0.1167225878064831,
+        "kl": 0.010510130319744349,
+        "pi_epochs": 10,
+        "std": 0.1987767070531845
+      },
+      "diagnostics": {
+        "aux_gradient_norm_ratio": 0.0,
+        "aux_gradient_cosine": 0.0
+      },
+      "seconds": 3.1461372720077634
+    }
+  },
+  "hashes": {
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/agent/base.py": "780b53d3836fe55154a3efedda76a6467fe1abbf9fc69f5002efa5d2bd25cddb",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/agent/td3_lag_repr.py": "1c3c89edd7bc31cd391923c9daa2d9bc64cb23780e64a9b776bfa0f0b010aa48",
+    "/home/jio/threemool-severity-auxiliary/Yoo/code/wwtp/ppo_fcsrl.py": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/trainer/offpolicy.py": "4a12c9d76189ac45a30c231b862de4b0dca85fdf7100eb038ec3241fcf1e7fcf",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/trainer/onpolicy.py": "0c8415bd0330712ff4b59683c26cf709c8ab5714b2ab672b4d7bcbb6b8062b72",
+    "/home/jio/threemool-severity-auxiliary/Yoo/code/wwtp/ppo_lag.py": "7636d777f89ac26504193f496d489a3b91970faeac23b8ab6f28da0d58393fab",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/noise.py": "443c1f9bba8c87a542ab4666509bec5a59ff64443d00210dce486748d0bfb6da",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/trainer/utils.py": "7c00ff68556c45c20636b48f6115050e45a864abc028fd6b2f71dd9aa517268b",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e45/evaluate.py": "81e473f522cee45737d7b54853f2859f28b8c90c267dd8665014a4108c0c82da",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e56/train.py": "f672617821933112526fe8a26ff6cfc9400e8c748331989ca058ab96a9512e53",
+    "/home/jio/fcsrl_src/results/e50/prepared/normalizer.json": "c8e8281d1a2cf28c1503f69cac4579dec8a83c0473a8b157b2daeebdd71658cf",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e30/darrow_env.py": "dfd47aa9e596ff92c774665b357e6a09a76b3b66648b2631a38e03590b9aa97a",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/network/representation.py": "e3ac1ac9cfc8e7c2225908b3f184c637f9db1b96965c651d9a36a6b08d44f0f6",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e25/preserve.py": "d3567756f82a62a752dfd675392e5ce8e141ee775c70f1bbeaa0fa10da745f8b",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/severity.py": "73051dede774d107d6f7548c2626db473e638957b8547cc765deaa7fd15b11d9",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/agent/ppo_lag_repr.py": "795fcb5c3bf7ce20a02c72777d9516e183036ee1f774c133f76ce16b853b5bdf",
+    "/home/jio/fcsrl_src/results/e50/prepared/surrogate.pkl": "9fdee8ff0443b79644ca38de022591f3484ef5b918fe9cf89bd1ea34f1750f0b",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/report.py": "e1f4ae05b78b552bccb5602aa6f4346dff4c2abb3eab208a0fd525f2604fc988",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/run.py": "4ff262108dc9e241d13b9ef3fe6f0641e402abb802f5eeb1c12452e56b86aaf0",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/normalizer.py": "a22eba6cb028637cc8e1c297806713852247863c43813b2a852439f4ae5f1eb1",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/network/__init__.py": "26cbd15a1e8814fccac4724165c63adc5465ecd942a0c7fea3375cf914a7eacd",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e33/dual.py": "ef3dbe5dee0b77ef7ed7f9b11a8b97afef576fb0de0b6ddbef148d1c17ffc526",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/agent/td3_lag_repr_vision.py": "4da52d2d5dabaccc6e39e570217dea301c17c5c0fb821b19c643a4b6cfac1690",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/env/multienv.py": "26ccae4e2efc742259a225a4be54cf49ce8cb2a9cc3605fc83a37fadcbbaab80",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/misc.py": "6e060ec54c5d59020dd81f98e2243f1af86ddd35b7508c0a439a2c788a47c749",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/data/collector.py": "00eb0ed02cfcd339a630922ba501e738a2ec1de3732a48c2c673921f55465f1a",
+    "/home/jio/threemool-severity-auxiliary/Yoo/code/wwtp/env.py": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/__init__.py": "cad431c65c0174dec81fed06a5689c45111f34fd9f4dff50b6c8f9dfe6358277",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/network/continuous.py": "9f19408b3ea672a95b7cefb9c8b8cae27953e379991220036a356c851bc76790",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e29/ablation.py": "8ee3bc04d400a8f63e4f53bfa186b711046d3bdbbb99d448f4c3b488e3c03bf5",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/env/__init__.py": "7fad14a3e0a06afb11c606d0cd3a237cc33a5594aee852ad71b6aadac9e11b77",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/__init__.py": "b0c4640a796d7093cacfa673dc1c0f82818df2a8aa08fc7f6b89998aba22acfc",
+    "/home/jio/threemool-severity-auxiliary/Yoo/code/wwtp/ppo_config.py": "f1f6b5b6f6d58a6d43b06c8a69e3a8a5b26d48ac89b02d28bf9f784d89a0c3b9",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e30/common.py": "63b24868374e38d98adb56d8660cceb2487eb569d2aeceb47a302bbe6504844f",
+    "/home/jio/fcsrl_src/results/e50/prepared/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/data/__init__.py": "b362cb9b8363dc1be5cdf0c8f1389de065404469337cf79411f5f3bc9cf7206f",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/network/utils.py": "b56d873d8384cc14d4c2b76fecb248ce8d356f0fb9ee915779546bf7801e754f",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e44/command.py": "d656bc72fadeda3c075337b3ed73074a55a553ec363a7f2600790f0d6ac6fb8a",
+    "/home/jio/fcsrl_src/results/e50/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/config.py": "8be4a07a234eb3ca791f1df6d08ac4220eb6b1c1be5ea56778901d9bcd01d438",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/train_severity.py": "efb62f517a5a9525368bb8196f09afa239e65d249b5d478d19014bce07f4584a",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/env/gym_utils.py": "3db32bc9f7bea2aa435ce229b936cfb2070ece8f04f1c4de9a8ac483948c0908",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/protocol.json": "53aa2975c9433a465b633b468ebb32b823a9d87460203c98f2bbc2f4bd0d8916",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/agent/__init__.py": "503b2d70754de1133886c93668eb5fd949b35069623ab028e80b90dba45e590d",
+    "/home/jio/threemool-severity-auxiliary/Yoo/code/wwtp/surrogate.py": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/env/utils.py": "b6453ecf20d15dd71d3e07acbae712ebccf6903a9616dce410bf2d4d2066d17d",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e23/behavior.py": "84479718ce15703bda28ebb6d6449da5c726156d010a01b5dc220463dc2722ca",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e56/hybrid.py": "4b49afa86374702a4095fa7ebeadbfe8f158b0549e8e8e1b04ac0efd7c0d0f0a",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/trainer/__init__.py": "4063ac75581a004437d920ef8aab631cedcdede65a965ff2864b6a127694eb18",
+    "/home/jio/threemool-severity-auxiliary/Yoo/experiments/e58/check.py": "adf6768e7b8532f7f5411a5a0136f36468047e434dd7bffba594a8b2ef6c312b",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/data/batch.py": "730299d9c4e01f50efe352cec5e8685791325f8017959ef586148f90dfd8bec2",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/data/replay.py": "07fefe8416101d952784c12a996302d2c9428fb4b73b24504dfbbe0db0e32f15",
+    "/home/jio/fcsrl_src/FCSRL/fcsrl/utils/solver.py": "da6b79fa26af3d66a759f448815443b2844695ae447ba667bf7f28a3788855b4"
+  },
+  "elapsed_seconds": 58.84793970710598,
+  "code_commit": "540aaa842ec226ce30af6488f41ccb55afdc7563",
+  "test_evaluated": false
+}
