@@ -229,3 +229,64 @@ policies and all five matched-air comparisons, failing the full improvement
 criterion. Its interrupted evaluation outputs remain archived; the retry
 matches all144105 overlapping numeric values exactly without retraining.
 Inspect actual processes before inferring whether a recorded run is active.
+
+## e55 unchanged-policy one-step correction
+
+The fixed specification predates outcomes at921e865. The complete implementation
+and smoke pipeline are committed atbdd9c82. See the [e55 recipe](../experiments/e55/README.md)
+and [smoke evidence](../experiments/e55/smoke_pipeline.json). The latter verifies
+only one6080-transition policy, not five full-policy outcomes.
+
+From the workspace root, with the pinned threemool Python environment and one
+OMP, OPENBLAS, MKL and NUMBA thread per process, the complete command is:
+
+```powershell
+python Threemool/Lee/experiments/e55/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baselines results/e42_baselines/new_ppolag_fcsrl --out results/e55_study
+```
+
+This exact study is already queued. Inspect its live process and study_status.json
+before doing anything; do not duplicate it. It keeps all five original11-input
+PPO/FCSRL policies and budgets, passively records their existing transitions,
+requires exact original checkpoint/config identity, fits NH4/DO cost classifiers
+on the first52 updates and diagnoses the last14. Classifier seeds5500/5501 are
+not additional policy seeds. Every final controller is evaluated natively,
+after quality-blind air matching, and through an independent action audit.
+The original e44 five-policy-seed bootstrap criterion remains unchanged.
+
+Generated captures are stored in each policy's transitions directory and are
+excluded from Git and archives. Their file hashes stay in fit_summary.json.
+To recreate them, re-run the same original collector with train_stream.py;
+the full base-equivalence check must pass before interpreting fitted models.
+Neither held training metrics nor validation outcomes select correction
+parameters. The extra supervised fitting and evaluation compute is recorded.
+
+Artifacts must include both model_final and correction/risk_models.pkl. The
+older policy-only packager silently omits pickle files, so use the dedicated
+package_correction_artifacts.py only after the entire study completes. It
+preserves all five base policies, correction models, logs, diagnostic/source
+manifests and generated comparisons, with file/archive hashes and the original
+FCSRL license. It explicitly excludes captures, source observations and banks.
+No e55 full-result archive is claimed merely because this recipe exists.
+
+Historical e55 loaders verify recorded source paths. On a relocated checkout,
+use the [portable source adapter](replay_correction_portable.py) to resolve
+historical names to the actual current repository files while preserving exact
+hashes. Do not edit stored manifests or relax the original guard. For example,
+after restoring a completed study and its matching reference artifacts:
+
+```powershell
+python Threemool/Lee/analysis/replay_correction_portable.py --operation compare --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --correction results/e55_study/policies/new_ppolag_fcsrl/seed_0/correction --out results/e55_relocated_replay/seed_0
+```
+
+The new output path must not already exist. --operation action-audit exposes
+the corresponding original independent action audit. Each operation writes
+separate adapter provenance. Original source, checkpoint, configuration,
+budget, freeze and native replay checks remain required. Replaying controllers
+does not require captured training arrays; rechecking held fitting diagnostics
+does require regenerating those excluded captures. Final test41 stays unused.
+
+[The adapter check](portable_correction_check.json) covers synthetic missing
+historical paths, an existing stale checkout, rejection of changed hashes and
+repository traversal, plus exact152000-action smoke-audit replay. This is a
+Windows reproduction check, not a full-budget performance result or evidence
+that every operating system has been tested.

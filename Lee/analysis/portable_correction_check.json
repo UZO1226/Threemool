@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "adapter_sha256": "ede44ad4106dc37e145436e41e0490cb752c58a70e8620df75833c86679292e4",
+  "missing_historical_path_resolved": true,
+  "existing_stale_checkout_ignored": true,
+  "changed_hash_rejected": true,
+  "repository_traversal_rejected": true,
+  "verified_runtime_source_records": 63,
+  "smoke_full_day_action_audit_exact": true,
+  "checked_action_rows": 152000,
+  "smoke_only": true,
+  "test_evaluated": false,
+  "original_runtime_sources_modified": false,
+  "scope": "Windows source-resolution and unchanged audit replay. No claim of full-budget policy success or testing on every operating system."
+}
