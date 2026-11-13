@@ -1,0 +1,545 @@
+{
+  "protocol": {
+    "question": "Does removing the frozen imitation prior improve PPO/FCSRL control in the same e50 environment?",
+    "interpretation": "Ablation of the additive prior throughout training, not only initialization; no behavior imitation penalty existed in e50.",
+    "prepared": "/home/jio/fcsrl_src/results/e50/prepared",
+    "baseline": "/home/jio/fcsrl_src/results/e50/main",
+    "baseline_audit": "/home/jio/fcsrl_src/results/e50_e52_audit_20261112/e50",
+    "methods": [
+      "ppo",
+      "fcsrl"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "updates": 66,
+    "steps": 401280,
+    "selection": "last",
+    "initial_log_std": -1.6,
+    "cost": "NH4>4 plus max(DO)>2 counts, sum limit12; e50 conditions, not e54 limits6/6",
+    "prior_off": "Load the same prior network and zero its final layer without consuming RNG; keep actor/critic/encoder initialization and optimizer unchanged. Initial action mean0 corresponds to4500m3/h.",
+    "primary": "Paired off-minus-on air_m3, nh4_cost, do_cost for each method separately",
+    "secondary": [
+      "NH4 excess integral",
+      "DO excess integral",
+      "worst day NH4/DO",
+      "seed mean cost<=12",
+      "lambda and clipping"
+    ],
+    "exploratory_joint_screen": "All three primary means strictly decrease; at least4/5 seeds have all three nonincreasing; both mean excess integrals and mean worst-day NH4/DO do not increase; number of cost-feasible seeds does not decrease. Numerical equality tolerances: air0.001m3, costs1e-9, integrals1e-8. No official adoption from this screen alone.",
+    "reuse_baseline": "Verify input hashes and shared training sources against e50; prior-on seed0 first2 updates must reproduce original logs for PPO and FCSRL before main launch.",
+    "test_evaluated": false,
+    "repeated_development_val": true,
+    "no_tuning_after_results": true
+  },
+  "methods": {
+    "ppo": {
+      "on": {
+        "air_m3": 82144.03753827699,
+        "nh4_cost": 12.662,
+        "do_cost": 1.712,
+        "cost": 14.374,
+        "nh4_excess_mg_h_L": 4.838465246503624,
+        "do_excess_mg_h_L": 0.11314497965674578,
+        "worst_day_nh4_cost": 47.120000000000005,
+        "worst_day_do_cost": 27.599999999999998
+      },
+      "off": {
+        "air_m3": 85354.30004479572,
+        "nh4_cost": 11.429,
+        "do_cost": 0.402,
+        "cost": 11.831,
+        "nh4_excess_mg_h_L": 13.689087542017898,
+        "do_excess_mg_h_L": 0.027275774072343637,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 10.32
+      },
+      "air_mean_ratio_change_pct": 3.908089500741707,
+      "three_means_lower": false,
+      "nonworsening_primary_seeds": 0,
+      "tail_means_nonworsening": false,
+      "feasible_seeds_on": 1,
+      "feasible_seeds_off": 2,
+      "exploratory_joint_screen": false,
+      "off_sd": {
+        "air_m3": 1794.6340470392752,
+        "nh4_cost": 1.7377837897736301,
+        "do_cost": 0.2917318974675207,
+        "cost": 1.5381417359918428,
+        "nh4_excess_mg_h_L": 2.3361985832296024,
+        "do_excess_mg_h_L": 0.04203443113185612,
+        "worst_day_nh4_cost": 0.0,
+        "worst_day_do_cost": 8.558738224761871
+      },
+      "on_sd": {
+        "air_m3": 1837.3124817294656,
+        "nh4_cost": 2.239080726548286,
+        "do_cost": 0.28914961525134353,
+        "cost": 2.2428759439612347,
+        "nh4_excess_mg_h_L": 0.4250310656553349,
+        "do_excess_mg_h_L": 0.06077646091215055,
+        "worst_day_nh4_cost": 2.9986663702386096,
+        "worst_day_do_cost": 3.9012818406262313
+      }
+    },
+    "fcsrl": {
+      "on": {
+        "air_m3": 89684.8661709486,
+        "nh4_cost": 9.44,
+        "do_cost": 1.898,
+        "cost": 11.338000000000001,
+        "nh4_excess_mg_h_L": 4.459598966496631,
+        "do_excess_mg_h_L": 0.11842307537876554,
+        "worst_day_nh4_cost": 49.72,
+        "worst_day_do_cost": 29.96
+      },
+      "off": {
+        "air_m3": 85872.7718883612,
+        "nh4_cost": 10.955,
+        "do_cost": 0.507,
+        "cost": 11.462,
+        "nh4_excess_mg_h_L": 11.811771537928905,
+        "do_excess_mg_h_L": 0.02907933844245706,
+        "worst_day_nh4_cost": 87.48,
+        "worst_day_do_cost": 9.92
+      },
+      "air_mean_ratio_change_pct": -4.250543536878526,
+      "three_means_lower": false,
+      "nonworsening_primary_seeds": 1,
+      "tail_means_nonworsening": false,
+      "feasible_seeds_on": 3,
+      "feasible_seeds_off": 3,
+      "exploratory_joint_screen": false,
+      "off_sd": {
+        "air_m3": 3088.7743698761315,
+        "nh4_cost": 3.1942859139407043,
+        "do_cost": 0.1055106629682517,
+        "cost": 3.1259430577027465,
+        "nh4_excess_mg_h_L": 3.8347656976448694,
+        "do_excess_mg_h_L": 0.018368233540588256,
+        "worst_day_nh4_cost": 16.815231190798418,
+        "worst_day_do_cost": 3.935987804859157
+      },
+      "on_sd": {
+        "air_m3": 5833.959485644438,
+        "nh4_cost": 7.056944274967743,
+        "do_cost": 0.365352569444913,
+        "cost": 7.0369077015405,
+        "nh4_excess_mg_h_L": 1.3831218103591822,
+        "do_excess_mg_h_L": 0.04218717049940795,
+        "worst_day_nh4_cost": 7.687132105018098,
+        "worst_day_do_cost": 8.251545309819246
+      }
+    }
+  },
+  "paired": [
+    {
+      "method": "ppo",
+      "seed": 0,
+      "on": {
+        "air_m3": 83498.48075389629,
+        "nh4_cost": 8.865,
+        "do_cost": 1.645,
+        "cost": 10.51,
+        "nh4_excess_mg_h_L": 4.1781158094369895,
+        "do_excess_mg_h_L": 0.12792293154135229,
+        "worst_day_nh4_cost": 47.2,
+        "worst_day_do_cost": 25.2
+      },
+      "off": {
+        "air_m3": 87399.9969031813,
+        "nh4_cost": 9.475,
+        "do_cost": 0.915,
+        "cost": 10.39,
+        "nh4_excess_mg_h_L": 9.687003578286419,
+        "do_excess_mg_h_L": 0.10208650668161923,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 25.4
+      },
+      "differences": {
+        "air_m3": 3901.516149285002,
+        "nh4_cost": 0.6099999999999994,
+        "do_cost": -0.73,
+        "cost": -0.11999999999999922,
+        "nh4_excess_mg_h_L": 5.508887768849429,
+        "do_excess_mg_h_L": -0.02583642485973306,
+        "worst_day_nh4_cost": 47.8,
+        "worst_day_do_cost": 0.1999999999999993
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 1,
+      "on": {
+        "air_m3": 80390.15159033588,
+        "nh4_cost": 12.92,
+        "do_cost": 1.54,
+        "cost": 14.46,
+        "nh4_excess_mg_h_L": 5.014559734968402,
+        "do_excess_mg_h_L": 0.05841283679280543,
+        "worst_day_nh4_cost": 51.2,
+        "worst_day_do_cost": 25.4
+      },
+      "off": {
+        "air_m3": 84854.16677497908,
+        "nh4_cost": 9.83,
+        "do_cost": 0.36,
+        "cost": 10.19,
+        "nh4_excess_mg_h_L": 13.56963808097667,
+        "do_excess_mg_h_L": 0.015885546661933755,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.6
+      },
+      "differences": {
+        "air_m3": 4464.015184643198,
+        "nh4_cost": -3.09,
+        "do_cost": -1.1800000000000002,
+        "cost": -4.270000000000001,
+        "nh4_excess_mg_h_L": 8.555078346008269,
+        "do_excess_mg_h_L": -0.04252729013087167,
+        "worst_day_nh4_cost": 43.8,
+        "worst_day_do_cost": -17.799999999999997
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 2,
+      "on": {
+        "air_m3": 80105.23982060957,
+        "nh4_cost": 12.97,
+        "do_cost": 2.17,
+        "cost": 15.14,
+        "nh4_excess_mg_h_L": 4.904194059975957,
+        "do_excess_mg_h_L": 0.20839354266792826,
+        "worst_day_nh4_cost": 43.2,
+        "worst_day_do_cost": 34.4
+      },
+      "off": {
+        "air_m3": 86276.89620090763,
+        "nh4_cost": 13.6,
+        "do_cost": 0.25,
+        "cost": 13.85,
+        "nh4_excess_mg_h_L": 15.284741501883364,
+        "do_excess_mg_h_L": 0.005729650376603676,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.2
+      },
+      "differences": {
+        "air_m3": 6171.656380298067,
+        "nh4_cost": 0.629999999999999,
+        "do_cost": -1.92,
+        "cost": -1.290000000000001,
+        "nh4_excess_mg_h_L": 10.380547441907407,
+        "do_excess_mg_h_L": -0.2026638922913246,
+        "worst_day_nh4_cost": 51.8,
+        "worst_day_do_cost": -27.2
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 3,
+      "on": {
+        "air_m3": 82507.87070625345,
+        "nh4_cost": 14.635,
+        "do_cost": 1.42,
+        "cost": 16.055,
+        "nh4_excess_mg_h_L": 5.333763835789759,
+        "do_excess_mg_h_L": 0.06358780807774213,
+        "worst_day_nh4_cost": 48.4,
+        "worst_day_do_cost": 27.4
+      },
+      "off": {
+        "air_m3": 82611.78611733718,
+        "nh4_cost": 12.255,
+        "do_cost": 0.27,
+        "cost": 12.525,
+        "nh4_excess_mg_h_L": 15.131200318456813,
+        "do_excess_mg_h_L": 0.00600448088824667,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.4
+      },
+      "differences": {
+        "air_m3": 103.91541108372621,
+        "nh4_cost": -2.379999999999999,
+        "do_cost": -1.15,
+        "cost": -3.5299999999999994,
+        "nh4_excess_mg_h_L": 9.797436482667052,
+        "do_excess_mg_h_L": -0.05758332718949546,
+        "worst_day_nh4_cost": 46.6,
+        "worst_day_do_cost": -20.0
+      }
+    },
+    {
+      "method": "ppo",
+      "seed": 4,
+      "on": {
+        "air_m3": 84218.44482028972,
+        "nh4_cost": 13.92,
+        "do_cost": 1.785,
+        "cost": 15.705,
+        "nh4_excess_mg_h_L": 4.761692792347014,
+        "do_excess_mg_h_L": 0.10740777920390077,
+        "worst_day_nh4_cost": 45.6,
+        "worst_day_do_cost": 25.6
+      },
+      "off": {
+        "air_m3": 85628.65422757342,
+        "nh4_cost": 11.985,
+        "do_cost": 0.215,
+        "cost": 12.2,
+        "nh4_excess_mg_h_L": 14.772854230486224,
+        "do_excess_mg_h_L": 0.006672685753314866,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 4.0
+      },
+      "differences": {
+        "air_m3": 1410.2094072837062,
+        "nh4_cost": -1.9350000000000005,
+        "do_cost": -1.5699999999999998,
+        "cost": -3.505000000000001,
+        "nh4_excess_mg_h_L": 10.011161438139212,
+        "do_excess_mg_h_L": -0.1007350934505859,
+        "worst_day_nh4_cost": 49.4,
+        "worst_day_do_cost": -21.6
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "on": {
+        "air_m3": 91687.55155933906,
+        "nh4_cost": 4.285,
+        "do_cost": 1.48,
+        "cost": 5.765,
+        "nh4_excess_mg_h_L": 3.712885742918697,
+        "do_excess_mg_h_L": 0.08285731476211755,
+        "worst_day_nh4_cost": 47.4,
+        "worst_day_do_cost": 31.6
+      },
+      "off": {
+        "air_m3": 84556.28010858083,
+        "nh4_cost": 8.42,
+        "do_cost": 0.66,
+        "cost": 9.08,
+        "nh4_excess_mg_h_L": 6.104245450937278,
+        "do_excess_mg_h_L": 0.06026811449919779,
+        "worst_day_nh4_cost": 57.4,
+        "worst_day_do_cost": 16.6
+      },
+      "differences": {
+        "air_m3": -7131.271450758228,
+        "nh4_cost": 4.135,
+        "do_cost": -0.82,
+        "cost": 3.3150000000000004,
+        "nh4_excess_mg_h_L": 2.391359708018581,
+        "do_excess_mg_h_L": -0.02258920026291976,
+        "worst_day_nh4_cost": 10.0,
+        "worst_day_do_cost": -15.0
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 1,
+      "on": {
+        "air_m3": 89423.23214248173,
+        "nh4_cost": 13.46,
+        "do_cost": 2.355,
+        "cost": 15.815,
+        "nh4_excess_mg_h_L": 4.399196235275099,
+        "do_excess_mg_h_L": 0.15495629058443383,
+        "worst_day_nh4_cost": 46.2,
+        "worst_day_do_cost": 35.2
+      },
+      "off": {
+        "air_m3": 88751.55073009722,
+        "nh4_cost": 7.83,
+        "do_cost": 0.55,
+        "cost": 8.38,
+        "nh4_excess_mg_h_L": 10.522905208751132,
+        "do_excess_mg_h_L": 0.029366908371117117,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.6
+      },
+      "differences": {
+        "air_m3": -671.6814123845106,
+        "nh4_cost": -5.630000000000001,
+        "do_cost": -1.805,
+        "cost": -7.434999999999999,
+        "nh4_excess_mg_h_L": 6.123708973476033,
+        "do_excess_mg_h_L": -0.12558938221331672,
+        "worst_day_nh4_cost": 48.8,
+        "worst_day_do_cost": -27.6
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 2,
+      "on": {
+        "air_m3": 80266.21228968375,
+        "nh4_cost": 20.015,
+        "do_cost": 1.57,
+        "cost": 21.585,
+        "nh4_excess_mg_h_L": 6.846697628754076,
+        "do_excess_mg_h_L": 0.06907007516129565,
+        "worst_day_nh4_cost": 63.4,
+        "worst_day_do_cost": 15.4
+      },
+      "off": {
+        "air_m3": 81394.6673939482,
+        "nh4_cost": 15.775,
+        "do_cost": 0.425,
+        "cost": 16.2,
+        "nh4_excess_mg_h_L": 16.356544866071005,
+        "do_excess_mg_h_L": 0.013026369199809954,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.4
+      },
+      "differences": {
+        "air_m3": 1128.4551042644453,
+        "nh4_cost": -4.24,
+        "do_cost": -1.145,
+        "cost": -5.385000000000002,
+        "nh4_excess_mg_h_L": 9.50984723731693,
+        "do_excess_mg_h_L": -0.056043705961485696,
+        "worst_day_nh4_cost": 31.6,
+        "worst_day_do_cost": -8.0
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 3,
+      "on": {
+        "air_m3": 96157.79924475237,
+        "nh4_cost": 4.92,
+        "do_cost": 2.065,
+        "cost": 6.985,
+        "nh4_excess_mg_h_L": 3.9383658123406677,
+        "do_excess_mg_h_L": 0.12124845324024619,
+        "worst_day_nh4_cost": 46.4,
+        "worst_day_do_cost": 33.2
+      },
+      "off": {
+        "air_m3": 85945.54979965382,
+        "nh4_cost": 10.655,
+        "do_cost": 0.395,
+        "cost": 11.05,
+        "nh4_excess_mg_h_L": 12.357691865020012,
+        "do_excess_mg_h_L": 0.02159945672018706,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 10.4
+      },
+      "differences": {
+        "air_m3": -10212.249445098554,
+        "nh4_cost": 5.734999999999999,
+        "do_cost": -1.67,
+        "cost": 4.065,
+        "nh4_excess_mg_h_L": 8.419326052679345,
+        "do_excess_mg_h_L": -0.09964899652005912,
+        "worst_day_nh4_cost": 48.6,
+        "worst_day_do_cost": -22.800000000000004
+      }
+    },
+    {
+      "method": "fcsrl",
+      "seed": 4,
+      "on": {
+        "air_m3": 90889.5356184861,
+        "nh4_cost": 4.52,
+        "do_cost": 2.02,
+        "cost": 6.54,
+        "nh4_excess_mg_h_L": 3.4008494131946145,
+        "do_excess_mg_h_L": 0.16398324314573448,
+        "worst_day_nh4_cost": 45.2,
+        "worst_day_do_cost": 34.4
+      },
+      "off": {
+        "air_m3": 88715.81140952591,
+        "nh4_cost": 12.095,
+        "do_cost": 0.505,
+        "cost": 12.6,
+        "nh4_excess_mg_h_L": 13.717470298865102,
+        "do_excess_mg_h_L": 0.021135843421973385,
+        "worst_day_nh4_cost": 95.0,
+        "worst_day_do_cost": 7.6
+      },
+      "differences": {
+        "air_m3": -2173.724208960193,
+        "nh4_cost": 7.575000000000001,
+        "do_cost": -1.5150000000000001,
+        "cost": 6.06,
+        "nh4_excess_mg_h_L": 10.316620885670488,
+        "do_excess_mg_h_L": -0.1428473997237611,
+        "worst_day_nh4_cost": 49.8,
+        "worst_day_do_cost": -26.799999999999997
+      }
+    }
+  ],
+  "backend_migration": [
+    {
+      "method": "ppo",
+      "seed": 0,
+      "exit_code": 0,
+      "backend": "legacy_cpu4"
+    },
+    {
+      "method": "ppo",
+      "seed": 1,
+      "exit_code": 0,
+      "backend": "legacy_cpu4"
+    },
+    {
+      "method": "fcsrl",
+      "seed": 0,
+      "exit_code": 0,
+      "backend": "legacy_cpu4"
+    },
+    {
+      "method": "ppo",
+      "seed": 2,
+      "exit_code": 0,
+      "backend": "cpu1"
+    },
+    {
+      "method": "fcsrl",
+      "seed": 1,
+      "exit_code": 0,
+      "backend": "gpu1_update"
+    },
+    {
+      "method": "fcsrl",
+      "seed": 2,
+      "exit_code": 0,
+      "backend": "gpu1_update"
+    },
+    {
+      "method": "ppo",
+      "seed": 3,
+      "exit_code": 0,
+      "backend": "cpu1"
+    },
+    {
+      "method": "fcsrl",
+      "seed": 3,
+      "exit_code": 0,
+      "backend": "gpu1_update"
+    },
+    {
+      "method": "ppo",
+      "seed": 4,
+      "exit_code": 0,
+      "backend": "cpu1"
+    },
+    {
+      "method": "fcsrl",
+      "seed": 4,
+      "exit_code": 0,
+      "backend": "gpu1_update"
+    }
+  ],
+  "prior_only_causal_confirmation": false,
+  "backend_limitation": "FCSRL uses GPU updates for seeds1-4, seed0 retains CPU4; PPO seeds0-1 CPU4 and seeds2-4 CPU1; baseline e50 CPU4. Promising results require matched-backend confirmation before adoption."
+}
