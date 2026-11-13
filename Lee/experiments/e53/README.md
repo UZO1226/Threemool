@@ -53,4 +53,29 @@ reconstruction and are excluded from Git and model/log archives.
 
 ```powershell
 python Threemool/Lee/experiments/e53/probe_history.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e53_history_probe
+python Threemool/Lee/experiments/e53/audit_probe.py --runs results/e53_history_probe --out Threemool/Lee/experiments/e53/audit.json
+```
+
+## Fixed low-air coverage follow-up
+
+The original full-range diagnostic finishes under source9fcf818 and independent
+reconstruction passes. Both event Brier differences favor history slightly,
+while repeated-current predictions equal current-only predictions. There are
+only4 new NH4 events among14166 currently-safe held-training rows. Do not
+generalize NH4 onset skill from these four events or count the positive probe
+as a controller improvement.
+
+Specify one additional diagnostic before generating its outcomes: action
+uniform[-1,0], corresponding to0..4500m3/h and expected2250m3/h. This covers
+lower-air risk states nearer the existing baseline's roughly2190m3/h than the
+original full-range mean4500. The range follows coverage and the recorded
+baseline air, not a search for a favorable held-out metric. Retain both probes;
+do not replace the full-range result. Keep all dates, members, random seed,
+features, models, labels, controls and intervals unchanged. No additional
+action range is searched and no validation/test episode is generated.
+The default main function still uses the original full range.
+
+```powershell
+python Threemool/Lee/experiments/e53/probe_low_air.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e53_history_probe_low_air
+python Threemool/Lee/experiments/e53/audit_probe.py --runs results/e53_history_probe_low_air --out Threemool/Lee/experiments/e53/low_air_audit.json
 ```

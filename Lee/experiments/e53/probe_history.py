@@ -34,7 +34,8 @@ def metrics(probability, target):
             'recall_at_half': tp / (tp + fn) if tp + fn else None}
 
 
-def main():
+def main(action_bounds=(-1., 1.)):
+    assert -1 <= action_bounds[0] < action_bounds[1] <= 1
     parser = argparse.ArgumentParser()
     for name in ('data', 'reference-summary', 'freeze', 'out'):
         parser.add_argument('--' + name, type=Path, required=True)
@@ -57,7 +58,7 @@ def main():
     rng = np.random.default_rng(5301)
     inputs, labels, current = [], [], []
     for t in range(95):
-        action = rng.uniform(-1, 1, len(cases))
+        action = rng.uniform(*action_bounds, len(cases))
         if t == 0:
             np.testing.assert_array_equal(lag, obs[:, LAG_COLUMNS])
         else:
@@ -90,6 +91,7 @@ def main():
               'validation_evaluated': False, 'test_evaluated': False, 'policy_training': False,
               'probe_fit_seeds': list(range(5)), 'environment_members': list(range(5)), 'policy_seeds': [],
               'action_rng_seed': 5301, 'noise_draws_per_case': 1, 'fit_days': fit, 'held_training_days': held,
+              'action_bounds': list(action_bounds),
               'data_sha256': expected, 'freeze_sha256': hashlib.sha256(args.freeze.read_bytes()).hexdigest(),
               'training_transitions_generated': len(x), 'held_training_transitions': int(held_rows.sum()),
               'scope': 'Feature diagnostic within a frozen simulated law, not independent plant confirmation.',
