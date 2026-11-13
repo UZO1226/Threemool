@@ -65,3 +65,12 @@ discounted-max targets and the contribution of day-end continuation bootstraps.
 This diagnostic does not fit a policy, change the fixed environment, modify
 targets in an existing run, or use final test dates. A finite-day alternative
 is a different objective, not automatically a bug fix to the existing code.
+
+That training-only audit now completes. feasibility_audit.json preserves all
+five policies' score quartiles, rank correlations and day-end effects, with
+unchanged checkpoints and no fitting. Scores rank high-risk transitions, but
+the continuation targets partly depend on the same learned head. Their rank
+correlations are therefore not independent calibration evidence. Removing
+day-end continuation would change mean labels by.00360 to.02584 and last24-step
+means by.01316 to.09415. These measured target effects motivate e48's separate
+finite-day auxiliary hypothesis, without proving its policy benefit.

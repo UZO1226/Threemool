@@ -124,6 +124,17 @@ audit_feasibility_targets.py is launched against the five frozen FCSRL policies,
 16 training dates, five members and two draws per seed. No fit or test data
 is involved; do not interpret these as independent performance seeds.
 
+The audit completes. Existing scores rank risky training transitions but the
+continuation target partly depends on the same head, limiting calibration
+inference. Day-end bootstraps change mean targets by.00360 to.02584 and the
+last24-step mean by.01316 to.09415. e48 prepares a daily-horizon auxiliary
+target, with unchanged actual/PPO costs, bootstraps and networks. It is a
+different objective, not a demonstrated bug fix or performance improvement.
+Its hand-target, no-end equivalence, input/RNG/gradient and serialization checks
+pass. A6080-step smoke plus independent replay is launched in results/e48_smoke
+and results/e48_smoke_replay. Inspect that real chain before waiting/restarting.
+Full fitting must wait for a successful smoke and checkpoint replay.
+
 ![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
 
 The figure shows all five paired seed differences and each mean/bootstrap

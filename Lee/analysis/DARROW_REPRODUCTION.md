@@ -135,6 +135,7 @@ are recorded because GitHub may change its untagged draft URL after edits.
 | lee-e45-severity-five-seed-evaluations.zip | [All severity air queries and evaluation cases](../experiments/e45/evaluation_artifacts.json) |
 | lee-e46-cold-five-seed-policies.zip | [Five cold-sampling policies](../experiments/e46/artifacts.json) |
 | lee-e46-cold-five-seed-evaluations.zip | [All cold-sampling air queries and evaluation cases](../experiments/e46/evaluation_artifacts.json) |
+| lee-e47-ppo-five-seed-diagnostic.zip | [All equal-air PPO diagnostic cases and queries](../experiments/e47/evaluation_artifacts.json) |
 
 Policy archives preserve results-relative run folders, final and diagnostic
 checkpoints, logs, settings, source manifests and the original Apache license.
