@@ -8,6 +8,19 @@ runner/child processes before waiting, restarting or declaring a run stopped.
 
 ## Current continuation
 
+e49's next-step diagnostic completes20 fixed classifier fits, both report
+splits and independent prediction/metric reconstruction. NH4 current-state
+information is useful: observed-e40 Brier.028417 versus daily free.126486,
+paired interval[-.115582,-.080892]. DO onset remains unresolved: the direct
+classifier recalls1/25 new events at.5, observed-e40 recalls0/25, and the
+classifier's new-onset Brier is worse than predicting none. Do not adopt this
+classifier as an environment or tune its threshold on validation.
+
+Next test e40 quantile training with exposure to its own accumulated state
+errors, retaining observed-state supervision and a zero-change reconstruction
+control. Specify the training-only augmentation and fixed selection before
+fitting. The e40 historical policy freeze is unchanged; final test is unused.
+
 e41 now completes all five model members and both audits. It fails the original
 adoption gate: NH4 frequency9.14145 versus17.31579 percent and DO2.55592 versus
 1.15789 percent. NH4 Brier is not clearly better than e34, and all25 DO onsets
@@ -15,7 +28,7 @@ remain missed within an hour. Independent reconstruction and action ordering
 pass; no implementation fault was identified by these checks. Results and
 remotely verified checkpoint/log artifacts are in e41. e40 is not replaced.
 
-Next, separate next-step event learnability from accumulated forecast drift.
+The completed next-step study separates event learnability from forecast drift.
 Use fitting dates only for a diagnostic event predictor, preserve calibration
 and validation separation, compare current-state persistence, and explicitly
 distinguish observed-state prediction from free-running simulation. This is

@@ -1,5 +1,11 @@
 # Lee/e49: Separate next-step event learnability from recursive drift
 
+Status: all20 fits and both evaluation splits complete. Independent checkpoint
+and direct-row metric reconstruction pass with zero probability error. See
+results.md, summary.json and audit.json. This diagnostic is not an adoption.
+The training implementation commit is6a2a084. artifacts.json identifies the
+existing environment draft asset with verified size and SHA256.
+
 ## Fixed diagnostic question
 
 e41's one-step observed-state reset substantially reduces frequency bias, but
@@ -45,6 +51,7 @@ No adoption gate is lowered or evaluated as passed by this diagnostic.
 
 ```powershell
 python Threemool/Lee/experiments/e49/diagnose.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e49_next_step
+python Threemool/Lee/experiments/e49/audit.py --data kaggle_data/darrow_15min.pkl --runs results/e49_next_step --out Threemool/Lee/experiments/e49/audit.json
 ```
 
 Raw data and probability arrays stay outside Git. Store compact reports under

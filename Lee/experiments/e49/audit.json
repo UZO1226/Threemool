@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "test_evaluated": false,
+  "policy_training": false,
+  "checkpoint_sha256_passed": true,
+  "data_sha256_passed": true,
+  "fit_date_subsets_passed": true,
+  "direct_row_feature_reconstruction_passed": true,
+  "classifier_probability_reconstruction_max_error": 0.0,
+  "all_and_new_onset_metrics_reconstructed": true,
+  "counts": {
+    "calibration": {
+      "transitions": 2850,
+      "new_nh4": 9,
+      "new_do": 26
+    },
+    "validation": {
+      "transitions": 3800,
+      "new_nh4": 89,
+      "new_do": 25
+    }
+  }
+}
