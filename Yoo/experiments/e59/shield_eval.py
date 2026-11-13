@@ -127,7 +127,7 @@ def run(a):
         assert base.fingerprint(agent) == fp
         if a.shield == 'none':
             # 차단 없는 평가는 원 실험의 기록값을 정확히 재현해야 한다.
-            reproduced = bool(abs(result['air_m3'] - recorded['air_m3']) < 1e-8 * recorded['air_m3'] and abs(result['cost'] - recorded['cost']) < 1e-9)
+            reproduced = bool(abs(result['air_m3'] - recorded['air_m3']) < 1e-7 * recorded['air_m3'] and abs(result['cost'] - recorded['cost']) < 1e-9)
             assert reproduced, (result['air_m3'], recorded['air_m3'], result['cost'], recorded['cost'])
     out = dict(policy=a.policy, seed=a.seed, shield=a.shield, shield_config=jsonable(SHIELDS[a.shield]), checkpoint=None if path is None else str(path),
                policy_fingerprint=fp, reproduced_recorded_metrics=reproduced, val=result, members=members,

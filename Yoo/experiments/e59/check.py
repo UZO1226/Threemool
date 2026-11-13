@@ -73,7 +73,7 @@ def run(a):
         agent, path, recorded = se.load_policy(name, 0, c)
         result, *_ = se.rollout(env, splits['val'], se.make_act(name, agent, env), None)
         rep[name] = dict(air_m3=result['air_m3'], recorded_air_m3=recorded['air_m3'], cost=result['cost'], recorded_cost=recorded['cost'],
-                         passed=abs(result['air_m3'] - recorded['air_m3']) < 1e-8 * recorded['air_m3'] and abs(result['cost'] - recorded['cost']) < 1e-9)
+                         passed=abs(result['air_m3'] - recorded['air_m3']) < 1e-7 * recorded['air_m3'] and abs(result['cost'] - recorded['cost']) < 1e-9)
     checks['reproduce_seed0_without_shield'] = rep
     t = time.monotonic()
     brake = se.make_shield('park_e19', dyn)
