@@ -26,13 +26,13 @@ def caps(prepared=PREPARED):
     return np.percentile(rows, 99, axis=0)
 
 
-def load_policy(condition, method, seed):
+def load_policy(condition, method, seed, runs_root=E63):
     c = base.common.config(66)
     if condition == 'alloc':
         agent = al.make_agent(method, seed, PREPARED, c)
     else:
         agent = base.common.make_agent(method, seed, PREPARED, c)
-    path = E63 / condition / method / f'seed_{seed}' / 'model_final'
+    path = Path(runs_root) / condition / method / f'seed_{seed}' / 'model_final'
     agent.load(path)
     return agent, path
 
@@ -130,7 +130,7 @@ def main(a):
     env = base.BatchEnv(days, dyn)
     agent, path, fp = None, None, None
     if a.policy == 'policy':
-        agent, path = load_policy(a.condition, a.method, a.seed)
+        agent, path = load_policy(a.condition, a.method, a.seed, a.runs_root)
         fp = base.fingerprint(agent)
     shield = None if a.shield == 'none' else se.make_shield(a.shield, dyn)
     cap = caps() if a.cap else None
@@ -157,5 +157,6 @@ if __name__ == '__main__':
     p.add_argument('--mode', choices=['daily', 'continuous'], required=True)
     p.add_argument('--shield', choices=['none', 'park_e10', 'park_e19'], default='park_e19')
     p.add_argument('--days', type=int, default=None, help='검사용: 앞 날짜 수만 평가')
+    p.add_argument('--runs-root', type=Path, default=E63, help='정책 학습 결과 runs 폴더 (e65 부터 사용)')
     p.add_argument('--out', type=Path, required=True)
     main(p.parse_args())
