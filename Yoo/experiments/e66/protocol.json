@@ -1,0 +1,22 @@
+{
+  "experiment": "e66",
+  "kind": "test 41일 최종 평가. 한 번만 실행한다. 새 학습 없음",
+  "written_before": "e65 결과를 보기 전 (2026-11-15 22:06 KST, 커밋 9af0aed) 에 고정했다. test 행은 이 실험 전까지 어떤 Yoo 실험에서도 추출하거나 평가하지 않았다",
+  "data": "Kaggle DARROW test 41일 (2021-12-20 ~ 2022-01-29) x 대리 모델 구성원 5개 = 205 에피소드. 준비물은 e63 prepared (데이터, prior, 정규화는 e50 과 같음)",
+  "policies": "e63 (seed 0 ~ 4) 와 e65 (seed 5 ~ 9) 의 마지막 정책. 조건 total, alloc x 방법 PPO-Lag, FCSRL x seed 10 = 40개. 결과를 본 뒤 정책을 빼거나 더하지 않는다",
+  "main_configuration": "e64 사전 규칙으로 정했다: 총 공기 + 배분 정책 + park_e19 차단 + 실행 상한 (구간 공기 train 99% 분위수). 비교 대상은 같은 상한과 차단의 총 공기만 정책",
+  "evaluations": {
+    "T1_main": "DO 수정 모델, 일별, 실행 상한, park_e19. 정책 40개",
+    "T2_common": "공통 v1.1 모델, 일별, 실행 상한, park_e19. 정책 40개",
+    "T3_continuous": "DO 수정 모델, test 41일 연속, 실행 상한, park_e19. 정책 40개",
+    "references": "기록 운전 (차단 없음) 과 공기 0 + park_e19 를 T1, T2, T3 설정에서 각각"
+  },
+  "judgement_fixed_before_results": {
+    "J1_main": "T1 에서 방법별 alloc minus total (seed 번호끼리, 10 seed). 공기와 합산 비용이 모두 낮은 seed 8/10 이상이고 두 평균이 모두 낮으면 'test 에서 배분 이득 유지'. 비용만 낮으면 '교환 (공기 증가)', 공기만 낮으면 '교환 (비용 증가)', 그 밖은 '이득 없음'",
+    "J2_common": "T2 에서 같은 규칙. 보고용",
+    "J3_continuous": "T3 에서 같은 규칙. 보고용",
+    "J4_absolute": "T1 의 배분 PPO-Lag 와 배분 FCSRL 평균을 기록 운전과 공기 0 + park_e19 와 나란히 적는다. 공기, NH4, DO 각각을 보고한다",
+    "J5_generalization": "같은 정책의 검증 (e64, e65) 대비 test 평균 공기와 비용 변화를 적는다"
+  },
+  "not_done": ["test 결과를 보고 설정, 정책, 상한을 바꿔 다시 평가", "test 로 모델 또는 정책 선택", "두 번째 test 실행"]
+}
