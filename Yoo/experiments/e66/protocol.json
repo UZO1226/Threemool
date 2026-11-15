@@ -1,7 +1,7 @@
 {
   "experiment": "e66",
   "kind": "test 41일 최종 평가. 한 번만 실행한다. 새 학습 없음",
-  "written_before": "e65 결과를 보기 전 (2026-11-15 22:10 KST) 에 고정했다. test 행은 이 실험 전까지 어떤 Yoo 실험에서도 추출하거나 평가하지 않았다",
+  "written_before": "e65 결과를 보기 전 (2026-11-15 22:06 KST, 커밋 9af0aed) 에 고정했다. test 행은 이 실험 전까지 어떤 Yoo 실험에서도 추출하거나 평가하지 않았다",
   "data": "Kaggle DARROW test 41일 (2021-12-20 ~ 2022-01-29) x 대리 모델 구성원 5개 = 205 에피소드. 준비물은 e63 prepared (데이터, prior, 정규화는 e50 과 같음)",
   "policies": "e63 (seed 0 ~ 4) 와 e65 (seed 5 ~ 9) 의 마지막 정책. 조건 total, alloc x 방법 PPO-Lag, FCSRL x seed 10 = 40개. 결과를 본 뒤 정책을 빼거나 더하지 않는다",
   "main_configuration": "e64 사전 규칙으로 정했다: 총 공기 + 배분 정책 + park_e19 차단 + 실행 상한 (구간 공기 train 99% 분위수). 비교 대상은 같은 상한과 차단의 총 공기만 정책",
