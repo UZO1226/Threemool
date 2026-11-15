@@ -1,0 +1,85 @@
+{
+ "judgement": {
+  "J1_ppo": {
+   "both_lower": 5,
+   "mean": {
+    "air_m3": -16050.052577780774,
+    "cost": -1.536,
+    "nh4_cost": -1.416,
+    "do_cost": -0.12000000000000004
+   },
+   "verdict": "재현"
+  },
+  "J2_corrected_ppo": {
+   "both_lower": 10,
+   "mean": {
+    "air_m3": -14883.12580684364,
+    "cost": -1.6465,
+    "nh4_cost": -1.5285000000000002,
+    "do_cost": -0.11800000000000002
+   },
+   "verdict": "10 seed 이득 유지"
+  },
+  "J1_fcsrl": {
+   "both_lower": 3,
+   "mean": {
+    "air_m3": -6077.0470610107495,
+    "cost": -0.6169999999999999,
+    "nh4_cost": -0.614,
+    "do_cost": -0.0029999999999999805
+   },
+   "verdict": "재현 실패"
+  },
+  "J2_corrected_fcsrl": {
+   "both_lower": 8,
+   "mean": {
+    "air_m3": -7446.616744378448,
+    "cost": -0.9754999999999999,
+    "nh4_cost": -0.9170000000000001,
+    "do_cost": -0.05849999999999998
+   },
+   "verdict": "10 seed 이득 유지"
+  },
+  "J3_ppo": {
+   "both_lower": 5,
+   "mean": {
+    "air_m3": -9792.031688903236,
+    "cost": -1.8699999999999999,
+    "nh4_cost": -1.3610000000000002,
+    "do_cost": -0.509
+   },
+   "verdict": "재현"
+  },
+  "J2_common_ppo": {
+   "both_lower": 10,
+   "mean": {
+    "air_m3": -8873.234932438492,
+    "cost": -1.9619999999999997,
+    "nh4_cost": -1.427,
+    "do_cost": -0.5349999999999999
+   },
+   "verdict": "10 seed 이득 유지"
+  },
+  "J3_fcsrl": {
+   "both_lower": 3,
+   "mean": {
+    "air_m3": -2597.0577074311964,
+    "cost": -0.7719999999999999,
+    "nh4_cost": -0.613,
+    "do_cost": -0.15900000000000003
+   },
+   "verdict": "재현 실패"
+  },
+  "J2_common_fcsrl": {
+   "both_lower": 6,
+   "mean": {
+    "air_m3": -2961.403011619275,
+    "cost": -1.0825,
+    "nh4_cost": -0.8815,
+    "do_cost": -0.20100000000000007
+   },
+   "verdict": "10 seed 기준 미달"
+  }
+ },
+ "root": "/home/jio/fcsrl_src/results/e65/main"
+}
