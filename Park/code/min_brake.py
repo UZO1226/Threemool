@@ -47,6 +47,12 @@ Park/e27 정책 앙상블 의견 차이 차단. EnsemblePolicy 는 구성원 행
 spread 에 남긴다. DisagreementBrake 는 그 값으로 에피소드마다 NH4 여유를 더하거나 뺀다 (extra). spread >= hi 이면
 여유 + up (의견이 갈리면 조심), spread <= lo 이면 여유 - down (의견이 같으면 공기를 덜 올리고 더 내린다), 그 사이는 0.
 extra 는 margins 가 쓰이는 모든 곳 (기본 필요 공기량, conflict 의 줄인 여유) 에 더한다
+
+plan=(H, do_lim, step) (Park/e28, trim=True 와 함께) 이면 회복 계획을 더한다. 공기량 9,000 에서도 다음 스텝 예측 NH4
+(다른 구성원 평균) 가 4 를 넘는 에피소드 (막을 수 없는 스텝) 에서만, step 간격 격자의 공기량을 H 스텝 동안 유지했을 때의
+예측 비용 (NH4 > 4 스텝 수 + 구간 DO 최댓값 > do_lim 스텝 수) 이 가장 작은 공기량을 쓴다. 같으면 H 스텝 뒤 예측 NH4 가
+낮은 쪽, 그것도 같으면 공기량이 작은 쪽이다 (Park/e16 futile 처럼 공기를 줄여 NH4 회복이 늦어지는 것을 막는다).
+외부 입력은 지속 예측이다. 다른 차단 계산을 모두 마친 뒤 그 에피소드의 공기량을 바꾼다. plan_steps 에 바꾼 횟수를 센다
 """
 import numpy as np
 
@@ -59,7 +65,7 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
-                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True):
+                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -75,6 +81,8 @@ class MinAirBrake:
         assert self.recover is None or self.recover[0] >= 2, 'recover 의 H 는 2 이상'
         self.conflict, self.conflict_recover, self.conflict_steps = conflict, bool(conflict_recover), 0
         assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
+        self.plan, self.plan_steps = (None if plan is None else (int(plan[0]), float(plan[1]), float(plan[2]))), 0
+        assert self.plan is None or self.trim, 'plan 은 trim 과 함께 쓴다'
         self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
 
     def _predict(self, x, member, n_states):
@@ -204,6 +212,33 @@ class MinAirBrake:
                     self.futile_steps += len(fut)
         if self.conflict is not None:
             air = self._resolve_conflict(obs, env, policy_air, air)
+        if self.plan is not None:
+            air = self._plan_recovery(obs, env, air)
+        return air
+
+    def _plan_recovery(self, obs, env, air):
+        nh_max, _ = self._rollout(obs, env, np.full((len(obs), 1), AIR_MAX), 1)
+        rows = np.flatnonzero(nh_max[:, 0] > NH4_MAX)
+        if not len(rows):
+            return air
+        H, do_lim, step = self.plan
+        grid = np.arange(0.0, AIR_MAX + 1e-9, step)
+        sub, n, K = _Rows(env, rows), len(rows), len(grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[rows, :len(STATE)], dtype=float))
+        exo, frac, zone_prev, member = rep(sub.x['exo'][:, sub.t]), rep(sub.x['frac'][:, sub.t]), rep(sub.prev_zone), rep(sub.member)
+        zone = np.tile(grid, n)[:, None] * frac
+        cost = np.zeros(n * K)
+        for _ in range(H):
+            x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
+            state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
+            zone_prev = zone
+            cost += (state[:, 0] > NH4_MAX) + (state[:, 2:].max(axis=1) > do_lim)
+        score = cost * 1000.0 + np.round(state[:, 0], 6)   # NH4 는 hi 아래라 1000 보다 작다
+        best = grid[score.reshape(n, K).argmin(axis=1)]
+        air = air.copy()
+        self.plan_steps += int((np.abs(best - air[rows]) > 1e-9).sum())
+        air[rows] = best
         return air
 
     def _resolve_conflict(self, obs, env, policy_air, air):
