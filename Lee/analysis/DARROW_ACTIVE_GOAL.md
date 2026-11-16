@@ -123,9 +123,16 @@ handle96253, PID23788 at launch. Recheck actual liveness before waiting or
 restarting. Four leave-one-day-out calibration comparisons precede both
 original global validation reconstructions, which must pass before context
 validation. Primary/secondary common-noise air order and primary16-draw
-sensitivity remain fixed. summary.json is not adoption; independent donor/
-full-day/event/date uncertainty checks remain to implement and execute.
-No candidate outcome exists yet and no additional weights or policy are fit.
+sensitivity remain fixed. All four calibration comparisons and both original
+global validation reconstructions now finish exactly. Context validation is
+running. summary.json is not adoption; audit_context.py now implements
+independent donors/paths, five-member full-day sklearn/scalar interpolation,
+aggregate and low/high-air replay, recomputed point gates and all reference/
+event/date uncertainty/adoption checks. Under sourcee5f1db7, follow-up handle
+12751 waits for verified evaluator PID23788 and requires completed summary.json
+before running the audit. Check both live handles before launching anything;
+never duplicate the queued audit or edit its pinned inputs. No candidate
+outcome exists yet and no additional weights or policy are fit.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
