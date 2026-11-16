@@ -74,6 +74,26 @@ fails, preserve that failure and do not train policies on it or switch to
 the favorable secondary as a rescue. A new freeze/agent comparison requires
 the full declared environment criteria and a separate recorded decision.
 
-Status: specified after completed e60 diagnosis and before implementation,
-preflight, candidate scoring or new parameter choice. The next step is the
-context/path identity preflight, not candidate performance evaluation.
+The specification was committed at5d6a0e1 before implementation or outcomes.
+context_paths.py implements only the fixed start-context, pool and whole-day
+copy rule. preflight.json now passes full-pool/original path bitwise identity
+for both parent banks, future-state/exogenous/air invariance, self exclusion,
+chronological pool order and deterministic ties. Independent scalar RNG/donor
+reconstruction reproduces every checked tuple. Both selected parent PIT banks
+also reconstruct bitwise from authenticated model weights and original
+calibration data. Fitting-only initial-context scales use all158 fitting dates
+with no standard-deviation floor needed. No candidate validation is scored.
+
+Run from the workspace into a new output destination:
+
+```powershell
+python Threemool/Lee/experiments/e61/preflight.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --out results/e61_context_preflight_replay.json
+```
+
+Use pinned threemool Python, CPU, DARROW_FAST_DYNAMICS=1 and numerical thread
+counts1 for OMP/OPENBLAS/MKL/NUMBA. The preflight rejects an existing output.
+An initial path-only preflight also passed before the bank-reconstruction
+extension; the published preflight.json is the completed stronger check.
+No e61 process remains live. Next implement leave-one-day-out calibration,
+both global-reference validation replays, all fixed context variants and the
+independent forecast/event/adoption audits without modifying historical code.

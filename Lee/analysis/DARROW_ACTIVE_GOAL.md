@@ -107,8 +107,16 @@ using exactly six episode-start context features and fit-only scaling.
 e58 is a secondary mechanism contrast, not an adoption fallback. All-pool
 bitwise identity, future-input invariance, leave-one-day-out calibration,
 original global validation reconstructions and complete point/event criteria
-remain required. Next implement and execute the sampler/context preflight.
-No e61 code, process or candidate result exists yet. Preserve all old sources.
+remain required. context_paths.py and the calibration-only preflight now pass
+full-pool original path identity, future-input invariance, exclusion/ties,
+independent selected-donor tuples and exact reconstruction of both original
+banks from authenticated weights/data. preflight.json records the two bank
+array hashes and fitting-only scales. Handles79108 and68391 are terminal.
+No candidate validation outcome exists. Next implement the fixed calibration/
+validation evaluator, authenticate the preflight inputs and reconstruct both
+global references before context outcomes, then independently audit paths,
+full-day forecasts, air order, event uncertainty and all adoption conditions.
+Preserve historical runtime sources and no policy training on failed models.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
