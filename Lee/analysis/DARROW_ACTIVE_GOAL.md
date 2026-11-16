@@ -159,6 +159,20 @@ prospective agent extension on the unchanged e42 research world. Inspect the
 actual model/policy guards and training-only diagnostic first. That review
 does not solve or waive the unresolved environment safety limitations, change
 the frozen world or reduce the full user objective. No new candidate yet.
+
+That review now supports the prospectively fixed e63 risk-only hard-region
+controller, specified at6b8df22 before implementation/new trajectories.
+Keep h4 models, base policies, candidate radius/grid and e42 freeze unchanged;
+remove only the action penalty, coefficient0 primary, coefficient1 identity
+null. No coefficient search or horizon1 fallback. Full five-policy-seed air/
+cost/NH4/DO criteria remain unchanged, as do all simulator limitations.
+The held preflight finishes all five85120-row sets with exact independent
+sklearn choices, old coefficient1 identity and archived risk-only counts.
+Source hashes and config/boundary checks are in e63/preflight.json. Handle34890
+is terminal. No new controller validation trajectory, model fit or PPO step
+exists. Next implement source/model/config-guarded comparison and independent
+native/matched action replays, verify a full native-only smoke and then the
+all-seed study. An agent gain cannot by itself close the full environment goal.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

@@ -74,7 +74,26 @@ final41 test days, and upload no source observations/captured arrays/banks.
 Necessary weights already live in e55/e56 archives; record exact references
 and preserve the new wrapper configuration, code, results and replay method.
 
-Status: specified after inspecting completed e56 held-state evidence and
-existing implementation guards, before e63 implementation, preflight or any
-new controller trajectory. Next implement the guarded wrapper and held-state
-identity checks, then a full native-only smoke before all-seed matching.
+The specification is committed at6b8df22 before implementation or new controller
+trajectories. trust_policy.py now implements only coefficient0 primary and
+coefficient1 identity null, the unchanged grid, stable ties and strict config
+serialization. preflight.json passes all five held training-state sets,85120
+rows per seed, independent sklearn action decisions, original coefficient1
+identity and exact prior diagnostic choice counts. Radius, unchanged inputs,
+flat-risk/clipped-boundary identity and config tamper/invalid-coefficient
+rejection checks pass. No environment query or validation is performed here.
+
+The initial preflight executes the uncommitted core working tree based on
+6b8df22; preflight.json records exact executed source SHA256 values. The core
+and its completed checks are committed before any new validation trajectory.
+From the workspace, reproduce into a new destination:
+
+```powershell
+python Threemool/Lee/experiments/e63/preflight.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --captures results/e55_study/policies/new_ppolag_fcsrl --baselines results/e42_baselines/new_ppolag_fcsrl --study results/e56_study --out results/e63_held_preflight_replay.json
+```
+
+Use pinned threemool Python/CPU, DARROW_FAST_DYNAMICS=1 and OMP/OPENBLAS/MKL/
+NUMBA thread counts1. Existing output files are rejected. Captured observation
+arrays remain local. No preflight process remains live. Next implement the
+guarded comparison and independent native/matched action audit, require the
+full native-only smoke, then run the fixed all-five-seed matched-air study.
