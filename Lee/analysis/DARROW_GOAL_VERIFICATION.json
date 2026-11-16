@@ -1,0 +1,12 @@
+{
+  "original_report_recomputed_exact": true,
+  "all_five_native_matched_audits_complete": true,
+  "actual_max_air_error_pct": 0.0851495455305624,
+  "branch_scope_lee_only": true,
+  "new_tracked_raw_data_or_weight_files": false,
+  "portable_native_matched_replay_passed": true,
+  "portable_verified_source_records": 108,
+  "raw_data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "test_evaluated": false,
+  "scope": "Verified research simulation comparison; residual environment and real-plant limits are documented separately."
+}

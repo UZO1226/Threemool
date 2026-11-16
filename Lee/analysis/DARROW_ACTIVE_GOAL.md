@@ -1,15 +1,22 @@
 # Active DARROW research goal
 
-The goal remains active pending the full objective/deliverable completion audit.
-e63 passes the complete predefined matched-air simulation criterion after
-all five policy-seed comparisons and independent native/matched action audits.
-This does not by itself close the unresolved environment-safety assessment.
-Previous environment failures and the negative first policy pair do not exhaust
-reasonable alternatives. No external blocker currently prevents useful work.
-This is an execution snapshot, not a live process monitor. Inspect the actual
-runner/child processes before waiting, restarting or declaring a run stopped.
+The research stopping condition is verified: e63 passes every original
+matched-air simulation criterion after all five policy-seed comparisons and
+independent native/matched action audits. DARROW_GOAL_AUDIT.md now accounts for
+the complete original objective, including the original environment gate,
+unfavorable safety diagnostics, process-model investigation, test preservation,
+failed trials, reproducible artifacts and branch scope. It does not infer
+environment safety merely from an agent win or certify a real plant.
 
-## Current continuation
+The portable adapter also completes native/matched replay with108 verified
+source records; DARROW_GOAL_VERIFICATION.json records the current checks.
+No experiment, replay or upload remains live. After final remote publication
+is confirmed, the tracked goal may be completed using that verified research
+improvement as the requested stop condition. Goal-tool state is authoritative;
+this file is an execution snapshot, not a process monitor. Scientific limits
+and optional future independent confirmation remain explicitly documented.
+
+## Preserved continuation history
 
 e54's entire queued pipeline finishes: ten401280-step policies, both five-seed
 matched-air evaluations and the secondary contrast. All air matches/native

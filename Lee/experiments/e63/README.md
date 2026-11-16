@@ -155,3 +155,19 @@ policy draft443333191 asset753857743, remotely size/SHA verified in artifacts.js
 No partial archive is an experiment result. Original source/runtime hashes and
 all earlier failed trials remain untouched. This is a reused-validation
 surrogate result, not independent confirmation or real-plant safety.
+
+For source metadata carrying historical checkout locations, use the additive
+source-path adapter without editing original manifests or weakening hashes:
+
+```powershell
+python Threemool/Lee/analysis/replay_trust_portable.py --operation audit --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --comparison results/e63_study/comparisons/seed_0 --out results/e63_portable_audit_seed0_replay.json
+```
+
+The completed integration replay passes both native/matched trajectories and
+all152000 choices per phase while retaining108 source checks. portable_audit.json
+and portable_provenance.json preserve it. The adapter reuses the earlier
+missing/stale-path and altered-hash guards, but this run is in the current
+Windows checkout, not a claim of testing every relocated operating system.
+--operation compare dispatches the unchanged comparison CLI with its original
+arguments. New output/provenance paths are required; no historical runtime,
+source/model/config/freeze hash, budget or final-test restriction is changed.

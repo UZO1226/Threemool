@@ -447,3 +447,13 @@ separate from matched-policy improvement. The team test remains unused; the
 five-seed intervals condition on a reused validation period and imperfect
 frozen surrogate, not independent plant confirmation. All12 completed
 extension/control families remain in the shared comparison figure/table.
+
+The [e63 source-location adapter](replay_trust_portable.py) supports compare
+or audit operations while retaining all original source/model/config/freeze/
+budget checks. Its complete seed0 native/matched integration replay passes
+in this Windows checkout, with108 verified source records in e63's
+portable_provenance.json. The exact command and scope are in the e63 README.
+It is an additive metadata-location adapter, not a modified controller or
+claim of testing all operating systems. [The final objective audit](DARROW_GOAL_AUDIT.md)
+accounts separately for model safety limits, simulation evidence, held-out
+test preservation and the completed research deliverables.
