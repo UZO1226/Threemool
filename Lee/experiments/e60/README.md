@@ -44,4 +44,5 @@ tasks run concurrently; no fitting or new policy seed is added. Each finished
 model/horizon writes a separate aggregate JSON. summary.json exists only after
 all eight paired tasks and both identity controls pass. An existing output
 folder is rejected. Inspect actual process liveness before resuming and never
-duplicate a live diagnostic. No completed outcome is recorded yet.
+duplicate a live diagnostic. All16 conditions now complete and both identity
+controls pass. See summary.json and results.md. No e60 process remains live.
