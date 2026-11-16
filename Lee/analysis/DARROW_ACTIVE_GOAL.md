@@ -74,8 +74,14 @@ numeric fast/sklearn error is zero and coordinate-order error is2.22e-16.
 The guarded20-condition evaluator launches under95ac42b in
 results/e58_conditional_upper. Its current execution handle is15632, PID25916
 at launch; recheck actual liveness rather than inferring it from this note.
-inner_progress.json records completed conditions and selection.json must be
-written before validation. No aggregate validation outcome exists yet.
+All20 inner conditions now complete and selection.json recordspit_b95_a0.25,
+chosen using calibration only before validation. No aggregate validation
+outcome exists yet. A separate sequential follow-up session47852 waits for
+the actually verified evaluator PID25916, then requires summary.json before
+running audit_upper.py, audit_events.py and rebuild_bank.py. Every nonzero
+stage exit stops later stages. Recheck both handles/processes before launching
+anything; queued audits must not be duplicated. Their sources remain fixed
+while this pipeline is active.
 Independent five-member full-day sklearn/scalar-interpolation audit code is
 implemented separately in e58/audit_upper.py. Event ranking/onsets, paired-date
 uncertainty and the stricter declared adoption checks remain required after
