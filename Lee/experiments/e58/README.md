@@ -85,6 +85,20 @@ If successful, subsequent agent comparisons must isolate new environment
 effects from agent changes under a newly documented freeze and equal policy
 training budgets. This experiment itself is not an FCSRL extension win.
 
-Status: specified after complete e57 failure and before any e58 implementation,
-fitting or validation outcome. The next work is a zero-extension numerical
-and calibration-only preflight; no e58 job has launched.
+The prospective specification was committed at35b8da3 before implementation,
+fitting or validation outcomes. upper_tail.py implements the fixed six-level
+kernel without changing historical sources or global backbone levels.
+preflight.json passes synthetic endpoints/atoms, the independent np.interp
+inverse reference, exact reproduction of all four e51 calibration banks and
+40 complete95-step calibration-only zero-extension forecasts. No new head
+has been fitted, and neither validation nor final test is evaluated here.
+
+From the workspace, reproduce the preflight into a new destination:
+
+```powershell
+python Threemool/Lee/experiments/e58/preflight.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e58_zero_preflight_replay.json
+```
+
+The next step is the fixed15-head DO upper-quantile fit, then source/constraint
+verification and the declared calibration/validation/audit pipeline. The
+preflight establishes kernel compatibility, not a safety-prediction gain.
