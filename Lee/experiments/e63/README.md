@@ -132,8 +132,10 @@ penalty contrast. All source files are pinned and checked throughout. Each
 stage writes logs/status, failures stop later stages, and the runner rejects
 an existing output directory. Complete reports stay under results/e63_study/
 final_reports until verified. Parent console log is results/e63_study_run.log.
-No full result is available yet. Do not duplicate live stages or change their
-pinned runtime files. No model fitting, PPO retraining or final test is added.
+All stages now complete and the primary passes all four predefined matched-air
+simulation conditions. See results.md, comparison.json and penalty_contrast.json.
+No e63 process remains live. Preserve pinned runtime files for replay. No
+model fitting, PPO retraining or final test is added.
 
 After all stages finish, package the necessary unchanged checkpoints, h4 rate
 models/provenance, fixed configs and complete generated outputs with:
@@ -146,5 +148,10 @@ The packager requires terminal complete status, all five native/matched action
 audits, exact model/config/checkpoint hashes and recomputed e44 report identity.
 It excludes source observations, captured arrays and stochastic banks. Its
 partial-study rejection is verified without creating an archive or index;
-positive complete-study packaging remains pending. No partial archive is an
-experiment result, and the existing source/runtime hashes remain untouched.
+positive complete-study packaging and remote upload now also pass. The complete
+14,263,028-byte archive has SHA256
+183c56ee7c864a04adbd337929040d557c37627680cbdb030a198c4443963aa3,
+policy draft443333191 asset753857743, remotely size/SHA verified in artifacts.json.
+No partial archive is an experiment result. Original source/runtime hashes and
+all earlier failed trials remain untouched. This is a reused-validation
+surrogate result, not independent confirmation or real-plant safety.

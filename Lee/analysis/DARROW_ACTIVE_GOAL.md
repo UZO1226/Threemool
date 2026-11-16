@@ -1,6 +1,9 @@
 # Active DARROW research goal
 
-The goal remains active. No extension passes the complete predefined criterion.
+The goal remains active pending the full objective/deliverable completion audit.
+e63 passes the complete predefined matched-air simulation criterion after
+all five policy-seed comparisons and independent native/matched action audits.
+This does not by itself close the unresolved environment-safety assessment.
 Previous environment failures and the negative first policy pair do not exhaust
 reasonable alternatives. No external blocker currently prevents useful work.
 This is an execution snapshot, not a live process monitor. Inspect the actual
@@ -194,6 +197,24 @@ five comparison PIDs at launch are24084,25396,17672,26776,10112. Check actual
 processes/handle before waiting or restarting; do not infer liveness from
 status.json alone or duplicate stages. All pinned Python sources must remain
 unchanged. No full result exists yet, no hyperparameter search or extra fit.
+
+This e63 launch is now complete: all five actual matches, all native/matched
+independent actions/trajectories/air accounting, the original e44 report and
+same-model penalty contrast finish. Study time1079.796 seconds. No process
+remains live and handle82418 is terminal. All four primary simulation checks
+pass. Matched air52018.537779 versus52020.577481m3, cost21.060125 versus22.464125,
+NH421.844737 versus23.208684 percent and DO.323816 versus.437763 percent.
+Cost/NH4/DO paired interval upper endpoints are negative and all five seeds
+improve each quality metric. Native air instead rises5.803 percent, so native
+quality is an energy/quality tradeoff, not the matched-policy efficiency claim.
+The complete14,263,028-byte archive is remotely verified in policy
+draft443333191 asset753857743. No source data/captures/banks are included.
+e63/results.md and the updated12-trial figure preserve all failures and
+surrogate/reused-validation limitations. Next audit the full original goal
+requirement by requirement, including environment safety limits, source/model
+research, split preservation, portable reproduction and actual GitHub state.
+Do not equate a simulator-only agent win with real-plant safety or waive any
+missing requirement. The full objective remains intact until that audit.
 
 Lee/analysis/package_trust_artifacts.py is prepared outside pinned runtime
 sources. It preserves all five unchanged base/rate weights, full outputs,
@@ -550,4 +571,5 @@ environment archives and PIT reconstruction are in DARROW_REPRODUCTION.md.
 Work remains under Lee/ on lee/darrow-safety-calibration. Preserve original
 FCSRL commit d882b91054d52c7a63a18a21f7db67bbbed82b63 and Apache license, keep
 final test41 unused, and run scope/paper checks before pushing. No agent or
-real-plant success claim is justified yet. Continue the full user objective.
+real-plant safety claim is justified. e63's scoped simulation improvement is
+verified; audit every remaining full-objective requirement before completion.

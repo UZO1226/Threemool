@@ -22,6 +22,7 @@ TRIALS = [
     ('Four-step rate correction', 'ppolag_fcsrl_rate_h4', 'e56/h4_comparison.json'),
     ('One-step regression control', 'ppolag_fcsrl_rate_h1', 'e56/h1_comparison.json'),
     ('Executed-air smoothing', 'ppolag_fcsrl_air_filter', 'e57/comparison.json'),
+    ('Risk-only hard region', 'ppolag_fcsrl_risk_only_h4', 'e63/comparison.json'),
 ]
 KEYS = ('cost', 'nh4_viol_pct', 'do_viol_pct')
 

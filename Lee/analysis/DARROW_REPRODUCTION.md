@@ -421,3 +421,29 @@ instructions](../experiments/e62/README.md) reproduce the calibration-only
 four-condition channel decomposition into a new output directory. Both
 experiments retain their failures/uncertainty; no new environment freeze,
 policy training or final test follows from these diagnostic results.
+
+## Completed e63 risk-only hard-region correction
+
+The complete five-seed study passes the original matched-air simulation
+criterion after all native/matched action audits. Restore
+lee-e63-risk-only.zip,14,263,028 bytes, SHA256
+183c56ee7c864a04adbd337929040d557c37627680cbdb030a198c4443963aa3,
+from policy draft443333191 asset753857743. [The index](../experiments/e63/artifacts.json)
+verifies remote size/digest and every archived file. It includes all necessary
+unchanged final base checkpoints, h4 regressors/provenance, fixed configs,
+comparison queries, full audits/logs and the original-penalty references.
+Source observations, training captures and stochastic banks are excluded.
+
+Restore the original e42 environment and reconstruct its excluded PIT bank
+separately using the earlier instructions. [The e63 README](../experiments/e63/README.md)
+provides held preflight, full native smoke, source-guarded all-seed comparison,
+independent audit and artifact commands. Preserve completed outputs and use
+new destinations for deliberate replay. Held checks require original captured
+streams to be regenerated locally; controller comparison/action replay does
+not require those arrays. Historical source/library hashes remain enforced.
+
+[The results](../experiments/e63/results.md) keep native air/quality tradeoffs
+separate from matched-policy improvement. The team test remains unused; the
+five-seed intervals condition on a reused validation period and imperfect
+frozen surrogate, not independent plant confirmation. All12 completed
+extension/control families remain in the shared comparison figure/table.
