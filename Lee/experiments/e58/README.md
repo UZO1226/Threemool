@@ -102,3 +102,16 @@ python Threemool/Lee/experiments/e58/preflight.py --data kaggle_data/darrow_15mi
 The next step is the fixed15-head DO upper-quantile fit, then source/constraint
 verification and the declared calibration/validation/audit pipeline. The
 preflight establishes kernel compatibility, not a safety-prediction gain.
+
+The fixed fit implementation is committed at69ad9a8 before fitting. Launch:
+
+```powershell
+python Threemool/Lee/experiments/e58/fit_upper.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --parent-freeze Threemool/Lee/experiments/e42/environment_freeze.json --preflight results/e58_zero_preflight.json --out results/e58_conditional_upper
+```
+
+The job runs in the threemool Python environment with OMP, OPENBLAS, MKL and
+NUMBA thread counts fixed to1, four fitting threads, CPU only. It authenticates
+the preflight inputs, split separation and copied backbone hashes before
+fitting. fit_summary.json is written only after all15 heads and numeric/order
+checks complete. An existing output directory is never reused. Inspect actual
+process liveness before resuming; a partial output folder is not a live job.
