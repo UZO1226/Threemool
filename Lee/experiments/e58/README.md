@@ -147,8 +147,12 @@ reproduces old/persistence/e40 reference metrics and candidate/e51 Brier values,
 and uses the original10000 circular five-day bootstrap resamples. Initial
 ongoing events are excluded from onset matching. Every condition is retained
 in the decision, with no validation-driven parameter change. Evaluation is
-still running; neither independent/event audit has executed yet. No agent is
-trained on e58 and no final test is evaluated.
+now complete, including the independent/event audits and exact bank rebuild.
+All seven adoption conditions fail. DO frequency is6.766447 percent versus
+1.157895 observed, all five members fail calibration and no new DO onset is
+matched. See results.md, summary.json, audit.json, event_audit.json and
+bank_rebuild_check.json. No agent is trained on e58 and no final test is
+evaluated. No evaluator or follow-up audit job remains queued.
 
 The stochastic bank remains local and must be excluded from shared archives.
 After restoring the completed summary and six authenticated model files, it
@@ -163,4 +167,5 @@ fixed banks, selects the already recorded alpha and compares arrays exactly
 if the original bank is available. It reports the array checksum and refuses
 to overwrite its output. Its complete-run execution check remains pending
 until selection and summary.json exist; syntax checking alone is not proof
-that bank reconstruction has passed.
+that bank reconstruction has passed. The completed execution now passes and
+its exact array checksum is preserved in bank_rebuild_check.json.

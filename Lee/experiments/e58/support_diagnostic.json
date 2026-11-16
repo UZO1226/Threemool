@@ -1,0 +1,39 @@
+{
+  "scope": "Observed-state one-step attainable support on calibration only; not free-running event prediction or policy safety.",
+  "selected_alpha_fixed": 0.25,
+  "model_refit": false,
+  "selection_changed": false,
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "models": {
+    "original_backbone": {
+      "actual_do_events": 306,
+      "actual_new_do_events": 26,
+      "events_outside_every_member_upper_support": 167,
+      "new_events_outside_every_member_upper_support": 4,
+      "non_events_with_some_member_upper_support": 103,
+      "per_member_attainable_event_rows": [
+        185,
+        167,
+        167,
+        183,
+        144
+      ]
+    },
+    "conditional_upper": {
+      "actual_do_events": 306,
+      "actual_new_do_events": 26,
+      "events_outside_every_member_upper_support": 2,
+      "new_events_outside_every_member_upper_support": 2,
+      "non_events_with_some_member_upper_support": 278,
+      "per_member_attainable_event_rows": [
+        507,
+        524,
+        528,
+        516,
+        476
+      ]
+    }
+  }
+}

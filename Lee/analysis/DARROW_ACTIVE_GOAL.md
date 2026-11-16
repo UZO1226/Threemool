@@ -60,33 +60,26 @@ or claim command smoothness as water-quality adoption. The complete archive
 is remotely size/SHA verified in draft443333191, asset753539996. No e57 job
 remains queued and no live process should be inferred from old launch notes.
 
-Next e58 revisits the unresolved conditional DO event support, keeping the
-original e40 five-quantile backbone fixed and fitting only15 conditional.99 DO
-heads. Its README is specified before implementation/outcomes. A DO-only
-upper extension and alpha-matched six-level PIT must first reproduce e51
-exactly in a zero-extension control. Preserve fixed clip bounds and original
-20 inner conditions/gate; additional predeclared Brier/ranking/onset conditions
-prevent frequency-only adoption. Model seeds are not policy seeds. Implement
-synthetic/CDF/atom and calibration-only zero controls before any candidate
-validation. The zero-extension banks and40 complete calibration trajectories
-now reproduce e51 bitwise. All15 fixed upper heads finish under69ad9a8;
-numeric fast/sklearn error is zero and coordinate-order error is2.22e-16.
-The guarded20-condition evaluator launches under95ac42b in
-results/e58_conditional_upper. Its current execution handle is15632, PID25916
-at launch; recheck actual liveness rather than inferring it from this note.
-All20 inner conditions now complete and selection.json recordspit_b95_a0.25,
-chosen using calibration only before validation. No aggregate validation
-outcome exists yet. A separate sequential follow-up session47852 waits for
-the actually verified evaluator PID25916, then requires summary.json before
-running audit_upper.py, audit_events.py and rebuild_bank.py. Every nonzero
-stage exit stops later stages. Recheck both handles/processes before launching
-anything; queued audits must not be duplicated. Their sources remain fixed
-while this pipeline is active.
-Independent five-member full-day sklearn/scalar-interpolation audit code is
-implemented separately in e58/audit_upper.py. Event ranking/onsets, paired-date
-uncertainty and the stricter declared adoption checks remain required after
-evaluation. Do not modify the frozen e42 world or train new policies until
-environment checks pass.
+e58 completes all15 conditional.99 DO heads, all20 inner conditions, selected
+validation,16-draw sensitivity, independent five-member full-day audit,
+event/reference/date uncertainty audit and exact calibration-bank rebuild.
+Selection ispit_b95_a0.25. DO frequency6.766447 percent versus1.157895 observed
+fails all five members. DO Brier.020414, AP.010811 and AUC.425680 fail, with
+0/25 new DO onsets matched. All seven declared adoption conditions fail.
+Independent sklearn/scalar interpolation discrepancy is8.88e-16. The complete
+24,046,229-byte archive is remotely verified in environment draft442901392,
+asset753652328. No e58 evaluator or follow-up job remains queued; handles15632,
+47852,5522 and37292 are terminal. Never infer liveness from earlier launch notes.
+
+The post-outcome calibration-only support diagnostic keeps alpha.25 fixed.
+Unattainable DO event rows fall167 to2 of306, new-event rows4 to2 of26, while
+non-event rows with some upper support rise103 to278. This demonstrates wider
+one-step support, not correct temporal probability or free-running safety.
+Do not retune the tail or adopt the failed candidate. The next useful diagnosis
+is whether temporal-noise conditioning and calibration/deployment context
+differences explain broad support without DO timing/ranking. Define any next
+candidate and controls prospectively after that evidence. Preserve all older
+models and failures. Do not modify the e42 freeze or train policies on e58.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

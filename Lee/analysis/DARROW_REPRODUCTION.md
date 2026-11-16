@@ -379,3 +379,22 @@ historical runtime files. The [results](../experiments/e57/results.md) are a
 failure: all five air matches pass, but mean cost rises by.646750 and NH4
 violation frequency by.682895 percentage points. Both paired intervals are
 unfavorable. Smaller command variation does not establish water-quality gain.
+
+## Completed e58 conditional DO upper tail
+
+The failed environment candidate's six model files and generated JSON reports
+are in lee-e58-conditional-do-upper.zip,24,046,229 bytes, SHA256
+e18e84dd88136d8b2826b3380616de2007c21c3cba9a2ba45bb008a4753233d7.
+The existing private environment draft442901392 contains verified asset753652328.
+[The artifact index](../experiments/e58/artifacts.json) records file checksums.
+Original observations and stochastic banks are excluded. The fixed e42
+environment remains the world for earlier policy comparisons.
+
+[The experiment README](../experiments/e58/README.md) provides fit, evaluation,
+independent audit, event comparison and calibration-only bank reconstruction
+commands. Completed outputs are in results/e58_conditional_upper. Preserve
+existing outputs and use separate destinations when reproducing. The rebuilt
+bank array SHA256 is9fb96ac7b36aec71350e12e3ddab13dabc2767456b74223630cbb98c1d4469c7.
+Its original array comparison passed. Reproduction requires original source
+versions and pinned libraries. [The results](../experiments/e58/results.md)
+record failure of all seven declared adoption conditions and no final test.
