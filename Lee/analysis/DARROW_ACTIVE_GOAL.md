@@ -92,6 +92,15 @@ an adopted improvement. No e59 process remains live. Next separate feedback
 error accumulation from noise organization with prospectively fixed reset
 horizons/common noise on calibration, then define a candidate from that
 evidence. No additional model or agent is trained by this diagnosis.
+
+e60 now prospectively specifies and launches the calibration-only factorial
+diagnosis under2e4bd6d. Existing e51/e58 at alpha.25 cross fixed1/4/16/95-step
+observed-state reset intervals with original versus tuple-preserving shuffled
+noise paths. All16 conditions, complete scores/events and paired date Brier
+contrasts are retained. reset1 must reproduce e59 and reset95 must reproduce
+both selected inner summaries. Execution handle24730, PID22408 at launch,
+results/e60_feedback_diagnosis. Recheck the actual handle/process before
+waiting or restarting. No outcome yet and no new environment or agent fit.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

@@ -30,3 +30,18 @@ reason to loosen the earlier adoption criterion. Retain failures and source
 hashes. Use these results to motivate a later prospectively fixed model
 change; never rescue e58 with a favorable diagnostic condition. Publish
 aggregate summaries only, excluding source/noise/trajectory arrays.
+
+The specification and implementation are committed at2e4bd6d before outcomes.
+The diagnostic launches in results/e60_feedback_diagnosis with:
+
+```powershell
+python Threemool/Lee/experiments/e60/diagnose_feedback.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --e59 results/e59_context_diagnosis.json --out results/e60_feedback_diagnosis
+```
+
+Use the pinned threemool environment, CPU, DARROW_FAST_DYNAMICS=1 and all
+OMP/OPENBLAS/MKL/NUMBA numerical thread counts1. Two independent inference
+tasks run concurrently; no fitting or new policy seed is added. Each finished
+model/horizon writes a separate aggregate JSON. summary.json exists only after
+all eight paired tasks and both identity controls pass. An existing output
+folder is rejected. Inspect actual process liveness before resuming and never
+duplicate a live diagnostic. No completed outcome is recorded yet.
