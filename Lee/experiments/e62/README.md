@@ -26,3 +26,16 @@ environment freeze or adoption decision is allowed in this diagnostic. Use
 the complete outcome to motivate a later prospectively specified candidate.
 Keep source observations, bank and trajectory arrays local; publish aggregate
 summaries and identity checks only. Preserve e61 failure and its full audit.
+
+Specification and implementation commit8f41b0e precedes all outcomes. Launch:
+
+```powershell
+python Threemool/Lee/experiments/e62/decompose_channels.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e61 results/e61_context_sampling --preflight Threemool/Lee/experiments/e61/preflight.json --out results/e62_channel_decomposition
+```
+
+Use pinned threemool Python, CPU, DARROW_FAST_DYNAMICS=1 and OMP/OPENBLAS/MKL/
+NUMBA thread counts1. Two independent inference tasks run concurrently, with
+no model fitting. Existing output directories are rejected. Each completed
+condition writes an aggregate report; summary.json requires all four and both
+e61 identity controls to finish. Inspect actual process liveness before
+resuming. No completed outcome is recorded yet.
