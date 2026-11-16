@@ -135,5 +135,17 @@ criteria. After it completes, run the independent five-member full-day check:
 python Threemool/Lee/experiments/e58/audit_upper.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e58_conditional_upper --out results/e58_conditional_upper/audit.json
 ```
 
-Event comparison, its date uncertainty and the full declared adoption decision
-remain pending. No agent is trained on e58 and no final test is evaluated.
+After the independent audit passes, reconstruct candidate and all four fixed
+references and apply every predeclared point/Brier/ranking/onset condition:
+
+```powershell
+python Threemool/Lee/experiments/e58/audit_events.py --data kaggle_data/darrow_15min.pkl --runs results/e58_conditional_upper --freeze Threemool/Lee/experiments/e42/environment_freeze.json --audit results/e58_conditional_upper/audit.json --e51 results/e51_blended_pit --out results/e58_conditional_upper/event_audit.json
+```
+
+The event audit authenticates all candidate/reference weights and splits,
+reproduces old/persistence/e40 reference metrics and candidate/e51 Brier values,
+and uses the original10000 circular five-day bootstrap resamples. Initial
+ongoing events are excluded from onset matching. Every condition is retained
+in the decision, with no validation-driven parameter change. Evaluation is
+still running; neither independent/event audit has executed yet. No agent is
+trained on e58 and no final test is evaluated.
