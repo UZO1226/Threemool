@@ -118,6 +118,17 @@ def main():
                        record['occupancies'][0]['native_summary']['air_m3'] - delta) <= 1e-8
         add(primary)
         add(ROOT / 'Lee/experiments/e69/artifacts.json')
+        add(ROOT / 'Lee/experiments/e69/projection_control_contrast.json')
+        add(ROOT / 'Lee/experiments/e69/native_air_diagnostic.json')
+        exposure_path = args.study / 'exposure_summary.json'
+        if exposure_path.exists():
+            exposure = json.loads(exposure_path.read_text())
+            assert exposure['passed'] and exposure['policy_seeds'] == list(range(5))
+            assert exposure['transport_summary_sha256'] == sha(args.study / 'summary.json')
+            assert exposure['new_environment_queries'] == 0 and not exposure['new_model_fitting']
+            for record in exposure['records']:
+                for name, count in (('fit', 316160), ('held', 85120), ('e63_native', 152000), ('e69_native', 152000)):
+                    assert sum(record['populations'][name]['regime_counts']) == count
     else:
         summary = json.loads((args.study / 'summary.json').read_text())
         audit = json.loads((args.study / 'audit.json').read_text())
@@ -140,7 +151,7 @@ def main():
                 'residual_banks_included': False, 'pit_banks_included': False,
                 'captured_training_arrays_included': False, 'test_evaluated': False,
                 'frozen_environment_dependencies': freeze['frozen_files_sha256'],
-                'scope': 'Audited aggregate outputs and provenance. Agent trials include unchanged policy/rate weights; environment trial reuses archived e40 weights. Frozen model/data dependencies require separate restoration.',
+                'scope': 'Audited aggregate outputs and provenance. Agent trials include policy/rate weights; non-agent studies reuse frozen environment and referenced prior model archives. Frozen model/data dependencies require separate restoration.',
                 'files': {name: {'bytes': path.stat().st_size, 'sha256': sha(path)} for name, path in sorted(files.items())}}
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(args.out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:

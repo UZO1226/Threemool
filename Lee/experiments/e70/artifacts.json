@@ -1,0 +1,89 @@
+{
+  "trial": "e70",
+  "new_model_fitting": false,
+  "source_data_included": false,
+  "projection_parameters_fitted": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "captured_training_arrays_included": false,
+  "test_evaluated": false,
+  "frozen_environment_dependencies": {
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
+    "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+    "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
+    "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
+    "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
+    "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
+    "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
+    "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+  },
+  "scope": "Audited aggregate outputs and provenance. Agent trials include policy/rate weights; non-agent studies reuse frozen environment and referenced prior model archives. Frozen model/data dependencies require separate restoration.",
+  "files": {
+    "Threemool/Lee/experiments/e42/environment_freeze.json": {
+      "bytes": 3289,
+      "sha256": "0c4d0e845b0d8aa51574d69b9941074c7fa3c413683a23f57e34a207c8ace1ad"
+    },
+    "Threemool/Lee/experiments/e69/artifacts.json": {
+      "bytes": 31154,
+      "sha256": "ee51c6d34ca10708733973477ed830fa7f0663fcd97c72c4dff04c3b26e90dec"
+    },
+    "Threemool/Lee/experiments/e69/native_air_diagnostic.json": {
+      "bytes": 5991,
+      "sha256": "9d81af2760c05c6f04a83963ecca33ef6ebc4ee20e167337e8a781a97d7bb8d3"
+    },
+    "Threemool/Lee/experiments/e69/projection_control_contrast.json": {
+      "bytes": 7970,
+      "sha256": "6c17e0bc9965d1de4e479602999a8d51dfe8e11e46af0bc5c7d1629e12b11c3b"
+    },
+    "metadata/FCSRL_LICENSE": {
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    "results/e69_study/comparison.json": {
+      "bytes": 12158,
+      "sha256": "74f91397983fb98030ed2f1380f9fefe06ff748c487498896f09062368191a7f"
+    },
+    "results/e70_air_transport/exposure_summary.json": {
+      "bytes": 7081,
+      "sha256": "c048c066db49d7296c007f93d15d942442adb3012b9690a38d2ca56f7baef1dc"
+    },
+    "results/e70_air_transport/seed_0.json": {
+      "bytes": 3256,
+      "sha256": "8a757c4ec56795eaf71c2aab84ca7a5fbc5c54f17b7c5ae4523b2eac1b8a8497"
+    },
+    "results/e70_air_transport/seed_1.json": {
+      "bytes": 3188,
+      "sha256": "853e4aa16ab25807cce877e7af03200d4763c764ce513dc56427cdfc9ee553b0"
+    },
+    "results/e70_air_transport/seed_2.json": {
+      "bytes": 3261,
+      "sha256": "1ce83d9ec225320960c6649524e0e8f62e8471e2fc9faa7587003932129633ee"
+    },
+    "results/e70_air_transport/seed_3.json": {
+      "bytes": 3256,
+      "sha256": "6fc72aebdd1a4493f5d96e33f876b6f09015f779f44798f12749951a7e728fc8"
+    },
+    "results/e70_air_transport/seed_4.json": {
+      "bytes": 3263,
+      "sha256": "67b5138fc43990d9250ca37d5064d57c37c8a9e464ce047225c34502f5d243b8"
+    },
+    "results/e70_air_transport/summary.json": {
+      "bytes": 20032,
+      "sha256": "7c3f4b74b7c71d480dedcfa1c552678bd00891c38b4cdc66a777ead3a459b8b4"
+    }
+  },
+  "archive": {
+    "name": "lee-e69-e70-air-transport.zip",
+    "bytes": 37379,
+    "sha256": "0f357db861cc8d616b9a8a3cf4988b8c88090df837f0584dd11d817ce26f8bd6"
+  },
+  "remote": {
+    "release_id": 443333191,
+    "tag": "lee-e42-e44-policy-comparison-20261113",
+    "asset_id": 755782069,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

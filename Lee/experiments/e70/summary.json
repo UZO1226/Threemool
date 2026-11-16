@@ -1,0 +1,590 @@
+{
+  "passed": true,
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "occupancies": [
+        {
+          "control": "e63",
+          "action_means": [
+            -0.5265291354367478,
+            -0.4734940566664309
+          ],
+          "regime_counts": [
+            118066,
+            19,
+            33914,
+            1
+          ],
+          "conditional_action_means": [
+            [
+              -0.41375189496007386,
+              -0.3576960213784903
+            ],
+            [
+              -0.21930120297168432,
+              -0.3805876723564161
+            ],
+            [
+              -0.9193436458300209,
+              -0.8767033307470686
+            ],
+            [
+              0.3897715061903,
+              0.3897715061903
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 50602.19865019757,
+            "cost": 21.29,
+            "nh4_viol_pct": 22.397368421052633,
+            "do_viol_pct": 0.013157894736842105,
+            "reward": -22.489866066754477,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 55.625
+          },
+          "saved_native_sha256": "ac208e8bdc109c278830d6382a3d8f11ce63d59d35fbeb7015504e064f50151c",
+          "native_replay_exact": true
+        },
+        {
+          "control": "e69",
+          "action_means": [
+            -0.5297639059970021,
+            -0.48444076158632865
+          ],
+          "regime_counts": [
+            123316,
+            6,
+            28677,
+            1
+          ],
+          "conditional_action_means": [
+            [
+              -0.4382669754243449,
+              -0.3917109923370473
+            ],
+            [
+              -0.1930469572544098,
+              -0.2108369556545765
+            ],
+            [
+              -0.9233305668881184,
+              -0.8833027717903201
+            ],
+            [
+              0.7255782783031464,
+              0.9755782783031464
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 55100.393605461155,
+            "cost": 17.935,
+            "nh4_viol_pct": 18.874342105263157,
+            "do_viol_pct": 0.004605263157894736,
+            "reward": -24.489063824649403,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 61.75000000000001
+          },
+          "saved_native_sha256": "6d823e3233ce21a997575696e7b17cd5ed91f3e94a8a68591da628bf7d755184",
+          "native_replay_exact": true
+        }
+      ],
+      "actual_native_air_difference_m3": 4498.1949552635515,
+      "symmetric_mapping_component_m3": 5256.017551234172,
+      "symmetric_occupancy_component_m3": -757.822595970621,
+      "mapping_on_e63_occupancy_m3": 5668.124043577623,
+      "mapping_on_e69_occupancy_m3": 4843.9110588907215,
+      "occupancy_under_e63_action_m3": -345.7161036271708,
+      "occupancy_under_e69_action_m3": -1169.9290883140714,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+        "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+      },
+      "rate_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+      "controller_config_sha256": "de86cecc2e347b4f5d70e35a98e0b058d8923e5c75c38ddf2c6f19eb87b34d5d",
+      "test_evaluated": false
+    },
+    {
+      "policy_seed": 1,
+      "occupancies": [
+        {
+          "control": "e63",
+          "action_means": [
+            -0.3916950178684814,
+            -0.3446547430230762
+          ],
+          "regime_counts": [
+            132230,
+            97,
+            19664,
+            9
+          ],
+          "conditional_action_means": [
+            [
+              -0.36792905118223723,
+              -0.31790052280957604
+            ],
+            [
+              0.07820985281897574,
+              -0.16953884100342714
+            ],
+            [
+              -0.5538892561099602,
+              -0.5253866135658343
+            ],
+            [
+              -0.2547001954582002,
+              -0.43190796238256024
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 65012.59496530605,
+            "cost": 12.205,
+            "nh4_viol_pct": 12.77763157894737,
+            "do_viol_pct": 0.06973684210526315,
+            "reward": -28.894486651247135,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 78.4375
+          },
+          "saved_native_sha256": "2ee2db39050aae7ff8f4ac48e4b269dc4fdd924a1bf3b73f921bf18c3b7def24",
+          "native_replay_exact": true
+        },
+        {
+          "control": "e69",
+          "action_means": [
+            -0.4373755579204789,
+            -0.3925972227968318
+          ],
+          "regime_counts": [
+            133301,
+            13,
+            18686,
+            0
+          ],
+          "conditional_action_means": [
+            [
+              -0.4171641567344225,
+              -0.36943761182704854
+            ],
+            [
+              0.2271950107354384,
+              -0.02280498926456158
+            ],
+            [
+              -0.5820207150913571,
+              -0.5580690520229369
+            ],
+            null
+          ],
+          "native_summary": {
+            "air_m3": 64916.17181358865,
+            "cost": 11.528125,
+            "nh4_viol_pct": 12.126315789473683,
+            "do_viol_pct": 0.008552631578947367,
+            "reward": -28.85163191715051,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 79.0625
+          },
+          "saved_native_sha256": "05079a5ffe2a5b0c21727221f276c658bfdb2968ed003895add30a1a607edf52",
+          "native_replay_exact": true
+        }
+      ],
+      "actual_native_air_difference_m3": -96.42315171745051,
+      "symmetric_mapping_component_m3": 4906.556970221231,
+      "symmetric_occupancy_component_m3": -5002.980121938682,
+      "mapping_on_e63_occupancy_m3": 5027.429374102679,
+      "mapping_on_e69_occupancy_m3": 4785.6845663397835,
+      "occupancy_under_e63_action_m3": -4882.107718057234,
+      "occupancy_under_e69_action_m3": -5123.85252582013,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "00c02245298bbdf5f21beff420641ffb108c5ab42e0531388f817a26ea66cf8b",
+        "normalizer.json": "b0da4f8348001531b9c332a33e72b052062252251737e1316a10c42f6c8235b2",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "9e6a7045a72284cb2b29600ac0c913ccab4d5763201546d28d13537882d4b8f1"
+      },
+      "rate_model_sha256": "1c049797f3739eeaf14e88f09a79d6b09a7b6f79fff9c5b4f94df7bde50a86d7",
+      "controller_config_sha256": "ebb89f9c1e08b24ecec2532126dae3ccefe34357dbefc76ed9e75355caf90f13",
+      "test_evaluated": false
+    },
+    {
+      "policy_seed": 2,
+      "occupancies": [
+        {
+          "control": "e63",
+          "action_means": [
+            -0.6045172865238579,
+            -0.5059897008748615
+          ],
+          "regime_counts": [
+            105081,
+            637,
+            46213,
+            69
+          ],
+          "conditional_action_means": [
+            [
+              -0.5800725509099647,
+              -0.47205817006128925
+            ],
+            [
+              0.035042941710638285,
+              -0.2178400559541251
+            ],
+            [
+              -0.6703891110352224,
+              -0.5881545683306749
+            ],
+            [
+              0.38182326006716577,
+              0.18929300202395238
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 42267.21500276268,
+            "cost": 29.741875,
+            "nh4_viol_pct": 30.842763157894733,
+            "do_viol_pct": 0.4644736842105263,
+            "reward": -18.785428890116744,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 34.9375
+          },
+          "saved_native_sha256": "197a79d59df62dd84864ce9d89759624324a441204e121a5c9fd0feab4b29974",
+          "native_replay_exact": true
+        },
+        {
+          "control": "e69",
+          "action_means": [
+            -0.6538162347715054,
+            -0.555937981633545
+          ],
+          "regime_counts": [
+            114891,
+            621,
+            36417,
+            71
+          ],
+          "conditional_action_means": [
+            [
+              -0.641786741779148,
+              -0.5351673506424427
+            ],
+            [
+              0.26039464006293417,
+              0.0007049558399214889
+            ],
+            [
+              -0.7093155337921351,
+              -0.6322593978175829
+            ],
+            [
+              0.35058573392075554,
+              0.11114911420244566
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 47459.12821291486,
+            "cost": 23.415,
+            "nh4_viol_pct": 24.19210526315789,
+            "do_viol_pct": 0.45526315789473687,
+            "reward": -21.092945872406606,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 47.625
+          },
+          "saved_native_sha256": "f6a10b14cac1ff0eac61a18f09bc929632a69b1444c3d57fb677acf68c928c8c",
+          "native_replay_exact": true
+        }
+      ],
+      "actual_native_air_difference_m3": 5191.913210152194,
+      "symmetric_mapping_component_m3": 10495.437010178006,
+      "symmetric_occupancy_component_m3": -5303.523800025812,
+      "mapping_on_e63_occupancy_m3": 10530.135716236495,
+      "mapping_on_e69_occupancy_m3": 10460.738304119517,
+      "occupancy_under_e63_action_m3": -5268.8250939673235,
+      "occupancy_under_e69_action_m3": -5338.222506084301,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "5a5ca8c2f639c8509b3f2062ba6fb208d515bf0d6d2035df186aa58a0816ac31",
+        "normalizer.json": "f1270e50a7aa71719dfeb37e168aed7290dea7a0c9e9f1da413cb070f1c3475c",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "7ad6d68d4b0afaf7bce07ece900d964910f5cbfca32c19ed47811c06eebb2834"
+      },
+      "rate_model_sha256": "477eeb3a1f00f7d44dd17d1b12a89c2811bec7f017f3861df449cf78d755bbaf",
+      "controller_config_sha256": "31182e91380b46218dcb9a4bf3d74203d91a7623868c017c2cb321063a43a8fa",
+      "test_evaluated": false
+    },
+    {
+      "policy_seed": 3,
+      "occupancies": [
+        {
+          "control": "e63",
+          "action_means": [
+            -0.370560275171577,
+            -0.3269083055763964
+          ],
+          "regime_counts": [
+            138419,
+            867,
+            11846,
+            868
+          ],
+          "conditional_action_means": [
+            [
+              -0.4186931302491439,
+              -0.3713772546664533
+            ],
+            [
+              -0.08598718075070964,
+              -0.33464650110682126
+            ],
+            [
+              0.13718953556720015,
+              0.18157336360499923
+            ],
+            [
+              0.09138965121929615,
+              -0.16725090177609556
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 67271.3705910377,
+            "cost": 8.836875,
+            "nh4_viol_pct": 8.13092105263158,
+            "do_viol_pct": 1.1710526315789473,
+            "reward": -29.89838692935009,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 79.5625
+          },
+          "saved_native_sha256": "9071bccda5fa13e906d74ab7e8486dc6ef522df5c5dfff12cf316db2cbe71c7b",
+          "native_replay_exact": true
+        },
+        {
+          "control": "e69",
+          "action_means": [
+            -0.41363053668213173,
+            -0.36818345726296847
+          ],
+          "regime_counts": [
+            138872,
+            574,
+            11700,
+            854
+          ],
+          "conditional_action_means": [
+            [
+              -0.47058275389374593,
+              -0.41702683807747554
+            ],
+            [
+              0.09381457145621137,
+              -0.15596765850894542
+            ],
+            [
+              0.18609102489617774,
+              0.17206761072349983
+            ],
+            [
+              0.2901780652776535,
+              0.0302107073104912
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 67525.39300502023,
+            "cost": 8.579375,
+            "nh4_viol_pct": 8.061842105263159,
+            "do_viol_pct": 0.9690789473684212,
+            "reward": -30.011285780008993,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 81.0
+          },
+          "saved_native_sha256": "4fb53fc0fa14b7e78cf17d8fb474122c9fdc9ac56ccb394d8d2c638a066e7e29",
+          "native_replay_exact": true
+        }
+      ],
+      "actual_native_air_difference_m3": 254.0224139825391,
+      "symmetric_mapping_component_m3": 4761.230431704002,
+      "symmetric_occupancy_component_m3": -4507.208017721463,
+      "mapping_on_e63_occupancy_m3": 4665.304250484931,
+      "mapping_on_e69_occupancy_m3": 4857.156612923073,
+      "occupancy_under_e63_action_m3": -4603.134198940535,
+      "occupancy_under_e69_action_m3": -4411.281836502391,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "f13169a673e414b35815cfd7dd2618363d90bfb51a95fad7d1ad48d32c434a3c",
+        "normalizer.json": "f2b8e59d6e354559f44de90c03fc58455d619ecade5b847c77252191a748fa93",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "fcc4f50df2b441d47957dd3497b089582b3807c5a245e39e75ade6a0b77afa03"
+      },
+      "rate_model_sha256": "90bf3773602ca4be1518f62eae45d1f6ec6af51f8a1dc2a66019061d870fc772",
+      "controller_config_sha256": "84be578ce220b0ea7a34f168017b259198ae1fbcf4b599729e9168683f3aaf7a",
+      "test_evaluated": false
+    },
+    {
+      "policy_seed": 4,
+      "occupancies": [
+        {
+          "control": "e63",
+          "action_means": [
+            -0.531758156438738,
+            -0.4168065399551531
+          ],
+          "regime_counts": [
+            115160,
+            21,
+            36801,
+            18
+          ],
+          "conditional_action_means": [
+            [
+              -0.5030891916474621,
+              -0.37966101202755015
+            ],
+            [
+              -0.4368270971767959,
+              -0.6793144842221011
+            ],
+            [
+              -0.6216525195569179,
+              -0.5328447581529567
+            ],
+            [
+              -0.27115151731090414,
+              -0.5192432852760857
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 50043.347030609875,
+            "cost": 23.32125,
+            "nh4_viol_pct": 24.523026315789476,
+            "do_viol_pct": 0.025657894736842102,
+            "reward": -22.241487569159943,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 46.4375
+          },
+          "saved_native_sha256": "7157ce383e6bd6b3c0fc603c0c1485a4546caee60a63e5969ba7d076fbcb63b1",
+          "native_replay_exact": true
+        },
+        {
+          "control": "e69",
+          "action_means": [
+            -0.6030229042713763,
+            -0.48135124466118173
+          ],
+          "regime_counts": [
+            126340,
+            3,
+            25653,
+            4
+          ],
+          "conditional_action_means": [
+            [
+              -0.5941472530850629,
+              -0.4684609128984484
+            ],
+            [
+              -0.30283754505217075,
+              -0.5528375450521708
+            ],
+            [
+              -0.6468230969510821,
+              -0.5448221597674113
+            ],
+            [
+              -0.26401894027367234,
+              -0.5140189402736723
+            ]
+          ],
+          "native_summary": {
+            "air_m3": 55430.585726836194,
+            "cost": 16.110625,
+            "nh4_viol_pct": 16.95394736842105,
+            "do_viol_pct": 0.004605263157894736,
+            "reward": -24.635815878593863,
+            "n_episodes": 1600,
+            "days_within_limit_pct": 60.25
+          },
+          "saved_native_sha256": "5d9ece4acb536ea96b9a663c2261779367e91cf79b2f2d1faba7185f40998f9b",
+          "native_replay_exact": true
+        }
+      ],
+      "actual_native_air_difference_m3": 5387.238696226329,
+      "symmetric_mapping_component_m3": 12644.55631626134,
+      "symmetric_occupancy_component_m3": -7257.317620035012,
+      "mapping_on_e63_occupancy_m3": 12285.45401168314,
+      "mapping_on_e69_occupancy_m3": 13003.658620839542,
+      "occupancy_under_e63_action_m3": -7616.419924613213,
+      "occupancy_under_e69_action_m3": -6898.2153154568105,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "d2eeb492be3c1bec582bd7314e8d7743e893c060a887a6dc80db6972e89b500c",
+        "normalizer.json": "6907118f4fbf84e4a2fa46e23a902ec15e95097df4e6262702907b128945f53c",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "46a467f0c1817508e9f9fec1feae285577ac38203f05bcb2ef854413aab1bbf1"
+      },
+      "rate_model_sha256": "bc6d1b989bad8e269033d3cd2576e2b479e5c7b0329e562d7c245662a5db6c13",
+      "controller_config_sha256": "d74779345d6b337ed871123c4d09bd529597a1ef0b559dc70140940d1c4810b4",
+      "test_evaluated": false
+    }
+  ],
+  "air_components": {
+    "actual_native_air_difference_m3": {
+      "mean": 3046.9892247814323,
+      "policy_seed_values": [
+        4498.1949552635515,
+        -96.42315171745051,
+        5191.913210152194,
+        254.0224139825391,
+        5387.238696226329
+      ],
+      "paired_seed_bootstrap95_ci": [
+        962.6786959587458,
+        5131.29975360412
+      ]
+    },
+    "symmetric_mapping_component_m3": {
+      "mean": 7612.75965591975,
+      "policy_seed_values": [
+        5256.017551234172,
+        4906.556970221231,
+        10495.437010178006,
+        4761.230431704002,
+        12644.55631626134
+      ],
+      "paired_seed_bootstrap95_ci": [
+        4918.318471016927,
+        10667.13258583665
+      ]
+    },
+    "symmetric_occupancy_component_m3": {
+      "mean": -4565.770431138318,
+      "policy_seed_values": [
+        -757.822595970621,
+        -5002.980121938682,
+        -5303.523800025812,
+        -4507.208017721463,
+        -7257.317620035012
+      ],
+      "paired_seed_bootstrap95_ci": [
+        -6256.428199953038,
+        -2455.885606357845
+      ]
+    }
+  },
+  "environment_evaluation_transitions": 1520000,
+  "environment_training_steps": 0,
+  "test_evaluated": false,
+  "candidate_selection": false,
+  "source_sha256": "eaa6ca44f42762df0b225d2f91fed5b5d26078102605f4e6f0d77bdbe2cff2b3",
+  "initial_report_sha256": "74f91397983fb98030ed2f1380f9fefe06ff748c487498896f09062368191a7f",
+  "scope": "Exact native model decomposition, not a new controller, adoption or physical causal effect."
+}

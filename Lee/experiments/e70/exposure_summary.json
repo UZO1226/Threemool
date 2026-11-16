@@ -1,0 +1,265 @@
+{
+  "passed": true,
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "populations": {
+        "fit": {
+          "rows": 316160,
+          "regime_counts": [
+            275608,
+            7618,
+            32153,
+            781
+          ],
+          "current_nh4_exposure_percent": 10.416877530364372,
+          "current_do_exposure_percent": 2.6565662955465585
+        },
+        "held": {
+          "rows": 85120,
+          "regime_counts": [
+            78445,
+            1157,
+            5378,
+            140
+          ],
+          "current_nh4_exposure_percent": 6.482612781954887,
+          "current_do_exposure_percent": 1.5237312030075187
+        },
+        "e63_native": {
+          "rows": 152000,
+          "regime_counts": [
+            118066,
+            19,
+            33914,
+            1
+          ],
+          "current_nh4_exposure_percent": 22.3125,
+          "current_do_exposure_percent": 0.013157894736842105
+        },
+        "e69_native": {
+          "rows": 152000,
+          "regime_counts": [
+            123316,
+            6,
+            28677,
+            1
+          ],
+          "current_nh4_exposure_percent": 18.867105263157892,
+          "current_do_exposure_percent": 0.004605263157894737
+        }
+      }
+    },
+    {
+      "policy_seed": 1,
+      "populations": {
+        "fit": {
+          "rows": 316160,
+          "regime_counts": [
+            271869,
+            2636,
+            40728,
+            927
+          ],
+          "current_nh4_exposure_percent": 13.175290991902832,
+          "current_do_exposure_percent": 1.1269610323886639
+        },
+        "held": {
+          "rows": 85120,
+          "regime_counts": [
+            75403,
+            122,
+            9544,
+            51
+          ],
+          "current_nh4_exposure_percent": 11.272321428571429,
+          "current_do_exposure_percent": 0.20324248120300753
+        },
+        "e63_native": {
+          "rows": 152000,
+          "regime_counts": [
+            132230,
+            97,
+            19664,
+            9
+          ],
+          "current_nh4_exposure_percent": 12.942763157894738,
+          "current_do_exposure_percent": 0.06973684210526315
+        },
+        "e69_native": {
+          "rows": 152000,
+          "regime_counts": [
+            133301,
+            13,
+            18686,
+            0
+          ],
+          "current_nh4_exposure_percent": 12.293421052631578,
+          "current_do_exposure_percent": 0.008552631578947367
+        }
+      }
+    },
+    {
+      "policy_seed": 2,
+      "populations": {
+        "fit": {
+          "rows": 316160,
+          "regime_counts": [
+            274775,
+            8021,
+            31913,
+            1451
+          ],
+          "current_nh4_exposure_percent": 10.552884615384615,
+          "current_do_exposure_percent": 2.9959514170040484
+        },
+        "held": {
+          "rows": 85120,
+          "regime_counts": [
+            79518,
+            2386,
+            2912,
+            304
+          ],
+          "current_nh4_exposure_percent": 3.778195488721805,
+          "current_do_exposure_percent": 3.1602443609022557
+        },
+        "e63_native": {
+          "rows": 152000,
+          "regime_counts": [
+            105081,
+            637,
+            46213,
+            69
+          ],
+          "current_nh4_exposure_percent": 30.448684210526316,
+          "current_do_exposure_percent": 0.4644736842105263
+        },
+        "e69_native": {
+          "rows": 152000,
+          "regime_counts": [
+            114891,
+            621,
+            36417,
+            71
+          ],
+          "current_nh4_exposure_percent": 24.00526315789474,
+          "current_do_exposure_percent": 0.4552631578947368
+        }
+      }
+    },
+    {
+      "policy_seed": 3,
+      "populations": {
+        "fit": {
+          "rows": 316160,
+          "regime_counts": [
+            279191,
+            6381,
+            28387,
+            2201
+          ],
+          "current_nh4_exposure_percent": 9.674848178137651,
+          "current_do_exposure_percent": 2.7144483805668016
+        },
+        "held": {
+          "rows": 85120,
+          "regime_counts": [
+            79991,
+            1315,
+            3460,
+            354
+          ],
+          "current_nh4_exposure_percent": 4.480733082706767,
+          "current_do_exposure_percent": 1.9607612781954886
+        },
+        "e63_native": {
+          "rows": 152000,
+          "regime_counts": [
+            138419,
+            867,
+            11846,
+            868
+          ],
+          "current_nh4_exposure_percent": 8.364473684210525,
+          "current_do_exposure_percent": 1.1414473684210527
+        },
+        "e69_native": {
+          "rows": 152000,
+          "regime_counts": [
+            138872,
+            574,
+            11700,
+            854
+          ],
+          "current_nh4_exposure_percent": 8.25921052631579,
+          "current_do_exposure_percent": 0.9394736842105263
+        }
+      }
+    },
+    {
+      "policy_seed": 4,
+      "populations": {
+        "fit": {
+          "rows": 316160,
+          "regime_counts": [
+            274327,
+            7378,
+            33678,
+            777
+          ],
+          "current_nh4_exposure_percent": 10.897963056680162,
+          "current_do_exposure_percent": 2.5793901821862346
+        },
+        "held": {
+          "rows": 85120,
+          "regime_counts": [
+            77849,
+            926,
+            6063,
+            282
+          ],
+          "current_nh4_exposure_percent": 7.454182330827068,
+          "current_do_exposure_percent": 1.419172932330827
+        },
+        "e63_native": {
+          "rows": 152000,
+          "regime_counts": [
+            115160,
+            21,
+            36801,
+            18
+          ],
+          "current_nh4_exposure_percent": 24.223026315789472,
+          "current_do_exposure_percent": 0.025657894736842105
+        },
+        "e69_native": {
+          "rows": 152000,
+          "regime_counts": [
+            126340,
+            3,
+            25653,
+            4
+          ],
+          "current_nh4_exposure_percent": 16.879605263157895,
+          "current_do_exposure_percent": 0.004605263157894737
+        }
+      }
+    }
+  ],
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "new_model_fitting": false,
+  "candidate_selection": false,
+  "source_sha256": "f8fed6543cc4aed5cbec00fdececef77dd427b40e984bfef93af2b3728d9682f",
+  "projection_preflight_sha256": "7fe5602cd1a87eacfa558ed249b3e1772859fb62a4627c0129df13614522ab23",
+  "transport_summary_sha256": "7c3f4b74b7c71d480dedcfa1c552678bd00891c38b4cdc66a777ead3a459b8b4",
+  "scope": "Posthoc descriptive current-state exposure, not next-step event frequency, causal identification or a new candidate result."
+}
