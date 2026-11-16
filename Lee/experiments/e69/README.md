@@ -1,5 +1,9 @@
 # e69: Training-state air-budget projection
 
+Status: complete, all five independent audits pass, joint quality criterion
+fails. See results.md and comparison.json. Preserve the following prospective
+specification and preflight history; it is not an adoption or fresh replication.
+
 Prospective hypothesis, 2026-11-17. e67's wider zero-penalty correction raises
 native air substantially and fails cost/NH4 at matched air, despite lower DO.
 Test risk-guided allocation that first conserves e63's mean native action

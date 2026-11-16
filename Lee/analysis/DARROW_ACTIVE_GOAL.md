@@ -72,11 +72,20 @@ held updates53~66 are excluded from calibration. Known-optimum discrete-jump,
 multiplier-sign and zero/flat controls pass. Session23268 completes all five
 calibration and independent held checks, with fitting mean discrepancies at
 most2.22e-16. Held means need not match, and no policy gain follows from this.
-Session9972 completes the seed0 native serialization replay, independent
-sklearn action/trajectory audit, zero-multiplier flat-risk null and full
-zero-multiplier e67 identity control. It now runs all five matched-air
-comparisons under runner PID11600; their independent audits and final report
-remain pending. No e69 quality improvement is established yet.
+Session9972 completes all five matched-air comparisons and independent
+native/matched audits. e69 fails the primary criterion: cost21.167375 and
+NH4 22.102632% versus e63 21.060125 and21.844737%; their difference intervals
+cross zero. DO improves, but cannot rescue the joint failure. The separate
+e67 mechanism contrast improves cost/NH4 versus that weaker control only.
+The primary archive is remotely size/digest verified, and compact follow-up
+contrasts remain separately tracked. No e69 adoption or fresh replication.
+
+e70 preregisters a failure-only native air transport diagnostic. Session6207
+(PID25296 directly confirmed live) replays both unchanged controllers and
+observes both actions on each state. It checks exact native reconstruction,
+four fixed current-violation regimes and two exact air-decomposition identities.
+At the last output, seeds0/1 completed and seed2's e63 replay passed. No new
+candidate, fitting, environment-training step or success claim is introduced.
 
 Fresh-report arithmetic now preserves actual policy IDs5 through9, with the
 same five-seed bootstrap rule. Its synthetic constant-difference/ID check
