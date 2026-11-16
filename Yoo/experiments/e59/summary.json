@@ -1,0 +1,1243 @@
+{
+ "means": {
+  "ppo|none": {
+   "air_m3": 82144.03753827699,
+   "nh4_cost": 12.662,
+   "do_cost": 1.7120000000000002,
+   "cost": 14.374,
+   "nh4_excess_mg_h_L": 4.838465246503624,
+   "worst_day_nh4_cost": 47.120000000000005,
+   "days_within_limit_pct": 55.8,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 82144.03753827699
+  },
+  "fcsrl|none": {
+   "air_m3": 89684.8661709486,
+   "nh4_cost": 9.440000000000001,
+   "do_cost": 1.8980000000000001,
+   "cost": 11.338,
+   "nh4_excess_mg_h_L": 4.45959896649663,
+   "worst_day_nh4_cost": 49.720000000000006,
+   "days_within_limit_pct": 68.9,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 89684.8661709486
+  },
+  "fcsrl_actor|none": {
+   "air_m3": 84545.31969797518,
+   "nh4_cost": 8.796,
+   "do_cost": 1.525,
+   "cost": 10.321000000000002,
+   "nh4_excess_mg_h_L": 5.19451256843508,
+   "worst_day_nh4_cost": 56.71999999999999,
+   "days_within_limit_pct": 78.6,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 84545.31969797518
+  },
+  "severity|none": {
+   "air_m3": 89131.27956772316,
+   "nh4_cost": 8.332,
+   "do_cost": 1.6800000000000002,
+   "cost": 10.011999999999999,
+   "nh4_excess_mg_h_L": 4.61951472286232,
+   "worst_day_nh4_cost": 50.67999999999999,
+   "days_within_limit_pct": 76.5,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 89131.27956772316
+  },
+  "record|none": {
+   "air_m3": 84859.75950433378,
+   "nh4_cost": 27.06,
+   "do_cost": 1.71,
+   "cost": 28.77,
+   "nh4_excess_mg_h_L": 28.294436027435218,
+   "worst_day_nh4_cost": 92.6,
+   "days_within_limit_pct": 48.5,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 84859.75950433378
+  },
+  "zero|none": {
+   "air_m3": 0.0,
+   "nh4_cost": 89.065,
+   "do_cost": 0.56,
+   "cost": 89.625,
+   "nh4_excess_mg_h_L": 143.51918094076527,
+   "worst_day_nh4_cost": 95.0,
+   "days_within_limit_pct": 0.0,
+   "intervention_pct": 0.0,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 0.0
+  },
+  "ppo|park_e10": {
+   "air_m3": 84628.63756610034,
+   "nh4_cost": 3.2009999999999996,
+   "do_cost": 1.8039999999999998,
+   "cost": 5.005,
+   "nh4_excess_mg_h_L": 2.7549062942505924,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.4,
+   "intervention_pct": 7.951578947368421,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 80900.11050591641
+  },
+  "fcsrl|park_e10": {
+   "air_m3": 91286.86488706805,
+   "nh4_cost": 3.1350000000000002,
+   "do_cost": 1.75,
+   "cost": 4.885,
+   "nh4_excess_mg_h_L": 2.7471614601873604,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.9,
+   "intervention_pct": 9.306315789473683,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 87957.42032479215
+  },
+  "fcsrl_actor|park_e10": {
+   "air_m3": 86879.6033050986,
+   "nh4_cost": 3.2020000000000004,
+   "do_cost": 1.754,
+   "cost": 4.956,
+   "nh4_excess_mg_h_L": 2.7516116776890795,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.2,
+   "intervention_pct": 7.4957894736842094,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 83794.3889526974
+  },
+  "severity|park_e10": {
+   "air_m3": 90905.1513254682,
+   "nh4_cost": 3.196,
+   "do_cost": 1.693,
+   "cost": 4.889,
+   "nh4_excess_mg_h_L": 2.754460478849044,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.6,
+   "intervention_pct": 7.649473684210525,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 88251.22083056462
+  },
+  "record|park_e10": {
+   "air_m3": 92031.55997870884,
+   "nh4_cost": 3.13,
+   "do_cost": 2.26,
+   "cost": 5.39,
+   "nh4_excess_mg_h_L": 2.7183990032405125,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 88.0,
+   "intervention_pct": 11.615789473684211,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 84859.75950433378
+  },
+  "zero|park_e10": {
+   "air_m3": 85875.3125,
+   "nh4_cost": 3.29,
+   "do_cost": 2.125,
+   "cost": 5.415,
+   "nh4_excess_mg_h_L": 2.791083419557822,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 87.0,
+   "intervention_pct": 78.78421052631579,
+   "lowered_pct": 0.0,
+   "conflict_pct": 0.0,
+   "policy_air_m3": 0.0
+  },
+  "ppo|park_e19": {
+   "air_m3": 82766.02988749114,
+   "nh4_cost": 3.197,
+   "do_cost": 1.4420000000000002,
+   "cost": 4.639,
+   "nh4_excess_mg_h_L": 2.7514504033901312,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.8,
+   "intervention_pct": 8.295789473684211,
+   "lowered_pct": 1.343157894736842,
+   "conflict_pct": 0.12421052631578947,
+   "policy_air_m3": 80176.01720874337
+  },
+  "fcsrl|park_e19": {
+   "air_m3": 89466.15906982089,
+   "nh4_cost": 3.124,
+   "do_cost": 1.346,
+   "cost": 4.470000000000001,
+   "nh4_excess_mg_h_L": 2.73329113978858,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 90.4,
+   "intervention_pct": 8.042105263157897,
+   "lowered_pct": 1.431578947368421,
+   "conflict_pct": 0.15894736842105264,
+   "policy_air_m3": 87568.2509662758
+  },
+  "fcsrl_actor|park_e19": {
+   "air_m3": 85772.12165727024,
+   "nh4_cost": 3.169,
+   "do_cost": 1.325,
+   "cost": 4.494,
+   "nh4_excess_mg_h_L": 2.758886351281368,
+   "worst_day_nh4_cost": 38.239999999999995,
+   "days_within_limit_pct": 90.5,
+   "intervention_pct": 7.715789473684211,
+   "lowered_pct": 1.343157894736842,
+   "conflict_pct": 0.0894736842105263,
+   "policy_air_m3": 83770.10010812455
+  },
+  "severity|park_e19": {
+   "air_m3": 89558.94775154197,
+   "nh4_cost": 3.191,
+   "do_cost": 1.3630000000000002,
+   "cost": 4.554,
+   "nh4_excess_mg_h_L": 2.7610251756788093,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 90.3,
+   "intervention_pct": 7.256842105263158,
+   "lowered_pct": 1.671578947368421,
+   "conflict_pct": 0.12421052631578948,
+   "policy_air_m3": 88202.39331744437
+  },
+  "record|park_e19": {
+   "air_m3": 91017.62729190744,
+   "nh4_cost": 3.215,
+   "do_cost": 1.475,
+   "cost": 4.69,
+   "nh4_excess_mg_h_L": 2.7548164532545125,
+   "worst_day_nh4_cost": 38.2,
+   "days_within_limit_pct": 89.5,
+   "intervention_pct": 11.2,
+   "lowered_pct": 1.5368421052631578,
+   "conflict_pct": 0.1736842105263158,
+   "policy_air_m3": 84859.75950433378
+  },
+  "zero|park_e19": {
+   "air_m3": 80003.125,
+   "nh4_cost": 3.365,
+   "do_cost": 2.045,
+   "cost": 5.41,
+   "nh4_excess_mg_h_L": 2.8116314809551284,
+   "worst_day_nh4_cost": 38.6,
+   "days_within_limit_pct": 87.5,
+   "intervention_pct": 77.31052631578947,
+   "lowered_pct": 0.0,
+   "conflict_pct": 3.1789473684210527,
+   "policy_air_m3": 0.0
+  }
+ },
+ "seed_level": {
+  "ppo|none": [
+   {
+    "air_m3": 83498.48075389629,
+    "nh4_cost": 8.865,
+    "do_cost": 1.645,
+    "cost": 10.51,
+    "nh4_excess_mg_h_L": 4.1781158094369895,
+    "worst_day_nh4_cost": 47.2,
+    "days_within_limit_pct": 75.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 83498.48075389629
+   },
+   {
+    "air_m3": 80390.15159033588,
+    "nh4_cost": 12.92,
+    "do_cost": 1.54,
+    "cost": 14.46,
+    "nh4_excess_mg_h_L": 5.014559734968402,
+    "worst_day_nh4_cost": 51.2,
+    "days_within_limit_pct": 55.50000000000001,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 80390.15159033588
+   },
+   {
+    "air_m3": 80105.23982060957,
+    "nh4_cost": 12.97,
+    "do_cost": 2.17,
+    "cost": 15.14,
+    "nh4_excess_mg_h_L": 4.904194059975957,
+    "worst_day_nh4_cost": 43.2,
+    "days_within_limit_pct": 54.50000000000001,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 80105.23982060957
+   },
+   {
+    "air_m3": 82507.87070625345,
+    "nh4_cost": 14.635,
+    "do_cost": 1.42,
+    "cost": 16.055,
+    "nh4_excess_mg_h_L": 5.333763835789759,
+    "worst_day_nh4_cost": 48.4,
+    "days_within_limit_pct": 50.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 82507.87070625345
+   },
+   {
+    "air_m3": 84218.44482028972,
+    "nh4_cost": 13.92,
+    "do_cost": 1.785,
+    "cost": 15.705,
+    "nh4_excess_mg_h_L": 4.761692792347014,
+    "worst_day_nh4_cost": 45.6,
+    "days_within_limit_pct": 43.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 84218.44482028972
+   }
+  ],
+  "fcsrl|none": [
+   {
+    "air_m3": 91687.55155933906,
+    "nh4_cost": 4.285,
+    "do_cost": 1.48,
+    "cost": 5.765,
+    "nh4_excess_mg_h_L": 3.712885742918697,
+    "worst_day_nh4_cost": 47.4,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 91687.55155933906
+   },
+   {
+    "air_m3": 89423.23214248173,
+    "nh4_cost": 13.46,
+    "do_cost": 2.355,
+    "cost": 15.815,
+    "nh4_excess_mg_h_L": 4.399196235275099,
+    "worst_day_nh4_cost": 46.2,
+    "days_within_limit_pct": 42.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 89423.23214248173
+   },
+   {
+    "air_m3": 80266.21228968375,
+    "nh4_cost": 20.015,
+    "do_cost": 1.57,
+    "cost": 21.585,
+    "nh4_excess_mg_h_L": 6.846697628754076,
+    "worst_day_nh4_cost": 63.4,
+    "days_within_limit_pct": 40.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 80266.21228968375
+   },
+   {
+    "air_m3": 96157.79924475237,
+    "nh4_cost": 4.92,
+    "do_cost": 2.065,
+    "cost": 6.985,
+    "nh4_excess_mg_h_L": 3.9383658123406677,
+    "worst_day_nh4_cost": 46.4,
+    "days_within_limit_pct": 87.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 96157.79924475237
+   },
+   {
+    "air_m3": 90889.5356184861,
+    "nh4_cost": 4.52,
+    "do_cost": 2.02,
+    "cost": 6.54,
+    "nh4_excess_mg_h_L": 3.4008494131946145,
+    "worst_day_nh4_cost": 45.2,
+    "days_within_limit_pct": 86.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 90889.5356184861
+   }
+  ],
+  "fcsrl_actor|none": [
+   {
+    "air_m3": 86142.31622535735,
+    "nh4_cost": 6.075,
+    "do_cost": 2.045,
+    "cost": 8.12,
+    "nh4_excess_mg_h_L": 4.58705010938526,
+    "worst_day_nh4_cost": 51.6,
+    "days_within_limit_pct": 85.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 86142.31622535735
+   },
+   {
+    "air_m3": 88636.81596379029,
+    "nh4_cost": 6.05,
+    "do_cost": 1.885,
+    "cost": 7.935,
+    "nh4_excess_mg_h_L": 4.019692384140665,
+    "worst_day_nh4_cost": 48.0,
+    "days_within_limit_pct": 84.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 88636.81596379029
+   },
+   {
+    "air_m3": 81246.50628914824,
+    "nh4_cost": 12.94,
+    "do_cost": 1.61,
+    "cost": 14.55,
+    "nh4_excess_mg_h_L": 6.025595784963529,
+    "worst_day_nh4_cost": 63.8,
+    "days_within_limit_pct": 66.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 81246.50628914824
+   },
+   {
+    "air_m3": 86431.98940084201,
+    "nh4_cost": 7.785,
+    "do_cost": 1.23,
+    "cost": 9.015,
+    "nh4_excess_mg_h_L": 4.754251631936114,
+    "worst_day_nh4_cost": 54.2,
+    "days_within_limit_pct": 81.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 86431.98940084201
+   },
+   {
+    "air_m3": 80268.97061073803,
+    "nh4_cost": 11.13,
+    "do_cost": 0.855,
+    "cost": 11.985,
+    "nh4_excess_mg_h_L": 6.585972931749833,
+    "worst_day_nh4_cost": 66.0,
+    "days_within_limit_pct": 75.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 80268.97061073803
+   }
+  ],
+  "severity|none": [
+   {
+    "air_m3": 91541.57374530505,
+    "nh4_cost": 4.015,
+    "do_cost": 1.835,
+    "cost": 5.85,
+    "nh4_excess_mg_h_L": 3.0129547644258703,
+    "worst_day_nh4_cost": 40.4,
+    "days_within_limit_pct": 87.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 91541.57374530505
+   },
+   {
+    "air_m3": 92893.82744987262,
+    "nh4_cost": 4.855,
+    "do_cost": 2.035,
+    "cost": 6.89,
+    "nh4_excess_mg_h_L": 2.8986659462950324,
+    "worst_day_nh4_cost": 38.4,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 92893.82744987262
+   },
+   {
+    "air_m3": 89428.35862117354,
+    "nh4_cost": 7.265,
+    "do_cost": 0.96,
+    "cost": 8.225,
+    "nh4_excess_mg_h_L": 5.506783869098414,
+    "worst_day_nh4_cost": 67.6,
+    "days_within_limit_pct": 85.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 89428.35862117354
+   },
+   {
+    "air_m3": 90251.00058170501,
+    "nh4_cost": 12.4,
+    "do_cost": 1.875,
+    "cost": 14.275,
+    "nh4_excess_mg_h_L": 7.143082634090377,
+    "worst_day_nh4_cost": 53.2,
+    "days_within_limit_pct": 66.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 90251.00058170501
+   },
+   {
+    "air_m3": 81541.63744055957,
+    "nh4_cost": 13.125,
+    "do_cost": 1.695,
+    "cost": 14.82,
+    "nh4_excess_mg_h_L": 4.5360864004019055,
+    "worst_day_nh4_cost": 53.8,
+    "days_within_limit_pct": 56.00000000000001,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 81541.63744055957
+   }
+  ],
+  "record|none": [
+   {
+    "air_m3": 84859.75950433378,
+    "nh4_cost": 27.06,
+    "do_cost": 1.71,
+    "cost": 28.77,
+    "nh4_excess_mg_h_L": 28.294436027435218,
+    "worst_day_nh4_cost": 92.6,
+    "days_within_limit_pct": 48.5,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 84859.75950433378
+   }
+  ],
+  "zero|none": [
+   {
+    "air_m3": 0.0,
+    "nh4_cost": 89.065,
+    "do_cost": 0.56,
+    "cost": 89.625,
+    "nh4_excess_mg_h_L": 143.51918094076527,
+    "worst_day_nh4_cost": 95.0,
+    "days_within_limit_pct": 0.0,
+    "intervention_pct": 0.0,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 0.0
+   }
+  ],
+  "ppo|park_e10": [
+   {
+    "air_m3": 85487.06118323024,
+    "nh4_cost": 3.125,
+    "do_cost": 1.665,
+    "cost": 4.79,
+    "nh4_excess_mg_h_L": 2.746615089253376,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 7.189473684210526,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 82602.96679299208
+   },
+   {
+    "air_m3": 83664.70397725818,
+    "nh4_cost": 3.245,
+    "do_cost": 1.71,
+    "cost": 4.955,
+    "nh4_excess_mg_h_L": 2.7276367900077627,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 9.2,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 79369.3637634872
+   },
+   {
+    "air_m3": 81799.55588292447,
+    "nh4_cost": 3.215,
+    "do_cost": 1.99,
+    "cost": 5.205,
+    "nh4_excess_mg_h_L": 2.7526454833785787,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 7.7894736842105265,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 77994.94884749874
+   },
+   {
+    "air_m3": 84804.01547475252,
+    "nh4_cost": 3.255,
+    "do_cost": 1.885,
+    "cost": 5.14,
+    "nh4_excess_mg_h_L": 2.7708948275160226,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 9.257894736842106,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 80756.86628304189
+   },
+   {
+    "air_m3": 87387.8513123363,
+    "nh4_cost": 3.165,
+    "do_cost": 1.77,
+    "cost": 4.935,
+    "nh4_excess_mg_h_L": 2.7767392810972207,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 6.321052631578947,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 83776.40684256214
+   }
+  ],
+  "fcsrl|park_e10": [
+   {
+    "air_m3": 92893.21453202165,
+    "nh4_cost": 3.175,
+    "do_cost": 1.51,
+    "cost": 4.685,
+    "nh4_excess_mg_h_L": 2.7586372979422165,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.5,
+    "intervention_pct": 4.984210526315789,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 91664.06499060222
+   },
+   {
+    "air_m3": 89579.97715525562,
+    "nh4_cost": 3.06,
+    "do_cost": 2.055,
+    "cost": 5.115,
+    "nh4_excess_mg_h_L": 2.7402315051516184,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 10.557894736842105,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 85731.30909680156
+   },
+   {
+    "air_m3": 83910.56410207764,
+    "nh4_cost": 3.265,
+    "do_cost": 1.62,
+    "cost": 4.885,
+    "nh4_excess_mg_h_L": 2.7554426129338525,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 23.142105263157895,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 74793.03655890631
+   },
+   {
+    "air_m3": 98077.61601225122,
+    "nh4_cost": 3.045,
+    "do_cost": 1.905,
+    "cost": 4.95,
+    "nh4_excess_mg_h_L": 2.739144697382717,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 4.378947368421053,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 96825.57784231029
+   },
+   {
+    "air_m3": 91972.95263373408,
+    "nh4_cost": 3.13,
+    "do_cost": 1.66,
+    "cost": 4.79,
+    "nh4_excess_mg_h_L": 2.742351187526399,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 3.468421052631579,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 90773.1131353404
+   }
+  ],
+  "fcsrl_actor|park_e10": [
+   {
+    "air_m3": 87368.63405594602,
+    "nh4_cost": 3.19,
+    "do_cost": 2.105,
+    "cost": 5.295,
+    "nh4_excess_mg_h_L": 2.794109964058117,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 87.5,
+    "intervention_pct": 6.463157894736842,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 84855.28385953512
+   },
+   {
+    "air_m3": 90839.49290782564,
+    "nh4_cost": 3.175,
+    "do_cost": 1.745,
+    "cost": 4.92,
+    "nh4_excess_mg_h_L": 2.7622352725820525,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 6.731578947368421,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 88417.48840361253
+   },
+   {
+    "air_m3": 83157.45220005512,
+    "nh4_cost": 3.33,
+    "do_cost": 1.72,
+    "cost": 5.05,
+    "nh4_excess_mg_h_L": 2.764710743896338,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 9.510526315789473,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 78838.34554179339
+   },
+   {
+    "air_m3": 88366.27556896883,
+    "nh4_cost": 3.17,
+    "do_cost": 1.635,
+    "cost": 4.805,
+    "nh4_excess_mg_h_L": 2.7064954117745605,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 7.4,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 85349.63279400136
+   },
+   {
+    "air_m3": 84666.16179269738,
+    "nh4_cost": 3.145,
+    "do_cost": 1.565,
+    "cost": 4.71,
+    "nh4_excess_mg_h_L": 2.7305069961343316,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 7.373684210526315,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 81511.19416454458
+   }
+  ],
+  "severity|park_e10": [
+   {
+    "air_m3": 92557.84922180464,
+    "nh4_cost": 3.165,
+    "do_cost": 1.64,
+    "cost": 4.805,
+    "nh4_excess_mg_h_L": 2.7943998161168304,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 3.9157894736842107,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 91342.86200799281
+   },
+   {
+    "air_m3": 94240.45709913538,
+    "nh4_cost": 3.105,
+    "do_cost": 2.055,
+    "cost": 5.16,
+    "nh4_excess_mg_h_L": 2.7429770807274783,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 3.857894736842105,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 93042.5459611189
+   },
+   {
+    "air_m3": 92253.69543729175,
+    "nh4_cost": 3.22,
+    "do_cost": 1.405,
+    "cost": 4.625,
+    "nh4_excess_mg_h_L": 2.734874986902068,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 8.81578947368421,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 89195.6772771076
+   },
+   {
+    "air_m3": 91164.98444231169,
+    "nh4_cost": 3.345,
+    "do_cost": 1.75,
+    "cost": 5.095,
+    "nh4_excess_mg_h_L": 2.7671030904913207,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 8.773684210526316,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 87743.20568701427
+   },
+   {
+    "air_m3": 84308.77042679756,
+    "nh4_cost": 3.145,
+    "do_cost": 1.615,
+    "cost": 4.76,
+    "nh4_excess_mg_h_L": 2.7329474200075192,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 12.884210526315789,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 79931.81321958953
+   }
+  ],
+  "record|park_e10": [
+   {
+    "air_m3": 92031.55997870884,
+    "nh4_cost": 3.13,
+    "do_cost": 2.26,
+    "cost": 5.39,
+    "nh4_excess_mg_h_L": 2.7183990032405125,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.0,
+    "intervention_pct": 11.615789473684211,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 84859.75950433378
+   }
+  ],
+  "zero|park_e10": [
+   {
+    "air_m3": 85875.3125,
+    "nh4_cost": 3.29,
+    "do_cost": 2.125,
+    "cost": 5.415,
+    "nh4_excess_mg_h_L": 2.791083419557822,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 87.0,
+    "intervention_pct": 78.78421052631579,
+    "lowered_pct": 0.0,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 0.0
+   }
+  ],
+  "ppo|park_e19": [
+   {
+    "air_m3": 83388.18112643086,
+    "nh4_cost": 3.17,
+    "do_cost": 1.485,
+    "cost": 4.655,
+    "nh4_excess_mg_h_L": 2.726132009740575,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 7.410526315789474,
+    "lowered_pct": 1.1842105263157894,
+    "conflict_pct": 0.07368421052631578,
+    "policy_air_m3": 81576.1104726058
+   },
+   {
+    "air_m3": 81288.06578143034,
+    "nh4_cost": 3.27,
+    "do_cost": 1.365,
+    "cost": 4.635,
+    "nh4_excess_mg_h_L": 2.779169442950549,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 9.452631578947368,
+    "lowered_pct": 1.4263157894736842,
+    "conflict_pct": 0.26842105263157895,
+    "policy_air_m3": 78279.15575256106
+   },
+   {
+    "air_m3": 80404.5345253835,
+    "nh4_cost": 3.225,
+    "do_cost": 1.475,
+    "cost": 4.7,
+    "nh4_excess_mg_h_L": 2.7437054632406817,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 8.257894736842106,
+    "lowered_pct": 1.3736842105263158,
+    "conflict_pct": 0.14736842105263157,
+    "policy_air_m3": 77797.32364987722
+   },
+   {
+    "air_m3": 82906.02214473649,
+    "nh4_cost": 3.175,
+    "do_cost": 1.6,
+    "cost": 4.775,
+    "nh4_excess_mg_h_L": 2.7443753062393856,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 8.784210526315789,
+    "lowered_pct": 1.068421052631579,
+    "conflict_pct": 0.10526315789473684,
+    "policy_air_m3": 79902.27110678446
+   },
+   {
+    "air_m3": 85843.3458594745,
+    "nh4_cost": 3.145,
+    "do_cost": 1.285,
+    "cost": 4.43,
+    "nh4_excess_mg_h_L": 2.7638697947794664,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 7.573684210526316,
+    "lowered_pct": 1.6631578947368422,
+    "conflict_pct": 0.02631578947368421,
+    "policy_air_m3": 83325.22506188834
+   }
+  ],
+  "fcsrl|park_e19": [
+   {
+    "air_m3": 92271.68018990837,
+    "nh4_cost": 3.12,
+    "do_cost": 1.195,
+    "cost": 4.315,
+    "nh4_excess_mg_h_L": 2.736050321984253,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.5,
+    "intervention_pct": 4.8,
+    "lowered_pct": 0.8,
+    "conflict_pct": 0.021052631578947368,
+    "policy_air_m3": 91564.57675333075
+   },
+   {
+    "air_m3": 88432.78833096962,
+    "nh4_cost": 3.075,
+    "do_cost": 1.385,
+    "cost": 4.46,
+    "nh4_excess_mg_h_L": 2.715800953477645,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 10.215789473684211,
+    "lowered_pct": 1.8210526315789475,
+    "conflict_pct": 0.07368421052631578,
+    "policy_air_m3": 86122.20920621067
+   },
+   {
+    "air_m3": 79882.08908939152,
+    "nh4_cost": 3.245,
+    "do_cost": 1.525,
+    "cost": 4.77,
+    "nh4_excess_mg_h_L": 2.7499009185566,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 88.5,
+    "intervention_pct": 16.010526315789473,
+    "lowered_pct": 1.8526315789473684,
+    "conflict_pct": 0.6105263157894737,
+    "policy_air_m3": 74590.85691888642
+   },
+   {
+    "air_m3": 95552.3678685527,
+    "nh4_cost": 3.08,
+    "do_cost": 1.27,
+    "cost": 4.35,
+    "nh4_excess_mg_h_L": 2.744010768659292,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 5.294736842105263,
+    "lowered_pct": 1.5315789473684212,
+    "conflict_pct": 0.042105263157894736,
+    "policy_air_m3": 94921.1582314514
+   },
+   {
+    "air_m3": 91191.86987028224,
+    "nh4_cost": 3.1,
+    "do_cost": 1.355,
+    "cost": 4.455,
+    "nh4_excess_mg_h_L": 2.7206927362651108,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 3.889473684210526,
+    "lowered_pct": 1.1526315789473685,
+    "conflict_pct": 0.04736842105263158,
+    "policy_air_m3": 90642.45372149978
+   }
+  ],
+  "fcsrl_actor|park_e19": [
+   {
+    "air_m3": 86848.98348850431,
+    "nh4_cost": 3.14,
+    "do_cost": 1.24,
+    "cost": 4.38,
+    "nh4_excess_mg_h_L": 2.780192688376942,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.5,
+    "intervention_pct": 6.921052631578948,
+    "lowered_pct": 1.6578947368421053,
+    "conflict_pct": 0.010526315789473684,
+    "policy_air_m3": 85572.78413720895
+   },
+   {
+    "air_m3": 89530.74667605686,
+    "nh4_cost": 3.115,
+    "do_cost": 1.24,
+    "cost": 4.355,
+    "nh4_excess_mg_h_L": 2.748445634565791,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 7.273684210526316,
+    "lowered_pct": 1.8105263157894738,
+    "conflict_pct": 0.010526315789473684,
+    "policy_air_m3": 88324.89984920599
+   },
+   {
+    "air_m3": 81790.17745975638,
+    "nh4_cost": 3.32,
+    "do_cost": 1.315,
+    "cost": 4.635,
+    "nh4_excess_mg_h_L": 2.81517851525637,
+    "worst_day_nh4_cost": 38.4,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 9.83157894736842,
+    "lowered_pct": 1.2473684210526317,
+    "conflict_pct": 0.16842105263157894,
+    "policy_air_m3": 78812.47206821339
+   },
+   {
+    "air_m3": 86762.17958701542,
+    "nh4_cost": 3.16,
+    "do_cost": 1.385,
+    "cost": 4.545,
+    "nh4_excess_mg_h_L": 2.723824428710852,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 7.431578947368421,
+    "lowered_pct": 1.2105263157894737,
+    "conflict_pct": 0.08947368421052632,
+    "policy_air_m3": 84650.80956301186
+   },
+   {
+    "air_m3": 83928.52107501822,
+    "nh4_cost": 3.11,
+    "do_cost": 1.445,
+    "cost": 4.555,
+    "nh4_excess_mg_h_L": 2.7267904894968855,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 7.121052631578947,
+    "lowered_pct": 0.7894736842105263,
+    "conflict_pct": 0.16842105263157894,
+    "policy_air_m3": 81489.53492298257
+   }
+  ],
+  "severity|park_e19": [
+   {
+    "air_m3": 91633.61544884043,
+    "nh4_cost": 3.185,
+    "do_cost": 1.52,
+    "cost": 4.705,
+    "nh4_excess_mg_h_L": 2.8053352867031403,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.0,
+    "intervention_pct": 4.5,
+    "lowered_pct": 1.4473684210526316,
+    "conflict_pct": 0.05263157894736842,
+    "policy_air_m3": 91309.5131048793
+   },
+   {
+    "air_m3": 93570.17958507931,
+    "nh4_cost": 3.16,
+    "do_cost": 1.215,
+    "cost": 4.375,
+    "nh4_excess_mg_h_L": 2.744454852389074,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 4.2894736842105265,
+    "lowered_pct": 2.0105263157894737,
+    "conflict_pct": 0.0,
+    "policy_air_m3": 93519.5147895167
+   },
+   {
+    "air_m3": 90036.66230000323,
+    "nh4_cost": 3.215,
+    "do_cost": 1.185,
+    "cost": 4.4,
+    "nh4_excess_mg_h_L": 2.7425858046560085,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 91.0,
+    "intervention_pct": 6.994736842105263,
+    "lowered_pct": 1.2052631578947368,
+    "conflict_pct": 0.03684210526315789,
+    "policy_air_m3": 88128.12302766368
+   },
+   {
+    "air_m3": 90288.34902263187,
+    "nh4_cost": 3.295,
+    "do_cost": 1.335,
+    "cost": 4.63,
+    "nh4_excess_mg_h_L": 2.7770823356304892,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.0,
+    "intervention_pct": 9.115789473684211,
+    "lowered_pct": 2.331578947368421,
+    "conflict_pct": 0.02631578947368421,
+    "policy_air_m3": 88401.23902843043
+   },
+   {
+    "air_m3": 82265.932401155,
+    "nh4_cost": 3.1,
+    "do_cost": 1.56,
+    "cost": 4.66,
+    "nh4_excess_mg_h_L": 2.7356675990153345,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 90.5,
+    "intervention_pct": 11.384210526315789,
+    "lowered_pct": 1.3631578947368421,
+    "conflict_pct": 0.5052631578947369,
+    "policy_air_m3": 79653.57663673174
+   }
+  ],
+  "record|park_e19": [
+   {
+    "air_m3": 91017.62729190744,
+    "nh4_cost": 3.215,
+    "do_cost": 1.475,
+    "cost": 4.69,
+    "nh4_excess_mg_h_L": 2.7548164532545125,
+    "worst_day_nh4_cost": 38.2,
+    "days_within_limit_pct": 89.5,
+    "intervention_pct": 11.2,
+    "lowered_pct": 1.5368421052631578,
+    "conflict_pct": 0.1736842105263158,
+    "policy_air_m3": 84859.75950433378
+   }
+  ],
+  "zero|park_e19": [
+   {
+    "air_m3": 80003.125,
+    "nh4_cost": 3.365,
+    "do_cost": 2.045,
+    "cost": 5.41,
+    "nh4_excess_mg_h_L": 2.8116314809551284,
+    "worst_day_nh4_cost": 38.6,
+    "days_within_limit_pct": 87.5,
+    "intervention_pct": 77.31052631578947,
+    "lowered_pct": 0.0,
+    "conflict_pct": 3.1789473684210527,
+    "policy_air_m3": 0.0
+   }
+  ]
+ },
+ "J1": {
+  "ppo": {
+   "both": 0,
+   "air_only": 0,
+   "cost_only": 5,
+   "verdict": "기여 없음"
+  },
+  "fcsrl": {
+   "both": 1,
+   "air_only": 1,
+   "cost_only": 5,
+   "verdict": "불확정"
+  },
+  "fcsrl_actor": {
+   "both": 0,
+   "air_only": 0,
+   "cost_only": 5,
+   "verdict": "기여 없음"
+  },
+  "severity": {
+   "both": 0,
+   "air_only": 0,
+   "cost_only": 5,
+   "verdict": "기여 없음"
+  }
+ },
+ "J2": {
+  "ppo": {
+   "air_m3": 621.9923492141563,
+   "nh4_cost": -9.465,
+   "do_cost": -0.2699999999999999,
+   "cost": -9.735,
+   "air_pct": 0.7571971963568556
+  },
+  "fcsrl": {
+   "air_m3": -218.70710112771485,
+   "nh4_cost": -6.316,
+   "do_cost": -0.5519999999999999,
+   "cost": -6.868,
+   "air_pct": -0.24386176895312142
+  },
+  "fcsrl_actor": {
+   "air_m3": 1226.8019592950527,
+   "nh4_cost": -5.627,
+   "do_cost": -0.2,
+   "cost": -5.827,
+   "air_pct": 1.4510583952815002
+  },
+  "severity": {
+   "air_m3": 427.66818381880876,
+   "nh4_cost": -5.141,
+   "do_cost": -0.317,
+   "cost": -5.458,
+   "air_pct": 0.47981829262740544
+  }
+ },
+ "J3": {
+  "slope": -0.6742862788202775,
+  "intercept": 68.04990497822241,
+  "r": -0.7509616640850605,
+  "residuals": {
+   "ppo|park_e10": -7.784975872146668,
+   "fcsrl|park_e10": -3.3614245483518537,
+   "fcsrl_actor|park_e10": -6.2661805602455996,
+   "severity|park_e10": -3.557808765378238,
+   "record|park_e10": -2.864286866153651,
+   "zero|park_e10": -6.855360070068953,
+   "ppo|park_e19": -9.044906672658147,
+   "fcsrl|park_e19": -4.6001014986898685,
+   "fcsrl_actor|park_e19": -7.04594023942153,
+   "severity|park_e19": -4.470535363775521,
+   "record|park_e19": -3.462967764511223,
+   "zero|park_e19": -10.739895527978904
+  }
+ },
+ "J4": {
+  "zero_plus_e19": {
+   "air_m3": 80003.125,
+   "cost": 5.41,
+   "nh4_viol_pct": 3.542105263157895,
+   "do_viol_pct": 2.1526315789473687
+  },
+  "best_policy": "fcsrl",
+  "park": {
+   "e10_runtime_only_on_e08_fcsrl_target3.5": {
+    "air_m3": 90747,
+    "cost": 5.46
+   },
+   "e12_A_trained_with_shield_target3.5": {
+    "air_m3": 84031,
+    "cost": 5.51
+   },
+   "e19_H1_e12A_policy_plus_e19_shield": {
+    "air_m3": 80748,
+    "cost": 4.98,
+    "nh4_viol_pct": 3.49,
+    "do_viol_pct": 1.75
+   },
+   "e22_H1_4x16_ensemble_plus_e19_shield": {
+    "air_m3": 79633,
+    "cost": 4.68,
+    "nh4_viol_pct": 3.37,
+    "do_viol_pct": 1.55
+   }
+  }
+ },
+ "model_only_beats_park_e22": false,
+ "next_step": "Park e12 방식으로 Yoo FCSRL/PPO 를 차단과 함께 학습 (e60)",
+ "root": "/home/jio/fcsrl_src/results/e59/main"
+}

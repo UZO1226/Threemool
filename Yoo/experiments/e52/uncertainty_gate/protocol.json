@@ -1,0 +1,23 @@
+{
+  "purpose": "Decide whether the e54 day-block disagreement is worth a downstream FCSRL control experiment",
+  "fixed_before_inspecting_candidate_results": true,
+  "candidate_source_commit": "475d0a0",
+  "candidate": "/home/jio/fcsrl_src/results/e54/unc/nh4_uncertainty.pkl",
+  "transition_model": "/home/jio/fcsrl_src/results/e35/zone_fix/corrected_surrogate.pkl",
+  "prepared": "/home/jio/fcsrl_src/results/e30/prepared",
+  "reference": "original ensemble SD with kappa 10",
+  "candidate_scale": "kappa frozen by e54 build on train recorded replay only; never retune here",
+  "splits": {"train": 188, "development_val": 40, "test_evaluated": false},
+  "primary": "validation recorded-action recursive trajectory, identical for all alarm rules",
+  "cost": "1[NH4_next + margin > 4], unmodified NH4 threshold and unmodified transition",
+  "train_matching_tolerance_daily_cost": 0.1,
+  "exploratory_screen": "candidate FPR <= reference FPR and candidate recall >= reference recall, at least one strict improvement, and both train costs within 0.1 of observed train cost",
+  "uncertainty_reporting": "paired circular date-block bootstrap, length 7 days, 2000 replicates, RNG 20261112, percentile 95% intervals; ensemble members not independent data",
+  "reliability_flag": "both bootstrap intervals remain in the improvement half-space; reported separately from exploratory screen",
+  "secondary": ["fixed margin 0.45", "no margin", "added alarm precision", "correlation of SD with absolute error versus NH4 underprediction", "one-step teacher-forced scores", "late versus early recursive forecast"],
+  "no_hyperparameter_search": true,
+  "no_policy_training_in_this_gate": true,
+  "failure_action": "do not promote this candidate on uncertainty-quality grounds; no repeated kappa search",
+  "pass_action": "retain as a candidate only; policy air/NH4/DO and severity still require controlled RL evaluation",
+  "scope": "FCSRL representation/dynamics/feasibility/EMA/PPO unchanged; exploratory reused development data, not independent confirmation"
+}

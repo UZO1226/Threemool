@@ -1,0 +1,30 @@
+{
+  "val": {
+    "value": {
+      "cost": 28.77,
+      "nh4_pct": 28.484210526315785,
+      "do_pct": 1.8,
+      "air_m3": 84859.75950433375
+    },
+    "reference": {
+      "cost": 28.77,
+      "nh4_pct": 28.48,
+      "do_pct": 1.8
+    },
+    "passed": true
+  },
+  "train": {
+    "value": {
+      "cost": 12.168085106382977,
+      "nh4_pct": 5.777155655095185,
+      "do_pct": 7.031354983202688,
+      "air_m3": 89621.56077292375
+    },
+    "reference": {
+      "cost": 12.17
+    },
+    "passed": true
+  },
+  "passed": true,
+  "sklearn": "1.9.1"
+}

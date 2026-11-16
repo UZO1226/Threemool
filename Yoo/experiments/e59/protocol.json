@@ -1,0 +1,25 @@
+{
+  "experiment": "e59",
+  "question": "Park의 모델 예측 최소 개입 차단을 Yoo 정책에 실행 시점에만 걸었을 때, 정책이 차단만 쓰는 제어기(공기 0 정책 + 차단)보다 공기량과 비용을 함께 낮추는가",
+  "environment": "e50 공통 v1.1 (scikit-learn 1.9.1), 관측 11, 비용 NH4>4 + max(DO)>2, 한도 12, 검증 40일 x 구성원 5",
+  "policies": ["ppo", "fcsrl", "fcsrl_actor", "severity"],
+  "policy_sources": {"ppo": "e50 PPO-Lag prior on", "fcsrl": "e50 FCSRL + PPO-Lag prior on", "fcsrl_actor": "e50 FCSRL + Actor 보정", "severity": "e58 severity (GPU1)"},
+  "fixed": ["record", "zero"],
+  "seeds": [0, 1, 2, 3, 4],
+  "shields": ["none", "park_e10", "park_e19"],
+  "shield_source": "Park/code/min_brake.py, main bbaefe2, sha256 1f25865141dafe3f3bf4ce199b8d1b9a625f07d60d663844acb20e8cf4195c69, 수정 없이 복사",
+  "park_reference_same_environment": {
+    "e10_runtime_only_on_e08_fcsrl_target3.5": {"air_m3": 90747, "cost": 5.46},
+    "e12_A_trained_with_shield_target3.5": {"air_m3": 84031, "cost": 5.51},
+    "e19_H1_e12A_policy_plus_e19_shield": {"air_m3": 80748, "cost": 4.98, "nh4_viol_pct": 3.49, "do_viol_pct": 1.75},
+    "e22_H1_4x16_ensemble_plus_e19_shield": {"air_m3": 79633, "cost": 4.68, "nh4_viol_pct": 3.37, "do_viol_pct": 1.55}
+  },
+  "judgement_fixed_before_results": {
+    "J1_policy_contribution": "방법별로 (정책 + park_e19) 가 (zero + park_e19) 보다 공기량과 비용이 모두 낮은 seed 수. 4/5 이상이면 그 방법의 정책이 차단 아래에서 기여한다고 적는다. 0/5 이면 이 차단 아래에서 기여 없음",
+    "J2_shield_effect": "같은 seed 에서 (정책 + park_e19) 대 (정책 + none) 의 비용과 공기량 변화. 보고만 한다",
+    "J3_frontier": "none 조건 20개 정책의 (공기량, NH4 비용) 에 직선을 맞추고 차단 조건의 잔차를 적는다. 음수이면 교환선 아래",
+    "J4_vs_park": "(zero + park_e19) 와 가장 좋은 (정책 + park_e19) 를 Park e19 H1, e22 H1 과 나란히 적는다. 학습 조건이 달라 우열로 해석하지 않는다",
+    "next_step_rule": "zero + park_e19 의 공기량이 Park e22 H1 (79,633) 이하이고 비용이 4.68 이하이면 정책 없이 모델 제어기만으로 Park 대표를 넘는 것이므로 다음은 모델 예측 제어기 개선. 그렇지 않으면 다음은 Park e12 방식으로 Yoo FCSRL/PPO 를 차단과 함께 학습 (e60)"
+  },
+  "not_done": ["새 학습", "test 평가", "차단 설정 탐색", "결과 뒤 seed 또는 조건 제외"]
+}

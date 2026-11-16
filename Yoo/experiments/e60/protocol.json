@@ -1,0 +1,26 @@
+{
+  "experiment": "e60",
+  "question": "Park/e12 방식으로 최소 개입 차단(1스텝, 다른 구성원, target 3.5)을 학습 중에 켠 Yoo PPO-Lag / FCSRL(모방 prior on)이 e19 차단과 결합했을 때, Park 의 같은 환경 대표 결과와 e59 의 정책 없는 모델 제어기, 차단 없이 학습한 Yoo 정책보다 공기량과 비용을 함께 낮추는가",
+  "environment": "e50 공통 v1.1 (scikit-learn 1.9.1), 관측 11, 비용 NH4>4 + max(DO)>2, 학습 한도 12, 401,280 전이 (66갱신), 마지막 정책",
+  "methods": ["ppo", "fcsrl"],
+  "seeds": [0, 1, 2, 3, 4],
+  "train_shield": "park_e10",
+  "train_shield_note": "Park/e12 A 와 같은 학습 중 차단. PPO 확률비는 정책이 뽑은 행동, 보상/비용/표현 학습은 실행 행동",
+  "eval": {"val": ["none", "park_e10", "park_e19"], "train": ["none", "park_e10"]},
+  "backend": "e56 hybrid: CPU1 수집, PPO CPU1 갱신, FCSRL GPU1 갱신, 동시 3개",
+  "prior": "on (e50 과 같은 모방 prior, 초기 log std -1.6)",
+  "references_same_environment": {
+    "park_e12_A": {"air_m3": 84031, "cost": 5.51, "note": "Park FCSRL, 학습 중 target 3.5 차단, 평가도 같은 차단"},
+    "park_e19_H1": {"air_m3": 80748, "cost": 4.98, "nh4_viol_pct": 3.49, "do_viol_pct": 1.75, "note": "e12 A 정책 + e19 차단, seed 5 평균"},
+    "park_e22_H1": {"air_m3": 79633, "cost": 4.68, "note": "4 x 16 앙상블 + e19 차단, 정책 하나"},
+    "yoo_e59": "summary.json 의 zero|park_e19 와 방법별 |park_e19 (차단 없이 학습한 정책)"
+  },
+  "judgement_fixed_before_results": {
+    "J1_vs_park_e19_H1": "방법별 val park_e19 의 평균 공기량 < 80,748 이고 평균 비용 < 4.98 이며, seed 4/5 이상이 두 값 모두 Park 평균보다 낮으면 '같은 환경에서 Park 단일 정책 대표를 넘는 탐색 후보'. Park 값은 seed 평균이라 짝 비교가 아니다",
+    "J2_policy_contribution": "방법별 val park_e19 가 e59 zero|park_e19 보다 공기량과 비용 모두 낮은 seed 수. 4/5 이상이면 차단 아래 정책 기여",
+    "J3_training_with_shield": "같은 seed 에서 e60 val park_e19 minus e59 (같은 방법)|park_e19. 공기량과 비용 변화. 4/5 이상 모두 감소이면 학습 중 차단의 효과",
+    "J4_reliance": "val none 의 비용과 마지막 라그랑주 승수를 보고만 한다 (Park/e12 의 의존 현상 확인)",
+    "J5_three_metrics": "NH4, DO 비용과 초과 적분, 최악 날짜도 공개한다. 공기와 합산 비용이 낮아도 DO 가 악화하면 교환관계로 적는다"
+  },
+  "not_done": ["test 평가", "차단 설정 또는 target 탐색", "결과 뒤 seed 제외", "학습량 연장", "Park 정책 가중치 사용"]
+}

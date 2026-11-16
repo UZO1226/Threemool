@@ -1,0 +1,20 @@
+{
+  "purpose": "Frozen representation probe before considering a severity auxiliary head. No RL or surrogate training.",
+  "prepared": "/home/jio/fcsrl_src/results/e50/prepared",
+  "checkpoints": "/home/jio/fcsrl_src/results/e50/main/runs/fcsrl",
+  "seeds": [0, 1, 2, 3, 4],
+  "data": "DARROW recorded train188 and development val40 days only; never extract test rows",
+  "probe_date_split": "Sorted train dates: first112 fit, next38 tune, last38 holdout. Existing encoders were trained on all188 train days; only probe fitting holds these dates out.",
+  "features": "Current normalized observation11 and current recorded total air action. Trained or same-seed initial frozen encoder z64. No future actions or measurements in features.",
+  "targets": ["current NH4 concentration mg/L", "sum of positive NH4 excess above4 over next4 observations times0.25h, mg h/L"],
+  "windows": "t=0..91 in each96-row day, future indices t+1..t+4, no crossing day boundaries",
+  "probes": ["ridge raw", "ridge trained_z", "ridge initial_z", "ridge raw_plus_trained_z", "ridge raw_plus_initial_z", "fixed HGB raw nonlinear control"],
+  "ridge": {"alphas": [0.01, 1.0, 100.0], "scale": "fit dates only", "select": "minimum tune-date MAE per target and seed, no refit"},
+  "hgb": {"max_iter": 100, "max_depth": 3, "learning_rate": 0.05, "min_samples_leaf": 30, "l2_regularization": 1.0, "early_stopping": false, "random_state": 5700},
+  "metrics": ["MAE", "R2", "paired daily MAE differences"],
+  "controls": ["current NH4 from inverse normalization", "one-hour persistence excess", "normalization clipping", "policy_input prefix equality", "current target and future window indexing", "unchanged checkpoint and input hashes"],
+  "interpretation": "Prediction under recorded operation is not a causal action-response estimate. A probe can miss nonlinear information. Raw observation bypass means latent probe failure is not total policy information loss. Probe losses do not prove control improvement. No architecture is auto-adopted or RL auto-launched from these scores.",
+  "review_rule": "A trained-z advantage is only a descriptive signal if future-target raw-plus-trained-z ridge MAE is at least10% below raw ridge and raw-plus-initial-z on probe holdout for at least4/5 seeds. Also report nonlinear raw control and val separately. This heuristic is not a statistical significance or control success threshold.",
+  "test_evaluated": false,
+  "policy_weight_updates": 0
+}

@@ -42,6 +42,25 @@ conflict=m (Park/e19, trim=True 와 함께) 이면 NH4 여유와 DO 가 부딪�
 공기량에서 예측 DO > do_limit 이면, 여유를 모든 sigma 칸에서 m 으로 둔 필요 공기량 (conflict_recover=True 이면 회복
 검사도 함께, 정책 공기량 이상) 과 원래 공기량 사이에서 예측 DO <= do_limit 인 가장 큰 격자 값으로 내린다. 없으면 그대로다.
 conflict_steps 에 내린 횟수를 센다
+
+Park/e27 정책 앙상블 의견 차이 차단. EnsemblePolicy 는 구성원 행동을 평균하고, 구성원 공기량의 표준편차 (Nm3/h) 를
+spread 에 남긴다. DisagreementBrake 는 그 값으로 에피소드마다 NH4 여유를 더하거나 뺀다 (extra). spread >= hi 이면
+여유 + up (의견이 갈리면 조심), spread <= lo 이면 여유 - down (의견이 같으면 공기를 덜 올리고 더 내린다), 그 사이는 0.
+extra 는 margins 가 쓰이는 모든 곳 (기본 필요 공기량, conflict 의 줄인 여유) 에 더한다
+
+plan=(H, do_lim, step) (Park/e28, trim=True 와 함께) 이면 회복 계획을 더한다. 공기량 9,000 에서도 다음 스텝 예측 NH4
+(다른 구성원 평균) 가 4 를 넘는 에피소드 (막을 수 없는 스텝) 에서만, step 간격 격자의 공기량을 H 스텝 동안 유지했을 때의
+예측 비용 (NH4 > 4 스텝 수 + 구간 DO 최댓값 > do_lim 스텝 수) 이 가장 작은 공기량을 쓴다. 같으면 H 스텝 뒤 예측 NH4 가
+낮은 쪽, 그것도 같으면 공기량이 작은 쪽이다 (Park/e16 futile 처럼 공기를 줄여 NH4 회복이 늦어지는 것을 막는다).
+외부 입력은 지속 예측이다. 다른 차단 계산을 모두 마친 뒤 그 에피소드의 공기량을 바꾼다. plan_steps 에 바꾼 횟수를 센다
+
+bias=lam (Park/e31, margins 와 함께) 이면 최근 예측 오차로 1 스텝 NH4 예측을 보정한다. 매 스텝 지난 스텝의 예측
+(다른 구성원 평균, 실제로 쓴 공기량) 과 지금 관측 NH4 의 차이 e 로 에피소드마다 b <- lam * b + (1 - lam) * e 를 갱신하고,
+여유 검사의 mu 에 b 를 더한다 (모델 예측 제어의 외란 추정과 같다). 에피소드 첫 스텝 (env.t == 0) 에 b 를 0 으로 되돌린다.
+margin_scale 은 margins 표의 여유에 곱한다 (conflict 의 줄인 여유에는 곱하지 않는다)
+
+plan_trigger (Park/e30) 는 회복 계획을 쓰는 기준이다. 공기량 9,000 에서의 다음 스텝 예측 NH4 가 plan_trigger 를 넘는 에피소드에
+쓴다 (기본 4 는 e28 과 같다). plan_now 를 주면 지금 NH4 가 plan_now 를 넘는 에피소드에도 쓴다
 """
 import numpy as np
 
@@ -54,7 +73,8 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
-                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True):
+                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None,
+                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -62,7 +82,11 @@ class MinAirBrake:
         assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
         assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
         self.lowered_steps, self.steps, self.futile_steps = 0, 0, 0
-        self.margins = None if margins is None else [(float(u), float(m)) for u, m in margins]
+        self.margins = None if margins is None else [(float(u), float(m) * float(margin_scale)) for u, m in margins]
+        assert margin_scale == 1.0 or margins is not None, 'margin_scale 은 margins 와 함께 쓴다'
+        self.bias = None if bias is None else float(bias)
+        assert self.bias is None or self.margins is not None, 'bias 는 margins 와 함께 쓴다'
+        self.b, self.last_mu = None, None
         self.do_limit, self.futile = float(do_limit), bool(futile)
         assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
         assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
@@ -70,6 +94,10 @@ class MinAirBrake:
         assert self.recover is None or self.recover[0] >= 2, 'recover 의 H 는 2 이상'
         self.conflict, self.conflict_recover, self.conflict_steps = conflict, bool(conflict_recover), 0
         assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
+        self.plan, self.plan_steps = (None if plan is None else (int(plan[0]), float(plan[1]), float(plan[2]))), 0
+        assert self.plan is None or self.trim, 'plan 은 trim 과 함께 쓴다'
+        self.plan_trigger, self.plan_now = float(plan_trigger), (None if plan_now is None else float(plan_now))
+        self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
 
     def _predict(self, x, member, n_states):
         """구성원 가중 평균 예측 변화량 (행, n_states)."""
@@ -106,8 +134,8 @@ class MinAirBrake:
                 worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
         return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
 
-    def _adaptive_ok(self, obs, env):
-        """격자 후보마다 mu + 여유(sigma) <= NH4_MAX 인지 (N, K)."""
+    def _adaptive_ok(self, obs, env, rows=None):
+        """격자 후보마다 mu + 여유(sigma) + extra <= NH4_MAX 인지 (N, K). rows 는 extra 에서 고를 에피소드."""
         t, N, K = env.t, len(obs), len(self.grid)
         rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
         state = rep(np.asarray(obs[:, :len(STATE)], dtype=float))
@@ -119,9 +147,13 @@ class MinAirBrake:
         n = keep.sum(axis=0)
         mu = np.where(keep, pred, 0.0).sum(axis=0) / n
         sigma = np.sqrt(np.where(keep, (pred - mu) ** 2, 0.0).sum(axis=0) / n)
+        if self.bias is not None:
+            mu = mu + rep(self.b if rows is None else self.b[rows])
         margin = np.full(len(mu), self.margins[-1][1])
         for upper, m in reversed(self.margins):
             margin = np.where(sigma < upper, m, margin)
+        if self.extra is not None:
+            margin = margin + rep(self.extra if rows is None else self.extra[rows])
         return (mu + margin <= NH4_MAX).reshape(N, K)
 
     def _recover_air(self, obs, env):
@@ -196,6 +228,36 @@ class MinAirBrake:
                     self.futile_steps += len(fut)
         if self.conflict is not None:
             air = self._resolve_conflict(obs, env, policy_air, air)
+        if self.plan is not None:
+            air = self._plan_recovery(obs, env, air)
+        return air
+
+    def _plan_recovery(self, obs, env, air):
+        nh_max, _ = self._rollout(obs, env, np.full((len(obs), 1), AIR_MAX), 1)
+        hit = nh_max[:, 0] > self.plan_trigger
+        if self.plan_now is not None:
+            hit |= np.asarray(obs[:, 0], dtype=float) > self.plan_now
+        rows = np.flatnonzero(hit)
+        if not len(rows):
+            return air
+        H, do_lim, step = self.plan
+        grid = np.arange(0.0, AIR_MAX + 1e-9, step)
+        sub, n, K = _Rows(env, rows), len(rows), len(grid)
+        rep = lambda v: np.repeat(v, K, axis=0)  # noqa: E731
+        state = rep(np.asarray(obs[rows, :len(STATE)], dtype=float))
+        exo, frac, zone_prev, member = rep(sub.x['exo'][:, sub.t]), rep(sub.x['frac'][:, sub.t]), rep(sub.prev_zone), rep(sub.member)
+        zone = np.tile(grid, n)[:, None] * frac
+        cost = np.zeros(n * K)
+        for _ in range(H):
+            x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
+            state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
+            zone_prev = zone
+            cost += (state[:, 0] > NH4_MAX) + (state[:, 2:].max(axis=1) > do_lim)
+        score = cost * 1000.0 + np.round(state[:, 0], 6)   # NH4 는 hi 아래라 1000 보다 작다
+        best = grid[score.reshape(n, K).argmin(axis=1)]
+        air = air.copy()
+        self.plan_steps += int((np.abs(best - air[rows]) > 1e-9).sum())
+        air[rows] = best
         return air
 
     def _resolve_conflict(self, obs, env, policy_air, air):
@@ -208,7 +270,7 @@ class MinAirBrake:
             return air
         sub, full = _Rows(env, c), self.margins
         self.margins = [(u, float(self.conflict)) for u, _ in full]
-        ok = self._adaptive_ok(obs[c], sub)
+        ok = self._adaptive_ok(obs[c], sub, rows=c)
         self.margins = full
         relaxed = np.where(ok.any(axis=1), self.grid[ok.argmax(axis=1)], air[c])
         if self.conflict_recover and self.recover is not None:
@@ -225,8 +287,24 @@ class MinAirBrake:
         air[c] = new
         return air
 
+    def _mu_at(self, obs, env, air):
+        """공기량 air (N,) 를 쓸 때 다음 스텝 NH4 예측 (다른 구성원 평균, 보정 없음)."""
+        t = env.t
+        state = np.asarray(obs[:, :len(STATE)], dtype=float)
+        x = np.column_stack([state, env.x['exo'][:, t], air[:, None] * env.x['frac'][:, t] / 1000.0, env.prev_zone / 1000.0])
+        return np.clip(state[:, 0] + self._predict(x, env.member, 1)[:, 0], 0.0, self.dyn.hi[0])
+
+    def _update_bias(self, obs, env):
+        if env.t == 0 or self.b is None or len(self.b) != len(obs):
+            self.b, self.last_mu = np.zeros(len(obs)), None
+        if self.last_mu is not None:
+            e = np.asarray(obs[:, 0], dtype=float) - self.last_mu
+            self.b = self.bias * self.b + (1.0 - self.bias) * e
+
     def __call__(self, obs, a, env):
         policy_air = action_to_air(a)
+        if self.bias is not None:
+            self._update_bias(obs, env)
         if self.do_cap:
             air = self.do_aware_air(obs, env, policy_air)
         elif self.trim:
@@ -234,9 +312,40 @@ class MinAirBrake:
         else:
             air = np.maximum(policy_air, self.required_air(obs, env))
         used = np.abs(air - policy_air) > 1e-9
+        if self.bias is not None:
+            self.last_mu = self._mu_at(obs, env, np.where(used, air, policy_air))
         self.lowered_steps += int((air < policy_air - 1e-9).sum())
         self.steps += len(air)
         return np.where(used, air_to_action(air), a), used
+
+
+class EnsemblePolicy:
+    """구성원 행동 평균 (Park/e20 ~ e23 과 같음). 마지막 호출의 구성원 공기량 표준편차를 spread 에 남긴다 (Park/e27)."""
+
+    def __init__(self, act_fns):
+        self.act_fns, self.spread = list(act_fns), None
+
+    def __call__(self, obs):
+        acts = np.stack([np.asarray(f(obs), dtype=float).reshape(len(obs)) for f in self.act_fns])
+        self.spread = action_to_air(acts).std(axis=0)
+        return acts.mean(axis=0)
+
+
+class DisagreementBrake:
+    """앙상블 의견 차이로 MinAirBrake 의 NH4 여유를 바꾼다 (Park/e27). policy 는 같은 스텝에 먼저 불린 EnsemblePolicy."""
+
+    def __init__(self, brake, policy, lo, hi, up, down):
+        self.brake, self.policy = brake, policy
+        self.lo, self.hi, self.up, self.down = float(lo), float(hi), float(up), float(down)
+        self.high_steps = self.low_steps = 0
+
+    def __call__(self, obs, a, env):
+        d = self.policy.spread
+        high, low = d >= self.hi, d <= self.lo
+        self.high_steps += int(high.sum())
+        self.low_steps += int(low.sum())
+        self.brake.extra = np.where(high, self.up, np.where(low, -self.down, 0.0))
+        return self.brake(obs, a, env)
 
 
 class _Rows:

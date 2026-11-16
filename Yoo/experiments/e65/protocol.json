@@ -1,0 +1,17 @@
+{
+  "experiment": "e65",
+  "question": "e63/e64 의 배분 이득이 새 seed 5 ~ 9 에서도 재현되는가",
+  "single_change_from_e63": "seed 만 0 ~ 4 에서 5 ~ 9 로 바꾼다. 코드 (e63 train_alloc.py, e60 train_shielded.py), 준비물 (e63 prepared, DO 수정 모델), 학습 중 차단 park_e10, 배분 설정, 예산은 같다",
+  "methods": ["ppo", "fcsrl"],
+  "conditions": ["total", "alloc"],
+  "seeds": [5, 6, 7, 8, 9],
+  "evaluation": "e64 evaluate64.py 의 일별 실행 상한 평가, park_e19, DO 수정 모델과 공통 v1.1 모델. 검증 40일 x 구성원 5. test 없음. 학습 스크립트의 상한 없는 평가도 남지만 판정에는 쓰지 않는다",
+  "team_check": "Park/e28 (11-15 병합) 은 막을 수 없는 NH4 스텝에서 차단의 여러 스텝 계획을 다룬다. 배분 행동과 다른 위치의 변경이며 이 실험은 Yoo/e63 의 seed 재현이다",
+  "judgement_fixed_before_results": {
+    "J1_main": "DO 수정 모델 상한 평가, seed 5 ~ 9, 방법별 alloc minus total (seed 번호끼리). 공기와 합산 비용이 모두 낮은 seed 4/5 이상이고 두 평균이 모두 낮으면 '재현', 아니면 '재현 실패'",
+    "J2_pooled": "e64 seed 0 ~ 4 와 합친 10 seed 에서 같은 비교. 8/10 이상이고 두 평균이 모두 낮으면 '10 seed 이득 유지'. 보고용",
+    "J3_common": "공통 모델 상한 평가 seed 5 ~ 9, J1 과 같은 규칙. 보고용",
+    "effect_on_e66": "e66 주 구성은 e64 규칙으로 이미 정했다. J1 이 '재현 실패' 이면 e66 결과를 해석할 때 seed 민감도를 함께 적는다. e66 의 평가 대상 정책은 seed 0 ~ 9 전부다"
+  },
+  "not_done": ["설정 변경", "test 평가", "결과 뒤 seed 제외"]
+}

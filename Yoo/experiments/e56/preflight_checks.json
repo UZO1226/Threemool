@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": {
+    "ppo": {
+      "initial_nonprior_weights_and_rng_identical": true,
+      "prior_off_initial_air_m3_h": 4500,
+      "initial_log_std": -1.600000023841858,
+      "prior_is_not_hard_constraint": true,
+      "prior_on_2_updates_exact": true,
+      "prior_off_2_updates_finite_and_reload_exact": true
+    },
+    "fcsrl": {
+      "initial_nonprior_weights_and_rng_identical": true,
+      "prior_off_initial_air_m3_h": 4500,
+      "initial_log_std": -1.600000023841858,
+      "prior_is_not_hard_constraint": true,
+      "prior_on_2_updates_exact": true,
+      "prior_off_2_updates_finite_and_reload_exact": true
+    }
+  },
+  "shared_sources_match_e50": [
+    "Yoo/experiments/e30/train.py",
+    "Yoo/experiments/e30/common.py",
+    "Yoo/experiments/e30/darrow_env.py",
+    "Yoo/experiments/e23/behavior.py",
+    "Yoo/experiments/e25/preserve.py",
+    "Yoo/experiments/e29/ablation.py",
+    "Yoo/code/wwtp/plot.py",
+    "Yoo/code/wwtp/surrogate.py",
+    "Yoo/code/wwtp/ppo_tail.py",
+    "Yoo/code/wwtp/agents.py",
+    "Yoo/code/wwtp/evaluate.py",
+    "Yoo/code/wwtp/env.py",
+    "Yoo/code/wwtp/prep.py",
+    "Yoo/code/wwtp/ppo_lag.py",
+    "Yoo/code/wwtp/surrogate_gbm.py",
+    "Yoo/code/wwtp/ppo_fcsrl.py",
+    "Yoo/code/wwtp/ppo_config.py",
+    "Yoo/code/wwtp/train.py"
+  ],
+  "frozen_file_count": 63,
+  "full_manifest": "/home/jio/fcsrl_src/results/e56/preflight/checks.json",
+  "preflight_commit": "7033994",
+  "report_checks": "identical/tradeoff rejected, joint screen and mean ratios passed"
+}

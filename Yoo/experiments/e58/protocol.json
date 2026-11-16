@@ -1,0 +1,42 @@
+{
+  "question": "Does adding continuous future NH4 excess supervision to the existing FCSRL representation improve air, NH4 and DO together?",
+  "team_review": "Yoo/analysis/TEAM_EXPERIMENT_REVIEW_20261113.md at main4460637. No identical experiment found in reviewed Lee/Park records. Distinct from Yoo/e24's future binary cost mean, Lee's policy feasibility penalty and Park's execution shields.",
+  "prepared": "/home/jio/fcsrl_src/results/e50/prepared",
+  "methods": [
+    "baseline",
+    "severity",
+    "detached"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "steps": 401280,
+  "updates": 66,
+  "target": "mean(max(NH4[t+1:t+5]-4,0))/4. Four 15-minute transitions starting after current executed action. Full windows only; no resets crossed. Surrogate training rollouts only.",
+  "network": "64 to64 Tanh to1 head on online encoder.zsa. Auxiliary positive/zero balanced MSE weight1, scale4mg/L fixed, no sweep. Equal mean losses for present positive and zero groups; single group uses its own mean. Head not used at inference.",
+  "preserved": "Original0.5 dynamics+1 feasibility losses, EMA0.05, discount0.9, prior on, PPO/PID settings, logstd-1.6, e50 surrogate, obs11, air0..9000, count cost sum limit12.",
+  "control": "Detached head learns the same target but its latent input is detached. Extra head computation control, not exact wall-clock match. Verify base policy updates match baseline under same buffer and CPU permutations.",
+  "backend": "All15 newly trained on physical GPU1 updates, CPU1 collection, max3 concurrent, serialized GPU updates. No CPU4 baseline reuse. Existing cu130 unchanged.",
+  "evaluation": "Final deterministic checkpoints, train188 and development val40 days times5 model members. No test rows extracted or evaluated. Same-air offsets not fitted.",
+  "metrics": [
+    "air m3/23.75h",
+    "NH4>4 count",
+    "maxDO>2 count",
+    "sum cost",
+    "NH4 excess mg h/L",
+    "DO excess mg h/L",
+    "worst-date NH4/DO",
+    "cost<=12 seed count",
+    "training time",
+    "encoder sync KL"
+  ],
+  "screen": "Severity vs baseline and vs detached separately: all3 primary mean air/NH4/DO strictly lower, at least4/5 paired seeds nonworsening all3 within air0.001/cost1e-9 tolerance, mean excess integrals/worst-date costs not increased, feasible seed count not lower. Report all seeds and paired mean differences with exploratory bootstrap95% intervals. Failure preserved; no seed removal or target/weight tuning after scores.",
+  "limits": "Auxiliary supervision does not directly constrain severity in the policy objective. Learned from the same imperfect surrogate, no plant claim. Repeated development data,5seeds exploratory. No originality claim from adding a head alone.",
+  "test_evaluated": false,
+  "literature": "FCSRL sections4.1-4.3 and5.5, UNREAL sections3.2-3.4 and AppendixB. Apply shared auxiliary representation and positive/zero balancing only to auxiliary loss. Do not introduce A3C, CNN, LSTM, replay, pixel control or policy resampling. Continuous4-step target/head dimensions are DARROW adaptation, not verbatim UNREAL.",
+  "gradient_diagnostics": "First512 rollout rows before every update: auxiliary versus original encoder gradient cosine and norm ratio. Diagnostic only, no adaptive weighting or projection."
+}

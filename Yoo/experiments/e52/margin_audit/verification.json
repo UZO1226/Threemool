@@ -1,0 +1,37 @@
+{
+  "policy_evaluations": 6,
+  "original_metric_checks": 60,
+  "max_metric_absolute_errors": {
+    "air_m3": 0.0,
+    "nh4_cost": 0.0,
+    "do_cost": 0.0,
+    "nh4_excess_mg_h_L": 0.0,
+    "cost": 0.0,
+    "both_mean_limits": 0.0,
+    "both_limits_episode_pct": 0.0,
+    "n_episodes": 0.0,
+    "worst_day_nh4_cost": 0.0,
+    "worst_day_do_cost": 0.0
+  },
+  "evaluation_status": {
+    "phase": "complete",
+    "completed": 6,
+    "total": 6,
+    "elapsed": 90.83002161292825,
+    "hashes_unchanged": true,
+    "test_evaluated": false,
+    "weight_updates": 0
+  },
+  "pipeline": {
+    "phase": "complete",
+    "started_at": "2026-11-12T12:55:38.168700+00:00",
+    "pid": 1145,
+    "weight_updates": 0,
+    "test_evaluated": false,
+    "completed": 6,
+    "total": 6,
+    "elapsed_seconds": 638.8654168900102,
+    "finished_at": "2026-11-12T13:06:17.034119+00:00"
+  },
+  "evaluation_commit": "da05f80fb803153c88086d2637a5c86766e22424"
+}

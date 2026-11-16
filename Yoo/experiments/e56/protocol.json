@@ -1,0 +1,22 @@
+{
+  "question": "Does removing the frozen imitation prior improve PPO/FCSRL control in the same e50 environment?",
+  "interpretation": "Ablation of the additive prior throughout training, not only initialization; no behavior imitation penalty existed in e50.",
+  "prepared": "/home/jio/fcsrl_src/results/e50/prepared",
+  "baseline": "/home/jio/fcsrl_src/results/e50/main",
+  "baseline_audit": "/home/jio/fcsrl_src/results/e50_e52_audit_20261112/e50",
+  "methods": ["ppo", "fcsrl"],
+  "seeds": [0, 1, 2, 3, 4],
+  "updates": 66,
+  "steps": 401280,
+  "selection": "last",
+  "initial_log_std": -1.6,
+  "cost": "NH4>4 plus max(DO)>2 counts, sum limit12; e50 conditions, not e54 limits6/6",
+  "prior_off": "Load the same prior network and zero its final layer without consuming RNG; keep actor/critic/encoder initialization and optimizer unchanged. Initial action mean0 corresponds to4500m3/h.",
+  "primary": "Paired off-minus-on air_m3, nh4_cost, do_cost for each method separately",
+  "secondary": ["NH4 excess integral", "DO excess integral", "worst day NH4/DO", "seed mean cost<=12", "lambda and clipping"],
+  "exploratory_joint_screen": "All three primary means strictly decrease; at least4/5 seeds have all three nonincreasing; both mean excess integrals and mean worst-day NH4/DO do not increase; number of cost-feasible seeds does not decrease. Numerical equality tolerances: air0.001m3, costs1e-9, integrals1e-8. No official adoption from this screen alone.",
+  "reuse_baseline": "Verify input hashes and shared training sources against e50; prior-on seed0 first2 updates must reproduce original logs for PPO and FCSRL before main launch.",
+  "test_evaluated": false,
+  "repeated_development_val": true,
+  "no_tuning_after_results": true
+}

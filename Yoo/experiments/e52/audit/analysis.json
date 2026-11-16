@@ -1,0 +1,1042 @@
+{
+  "e50_actor": {
+    "experiment": "e50",
+    "method": "actor",
+    "paired": [
+      {
+        "seed": 0,
+        "baseline": {
+          "air_m3": 91687.55155933906,
+          "nh4_cost": 4.285,
+          "do_cost": 1.48,
+          "nh4_excess_mg_h_L": 3.712885742918697,
+          "do_excess_mg_h_L": 0.08285731476211755,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 80.0,
+          "worst_day_nh4_cost": 47.4,
+          "worst_day_do_cost": 31.6,
+          "cost": 5.765,
+          "nh4_viol_pct": 4.510526315789473,
+          "do_viol_pct": 1.5578947368421052,
+          "days_within_limit_pct": 89.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 86142.31622535735,
+          "nh4_cost": 6.075,
+          "do_cost": 2.045,
+          "nh4_excess_mg_h_L": 4.58705010938526,
+          "do_excess_mg_h_L": 0.11990971843267655,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 72.5,
+          "worst_day_nh4_cost": 51.6,
+          "worst_day_do_cost": 25.4,
+          "cost": 8.12,
+          "nh4_viol_pct": 6.394736842105263,
+          "do_viol_pct": 2.1526315789473682,
+          "days_within_limit_pct": 85.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": -5545.2353339817055,
+          "nh4_cost": 1.79,
+          "do_cost": 0.565,
+          "cost": 2.3549999999999995,
+          "nh4_excess_mg_h_L": 0.8741643664665624,
+          "do_excess_mg_h_L": 0.037052403670558995,
+          "worst_day_nh4_cost": 4.200000000000003,
+          "worst_day_do_cost": -6.200000000000003
+        },
+        "air_pct": -6.047969696729105
+      },
+      {
+        "seed": 1,
+        "baseline": {
+          "air_m3": 89423.23214248173,
+          "nh4_cost": 13.46,
+          "do_cost": 2.355,
+          "nh4_excess_mg_h_L": 4.399196235275099,
+          "do_excess_mg_h_L": 0.15495629058443383,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 23.5,
+          "worst_day_nh4_cost": 46.2,
+          "worst_day_do_cost": 35.2,
+          "cost": 15.815,
+          "nh4_viol_pct": 14.16842105263158,
+          "do_viol_pct": 2.4789473684210526,
+          "days_within_limit_pct": 42.5,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 88636.81596379029,
+          "nh4_cost": 6.05,
+          "do_cost": 1.885,
+          "nh4_excess_mg_h_L": 4.019692384140665,
+          "do_excess_mg_h_L": 0.09797344630083966,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 68.0,
+          "worst_day_nh4_cost": 48.0,
+          "worst_day_do_cost": 32.2,
+          "cost": 7.935,
+          "nh4_viol_pct": 6.368421052631579,
+          "do_viol_pct": 1.9842105263157896,
+          "days_within_limit_pct": 84.0,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": -786.4161786914483,
+          "nh4_cost": -7.410000000000001,
+          "do_cost": -0.47,
+          "cost": -7.88,
+          "nh4_excess_mg_h_L": -0.37950385113443375,
+          "do_excess_mg_h_L": -0.05698284428359417,
+          "worst_day_nh4_cost": 1.7999999999999972,
+          "worst_day_do_cost": -3.0
+        },
+        "air_pct": -0.8794316195576801
+      },
+      {
+        "seed": 2,
+        "baseline": {
+          "air_m3": 80266.21228968375,
+          "nh4_cost": 20.015,
+          "do_cost": 1.57,
+          "nh4_excess_mg_h_L": 6.846697628754076,
+          "do_excess_mg_h_L": 0.06907007516129565,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 18.5,
+          "worst_day_nh4_cost": 63.4,
+          "worst_day_do_cost": 15.4,
+          "cost": 21.585,
+          "nh4_viol_pct": 21.068421052631578,
+          "do_viol_pct": 1.6526315789473685,
+          "days_within_limit_pct": 40.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 81246.50628914824,
+          "nh4_cost": 12.94,
+          "do_cost": 1.61,
+          "nh4_excess_mg_h_L": 6.025595784963529,
+          "do_excess_mg_h_L": 0.06038951345104168,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 43.0,
+          "worst_day_nh4_cost": 63.8,
+          "worst_day_do_cost": 23.6,
+          "cost": 14.55,
+          "nh4_viol_pct": 13.621052631578948,
+          "do_viol_pct": 1.6947368421052633,
+          "days_within_limit_pct": 66.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 980.2939994644839,
+          "nh4_cost": -7.075000000000001,
+          "do_cost": 0.040000000000000036,
+          "cost": -7.035,
+          "nh4_excess_mg_h_L": -0.8211018437905473,
+          "do_excess_mg_h_L": -0.00868056171025397,
+          "worst_day_nh4_cost": 0.3999999999999986,
+          "worst_day_do_cost": 8.200000000000001
+        },
+        "air_pct": 1.2213034245674548
+      },
+      {
+        "seed": 3,
+        "baseline": {
+          "air_m3": 96157.79924475237,
+          "nh4_cost": 4.92,
+          "do_cost": 2.065,
+          "nh4_excess_mg_h_L": 3.9383658123406677,
+          "do_excess_mg_h_L": 0.12124845324024619,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 76.0,
+          "worst_day_nh4_cost": 46.4,
+          "worst_day_do_cost": 33.2,
+          "cost": 6.985,
+          "nh4_viol_pct": 5.178947368421052,
+          "do_viol_pct": 2.1736842105263157,
+          "days_within_limit_pct": 87.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 86431.98940084201,
+          "nh4_cost": 7.785,
+          "do_cost": 1.23,
+          "nh4_excess_mg_h_L": 4.754251631936114,
+          "do_excess_mg_h_L": 0.044931233573594055,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 60.5,
+          "worst_day_nh4_cost": 54.2,
+          "worst_day_do_cost": 17.6,
+          "cost": 9.015,
+          "nh4_viol_pct": 8.194736842105263,
+          "do_viol_pct": 1.294736842105263,
+          "days_within_limit_pct": 81.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": -9725.809843910363,
+          "nh4_cost": 2.865,
+          "do_cost": -0.835,
+          "cost": 2.0300000000000002,
+          "nh4_excess_mg_h_L": 0.8158858195954464,
+          "do_excess_mg_h_L": -0.07631721966665214,
+          "worst_day_nh4_cost": 7.800000000000004,
+          "worst_day_do_cost": -15.600000000000001
+        },
+        "air_pct": -10.114426411897249
+      },
+      {
+        "seed": 4,
+        "baseline": {
+          "air_m3": 90889.5356184861,
+          "nh4_cost": 4.52,
+          "do_cost": 2.02,
+          "nh4_excess_mg_h_L": 3.4008494131946145,
+          "do_excess_mg_h_L": 0.16398324314573448,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 77.5,
+          "worst_day_nh4_cost": 45.2,
+          "worst_day_do_cost": 34.4,
+          "cost": 6.54,
+          "nh4_viol_pct": 4.757894736842105,
+          "do_viol_pct": 2.1263157894736846,
+          "days_within_limit_pct": 86.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 80268.97061073803,
+          "nh4_cost": 11.13,
+          "do_cost": 0.855,
+          "nh4_excess_mg_h_L": 6.585972931749833,
+          "do_excess_mg_h_L": 0.05722708006556268,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 60.5,
+          "worst_day_nh4_cost": 66.0,
+          "worst_day_do_cost": 11.6,
+          "cost": 11.985,
+          "nh4_viol_pct": 11.715789473684211,
+          "do_viol_pct": 0.9,
+          "days_within_limit_pct": 75.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": -10620.565007748068,
+          "nh4_cost": 6.610000000000001,
+          "do_cost": -1.165,
+          "cost": 5.444999999999999,
+          "nh4_excess_mg_h_L": 3.1851235185552182,
+          "do_excess_mg_h_L": -0.1067561630801718,
+          "worst_day_nh4_cost": 20.799999999999997,
+          "worst_day_do_cost": -22.799999999999997
+        },
+        "air_pct": -11.6851350768569
+      }
+    ],
+    "means": {
+      "air_m3": {
+        "baseline": 89684.8661709486,
+        "candidate": 84545.31969797518
+      },
+      "nh4_cost": {
+        "baseline": 9.440000000000001,
+        "candidate": 8.796
+      },
+      "do_cost": {
+        "baseline": 1.8980000000000001,
+        "candidate": 1.525
+      },
+      "cost": {
+        "baseline": 11.338,
+        "candidate": 10.321000000000002
+      },
+      "nh4_excess_mg_h_L": {
+        "baseline": 4.45959896649663,
+        "candidate": 5.19451256843508
+      },
+      "do_excess_mg_h_L": {
+        "baseline": 0.11842307537876554,
+        "candidate": 0.07608619836474292
+      },
+      "worst_day_nh4_cost": {
+        "baseline": 49.720000000000006,
+        "candidate": 56.71999999999999
+      },
+      "worst_day_do_cost": {
+        "baseline": 29.96,
+        "candidate": 22.080000000000002
+      },
+      "air_pct": -5.730673069385994
+    },
+    "independent_training_seeds": 5,
+    "validation_dates": 40,
+    "ensemble_members_are_not_independent_datasets": true,
+    "episodes_aligned": 1000,
+    "cost_better_seeds": 2,
+    "leave_one_seed_out_cost_difference": [
+      -1.8599999999999997,
+      0.6987499999999998,
+      0.4874999999999998,
+      -1.7787500000000003,
+      -2.6325000000000003
+    ],
+    "seed_day_counts": {
+      "air_m3": 139,
+      "cost": 91,
+      "nh4_cost": 84,
+      "do_cost": 54
+    },
+    "seed_day_total": 200,
+    "date_mean_counts": {
+      "air_m3": 34,
+      "cost": 33,
+      "nh4_cost": 31,
+      "do_cost": 17
+    },
+    "all_three_better_seed_days": 13,
+    "all_three_better_dates": 11
+  },
+  "e52_fcsrl": {
+    "experiment": "e52",
+    "method": "fcsrl",
+    "paired": [
+      {
+        "seed": 0,
+        "baseline": {
+          "air_m3": 84237.44193970111,
+          "nh4_cost": 6.305,
+          "do_cost": 1.02,
+          "nh4_excess_mg_h_L": 5.05745123968944,
+          "do_excess_mg_h_L": 0.06261452549547414,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 73.5,
+          "worst_day_nh4_cost": 52.6,
+          "worst_day_do_cost": 8.4,
+          "cost": 7.325,
+          "nh4_viol_pct": 6.636842105263159,
+          "do_viol_pct": 1.0736842105263158,
+          "days_within_limit_pct": 85.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 87081.06030879251,
+          "nh4_cost": 6.32,
+          "do_cost": 0.585,
+          "nh4_excess_mg_h_L": 5.156373767961652,
+          "do_excess_mg_h_L": 0.01666124073235955,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 71.0,
+          "worst_day_nh4_cost": 52.4,
+          "worst_day_do_cost": 7.4,
+          "cost": 6.905,
+          "nh4_viol_pct": 6.652631578947369,
+          "do_viol_pct": 0.6157894736842104,
+          "days_within_limit_pct": 87.0,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 2843.618369091404,
+          "nh4_cost": 0.015000000000000568,
+          "do_cost": -0.43500000000000005,
+          "cost": -0.41999999999999993,
+          "nh4_excess_mg_h_L": 0.09892252827221171,
+          "do_excess_mg_h_L": -0.04595328476311459,
+          "worst_day_nh4_cost": -0.20000000000000284,
+          "worst_day_do_cost": -1.0
+        },
+        "air_pct": 3.375717856113103
+      },
+      {
+        "seed": 1,
+        "baseline": {
+          "air_m3": 80739.63103761314,
+          "nh4_cost": 28.15,
+          "do_cost": 0.97,
+          "nh4_excess_mg_h_L": 8.101437325451066,
+          "do_excess_mg_h_L": 0.11032465551337055,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 11.5,
+          "worst_day_nh4_cost": 57.4,
+          "worst_day_do_cost": 10.4,
+          "cost": 29.12,
+          "nh4_viol_pct": 29.63157894736842,
+          "do_viol_pct": 1.0210526315789474,
+          "days_within_limit_pct": 19.0,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 97956.33953486131,
+          "nh4_cost": 4.555,
+          "do_cost": 0.355,
+          "nh4_excess_mg_h_L": 4.685746120487733,
+          "do_excess_mg_h_L": 0.015210379149105691,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 83.0,
+          "worst_day_nh4_cost": 51.8,
+          "worst_day_do_cost": 6.2,
+          "cost": 4.91,
+          "nh4_viol_pct": 4.794736842105263,
+          "do_viol_pct": 0.37368421052631573,
+          "days_within_limit_pct": 90.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 17216.708497248168,
+          "nh4_cost": -23.595,
+          "do_cost": -0.615,
+          "cost": -24.21,
+          "nh4_excess_mg_h_L": -3.4156912049633332,
+          "do_excess_mg_h_L": -0.09511427636426485,
+          "worst_day_nh4_cost": -5.600000000000001,
+          "worst_day_do_cost": -4.2
+        },
+        "air_pct": 21.3237393780356
+      },
+      {
+        "seed": 2,
+        "baseline": {
+          "air_m3": 78080.71354407293,
+          "nh4_cost": 23.245,
+          "do_cost": 1.09,
+          "nh4_excess_mg_h_L": 8.61857152642505,
+          "do_excess_mg_h_L": 0.06669218200957346,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 27.500000000000004,
+          "worst_day_nh4_cost": 63.4,
+          "worst_day_do_cost": 9.8,
+          "cost": 24.335,
+          "nh4_viol_pct": 24.468421052631573,
+          "do_viol_pct": 1.1473684210526316,
+          "days_within_limit_pct": 46.5,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 94805.97545284427,
+          "nh4_cost": 4.9,
+          "do_cost": 1.115,
+          "nh4_excess_mg_h_L": 4.497751467537326,
+          "do_excess_mg_h_L": 0.11352516864961334,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 82.0,
+          "worst_day_nh4_cost": 48.0,
+          "worst_day_do_cost": 11.2,
+          "cost": 6.015,
+          "nh4_viol_pct": 5.157894736842105,
+          "do_viol_pct": 1.1736842105263159,
+          "days_within_limit_pct": 88.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 16725.26190877134,
+          "nh4_cost": -18.345,
+          "do_cost": 0.02499999999999991,
+          "cost": -18.32,
+          "nh4_excess_mg_h_L": -4.120820058887724,
+          "do_excess_mg_h_L": 0.04683298664003989,
+          "worst_day_nh4_cost": -15.399999999999999,
+          "worst_day_do_cost": 1.3999999999999986
+        },
+        "air_pct": 21.420477797414982
+      }
+    ],
+    "means": {
+      "air_m3": {
+        "baseline": 81019.26217379572,
+        "candidate": 93281.12509883271
+      },
+      "nh4_cost": {
+        "baseline": 19.233333333333334,
+        "candidate": 5.258333333333334
+      },
+      "do_cost": {
+        "baseline": 1.0266666666666666,
+        "candidate": 0.6849999999999999
+      },
+      "cost": {
+        "baseline": 20.26,
+        "candidate": 5.943333333333334
+      },
+      "nh4_excess_mg_h_L": {
+        "baseline": 7.259153363855186,
+        "candidate": 4.779957118662238
+      },
+      "do_excess_mg_h_L": {
+        "baseline": 0.07987712100613938,
+        "candidate": 0.04846559617702619
+      },
+      "worst_day_nh4_cost": {
+        "baseline": 57.800000000000004,
+        "candidate": 50.73333333333333
+      },
+      "worst_day_do_cost": {
+        "baseline": 9.533333333333333,
+        "candidate": 8.266666666666667
+      },
+      "air_pct": 15.134503321856796
+    },
+    "independent_training_seeds": 3,
+    "validation_dates": 40,
+    "ensemble_members_are_not_independent_datasets": true,
+    "episodes_aligned": 600,
+    "cost_better_seeds": 3,
+    "leave_one_seed_out_cost_difference": [
+      -21.265,
+      -9.370000000000001,
+      -12.315000000000001
+    ],
+    "seed_day_counts": {
+      "air_m3": 12,
+      "cost": 95,
+      "nh4_cost": 93,
+      "do_cost": 38
+    },
+    "seed_day_total": 120,
+    "date_mean_counts": {
+      "air_m3": 0,
+      "cost": 40,
+      "nh4_cost": 40,
+      "do_cost": 18
+    },
+    "all_three_better_seed_days": 4,
+    "all_three_better_dates": 0,
+    "baseline_pre_nh4_partition": {
+      "NH4_le_3": {
+        "step_pct": 32.142105263157895,
+        "positive_extra_air_share_pct": 40.14892221618624,
+        "net_extra_m3_per_episode": 7421.293305217115
+      },
+      "NH4_3_to_4": {
+        "step_pct": 47.473684210526315,
+        "positive_extra_air_share_pct": 50.57911252705443,
+        "net_extra_m3_per_episode": 7275.272988565558
+      },
+      "NH4_gt_4": {
+        "step_pct": 20.38421052631579,
+        "positive_extra_air_share_pct": 9.271965256759321,
+        "net_extra_m3_per_episode": -2434.703368745686
+      }
+    },
+    "baseline_sd_quartiles": {
+      "cutoffs_mg_L": [
+        0.03026646412350075,
+        0.043771223290655914,
+        0.061342459356243106
+      ],
+      "descriptive_validation_quantiles_only": true,
+      "groups": [
+        {
+          "quartile": 1,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 26.186561379667538
+        },
+        {
+          "quartile": 2,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 26.58048192802947
+        },
+        {
+          "quartile": 3,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 26.08218173117038
+        },
+        {
+          "quartile": 4,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 21.1507749611326
+        }
+      ]
+    },
+    "air_accounting": {
+      "net_extra_m3_per_episode": 12261.862925036985,
+      "positive_extra_m3_per_episode": 23140.48589649727,
+      "removed_m3_per_episode": 10878.622971460281
+    },
+    "time_bins": [
+      {
+        "seed": 0,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": -381.6505831765244,
+        "d_nh4_cost": -0.03
+      },
+      {
+        "seed": 0,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": -1066.4700223936234,
+        "d_nh4_cost": 0.975
+      },
+      {
+        "seed": 0,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 4599.641544842161,
+        "d_nh4_cost": -0.17
+      },
+      {
+        "seed": 0,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": -307.9025701805949,
+        "d_nh4_cost": -0.76
+      },
+      {
+        "seed": 1,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": 7073.8684382193605,
+        "d_nh4_cost": -1.84
+      },
+      {
+        "seed": 1,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": 7454.3689245780115,
+        "d_nh4_cost": -2.885
+      },
+      {
+        "seed": 1,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 2259.3922264970024,
+        "d_nh4_cost": -10.8
+      },
+      {
+        "seed": 1,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": 429.0789079538081,
+        "d_nh4_cost": -8.07
+      },
+      {
+        "seed": 2,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": 11111.911593710538,
+        "d_nh4_cost": -2.675
+      },
+      {
+        "seed": 2,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": 195.33463828149252,
+        "d_nh4_cost": -6.56
+      },
+      {
+        "seed": 2,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 3323.7191809527576,
+        "d_nh4_cost": -5.525
+      },
+      {
+        "seed": 2,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": 2094.2964958265657,
+        "d_nh4_cost": -3.585
+      }
+    ]
+  },
+  "e52_ppo": {
+    "experiment": "e52",
+    "method": "ppo",
+    "paired": [
+      {
+        "seed": 0,
+        "baseline": {
+          "air_m3": 84737.04443862547,
+          "nh4_cost": 6.36,
+          "do_cost": 1.57,
+          "nh4_excess_mg_h_L": 3.831082904815583,
+          "do_excess_mg_h_L": 0.15188082213100185,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 67.5,
+          "worst_day_nh4_cost": 43.6,
+          "worst_day_do_cost": 28.8,
+          "cost": 7.93,
+          "nh4_viol_pct": 6.6947368421052635,
+          "do_viol_pct": 1.6526315789473685,
+          "days_within_limit_pct": 82.5,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 91874.61264916841,
+          "nh4_cost": 3.945,
+          "do_cost": 1.7,
+          "nh4_excess_mg_h_L": 3.6053318641072014,
+          "do_excess_mg_h_L": 0.1515403797339936,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 83.5,
+          "worst_day_nh4_cost": 43.0,
+          "worst_day_do_cost": 28.8,
+          "cost": 5.645,
+          "nh4_viol_pct": 4.152631578947369,
+          "do_viol_pct": 1.7894736842105263,
+          "days_within_limit_pct": 90.0,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 7137.568210542944,
+          "nh4_cost": -2.4150000000000005,
+          "do_cost": 0.1299999999999999,
+          "cost": -2.285,
+          "nh4_excess_mg_h_L": -0.22575104070838137,
+          "do_excess_mg_h_L": -0.00034044239700825596,
+          "worst_day_nh4_cost": -0.6000000000000014,
+          "worst_day_do_cost": 0.0
+        },
+        "air_pct": 8.423197030093066
+      },
+      {
+        "seed": 1,
+        "baseline": {
+          "air_m3": 86127.85146979848,
+          "nh4_cost": 7.11,
+          "do_cost": 1.425,
+          "nh4_excess_mg_h_L": 3.958871147328223,
+          "do_excess_mg_h_L": 0.10114514695141369,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 64.5,
+          "worst_day_nh4_cost": 46.6,
+          "worst_day_do_cost": 25.0,
+          "cost": 8.535,
+          "nh4_viol_pct": 7.484210526315788,
+          "do_viol_pct": 1.5,
+          "days_within_limit_pct": 82.5,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 91697.87010818487,
+          "nh4_cost": 4.565,
+          "do_cost": 1.875,
+          "nh4_excess_mg_h_L": 3.9582327435072004,
+          "do_excess_mg_h_L": 0.1840316643661898,
+          "both_mean_limits": true,
+          "both_limits_episode_pct": 82.0,
+          "worst_day_nh4_cost": 45.4,
+          "worst_day_do_cost": 26.0,
+          "cost": 6.44,
+          "nh4_viol_pct": 4.8052631578947365,
+          "do_viol_pct": 1.9736842105263157,
+          "days_within_limit_pct": 88.5,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 5570.018638386391,
+          "nh4_cost": -2.545,
+          "do_cost": 0.44999999999999996,
+          "cost": -2.0949999999999998,
+          "nh4_excess_mg_h_L": -0.0006384038210227594,
+          "do_excess_mg_h_L": 0.08288651741477612,
+          "worst_day_nh4_cost": -1.2000000000000028,
+          "worst_day_do_cost": 1.0
+        },
+        "air_pct": 6.467151500162016
+      },
+      {
+        "seed": 2,
+        "baseline": {
+          "air_m3": 81273.8108738407,
+          "nh4_cost": 14.56,
+          "do_cost": 1.185,
+          "nh4_excess_mg_h_L": 6.365309038451037,
+          "do_excess_mg_h_L": 0.09482081500203612,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 45.0,
+          "worst_day_nh4_cost": 53.8,
+          "worst_day_do_cost": 14.8,
+          "cost": 15.745,
+          "nh4_viol_pct": 15.326315789473684,
+          "do_viol_pct": 1.2473684210526315,
+          "days_within_limit_pct": 60.5,
+          "n_episodes": 200
+        },
+        "candidate": {
+          "air_m3": 83932.96859733062,
+          "nh4_cost": 12.79,
+          "do_cost": 0.74,
+          "nh4_excess_mg_h_L": 7.7945124264208925,
+          "do_excess_mg_h_L": 0.06766395627254153,
+          "both_mean_limits": false,
+          "both_limits_episode_pct": 59.0,
+          "worst_day_nh4_cost": 61.0,
+          "worst_day_do_cost": 10.2,
+          "cost": 13.53,
+          "nh4_viol_pct": 13.463157894736842,
+          "do_viol_pct": 0.7789473684210526,
+          "days_within_limit_pct": 70.0,
+          "n_episodes": 200
+        },
+        "difference": {
+          "air_m3": 2659.157723489916,
+          "nh4_cost": -1.7700000000000014,
+          "do_cost": -0.44500000000000006,
+          "cost": -2.215,
+          "nh4_excess_mg_h_L": 1.4292033879698556,
+          "do_excess_mg_h_L": -0.027156858729494596,
+          "worst_day_nh4_cost": 7.200000000000003,
+          "worst_day_do_cost": -4.600000000000001
+        },
+        "air_pct": 3.271850667391063
+      }
+    ],
+    "means": {
+      "air_m3": {
+        "baseline": 84046.23559408821,
+        "candidate": 89168.48378489463
+      },
+      "nh4_cost": {
+        "baseline": 9.343333333333334,
+        "candidate": 7.099999999999999
+      },
+      "do_cost": {
+        "baseline": 1.3933333333333333,
+        "candidate": 1.4383333333333335
+      },
+      "cost": {
+        "baseline": 10.736666666666666,
+        "candidate": 8.538333333333334
+      },
+      "nh4_excess_mg_h_L": {
+        "baseline": 4.718421030198281,
+        "candidate": 5.1193590113450975
+      },
+      "do_excess_mg_h_L": {
+        "baseline": 0.11594892802815056,
+        "candidate": 0.13441200012424162
+      },
+      "worst_day_nh4_cost": {
+        "baseline": 48.0,
+        "candidate": 49.800000000000004
+      },
+      "worst_day_do_cost": {
+        "baseline": 22.866666666666664,
+        "candidate": 21.666666666666668
+      },
+      "air_pct": 6.094559922403864
+    },
+    "independent_training_seeds": 3,
+    "validation_dates": 40,
+    "ensemble_members_are_not_independent_datasets": true,
+    "episodes_aligned": 600,
+    "cost_better_seeds": 3,
+    "leave_one_seed_out_cost_difference": [
+      -2.155,
+      -2.25,
+      -2.19
+    ],
+    "seed_day_counts": {
+      "air_m3": 8,
+      "cost": 93,
+      "nh4_cost": 95,
+      "do_cost": 18
+    },
+    "seed_day_total": 120,
+    "date_mean_counts": {
+      "air_m3": 1,
+      "cost": 33,
+      "nh4_cost": 32,
+      "do_cost": 9
+    },
+    "all_three_better_seed_days": 2,
+    "all_three_better_dates": 0,
+    "baseline_pre_nh4_partition": {
+      "NH4_le_3": {
+        "step_pct": 43.54385964912281,
+        "positive_extra_air_share_pct": 56.48908328137527,
+        "net_extra_m3_per_episode": 4511.329278047488
+      },
+      "NH4_3_to_4": {
+        "step_pct": 46.37543859649123,
+        "positive_extra_air_share_pct": 40.078237171214724,
+        "net_extra_m3_per_episode": 1766.1446359637193
+      },
+      "NH4_gt_4": {
+        "step_pct": 10.080701754385965,
+        "positive_extra_air_share_pct": 3.432679547409994,
+        "net_extra_m3_per_episode": -1155.225723204785
+      }
+    },
+    "baseline_sd_quartiles": {
+      "cutoffs_mg_L": [
+        0.02890256910501395,
+        0.04070769816000912,
+        0.05560729081323448
+      ],
+      "descriptive_validation_quantiles_only": true,
+      "groups": [
+        {
+          "quartile": 1,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 28.639504547054788
+        },
+        {
+          "quartile": 2,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 27.46071613848163
+        },
+        {
+          "quartile": 3,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 24.6608055800461
+        },
+        {
+          "quartile": 4,
+          "step_pct": 25.0,
+          "positive_extra_air_share_pct": 19.23897373441747
+        }
+      ]
+    },
+    "air_accounting": {
+      "net_extra_m3_per_episode": 5122.248190806422,
+      "positive_extra_m3_per_episode": 10232.144091155205,
+      "removed_m3_per_episode": 5109.8959003487835
+    },
+    "time_bins": [
+      {
+        "seed": 0,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": 2379.293866713415,
+        "d_nh4_cost": -0.445
+      },
+      {
+        "seed": 0,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": 1579.0516715543345,
+        "d_nh4_cost": -1.37
+      },
+      {
+        "seed": 0,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 1315.151620155957,
+        "d_nh4_cost": -0.42
+      },
+      {
+        "seed": 0,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": 1864.0710521192523,
+        "d_nh4_cost": -0.18
+      },
+      {
+        "seed": 1,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": 2460.446016336791,
+        "d_nh4_cost": -0.7
+      },
+      {
+        "seed": 1,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": 262.88471757550724,
+        "d_nh4_cost": -1.735
+      },
+      {
+        "seed": 1,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 1100.555816302076,
+        "d_nh4_cost": -0.19
+      },
+      {
+        "seed": 1,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": 1746.1320881720167,
+        "d_nh4_cost": 0.08
+      },
+      {
+        "seed": 2,
+        "start_hour": 0.0,
+        "end_hour": 6.0,
+        "d_air_m3": -21.85501872212626,
+        "d_nh4_cost": -0.3
+      },
+      {
+        "seed": 2,
+        "start_hour": 6.0,
+        "end_hour": 12.0,
+        "d_air_m3": 784.5788313494995,
+        "d_nh4_cost": -2.805
+      },
+      {
+        "seed": 2,
+        "start_hour": 12.0,
+        "end_hour": 18.0,
+        "d_air_m3": 689.1427047655452,
+        "d_nh4_cost": 0.085
+      },
+      {
+        "seed": 2,
+        "start_hour": 18.0,
+        "end_hour": 23.75,
+        "d_air_m3": 1207.2912060969975,
+        "d_nh4_cost": 1.25
+      }
+    ]
+  },
+  "verification": {
+    "policy_evaluations": 27,
+    "original_metric_checks": 210,
+    "max_metric_absolute_errors": {
+      "e50:air_m3": 0.0010590010933810845,
+      "e50:cost": 0.0,
+      "e50:nh4_viol_pct": 0.0,
+      "e50:do_viol_pct": 0.0,
+      "e50:days_within_limit_pct": 0.0,
+      "e50:n_episodes": 0.0,
+      "e52:air_m3": 0.0,
+      "e52:nh4_cost": 0.0,
+      "e52:do_cost": 0.0,
+      "e52:nh4_excess_mg_h_L": 0.0,
+      "e52:cost": 0.0,
+      "e52:both_mean_limits": 0.0,
+      "e52:both_limits_episode_pct": 0.0,
+      "e52:n_episodes": 0.0,
+      "e52:worst_day_nh4_cost": 0.0,
+      "e52:worst_day_do_cost": 0.0
+    },
+    "analysis_source_sha256": "8aba61ff3c11b9558feeca3e689aa2e1093bdfa25c79d71359577163df184490",
+    "weight_updates": 0,
+    "test_evaluated": false,
+    "inputs_unchanged": true
+  },
+  "e50_actor_training_diagnostics": [
+    {
+      "seed": 0,
+      "before_kl": 0.0014172511500322744,
+      "after_kl": 7.637357582483894e-05,
+      "extra_wall_seconds": 30.152704283129424
+    },
+    {
+      "seed": 1,
+      "before_kl": 0.0011988945813589619,
+      "after_kl": 5.6475060668589954e-05,
+      "extra_wall_seconds": 30.196418780717067
+    },
+    {
+      "seed": 2,
+      "before_kl": 0.0013428078317853458,
+      "after_kl": 5.691106278504776e-05,
+      "extra_wall_seconds": 105.40499391127378
+    },
+    {
+      "seed": 3,
+      "before_kl": 0.0012981961157851347,
+      "after_kl": 6.26586263479112e-05,
+      "extra_wall_seconds": 109.78179295605514
+    },
+    {
+      "seed": 4,
+      "before_kl": 0.001349873293368849,
+      "after_kl": 6.563188587363405e-05,
+      "extra_wall_seconds": 116.93890245305374
+    }
+  ]
+}

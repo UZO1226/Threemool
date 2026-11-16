@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": {
+    "ppo": {
+      "cpu_threads": 1,
+      "device": "cpu",
+      "collection_seconds": 21.88324520085007,
+      "cpu1_update_seconds": 1.5604476160369813,
+      "hybrid_update_seconds": 1.0690178950317204,
+      "mean_action_max_difference": 0.0,
+      "value_max_difference": 0.0,
+      "same_epochs": 10,
+      "cpu_rng_identical": true,
+      "checkpoint_optimizer_rng_resume_exact": true,
+      "finite": true
+    },
+    "fcsrl": {
+      "cpu_threads": 1,
+      "device": "cuda:0",
+      "collection_seconds": 20.49382324400358,
+      "cpu1_update_seconds": 10.213645505020395,
+      "hybrid_update_seconds": 4.673737420933321,
+      "mean_action_max_difference": 7.450580596923828e-08,
+      "value_max_difference": 3.814697265625e-06,
+      "same_epochs": 10,
+      "cpu_rng_identical": true,
+      "checkpoint_optimizer_rng_resume_exact": true,
+      "finite": true
+    }
+  },
+  "hashes": {
+    "/home/jio/threemool-hybrid-gpu/Yoo/experiments/e56/check_hybrid.py": "9802a770d3b1cb42c28ba06ef0949f2d2d5d57a7531ae95e0eb4c5c3ab09c2d1",
+    "/home/jio/threemool-hybrid-gpu/Yoo/experiments/e56/hybrid.py": "4b49afa86374702a4095fa7ebeadbfe8f158b0549e8e8e1b04ac0efd7c0d0f0a",
+    "/home/jio/threemool-hybrid-gpu/Yoo/experiments/e56/train.py": "f672617821933112526fe8a26ff6cfc9400e8c748331989ca058ab96a9512e53"
+  },
+  "caveat": "Fixed buffer and initial update parity is not proof of identical full CPU/GPU training trajectories",
+  "entrypoint": {
+    "passed": true,
+    "updates": 1,
+    "steps": 6080,
+    "val_episodes": 200,
+    "train_episodes": 940,
+    "test_evaluated": false,
+    "cpu_threads": 1,
+    "backend": "physical_gpu1",
+    "checkpoint_reload": "exact"
+  }
+}

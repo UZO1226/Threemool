@@ -1,0 +1,180 @@
+{
+ "criterion1": {
+  "back_w0.25": false,
+  "back_w0.5": false,
+  "back_w1.0": false,
+  "uniform_w0.25": false,
+  "uniform_w0.5": false,
+  "uniform_w1.0": false
+ },
+ "criterion2": {
+  "back_w0.25": false,
+  "back_w0.5": true,
+  "back_w1.0": false,
+  "uniform_w0.25": false,
+  "uniform_w0.5": false,
+  "uniform_w1.0": false
+ },
+ "criterion3": true,
+ "passing": [],
+ "go": false,
+ "A": {
+  "floor_max_air": {
+   "nh4_cost": 2.96,
+   "carryover": 2.81,
+   "controllable": 0.15,
+   "floor": 2.96,
+   "above_floor": 0.0,
+   "nh4_cost_start_above4": 9.7,
+   "nh4_cost_start_below4": 0.07142857142857142,
+   "share_episodes_start_above4": 0.3
+  },
+  "기록 운전": {
+   "nh4_cost": 27.06,
+   "carryover": 10.645,
+   "controllable": 16.415,
+   "floor": 2.96,
+   "above_floor": 24.1,
+   "nh4_cost_start_above4": 43.56666666666667,
+   "nh4_cost_start_below4": 19.985714285714284,
+   "share_episodes_start_above4": 0.3
+  },
+  "공기 0 + park_e19": {
+   "nh4_cost": 3.365,
+   "carryover": 2.81,
+   "controllable": 0.555,
+   "floor": 2.96,
+   "above_floor": 0.405,
+   "nh4_cost_start_above4": 10.316666666666666,
+   "nh4_cost_start_below4": 0.38571428571428573,
+   "share_episodes_start_above4": 0.3
+  },
+  "e50 ppo 차단 없음": {
+   "nh4_cost": 12.662,
+   "carryover": 3.6910000000000003,
+   "controllable": 8.971,
+   "floor": 2.96,
+   "above_floor": 9.702,
+   "nh4_cost_start_above4": 19.903333333333332,
+   "nh4_cost_start_below4": 9.55857142857143,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e50 fcsrl 차단 없음": {
+   "nh4_cost": 9.440000000000001,
+   "carryover": 3.6809999999999996,
+   "controllable": 5.7589999999999995,
+   "floor": 2.96,
+   "above_floor": 6.4799999999999995,
+   "nh4_cost_start_above4": 18.82,
+   "nh4_cost_start_below4": 5.42,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e59 ppo + park_e19": {
+   "nh4_cost": 3.197,
+   "carryover": 2.81,
+   "controllable": 0.387,
+   "floor": 2.96,
+   "above_floor": 0.23700000000000002,
+   "nh4_cost_start_above4": 10.053333333333333,
+   "nh4_cost_start_below4": 0.25857142857142856,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e59 fcsrl + park_e19": {
+   "nh4_cost": 3.124,
+   "carryover": 2.81,
+   "controllable": 0.314,
+   "floor": 2.96,
+   "above_floor": 0.164,
+   "nh4_cost_start_above4": 9.876666666666667,
+   "nh4_cost_start_below4": 0.22999999999999998,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e59 fcsrl_actor + park_e19": {
+   "nh4_cost": 3.169,
+   "carryover": 2.81,
+   "controllable": 0.35900000000000004,
+   "floor": 2.96,
+   "above_floor": 0.209,
+   "nh4_cost_start_above4": 9.966666666666667,
+   "nh4_cost_start_below4": 0.25571428571428567,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e59 severity + park_e19": {
+   "nh4_cost": 3.191,
+   "carryover": 2.81,
+   "controllable": 0.38099999999999995,
+   "floor": 2.96,
+   "above_floor": 0.23100000000000004,
+   "nh4_cost_start_above4": 10.036666666666665,
+   "nh4_cost_start_below4": 0.2571428571428571,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e60 ppo + park_e19": {
+   "nh4_cost": 3.251,
+   "carryover": 2.81,
+   "controllable": 0.441,
+   "floor": 2.96,
+   "above_floor": 0.291,
+   "nh4_cost_start_above4": 10.09,
+   "nh4_cost_start_below4": 0.31999999999999995,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e61 ppo + park_e19": {
+   "nh4_cost": 3.2619999999999996,
+   "carryover": 2.81,
+   "controllable": 0.45199999999999996,
+   "floor": 2.96,
+   "above_floor": 0.302,
+   "nh4_cost_start_above4": 10.186666666666667,
+   "nh4_cost_start_below4": 0.29428571428571426,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e60 fcsrl + park_e19": {
+   "nh4_cost": 3.2439999999999998,
+   "carryover": 2.81,
+   "controllable": 0.434,
+   "floor": 2.96,
+   "above_floor": 0.284,
+   "nh4_cost_start_above4": 10.11,
+   "nh4_cost_start_below4": 0.30142857142857143,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  },
+  "e61 fcsrl + park_e19": {
+   "nh4_cost": 3.2659999999999996,
+   "carryover": 2.81,
+   "controllable": 0.45600000000000007,
+   "floor": 2.96,
+   "above_floor": 0.30599999999999994,
+   "nh4_cost_start_above4": 10.126666666666667,
+   "nh4_cost_start_below4": 0.3257142857142857,
+   "share_episodes_start_above4": 0.3,
+   "seeds": 5
+  }
+ },
+ "B_data": {
+  "rows": 17860,
+  "days": 188,
+  "data_coef": -0.30940874084851744,
+  "data_ci95": [
+   -0.4127222954898784,
+   -0.192980366556276
+  ],
+  "model_coef": -0.20695116411816644,
+  "model_ci95": [
+   -0.29418821157446295,
+   -0.11865598348468678
+  ],
+  "share_mean": 0.5704588886023195,
+  "share_sd": 0.0896821392866811
+ },
+ "root": "/home/jio/fcsrl_src/results/e62/main"
+}
