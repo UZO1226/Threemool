@@ -149,3 +149,18 @@ ongoing events are excluded from onset matching. Every condition is retained
 in the decision, with no validation-driven parameter change. Evaluation is
 still running; neither independent/event audit has executed yet. No agent is
 trained on e58 and no final test is evaluated.
+
+The stochastic bank remains local and must be excluded from shared archives.
+After restoring the completed summary and six authenticated model files, it
+can be reconstructed from calibration data only:
+
+```powershell
+python Threemool/Lee/experiments/e58/rebuild_bank.py --data kaggle_data/darrow_15min.pkl --runs results/e58_conditional_upper --out results/e58_conditional_upper/pit_bank_rebuilt.npz
+```
+
+The helper checks model/data hashes and split separation, reproduces all four
+fixed banks, selects the already recorded alpha and compares arrays exactly
+if the original bank is available. It reports the array checksum and refuses
+to overwrite its output. Its complete-run execution check remains pending
+until selection and summary.json exist; syntax checking alone is not proof
+that bank reconstruction has passed.
