@@ -183,9 +183,17 @@ results/e63_native_smoke/seed_0. Verify actual process/handle before waiting or
 restarting. It must pass original/native/serialized full replay, independent
 sklearn152000 choices, executed air and flat-risk identity. No smoke result is
 complete yet. Do not modify sources recorded by the active comparison/audit.
-Next require the completed smoke, implement its source-guarded full-study
-runner, all five matched-air/action audits, original report and same-base
-secondary contrast to historical h4 coefficient1. No hyperparameter search.
+The full smoke now passes all152000 independent sklearn choices, exact native
+trajectories, executed air and flat-risk full baseline identity. Compact
+native_smoke.json/native_smoke_audit.json preserve it. Handle56806 is terminal.
+Sourcea5f0d7b implements the guarded full runner and secondary same-base/model
+penalty contrast. Complete study handle82418 now runs in results/e63_study:
+five actual matched-air comparisons, then five independent native/matched
+action audits, unchanged e44 report and the secondary penalty contrast. The
+five comparison PIDs at launch are24084,25396,17672,26776,10112. Check actual
+processes/handle before waiting or restarting; do not infer liveness from
+status.json alone or duplicate stages. All pinned Python sources must remain
+unchanged. No full result exists yet, no hyperparameter search or extra fit.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

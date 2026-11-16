@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "policy_seed": 0,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "offset": 0.0,
+      "action_rows": 152000,
+      "choice_counts": [
+        108534,
+        4937,
+        12231,
+        5813,
+        20485
+      ],
+      "changed_action_fraction": 0.2859605263157895,
+      "mean_predicted_rate_change": -0.0005319422180062279
+    }
+  },
+  "flat_risk_null_full_native_exact": true,
+  "test_evaluated": false,
+  "model_refit": false,
+  "comparison_summary_sha256": "6cd38ccfb36d86ec23c805411be193f21f56b89f8f7a6ab33205d31331e99dec",
+  "audit_source_sha256": "58f01cc7a3a42bdaf924761751e2bd655b1b2b92705ba42eac40931f6059de4e"
+}

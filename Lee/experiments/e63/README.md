@@ -114,5 +114,23 @@ flat-risk identity against original FCSRL. Its controls are implementation
 checks, not additional performance seeds. Smoke console logs are
 results/e63_smoke_compare.log and results/e63_smoke_audit.log. Actual air
 matching is deliberately absent here and remains required in the complete
-five-seed study and matched-action audits. No smoke result is complete yet.
-Do not duplicate the live sequential commands or change pinned runtime files.
+five-seed study and matched-action audits. The complete native smoke now passes,
+including all152000 independently reconstructed choices, physical trajectories,
+executed-air accounting and full flat-risk null replay. native_smoke.json and
+native_smoke_audit.json preserve the completed compact records. Native-only
+figures are not matched-air improvement evidence. Smoke handle56806 is terminal.
+
+The complete study launches under sourcea5f0d7b after those smoke guards pass:
+
+```powershell
+python Threemool/Lee/experiments/e63/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --policies results/e55_study/policies/new_ppolag_fcsrl --baselines results/e42_baselines/new_ppolag_fcsrl --previous results/e56_study --smoke results/e63_native_smoke/seed_0 --out results/e63_study
+```
+
+Five fixed comparisons run first, then five independent native/matched action
+audits, the unchanged e44 five-seed report and the same-base/model secondary
+penalty contrast. All source files are pinned and checked throughout. Each
+stage writes logs/status, failures stop later stages, and the runner rejects
+an existing output directory. Complete reports stay under results/e63_study/
+final_reports until verified. Parent console log is results/e63_study_run.log.
+No full result is available yet. Do not duplicate live stages or change their
+pinned runtime files. No model fitting, PPO retraining or final test is added.

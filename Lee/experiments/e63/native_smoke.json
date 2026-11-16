@@ -1,0 +1,73 @@
+{
+  "policy_seed": 0,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "ppolag_fcsrl",
+  "candidate_method": "ppolag_fcsrl_risk_only_h4",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 47194.437990665756,
+    "cost": 24.121875,
+    "nh4_viol_pct": 25.35855263157895,
+    "do_viol_pct": 0.03289473684210526,
+    "reward": -20.975305773629223,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 50.6875
+  },
+  "candidate_native": {
+    "air_m3": 50602.19865019757,
+    "cost": 21.29,
+    "nh4_viol_pct": 22.397368421052633,
+    "do_viol_pct": 0.013157894736842105,
+    "reward": -22.489866066754477,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 55.625
+  },
+  "candidate_matched": null,
+  "matching": null,
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "baseline_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "candidate_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "correction_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "checkpoint_replay_verified": true,
+  "checks": {
+    "base_checkpoint_files_exact": true,
+    "base_native_replay": true,
+    "corrected_serialized_independent_native_replay_exact": true
+  },
+  "extra_environment_training_steps": 0,
+  "scope": "Final unchanged base plus fixed learned correction. Offset after correction, air-only matching. Exploratory reused validation, not a plant safety claim.",
+  "correction_horizon": 4,
+  "penalty": 0,
+  "hard_action_radius": 0.25,
+  "additional_ppo_training": false,
+  "base_training_steps": 401280,
+  "new_model_fitting": false,
+  "pipeline_smoke_only": true,
+  "target_mean_rate_not_any_event_probability": true,
+  "preflight_sha256": "56e62957f10f50e9bdb9adca19babc6fa0bb9bbf05dbbd447763b429b9e497dc",
+  "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+  "comparison_sources_sha256": {
+    "audit_trust.py": "58f01cc7a3a42bdaf924761751e2bd655b1b2b92705ba42eac40931f6059de4e",
+    "compare_trust.py": "f4b642a3c0ae251007307e08dac296e782122f4290d8b4c48898e11f18d67cdd",
+    "preflight.py": "cd7cf7666871d4b2cd29b5e9903f514ac559125d380b744d0a2ca4b377bc3608",
+    "trust_policy.py": "90c8fcfd7be0db2a429a7347a2966c9b56f72dc2073a7c3b04e7c910e1c05cba"
+  },
+  "reused_comparison_source_sha256": "9771a029052ca53f03f646d8da09d16e2fcc478a541f646fb987c9e3742d91c4"
+}
