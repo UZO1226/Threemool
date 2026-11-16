@@ -97,3 +97,22 @@ NUMBA thread counts1. Existing output files are rejected. Captured observation
 arrays remain local. No preflight process remains live. Next implement the
 guarded comparison and independent native/matched action audit, require the
 full native-only smoke, then run the fixed all-five-seed matched-air study.
+
+The comparison/audit implementation is committed ata337095 before any new
+controller validation trajectory. The native-only full seed0 smoke launches:
+
+```powershell
+python Threemool/Lee/experiments/e63/compare_trust.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --out results/e63_native_smoke/seed_0 --native-only
+python Threemool/Lee/experiments/e63/audit_trust.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --comparison results/e63_native_smoke/seed_0 --out results/e63_native_smoke/seed_0/action_audit.json --null-check
+```
+
+The first command verifies original native checkpoint replay and independent
+base/model/config reload of the primary. The second starts only after the
+first succeeds, independently rebuilds all152000 native choices using sklearn,
+replays physical trajectories/executed-air accounting and checks full-day
+flat-risk identity against original FCSRL. Its controls are implementation
+checks, not additional performance seeds. Smoke console logs are
+results/e63_smoke_compare.log and results/e63_smoke_audit.log. Actual air
+matching is deliberately absent here and remains required in the complete
+five-seed study and matched-action audits. No smoke result is complete yet.
+Do not duplicate the live sequential commands or change pinned runtime files.

@@ -173,6 +173,19 @@ is terminal. No new controller validation trajectory, model fit or PPO step
 exists. Next implement source/model/config-guarded comparison and independent
 native/matched action replays, verify a full native-only smoke and then the
 all-seed study. An agent gain cannot by itself close the full environment goal.
+
+The comparison and independent action audit now implement all legacy guards,
+strict primary config reload and actual offset-after-wrapper matching without
+editing historical code. Sourcea337095 precedes the first validation query.
+Sequential native-only smoke handle56806 starts compare_trust.py (PID22620 at
+launch), then audit_trust.py --null-check only on success, in
+results/e63_native_smoke/seed_0. Verify actual process/handle before waiting or
+restarting. It must pass original/native/serialized full replay, independent
+sklearn152000 choices, executed air and flat-risk identity. No smoke result is
+complete yet. Do not modify sources recorded by the active comparison/audit.
+Next require the completed smoke, implement its source-guarded full-study
+runner, all five matched-air/action audits, original report and same-base
+secondary contrast to historical h4 coefficient1. No hyperparameter search.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
