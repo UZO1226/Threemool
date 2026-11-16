@@ -86,7 +86,7 @@ def slow_days(dyn, batch, noise, fast):
 
 def main():
     parser = argparse.ArgumentParser()
-    for name in ('data', 'e51', 'e58', 'freeze', 'runs', 'out'):
+    for name in ('data', 'e51', 'e58', 'freeze', 'reference-summary', 'runs', 'out'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
     if args.out.exists():
@@ -101,17 +101,20 @@ def main():
     assert digest(preflight_path) == source['preflight_sha256']
     preflight = json.loads(preflight_path.read_text())
     raw = pd.read_pickle(args.data)
+    reference = json.loads(args.reference_summary.read_text())
     fit, cal, days = source['fit_days'], source['calibration_days'], raw['days']['val']
     assert len(fit) == 158 and len(cal) == 30 and len(days) == 40
     assert set(fit).isdisjoint(cal)
     assert set(fit + cal).isdisjoint(days + raw['days']['test'])
+    assert reference['fit_days'] == fit and reference['calibration_days'] == cal
     batch, donor_batch, fitting_batch = [q.arrays(raw['data'], dates) for dates in (days, cal, fit)]
     sd = np.concatenate([raw['data'].loc[day][q.STATE].to_numpy(float) for day in fit]).std(0)
     result = {'test_evaluated': False, 'model_refit': False, 'selection_changed': False,
               'primary': 'e51_context5', 'policy_seeds': [], 'model_members': 5,
               'scope': 'Exploratory reused validation, no plant or policy improvement claim.',
               'independent_full_day_scope': 'Every member, first validation date/draw, all95 steps; all donor paths and aggregate forecasts rebuilt.',
-              'metrics': {}, 'independent_max_difference': {}, 'paired_date_brier_differences': {}}
+              'metrics': {}, 'independent_max_difference': {}, 'paired_date_brier_differences': {},
+              'independent_air_order': {}, 'independent_point_gates': {}}
     errors = {}
 
     def record(name, trajectory, expected=None):
@@ -121,6 +124,7 @@ def main():
             score = q.summarize(trajectory, batch[0], sd)
             for key in ('normalized_mae', 'proper_selection_score', 'nh4_brier', 'do_brier'):
                 np.testing.assert_allclose(score[key], expected[key], rtol=1e-12, atol=1e-14)
+            return score
 
     for parent, directory in [('e51', args.e51), ('e58', args.e58)]:
         assert digest(directory / 'summary.json') == source['parent_summary_sha256'][parent]
@@ -132,8 +136,19 @@ def main():
         dyn = load_model(directory, parent)
         noise = independent_paths(bank, batch, donor_batch, fitting_batch, days, cal)
         trajectory = rollout(dyn, batch, noise)
-        record(parent + '_context5', trajectory, source['validation_context5'][parent])
+        reconstructed = record(parent + '_context5', trajectory, source['validation_context5'][parent])
         result['independent_max_difference'][parent] = slow_days(dyn, batch, noise, trajectory)
+        low = rollout(dyn, batch, noise, air_scale=.75)
+        high = rollout(dyn, batch, noise, air_scale=1.25)
+        order = {'nh4_max_order_violation': float(np.maximum(high[..., 0] - low[..., 0], 0).max()),
+                 'do_max_order_violation': float(np.maximum(low[..., 2:] - high[..., 2:], 0).max())}
+        assert max(order.values()) < 1e-8
+        assert order == source['validation_context5'][parent]['recursive_order']
+        result['independent_air_order'][parent] = order
+        reconstructed['recursive_order'] = order
+        point_gate = q.gate(reconstructed, reference['validation']['old'])
+        assert point_gate == source['primary_point_gate' if parent == 'e51' else 'secondary_point_gate']
+        result['independent_point_gates'][parent] = point_gate
         print('INDEPENDENT_CONTEXT_PASS', parent, flush=True)
         global_trajectory = rollout(dyn, batch, q.paths(bank, days, 95))
         record(parent + '_global', global_trajectory, source['validation_global'][parent])

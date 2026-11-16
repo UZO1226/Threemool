@@ -115,3 +115,18 @@ concurrently with all numerical thread counts1; there is no new fitting.
 summary.json is written only after those stages finish, and still requires
 independent full-day/donor/event uncertainty/adoption audits. No result or
 improvement is claimed from this launch. Never duplicate an existing run.
+
+After the evaluator completes, the independent audit can be run with:
+
+```powershell
+python Threemool/Lee/experiments/e61/audit_context.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --freeze Threemool/Lee/experiments/e42/environment_freeze.json --reference-summary results/e17_contractive/summary.json --runs results/e61_context_sampling --out results/e61_context_sampling/audit.json
+```
+
+It independently reconstructs every validation donor/path, all five members'
+first full-day sklearn/scalar-interpolation paths for both parents, aggregate
+scores and low/high-air trajectories using the independently rebuilt noise.
+Original point gates are recomputed. Event metrics and paired five-day Brier
+intervals compare both context variants with both original global parents,
+frozen e40, old and persistence. Only the predefined e51 primary receives the
+declared adoption decision; the secondary cannot rescue primary failure.
+The audit refuses an existing output and requires the completed summary.
