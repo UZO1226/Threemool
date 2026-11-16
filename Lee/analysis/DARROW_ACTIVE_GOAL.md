@@ -69,9 +69,12 @@ e69 prospectively tests a training-only mean-action budget for the radius0.5
 risk correction. A fixed64-step mean-only multiplier bisection and deterministic
 convex policy interpolation match e63 native mean action on fit updates1~52;
 held updates53~66 are excluded from calibration. Known-optimum discrete-jump,
-multiplier-sign and zero/flat controls pass. Session23268 (fitter PID5648 at
-the last direct check) calibrates and independently checks all five original
-seeds. No e69 environment query or quality improvement is established yet.
+multiplier-sign and zero/flat controls pass. Session23268 completes all five
+calibration and independent held checks, with fitting mean discrepancies at
+most2.22e-16. Held means need not match, and no policy gain follows from this.
+Session9972 completes the seed0 native serialization replay and now runs
+its independent smoke audit (PID22140), then all five matched-air comparisons
+and their audits. No e69 quality improvement is established yet.
 
 The companion research note records the study history and commands. This
 is a snapshot, not a process monitor.
