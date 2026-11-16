@@ -17,7 +17,7 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=('e65', 'e66'), required=True)
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67'), required=True)
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
@@ -31,7 +31,7 @@ def main():
         assert path.is_file() and path.suffix in ('.json', '.log', '.pkl', '.pt')
         assert '/transitions/' not in relative and 'pit_bank' not in relative
         files[relative] = path
-    if args.kind == 'e65':
+    if args.kind in ('e65', 'e67'):
         status = json.loads((args.study / 'study_status.json').read_text())
         assert status['phase'] == 'complete' and not status['running'] and not status['pending']
         cert_path = ROOT / 'Lee/experiments/e64/baseline_authentication.json'
@@ -42,7 +42,8 @@ def main():
             folder = args.study / f'comparisons/seed_{seed}'
             pair = json.loads((folder / 'summary.json').read_text())
             audit = json.loads((folder / 'action_audit.json').read_text())
-            assert pair['candidate_method'] == 'e65_nested_grid_h4'
+            expected_method = 'e65_nested_grid_h4' if args.kind == 'e65' else 'e67_larger_radius_h4'
+            assert pair['candidate_method'] == expected_method
             assert pair['policy_seed'] == audit['policy_seed'] == seed
             assert pair['training_steps'] == 401280 and not pair['pipeline_smoke_only']
             assert not pair['test_evaluated'] and not pair['smoke_only']
@@ -79,9 +80,10 @@ def main():
                 if path.is_file() and path.suffix in ('.json', '.log'):
                     add(path)
         add(cert_path)
-        for path in (results / 'e65_native_smoke').glob('*.json'):
+        for path in (results / f'{args.kind}_native_smoke').glob('*.json'):
             add(path)
-        for path in (results / 'e65_preflight_v2').glob('*.json'):
+        preflight_name = 'e65_preflight_v2' if args.kind == 'e65' else 'e67_preflight'
+        for path in (results / preflight_name).glob('*.json'):
             add(path)
     else:
         summary = json.loads((args.study / 'summary.json').read_text())
@@ -104,7 +106,7 @@ def main():
                 'residual_banks_included': False, 'pit_banks_included': False,
                 'captured_training_arrays_included': False, 'test_evaluated': False,
                 'frozen_environment_dependencies': freeze['frozen_files_sha256'],
-                'scope': 'Audited aggregate outputs and provenance. e65 includes unchanged policy/rate weights; e66 reuses archived e40 weights. Frozen model/data dependencies require separate restoration.',
+                'scope': 'Audited aggregate outputs and provenance. Agent trials include unchanged policy/rate weights; environment trial reuses archived e40 weights. Frozen model/data dependencies require separate restoration.',
                 'files': {name: {'bytes': path.stat().st_size, 'sha256': sha(path)} for name, path in sorted(files.items())}}
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(args.out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
