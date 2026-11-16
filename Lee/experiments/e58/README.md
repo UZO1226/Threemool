@@ -115,3 +115,25 @@ the preflight inputs, split separation and copied backbone hashes before
 fitting. fit_summary.json is written only after all15 heads and numeric/order
 checks complete. An existing output directory is never reused. Inspect actual
 process liveness before resuming; a partial output folder is not a live job.
+
+All15 heads finish and fit_summary.json records zero fast/sklearn discrepancy,
+coordinate-order discrepancy2.22e-16, exact central backbone predictions and
+unchanged non-DO endpoints. This is implementation validation only.
+
+The evaluator launches under95ac42b with all numerical library threads1:
+
+```powershell
+python Threemool/Lee/experiments/e58/evaluate_upper.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e58_conditional_upper
+```
+
+It writes progress for all20 inner conditions and fixes selection.json before
+validation. Existing evaluation manifests prohibit accidental duplicate runs.
+It does not decide adoption without the independent audit and additional event
+criteria. After it completes, run the independent five-member full-day check:
+
+```powershell
+python Threemool/Lee/experiments/e58/audit_upper.py --data kaggle_data/darrow_15min.pkl --reference-summary results/e17_contractive/summary.json --runs results/e58_conditional_upper --out results/e58_conditional_upper/audit.json
+```
+
+Event comparison, its date uncertainty and the full declared adoption decision
+remain pending. No agent is trained on e58 and no final test is evaluated.

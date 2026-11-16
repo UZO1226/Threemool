@@ -68,8 +68,19 @@ exactly in a zero-extension control. Preserve fixed clip bounds and original
 20 inner conditions/gate; additional predeclared Brier/ranking/onset conditions
 prevent frequency-only adoption. Model seeds are not policy seeds. Implement
 synthetic/CDF/atom and calibration-only zero controls before any candidate
-validation. No e58 fit or outcome exists yet. Do not modify the frozen e42
-world or train new policies until environment checks pass.
+validation. The zero-extension banks and40 complete calibration trajectories
+now reproduce e51 bitwise. All15 fixed upper heads finish under69ad9a8;
+numeric fast/sklearn error is zero and coordinate-order error is2.22e-16.
+The guarded20-condition evaluator launches under95ac42b in
+results/e58_conditional_upper. Its current execution handle is15632, PID25916
+at launch; recheck actual liveness rather than inferring it from this note.
+inner_progress.json records completed conditions and selection.json must be
+written before validation. No aggregate validation outcome exists yet.
+Independent five-member full-day sklearn/scalar-interpolation audit code is
+implemented separately in e58/audit_upper.py. Event ranking/onsets, paired-date
+uncertainty and the stricter declared adoption checks remain required after
+evaluation. Do not modify the frozen e42 world or train new policies until
+environment checks pass.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
