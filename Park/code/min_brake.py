@@ -54,6 +54,11 @@ plan=(H, do_lim, step) (Park/e28, trim=True 와 함께) 이면 회복 계획을 
 낮은 쪽, 그것도 같으면 공기량이 작은 쪽이다 (Park/e16 futile 처럼 공기를 줄여 NH4 회복이 늦어지는 것을 막는다).
 외부 입력은 지속 예측이다. 다른 차단 계산을 모두 마친 뒤 그 에피소드의 공기량을 바꾼다. plan_steps 에 바꾼 횟수를 센다
 
+bias=lam (Park/e31, margins 와 함께) 이면 최근 예측 오차로 1 스텝 NH4 예측을 보정한다. 매 스텝 지난 스텝의 예측
+(다른 구성원 평균, 실제로 쓴 공기량) 과 지금 관측 NH4 의 차이 e 로 에피소드마다 b <- lam * b + (1 - lam) * e 를 갱신하고,
+여유 검사의 mu 에 b 를 더한다 (모델 예측 제어의 외란 추정과 같다). 에피소드 첫 스텝 (env.t == 0) 에 b 를 0 으로 되돌린다.
+margin_scale 은 margins 표의 여유에 곱한다 (conflict 의 줄인 여유에는 곱하지 않는다)
+
 plan_trigger (Park/e30) 는 회복 계획을 쓰는 기준이다. 공기량 9,000 에서의 다음 스텝 예측 NH4 가 plan_trigger 를 넘는 에피소드에
 쓴다 (기본 4 는 e28 과 같다). plan_now 를 주면 지금 NH4 가 plan_now 를 넘는 에피소드에도 쓴다
 """
@@ -69,7 +74,7 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
                  do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None,
-                 plan_trigger=NH4_MAX, plan_now=None):
+                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -77,7 +82,11 @@ class MinAirBrake:
         assert not (self.do_cap and self.trim), 'do_cap 과 trim 은 하나만 고른다'
         assert not self.trim or self.horizon == 1, 'trim 은 1스텝만 쓴다'
         self.lowered_steps, self.steps, self.futile_steps = 0, 0, 0
-        self.margins = None if margins is None else [(float(u), float(m)) for u, m in margins]
+        self.margins = None if margins is None else [(float(u), float(m) * float(margin_scale)) for u, m in margins]
+        assert margin_scale == 1.0 or margins is not None, 'margin_scale 은 margins 와 함께 쓴다'
+        self.bias = None if bias is None else float(bias)
+        assert self.bias is None or self.margins is not None, 'bias 는 margins 와 함께 쓴다'
+        self.b, self.last_mu = None, None
         self.do_limit, self.futile = float(do_limit), bool(futile)
         assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
         assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
@@ -138,6 +147,8 @@ class MinAirBrake:
         n = keep.sum(axis=0)
         mu = np.where(keep, pred, 0.0).sum(axis=0) / n
         sigma = np.sqrt(np.where(keep, (pred - mu) ** 2, 0.0).sum(axis=0) / n)
+        if self.bias is not None:
+            mu = mu + rep(self.b if rows is None else self.b[rows])
         margin = np.full(len(mu), self.margins[-1][1])
         for upper, m in reversed(self.margins):
             margin = np.where(sigma < upper, m, margin)
@@ -276,8 +287,24 @@ class MinAirBrake:
         air[c] = new
         return air
 
+    def _mu_at(self, obs, env, air):
+        """공기량 air (N,) 를 쓸 때 다음 스텝 NH4 예측 (다른 구성원 평균, 보정 없음)."""
+        t = env.t
+        state = np.asarray(obs[:, :len(STATE)], dtype=float)
+        x = np.column_stack([state, env.x['exo'][:, t], air[:, None] * env.x['frac'][:, t] / 1000.0, env.prev_zone / 1000.0])
+        return np.clip(state[:, 0] + self._predict(x, env.member, 1)[:, 0], 0.0, self.dyn.hi[0])
+
+    def _update_bias(self, obs, env):
+        if env.t == 0 or self.b is None or len(self.b) != len(obs):
+            self.b, self.last_mu = np.zeros(len(obs)), None
+        if self.last_mu is not None:
+            e = np.asarray(obs[:, 0], dtype=float) - self.last_mu
+            self.b = self.bias * self.b + (1.0 - self.bias) * e
+
     def __call__(self, obs, a, env):
         policy_air = action_to_air(a)
+        if self.bias is not None:
+            self._update_bias(obs, env)
         if self.do_cap:
             air = self.do_aware_air(obs, env, policy_air)
         elif self.trim:
@@ -285,6 +312,8 @@ class MinAirBrake:
         else:
             air = np.maximum(policy_air, self.required_air(obs, env))
         used = np.abs(air - policy_air) > 1e-9
+        if self.bias is not None:
+            self.last_mu = self._mu_at(obs, env, np.where(used, air, policy_air))
         self.lowered_steps += int((air < policy_air - 1e-9).sum())
         self.steps += len(air)
         return np.where(used, air_to_action(air), a), used
