@@ -32,7 +32,7 @@ The complete e55 archive is remotely size/SHA verified in draft443333191,
 asset743367629. It preserves checkpoints, correction models, logs, generated
 native/matched/all-query outputs and audits while excluding source data,
 captured training arrays and stochastic banks. No e55 job remains queued.
-All ten completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
+All eleven completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
 Known e40 DO onset/ranking, reused-validation and plant-model limitations remain.
 
 e56 completes its entire source0054e89 pipeline, including twenty rate
@@ -49,26 +49,30 @@ draft443333191, asset743519310. No e56 job remains queued. All pinned original
 sources and every failure remain preserved. Proposal geometry is exploratory
 held-state evidence, not safer counterfactual actions or a reason to tune gains.
 
-Next e57 prospectively specifies fixed executed-air smoothing, gain.5, of
-exactly the same original five FCSRL policies. This distinct actuator mechanism
-adds no PPO, supervised fit or environment-training sample. Public previous
-air is clipped only for the filter; the original NN observation is unchanged.
-Gain1 is a strict identity null. Units/bounds, serialization, actual
-executed-air/reset/terminal feedback and full gain1 native replay now pass in
-preflight.json. Nonzero-offset identity also preserves the original dtype.
-Guarded comparison and independent primary replay are implemented. The seed0
-native-only smoke passes serialization, original replay, executed-volume
-accounting and152000 independent primary actions. This is not adoption or a
-matched-air performance result. The full five-seed study launches under source
-e664aca in results/e57_study, queuing actual air matching, independent native
-and matched executed-feedback audits and the unchanged five-seed report. Match air after filtering with the unchanged quality-blind rule,
-retain all five seeds and the original full criterion. Smaller command changes
-alone are not adoption. The README was committed at390659c before implementation or outcomes.
-The e57 parent and five comparator workers are live at launch. Do not duplicate
-these queued jobs or edit pinned Python sources. Verify actual process handles
-before waiting, restarting or declaring a stage stopped.
-The goal is active; reasonable alternatives remain and no external blocker
-prevents useful work. Preserve historical sources and never use final test41.
+e57 also completes its full sourcee664aca study. All five actual air matches,
+original source/config/NN guards and independent native/matched feedback
+replays pass. Command changes shrink406.812460 to282.556246m3/h, but same-air
+cost rises22.464125 to23.110875 with difference interval[.355875,.945375].
+NH4 rises23.208684 to23.891579 percent with interval[.386184,.989868] points;
+DO remains uncertain. All quality conditions fail. Native cost/NH4 are also
+unfavorable, so matching is not the sole explanation. Do not retune the gain
+or claim command smoothness as water-quality adoption. The complete archive
+is remotely size/SHA verified in draft443333191, asset753539996. No e57 job
+remains queued and no live process should be inferred from old launch notes.
+
+Next e58 revisits the unresolved conditional DO event support, keeping the
+original e40 five-quantile backbone fixed and fitting only15 conditional.99 DO
+heads. Its README is specified before implementation/outcomes. A DO-only
+upper extension and alpha-matched six-level PIT must first reproduce e51
+exactly in a zero-extension control. Preserve fixed clip bounds and original
+20 inner conditions/gate; additional predeclared Brier/ranking/onset conditions
+prevent frequency-only adoption. Model seeds are not policy seeds. Implement
+synthetic/CDF/atom and calibration-only zero controls before any candidate
+validation. No e58 fit or outcome exists yet. Do not modify the frozen e42
+world or train new policies until environment checks pass.
+The goal remains active. Reasonable alternatives and execution resources
+remain, so no external blocker or completion is claimed. Preserve all failures
+and pinned historical sources, and never use final test41.
 
 The original baseline/history/repeated smoke, serialization, physical trajectory,
 independent native replay and real air-matching checks all passed before full

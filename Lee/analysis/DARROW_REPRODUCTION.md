@@ -358,3 +358,24 @@ regressor binary using synthetic historical source paths and rejects altered
 source hashes. It is a metadata-location fixture check, not another controller
 performance seed or a claim of testing every operating system. Reproduction
 still requires the pinned library versions and original environment artifacts.
+
+## Completed e57 executed-air smoothing
+
+Restore lee-e57-air-filter.zip from the existing private policy draft release
+443333191. The remotely verified asset is753539996,12955323 bytes, SHA256
+364257cc50749880d3d899d103eb61230db3ebe92e41f1c2994bce9ac38e68ad.
+The [artifact index](../experiments/e57/artifacts.json) records each archived
+file checksum. It includes all five unchanged base networks, fixed filter
+configurations, comparison queries, independent native/matched action audits
+and the completed study manifest/report. Source observations, captured streams
+and stochastic banks are excluded. Restore the original e42 environment and
+its reconstructed bank separately as described above.
+
+The [experiment instructions](../experiments/e57/README.md) give the full
+run_study.py command. Existing completed results are in results/e57_study;
+use a new output directory when deliberately reproducing them. Reproduction
+requires the original pinned source and library versions, not modified
+historical runtime files. The [results](../experiments/e57/results.md) are a
+failure: all five air matches pass, but mean cost rises by.646750 and NH4
+violation frequency by.682895 percentage points. Both paired intervals are
+unfavorable. Smaller command variation does not establish water-quality gain.

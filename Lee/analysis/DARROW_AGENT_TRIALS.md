@@ -18,6 +18,7 @@ All methods use policy seeds0..4 and401280 transitions per seed, the same frozen
 | [One-step correction](../experiments/e55/comparison.json) | 22.323750 | 23.141184 | 0.357500 | [-0.250625,-0.030125] | [-0.215000,0.110526] | [-0.163947,-0.022368] | Fail |
 | [Four-step rate correction](../experiments/e56/h4_comparison.json) | 22.422125 | 23.242500 | 0.359737 | [-0.103375,0.011875] | [-0.054474,0.156447] | [-0.151974,-0.028289] | Fail |
 | [One-step regression control](../experiments/e56/h1_comparison.json) | 22.503000 | 23.321053 | 0.366316 | [-0.043750,0.163750] | [0.016842,0.291184] | [-0.123158,-0.031579] | Fail |
+| [Executed-air smoothing](../experiments/e57/comparison.json) | 23.110875 | 23.891579 | 0.435658 | [0.355875,0.945375] | [0.386184,0.989868] | [-0.028684,0.033553] | Fail |
 
 Differences are candidate minus its paired FCSRL reference; negative quality differences favor the candidate. NH4/DO intervals use percentage points. Cost is the95-step sum of the two violation indicators, not electricity or money. The complete criterion requires cost and NH4 upper endpoints below zero, DO upper endpoint at most zero and all five air matches.
 
@@ -39,5 +40,6 @@ Pending registered reports: none. No partial seed or smoke outcome is inserted a
 - One-step correction, e55/comparison.json, SHA256 de7705e507d53c9ca7f451268b0b3dddd3609b9fb69085a3a110412cfa8f81de
 - Four-step rate correction, e56/h4_comparison.json, SHA256 94b95c0c31ae9e32ac8083027d98587326436ab337c4dcd6535ad925bcce997f
 - One-step regression control, e56/h1_comparison.json, SHA256 9051a5c3ec9dee75279a2e5395580a32e23db4edbf312c2a01d85cf1d122efbc
+- Executed-air smoothing, e57/comparison.json, SHA256 0f951522a0ada2aec0ca56cb363bfc5a9827d207895b717df8ce13d6ac9403e1
 
 Regenerate with Lee/analysis/plot_all_agent_trials.py. All inputs are compact generated summaries; no source observations, stochastic banks or final test metrics are read.
