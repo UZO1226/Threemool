@@ -27,14 +27,22 @@ changed actions number1481,3870,2637,3650,4885. No counterfactual quality
 conclusion follows from those predicted-risk differences.
 
 The seed0 native smoke exactly reproduces the authenticated matched e63
-baseline and independently reloaded new native trajectory. The runner now
-requires its full independent action/trajectory audit before all five
-matched-air comparisons and their independent audits. At this snapshot,
-runner PID9872 and smoke-audit PID17660 were directly confirmed live.
-results/e65_study holds the source manifest, logs and progress, and the live
-tool session is22575. Check actual process liveness before continuation;
-this document is a historical snapshot, not proof of ongoing execution.
-Final test41 is untouched. Goal-tool state remains authoritative.
+baseline and independently reloaded new native trajectory. Its152000-row
+independent sklearn action/trajectory replay and flat-risk null pass. The
+runner advances to all five matched-air comparisons, then their audits.
+results/e65_study holds the source manifest, logs and progress. The live
+tool session is22575; the smoke-audit process has completed.
+
+Independent environment experiment e66 fixes current-exogenous conditional
+four-step PIT blocks, keeping e40 weights and alpha0.5. Its1200 calibration
+paths and neighbor pools reconstruct independently, with no future-input
+leakage or self-date donors. Calibration still substantially underpredicts
+DO. Evaluation is running in session47433 (PID27024 at the last direct check),
+and session31358 waits for that process before its independent audit.
+DARROW_SELF_IMPROVEMENT_20261117.md records hypotheses, limitations and commands.
+Check actual process liveness before continuation; this document is a
+historical snapshot, not proof of ongoing execution. Final test41 is untouched.
+Goal-tool state remains authoritative. No new improvement is verified yet.
 
 ## Previous completed objective
 
