@@ -1,5 +1,31 @@
 # Active DARROW research goal
 
+## New active objective, 2026-11-17
+
+Improve our own e63 matched controller. Other team members' rankings are not
+the optimization target. The previous goal below is preserved as history;
+its completion does not complete this new objective.
+
+Baseline authentication e64 passed for all five policy seeds, including their
+fixed post-wrapper offsets, checkpoints, rate models, frozen environment,
+independent audit records and recomputed report. The primary reference means
+are air52018.537779m3 per23.75hours, cost21.060125, NH4 violations21.844737%
+and DO violations0.323816%. Original FCSRL remains a secondary reference.
+
+New candidates require all five actual-air matches and paired policy-seed
+bootstrap95% interval upper endpoints below zero for cost and NH4, and at
+most zero for DO, versus e63. Preserve native results and unsuccessful trials.
+Separate environment improvements from policy improvements. Use training
+held dates and feasible fresh seeds; reused validation40 is exploratory.
+Do not use test41 for further development or evaluation.
+
+Work proceeds on lee/e63-self-improvement. No new candidate has passed or
+been selected. The next step is a prospective hypothesis based on our own
+remaining safety-prediction and policy limitations. Goal-tool state is
+authoritative; this document does not imply a background process is running.
+
+## Previous completed objective
+
 The research stopping condition is verified: e63 passes every original
 matched-air simulation criterion after all five policy-seed comparisons and
 independent native/matched action audits. DARROW_GOAL_AUDIT.md now accounts for
