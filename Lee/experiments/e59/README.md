@@ -30,3 +30,17 @@ a later prospectively specified hypothesis, but must not rescue e58, tune its
 tail, lower the adoption criterion or justify training an agent on it. No
 post-outcome context subset is used as a headline success. Source observations,
 probability arrays and stochastic banks stay local and out of Git/artifacts.
+
+The completed diagnosis and initial path failure are preserved in diagnosis.json,
+results.md and initial_execution_failure.json. Run from the workspace:
+
+```powershell
+python Threemool/Lee/experiments/e59/diagnose_context.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --out results/e59_context_diagnosis_replay.json
+```
+
+Use the pinned threemool Python environment, CPU, DARROW_FAST_DYNAMICS=1 and
+OMP/OPENBLAS/MKL/NUMBA thread counts1. The script refuses an existing output.
+The e51 recursive event report is read from its preserved repository location;
+both methods' recursive Brier values/settings are verified before scoring.
+Source hashing, input/target alignment and exact central-backbone comparison
+pass. No new trained artifacts are produced by this diagnostic.

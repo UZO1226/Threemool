@@ -46,6 +46,17 @@ def main():
     sources = {name: authenticate(directory, digest) for name, directory in [('e51', args.e51), ('e58', args.e58)]}
     assert sources['e51']['fit_days'] == sources['e58']['fit_days']
     assert sources['e51']['calibration_days'] == sources['e58']['calibration_days']
+    records = {'e51': ROOT / 'Lee/experiments/e51/event_reference_audit.json',
+               'e58': args.e58 / 'event_audit.json'}
+    stored = {}
+    for name, path in records.items():
+        report = json.loads(path.read_text())
+        assert report['test_evaluated'] is False
+        assert report['selected'] == sources[name]['selected']
+        stored[name] = report['metrics']['candidate']
+        for label in ('nh4', 'do'):
+            np.testing.assert_allclose(stored[name][label]['brier'],
+                sources[name]['validation'][sources[name]['selected']][label + '_brier'], rtol=1e-12)
     raw = pd.read_pickle(args.data)
     splits = {'fit': sources['e58']['fit_days'], 'calibration': sources['e58']['calibration_days'],
               'validation': raw['days']['val']}
@@ -98,8 +109,7 @@ def main():
                 'nh4_frequency': float((prediction[..., 0] > 4).mean()),
                 'do_frequency': float((prediction[..., 2:].max(-1) > 2).mean())}
             print('SCORED', split, name, flush=True)
-    result['stored_recursive_validation']['e51'] = json.loads((args.e51 / 'event_reference_audit.json').read_text())['metrics']['candidate']
-    result['stored_recursive_validation']['e58'] = json.loads((args.e58 / 'event_audit.json').read_text())['metrics']['candidate']
+    result['stored_recursive_validation'] = stored
     result['input_target_alignment_checked'] = True
     result['backbone_quantiles_exact'] = True
     result['source_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()

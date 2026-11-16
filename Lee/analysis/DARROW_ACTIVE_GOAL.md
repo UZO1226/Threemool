@@ -80,6 +80,18 @@ is whether temporal-noise conditioning and calibration/deployment context
 differences explain broad support without DO timing/ranking. Define any next
 candidate and controls prospectively after that evidence. Preserve all older
 models and failures. Do not modify the e42 freeze or train policies on e58.
+
+e59 now completes the fixed context/observed-state diagnosis. The first run
+fails on the e51 report path and is retained, then corrected using the preserved
+repository report with setting/Brier authentication. e58 observed-state DO
+Brier.007537/AP.495948 contrasts with recursive.020414/.010811, but matches
+only2/25 new onsets. Calibration/validation actual DO frequencies10.736842/
+1.157895 percent differ sharply;12.473684 percent of validation temperatures
+are outside the fit range. These are descriptive effects, not causal proof or
+an adopted improvement. No e59 process remains live. Next separate feedback
+error accumulation from noise organization with prospectively fixed reset
+horizons/common noise on calibration, then define a candidate from that
+evidence. No additional model or agent is trained by this diagnosis.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

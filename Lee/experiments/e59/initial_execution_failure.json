@@ -1,0 +1,9 @@
+{
+  "source_commit": "4313cd0",
+  "failure": "FileNotFoundError: results/e51_blended_pit/event_reference_audit.json",
+  "stage": "Loading stored recursive e51 reference after observed-state calculations",
+  "outcome_file_written": false,
+  "model_refit": false,
+  "selection_changed": false,
+  "correction": "Read the preserved Lee/experiments/e51/event_reference_audit.json before scoring, and authenticate selected setting and both Brier values against the original summary."
+}
