@@ -194,6 +194,13 @@ five comparison PIDs at launch are24084,25396,17672,26776,10112. Check actual
 processes/handle before waiting or restarting; do not infer liveness from
 status.json alone or duplicate stages. All pinned Python sources must remain
 unchanged. No full result exists yet, no hyperparameter search or extra fit.
+
+Lee/analysis/package_trust_artifacts.py is prepared outside pinned runtime
+sources. It preserves all five unchanged base/rate weights, full outputs,
+configs and provenance, requiring completed status/audits/report reconstruction.
+An actual partial-study invocation is rejected before any archive/index is
+created. Full successful packaging/upload remains pending completion. Continue
+polling handle82418 or its verified live process tree, not status notes alone.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.

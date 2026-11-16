@@ -134,3 +134,17 @@ an existing output directory. Complete reports stay under results/e63_study/
 final_reports until verified. Parent console log is results/e63_study_run.log.
 No full result is available yet. Do not duplicate live stages or change their
 pinned runtime files. No model fitting, PPO retraining or final test is added.
+
+After all stages finish, package the necessary unchanged checkpoints, h4 rate
+models/provenance, fixed configs and complete generated outputs with:
+
+```powershell
+python Threemool/Lee/analysis/package_trust_artifacts.py --results results --study results/e63_study --policies results/e55_study/policies/new_ppolag_fcsrl --previous results/e56_study --smoke results/e63_native_smoke/seed_0 --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/artifacts/lee-e63-risk-only.zip --index Threemool/Lee/experiments/e63/artifacts.json
+```
+
+The packager requires terminal complete status, all five native/matched action
+audits, exact model/config/checkpoint hashes and recomputed e44 report identity.
+It excludes source observations, captured arrays and stochastic banks. Its
+partial-study rejection is verified without creating an archive or index;
+positive complete-study packaging remains pending. No partial archive is an
+experiment result, and the existing source/runtime hashes remain untouched.
