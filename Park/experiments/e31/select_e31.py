@@ -1,6 +1,6 @@
 """Park/e31 고르기 단계 (Park 작성). 학습 구간 마지막 40일에서 4 x 16 앙상블 조합 5개에 최근 오차 보정 차단을 건다.
 
-    python select_e30.py <B5|B5s8|B8s8|B5s7>   (기준은 Park/e26 select_e26.py base)   (D, R 경로는 각자 환경에 맞게 바꾼다)
+    python select_e31.py <B5|B5s8|B8s8|B5s7>   (기준은 Park/e26 select_e26.py base)   (D, R 경로는 각자 환경에 맞게 바꾼다)
 """
 import sys, json, itertools, numpy as np
 from pathlib import Path
