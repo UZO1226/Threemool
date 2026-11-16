@@ -94,13 +94,21 @@ horizons/common noise on calibration, then define a candidate from that
 evidence. No additional model or agent is trained by this diagnosis.
 
 e60 now prospectively specifies and launches the calibration-only factorial
-diagnosis under2e4bd6d. Existing e51/e58 at alpha.25 cross fixed1/4/16/95-step
-observed-state reset intervals with original versus tuple-preserving shuffled
-noise paths. All16 conditions, complete scores/events and paired date Brier
-contrasts are retained. reset1 must reproduce e59 and reset95 must reproduce
-both selected inner summaries. Execution handle24730, PID22408 at launch,
-results/e60_feedback_diagnosis. Recheck the actual handle/process before
-waiting or restarting. No outcome yet and no new environment or agent fit.
+diagnosis under2e4bd6d and now completes all16 conditions. Both reset1/e59
+and reset95/selected-inner controls pass. State resets reduce descriptive
+error; every shuffled-minus-original NH4/DO Brier interval crosses zero.
+Time permutation alone is not a demonstrated repair. Full results are in
+results/e60_feedback_diagnosis and Lee/experiments/e60/summary.json.
+Handle24730 is terminal and no e60 job remains queued. No new model fit.
+
+e61 is prospectively specified at5d6a0e1 before implementation/outcomes.
+The primary is e51 with five-nearest-calibration-day whole-path PIT sampling
+using exactly six episode-start context features and fit-only scaling.
+e58 is a secondary mechanism contrast, not an adoption fallback. All-pool
+bitwise identity, future-input invariance, leave-one-day-out calibration,
+original global validation reconstructions and complete point/event criteria
+remain required. Next implement and execute the sampler/context preflight.
+No e61 code, process or candidate result exists yet. Preserve all old sources.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
