@@ -97,3 +97,21 @@ extension; the published preflight.json is the completed stronger check.
 No e61 process remains live. Next implement leave-one-day-out calibration,
 both global-reference validation replays, all fixed context variants and the
 independent forecast/event/adoption audits without modifying historical code.
+
+evaluate_context.py and runtime.py are committed ate596ab6 before scoring.
+The evaluator is now launched in results/e61_context_sampling:
+
+```powershell
+python Threemool/Lee/experiments/e61/evaluate_context.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --preflight results/e61_context_preflight_full.json --reference-summary results/e17_contractive/summary.json --out results/e61_context_sampling
+```
+
+It authenticates preflight source/data/bank hashes and fitting-only scales,
+then writes all four leave-one-day-out calibration comparisons. Both global
+validation scores/member frequencies must reproduce their original summaries
+before any context validation score is computed. The fixed primary and
+secondary context variants retain common-noise air order, and the primary
+gets the declared16-draw sensitivity. Two calibration inference tasks may run
+concurrently with all numerical thread counts1; there is no new fitting.
+summary.json is written only after those stages finish, and still requires
+independent full-day/donor/event uncertainty/adoption audits. No result or
+improvement is claimed from this launch. Never duplicate an existing run.

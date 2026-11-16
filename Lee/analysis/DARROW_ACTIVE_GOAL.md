@@ -117,6 +117,15 @@ validation evaluator, authenticate the preflight inputs and reconstruct both
 global references before context outcomes, then independently audit paths,
 full-day forecasts, air order, event uncertainty and all adoption conditions.
 Preserve historical runtime sources and no policy training on failed models.
+
+The fixed evaluator now launches ate596ab6 in results/e61_context_sampling,
+handle96253, PID23788 at launch. Recheck actual liveness before waiting or
+restarting. Four leave-one-day-out calibration comparisons precede both
+original global validation reconstructions, which must pass before context
+validation. Primary/secondary common-noise air order and primary16-draw
+sensitivity remain fixed. summary.json is not adoption; independent donor/
+full-day/event/date uncertainty checks remain to implement and execute.
+No candidate outcome exists yet and no additional weights or policy are fit.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
