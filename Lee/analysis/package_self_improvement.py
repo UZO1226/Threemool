@@ -17,7 +17,7 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69'), required=True)
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70'), required=True)
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
@@ -95,6 +95,29 @@ def main():
         preflight_name = {'e65': 'e65_preflight_v2', 'e67': 'e67_preflight', 'e69': 'e69_projection_fit'}[args.kind]
         for path in (results / preflight_name).rglob('*.json'):
             add(path)
+    elif args.kind == 'e70':
+        summary = json.loads((args.study / 'summary.json').read_text())
+        assert summary['passed'] and summary['policy_seeds'] == list(range(5))
+        assert not summary['test_evaluated'] and not summary['candidate_selection']
+        assert summary['environment_training_steps'] == 0
+        assert summary['environment_evaluation_transitions'] == 5 * 2 * 152000
+        assert sha(ROOT / 'Lee/experiments/e70/diagnose_transport.py') == summary['source_sha256']
+        primary = results / 'e69_study/comparison.json'
+        assert sha(primary) == summary['initial_report_sha256']
+        assert not json.loads(primary.read_text())['meets_prespecified_simulation_criterion']
+        for seed, record in enumerate(summary['records']):
+            assert record['policy_seed'] == seed
+            assert json.loads((args.study / f'seed_{seed}.json').read_text()) == record
+            assert all(item['native_replay_exact'] and sum(item['regime_counts']) == 152000
+                       for item in record['occupancies'])
+            delta = record['actual_native_air_difference_m3']
+            mapping = record['symmetric_mapping_component_m3']
+            occupancy = record['symmetric_occupancy_component_m3']
+            assert abs(mapping + occupancy - delta) <= 1e-8
+            assert abs(record['occupancies'][1]['native_summary']['air_m3'] -
+                       record['occupancies'][0]['native_summary']['air_m3'] - delta) <= 1e-8
+        add(primary)
+        add(ROOT / 'Lee/experiments/e69/artifacts.json')
     else:
         summary = json.loads((args.study / 'summary.json').read_text())
         audit = json.loads((args.study / 'audit.json').read_text())
