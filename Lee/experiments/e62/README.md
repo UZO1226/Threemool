@@ -38,4 +38,7 @@ NUMBA thread counts1. Two independent inference tasks run concurrently, with
 no model fitting. Existing output directories are rejected. Each completed
 condition writes an aggregate report; summary.json requires all four and both
 e61 identity controls to finish. Inspect actual process liveness before
-resuming. No completed outcome is recorded yet.
+resuming. All four conditions now complete and both e61 identity controls pass.
+Every NH4/DO Brier contrast versus global/global has an interval crossing zero.
+See results.md and summary.json. No e62 process remains live, and no model or
+validation candidate is selected from these descriptive contrasts.

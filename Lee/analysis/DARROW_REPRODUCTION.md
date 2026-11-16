@@ -398,3 +398,26 @@ bank array SHA256 is9fb96ac7b36aec71350e12e3ddab13dabc2767456b74223630cbb98c1d44
 Its original array comparison passed. Reproduction requires original source
 versions and pinned libraries. [The results](../experiments/e58/results.md)
 record failure of all seven declared adoption conditions and no final test.
+
+## Completed e61/e62 context sampling and channel decomposition
+
+lee-e61-e62-context-noise.zip contains the complete aggregate evaluation,
+independent audit and calibration decomposition outputs,42136 bytes, SHA256
+7148dd29ac0f447e51669664d5e667de00e3c708737bbe7b7ea684062bcc0ca5.
+Environment draft442901392 has remotely verified asset753764524. The
+[artifact index](../experiments/e61/artifacts.json) records each file hash.
+No source observations, noise banks or trajectories are included.
+
+There are no new weights. Restore the previously archived e51/e58 parent
+weights and summaries, then follow [the e61 reconstruction instructions](../experiments/e61/README.md)
+to rebuild the two excluded banks from original calibration data. Both array
+hashes/identity checks are preserved in rebuild_check.json. The evaluator
+authenticates source/data/bank hashes, reproduces both original global worlds
+and keeps the e51 context primary distinct from the e58 secondary.
+
+[The independent e61 audit](../experiments/e61/audit_context.py) reconstructs
+donors, full-day forecasts, air order and complete event criteria. [The e62
+instructions](../experiments/e62/README.md) reproduce the calibration-only
+four-condition channel decomposition into a new output directory. Both
+experiments retain their failures/uncertainty; no new environment freeze,
+policy training or final test follows from these diagnostic results.

@@ -143,3 +143,10 @@ arrays and published preflight checksums exactly; rebuild_check.json preserves
 the completed check. Place the corresponding e51/e58 output bank in its parent
 run as pit_bank.npz when restoring an archive that excluded it. Original source
 data and reconstructed bank arrays are never included in Git or artifacts.
+
+All evaluations and independent audits now complete. The primary fails all
+seven declared adoption conditions: NH4 frequency9.190132 percent versus
+17.315789 observed, no calibrated member, worse NH4 probability error and
+zero matched new DO onsets. See results.md, summary.json and audit.json.
+No e61 job remains live. artifacts.json indexes the remotely verified combined
+e61/e62 aggregate archive, with prior parent weights referenced separately.

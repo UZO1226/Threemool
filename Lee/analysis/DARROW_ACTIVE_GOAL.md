@@ -132,19 +132,33 @@ audit_context.py now implements
 independent donors/paths, five-member full-day sklearn/scalar interpolation,
 aggregate and low/high-air replay, recomputed point gates and all reference/
 event/date uncertainty/adoption checks. Under sourcee5f1db7, follow-up handle
-12751 now runs the audit as PID25736 after evaluator96253 finishes. Primary
-independent donor/full-day/air-order replay passes; secondary/reference/event
-stages remain live. Check actual handles before launching anything and never
-duplicate the audit or edit pinned inputs. Both parent banks rebuild exactly
-using rebuild_banks.py; rebuild_check.json is published, no banks uploaded.
+12751 now completes the entire audit after evaluator96253 finishes. Both
+independent donor/full-day/air-order replays pass, with discrepancies1.11e-16
+and2.22e-16, but all seven primary adoption conditions fail. NH4 Brier worsens
+versus e40 with difference interval[.002486,.025563], and DO onset matches are
+0/25. Both parent banks rebuild exactly using rebuild_banks.py. Handles96253,
+12751 and25656 are terminal. No e61 process remains live and no banks uploaded.
 
 e62 is prospectively specified/launched at8f41b0e as a calibration-only
 four-condition NH4-global/context by DO-global/context noise decomposition.
 It freezes e51 and all e61 scaling/pools, requires both all-global/all-context
 calibration identities, and deliberately discloses mixed copula limitations.
 No validation, fitting, policy training or adoption is part of this diagnosis.
-Handle61314, PID24536 at launch, results/e62_channel_decomposition. Recheck
-actual liveness before waiting or restarting. No e62 outcome exists yet.
+All four conditions and both identity controls complete in
+results/e62_channel_decomposition. Every NH4/DO Brier contrast interval versus
+global/global crosses zero, providing no demonstrated channel-only repair.
+Handle61314 is terminal and no e62 process remains live. The complete e61/e62
+aggregate archive42136 bytes is remotely verified in environment draft442901392,
+asset753764524. Source observations, trajectories and banks are excluded.
+
+Do not select a favorable unproven noise combination or retune k to rescue
+these failures. The next useful review is the exact earlier e55/e56 partial
+cost/DO benefit and e56 proposal geometry, to determine whether its fixed
+action-penalty suppresses useful risk correction enough to justify a new
+prospective agent extension on the unchanged e42 research world. Inspect the
+actual model/policy guards and training-only diagnostic first. That review
+does not solve or waive the unresolved environment safety limitations, change
+the frozen world or reduce the full user objective. No new candidate yet.
 The goal remains active. Reasonable alternatives and execution resources
 remain, so no external blocker or completion is claimed. Preserve all failures
 and pinned historical sources, and never use final test41.
