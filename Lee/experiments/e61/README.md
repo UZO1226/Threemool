@@ -130,3 +130,16 @@ intervals compare both context variants with both original global parents,
 frozen e40, old and persistence. Only the predefined e51 primary receives the
 declared adoption decision; the secondary cannot rescue primary failure.
 The audit refuses an existing output and requires the completed summary.
+
+The excluded stochastic banks can be restored without model fitting or
+validation access after downloading the authenticated parent weights/summaries:
+
+```powershell
+python Threemool/Lee/experiments/e61/rebuild_banks.py --data kaggle_data/darrow_15min.pkl --e51 results/e51_blended_pit --e58 results/e58_conditional_upper --preflight Threemool/Lee/experiments/e61/preflight.json --out results/e61_rebuilt_parent_banks
+```
+
+The output directory must not exist. Both rebuilt arrays match the original
+arrays and published preflight checksums exactly; rebuild_check.json preserves
+the completed check. Place the corresponding e51/e58 output bank in its parent
+run as pit_bank.npz when restoring an archive that excluded it. Original source
+data and reconstructed bank arrays are never included in Git or artifacts.

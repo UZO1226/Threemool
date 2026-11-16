@@ -1,0 +1,29 @@
+{
+  "banks": {
+    "e51": {
+      "array_sha256": "5a6ffd1ed43cf6be6def0f332bc3e9d1c4f6a2b7cfa54ea73844b6e278ec5e54",
+      "shape": [
+        5,
+        2850,
+        5
+      ],
+      "existing_original_compared": true,
+      "output": "e51_pit_bank.npz"
+    },
+    "e58": {
+      "array_sha256": "9fb96ac7b36aec71350e12e3ddab13dabc2767456b74223630cbb98c1d4469c7",
+      "shape": [
+        5,
+        2850,
+        5
+      ],
+      "existing_original_compared": true,
+      "output": "e58_pit_bank.npz"
+    }
+  },
+  "model_refit": false,
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "source_sha256": "341673b96509a8ccc9eb131d3ec41e759aca74c46ca708225d1ecb6912fb9a60"
+}
