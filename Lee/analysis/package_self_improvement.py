@@ -17,7 +17,7 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=('e65', 'e66', 'e67'), required=True)
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69'), required=True)
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
@@ -31,7 +31,7 @@ def main():
         assert path.is_file() and path.suffix in ('.json', '.log', '.pkl', '.pt')
         assert '/transitions/' not in relative and 'pit_bank' not in relative
         files[relative] = path
-    if args.kind in ('e65', 'e67'):
+    if args.kind in ('e65', 'e67', 'e69'):
         status = json.loads((args.study / 'study_status.json').read_text())
         assert status['phase'] == 'complete' and not status['running'] and not status['pending']
         cert_path = ROOT / 'Lee/experiments/e64/baseline_authentication.json'
@@ -42,7 +42,8 @@ def main():
             folder = args.study / f'comparisons/seed_{seed}'
             pair = json.loads((folder / 'summary.json').read_text())
             audit = json.loads((folder / 'action_audit.json').read_text())
-            expected_method = 'e65_nested_grid_h4' if args.kind == 'e65' else 'e67_larger_radius_h4'
+            expected_method = {'e65': 'e65_nested_grid_h4', 'e67': 'e67_larger_radius_h4',
+                               'e69': 'e69_training_air_budget_h4'}[args.kind]
             assert pair['candidate_method'] == expected_method
             assert pair['policy_seed'] == audit['policy_seed'] == seed
             assert pair['training_steps'] == 401280 and not pair['pipeline_smoke_only']
@@ -57,6 +58,15 @@ def main():
                 assert replay['independent_sklearn_actions_exact'] and replay['trajectory_replay_exact']
                 assert replay['executed_air_accounting_exact']
             assert sha(folder / 'controller_config.json') == pair['controller_config_sha256']
+            if args.kind == 'e69':
+                calibration_folder = results / f'e69_projection_fit/seed_{seed}'
+                calibration_path = calibration_folder / 'fit_summary.json'
+                calibration = json.loads(calibration_path.read_text())
+                assert sha(calibration_path) == pair['projection_fit_summary_sha256']
+                assert calibration['passed'] and calibration['calibration']['absolute_mean_action_error'] <= 1e-10
+                assert calibration['controller_config_sha256'] == pair['controller_config_sha256']
+                assert calibration['base_checkpoint_hashes'] == pair['base_checkpoint_hashes']
+                assert calibration['rate_model_sha256'] == pair['correction_model_sha256']
             base = results / f'e55_study/policies/new_ppolag_fcsrl/seed_{seed}'
             for name, expected in pair['base_checkpoint_hashes'].items():
                 path = base / 'model_final' / name
@@ -82,8 +92,8 @@ def main():
         add(cert_path)
         for path in (results / f'{args.kind}_native_smoke').glob('*.json'):
             add(path)
-        preflight_name = 'e65_preflight_v2' if args.kind == 'e65' else 'e67_preflight'
-        for path in (results / preflight_name).glob('*.json'):
+        preflight_name = {'e65': 'e65_preflight_v2', 'e67': 'e67_preflight', 'e69': 'e69_projection_fit'}[args.kind]
+        for path in (results / preflight_name).rglob('*.json'):
             add(path)
     else:
         summary = json.loads((args.study / 'summary.json').read_text())
@@ -103,6 +113,7 @@ def main():
     files['metadata/FCSRL_LICENSE'] = ROOT / 'Lee/code/darrow/FCSRL_LICENSE'
     freeze = json.loads((ROOT / 'Lee/experiments/e42/environment_freeze.json').read_text())
     manifest = {'trial': args.kind, 'new_model_fitting': False, 'source_data_included': False,
+                'projection_parameters_fitted': args.kind == 'e69',
                 'residual_banks_included': False, 'pit_banks_included': False,
                 'captured_training_arrays_included': False, 'test_evaluated': False,
                 'frozen_environment_dependencies': freeze['frozen_files_sha256'],
