@@ -1,0 +1,551 @@
+{
+  "operation": "audit",
+  "source_location_adapter_only": true,
+  "original_runtime_files_modified": false,
+  "source_hash_checks_preserved": true,
+  "verified_sources": [
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\calibrate_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\calibrate_dw.py",
+      "expected_sha256": "98ffc5e7825c98fb56573dfc56c1e216c98dec8a448ed26e5a708a62c2b7bda3"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\curriculum_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\curriculum_dw.py",
+      "expected_sha256": "b7c6063524a014d4636a3203326eb56f446dd87f888d9022ced2fee6cdde6854"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\direct_dynamics.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\direct_dynamics.py",
+      "expected_sha256": "d0d58bd70d2cbec678a6b1818caad6a6ee6b34f22443d368d1bd5779a628617a"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env.py",
+      "expected_sha256": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env_dw.py",
+      "expected_sha256": "a1a78f1e36b196f3ba60ac00134a3461e7b0ec062478ff0a7d82ca819eed6ce8"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fast_gbm.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fast_gbm.py",
+      "expected_sha256": "2aceeb34c5013857affab218f6d5e615f15d68ecc523b409afd1b9569292c312"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fcsrl_compat.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fcsrl_compat.py",
+      "expected_sha256": "8f412d0633e94778b7496d0f12dfa21cab5ddfb16c8f48c12aadab3bbbc42b19"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\feasibility_policy.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\feasibility_policy.py",
+      "expected_sha256": "04027155083d756ffcaf5cb033230ccaa8ed412f7f3008e4bd713a8ffde390c2"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_config.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_config.py",
+      "expected_sha256": "7236f11934ee8bca42e997e086092e451ce8535a06053ec2174ca145af1c2052"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_fcsrl.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_fcsrl.py",
+      "expected_sha256": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_lag.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_lag.py",
+      "expected_sha256": "b55da69b3b04746b5aaa6a1829045af19f2b4f8858ebdf7a290587f67862b0c4"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_tail.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_tail.py",
+      "expected_sha256": "9a1452736d03ecaf22d0f6881d7f5104b67b30a32afdd942bdfbbee2865eaf7e"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\prep_darrow.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\prep_darrow.py",
+      "expected_sha256": "1472c7c3f0c8362405d3a34dec601ccedbc6f9257eed5df959f35b8721ddfb6a"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate.py",
+      "expected_sha256": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate_dw.py",
+      "expected_sha256": "15f9fc2d2c6d30230538367ad2764354159e9ababb835abff5032f280fd7f963"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\train_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\train_dw.py",
+      "expected_sha256": "4a1a4772a1d525e9c8e6c66a7ec0bc1a69046c6c7c6c0a18b51385fc9ec08b10"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e38\\quantile_dynamics.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e38\\quantile_dynamics.py",
+      "expected_sha256": "6fc3b06ce17a122c021b106c559bb457adf6eb5dac7919db447f8d7c949877e9"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_env.py",
+      "expected_sha256": "331a944adb2a71e97606b9c106d13e05f26b5e7b13a86ba3db6fbe510ae94881"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_reset.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_reset.py",
+      "expected_sha256": "2df3c9a34aec890e43df05b8e5b0999a8bb51c449b9d1d1ecee6707bc0ab0c3d"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\factual_replay.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\factual_replay.py",
+      "expected_sha256": "2b95ec49e63af8a825fba3ca814475d448a2444483ac1f9b515b29ea6436b99b"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\quantile_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\quantile_env.py",
+      "expected_sha256": "0c64efa9f9027e4e8d7cf43fdfb9793dd6587fcd262a636d253fdb11f3d33a14"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\rebuild_bank.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\rebuild_bank.py",
+      "expected_sha256": "dd9173503f288cc6a0912e5704e5d3e94b8f2e4514606e09b7a08b5467fb208f"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\run_policies.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\run_policies.py",
+      "expected_sha256": "4ce9aaab95017475b57e902a841412c7d3aa7c50038b332b52010f2e0dd6982a"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\train_policy.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\train_policy.py",
+      "expected_sha256": "f475a695bb22010da1d0dbd21afc830bd6059cc39742ae763a10d689f3e3895d"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\check_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_env.py",
+      "expected_sha256": "331a944adb2a71e97606b9c106d13e05f26b5e7b13a86ba3db6fbe510ae94881"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\check_reset.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_reset.py",
+      "expected_sha256": "2df3c9a34aec890e43df05b8e5b0999a8bb51c449b9d1d1ecee6707bc0ab0c3d"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\factual_replay.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\factual_replay.py",
+      "expected_sha256": "2b95ec49e63af8a825fba3ca814475d448a2444483ac1f9b515b29ea6436b99b"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\quantile_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\quantile_env.py",
+      "expected_sha256": "0c64efa9f9027e4e8d7cf43fdfb9793dd6587fcd262a636d253fdb11f3d33a14"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\rebuild_bank.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\rebuild_bank.py",
+      "expected_sha256": "dd9173503f288cc6a0912e5704e5d3e94b8f2e4514606e09b7a08b5467fb208f"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\run_policies.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\run_policies.py",
+      "expected_sha256": "4ce9aaab95017475b57e902a841412c7d3aa7c50038b332b52010f2e0dd6982a"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e42\\train_policy.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\train_policy.py",
+      "expected_sha256": "f475a695bb22010da1d0dbd21afc830bd6059cc39742ae763a10d689f3e3895d"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\calibrate_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\calibrate_dw.py",
+      "expected_sha256": "98ffc5e7825c98fb56573dfc56c1e216c98dec8a448ed26e5a708a62c2b7bda3"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\curriculum_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\curriculum_dw.py",
+      "expected_sha256": "b7c6063524a014d4636a3203326eb56f446dd87f888d9022ced2fee6cdde6854"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\direct_dynamics.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\direct_dynamics.py",
+      "expected_sha256": "d0d58bd70d2cbec678a6b1818caad6a6ee6b34f22443d368d1bd5779a628617a"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env.py",
+      "expected_sha256": "c4bc095d4a9ee941f4ad0b041f0b0bd88a531983cd4bf28d0add38247a48b6c5"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\env_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env_dw.py",
+      "expected_sha256": "a1a78f1e36b196f3ba60ac00134a3461e7b0ec062478ff0a7d82ca819eed6ce8"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\fast_gbm.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fast_gbm.py",
+      "expected_sha256": "2aceeb34c5013857affab218f6d5e615f15d68ecc523b409afd1b9569292c312"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\fcsrl_compat.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fcsrl_compat.py",
+      "expected_sha256": "8f412d0633e94778b7496d0f12dfa21cab5ddfb16c8f48c12aadab3bbbc42b19"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\feasibility_policy.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\feasibility_policy.py",
+      "expected_sha256": "04027155083d756ffcaf5cb033230ccaa8ed412f7f3008e4bd713a8ffde390c2"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\ppo_config.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_config.py",
+      "expected_sha256": "7236f11934ee8bca42e997e086092e451ce8535a06053ec2174ca145af1c2052"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\ppo_fcsrl.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_fcsrl.py",
+      "expected_sha256": "3bb56d34b3e47e12f299f0414b189a6be59829c3cf07a74120323dc534c74c66"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\ppo_lag.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_lag.py",
+      "expected_sha256": "b55da69b3b04746b5aaa6a1829045af19f2b4f8858ebdf7a290587f67862b0c4"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\ppo_tail.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_tail.py",
+      "expected_sha256": "9a1452736d03ecaf22d0f6881d7f5104b67b30a32afdd942bdfbbee2865eaf7e"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\prep_darrow.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\prep_darrow.py",
+      "expected_sha256": "1472c7c3f0c8362405d3a34dec601ccedbc6f9257eed5df959f35b8721ddfb6a"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\surrogate.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate.py",
+      "expected_sha256": "552a491fec8f4c5fdc52aeded9ce3d17b9d122473b21203db27c713dde848e15"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\surrogate_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate_dw.py",
+      "expected_sha256": "15f9fc2d2c6d30230538367ad2764354159e9ababb835abff5032f280fd7f963"
+    },
+    {
+      "recorded_name": "Lee\\code\\darrow\\train_dw.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\train_dw.py",
+      "expected_sha256": "4a1a4772a1d525e9c8e6c66a7ec0bc1a69046c6c7c6c0a18b51385fc9ec08b10"
+    },
+    {
+      "recorded_name": "audit_correction.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_correction.py",
+      "expected_sha256": "5aed75fdc9a8cd98fb6627c524dacfd3c7ac88b2ab7b22fffc4b1e47ea03c136"
+    },
+    {
+      "recorded_name": "audit_cost_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_cost_models.py",
+      "expected_sha256": "61a1a99e536e6452be81dad55aeb511e94e0747779f13fc1afa854ffc5283ec3"
+    },
+    {
+      "recorded_name": "capture_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\capture_env.py",
+      "expected_sha256": "62baa4aac54194c903c21e0de435848d328cd55ff6b4de2cafc67b3e5ae1e099"
+    },
+    {
+      "recorded_name": "check_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\check_capture.py",
+      "expected_sha256": "60a6f70d86b547d99988f9c98b44fe07425558f66b87f28aa55a71f3d0baa43a"
+    },
+    {
+      "recorded_name": "compare.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\compare.py",
+      "expected_sha256": "9771a029052ca53f03f646d8da09d16e2fcc478a541f646fb987c9e3742d91c4"
+    },
+    {
+      "recorded_name": "cost_model.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\cost_model.py",
+      "expected_sha256": "becb625243ab925f3ba1b4dd9be8c4fe8185ad36fa785cda55fa08d5882dae56"
+    },
+    {
+      "recorded_name": "fast_cost.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fast_cost.py",
+      "expected_sha256": "b3377b142f0f4907409e5e3aa8551ed9ec01726aad6734fdea78f61c60a98dc6"
+    },
+    {
+      "recorded_name": "fit_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fit_models.py",
+      "expected_sha256": "5cc066f78c65ba048f2043dd0685d8283ce30476223c0166226394efd61783cb"
+    },
+    {
+      "recorded_name": "policy_io.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\policy_io.py",
+      "expected_sha256": "bfd3c64125a71be7df075f8b775209af4519a77d97ee97da93e8afb79f769514"
+    },
+    {
+      "recorded_name": "run_study.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\run_study.py",
+      "expected_sha256": "eec41865c4bb57b6c5d6083fc4e920873f8c5ad7b51e9714ee9342a7c9951459"
+    },
+    {
+      "recorded_name": "train_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_capture.py",
+      "expected_sha256": "c2550e2258dd0711d62d01f0b96643768b0444973a8ad499103f5c750578f0c5"
+    },
+    {
+      "recorded_name": "train_stream.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_stream.py",
+      "expected_sha256": "27d6335554f83b783aac0be08a5a30247b3d0f6bbb9da758bdaf2f22181217ba"
+    },
+    {
+      "recorded_name": "verify_base.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\verify_base.py",
+      "expected_sha256": "8512eef891e926ae5b3facd0aa5f25b836977f8fb1e64475d104b34a951c7c3d"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_correction.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_correction.py",
+      "expected_sha256": "5aed75fdc9a8cd98fb6627c524dacfd3c7ac88b2ab7b22fffc4b1e47ea03c136"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_cost_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_cost_models.py",
+      "expected_sha256": "61a1a99e536e6452be81dad55aeb511e94e0747779f13fc1afa854ffc5283ec3"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\capture_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\capture_env.py",
+      "expected_sha256": "62baa4aac54194c903c21e0de435848d328cd55ff6b4de2cafc67b3e5ae1e099"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\check_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\check_capture.py",
+      "expected_sha256": "60a6f70d86b547d99988f9c98b44fe07425558f66b87f28aa55a71f3d0baa43a"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\compare.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\compare.py",
+      "expected_sha256": "9771a029052ca53f03f646d8da09d16e2fcc478a541f646fb987c9e3742d91c4"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\cost_model.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\cost_model.py",
+      "expected_sha256": "becb625243ab925f3ba1b4dd9be8c4fe8185ad36fa785cda55fa08d5882dae56"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fast_cost.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fast_cost.py",
+      "expected_sha256": "b3377b142f0f4907409e5e3aa8551ed9ec01726aad6734fdea78f61c60a98dc6"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fit_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fit_models.py",
+      "expected_sha256": "5cc066f78c65ba048f2043dd0685d8283ce30476223c0166226394efd61783cb"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\policy_io.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\policy_io.py",
+      "expected_sha256": "bfd3c64125a71be7df075f8b775209af4519a77d97ee97da93e8afb79f769514"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\run_study.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\run_study.py",
+      "expected_sha256": "eec41865c4bb57b6c5d6083fc4e920873f8c5ad7b51e9714ee9342a7c9951459"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_capture.py",
+      "expected_sha256": "c2550e2258dd0711d62d01f0b96643768b0444973a8ad499103f5c750578f0c5"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_stream.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_stream.py",
+      "expected_sha256": "27d6335554f83b783aac0be08a5a30247b3d0f6bbb9da758bdaf2f22181217ba"
+    },
+    {
+      "recorded_name": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\verify_base.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\verify_base.py",
+      "expected_sha256": "8512eef891e926ae5b3facd0aa5f25b836977f8fb1e64475d104b34a951c7c3d"
+    },
+    {
+      "recorded_name": "audit_rates.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\audit_rates.py",
+      "expected_sha256": "b00868bd4601fc1281241313d58eb8d00374d88db3a81a976729dcd7d6ff2406"
+    },
+    {
+      "recorded_name": "check_rate_model.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\check_rate_model.py",
+      "expected_sha256": "d6619879949c0ddce7a143c423f29667b5b89e8ce168c393e2aad29299cce4be"
+    },
+    {
+      "recorded_name": "check_targets.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\check_targets.py",
+      "expected_sha256": "9775d9dc5405d8315c50fa55d3ab6b34751c5a28b3ab6177cdd62c52941bc9eb"
+    },
+    {
+      "recorded_name": "compare_rates.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\compare_rates.py",
+      "expected_sha256": "6aabad91f4440997b869288f14d985fc713a69653d4c5ae1ca08565da100e758"
+    },
+    {
+      "recorded_name": "fit_rates.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\fit_rates.py",
+      "expected_sha256": "da882aa1e95151e0467cfb05409507a4b5570ca103b5467a23ddf78cb1ec76e4"
+    },
+    {
+      "recorded_name": "horizon_contrast.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\horizon_contrast.py",
+      "expected_sha256": "97d350002847f64fe8397170a3e4fb6373b366cea932d4d8fc7c4d4fc2416b06"
+    },
+    {
+      "recorded_name": "rate_io.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\rate_io.py",
+      "expected_sha256": "66cb129a3014350bdc0becad7daaf269eb51dfae9c580256a3ccba0b9c26c30b"
+    },
+    {
+      "recorded_name": "rate_model.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\rate_model.py",
+      "expected_sha256": "5bf6683adec08d5a6d987535c7d83043bdba3bf378c8c2f455973601c99a839b"
+    },
+    {
+      "recorded_name": "run_study.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\run_study.py",
+      "expected_sha256": "3624ca729b839069d5c7f145c67ad3384c60ea8b367897d1edc47b5f7e28b121"
+    },
+    {
+      "recorded_name": "streams.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\streams.py",
+      "expected_sha256": "f5b59bc98c8c8ebb901b5c282e922c81393c6e36402ae760ed6b668fbbbe3b70"
+    },
+    {
+      "recorded_name": "summarize_smoke.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\summarize_smoke.py",
+      "expected_sha256": "e4a85dee9c30f16b275fc689ebd34d336fc8799fd8b462616e98f69619b919af"
+    },
+    {
+      "recorded_name": "targets.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\targets.py",
+      "expected_sha256": "51286d96f6f597380ae087653f1ddff3e2a3e40a7ee6120a1775fc3e72d33053"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\audit_correction.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_correction.py",
+      "expected_sha256": "5aed75fdc9a8cd98fb6627c524dacfd3c7ac88b2ab7b22fffc4b1e47ea03c136"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\audit_cost_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_cost_models.py",
+      "expected_sha256": "61a1a99e536e6452be81dad55aeb511e94e0747779f13fc1afa854ffc5283ec3"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\capture_env.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\capture_env.py",
+      "expected_sha256": "62baa4aac54194c903c21e0de435848d328cd55ff6b4de2cafc67b3e5ae1e099"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\check_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\check_capture.py",
+      "expected_sha256": "60a6f70d86b547d99988f9c98b44fe07425558f66b87f28aa55a71f3d0baa43a"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\compare.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\compare.py",
+      "expected_sha256": "9771a029052ca53f03f646d8da09d16e2fcc478a541f646fb987c9e3742d91c4"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\cost_model.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\cost_model.py",
+      "expected_sha256": "becb625243ab925f3ba1b4dd9be8c4fe8185ad36fa785cda55fa08d5882dae56"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\fast_cost.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fast_cost.py",
+      "expected_sha256": "b3377b142f0f4907409e5e3aa8551ed9ec01726aad6734fdea78f61c60a98dc6"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\fit_models.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fit_models.py",
+      "expected_sha256": "5cc066f78c65ba048f2043dd0685d8283ce30476223c0166226394efd61783cb"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\policy_io.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\policy_io.py",
+      "expected_sha256": "bfd3c64125a71be7df075f8b775209af4519a77d97ee97da93e8afb79f769514"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\run_study.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\run_study.py",
+      "expected_sha256": "eec41865c4bb57b6c5d6083fc4e920873f8c5ad7b51e9714ee9342a7c9951459"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\train_capture.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_capture.py",
+      "expected_sha256": "c2550e2258dd0711d62d01f0b96643768b0444973a8ad499103f5c750578f0c5"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\train_stream.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_stream.py",
+      "expected_sha256": "27d6335554f83b783aac0be08a5a30247b3d0f6bbb9da758bdaf2f22181217ba"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e55\\verify_base.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\verify_base.py",
+      "expected_sha256": "8512eef891e926ae5b3facd0aa5f25b836977f8fb1e64475d104b34a951c7c3d"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\air_match.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\air_match.py",
+      "expected_sha256": "81184a6dd2ed97d638a94366ba757f9c831b7c7db74cec0a539721b350449e2e"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\capacity_contrast.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\capacity_contrast.py",
+      "expected_sha256": "50e333528ebdb5c712e19d8047d14e43b646fcae9cd1905972b31fc6eb687a57"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\check_capacity_contrast.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_capacity_contrast.py",
+      "expected_sha256": "50dbef898de88083f3afd5fedecc9504fee282f89011c8da1fa3a5c9122f158b"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\check_matching.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_matching.py",
+      "expected_sha256": "b465ae42faaf798c412ccebacd24231470a6619b40eea0f201285edee840a77f"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\check_report.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_report.py",
+      "expected_sha256": "493415828638a175d62c033ceae83bee699a6100e22ce7ffa33187ea513ea95f"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\evaluate_pair.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\evaluate_pair.py",
+      "expected_sha256": "9a8284c7fbd1c57ee6eb143b48bc80dabf23bd55ff03df9c2ee5fe01cb846d70"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\native_eval.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\native_eval.py",
+      "expected_sha256": "8646e237597ddd02cddafccc0ff28caefe9e4cc753951bfa06f51132b109c927"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\report.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\report.py",
+      "expected_sha256": "c4d72363ffb6e4b450059765e9e0fe212f6f2c2f8b5f9ebb76c647e8137a615b"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\run_native_batch.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\run_native_batch.py",
+      "expected_sha256": "e1421a39ba3e576b071247813677945f68bdbd2f5de95ecdfe9ca3ab5a3f4640"
+    },
+    {
+      "recorded_name": "Lee\\experiments\\e44\\run_pair_batch.py",
+      "resolved_path": "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\run_pair_batch.py",
+      "expected_sha256": "148cbef16aa98a6063ca6f2488d1cfe987d9876b1a86d8dd61faf7fba6844a06"
+    }
+  ],
+  "adapter_sha256": "3a0de1486e3007cd3d0910fd2cf814a46d29a62b37ee6ed1ff3214318ec9d4ce",
+  "inherited_adapter_sha256": "e3b2c664de23b5aa53835bbf545f68439bc4c0ce9582fa87c21cbaf79a6cecb8",
+  "scope": "Relocate source paths only; retain original base/rate/config/freeze/source/budget and action/trajectory checks."
+}

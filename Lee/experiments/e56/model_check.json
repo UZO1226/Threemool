@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "synthetic_only": true,
+  "test_evaluated": false,
+  "raw_sklearn_max_difference": 0.0,
+  "clipped_predictions_match_sklearn": true,
+  "serialized_predictions_exact": true,
+  "coordinate_order_max_violation": 0.0,
+  "constant_target_fallback_exact": true,
+  "flat_risk_null_action_identity": true,
+  "independent_fixed_candidate_choices_exact": true,
+  "real_stream_target_preflight_passed": true,
+  "source_sha256": {
+    "rate_model.py": "5bf6683adec08d5a6d987535c7d83043bdba3bf378c8c2f455973601c99a839b",
+    "targets.py": "51286d96f6f597380ae087653f1ddff3e2a3e40a7ee6120a1775fc3e72d33053",
+    "check_rate_model.py": "d6619879949c0ddce7a143c423f29667b5b89e8ce168c393e2aad29299cce4be"
+  },
+  "shared_inference_source_sha256": "b3377b142f0f4907409e5e3aa8551ed9ec01726aad6734fdea78f61c60a98dc6",
+  "scope": "Synthetic model and action-choice checks plus previously verified real-stream targets. Not a DARROW fitted-regressor or controller performance result."
+}

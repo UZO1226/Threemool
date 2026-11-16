@@ -1,0 +1,97 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e61_context_sampling",
+    "e62_channel_decomposition"
+  ],
+  "files": {
+    "e61_context_sampling/audit.json": {
+      "bytes": 21648,
+      "sha256": "b775a2b2cc408e62fe7b48c58567db43e9ed4eabdb6300b375cb02d38249b9c1"
+    },
+    "e61_context_sampling/calibration_e51_context5.json": {
+      "bytes": 6797,
+      "sha256": "bc9273ac29978aad7f2d35cdb5e6eeb695b0f683bb30ef59d8546b932350d9a9"
+    },
+    "e61_context_sampling/calibration_e51_global.json": {
+      "bytes": 6436,
+      "sha256": "e485ef3e68d3ffd55bc5df44135de7e82e297def49f4ed915bcb841a40a38028"
+    },
+    "e61_context_sampling/calibration_e58_context5.json": {
+      "bytes": 6768,
+      "sha256": "a2caf3fdc61a6e7c303dc947045b94525f040ea9df7ac4711788303ae36859a5"
+    },
+    "e61_context_sampling/calibration_e58_global.json": {
+      "bytes": 6437,
+      "sha256": "95ca27c1323e136aa4b8bc36b6d7fd8d91df139d25d7ca7414dd94cc3fa6e953"
+    },
+    "e61_context_sampling/global_reference_check.json": {
+      "bytes": 99,
+      "sha256": "0550d73c28d68f53f4c68507e1ca3721bbdf032fad6ae70a2adecee403a29dca"
+    },
+    "e61_context_sampling/manifest.json": {
+      "bytes": 5027,
+      "sha256": "ea781ec1ae6c5d2ad2b2cfd0cbd984c43c0b5727027d77956c48534a541091fb"
+    },
+    "e61_context_sampling/summary.json": {
+      "bytes": 68903,
+      "sha256": "9d0e02af0d75444100e76dd77ddd84f69773ec170300817434e2754acccfd38a"
+    },
+    "e61_context_sampling/validation_context5_e51.json": {
+      "bytes": 6507,
+      "sha256": "bc27450187f4f663c2c60bff7d9294e63dca4a1756ab8622b8826d314f479831"
+    },
+    "e61_context_sampling/validation_context5_e58.json": {
+      "bytes": 6705,
+      "sha256": "2881179b0f9bf91ea6b97186a946da5f5196bb2ae6f43eeb67e35d2161d9e85c"
+    },
+    "e61_context_sampling/validation_global_e51.json": {
+      "bytes": 6380,
+      "sha256": "5620eb879f216fed0edcd02c8acd0fd35a5507d1d268889fbf0050af3815fb85"
+    },
+    "e61_context_sampling/validation_global_e58.json": {
+      "bytes": 6381,
+      "sha256": "59dfb1a4bdecb76bea9134319dcdb2c66363c796e870b6da7e8454a6f0141e8b"
+    },
+    "e62_channel_decomposition/manifest.json": {
+      "bytes": 491,
+      "sha256": "208f0e0aba21092bc94f147f68ad391da0618ff6580d169df643bc0f2b16ea65"
+    },
+    "e62_channel_decomposition/nh4_context_do_context.json": {
+      "bytes": 4651,
+      "sha256": "1a17d1dcd936e6d5f2020aab6dd3ccc4588b59db0c21999492c1d4dc85b338be"
+    },
+    "e62_channel_decomposition/nh4_context_do_global.json": {
+      "bytes": 4629,
+      "sha256": "3ec323ca7a05edfe8e662c5ec17e28d47d3a1ceab4be0ecf6ec253abacf92296"
+    },
+    "e62_channel_decomposition/nh4_global_do_context.json": {
+      "bytes": 4640,
+      "sha256": "d43e25f6242eee8e98c9695f3013c884c07d8d83594e1e547b6abd9ad5b0a207"
+    },
+    "e62_channel_decomposition/nh4_global_do_global.json": {
+      "bytes": 4598,
+      "sha256": "8daebba2cab128db88ba951fd43e503a3423418562b28ec7b2146634f13b298a"
+    },
+    "e62_channel_decomposition/summary.json": {
+      "bytes": 23434,
+      "sha256": "4ff0e5a46a927fd09db15c66d7807765921d66a214c5161025b246c96f05b1c4"
+    }
+  },
+  "archive": {
+    "name": "lee-e61-e62-context-noise.zip",
+    "bytes": 42136,
+    "sha256": "7148dd29ac0f447e51669664d5e667de00e3c708737bbe7b7ea684062bcc0ca5"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 753764524,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

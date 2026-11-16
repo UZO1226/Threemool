@@ -63,7 +63,8 @@ def make_agent(a, c):
     raise ValueError(a.method)
 
 
-def train(a):
+def train(a,dynamics=None,environment_factory=None,evaluation_function=None,
+          agent_factory=None,run_metadata=None):
     run = a.out
     if run.exists() and any(run.iterdir()):
         raise ValueError(f'Refusing to overwrite {run}')
@@ -78,9 +79,11 @@ def train(a):
     torch.set_num_threads(1)
     torch.manual_seed(a.seed)
     np.random.seed(a.seed)
-    agent, r = make_agent(a, c)
-    dyn = GBMDynamics(a.surrogate)
-    env = VecAerationEnv(a.data, None, split='train', n_env=c.n_env, seed=a.seed * 1000, dynamics=dyn)
+    agent, r = (make_agent if agent_factory is None else agent_factory)(a, c)
+    dyn = GBMDynamics(a.surrogate) if dynamics is None else dynamics
+    env = (VecAerationEnv(a.data, None, split='train', n_env=c.n_env, seed=a.seed * 1000, dynamics=dyn)
+           if environment_factory is None else environment_factory(a.data,dyn,c.n_env,a.seed*1000))
+    evaluator=batched_rollout if evaluation_function is None else evaluation_function
     curriculum = None
     if a.method == 'ppolag_fcsrl_curriculum':
         from curriculum_dw import risk_day_weights
@@ -90,7 +93,7 @@ def train(a):
         'representation': asdict(r) if isinstance(agent, PPOFCSRLAgent) else None,
         'feasibility_penalty': asdict(agent.feasibility_penalty) if hasattr(agent, 'feasibility_penalty') else None,
         'cost_limit': a.limit, 'data': str(a.data.resolve()), 'surrogate': str(a.surrogate.resolve()),
-        'actual_steps': c.actual_steps, 'curriculum': curriculum})
+        'actual_steps': c.actual_steps, 'curriculum': curriculum,'experiment_metadata':run_metadata})
     obs = env.reset()
     agent.obs_normalizer.update(obs)
     ep_cost, ep_reward = np.zeros(c.n_env), np.zeros(c.n_env)
@@ -104,6 +107,9 @@ def train(a):
                  (('obs', (OBS_DIM,)), ('obs_next', (OBS_DIM,)), ('act', (1,)), ('act_exec', (1,)),
                   ('logp', ()), ('rew', ()), ('cost', ()), ('vr', ()), ('vc', ()), ('nvr', ()),
                   ('nvc', ()), ('end', ()), ('terminated', ()), ('next_feasi', ()))}
+            for key,shape in getattr(agent,'buffer_shapes',{}).items():
+                if key in B:raise ValueError(f'Additional buffer key collision: {key}')
+                B[key]=np.zeros((c.horizon,c.n_env)+shape,dtype=np.float32)
             completed = []
             env.set_member(np.random.randint(dyn.n_members))
             for t in range(c.horizon):
@@ -118,7 +124,7 @@ def train(a):
                 actions = actions.cpu().numpy()
                 B['obs'][t], B['act'][t] = on, actions
                 B['act_exec'][t] = np.clip(actions, -1, 1)
-                new_obs, reward, cost, trunc, terminal_obs, _ = env.step(B['act_exec'][t, :, 0])
+                new_obs, reward, cost, trunc, terminal_obs, step_info = env.step(B['act_exec'][t, :, 0])
                 B['rew'][t], B['cost'][t] = reward, cost
                 B['end'][t], B['terminated'][t] = trunc.astype(np.float32), 0.0
                 ep_cost += cost
@@ -133,12 +139,15 @@ def train(a):
                     B['nvr'][t], B['nvc'][t] = vr.cpu().numpy(), vc.cpu().numpy()
                     if isinstance(agent, PPOFCSRLAgent):
                         B['next_feasi'][t] = agent.next_feasibility(next_on)
+                if hasattr(agent,'collect_aux'):
+                    agent.collect_aux(B,t,next_on,cost,step_info)
                 obs = new_obs
                 agent.obs_normalizer.update(obs)
             B['adv_r'], B['ret_r'] = gae(B['rew'], B['vr'], B['nvr'], B['end'], c.gamma, c.gae_lambda)
             B['adv_c'], B['ret_c'] = gae(B['cost'], B['vc'], B['nvc'], B['end'], c.gamma, c.gae_lambda)
             B['feasi'] = feasibility_targets(B['cost'], B['next_feasi'], B['end'], B['terminated'],
                                              r.feasibility_discount)
+            if hasattr(agent,'finish_buffer'):agent.finish_buffer(B)
             flat = {key: value.reshape(c.horizon * c.n_env, *value.shape[2:]) for key, value in B.items()}
             info = agent.update(flat)
             if hasattr(agent, 'last_penalty_rms'):
@@ -149,6 +158,7 @@ def train(a):
             modules = [agent.pi, agent.vr, agent.vc]
             if isinstance(agent, PPOFCSRLAgent):
                 modules += [agent.encoder, agent.fixed_encoder, agent.feasi_head, agent.proj_layer, agent.post_proj]
+            modules+=getattr(agent,'extra_modules',[])
             if any(not torch.isfinite(p).all() for module in modules for p in module.parameters()):
                 raise FloatingPointError('Nonfinite model parameter')
             if completed:
@@ -162,7 +172,7 @@ def train(a):
                       'train_episode_cost': cost_mean, **info}
             if u in eval_at:
                 epoch = len([x for x in log if 'val' in x]) + 1
-                final, rows = batched_rollout(a.data, dyn, 'val',
+                final, rows = evaluator(a.data, dyn, 'val',
                                               lambda x: agent.act_det(x)[:, 0], c.cost_limit)
                 candidate = {'epoch': epoch, **final}
                 agent.save(run / 'model' / f'epoch_{epoch}')

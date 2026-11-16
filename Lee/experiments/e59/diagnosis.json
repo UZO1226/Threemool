@@ -1,0 +1,620 @@
+{
+  "scope": "Post-outcome descriptive diagnosis, reused validation; observed-state reset is not a deployable-world gain.",
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "model_refit": false,
+  "selection_changed": false,
+  "test_evaluated": false,
+  "policy_seeds": [],
+  "model_members": 5,
+  "draws": 8,
+  "calibration_warning": "Same dates used for PIT estimation; not held-out evidence.",
+  "context": {
+    "fit": {
+      "days": 158,
+      "rows": 15010,
+      "features": {
+        "nh4": {
+          "min": 0.0,
+          "q25": 0.23327202415254608,
+          "median": 0.9535131905454397,
+          "q75": 2.217060023027857,
+          "max": 9.971257464090986,
+          "mean": 1.5246401942155283
+        },
+        "max_do": {
+          "min": 0.1237256405849616,
+          "q25": 0.34913668771085205,
+          "median": 0.6319444775581359,
+          "q75": 0.9959861460442878,
+          "max": 6.008680820465088,
+          "mean": 0.7944109171243542
+        },
+        "flow": {
+          "min": 95.29417316891296,
+          "q25": 1652.4322264833704,
+          "median": 1762.6440292422312,
+          "q75": 1894.8686100647851,
+          "max": 17536.956878096502,
+          "mean": 2210.6390850501466
+        },
+        "temperature": {
+          "min": 14.018329218132251,
+          "q25": 19.071656549133944,
+          "median": 20.663080649691338,
+          "q75": 21.26280947772205,
+          "max": 28.42086533983884,
+          "mean": 20.03067006602555
+        },
+        "air_m3_per_h": {
+          "min": 1416.0714166720866,
+          "q25": 3042.9698517958977,
+          "median": 3433.4710114107747,
+          "q75": 4021.7066141499463,
+          "max": 8388.123545302018,
+          "mean": 3790.5931437724307
+        }
+      },
+      "actual_nh4_frequency": 0.05996002664890073,
+      "actual_do_frequency": 0.04257161892071952
+    },
+    "calibration": {
+      "days": 30,
+      "rows": 2850,
+      "features": {
+        "nh4": {
+          "min": 0.0,
+          "q25": 0.05401591925046255,
+          "median": 0.9229158321418346,
+          "q75": 2.095215259843756,
+          "max": 9.97106456756592,
+          "mean": 1.399873592726672
+        },
+        "max_do": {
+          "min": 0.1037321562922861,
+          "q25": 0.25388843881361267,
+          "median": 0.32459334035681825,
+          "q75": 0.8356405489109376,
+          "max": 3.825499281105007,
+          "mean": 0.6916798758978109
+        },
+        "flow": {
+          "min": 97.99382120768227,
+          "q25": 1600.6777543164621,
+          "median": 2124.1236015983773,
+          "q75": 2656.8889613859974,
+          "max": 13072.574036845184,
+          "mean": 2590.9938548136615
+        },
+        "temperature": {
+          "min": 14.32727247815708,
+          "q25": 17.062628707820263,
+          "median": 18.052465491824012,
+          "q75": 19.003976940242758,
+          "max": 25.58639088993156,
+          "mean": 18.04860446319941
+        },
+        "air_m3_per_h": {
+          "min": 1095.4576710625365,
+          "q25": 3047.911329115109,
+          "median": 3406.4033021452233,
+          "q75": 4049.594797634818,
+          "max": 7544.527258744969,
+          "mean": 3683.7230221805157
+        }
+      },
+      "actual_nh4_frequency": 0.055087719298245616,
+      "actual_do_frequency": 0.10736842105263159
+    },
+    "validation": {
+      "days": 40,
+      "rows": 3800,
+      "features": {
+        "nh4": {
+          "min": 0.0,
+          "q25": 0.7891041390067339,
+          "median": 1.958912014961243,
+          "q75": 3.436698384252716,
+          "max": 9.979744911193848,
+          "mean": 2.3643390775324002
+        },
+        "max_do": {
+          "min": 0.1516165098763535,
+          "q25": 0.253205875409771,
+          "median": 0.3358686852064089,
+          "q75": 1.152721762783413,
+          "max": 4.266213605044728,
+          "mean": 0.6415557081749513
+        },
+        "flow": {
+          "min": 98.37962341308592,
+          "q25": 1522.6006994085458,
+          "median": 2089.480735530293,
+          "q75": 2565.0123320053217,
+          "max": 10772.556473499912,
+          "mean": 2310.572083712656
+        },
+        "temperature": {
+          "min": 9.442714380465382,
+          "q25": 14.903693421290788,
+          "median": 16.072382873635497,
+          "q75": 17.315345790713895,
+          "max": 20.59712973629164,
+          "mean": 15.963975647579263
+        },
+        "air_m3_per_h": {
+          "min": 1556.8971621071883,
+          "q25": 2689.896503396542,
+          "median": 3183.7956301053287,
+          "q75": 4656.493812680159,
+          "max": 7051.362594074718,
+          "mean": 3573.0425054456314
+        }
+      },
+      "actual_nh4_frequency": 0.1731578947368421,
+      "actual_do_frequency": 0.011578947368421053
+    }
+  },
+  "observed_state": {
+    "calibration": {
+      "e51": {
+        "event_metrics": {
+          "nh4": {
+            "prevalence": 0.055087719298245616,
+            "brier": 0.0047778508771929825,
+            "average_precision": 0.985505865425077,
+            "roc_auc": 0.9961613146610344,
+            "precision_at_half": 0.9556962025316456,
+            "recall_at_half": 0.9617834394904459,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 6,
+                "recall": 0.6666666666666666,
+                "precision": 0.5454545454545454,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 9,
+                "recall": 1.0,
+                "precision": 0.8181818181818182,
+                "mean_absolute_delay_steps": 0.3333333333333333
+              },
+              "4": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 9,
+                "recall": 1.0,
+                "precision": 0.8181818181818182,
+                "mean_absolute_delay_steps": 0.3333333333333333
+              }
+            }
+          },
+          "do": {
+            "prevalence": 0.10736842105263159,
+            "brier": 0.09297127192982457,
+            "average_precision": 0.3218406180368598,
+            "roc_auc": 0.7045489579479589,
+            "precision_at_half": 0.6595744680851063,
+            "recall_at_half": 0.10130718954248366,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 26,
+                "predicted_onsets": 24,
+                "matched": 5,
+                "recall": 0.19230769230769232,
+                "precision": 0.20833333333333334,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 26,
+                "predicted_onsets": 24,
+                "matched": 15,
+                "recall": 0.5769230769230769,
+                "precision": 0.625,
+                "mean_absolute_delay_steps": 0.6666666666666666
+              },
+              "4": {
+                "actual_onsets": 26,
+                "predicted_onsets": 24,
+                "matched": 18,
+                "recall": 0.6923076923076923,
+                "precision": 0.75,
+                "mean_absolute_delay_steps": 0.9444444444444444
+              }
+            }
+          }
+        },
+        "nh4_frequency": 0.056710526315789475,
+        "do_frequency": 0.02139473684210526
+      },
+      "e58": {
+        "event_metrics": {
+          "nh4": {
+            "prevalence": 0.055087719298245616,
+            "brier": 0.0047778508771929825,
+            "average_precision": 0.985505865425077,
+            "roc_auc": 0.9961613146610344,
+            "precision_at_half": 0.9556962025316456,
+            "recall_at_half": 0.9617834394904459,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 6,
+                "recall": 0.6666666666666666,
+                "precision": 0.5454545454545454,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 9,
+                "recall": 1.0,
+                "precision": 0.8181818181818182,
+                "mean_absolute_delay_steps": 0.3333333333333333
+              },
+              "4": {
+                "actual_onsets": 9,
+                "predicted_onsets": 11,
+                "matched": 9,
+                "recall": 1.0,
+                "precision": 0.8181818181818182,
+                "mean_absolute_delay_steps": 0.3333333333333333
+              }
+            }
+          },
+          "do": {
+            "prevalence": 0.10736842105263159,
+            "brier": 0.07499868421052633,
+            "average_precision": 0.6579039365619292,
+            "roc_auc": 0.9666561331031365,
+            "precision_at_half": 0.6181818181818182,
+            "recall_at_half": 0.1111111111111111,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 26,
+                "predicted_onsets": 26,
+                "matched": 6,
+                "recall": 0.23076923076923078,
+                "precision": 0.23076923076923078,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 26,
+                "predicted_onsets": 26,
+                "matched": 17,
+                "recall": 0.6538461538461539,
+                "precision": 0.6538461538461539,
+                "mean_absolute_delay_steps": 0.6470588235294118
+              },
+              "4": {
+                "actual_onsets": 26,
+                "predicted_onsets": 26,
+                "matched": 19,
+                "recall": 0.7307692307692307,
+                "precision": 0.7307692307692307,
+                "mean_absolute_delay_steps": 0.8421052631578947
+              }
+            }
+          }
+        },
+        "nh4_frequency": 0.056710526315789475,
+        "do_frequency": 0.03543859649122807
+      }
+    },
+    "validation": {
+      "e51": {
+        "event_metrics": {
+          "nh4": {
+            "prevalence": 0.1731578947368421,
+            "brier": 0.026042763157894732,
+            "average_precision": 0.9615287004487583,
+            "roc_auc": 0.9883345844804868,
+            "precision_at_half": 0.9118110236220472,
+            "recall_at_half": 0.8799392097264438,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 20,
+                "recall": 0.2247191011235955,
+                "precision": 0.23529411764705882,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 78,
+                "recall": 0.8764044943820225,
+                "precision": 0.9176470588235294,
+                "mean_absolute_delay_steps": 0.7435897435897436
+              },
+              "4": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 82,
+                "recall": 0.9213483146067416,
+                "precision": 0.9647058823529412,
+                "mean_absolute_delay_steps": 0.8048780487804879
+              }
+            }
+          },
+          "do": {
+            "prevalence": 0.011578947368421053,
+            "brier": 0.007736677631578948,
+            "average_precision": 0.4487820723602587,
+            "roc_auc": 0.7470774034272437,
+            "precision_at_half": 1.0,
+            "recall_at_half": 0.3181818181818182,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 1,
+                "recall": 0.04,
+                "precision": 0.3333333333333333,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 2,
+                "recall": 0.08,
+                "precision": 0.6666666666666666,
+                "mean_absolute_delay_steps": 0.5
+              },
+              "4": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 2,
+                "recall": 0.08,
+                "precision": 0.6666666666666666,
+                "mean_absolute_delay_steps": 0.5
+              }
+            }
+          }
+        },
+        "nh4_frequency": 0.17194736842105263,
+        "do_frequency": 0.004782894736842105
+      },
+      "e58": {
+        "event_metrics": {
+          "nh4": {
+            "prevalence": 0.1731578947368421,
+            "brier": 0.026042763157894732,
+            "average_precision": 0.9615287004487583,
+            "roc_auc": 0.9883345844804868,
+            "precision_at_half": 0.9118110236220472,
+            "recall_at_half": 0.8799392097264438,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 20,
+                "recall": 0.2247191011235955,
+                "precision": 0.23529411764705882,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 78,
+                "recall": 0.8764044943820225,
+                "precision": 0.9176470588235294,
+                "mean_absolute_delay_steps": 0.7435897435897436
+              },
+              "4": {
+                "actual_onsets": 89,
+                "predicted_onsets": 85,
+                "matched": 82,
+                "recall": 0.9213483146067416,
+                "precision": 0.9647058823529412,
+                "mean_absolute_delay_steps": 0.8048780487804879
+              }
+            }
+          },
+          "do": {
+            "prevalence": 0.011578947368421053,
+            "brier": 0.007536842105263159,
+            "average_precision": 0.4959483536944476,
+            "roc_auc": 0.8183240149094781,
+            "precision_at_half": 1.0,
+            "recall_at_half": 0.3409090909090909,
+            "onset_tolerance_steps": {
+              "0": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 1,
+                "recall": 0.04,
+                "precision": 0.3333333333333333,
+                "mean_absolute_delay_steps": 0.0
+              },
+              "1": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 2,
+                "recall": 0.08,
+                "precision": 0.6666666666666666,
+                "mean_absolute_delay_steps": 0.5
+              },
+              "4": {
+                "actual_onsets": 25,
+                "predicted_onsets": 3,
+                "matched": 2,
+                "recall": 0.08,
+                "precision": 0.6666666666666666,
+                "mean_absolute_delay_steps": 0.5
+              }
+            }
+          }
+        },
+        "nh4_frequency": 0.17194736842105263,
+        "do_frequency": 0.007592105263157895
+      }
+    }
+  },
+  "stored_recursive_validation": {
+    "e51": {
+      "nh4": {
+        "prevalence": 0.1731578947368421,
+        "brier": 0.1288825657894737,
+        "average_precision": 0.41194000633961364,
+        "roc_auc": 0.7211507393699249,
+        "precision_at_half": 0.5421686746987951,
+        "recall_at_half": 0.20516717325227962,
+        "onset_tolerance_steps": {
+          "0": {
+            "actual_onsets": 89,
+            "predicted_onsets": 23,
+            "matched": 1,
+            "recall": 0.011235955056179775,
+            "precision": 0.043478260869565216,
+            "mean_absolute_delay_steps": 0.0
+          },
+          "1": {
+            "actual_onsets": 89,
+            "predicted_onsets": 23,
+            "matched": 3,
+            "recall": 0.033707865168539325,
+            "precision": 0.13043478260869565,
+            "mean_absolute_delay_steps": 0.6666666666666666
+          },
+          "4": {
+            "actual_onsets": 89,
+            "predicted_onsets": 23,
+            "matched": 10,
+            "recall": 0.11235955056179775,
+            "precision": 0.43478260869565216,
+            "mean_absolute_delay_steps": 2.4
+          }
+        }
+      },
+      "do": {
+        "prevalence": 0.011578947368421053,
+        "brier": 0.014217269736842106,
+        "average_precision": 0.01171032368920865,
+        "roc_auc": 0.4803375205731436,
+        "precision_at_half": 0.0,
+        "recall_at_half": 0.0,
+        "onset_tolerance_steps": {
+          "0": {
+            "actual_onsets": 25,
+            "predicted_onsets": 3,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          },
+          "1": {
+            "actual_onsets": 25,
+            "predicted_onsets": 3,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          },
+          "4": {
+            "actual_onsets": 25,
+            "predicted_onsets": 3,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          }
+        }
+      }
+    },
+    "e58": {
+      "nh4": {
+        "prevalence": 0.1731578947368421,
+        "brier": 0.129471875,
+        "average_precision": 0.40376152064659265,
+        "roc_auc": 0.7058266858079283,
+        "precision_at_half": 0.6853146853146853,
+        "recall_at_half": 0.14893617021276595,
+        "onset_tolerance_steps": {
+          "0": {
+            "actual_onsets": 89,
+            "predicted_onsets": 10,
+            "matched": 1,
+            "recall": 0.011235955056179775,
+            "precision": 0.1,
+            "mean_absolute_delay_steps": 0.0
+          },
+          "1": {
+            "actual_onsets": 89,
+            "predicted_onsets": 10,
+            "matched": 1,
+            "recall": 0.011235955056179775,
+            "precision": 0.1,
+            "mean_absolute_delay_steps": 0.0
+          },
+          "4": {
+            "actual_onsets": 89,
+            "predicted_onsets": 10,
+            "matched": 5,
+            "recall": 0.056179775280898875,
+            "precision": 0.5,
+            "mean_absolute_delay_steps": 2.8
+          }
+        }
+      },
+      "do": {
+        "prevalence": 0.011578947368421053,
+        "brier": 0.020413651315789472,
+        "average_precision": 0.010811023556331121,
+        "roc_auc": 0.4256795188304773,
+        "precision_at_half": 0.0,
+        "recall_at_half": 0.0,
+        "onset_tolerance_steps": {
+          "0": {
+            "actual_onsets": 25,
+            "predicted_onsets": 2,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          },
+          "1": {
+            "actual_onsets": 25,
+            "predicted_onsets": 2,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          },
+          "4": {
+            "actual_onsets": 25,
+            "predicted_onsets": 2,
+            "matched": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "mean_absolute_delay_steps": null
+          }
+        }
+      }
+    }
+  },
+  "validation_outside_context_ranges": {
+    "fit": {
+      "nh4": 0.013947368421052632,
+      "max_do": 0.0,
+      "flow": 0.0,
+      "temperature": 0.12473684210526316,
+      "air_m3_per_h": 0.0
+    },
+    "calibration": {
+      "nh4": 0.013947368421052632,
+      "max_do": 0.0002631578947368421,
+      "flow": 0.0,
+      "temperature": 0.15736842105263157,
+      "air_m3_per_h": 0.0
+    }
+  },
+  "input_target_alignment_checked": true,
+  "backbone_quantiles_exact": true,
+  "source_sha256": "19d860c6a86aa63f86fc6fba47d1d78011645e0a7ab4c8a82ec0433074ead9ce"
+}

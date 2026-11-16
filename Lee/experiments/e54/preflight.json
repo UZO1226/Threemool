@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "policy_training": false,
+  "test_evaluated": false,
+  "modes": {
+    "history": {
+      "common_parameters_exact": true,
+      "rng_exact": true,
+      "initial_outputs_bitwise_equal": true,
+      "initial_outputs_max_difference": 0.0,
+      "actor_new_column_gradient_max": 0.0023942366242408752,
+      "encoder_new_column_gradient_max": 0.016160689294338226,
+      "optimizer_membership_exact": true,
+      "fixed_encoder_frozen": true,
+      "first11_normalizer_statistics_exact": true,
+      "serialization_replay_exact": true,
+      "scoped_globals_restored": true,
+      "trainable_parameter_count": 406755,
+      "physical_environment_190_steps_exact": true,
+      "reset_and_terminal_history_exact": true
+    },
+    "repeated": {
+      "common_parameters_exact": true,
+      "rng_exact": true,
+      "initial_outputs_bitwise_equal": true,
+      "initial_outputs_max_difference": 0.0,
+      "actor_new_column_gradient_max": 0.00913181435316801,
+      "encoder_new_column_gradient_max": 0.013920286670327187,
+      "optimizer_membership_exact": true,
+      "fixed_encoder_frozen": true,
+      "first11_normalizer_statistics_exact": true,
+      "serialization_replay_exact": true,
+      "scoped_globals_restored": true,
+      "trainable_parameter_count": 406755,
+      "physical_environment_190_steps_exact": true,
+      "reset_and_terminal_history_exact": true
+    }
+  },
+  "same_capacity_exact": true,
+  "runtime_sources": {
+    "history_agent.py": "5cbeb92b2557a4cff197876c0cf787bd7604b19330fbf4a9cbd06dfde3a7ea97",
+    "history_env.py": "723cb29c5b90ba5a3eb6bed5a8cb7a6a6f5629dd33e7fd326bfd9f8adf37edc2",
+    "train_history.py": "7a68ae221bdf1fb8588764d6ea0698001efbc4a657cdddcc9198b22e7e95bb6a"
+  }
+}

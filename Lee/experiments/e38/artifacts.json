@@ -1,0 +1,128 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e38_quantile",
+    "e39_monod"
+  ],
+  "files": {
+    "e38_quantile/quantile_0.05.pkl": {
+      "bytes": 9793717,
+      "sha256": "a660e14d88743c256a8be6feb6d9b49d559427a1117f22965970ff88e9e032dc"
+    },
+    "e38_quantile/quantile_0.25.pkl": {
+      "bytes": 9793717,
+      "sha256": "100a0b88a17f2af27c17395b646cc659f7e09aebad95ce0b79906851b0b2006a"
+    },
+    "e38_quantile/quantile_0.5.pkl": {
+      "bytes": 9793717,
+      "sha256": "e51c243d496f9f99e5483b62b3e1a9909a9a848114f2e5a397af23d93ab39490"
+    },
+    "e38_quantile/quantile_0.75.pkl": {
+      "bytes": 9793717,
+      "sha256": "d1763f883455081ae44fc5487f448ed79ff8d44681d1b99a938d557c8dc0aa25"
+    },
+    "e38_quantile/quantile_0.95.pkl": {
+      "bytes": 9792261,
+      "sha256": "4fc90fd8ddb19cedac9815ef068d1a3ca40d3eb5ca32cff12625bb6f72c8b337"
+    },
+    "e38_quantile/summary.json": {
+      "bytes": 78510,
+      "sha256": "0152221c8718a9aeb553aa80bdf18c75e8b56899597c9f1133e9144d92d4b0d3"
+    },
+    "e39_monod/epoch20_calibration.json": {
+      "bytes": 17615,
+      "sha256": "901c65f5d51c75cf0237d8b31978d075dde7bea9d2fdbedb58cd44b5946079d1"
+    },
+    "e39_monod/epoch20_m0.pt": {
+      "bytes": 296501,
+      "sha256": "63a663d5eb4d488d569c60aa9bfa8eaef3db61aeb1d6dbf2436292e10d6401c0"
+    },
+    "e39_monod/epoch20_m1.pt": {
+      "bytes": 296501,
+      "sha256": "fd80836c127937228a7db7ea46ccc114154a405e1d88afaccf913307b9dcb50c"
+    },
+    "e39_monod/epoch20_m2.pt": {
+      "bytes": 296501,
+      "sha256": "35e3e79abe48409a638a2d494c85e4f4a228db19f8318d769253bbbbbb4eb043"
+    },
+    "e39_monod/epoch20_m3.pt": {
+      "bytes": 296501,
+      "sha256": "d944bfab3add991594d4354903383d4aeb97416e4d10d734b0d596750545720a"
+    },
+    "e39_monod/epoch20_m4.pt": {
+      "bytes": 296501,
+      "sha256": "bd77b83cacb58ef23caed6da1145cd7b01ca9ad751af5053b60c41e7f6b66e6b"
+    },
+    "e39_monod/epoch40_calibration.json": {
+      "bytes": 16210,
+      "sha256": "e6df77ab7eaa98fab62fbf126d935c2d35504ecd555851e65803372cd9871cef"
+    },
+    "e39_monod/epoch40_m0.pt": {
+      "bytes": 296501,
+      "sha256": "5d1b0333690f1251a0ed7190a72fb7b2926b078ada40380791926471ca14d59e"
+    },
+    "e39_monod/epoch40_m1.pt": {
+      "bytes": 296501,
+      "sha256": "b707901bfedb5b95eb88e650c547ef08b2eb0907f6b73a6dd3eaeb4a760d5bda"
+    },
+    "e39_monod/epoch40_m2.pt": {
+      "bytes": 296501,
+      "sha256": "a0f0b77e5d81fd8fd17dcd48164d5ab4c25d2bfc696bf32b3e20b9f75ab48362"
+    },
+    "e39_monod/epoch40_m3.pt": {
+      "bytes": 296501,
+      "sha256": "78a84d0029303d64a95a1e9b2f3f8629d5f648873aa4a5e8021088f69f768e3a"
+    },
+    "e39_monod/epoch40_m4.pt": {
+      "bytes": 296501,
+      "sha256": "e0d6dab559e02cf39bc3baf1d71c9d560aec2bfc88b016ee798e3d7f2140005e"
+    },
+    "e39_monod/epoch80_calibration.json": {
+      "bytes": 16848,
+      "sha256": "b5a05ecf29003a4b2e2c13da3153a2288c8b07c4dfe2523230ca68765898fdf4"
+    },
+    "e39_monod/epoch80_m0.pt": {
+      "bytes": 296501,
+      "sha256": "cabcd129b8030c5f9ebf7461be1897c6e5ece02c37b75c917d3eed95f729fc5a"
+    },
+    "e39_monod/epoch80_m1.pt": {
+      "bytes": 296501,
+      "sha256": "a4d8284544c6cd60028663c050a04c0d769a9d858dbc43d7e74600942cc24e84"
+    },
+    "e39_monod/epoch80_m2.pt": {
+      "bytes": 296501,
+      "sha256": "c70bc4cd70d3a5da5ce19bda3d655045acf24ca38b21962eea75eae46a777e77"
+    },
+    "e39_monod/epoch80_m3.pt": {
+      "bytes": 296501,
+      "sha256": "58bfcbf260b3794d4d2dd9b908127939772f676283ae305cd10f3ae20e8dcafb"
+    },
+    "e39_monod/epoch80_m4.pt": {
+      "bytes": 296501,
+      "sha256": "63a1472aacb0594e00c213c60f5d0888c02730be43023324acfb8e230cbc5b7a"
+    },
+    "e39_monod/summary.json": {
+      "bytes": 71612,
+      "sha256": "9a0ee31677917142872cf8894e6c2efd94ae976498abb3aaab487b5e47d20646"
+    },
+    "e39_monod/train_losses.json": {
+      "bytes": 10152,
+      "sha256": "3e72cc8d560cabe08b6b8ed8a78833c52dfc738322c1ce7e070e9dd21b8d7bb4"
+    }
+  },
+  "archive": {
+    "name": "lee-e38-e39-followup.zip",
+    "bytes": 24178376,
+    "sha256": "971b0f57f086a14dc58532b470fd66838cf72fbb2ef47d3f3f9a288e6d56c571"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 740283817,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

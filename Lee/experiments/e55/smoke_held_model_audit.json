@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "policy_seed": 0,
+  "test_evaluated": false,
+  "smoke_only": true,
+  "fit_transitions": 4560,
+  "held_transitions": 1520,
+  "held_training_dates": 16,
+  "public_features_exact": true,
+  "terminal_executed_air_exact_tolerance": 1e-07,
+  "held_metrics_reproduced_exact": true,
+  "verification": {
+    "passed": true,
+    "probe_rows": 1520,
+    "max_fast_probability_difference": 1.1102230246251565e-16,
+    "max_fast_logit_difference": 0.0,
+    "max_coordinate_order_violation": 0.0
+  },
+  "labels": {
+    "nh4": {
+      "all": {
+        "n": 1520,
+        "positive": 101,
+        "prevalence": 0.06644736842105263,
+        "brier": 0.0035465486946654194,
+        "average_precision": 0.9959354396323986,
+        "roc_auc": 0.9996929925550695,
+        "recall_at_half": 0.9504950495049505
+      },
+      "new_event_subset": {
+        "n": 1419,
+        "positive": 2,
+        "prevalence": 0.0014094432699083862,
+        "brier": 0.0016733135405366836,
+        "average_precision": 0.34090909090909094,
+        "roc_auc": 0.9964714184897672,
+        "recall_at_half": 0.5
+      },
+      "new_event_count": 2,
+      "new_event_recall_count_at_half": 1,
+      "brier_contrasts": {
+        "current_state_persistence": {
+          "brier_difference": 0.0009149697472969989,
+          "paired_date_bootstrap95_ci": [
+            -0.00014500520153517367,
+            0.0026584832535285615
+          ]
+        },
+        "fit_prevalence_constant": {
+          "brier_difference": -0.06096368522346323,
+          "paired_date_bootstrap95_ci": [
+            -0.1652462888853186,
+            0.0013179805010019353
+          ]
+        }
+      }
+    },
+    "do": {
+      "all": {
+        "n": 1520,
+        "positive": 119,
+        "prevalence": 0.07828947368421052,
+        "brier": 0.01914649558641528,
+        "average_precision": 0.906464942015542,
+        "roc_auc": 0.9914946706734086,
+        "recall_at_half": 0.8487394957983193
+      },
+      "new_event_subset": {
+        "n": 1403,
+        "positive": 22,
+        "prevalence": 0.015680684248039915,
+        "brier": 0.01057136236964156,
+        "average_precision": 0.5347796031639578,
+        "roc_auc": 0.9814034625765257,
+        "recall_at_half": 0.5454545454545454
+      },
+      "new_event_count": 22,
+      "new_event_recall_count_at_half": 12,
+      "brier_contrasts": {
+        "current_state_persistence": {
+          "brier_difference": -0.00848508336095314,
+          "paired_date_bootstrap95_ci": [
+            -0.01982973491465084,
+            -0.0010540168873909139
+          ]
+        },
+        "fit_prevalence_constant": {
+          "brier_difference": -0.054842424081174755,
+          "paired_date_bootstrap95_ci": [
+            -0.11993248316030747,
+            -0.00828458744949242
+          ]
+        }
+      }
+    }
+  },
+  "selection_or_refitting": false,
+  "uncertainty_scope": "10000 resamples of held on-policy training dates, conditional on this fitted policy/model. Not policy-seed or plant-generalization uncertainty."
+}

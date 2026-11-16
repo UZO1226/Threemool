@@ -1,0 +1,15 @@
+{
+  "direct_slice_statistics_passed": true,
+  "short_context_unchanged": true,
+  "all_fit_cal_validation_initial_contexts_finite": true,
+  "history_table_stops_at_validation_end": true,
+  "future_validation_scrambling_passed": true,
+  "initial_parent_predictions_exact": true,
+  "common_parameters_exact": true,
+  "common_rng_preserved": true,
+  "new_head_gradient_max": 0.12479273229837418,
+  "nonzero_long_offset_after_update": 0.025249548256397247,
+  "teacher_first_step_matches_recursive": true,
+  "full_day_torch_numpy_passed": true,
+  "test_evaluated": false
+}

@@ -1,0 +1,7 @@
+{
+  "step0_alignment": true,
+  "target_alignment": true,
+  "later_prediction_difference": 4.543865203857422,
+  "finite_nonzero_local_loss_gradient": true,
+  "test_evaluated": false
+}

@@ -1,0 +1,18 @@
+{
+  "original_largest_decline": 0.0558575211611525,
+  "original_reversal_count": 9,
+  "leaf_field_only_clamp_largest_decline": 0.002848346729704909,
+  "corrected_largest_decline": 0.0,
+  "correction": {
+    "sklearn_version": "1.9.1",
+    "original_source_sha256": "cf60fddf8e2fc786c2c548c91016a06f8fd0ece38182aac46372e77c5d5cbf43",
+    "leaves_clipped": 764,
+    "leaves_checked": 2997,
+    "maximum_correction": 0.21808618110276393,
+    "restored": true,
+    "reconstructed_bounds": true,
+    "missing_bound_leaves": 104
+  },
+  "package_function_restored": true,
+  "test_evaluated": false
+}

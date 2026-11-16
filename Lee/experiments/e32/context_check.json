@@ -1,0 +1,7 @@
+{
+  "full_day_zero_offset_equivalence": true,
+  "rng_state_pairing": true,
+  "cached_recursive_agreement": true,
+  "context_head_gradient_sum": 131.3344268798828,
+  "test_evaluated": false
+}

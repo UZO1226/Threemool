@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "policy_training": false,
+  "file_hashes_passed": true,
+  "strict_past_history_and_initialization_exact": true,
+  "previous_public_air_matches_previous_action": true,
+  "all_model_probabilities_exact_max_error": 0.0,
+  "all_and_new_event_metrics_reconstructed": true,
+  "date_intervals_reconstructed": true,
+  "generated_training_transitions": 89300,
+  "held_training_transitions": 14250
+}

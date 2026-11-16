@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "incomplete_study_rejected": true,
+  "archive_and_index_not_written": true,
+  "packager_sha256": "d3e725d61024b62acf1159bb28cff9c45c53d37028a0ecbabc89f7111d4c3e92",
+  "scope": "Actual incomplete e56 study rejected before writing. Full archive contents, CRC, hashes and exclusions require verification after completion."
+}

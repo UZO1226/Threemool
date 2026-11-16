@@ -1,0 +1,6 @@
+{
+  "synthetic_fixture_only": true,
+  "common_reference_checkpoint_required": true,
+  "mutual_air_difference_independently_checked": true,
+  "real_policy_performance_tested": false
+}

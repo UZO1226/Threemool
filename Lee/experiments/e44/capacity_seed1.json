@@ -1,0 +1,130 @@
+{
+  "policy_seed": 1,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "ppolag_fcsrl",
+  "candidate_method": "ppolag_fcsrl_capacity",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 65341.394539187306,
+    "cost": 13.33625,
+    "nh4_viol_pct": 13.8625,
+    "do_viol_pct": 0.17565789473684212,
+    "reward": -29.04061979519436,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 76.625
+  },
+  "candidate_native": {
+    "air_m3": 59359.77252491604,
+    "cost": 13.779375,
+    "nh4_viol_pct": 14.33157894736842,
+    "do_viol_pct": 0.17302631578947367,
+    "reward": -26.38212112218491,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 70.625
+  },
+  "candidate_matched": {
+    "air_m3": 65276.90374449128,
+    "cost": 12.208125,
+    "nh4_viol_pct": 12.623684210526317,
+    "do_viol_pct": 0.2269736842105263,
+    "reward": -29.011957219773905,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 74.0
+  },
+  "matching": {
+    "offset": 0.10546875,
+    "target_air_m3": 65341.394539187306,
+    "achieved_air_m3": 65276.90374449128,
+    "air_error_m3": -64.49079469602293,
+    "relative_air_error": -0.0009869822208545878,
+    "matched_within_one_percent": true,
+    "strict_tolerance_reached": true,
+    "callback_queries": 9,
+    "trace": [
+      {
+        "offset": -2.0,
+        "air_m3": 0.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 0.0,
+        "air_m3": 59359.77252491604,
+        "source": "native"
+      },
+      {
+        "offset": 2.0,
+        "air_m3": 213750.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 1.0,
+        "air_m3": 118528.48162787966,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.5,
+        "air_m3": 86179.19685607078,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.25,
+        "air_m3": 72940.34839714179,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.125,
+        "air_m3": 66383.39658668381,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.0625,
+        "air_m3": 62976.822658870944,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.09375,
+        "air_m3": 64676.1146695842,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.109375,
+        "air_m3": 65488.5875330394,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.1015625,
+        "air_m3": 65074.912057145855,
+        "source": "air-only callback"
+      },
+      {
+        "offset": 0.10546875,
+        "air_m3": 65276.90374449128,
+        "source": "air-only callback"
+      }
+    ]
+  },
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "baseline_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "00c02245298bbdf5f21beff420641ffb108c5ab42e0531388f817a26ea66cf8b",
+    "normalizer.json": "b0da4f8348001531b9c332a33e72b052062252251737e1316a10c42f6c8235b2",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "9e6a7045a72284cb2b29600ac0c913ccab4d5763201546d28d13537882d4b8f1"
+  },
+  "candidate_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "fc7d73d633b57eb71d8f32097ea99b7fbaed12f1409e92c27abe66725bcabea6",
+    "normalizer.json": "ff7b2fb89d702ae3b4188d31ba936df439dbfeeedf7bf3e669055a4fd9886ad7",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "73bc43a21d62f7230d5f7302b1b3a9b9b4bcbbe0193d099c3f86cd28497bda87",
+    "second_head.pt": "06b4d39cc92c4180d92704f7dd98b6c659ecf39cc761d80fdb100366a2cae733",
+    "two_head.json": "05e13e7baf07b5cd2bd94a4b0c4c960131260887617cdba58dce07687e79de1b"
+  },
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "checkpoint_replay_verified": true,
+  "scope": "Exploratory reused validation, frozen surrogate, final policies. Matching changes candidate actions using air only."
+}

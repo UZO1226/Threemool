@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "policy_seed": 0,
+  "base_training_steps": 401280,
+  "extra_environment_training_steps": 0,
+  "test_evaluated": false,
+  "original_gain1_native_replay_passed": true,
+  "gain1_dtype_nonzero_offset_reset_terminal_checks_passed": true,
+  "serialized_gain_half_native_replay_passed": true,
+  "independent_gain_half_native_action_rows": 152000,
+  "executed_volume_reconstruction_passed": true,
+  "matching_not_exercised_in_native_only_smoke": true,
+  "shared_matcher_source_sha256": "81184a6dd2ed97d638a94366ba757f9c831b7c7db74cec0a539721b350449e2e",
+  "runtime_sources": {
+    "air_filter.py": "d0d8e048f5ea22440fccd59a9c008a09b6fbf1425446c1e4613e1ac6035b0539",
+    "audit_filter.py": "8a360e1d43e84ff30022aee2898194d9595a3c71860933d8f7191715d0f80b29",
+    "check_filter.py": "7f851703d0b734e96fe6128197b16f6c4984a537e73239dfb686024f716189d1",
+    "compare_filter.py": "8106b6169cc6210038321dedb5e0541da3cd858e1740520c8fda42e65dc667e7",
+    "evaluate_filter.py": "a2ce00753815b3571da91c20172a2b622458b1e18b234cfcb9f83befb54c6b77",
+    "filter_io.py": "2ea2286b1951e388cc161bb849518a9fc92c5e1f78aad8bed29e4fa214731fe3",
+    "run_study.py": "eb5ea62041af6594bd0fbcfbcfb963b2a3a3e991a47fa275f17c50a7599e2001",
+    "summarize_pipeline.py": "fb958bf5318ff4e10ecc2e8a8bf30ec5e11695db85ce46fd5b19dfe2825c2210"
+  },
+  "full_policy_seed_comparisons_completed": [],
+  "scope": "Original identity replay and one full-budget seed native verification. Native primary quality is not an adoption result. Full five-seed air matching and independent matched-feedback replays remain required. Batch orchestration is compiled/source pinned."
+}

@@ -1,0 +1,69 @@
+{
+  "environment_run": "results\\e40_monotone_quantile",
+  "source_commit": "d31b0687d84b47657c4fdd1040e78fd76d115faa",
+  "selected": "pit_b95_a0.5",
+  "alpha": 0.5,
+  "pit_block_steps": 95,
+  "noise_draws_primary": 8,
+  "noise_draws_sensitivity": 16,
+  "model_members": 5,
+  "frozen_files_sha256": {
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
+    "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+    "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
+    "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
+    "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
+    "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
+    "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
+    "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+  },
+  "gate": {
+    "passed": true,
+    "checks": {
+      "normalized_error_improves_10pct": true,
+      "nh4_error_improves_10pct": true,
+      "nh4_calibration": true,
+      "do_calibration": true,
+      "four_members_calibrated": true,
+      "recursive_action_order": true
+    },
+    "members_calibrated": 4
+  },
+  "test_evaluated": false,
+  "cost_limit": 12,
+  "reward": "-air/9000",
+  "cost": "1[NH4>4]+1[maxDO>2]",
+  "episode_steps": 95,
+  "observation_dim": 11,
+  "air_range_m3_per_hour": [
+    0,
+    9000
+  ],
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "policy_transitions": 401280,
+  "adoption_scope": "Predeclared exploratory surrogate point gates passed. Not independent confirmation, rare DO timing or real-plant causal validation.",
+  "runtime": {
+    "python": "3.11.15",
+    "sklearn": "1.9.1",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "torch": "2.15.0+cpu"
+  },
+  "original_environment_sha256": "cddf40c09f05f9582eb8daf440f1e71cbeab3045366da050d09cdf5982464a5b",
+  "original_environment_path": "kaggle_data\\darrow_surrogate_gbm.pkl",
+  "frozen_inference_sources_sha256": {
+    "Threemool\\Lee\\experiments\\e38\\quantile_dynamics.py": "6fc3b06ce17a122c021b106c559bb457adf6eb5dac7919db447f8d7c949877e9",
+    "Threemool\\Lee\\code\\darrow\\direct_dynamics.py": "8309333e35512aa155c0bdf0347e5b04bb7303bcb131f5d8b535e35ad53e52f4",
+    "Threemool\\Lee\\code\\darrow\\fast_gbm.py": "1e4beb94bde95fea2070c96878a1c819ff5903c3af58dfcb05086409a61adb03",
+    "Threemool\\Lee\\code\\darrow\\surrogate_dw.py": "8ec21ac58cf2eddfd5c2eaf3c6b9fdda2c2620b10d7c7f2a3533315b8037e8c1",
+    "Threemool\\Lee\\code\\darrow\\env_dw.py": "0e0eb3922f28dca96dc36be9302fefb310e564edf531081447cd361eb4130cec"
+  },
+  "text_hashing": "UTF-8 bytes with CRLF normalized to LF for .py and .json; binary files unchanged"
+}

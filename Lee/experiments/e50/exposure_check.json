@@ -1,0 +1,24 @@
+{
+  "zero_augmentation_original_inputs_exact": true,
+  "zero_augmentation_original_targets_exact": true,
+  "first_exposure_state_observed_initial_exact": true,
+  "future_concentration_scrambling_leaves_exposure_exact": true,
+  "future_scrambling_changes_supervision": true,
+  "finite_exposure_inputs": true,
+  "fit_air_within_cap": true,
+  "calibration_or_validation_used_for_exposure": false,
+  "exposure_mean_absolute_difference_by_state": [
+    1.3692897618321593,
+    0.6779525311941172,
+    0.11765658896098867,
+    0.14054991490672258,
+    0.4716915576899466
+  ],
+  "exposure_max_absolute_difference_by_state": [
+    10.74346465036866,
+    7.147393124262036,
+    2.444057768321824,
+    5.891129274088218,
+    4.688149634107534
+  ]
+}

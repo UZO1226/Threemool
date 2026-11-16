@@ -1,0 +1,12 @@
+{
+  "initial_parameters_rng_exact": true,
+  "hand_computed_daily_targets_pass": true,
+  "no_end_original_targets_exact": true,
+  "true_terminal_targets_pass": true,
+  "ppo_buffer_fields_unchanged": true,
+  "inherited_objective_gradients_exact": true,
+  "finite_nonzero_gradients": true,
+  "checkpoint_roundtrip_exact": true,
+  "policy_performance_tested": false,
+  "test_evaluated": false
+}

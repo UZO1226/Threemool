@@ -1,0 +1,84 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e58_conditional_upper"
+  ],
+  "files": {
+    "e58_conditional_upper/audit.json": {
+      "bytes": 1848,
+      "sha256": "ea73d456bdbaebd5a2aef36104bb7e862665235b0f86fa5d27fd57eeb734ffe4"
+    },
+    "e58_conditional_upper/bank_rebuild_check.json": {
+      "bytes": 293,
+      "sha256": "9a8834be2f5768d001b5614a9fe58c688334e36b3d0db24605ccf198968a074d"
+    },
+    "e58_conditional_upper/evaluation_manifest.json": {
+      "bytes": 575,
+      "sha256": "be49a5dce0abc1ad1c50e05952c3ebca7efb2fe53a5ffe2140b39372c2cc78a7"
+    },
+    "e58_conditional_upper/event_audit.json": {
+      "bytes": 13665,
+      "sha256": "56e7796911b408a7ff563824812cd80ac9290085bd46bf8d7e3aac1f7b8c2f48"
+    },
+    "e58_conditional_upper/fit_summary.json": {
+      "bytes": 6304,
+      "sha256": "d2efa87192c88dfe954fc6a4bf990c709f5da2e93f1ead4ae15e8fa5cec2e19b"
+    },
+    "e58_conditional_upper/inner_progress.json": {
+      "bytes": 51857,
+      "sha256": "53114c4168c70571882e0d4986e329cd72bb8739bb1a3fba22ac570e6566fb87"
+    },
+    "e58_conditional_upper/quantile_0.05.pkl": {
+      "bytes": 9793717,
+      "sha256": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4"
+    },
+    "e58_conditional_upper/quantile_0.25.pkl": {
+      "bytes": 9793717,
+      "sha256": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30"
+    },
+    "e58_conditional_upper/quantile_0.5.pkl": {
+      "bytes": 9793717,
+      "sha256": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e"
+    },
+    "e58_conditional_upper/quantile_0.75.pkl": {
+      "bytes": 9793717,
+      "sha256": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5"
+    },
+    "e58_conditional_upper/quantile_0.95.pkl": {
+      "bytes": 9792485,
+      "sha256": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8"
+    },
+    "e58_conditional_upper/selection.json": {
+      "bytes": 63,
+      "sha256": "3e48e0af851685a5f0f20497038d1b24e01c787cd3eaffd714ee8265976f7033"
+    },
+    "e58_conditional_upper/summary.json": {
+      "bytes": 78204,
+      "sha256": "c1000e925a7078aec6d5e03263525f8494389ba2082d4c19fad19f6433d39d3a"
+    },
+    "e58_conditional_upper/support_diagnostic.json": {
+      "bytes": 1187,
+      "sha256": "8016f35d2cf4a66d139b9667de719365532d97b3ef942d124479b46059229598"
+    },
+    "e58_conditional_upper/upper_do_0.99.pkl": {
+      "bytes": 9764078,
+      "sha256": "a2affdffe1bef81c1e4573fb9cac8fb5c64189c60915b0648490acf36cefaef8"
+    }
+  },
+  "archive": {
+    "name": "lee-e58-conditional-do-upper.zip",
+    "bytes": 24046229,
+    "sha256": "e18e84dd88136d8b2826b3380616de2007c21c3cba9a2ba45bb008a4753233d7"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 753652328,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

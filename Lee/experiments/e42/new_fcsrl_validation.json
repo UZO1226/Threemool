@@ -1,0 +1,184 @@
+{
+  "method": "ppolag_fcsrl",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "training_environment": "new",
+      "evaluation_environment": "old",
+      "metrics": {
+        "air_m3": 8717.758852784755,
+        "cost": 87.185,
+        "nh4_viol_pct": 91.2736842105263,
+        "do_viol_pct": 0.5,
+        "reward": -3.8745594901265576,
+        "n_episodes": 200,
+        "days_within_limit_pct": 0.5
+      },
+      "stored_native_metrics_reproduced": false,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s0_eval_old.json",
+      "evaluation_sha256": "dcd17b4356b4de1efca624e120127f58db84c6fff74d7b78b7065624727cd559"
+    },
+    {
+      "policy_seed": 1,
+      "training_environment": "new",
+      "evaluation_environment": "old",
+      "metrics": {
+        "air_m3": 28288.834696852136,
+        "cost": 77.07,
+        "nh4_viol_pct": 80.46842105263158,
+        "do_viol_pct": 0.6578947368421052,
+        "reward": -12.572815420823172,
+        "n_episodes": 200,
+        "days_within_limit_pct": 7.5
+      },
+      "stored_native_metrics_reproduced": false,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s1_eval_old.json",
+      "evaluation_sha256": "1d66f66c629b080f249380eafe32ac31e4bb5f1954e93a4336ebbe6ce3c99975"
+    },
+    {
+      "policy_seed": 2,
+      "training_environment": "new",
+      "evaluation_environment": "old",
+      "metrics": {
+        "air_m3": 38125.51229533274,
+        "cost": 88.03,
+        "nh4_viol_pct": 91.9842105263158,
+        "do_viol_pct": 0.6789473684210526,
+        "reward": -16.944672131258994,
+        "n_episodes": 200,
+        "days_within_limit_pct": 0.0
+      },
+      "stored_native_metrics_reproduced": false,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s2_eval_old.json",
+      "evaluation_sha256": "71a3ec46bd665ca693b7fe95702b42d3faecace168fe3c8640c5b6d5f8246faa"
+    },
+    {
+      "policy_seed": 3,
+      "training_environment": "new",
+      "evaluation_environment": "old",
+      "metrics": {
+        "air_m3": 90616.11596682224,
+        "cost": 72.495,
+        "nh4_viol_pct": 75.3,
+        "do_viol_pct": 1.0105263157894737,
+        "reward": -40.27382931858766,
+        "n_episodes": 200,
+        "days_within_limit_pct": 3.0
+      },
+      "stored_native_metrics_reproduced": false,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s3_eval_old.json",
+      "evaluation_sha256": "0105295e13345f54134117198975cd13314170707ca8dcb7add9ea6c2536006f"
+    },
+    {
+      "policy_seed": 4,
+      "training_environment": "new",
+      "evaluation_environment": "old",
+      "metrics": {
+        "air_m3": 39917.8284817774,
+        "cost": 79.6,
+        "nh4_viol_pct": 82.41578947368421,
+        "do_viol_pct": 1.3736842105263156,
+        "reward": -17.741257103012178,
+        "n_episodes": 200,
+        "days_within_limit_pct": 4.0
+      },
+      "stored_native_metrics_reproduced": false,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s4_eval_old.json",
+      "evaluation_sha256": "8a4a6f863c9977b10a0f6654409203ea0f1285bf180b5064991e10121453b5ce"
+    },
+    {
+      "policy_seed": 0,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 47194.437990665756,
+        "cost": 24.121875,
+        "nh4_viol_pct": 25.35855263157895,
+        "do_viol_pct": 0.03289473684210526,
+        "reward": -20.975305773629223,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 50.6875
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s0_eval_new.json",
+      "evaluation_sha256": "1401c5c5e021e31166123c0e1643353bf69702240c823ef274c54889a2d82322"
+    },
+    {
+      "policy_seed": 1,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 65341.394539187306,
+        "cost": 13.33625,
+        "nh4_viol_pct": 13.8625,
+        "do_viol_pct": 0.17565789473684212,
+        "reward": -29.04061979519436,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 76.625
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s1_eval_new.json",
+      "evaluation_sha256": "d95b9e22855b61c270e8289b072d298a072409dfa72904fa3342da53be963dd1"
+    },
+    {
+      "policy_seed": 2,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 38825.80827255326,
+        "cost": 34.500625,
+        "nh4_viol_pct": 35.83355263157895,
+        "do_viol_pct": 0.48289473684210527,
+        "reward": -17.255914787801448,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 25.5
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s2_eval_new.json",
+      "evaluation_sha256": "ff47dad1b61989cd92778892bef204cf006f47f5d7f3a0ee3c7df7a3bc0dc9a9"
+    },
+    {
+      "policy_seed": 3,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 66228.26037566687,
+        "cost": 9.950625,
+        "nh4_viol_pct": 9.06578947368421,
+        "do_viol_pct": 1.4085526315789474,
+        "reward": -29.434782389185276,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 75.0625
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s3_eval_new.json",
+      "evaluation_sha256": "18b931f42b81df7380d02efa0ae5217b7e1f51582ac0e9c303bad70f29b431ef"
+    },
+    {
+      "policy_seed": 4,
+      "training_environment": "new",
+      "evaluation_environment": "new",
+      "metrics": {
+        "air_m3": 42512.98622940583,
+        "cost": 30.41125,
+        "nh4_viol_pct": 31.923026315789475,
+        "do_viol_pct": 0.08881578947368421,
+        "reward": -18.89466054640259,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 32.5625
+      },
+      "stored_native_metrics_reproduced": true,
+      "evaluation_file": "results\\e44_new_policy_cross\\new_ppolag_fcsrl_s4_eval_new.json",
+      "evaluation_sha256": "4045d8fb99a9b13090ef2a80932e3ef6532b9c22ae8248275fe5e3bfcf292c85"
+    }
+  ],
+  "test_evaluated": false,
+  "scope": "Cross-model final-policy sensitivities, not an agent-extension improvement claim."
+}

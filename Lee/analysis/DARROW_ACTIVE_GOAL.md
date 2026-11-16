@@ -1,0 +1,582 @@
+# Active DARROW research goal
+
+The research stopping condition is verified: e63 passes every original
+matched-air simulation criterion after all five policy-seed comparisons and
+independent native/matched action audits. DARROW_GOAL_AUDIT.md now accounts for
+the complete original objective, including the original environment gate,
+unfavorable safety diagnostics, process-model investigation, test preservation,
+failed trials, reproducible artifacts and branch scope. It does not infer
+environment safety merely from an agent win or certify a real plant.
+
+The portable adapter also completes native/matched replay with108 verified
+source records; DARROW_GOAL_VERIFICATION.json records the current checks.
+No experiment, replay or upload remains live. After final remote publication
+is confirmed, the tracked goal may be completed using that verified research
+improvement as the requested stop condition. Goal-tool state is authoritative;
+this file is an execution snapshot, not a process monitor. Scientific limits
+and optional future independent confirmation remain explicitly documented.
+
+## Preserved continuation history
+
+e54's entire queued pipeline finishes: ten401280-step policies, both five-seed
+matched-air evaluations and the secondary contrast. All air matches/native
+replays/source/budget guards pass. Both variants fail all quality conditions.
+History cost23.627375 versus22.464125 has paired interval[.174750,2.239000];
+NH4 difference+1.169605 points has interval[.099342,2.490395]. Repeated-current
+quality intervals cross zero, as do history-minus-repeated contrasts. Preserve
+all failures and four verified artifact indexes. No process remains queued.
+
+The separate environment summary/figure records why frequency improvement is
+not complete safety prediction: DARROW_ENVIRONMENT_TRADEOFFS.md. e55 now
+finishes the entire sourcebdd9c82 study: five401280-step unchanged base policies,
+full original file/66-update/five-native-evaluation parity, fixed cost fits,
+held-stream audits, matched-air comparisons and independent action audits.
+Every air match and native/serialized/action-choice guard passes. Same-air
+cost22.323750 versus22.464125 has difference interval[-.250625,-.030125].
+DO difference-.080263 percentage points has interval[-.163947,-.022368].
+NH4 difference-.067500 has interval[-.215000,.110526], failing its required
+upper endpoint. Preserve this partial benefit and complete-criterion failure.
+No favorable seed, threshold or revised criterion rescues the trial.
+
+The complete e55 archive is remotely size/SHA verified in draft443333191,
+asset743367629. It preserves checkpoints, correction models, logs, generated
+native/matched/all-query outputs and audits while excluding source data,
+captured training arrays and stochastic banks. No e55 job remains queued.
+All eleven completed extension/control reports remain in DARROW_AGENT_TRIALS.md.
+Known e40 DO onset/ranking, reused-validation and plant-model limitations remain.
+
+e56 completes its entire source0054e89 pipeline, including twenty rate
+regressors, ten held audits, ten native/matched comparisons, ten independent
+action audits, both five-seed reports and the same-base/capture horizon contrast.
+Primary horizon4 cost22.422125 has difference interval[-.103375,.011875] and
+NH4 difference+.033816 points has interval[-.054474,.156447], both failing.
+DO difference-.078026 has interval[-.151974,-.028289], a partial benefit.
+The horizon1 regression control also fails, with unfavorable NH4 interval.
+Horizon4 improves cost/NH4 versus that control but not versus original FCSRL;
+its secondary DO interval crosses zero, so no complete horizon-specific benefit.
+The complete15,403,571-byte archive is remotely size/SHA verified in policy
+draft443333191, asset743519310. No e56 job remains queued. All pinned original
+sources and every failure remain preserved. Proposal geometry is exploratory
+held-state evidence, not safer counterfactual actions or a reason to tune gains.
+
+e57 also completes its full sourcee664aca study. All five actual air matches,
+original source/config/NN guards and independent native/matched feedback
+replays pass. Command changes shrink406.812460 to282.556246m3/h, but same-air
+cost rises22.464125 to23.110875 with difference interval[.355875,.945375].
+NH4 rises23.208684 to23.891579 percent with interval[.386184,.989868] points;
+DO remains uncertain. All quality conditions fail. Native cost/NH4 are also
+unfavorable, so matching is not the sole explanation. Do not retune the gain
+or claim command smoothness as water-quality adoption. The complete archive
+is remotely size/SHA verified in draft443333191, asset753539996. No e57 job
+remains queued and no live process should be inferred from old launch notes.
+
+e58 completes all15 conditional.99 DO heads, all20 inner conditions, selected
+validation,16-draw sensitivity, independent five-member full-day audit,
+event/reference/date uncertainty audit and exact calibration-bank rebuild.
+Selection ispit_b95_a0.25. DO frequency6.766447 percent versus1.157895 observed
+fails all five members. DO Brier.020414, AP.010811 and AUC.425680 fail, with
+0/25 new DO onsets matched. All seven declared adoption conditions fail.
+Independent sklearn/scalar interpolation discrepancy is8.88e-16. The complete
+24,046,229-byte archive is remotely verified in environment draft442901392,
+asset753652328. No e58 evaluator or follow-up job remains queued; handles15632,
+47852,5522 and37292 are terminal. Never infer liveness from earlier launch notes.
+
+The post-outcome calibration-only support diagnostic keeps alpha.25 fixed.
+Unattainable DO event rows fall167 to2 of306, new-event rows4 to2 of26, while
+non-event rows with some upper support rise103 to278. This demonstrates wider
+one-step support, not correct temporal probability or free-running safety.
+Do not retune the tail or adopt the failed candidate. The next useful diagnosis
+is whether temporal-noise conditioning and calibration/deployment context
+differences explain broad support without DO timing/ranking. Define any next
+candidate and controls prospectively after that evidence. Preserve all older
+models and failures. Do not modify the e42 freeze or train policies on e58.
+
+e59 now completes the fixed context/observed-state diagnosis. The first run
+fails on the e51 report path and is retained, then corrected using the preserved
+repository report with setting/Brier authentication. e58 observed-state DO
+Brier.007537/AP.495948 contrasts with recursive.020414/.010811, but matches
+only2/25 new onsets. Calibration/validation actual DO frequencies10.736842/
+1.157895 percent differ sharply;12.473684 percent of validation temperatures
+are outside the fit range. These are descriptive effects, not causal proof or
+an adopted improvement. No e59 process remains live. Next separate feedback
+error accumulation from noise organization with prospectively fixed reset
+horizons/common noise on calibration, then define a candidate from that
+evidence. No additional model or agent is trained by this diagnosis.
+
+e60 now prospectively specifies and launches the calibration-only factorial
+diagnosis under2e4bd6d and now completes all16 conditions. Both reset1/e59
+and reset95/selected-inner controls pass. State resets reduce descriptive
+error; every shuffled-minus-original NH4/DO Brier interval crosses zero.
+Time permutation alone is not a demonstrated repair. Full results are in
+results/e60_feedback_diagnosis and Lee/experiments/e60/summary.json.
+Handle24730 is terminal and no e60 job remains queued. No new model fit.
+
+e61 is prospectively specified at5d6a0e1 before implementation/outcomes.
+The primary is e51 with five-nearest-calibration-day whole-path PIT sampling
+using exactly six episode-start context features and fit-only scaling.
+e58 is a secondary mechanism contrast, not an adoption fallback. All-pool
+bitwise identity, future-input invariance, leave-one-day-out calibration,
+original global validation reconstructions and complete point/event criteria
+remain required. context_paths.py and the calibration-only preflight now pass
+full-pool original path identity, future-input invariance, exclusion/ties,
+independent selected-donor tuples and exact reconstruction of both original
+banks from authenticated weights/data. preflight.json records the two bank
+array hashes and fitting-only scales. Handles79108 and68391 are terminal.
+No candidate validation outcome exists. Next implement the fixed calibration/
+validation evaluator, authenticate the preflight inputs and reconstruct both
+global references before context outcomes, then independently audit paths,
+full-day forecasts, air order, event uncertainty and all adoption conditions.
+Preserve historical runtime sources and no policy training on failed models.
+
+The fixed evaluator now launches ate596ab6 in results/e61_context_sampling,
+handle96253, PID23788 at launch. Recheck actual liveness before waiting or
+restarting. Four leave-one-day-out calibration comparisons precede both
+original global validation reconstructions, which must pass before context
+validation. Primary/secondary common-noise air order and primary16-draw
+sensitivity remain fixed. All four calibration comparisons and both original
+global validation reconstructions now finish exactly. Context validation and
+primary16-draw sensitivity complete. Primary NH4 frequency9.190132 percent
+versus17.315789 observed fails its point gate with0/5 calibrated members;
+16-draw frequency9.390461 confirms this failure. summary.json is not adoption;
+audit_context.py now implements
+independent donors/paths, five-member full-day sklearn/scalar interpolation,
+aggregate and low/high-air replay, recomputed point gates and all reference/
+event/date uncertainty/adoption checks. Under sourcee5f1db7, follow-up handle
+12751 now completes the entire audit after evaluator96253 finishes. Both
+independent donor/full-day/air-order replays pass, with discrepancies1.11e-16
+and2.22e-16, but all seven primary adoption conditions fail. NH4 Brier worsens
+versus e40 with difference interval[.002486,.025563], and DO onset matches are
+0/25. Both parent banks rebuild exactly using rebuild_banks.py. Handles96253,
+12751 and25656 are terminal. No e61 process remains live and no banks uploaded.
+
+e62 is prospectively specified/launched at8f41b0e as a calibration-only
+four-condition NH4-global/context by DO-global/context noise decomposition.
+It freezes e51 and all e61 scaling/pools, requires both all-global/all-context
+calibration identities, and deliberately discloses mixed copula limitations.
+No validation, fitting, policy training or adoption is part of this diagnosis.
+All four conditions and both identity controls complete in
+results/e62_channel_decomposition. Every NH4/DO Brier contrast interval versus
+global/global crosses zero, providing no demonstrated channel-only repair.
+Handle61314 is terminal and no e62 process remains live. The complete e61/e62
+aggregate archive42136 bytes is remotely verified in environment draft442901392,
+asset753764524. Source observations, trajectories and banks are excluded.
+
+Do not select a favorable unproven noise combination or retune k to rescue
+these failures. The next useful review is the exact earlier e55/e56 partial
+cost/DO benefit and e56 proposal geometry, to determine whether its fixed
+action-penalty suppresses useful risk correction enough to justify a new
+prospective agent extension on the unchanged e42 research world. Inspect the
+actual model/policy guards and training-only diagnostic first. That review
+does not solve or waive the unresolved environment safety limitations, change
+the frozen world or reduce the full user objective. No new candidate yet.
+
+That review now supports the prospectively fixed e63 risk-only hard-region
+controller, specified at6b8df22 before implementation/new trajectories.
+Keep h4 models, base policies, candidate radius/grid and e42 freeze unchanged;
+remove only the action penalty, coefficient0 primary, coefficient1 identity
+null. No coefficient search or horizon1 fallback. Full five-policy-seed air/
+cost/NH4/DO criteria remain unchanged, as do all simulator limitations.
+The held preflight finishes all five85120-row sets with exact independent
+sklearn choices, old coefficient1 identity and archived risk-only counts.
+Source hashes and config/boundary checks are in e63/preflight.json. Handle34890
+is terminal. No new controller validation trajectory, model fit or PPO step
+exists. Next implement source/model/config-guarded comparison and independent
+native/matched action replays, verify a full native-only smoke and then the
+all-seed study. An agent gain cannot by itself close the full environment goal.
+
+The comparison and independent action audit now implement all legacy guards,
+strict primary config reload and actual offset-after-wrapper matching without
+editing historical code. Sourcea337095 precedes the first validation query.
+Sequential native-only smoke handle56806 starts compare_trust.py (PID22620 at
+launch), then audit_trust.py --null-check only on success, in
+results/e63_native_smoke/seed_0. Verify actual process/handle before waiting or
+restarting. It must pass original/native/serialized full replay, independent
+sklearn152000 choices, executed air and flat-risk identity. No smoke result is
+complete yet. Do not modify sources recorded by the active comparison/audit.
+The full smoke now passes all152000 independent sklearn choices, exact native
+trajectories, executed air and flat-risk full baseline identity. Compact
+native_smoke.json/native_smoke_audit.json preserve it. Handle56806 is terminal.
+Sourcea5f0d7b implements the guarded full runner and secondary same-base/model
+penalty contrast. Complete study handle82418 now runs in results/e63_study:
+five actual matched-air comparisons, then five independent native/matched
+action audits, unchanged e44 report and the secondary penalty contrast. The
+five comparison PIDs at launch are24084,25396,17672,26776,10112. Check actual
+processes/handle before waiting or restarting; do not infer liveness from
+status.json alone or duplicate stages. All pinned Python sources must remain
+unchanged. No full result exists yet, no hyperparameter search or extra fit.
+
+This e63 launch is now complete: all five actual matches, all native/matched
+independent actions/trajectories/air accounting, the original e44 report and
+same-model penalty contrast finish. Study time1079.796 seconds. No process
+remains live and handle82418 is terminal. All four primary simulation checks
+pass. Matched air52018.537779 versus52020.577481m3, cost21.060125 versus22.464125,
+NH421.844737 versus23.208684 percent and DO.323816 versus.437763 percent.
+Cost/NH4/DO paired interval upper endpoints are negative and all five seeds
+improve each quality metric. Native air instead rises5.803 percent, so native
+quality is an energy/quality tradeoff, not the matched-policy efficiency claim.
+The complete14,263,028-byte archive is remotely verified in policy
+draft443333191 asset753857743. No source data/captures/banks are included.
+e63/results.md and the updated12-trial figure preserve all failures and
+surrogate/reused-validation limitations. Next audit the full original goal
+requirement by requirement, including environment safety limits, source/model
+research, split preservation, portable reproduction and actual GitHub state.
+Do not equate a simulator-only agent win with real-plant safety or waive any
+missing requirement. The full objective remains intact until that audit.
+
+Lee/analysis/package_trust_artifacts.py is prepared outside pinned runtime
+sources. It preserves all five unchanged base/rate weights, full outputs,
+configs and provenance, requiring completed status/audits/report reconstruction.
+An actual partial-study invocation is rejected before any archive/index is
+created. Full successful packaging/upload remains pending completion. Continue
+polling handle82418 or its verified live process tree, not status notes alone.
+The goal remains active. Reasonable alternatives and execution resources
+remain, so no external blocker or completion is claimed. Preserve all failures
+and pinned historical sources, and never use final test41.
+
+The original baseline/history/repeated smoke, serialization, physical trajectory,
+independent native replay and real air-matching checks all passed before full
+training. Both full variants nevertheless failed. No e54 training or matching
+job remains pending. Historical e54 runtime sources remain pinned for replay.
+The prospective e55 README fixed the next hypothesis and controls at921e865
+before new captured-data or correction-model outcomes. Sources and actual
+process handles, not historical planning notes, establish the current state.
+
+## Prior evidence and historical planning notes
+
+The notes below retain earlier experiments and decisions. Any historical
+running/planned state below is superseded by the completed e54 snapshot above.
+Actual process state must always be checked separately.
+
+Both e53 action ranges now complete and independently reconstruct. Lower-air
+history-minus-current NH4 Brier difference-.001271 has held-training-date
+interval[-.001678,-.000868]; DO interval crosses zero and has only3 new events.
+These are feature diagnostics, not agent wins. e54 prospectively specifies a
+17-input causal previous-observation FCSRL and same-size repeated-current
+control, with unchanged costs/PPO/PID/representation targets and all five
+final policy seeds. Implement and check initialization, history/reset/terminal
+adapters, serialization, smoke and comparison pipeline before full training.
+Keep e40 frozen and disclose unresolved DO forecast limits. No external blocker.
+
+e52 completes the original20-setting search and independent tail-specific
+audit. Selected pit_b95_a0.75 fails DO frequency/member agreement: NH4/DO
+18.790789/6.565789 percent versus actual17.315789/1.157895. Brier worsens
+versus e40 for both labels. Zero-tail e51 full validation replay, independent
+indices/slow day and common-noise air ordering pass. Preserve the failure and
+verified artifact archive; historical e40 remains frozen with its known limits.
+
+e53's separate training-only recent-observation probe completes30 classifier
+fits and exact independent reconstruction under source9fcf818. History reduces
+both Brier scores slightly, repeated-current predictions equal current-only,
+but there are only4 new NH4 events in the held-training subset. This is not
+policy learning or agent improvement. A prospectively fixed lower-air coverage
+follow-up runs under source2af8bfc, with actions uniform[-1,0], all other
+settings unchanged and both reports retained. No validation/test episode is
+generated. Finish its independent audit before defining a full policy trial.
+
+e52 implements fixed full-strength safety tail innovations paired with the
+alpha-matched PIT rows. Existing weights and physical clip bounds remain.
+Preflights pass tail signs, zero inside support, zero NO3 tail, calibration
+algebra, independent paired indices for all four blocks, exact zero-tail
+e51 day replay and nonzero-tail common-noise air order. These are implementation
+checks, not generalization evidence. Run the unchanged20-setting search and
+tail-specific independent audit next; do not use the PIT-only auditor.
+
+e51 completes fixed calibration, both audits and its post-primary2x2 diagnostic.
+The original point gate passes5/5 members. NH4/DO frequency16.686842/.963816
+percent is closer to actual17.315789/1.157895, and one-hour NH4 onset matches
+rise3/89 to10/89. However DO still matches0/25 onsets and its Brier worsens
+versus frozen e40, difference+.000890 with exploratory interval
+[.000002956,.002084725]. NH4 Brier difference is uncertain. At fixed alpha,
+PIT-change Brier intervals cross zero. Primary selection stays unchanged;
+no complete environment replacement or agent improvement is claimed.
+
+Next specify a fixed tail-innovation candidate addressing observed calibration
+outcomes outside the bounded quantile support. Keep weights and physical clip
+bounds fixed, preserve a zero-tail reconstruction, action-independent paired
+noise, original20-setting search/gate and final test exclusion. Do not select
+a favorable decomposition cell or declare the earlier design a coding bug.
+
+e51 implements matching PIT to the actual alpha-blended clipped transition,
+with frozen e40 weights and unchanged20-setting search/gate. A preflight
+assumption fails for14 observed NO3 states above fitting-only clip bounds;
+the failure is recorded. Original final clipping and exactly deterministic
+NO3 quantiles resolve it without changing data, weights or criteria. Corrected
+kernel interpolation, alpha0-bank identity, finite PIT and endpoint/outside-NO3
+probes pass. Run the full calibration and both audits next. Quantile support
+still shrinks under blending, so recalibration cannot recover missing tails.
+
+e50 now completes105 fits, selection and both audits. MAE improves, but NH4
+frequency5.117763 versus17.315789 percent fails the unchanged gate. NH4 Brier
+is worse than e40 by+.017702, interval[.002202,.033407]. DO point frequency
+passes but onset/ranking remains weak; no member passes both tolerances.
+All checked implementation/reconstruction/action-order paths pass. Keep this
+failure and its remotely verified artifacts; do not replace e40.
+
+Next keep e40 weights fixed and test PIT calibration against the actual
+alpha-blended conditional distribution, rather than the unblended quantiles
+currently used to estimate PIT. Preserve alpha0 exact identity, original
+selection/gate, event metrics and test exclusion. This is a new calibration
+hypothesis, not a declaration that the earlier design is a coding bug.
+
+e50 implemented one fixed50/50 observed/exposed-state refit of e40 safety quantiles.
+Its preflight passes zero-change array reconstruction, true initial states,
+future-concentration scrambling invariance and finite/capped training inputs.
+Exposure uses158 fitting dates, deterministic median rollouts and no PIT bank
+values or later labels. Original105 fits, constraints, inner20 settings and
+adoption gate remain. Run the independent full-day and event audits after fit.
+No model adoption or policy training is automatic. See e50/README.md for the
+supervision-validity and effective-leaf-support caveats.
+
+e49's next-step diagnostic completes20 fixed classifier fits, both report
+splits and independent prediction/metric reconstruction. NH4 current-state
+information is useful: observed-e40 Brier.028417 versus daily free.126486,
+paired interval[-.115582,-.080892]. DO onset remains unresolved: the direct
+classifier recalls1/25 new events at.5, observed-e40 recalls0/25, and the
+classifier's new-onset Brier is worse than predicting none. Do not adopt this
+classifier as an environment or tune its threshold on validation.
+
+Next test e40 quantile training with exposure to its own accumulated state
+errors, retaining observed-state supervision and a zero-change reconstruction
+control. Specify the training-only augmentation and fixed selection before
+fitting. The e40 historical policy freeze is unchanged; final test is unused.
+
+e41 now completes all five model members and both audits. It fails the original
+adoption gate: NH4 frequency9.14145 versus17.31579 percent and DO2.55592 versus
+1.15789 percent. NH4 Brier is not clearly better than e34, and all25 DO onsets
+remain missed within an hour. Independent reconstruction and action ordering
+pass; no implementation fault was identified by these checks. Results and
+remotely verified checkpoint/log artifacts are in e41. e40 is not replaced.
+
+The completed next-step study separates event learnability from forecast drift.
+Use fitting dates only for a diagnostic event predictor, preserve calibration
+and validation separation, compare current-state persistence, and explicitly
+distinguish observed-state prediction from free-running simulation. This is
+a diagnostic hypothesis, not an adopted probability model or policy result.
+No external blocker prevents this next useful action.
+
+e48's recovered five-seed evaluation is complete and fails all three quality
+conditions. Matched cost24.266875, NH4 violation24.97171053 percent and DO
+violation.57236842 percent compare with baseline22.464125,23.20868421 and
+.43776316. All paired intervals cross zero. Recovery verification matches
+all144105 overlapping numeric values exactly. Policies were not retrained;
+interrupted partial outputs and completed retry are archived together.
+
+The separate forecasting experiment launched was the previously prepared e41
+long causal operating history. Its new preflight passes finite initial context
+for every fit/calibration/validation episode, exclusion of final test, future
+scrambling, zero-head parent equivalence and full-day Torch/NumPy agreement.
+Keep the e34 control and original selection/gate unchanged. Compare onset,
+ranking, Brier and date uncertainty as well as aggregate error/frequency before
+any adoption decision. e40 remains frozen for historical policy comparisons.
+No automatic environment replacement or policy training follows an e41 point
+gate pass. Extra capacity requires a matched control before a history-specific
+causal claim. The goal remains active with no external blocker.
+
+## Frozen environment and limits
+
+e40 passes all unchanged e16 point-estimate gates and independent sklearn/full-day
+reconstruction. Selection is pit_b95_a0.5, five structural members, eight primary
+noise draws and sixteen-draw sensitivity. NH4/DO frequency is13.4993/.7211 percent
+versus actual17.3158/1.1579. Normalized MAE.775476 and NH4 MAE1.977722 improve over
+the original predictor. e42/environment_freeze.json pins weights, PIT bank,
+authorized input and inference sources. Do not change them during paired studies.
+
+Onset prediction remains weak. NH4 AP improves.30003 to.42675, but probability-.5
+recall drops.53191 to.18997 and one-hour onset matching drops10/89 to3/89.
+DO AP.01149 and AUC.48475 are near chance; no DO onset is matched. Brier error
+improves over the original for both constraints, but DO is worse than persistence.
+See e40/results.md and event_reference_audit.json. Passing frequency gates does
+not establish accurate onset prediction or real-plant causal safety.
+
+![Exploratory environment frequency audit](figures/darrow_environment_progress.png)
+
+The bands show point-frequency criteria only. Member ranges are not confidence
+intervals and do not establish agent improvement. Failed e16 to e39 experiments
+remain in their experiment folders and archived checkpoints/logs. e41's causal
+history alternative is now fitted and fails adoption; its full audit is retained.
+
+## Completed work
+
+- All15 e42 baseline jobs finish: five original-model FCSRL, five frozen-model
+  FCSRL and five frozen-model PPO seeds. Each uses401280 transitions and cost
+  limit12. Both simulators use the same terminal reward/air accounting fix;
+  the historical reset alias, unchanged states/costs and correction are tested.
+- All ten cross-model evaluations of the five original-model final policies
+  finish in results/e44_old_policy_cross. Native metrics reproduce checkpoint
+  replay. Compact evidence is e42/old_baseline_validation.json.
+- e43 split and independent two-head summed-cost capacity-control implementations
+  pass target-boundary, shared initialization/RNG, original-objective limit,
+  gradient, EMA, serialization and one-update pipeline checks. These checks
+  are not policy seeds or performance evidence.
+- Full split seed0 and its formal matched-air evaluation finish. At air47194.44
+  versus47206.56m3, cost increases24.121875 to28.468125 and NH4 increases25.35855
+  to29.96645 percent. DO decreases.03289 to0. The air mismatch is.02568 percent.
+  Native split uses84893.57m3 and cost12.1325. This is a retained negative
+  single-seed result, not a five-seed conclusion. See e44/split_seed0.json.
+- Source, checkpoint and budget guards, air-only matching, five-seed reporting
+  and common-reference capacity contrast are implemented. Reports reject smoke
+  runs, missing/duplicate seeds, mixed references and excessive actual air gaps.
+
+## Latest verified continuation
+
+All ten split/capacity policies finish401280 transitions. All five split
+matched evaluations finish. split_comparison.json fails the prespecified
+criterion: matched mean cost22.464125 to24.681125, NH4 percentage23.20868
+to25.57026 and DO percentage.43776 to.40987. All three paired uncertainty
+intervals cross zero. Every seed matches air within1 percent. This neither
+proves improvement nor establishes consistent worsening.
+
+All five capacity comparisons finish, with matched mean cost24.6515 versus
+baseline22.464125. Its three quality uncertainty intervals cross zero and the
+prespecified improvement criterion fails. The split/capacity common-reference
+contrast also fails. Both match-reference and mutual air checks pass. These
+are retained negative or inconclusive results, not an external blocker.
+capacity_comparison.json and capacity_contrast.json hold full five-seed data.
+Both methods' generated evaluation queries and weights are uploaded to the
+existing draft with verified remote size/SHA256 in the artifact indexes.
+
+e45 prepares a single-head severity-supervision candidate. Training-only label
+and support checks, original objective/gradient/RNG equivalence, serialization
+and380 actual environment-transition equivalence checks pass. A6080-step smoke
+and its independent1600-case final-checkpoint replay finish successfully.
+All five full severity seeds and the queued matched-air comparison finish
+successfully. Both runner handles exit0. comparison.json fails all three
+quality conditions: mean matched cost22.771375 versus22.464125, NH4 percentage
+23.26632 versus23.20868 and DO percentage.70355 versus.43776. All paired
+uncertainty intervals cross zero and all air matches pass1 percent. No
+improvement is established. Full weights/logs and generated query evaluations
+are remotely verified in e45/artifacts.json and evaluation_artifacts.json.
+Never count the earlier smoke as performance evidence or restart these jobs.
+
+Next investigate train/validation distribution and final training-cost gaps.
+The existing risk-stratified sampling rule already failed in e15 on another
+environment; do not present it as untested or invent a novelty claim. A repeat
+on the fixed e40 model would be a separate model-sensitive controlled test,
+only justified after the diagnostic. Preserve the current criteria and all
+earlier failures; reasonable alternatives remain and there is no blocker.
+
+The completed diagnostic finds training/validation mean temperature19.714
+versus15.962C and initial NH4 violation fractions.07447 versus.3. The old risk
+sampler barely changes temperature to19.605C. e46 instead prepares a fixed
+coldest-training-quarter half-probability sampler, with no validation-fitted
+cutoff/probability, unchanged FCSRL and uniform matched-air evaluation.
+Its weighted mean temperature18.801C still leaves a gap. This is a different
+sampling intervention, not evidence of a causal mechanism or novelty. Run its
+real-transition/reset checks and smoke/replay before any full training.
+
+e46 now passes those checks and6080-step smoke/independent1600-case replay.
+All five full seeds and matched evaluations complete, and the pipeline exits0.
+e46/comparison.json fails the full criterion: cost24.65 versus22.464125,
+NH4 percentage25.64921 versus23.20868 and DO percentage.29816 versus.43776.
+Only the DO paired interval lies below zero. All reference-air matches pass.
+Weights/logs and complete generated evaluation queries are remotely verified
+in e46/artifacts.json and evaluation_artifacts.json. Do not restart these jobs.
+
+Next: e47 compares the existing five PPO final policies at the same original
+FCSRL air, kind=diagnostic. No fitting or new extension claim is involved.
+This missing matched-air ablation can inform whether another representation
+intervention is justified. Preserve all existing criteria, seeds and failures.
+The e47 five-worker diagnostic launches in results/e47_ppo_diagnostic at
+source commit34b9f26 and now finishes successfully with all five pairs.
+Matched PPO cost32.399375 versus22.464125 and NH4 percentage34.09303 versus
+23.20868 are worse in every seed, with paired intervals strictly positive.
+DO decreases.01158 versus.43776 percent. The full criterion fails; the result
+does not support removing representation learning as the solution, nor does
+it isolate the sole cause. Queries are archived in e47/evaluation_artifacts.json.
+
+Next: audit existing feasibility predictions and day-end bootstrap effects
+on fixed training-only rollouts before selecting another actor intervention.
+audit_feasibility_targets.py is launched against the five frozen FCSRL policies,
+16 training dates, five members and two draws per seed. No fit or test data
+is involved; do not interpret these as independent performance seeds.
+
+The audit completes. Existing scores rank risky training transitions but the
+continuation target partly depends on the same head, limiting calibration
+inference. Day-end bootstraps change mean targets by.00360 to.02584 and the
+last24-step mean by.01316 to.09415. e48 prepares a daily-horizon auxiliary
+target, with unchanged actual/PPO costs, bootstraps and networks. It is a
+different objective, not a demonstrated bug fix or performance improvement.
+Its hand-target, no-end equivalence, input/RNG/gradient and serialization checks
+pass. A6080-step smoke plus independent replay is launched in results/e48_smoke
+and results/e48_smoke_replay. Inspect that real chain before waiting/restarting.
+Full fitting must wait for a successful smoke and checkpoint replay.
+
+Both e48 smoke and its independent1600-case final-checkpoint replay now pass.
+All five full seeds complete in results/e48_full at source commit3f584a9,
+401280 transitions each. The same shell starts all five matched-air evaluations
+in results/e48_comparison and will write the report only after they succeed.
+Actual evaluation processes are confirmed live. Weights/full logs are uploaded
+and remotely verified in e48/artifacts.json, excluding original data/banks.
+Do not launch another copy. Inspect the live pipeline before waiting or
+restarting, and preserve its pinned training/evaluation Python sources until
+all jobs finish. The full criterion, fixed environment and final test
+reservation remain unchanged. No e48 performance improvement is established.
+
+The original e48 evaluation is subsequently verified stopped: its tool handle
+is missing, no matching Python jobs remain, and its recorded PIDs are stale.
+There are no completed seed summaries. Keep results/e48_comparison untouched.
+Evaluation only restarts in results/e48_comparison_retry, same policies/inputs
+and criteria, source head0882614, five workers and chained report. No training
+is repeated. See e48/interruption.json. Inspect the replacement batch, not the
+old handle/PIDs, and compare overlapping partial outputs before accepting it.
+
+![Complete matched-air extension effects](figures/darrow_agent_extensions.png)
+
+The figure shows all five paired seed differences and each mean/bootstrap
+interval from the four complete reports. Intervals are unadjusted exploratory
+summaries under repeated validation, not independent confirmation or a
+population guarantee. All four candidates fail the full criterion.
+
+Capacity seed0 at matched air47157.57m3 increases cost24.121875 to28.294375.
+Seed1 at matched air65276.90m3 decreases cost13.33625 to12.208125, but DO
+increases.17566 to.22697 percent. These are retained mixed single-seed results,
+not a five-seed improvement. Complete five-seed reports now retain these cases.
+
+Both ten-case cross-model evaluation batches and the five PPO checkpoint
+replays finish. New validation JSONs and model_sensitivity.json preserve the
+strong simulator dependence. The sensitivity figure compares native air and
+does not establish matched-air dominance. Split artifacts for all five seeds
+are uploaded to the existing draft with verified size and SHA256.
+
+Action diagnosis does not support more zero-air actions or sharper air changes
+as the split seed0 failure explanation. Encoder synchronization logs do not
+demonstrate a large single-update shock. Training-only observation probes are
+descriptive, not causal. DARROW_NEXT_HYPOTHESIS.md records the severity-aware
+auxiliary rationale; e45 now contains its checked implementation and smoke.
+
+## Prior launch record and next actions
+
+- results/e43_first_pair contains completed split and capacity-control seed0.
+  Do not duplicate either job.
+- results/e43_remaining completes all eight split/capacity seed1..4 jobs.
+- results/e44_new_policy_cross and results/e44_ppo_native are complete.
+- Capacity seed0 matching finishes in results/e44_capacity_first, seed1 in
+  results/e44_capacity_seed1 and seeds2..4 in results/e44_capacity_later. Split
+  seeds1..4 matching finishes in results/e44_split_remaining. Exact commands and
+  definitions are in e42/e43/e44 READMEs. Never overwrite a prior result folder.
+- Both five-seed reports and the common-reference capacity contrast finish.
+  Keep native results and actual air mismatch visible. Seed counts, members,
+  noise draws and dates are different uncertainty units. Matching changes
+  candidate actions using air only; it is not a native-policy dominance claim.
+- If the complete comparison fails, diagnose consistent train/validation and
+  action-distribution differences before defining another justified extension.
+  Do not replace the predefined matching rule or omit seed0 to rescue a result.
+  Continue reasonable alternatives rather than declaring failure an external block.
+
+Do not modify e42/darrow training Python sources while policy runners are active:
+source hashes are locked and later launches reject changed implementations.
+Evaluation batch manifests similarly pin their runtime source files.
+
+## Artifacts and constraints
+
+Policy draft release id443333191, tag lee-e42-e44-policy-comparison-20261113,
+contains separate completed original-FCSRL, frozen-FCSRL and PPO subsets with
+verified remote size/SHA256 in e42 artifact indexes. Archive existence is not
+an improvement claim. Source data and residual/PIT banks are excluded. Earlier
+environment archives and PIT reconstruction are in DARROW_REPRODUCTION.md.
+
+Work remains under Lee/ on lee/darrow-safety-calibration. Preserve original
+FCSRL commit d882b91054d52c7a63a18a21f7db67bbbed82b63 and Apache license, keep
+final test41 unused, and run scope/paper checks before pushing. No agent or
+real-plant safety claim is justified. e63's scoped simulation improvement is
+verified; audit every remaining full-objective requirement before completion.

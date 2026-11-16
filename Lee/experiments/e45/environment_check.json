@@ -1,0 +1,12 @@
+{
+  "training_cases_only": true,
+  "transitions": 380,
+  "all_original_outputs_exact": true,
+  "noise_and_post_reset_state_exact": true,
+  "outgoing_terminal_labels_exact": true,
+  "same_zero_cost_set": true,
+  "maximum_auxiliary_observed": 1.568503975868225,
+  "policy_training": false,
+  "test_evaluated": false,
+  "policy_performance_tested": false
+}

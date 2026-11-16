@@ -1,0 +1,54 @@
+{
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "full_pool_original_paths_bitwise_both_banks": true,
+  "future_state_exogenous_air_invariance": true,
+  "leave_self_out_five_and_global_pools": true,
+  "deterministic_tie_and_chronological_order": true,
+  "independent_donor_and_tuple_copy_exact": true,
+  "reproducibility_exact": true,
+  "fit_context_count": 158,
+  "both_selected_banks_reconstructed_bitwise": true,
+  "bank_array_sha256": {
+    "e51": "5a6ffd1ed43cf6be6def0f332bc3e9d1c4f6a2b7cfa54ea73844b6e278ec5e54",
+    "e58": "9fb96ac7b36aec71350e12e3ddab13dabc2767456b74223630cbb98c1d4469c7"
+  },
+  "feature_order": [
+    "nh4",
+    "do1",
+    "do2",
+    "do3",
+    "temperature",
+    "flow"
+  ],
+  "fit_context_mean": [
+    2.2979871378008516,
+    0.508734856547462,
+    0.3093370743190844,
+    0.7253479280669867,
+    20.012492667537597,
+    2374.2333667917756
+  ],
+  "fit_context_sd": [
+    2.0769577428740775,
+    0.491051658877736,
+    0.3567890716546858,
+    0.5990523543594426,
+    1.7417421490207643,
+    1501.8781016323398
+  ],
+  "sd_floor_used": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "weight_fitting": false,
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "source_sha256": {
+    "context_paths.py": "9429974302d15d2a96a90d5ffee89d164a33b119852a6af32796a8cda310f55f",
+    "preflight.py": "d7f2ac2ed691dff2ac383e75ed8389a6a19469267b3c2c2caec53505b6885ceb"
+  }
+}

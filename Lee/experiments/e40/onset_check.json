@@ -1,0 +1,6 @@
+{
+  "carried_in_events_excluded": true,
+  "maximum_cardinality_matching_passed": true,
+  "tolerance_and_empty_cases_passed": true,
+  "real_policy_performance_tested": false
+}

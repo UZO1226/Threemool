@@ -1,0 +1,8 @@
+{
+  "synthetic_fixture_only": true,
+  "real_policy_performance_tested": false,
+  "improvement_and_regression_distinguished": true,
+  "air_mismatch_independently_rechecked": true,
+  "all_five_unique_seeds_required": true,
+  "smoke_runs_rejected": true
+}

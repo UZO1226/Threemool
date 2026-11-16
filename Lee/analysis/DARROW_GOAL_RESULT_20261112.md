@@ -1,5 +1,10 @@
 # DARROW environment and extension investigation
 
+Status correction: the user resumed the goal after rejecting the earlier
+completion judgment. The decision below is a historical e16 to e25 status,
+not proof of an external blocker or completion of the renewed objective.
+e26 and subsequent work continue under the active goal.
+
 ## Decision
 
 An improvement over base FCSRL has not been verified. The current stopping

@@ -1,0 +1,163 @@
+{
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "same_base_rate_models_and_reference_air_verified": true,
+  "metrics": {
+    "candidate_native": {
+      "air_m3": {
+        "risk_only_mean": 55039.34524798277,
+        "original_penalty_mean": 51987.80024975362,
+        "risk_only_sd": 10687.18546948076,
+        "original_penalty_sd": 12890.973730192767,
+        "paired_difference": [
+          3407.656603933101,
+          -278.6835335794676,
+          3451.619836266618,
+          1112.4570857871731,
+          7564.674998738374
+        ],
+        "paired_mean_difference": 3051.54499822916,
+        "paired_seed_bootstrap95_ci": [
+          745.6052642630777,
+          5451.6203836537825
+        ]
+      },
+      "cost": {
+        "risk_only_mean": 19.078999999999997,
+        "original_penalty_mean": 22.425,
+        "risk_only_sd": 8.496103663499964,
+        "original_penalty_sd": 10.543435605863964,
+        "paired_difference": [
+          -2.821875000000002,
+          -1.109375,
+          -4.616875,
+          -1.1787500000000009,
+          -7.003125000000001
+        ],
+        "paired_mean_difference": -3.346000000000001,
+        "paired_seed_bootstrap95_ci": [
+          -5.361000000000001,
+          -1.4796250000000009
+        ]
+      },
+      "nh4_viol_pct": {
+        "risk_only_mean": 19.73434210526316,
+        "original_penalty_mean": 23.25052631578948,
+        "risk_only_sd": 9.171360659423529,
+        "original_penalty_sd": 11.346637223857117,
+        "paired_difference": [
+          -2.962500000000002,
+          -1.1092105263157883,
+          -4.909868421052632,
+          -1.2532894736842106,
+          -7.346052631578946
+        ],
+        "paired_mean_difference": -3.5161842105263164,
+        "paired_seed_bootstrap95_ci": [
+          -5.6402631578947355,
+          -1.5375
+        ]
+      },
+      "do_viol_pct": {
+        "risk_only_mean": 0.3488157894736842,
+        "original_penalty_mean": 0.35473684210526313,
+        "risk_only_sd": 0.49609285401635667,
+        "original_penalty_sd": 0.4754934836334136,
+        "paired_difference": [
+          -0.007894736842105267,
+          -0.058552631578947356,
+          0.04999999999999999,
+          0.012499999999999956,
+          -0.02565789473684211
+        ],
+        "paired_mean_difference": -0.005921052631578956,
+        "paired_seed_bootstrap95_ci": [
+          -0.037763157894736846,
+          0.027368421052631563
+        ]
+      }
+    },
+    "candidate_matched": {
+      "air_m3": {
+        "risk_only_mean": 52018.53777884504,
+        "original_penalty_mean": 52004.11467693809,
+        "risk_only_sd": 12906.94227657456,
+        "original_penalty_sd": 12913.423965142469,
+        "paired_difference": [
+          4.9427961890542065,
+          -5.521860191664018,
+          -4.086980308347847,
+          18.45454537658952,
+          58.327008469168504
+        ],
+        "paired_mean_difference": 14.423101906960074,
+        "paired_seed_bootstrap95_ci": [
+          -2.8549769621939047,
+          37.5827421184862
+        ]
+      },
+      "cost": {
+        "risk_only_mean": 21.060125000000003,
+        "original_penalty_mean": 22.422125,
+        "risk_only_sd": 9.781346668851382,
+        "original_penalty_sd": 10.547666475857943,
+        "paired_difference": [
+          -1.0700000000000003,
+          -1.1206250000000004,
+          -2.7699999999999996,
+          -0.3200000000000003,
+          -1.5293749999999982
+        ],
+        "paired_mean_difference": -1.3619999999999997,
+        "paired_seed_bootstrap95_ci": [
+          -2.1102499999999997,
+          -0.7219999999999999
+        ]
+      },
+      "nh4_viol_pct": {
+        "risk_only_mean": 21.84473684210526,
+        "original_penalty_mean": 23.2425,
+        "risk_only_sd": 10.54407934759763,
+        "original_penalty_sd": 11.358905623868564,
+        "paired_difference": [
+          -1.1118421052631646,
+          -1.1322368421052627,
+          -2.897368421052626,
+          -0.284868421052634,
+          -1.562500000000007
+        ],
+        "paired_mean_difference": -1.397763157894739,
+        "paired_seed_bootstrap95_ci": [
+          -2.1913157894736806,
+          -0.7098684210526344
+        ]
+      },
+      "do_viol_pct": {
+        "risk_only_mean": 0.3238157894736842,
+        "original_penalty_mean": 0.35973684210526313,
+        "risk_only_sd": 0.47949253241594836,
+        "original_penalty_sd": 0.48607278297211864,
+        "paired_difference": [
+          -0.01447368421052632,
+          -0.047368421052631574,
+          -0.01842105263157895,
+          -0.05197368421052628,
+          -0.04736842105263158
+        ],
+        "paired_mean_difference": -0.035921052631578944,
+        "paired_seed_bootstrap95_ci": [
+          -0.04921052631578946,
+          -0.0218421052631579
+        ]
+      }
+    }
+  },
+  "test_evaluated": false,
+  "new_training": false,
+  "scope": "Secondary reused-five-seed contrast, cannot rescue primary failure versus original FCSRL."
+}

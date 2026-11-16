@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "test_evaluated": false,
+  "policy_seed": 0,
+  "horizons": [
+    {
+      "horizon": 1,
+      "fit_transitions": 6080,
+      "held_transitions": 6080,
+      "base_policy_training_steps": 401280,
+      "inference_checks": {
+        "passed": true,
+        "probe_rows": 6080,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      },
+      "held_metrics_reconstructed": true,
+      "native_replay_checks": {
+        "base_checkpoint_files_exact": true,
+        "base_native_replay": true,
+        "corrected_serialized_independent_native_replay_exact": true
+      },
+      "matching": {
+        "offset": 0.0,
+        "target_air_m3": 47194.437990665756,
+        "achieved_air_m3": 47203.478829958476,
+        "air_error_m3": 9.040839292720193,
+        "relative_air_error": 0.0001915657793087464,
+        "matched_within_one_percent": true,
+        "strict_tolerance_reached": true,
+        "callback_queries": 0,
+        "trace": [
+          {
+            "offset": -2.0,
+            "air_m3": 0.0,
+            "source": "analytic clipped endpoint"
+          },
+          {
+            "offset": 0.0,
+            "air_m3": 47203.478829958476,
+            "source": "native"
+          },
+          {
+            "offset": 2.0,
+            "air_m3": 213750.0,
+            "source": "analytic clipped endpoint"
+          }
+        ]
+      },
+      "action_audit": {
+        "independent_sklearn_choices_exact": true,
+        "native_replay_exact": true,
+        "action_rows": 152000,
+        "candidate_choice_counts": [
+          151814,
+          100,
+          48,
+          38,
+          0
+        ],
+        "changed_action_fraction": 0.0012236842105263158,
+        "candidate_clipped_fraction": 0.18246447368421054,
+        "mean_predicted_rate_change": -6.040099465357214e-05,
+        "mean_squared_adjustment": 3.0838815789473685e-05
+      }
+    },
+    {
+      "horizon": 4,
+      "fit_transitions": 6080,
+      "held_transitions": 6080,
+      "base_policy_training_steps": 401280,
+      "inference_checks": {
+        "passed": true,
+        "probe_rows": 6080,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      },
+      "held_metrics_reconstructed": true,
+      "native_replay_checks": {
+        "base_checkpoint_files_exact": true,
+        "base_native_replay": true,
+        "corrected_serialized_independent_native_replay_exact": true
+      },
+      "matching": {
+        "offset": 0.0,
+        "target_air_m3": 47194.437990665756,
+        "achieved_air_m3": 47189.205812839864,
+        "air_error_m3": -5.232177825891995,
+        "relative_air_error": -0.00011086428928186048,
+        "matched_within_one_percent": true,
+        "strict_tolerance_reached": true,
+        "callback_queries": 0,
+        "trace": [
+          {
+            "offset": -2.0,
+            "air_m3": 0.0,
+            "source": "analytic clipped endpoint"
+          },
+          {
+            "offset": 0.0,
+            "air_m3": 47189.205812839864,
+            "source": "native"
+          },
+          {
+            "offset": 2.0,
+            "air_m3": 213750.0,
+            "source": "analytic clipped endpoint"
+          }
+        ]
+      },
+      "action_audit": {
+        "independent_sklearn_choices_exact": true,
+        "native_replay_exact": true,
+        "action_rows": 152000,
+        "candidate_choice_counts": [
+          151901,
+          85,
+          5,
+          9,
+          0
+        ],
+        "changed_action_fraction": 0.0006513157894736842,
+        "candidate_clipped_fraction": 0.18249605263157895,
+        "mean_predicted_rate_change": -2.1892429860905412e-05,
+        "mean_squared_adjustment": 1.2952302631578947e-05,
+        "flat_rate_null_full_day_exact": true
+      }
+    }
+  ],
+  "same_base_and_capture_subsets_verified": true,
+  "full_horizon_policy_seed_results_completed": [],
+  "runtime_sources": {
+    "audit_rates.py": "b00868bd4601fc1281241313d58eb8d00374d88db3a81a976729dcd7d6ff2406",
+    "check_rate_model.py": "d6619879949c0ddce7a143c423f29667b5b89e8ce168c393e2aad29299cce4be",
+    "check_targets.py": "9775d9dc5405d8315c50fa55d3ab6b34751c5a28b3ab6177cdd62c52941bc9eb",
+    "compare_rates.py": "6aabad91f4440997b869288f14d985fc713a69653d4c5ae1ca08565da100e758",
+    "fit_rates.py": "da882aa1e95151e0467cfb05409507a4b5570ca103b5467a23ddf78cb1ec76e4",
+    "horizon_contrast.py": "97d350002847f64fe8397170a3e4fb6373b366cea932d4d8fc7c4d4fc2416b06",
+    "rate_io.py": "66cb129a3014350bdc0becad7daaf269eb51dfae9c580256a3ccba0b9c26c30b",
+    "rate_model.py": "5bf6683adec08d5a6d987535c7d83043bdba3bf378c8c2f455973601c99a839b",
+    "run_study.py": "3624ca729b839069d5c7f145c67ad3384c60ea8b367897d1edc47b5f7e28b121",
+    "streams.py": "f5b59bc98c8c8ebb901b5c282e922c81393c6e36402ae760ed6b668fbbbe3b70",
+    "summarize_smoke.py": "e4a85dee9c30f16b275fc689ebd34d336fc8799fd8b462616e98f69619b919af",
+    "targets.py": "51286d96f6f597380ae087653f1ddff3e2a3e40a7ee6120a1775fc3e72d33053"
+  },
+  "scope": "Both small regressor fits on update1 with update2 held, attached to an existing full-budget base policy. Not five complete regressor/control trials. Batch orchestration is compiled/source pinned; underlying operations are exercised."
+}

@@ -1,0 +1,36 @@
+{
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "new_policy_training": false,
+  "experiments": [
+    "e49_next_step"
+  ],
+  "files": {
+    "e49_next_step/models.pkl": {
+      "bytes": 7784396,
+      "sha256": "d3b97d247755506702317a99e8ab87bff59058e2ec7d8741bd312a1e30a03985"
+    },
+    "e49_next_step/summary.json": {
+      "bytes": 130882,
+      "sha256": "557042cb90114465b69c00334af31b56d475ddf9369fc4d7a8e285daa5207fa4"
+    },
+    "e49_next_step/train.log": {
+      "bytes": 3486,
+      "sha256": "7aa76e86d3755105928e8c9f0720e083f9be077ecbdfe9d8f902d060cfc43983"
+    }
+  },
+  "archive": {
+    "name": "lee-e49-next-step-diagnostic.zip",
+    "bytes": 3232227,
+    "sha256": "a77e60908bdf736741d79b7735b1d7b7ca6800e113f3139075cf3c36dc02efee"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 742512420,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

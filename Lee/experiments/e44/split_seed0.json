@@ -1,0 +1,141 @@
+{
+  "policy_seed": 0,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "ppolag_fcsrl",
+  "candidate_method": "ppolag_fcsrl_split",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 47194.437990665756,
+    "cost": 24.121875,
+    "nh4_viol_pct": 25.35855263157895,
+    "do_viol_pct": 0.03289473684210526,
+    "reward": -20.975305773629223,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 50.6875
+  },
+  "candidate_native": {
+    "air_m3": 84893.57113663136,
+    "cost": 12.1325,
+    "nh4_viol_pct": 12.50328947368421,
+    "do_viol_pct": 0.26776315789473687,
+    "reward": -37.73047606072505,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 76.0625
+  },
+  "candidate_matched": {
+    "air_m3": 47206.55790107092,
+    "cost": 28.468125,
+    "nh4_viol_pct": 29.966447368421054,
+    "do_viol_pct": 0.0,
+    "reward": -20.980692400475963,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 49.875
+  },
+  "matching": {
+    "offset": -0.7275390625,
+    "target_air_m3": 47194.437990665756,
+    "achieved_air_m3": 47206.55790107092,
+    "air_error_m3": 12.119910405162955,
+    "relative_air_error": 0.00025680802486852507,
+    "matched_within_one_percent": true,
+    "strict_tolerance_reached": true,
+    "callback_queries": 11,
+    "trace": [
+      {
+        "offset": -2.0,
+        "air_m3": 0.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": 0.0,
+        "air_m3": 84893.57113663136,
+        "source": "native"
+      },
+      {
+        "offset": 2.0,
+        "air_m3": 213750.0,
+        "source": "analytic clipped endpoint"
+      },
+      {
+        "offset": -1.0,
+        "air_m3": 31763.549451478757,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.5,
+        "air_m3": 60519.72417579498,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.75,
+        "air_m3": 46011.962869665585,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.625,
+        "air_m3": 53414.51691391412,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.6875,
+        "air_m3": 49536.764816783834,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.71875,
+        "air_m3": 47823.29659159295,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.734375,
+        "air_m3": 46853.71943164151,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.7265625,
+        "air_m3": 47257.76289067464,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.73046875,
+        "air_m3": 47023.07224043179,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.728515625,
+        "air_m3": 47142.51551841851,
+        "source": "air-only callback"
+      },
+      {
+        "offset": -0.7275390625,
+        "air_m3": 47206.55790107092,
+        "source": "air-only callback"
+      }
+    ]
+  },
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "baseline_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "candidate_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "b0b225fa2b3da5583616126b63c6c3dfa2e4196e7058f39ae121c959db1fdcf1",
+    "normalizer.json": "dfb1e3e0d6e0e7eef9477b778fc05bc5b89fb0d5bb0b8c6400e4c2b02be00548",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "62f825a43f43baa426da58617bc86df772a6ac84a38f735082366ae91380f391",
+    "second_head.pt": "b2f50eb332f652d15865727dc6472171ad9b470346e8b5af1cdc078385384562",
+    "two_head.json": "088e6e513bb07cbb627bc53ebf0cece0203b9a1eac09a2174df505d26e8a4628"
+  },
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "checkpoint_replay_verified": true,
+  "scope": "Exploratory reused validation, frozen surrogate, final policies. Matching changes candidate actions using air only.",
+  "interpretation": "Single policy seed only. At matched air, total cost and NH4 worsen; no improvement established. Complete all five seeds and capacity control."
+}

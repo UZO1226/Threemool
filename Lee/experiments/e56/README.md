@@ -1,0 +1,152 @@
+# Lee/e56: Four-step cost-rate correction with a one-step regression control
+
+## Prospectively fixed hypothesis
+
+e55 reduces total cost and DO violation at matched air but fails the complete
+criterion because NH4 remains uncertain. Test whether a one-hour target can
+capture slower NH4 consequences that a next15-minute target misses. This is
+a hypothesis, not a proven explanation of e55. Preserve all e55 results and
+the original criterion; do not tune its successful seeds, radius or penalty.
+
+Use the same five unchanged11-input FCSRL policies and passively captured
+401280-transition streams from e55. Full byte/config/training-record parity
+with the original references is already established. No additional PPO run,
+environment transition or model-oracle label is collected. Supervised fitting
+and evaluation compute are additional. These remain five policy training
+seeds0..4, not ten independent seeds or extra seeds for every classifier.
+
+## Target and controlled change
+
+Primary method: predict the average NH4 indicator and average DO indicator
+over the next four executed transitions (one hour when four steps remain).
+For each trajectory position, include its own transition cost and up to three
+following costs, stopping at the95-step day boundary. Divide by the number
+of available transitions. Never include an autoreset day's cost, another
+environment lane, a later update or a future observation as an input.
+This is an expected short-horizon violation rate, not the probability of any
+violation in the window. Its MSE must not be mislabeled binary-event Brier.
+
+Required control: the same regression implementation, features, model size,
+constraints, fitting stream, seeds and controller, with horizon1. Thus the
+primary/control difference is the label horizon. The e55 classifier is an
+existing reference, not a sufficient loss-matched horizon control.
+
+Both variants use current public11 observations and the executed normalized
+action,12 features. Retain NO3, with no monotonic constraint: although it is
+absent from the frozen safety transition, future behavior-policy actions can
+depend on it. The horizon1 regression control retains it too, so feature and
+loss changes versus e55 cannot be attributed to horizon alone.
+
+Fit the first52 whole updates,316160 transitions, and use the last14 updates,
+85120 transitions, for diagnostics only. Deploy the same models without
+refitting on the holdout. Labels use only transitions within their own split
+and day. The original captured behavior is stochastic and changes across PPO
+updates; its future actions differ from final deterministic evaluation. These
+are approximation and distribution-shift limitations, not causal plant labels.
+
+Each label uses one HGB regressor, squared-error loss,200 iterations, learning
+rate.05,15 leaves, minimum40 samples per leaf,L2=1, no early stopping or weights.
+Use fixed regressor seeds5600/5601, distinct from policy seeds. Clip outputs
+to[0,1]. Keep NH4 signs positive in NH4 and negative in DO1/2/3, previous air
+and current action; use the opposite signs for DO. Other public features are
+free. For future behavior-policy costs these are inductive assumptions, not
+guaranteed feedback-trajectory order. Report held error and failures honestly.
+Use constants for a constant fitting target and retain that policy seed.
+
+## Fixed controller and verification
+
+Use the unchanged final FCSRL deterministic action b and candidate offsets
+ordered[0,-.125,.125,-.25,.25], clipped to[-1,1]. Score predicted NH4 rate plus
+DO rate plus(a-b)^2. Keep penalty1 and stable first occurrence for ties. A
+flat-risk null must recover the original policy exactly. Do not tune horizon,
+penalty, radius, regressor loss or threshold using validation.
+
+Before outcomes, independently verify horizon4 and horizon1 labels against
+explicit within-day sums, terminal partial windows, lane/update/split boundaries
+and future/reset exclusion. Require exact horizon1 identity with captured costs,
+bounded finite targets, constant-target handling, serialized predictions,
+public feature construction, fast/sklearn numeric agreement and the actual
+fixed candidate choices. Preserve all original base checkpoints and sources.
+
+Run both variants for all five policy seeds. Require original checkpoint,
+config, budget, source/freeze identity and native replay guards, plus independent
+corrected-controller replay. Apply the unchanged quality-blind air matcher
+after correction, never inside it. Preserve native outcomes, every air query,
+actual match error and all failed seeds.
+
+Primary adoption criterion remains all five air matches within1 percent,
+cost and NH4 paired-seed95 interval upper endpoints below zero, and DO upper
+endpoint at most zero. Use10000 paired policy-seed resamples and sample SD
+ddof1. The horizon1 regression control is not substituted if the primary fails.
+Also report horizon4 minus horizon1 at the same common reference, checking
+reference checkpoint and mutual air identity. An uncertain secondary contrast
+prevents attributing a primary gain specifically to a longer horizon.
+
+No final test, actual costs/rewards/thresholds, frozen environment, team protocol,
+Paper or other member's files change. Preserve previous DO onset/ranking and
+reused-validation limits. Do not claim real-plant safety or an independent
+confirmation from these exploratory comparisons. Captures and original data
+remain outside Git and archives; fitted controller models/logs and reproducible
+source/summary hashes belong in the authorized draft artifacts.
+
+The specification was committed atc94654d after complete e55 verification and
+before any e56 label generation, fitting, smoke or performance outcome.
+target_check.json now passes on all2,006,400 original captured transitions.
+Horizon1 equals recorded costs exactly; horizon4 matches independent explicit
+sums on updates1/52/53/66 per seed, including terminal partial windows and
+reset/future perturbation exclusion. Public inputs retain current NO3 exactly.
+The core regression/inference implementation is committed atad32767.
+model_check.json passes synthetic raw/clipped sklearn agreement, serialization,
+monotonicity, constant-target fallback and independent fixed-candidate choice.
+Both actual small-data smoke fits now pass: fit update1 and diagnose update2,
+6080 transitions each, attached to the existing401280-step seed0 base policy.
+This differs from the older6080-step PPO smokes and does not supply a full
+regressor trial. No PPO learning or environment transition is added.
+
+smoke_pipeline.json requires both held-error reconstructions, serialized
+independent native replays, fixed-air matching and152000 independently rebuilt
+action choices per horizon. The horizon4 constant-rate null also matches the
+original full-day policy exactly. Both native smoke policies already fall
+inside the original strict air tolerance, so these smokes use zero extra air
+queries; nonzero offset operations remain the unchanged verified e55 matcher.
+No smoke quality point estimate selects a parameter or replaces a full result.
+
+The full fixed study runs from the workspace as follows:
+
+```powershell
+python Threemool/Lee/experiments/e56/run_study.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --captures results/e55_study/policies/new_ppolag_fcsrl --baselines results/e42_baselines/new_ppolag_fcsrl --out results/e56_study
+```
+
+The runner pins original/common/e55/e56 Python sources and queues both horizons
+for all five original policy seeds, with horizon4 primary. It fits20 scalar
+regressors, audits held data, runs ten final-controller native/matched pairs,
+independently audits actual actions, then invokes the unchanged e44 reports
+and a same-base/capture/reference-air horizon contrast. Preserve all logs and
+partial outputs; do not duplicate a live queued study. The full-regressor
+results are not yet complete. No original e55 Python source is edited.
+
+The complete study launches under source0054e89 in results/e56_study. All ten
+full regressor fits finish and pass their real-data fast/sklearn and order
+checks. All held audits, comparisons, independent action audits, both full
+reports and the secondary contrast now finish. Neither horizon passes the
+complete original-FCSRL improvement criterion. Primary horizon4 improves DO
+only; its cost/NH4 intervals cross zero. It improves cost/NH4 versus the
+matching regression control, but this does not establish original-FCSRL
+superiority or the complete horizon-specific criterion. results.md preserves
+all failures and partial effects. No e56 job remains queued. Preserve the
+pinned Python sources for replay. The two horizons predict
+different target variables, so lower held MSE across horizons alone does not
+prove a better predictor or controller; compare each against its own controls
+and use the unchanged physical-cost matched-air reports for adoption.
+
+proposal_diagnostic.md records prediction flatness and the fixed penalty's
+effect on held logged-state candidate choices. It adds no simulator label or
+parameter selection. Its risk-only alternatives are not evaluated controllers
+and must not be interpreted as safer actions or evidence for tuning a penalty.
+
+artifacts.json verifies the combined15,403,571-byte archive in policy draft
+443333191, asset743519310, SHA256
+072be5a2fef3b64c52e447166e07d65bc9d797cc746a3590d3b4442537f3ece1.
+It preserves both fitted horizons, full logs, every generated evaluation and
+audit, final reports, source manifests and the five unchanged final base
+checkpoints. Original data, captures and stochastic banks are excluded.

@@ -1,0 +1,131 @@
+# Lee/e42: Freeze the validated quantile environment and train paired baselines
+
+e40 passes the unchanged environment point gates and independent reconstruction.
+Freeze its five quantile checkpoints, PIT bank, selected alpha.5/block95,
+normalization inputs and model summary before controller comparisons. The
+manifest records exact SHA256 values. It does not claim independent validation,
+accurate rare DO timing or real-plant causal identification. See e40/results.md.
+
+## Environment adapter
+
+Preserve11 observations, total air[0,9000]m3/h, recorded zone fractions, reward
+-air/9000, cost1[NH4>4]+1[maxDO>2], cost limit12 and95 steps per daily episode.
+Derive fallback fractions only from official188 training dates, correcting
+unused legacy full-table metadata. Do not rewrite the canonical prepared file.
+The unchanged train/validation records never exercise that fallback.
+
+Adapter checks also reproduced a historical terminal-step alias in VecAerationEnv:
+reset overwrites self.prev_air, which shares storage with the local executed
+air. The returned last-step reward and info air then reflect the next day's
+initial air. A constant4500m3/h training-day probe returns4416.41 at the final
+step in the historical wrapper. The new adapter and a separate original-model
+wrapper both preserve the executed action before reset. State predictions,
+costs and terminal observations are unchanged in the independent regression.
+Apply this correction to every newly trained baseline and extension. Preserve
+old code and historical results; those old policies are sensitivity references,
+not a fully paired control for this corrected runner. New old-model baselines
+therefore use the same correction to separate transition-model effects.
+
+Each training episode samples a full95-step inner-calibration PIT block for
+its structural member. Keep the NO3 quantile index.5 and the original state
+blend.5. Episode noise randomness is independent of policy RNG and day sampling.
+Hold member fixed for each760-step training update as in the original runner.
+For deterministic-action validation, use common eight-noise-draw paths for all
+40 dates and five members,1600 episodes; reproduce the e40 factual replay.
+Eight stochastic draws are an explicitly required difference from v1.1's
+deterministic200-episode surrogate, not a change to the team protocol.
+
+Check independent rollout identity, reward/cost arithmetic, final-step terminal
+observation before reset, noise reproducibility, common-noise air order and
+train-only fallback before any new training. Reject test split construction.
+
+## Paired baselines and separation
+
+Run original PPO-Lag and original FCSRL on this frozen environment, seeds0..4,
+401280 transitions each,8 environments,760 steps and66 updates. Keep all PPO,
+representation, PID and cost-limit settings fixed to the original DARROW
+application. Use final policies as primary. Intermediate checkpoints are
+diagnostic and must not replace a failing final result.
+
+Also train the same original FCSRL seeds and budget on the original delta GBM.
+Evaluate old-trained and new-trained final policies on both simulators without
+retuning. This separates changing the environment from changing the agent.
+No direct claim that rewards/costs from different environments are comparable.
+Native evaluations and matched-air evaluations are both required. A separate
+e43 extension changes representation supervision only within the frozen e40
+environment, with a capacity control and the same five policy seeds.
+
+Before seeing extension outcomes, specify matching by an additive deterministic
+policy action offset in[-2,2], clipped to the existing action bounds. Target
+each paired FCSRL baseline's native validation air using common stochastic
+paths. The matching routine may inspect only mean air, never reward, cost or
+NH4/DO outcomes. Find a bracket with an air-only grid and bisect for at most25
+queries, retaining the nearest air value with a fixed smallest-offset tie
+rule. Endpoints supply zero/maximum air; report any discontinuity or failure
+to reach the target. This adjusts the policy being evaluated and must be
+reported alongside native results. It does not establish a better native
+controller. Only call it matched if residual air mismatch is within1 percent.
+Include the feasible matching range and do not extrapolate. A training-air
+calibrated fixed offset is an optional transfer sensitivity, not permission
+to select offsets using water-quality outcomes.
+Report NH4 and DO separately, total cost, air, per-seed values and paired
+10000-resample seed bootstrap intervals. Five seeds are exploratory. Improvement
+requires lower total cost and NH4 at matched air without higher DO, supported
+by seed uncertainty; preserve trade-offs and failures.
+
+Runtime and source hashes follow the freeze manifest. Original FCSRL commit
+d882b91054d52c7a63a18a21f7db67bbbed82b63, Apache-2.0. Existing wrappers are
+the DARROW application, not a reproduction of every paper hyperparameter.
+No original source or official protocol modification. Raw data, checkpoints
+and full logs remain outside Git and are archived with checksums.
+
+## Executed commands
+
+Run from the workspace above Threemool with the recorded Python runtime and
+OMP_NUM_THREADS, OPENBLAS_NUM_THREADS, MKL_NUM_THREADS and NUMBA_NUM_THREADS=1.
+
+```powershell
+python Threemool/Lee/experiments/e42/check_reset.py --data kaggle_data/darrow_15min.pkl --out Threemool/Lee/experiments/e42/reset_alias_check.json
+python Threemool/Lee/experiments/e42/check_env.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out Threemool/Lee/experiments/e42/environment_check.json
+python Threemool/Lee/experiments/e42/run_policies.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --out results/e42_baselines --parallel 5 --jobs old:ppolag_fcsrl:0 old:ppolag_fcsrl:1 old:ppolag_fcsrl:2 old:ppolag_fcsrl:3 old:ppolag_fcsrl:4 new:ppolag_fcsrl:0 new:ppolag_fcsrl:1 new:ppolag_fcsrl:2 new:ppolag_fcsrl:3 new:ppolag_fcsrl:4 new:ppolag:0 new:ppolag:1 new:ppolag:2 new:ppolag:3 new:ppolag:4
+```
+
+Use a fresh output path on reproduction. Original-model final policies all
+complete and are independently evaluated on both simulators. Their final and
+intermediate checkpoints/logs are in a [draft release](https://github.com/UZO1226/Threemool/releases),
+tag lee-e42-e44-policy-comparison-20261113, release id443333191. Only the five
+listed original-model runs are in lee-e42-original-model-baselines.zip.
+Its65,789,399 bytes and SHA2562905f91736a475cb0b6400971e6c8bda9f5ef25e2c51072d2b3db4c5ac1093da
+match GitHub. See old_baseline_artifacts.json and old_baseline_validation.json.
+Archive presence is not an improvement claim. Frozen-model PPO remains a
+separate baseline job group and must also finish before the full report.
+
+All five frozen-model FCSRL runs also complete. Their separate archive is
+lee-e42-frozen-model-fcsrl-baselines.zip,65,793,083 bytes, SHA256
+8ce417b78a2a2ffaafaab5007f6f2975dabaf96eb95148e39db16d1e8df71739.
+Remote size and digest match new_fcsrl_artifacts.json in the same draft release.
+This is a completed baseline subset, not an extension-performance conclusion.
+
+## Completed FCSRL cross-model sensitivity
+
+All20 final-policy evaluations across the two training and two evaluation
+simulators complete. Own-environment checkpoint replay matches stored final
+metrics. new_fcsrl_validation.json and model_sensitivity.json retain every
+policy seed. Within each figure row, the evaluation simulator is held fixed.
+Air is not matched between policies in this sensitivity figure, so the native
+cost/air differences are not evidence of agent dominance. The large transfer
+differences also prevent treating one simulator's scores as real-plant truth.
+
+![Final-policy model sensitivity](figures/model_sensitivity.png)
+
+Dots are five policy seeds and black whiskers are sample SD, not confidence
+intervals. The dashed cost reference is12 counts per simulated daily episode.
+The simulated episode count includes model/noise cases and is not the number
+of independent policy seeds or a count of actual compliant calendar days.
+
+The logged encoder-sync KL diagnostic is also descriptive. Maximum analytic
+probe KL is.00683 for original-model FCSRL and.00317 for frozen-model FCSRL,
+against the configured PPO target reference.02. These different estimators
+and the limited1024-state probe do not establish a global trust-region bound,
+but they do not demonstrate a large single-update EMA shock as the failure
+mechanism. See encoder_sync_diagnostic.json. No hyperparameter was retuned.

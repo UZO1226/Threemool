@@ -1,0 +1,14 @@
+{
+  "common_parent_parameters_exact": true,
+  "common_parent_rng_preserved": true,
+  "split_capacity_initial_parameters_exact": true,
+  "second_head_independently_initialized": true,
+  "hand_computed_reset_termination_targets_passed": true,
+  "component_vs_sum_labels_passed": true,
+  "redundant_head_original_objective_and_common_gradients_passed": true,
+  "nonzero_finite_gradients": true,
+  "ema_passed": true,
+  "checkpoint_round_trip_exact": true,
+  "test_evaluated": false,
+  "policy_performance_tested": false
+}

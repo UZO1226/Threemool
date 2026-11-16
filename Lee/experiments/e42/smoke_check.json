@@ -1,0 +1,16 @@
+{
+  "old": {
+    "steps": 6080,
+    "elapsed_seconds": 19.827999999994063,
+    "metrics_finite": true,
+    "completed_training_save_and_validation": true
+  },
+  "new": {
+    "steps": 6080,
+    "elapsed_seconds": 79.64100000000326,
+    "metrics_finite": true,
+    "completed_training_save_and_validation": true
+  },
+  "bank_reproduction_sha256": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+  "test_evaluated": false
+}

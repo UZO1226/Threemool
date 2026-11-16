@@ -1,0 +1,349 @@
+{
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "controller_parameters_changed": false,
+  "states": "Same last14 captured PPO-training updates, not validation or candidate native trajectories.",
+  "methods": [
+    {
+      "policy_seed": 0,
+      "methods": [
+        {
+          "horizon": 1,
+          "risk_model_sha256": "90797854105e4ae9eb96889143a5b4096cbb3bfb05c1544865d42e0a03e8b8ed",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.2231907894736842,
+          "fixed_penalty_changed_action_fraction": 0.006555451127819549,
+          "risk_change_suppressed_by_penalty_fraction": 0.21663533834586465,
+          "risk_only_choice_counts": [
+            66122,
+            3382,
+            3653,
+            7989,
+            3974
+          ],
+          "fixed_penalty_choice_counts": [
+            84562,
+            424,
+            6,
+            128,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.0007670551035288082,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0005278824972857902,
+            0.009957935179323198
+          ],
+          "selected_predicted_rate_gain_mean": 0.00038534010388163595,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.6667998120300752
+        },
+        {
+          "horizon": 4,
+          "risk_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.24095394736842105,
+          "fixed_penalty_changed_action_fraction": 0.010009398496240602,
+          "risk_change_suppressed_by_penalty_fraction": 0.23094454887218044,
+          "risk_only_choice_counts": [
+            64610,
+            3682,
+            4819,
+            5586,
+            6423
+          ],
+          "fixed_penalty_choice_counts": [
+            84268,
+            717,
+            7,
+            126,
+            2
+          ],
+          "best_predicted_rate_gain_mean": 0.0009750399793645036,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0008257932607349598,
+            0.023275802651056346
+          ],
+          "selected_predicted_rate_gain_mean": 0.0004726016624398152,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.6033599624060151
+        }
+      ]
+    },
+    {
+      "policy_seed": 1,
+      "methods": [
+        {
+          "horizon": 1,
+          "risk_model_sha256": "aeadb54483ea86c7a027cc515656f15089958b71e095420f7624b275cc133767",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.22690319548872181,
+          "fixed_penalty_changed_action_fraction": 0.0004581766917293233,
+          "risk_change_suppressed_by_penalty_fraction": 0.22644501879699247,
+          "risk_only_choice_counts": [
+            65806,
+            2872,
+            3043,
+            7890,
+            5509
+          ],
+          "fixed_penalty_choice_counts": [
+            85081,
+            19,
+            15,
+            5,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.0002014672705778017,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0005002387075351711,
+            0.002415667624356784
+          ],
+          "selected_predicted_rate_gain_mean": 1.7280313623192954e-05,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.6907424812030075
+        },
+        {
+          "horizon": 4,
+          "risk_model_sha256": "1c049797f3739eeaf14e88f09a79d6b09a7b6f79fff9c5b4f94df7bde50a86d7",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.3159187030075188,
+          "fixed_penalty_changed_action_fraction": 0.0006109022556390978,
+          "risk_change_suppressed_by_penalty_fraction": 0.3153078007518797,
+          "risk_only_choice_counts": [
+            58229,
+            4938,
+            3956,
+            7191,
+            10806
+          ],
+          "fixed_penalty_choice_counts": [
+            85068,
+            45,
+            0,
+            7,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.0002849795143574646,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0007853202395295677,
+            0.0030380537448427974
+          ],
+          "selected_predicted_rate_gain_mean": 2.7054404103027833e-05,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.550187969924812
+        }
+      ]
+    },
+    {
+      "policy_seed": 2,
+      "methods": [
+        {
+          "horizon": 1,
+          "risk_model_sha256": "4aae653e69342618440eec942fa4b9d74ddf47bfdaaaf4d98887a3da3b48c687",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.2396029135338346,
+          "fixed_penalty_changed_action_fraction": 0.02042998120300752,
+          "risk_change_suppressed_by_penalty_fraction": 0.21917293233082707,
+          "risk_only_choice_counts": [
+            64725,
+            3811,
+            2288,
+            10146,
+            4150
+          ],
+          "fixed_penalty_choice_counts": [
+            83381,
+            1312,
+            20,
+            407,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.002134912434237609,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0028000117728170376,
+            0.0670256291857465
+          ],
+          "selected_predicted_rate_gain_mean": 0.0012311556718090858,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.6640977443609023
+        },
+        {
+          "horizon": 4,
+          "risk_model_sha256": "477eeb3a1f00f7d44dd17d1b12a89c2811bec7f017f3861df449cf78d755bbaf",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.264203477443609,
+          "fixed_penalty_changed_action_fraction": 0.03161419172932331,
+          "risk_change_suppressed_by_penalty_fraction": 0.23258928571428572,
+          "risk_only_choice_counts": [
+            62631,
+            4040,
+            1952,
+            10592,
+            5905
+          ],
+          "fixed_penalty_choice_counts": [
+            82429,
+            1937,
+            95,
+            659,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.003288430972739288,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.003352261477453791,
+            0.08894114711663402
+          ],
+          "selected_predicted_rate_gain_mean": 0.001932477544468265,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.64375
+        }
+      ]
+    },
+    {
+      "policy_seed": 3,
+      "methods": [
+        {
+          "horizon": 1,
+          "risk_model_sha256": "330979799a7aeeca6f55fac9fdbe524ad9b376dfb32c53a16944bf961977f236",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.2430921052631579,
+          "fixed_penalty_changed_action_fraction": 0.020335996240601503,
+          "risk_change_suppressed_by_penalty_fraction": 0.22275610902255638,
+          "risk_only_choice_counts": [
+            64428,
+            3249,
+            4211,
+            6672,
+            6560
+          ],
+          "fixed_penalty_choice_counts": [
+            83389,
+            1177,
+            32,
+            521,
+            1
+          ],
+          "best_predicted_rate_gain_mean": 0.0020595414884287963,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0009519867213118038,
+            0.0769686527268018
+          ],
+          "selected_predicted_rate_gain_mean": 0.0013875409612650194,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.673484492481203
+        },
+        {
+          "horizon": 4,
+          "risk_model_sha256": "90bf3773602ca4be1518f62eae45d1f6ec6af51f8a1dc2a66019061d870fc772",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.33482142857142855,
+          "fixed_penalty_changed_action_fraction": 0.024400845864661656,
+          "risk_change_suppressed_by_penalty_fraction": 0.3104205827067669,
+          "risk_only_choice_counts": [
+            56620,
+            2681,
+            4139,
+            5817,
+            15863
+          ],
+          "fixed_penalty_choice_counts": [
+            83043,
+            1609,
+            53,
+            415,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.002314303683195123,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0022873920931125854,
+            0.06859629282005786
+          ],
+          "selected_predicted_rate_gain_mean": 0.0012577400016090723,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.5866071428571429
+        }
+      ]
+    },
+    {
+      "policy_seed": 4,
+      "methods": [
+        {
+          "horizon": 1,
+          "risk_model_sha256": "f51fabb70fb732be8becad318d79672418918b8bca0bf9f43e4ccc395a065078",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.2372532894736842,
+          "fixed_penalty_changed_action_fraction": 0.009445488721804512,
+          "risk_change_suppressed_by_penalty_fraction": 0.2278078007518797,
+          "risk_only_choice_counts": [
+            64925,
+            3841,
+            3763,
+            5783,
+            6808
+          ],
+          "fixed_penalty_choice_counts": [
+            84316,
+            536,
+            40,
+            228,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.0012778599794400786,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.0017718504011222946,
+            0.021384749467100738
+          ],
+          "selected_predicted_rate_gain_mean": 0.0006740009012834743,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.6614074248120301
+        },
+        {
+          "horizon": 4,
+          "risk_model_sha256": "bc6d1b989bad8e269033d3cd2576e2b479e5c7b0329e562d7c245662a5db6c13",
+          "held_rows": 85120,
+          "risk_only_changed_action_fraction": 0.3678806390977444,
+          "fixed_penalty_changed_action_fraction": 0.016282894736842104,
+          "risk_change_suppressed_by_penalty_fraction": 0.35159774436090224,
+          "risk_only_choice_counts": [
+            53806,
+            3691,
+            5121,
+            6242,
+            16260
+          ],
+          "fixed_penalty_choice_counts": [
+            83734,
+            971,
+            175,
+            240,
+            0
+          ],
+          "best_predicted_rate_gain_mean": 0.0018871346236093408,
+          "best_predicted_rate_gain_quantiles_50_90_99": [
+            0.0,
+            0.002976289441304444,
+            0.046033607363287106
+          ],
+          "selected_predicted_rate_gain_mean": 0.0007944742621201064,
+          "flat_predicted_risk_fraction_tolerance_1e_minus12": 0.5320723684210527
+        }
+      ]
+    }
+  ],
+  "generator_sha256": "ad03246266e81653c67380dbe10ec1ded09427b9061199a50db5ff46d44c4619",
+  "scope": "Exploratory within-model proposal geometry only. Risk-only choices are not evaluated controllers and predicted gains are not causal or measured safety gains. Different target horizons do not make these scores independent performance comparisons.",
+  "actual_generation_source_sha256": "b7bbe74081bbcb8988de169df625b0fdc83c33e99144c58c27957082bbd81d22",
+  "source_label_revision": {
+    "from": "flat_predicted_risk_fraction_tolerance_1e12",
+    "to": "flat_predicted_risk_fraction_tolerance_1e_minus12",
+    "numeric_values_changed": false,
+    "prior_source_reconstructed_by_reversing_single_label_replacement": true
+  }
+}

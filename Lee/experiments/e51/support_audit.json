@@ -1,0 +1,226 @@
+{
+  "test_evaluated": false,
+  "validation_evaluated": false,
+  "model_fitted": false,
+  "scope": "Observed-state one-step inner calibration only, not a free-running impossibility bound.",
+  "uncertainty_unit": "30 calibration dates, not five independent policy seeds or pooled member rows.",
+  "probability_bound": "Uniform-member lower and upper event probabilities assuming arbitrary within-support noise per row.",
+  "brier_bound": "Mean squared distance of binary target from attainable probability interval. Optimistic; fixed pooled PIT can be more restricted.",
+  "diagnostic_does_not_select_settings": true,
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "dates": [
+    "2021-10-11",
+    "2021-10-12",
+    "2021-10-13",
+    "2021-10-14",
+    "2021-10-15",
+    "2021-10-16",
+    "2021-10-17",
+    "2021-10-18",
+    "2021-10-19",
+    "2021-10-20",
+    "2021-10-21",
+    "2021-10-22",
+    "2021-10-23",
+    "2021-10-24",
+    "2021-10-25",
+    "2021-10-26",
+    "2021-10-27",
+    "2021-10-28",
+    "2021-10-29",
+    "2021-10-30",
+    "2021-10-31",
+    "2021-11-01",
+    "2021-11-02",
+    "2021-11-03",
+    "2021-11-04",
+    "2021-11-05",
+    "2021-11-06",
+    "2021-11-07",
+    "2021-11-08",
+    "2021-11-09"
+  ],
+  "transitions": 2850,
+  "alphas": {
+    "0": {
+      "member_row_outside_concentration_support_fraction_by_state": [
+        0.1726315789473684,
+        1.0,
+        0.1847719298245614,
+        0.17171929824561402,
+        0.29550877192982455
+      ],
+      "mean_upper_tail_gap_by_state": [
+        0.006948261158002804,
+        0.19835474938330472,
+        0.008143822225286675,
+        0.0065111620239589815,
+        0.015540533376287542
+      ],
+      "mean_lower_tail_gap_by_state": [
+        0.007246425255022251,
+        0.05933824090403465,
+        0.001126279323996579,
+        0.0025361979492254,
+        0.010084564614005502
+      ],
+      "events": {
+        "nh4": {
+          "actual_violations": 157,
+          "actual_new_onsets": 9,
+          "positive_with_no_member_support": 1,
+          "new_onset_with_no_member_support": 1,
+          "negative_with_all_members_forced_violation": 0,
+          "optimistic_ensemble_brier_lower_bound": 0.0003508771929824561,
+          "new_onset_subset_brier_lower_bound": 0.0003713330857779428,
+          "eligible_currently_safe_steps": 2693
+        },
+        "do": {
+          "actual_violations": 306,
+          "actual_new_onsets": 26,
+          "positive_with_no_member_support": 220,
+          "new_onset_with_no_member_support": 2,
+          "negative_with_all_members_forced_violation": 0,
+          "optimistic_ensemble_brier_lower_bound": 0.08270877192982456,
+          "new_onset_subset_brier_lower_bound": 0.001650294695481336,
+          "eligible_currently_safe_steps": 2545
+        }
+      }
+    },
+    "0.25": {
+      "member_row_outside_concentration_support_fraction_by_state": [
+        0.25873684210526315,
+        1.0,
+        0.29017543859649125,
+        0.2691228070175439,
+        0.3409824561403509
+      ],
+      "mean_upper_tail_gap_by_state": [
+        0.01248256005792267,
+        0.16647779511410454,
+        0.01076361255433946,
+        0.009672820542572187,
+        0.01314271867556094
+      ],
+      "mean_lower_tail_gap_by_state": [
+        0.01403069781045979,
+        0.06200897868326299,
+        0.0032310661774804486,
+        0.006521044268013463,
+        0.01430648695549779
+      ],
+      "events": {
+        "nh4": {
+          "actual_violations": 157,
+          "actual_new_onsets": 9,
+          "positive_with_no_member_support": 1,
+          "new_onset_with_no_member_support": 1,
+          "negative_with_all_members_forced_violation": 0,
+          "optimistic_ensemble_brier_lower_bound": 0.0003508771929824561,
+          "new_onset_subset_brier_lower_bound": 0.0003713330857779428,
+          "eligible_currently_safe_steps": 2693
+        },
+        "do": {
+          "actual_violations": 306,
+          "actual_new_onsets": 26,
+          "positive_with_no_member_support": 167,
+          "new_onset_with_no_member_support": 4,
+          "negative_with_all_members_forced_violation": 0,
+          "optimistic_ensemble_brier_lower_bound": 0.07160701754385965,
+          "new_onset_subset_brier_lower_bound": 0.0022161100196463656,
+          "eligible_currently_safe_steps": 2545
+        }
+      }
+    },
+    "0.5": {
+      "member_row_outside_concentration_support_fraction_by_state": [
+        0.38435087719298244,
+        1.0,
+        0.4691228070175439,
+        0.4298245614035088,
+        0.41221052631578947
+      ],
+      "mean_upper_tail_gap_by_state": [
+        0.024128012005693367,
+        0.1366774817882742,
+        0.015009217211123466,
+        0.015193268684164396,
+        0.012087901629974224
+      ],
+      "mean_lower_tail_gap_by_state": [
+        0.02639211152617343,
+        0.06675635740586223,
+        0.00766877320884417,
+        0.014186196885335444,
+        0.019858829454114338
+      ],
+      "events": {
+        "nh4": {
+          "actual_violations": 157,
+          "actual_new_onsets": 9,
+          "positive_with_no_member_support": 1,
+          "new_onset_with_no_member_support": 1,
+          "negative_with_all_members_forced_violation": 0,
+          "optimistic_ensemble_brier_lower_bound": 0.0003508771929824561,
+          "new_onset_subset_brier_lower_bound": 0.0003713330857779428,
+          "eligible_currently_safe_steps": 2693
+        },
+        "do": {
+          "actual_violations": 306,
+          "actual_new_onsets": 26,
+          "positive_with_no_member_support": 11,
+          "new_onset_with_no_member_support": 9,
+          "negative_with_all_members_forced_violation": 2,
+          "optimistic_ensemble_brier_lower_bound": 0.009866666666666668,
+          "new_onset_subset_brier_lower_bound": 0.004337917485265227,
+          "eligible_currently_safe_steps": 2545
+        }
+      }
+    },
+    "0.75": {
+      "member_row_outside_concentration_support_fraction_by_state": [
+        0.5738245614035088,
+        1.0,
+        0.720280701754386,
+        0.6567017543859649,
+        0.5541754385964912
+      ],
+      "mean_upper_tail_gap_by_state": [
+        0.047131533117380164,
+        0.1097470293254235,
+        0.02142851693994852,
+        0.02483558235347772,
+        0.015520363788803102
+      ],
+      "mean_lower_tail_gap_by_state": [
+        0.04883297865570283,
+        0.07431064224638187,
+        0.0160618125762092,
+        0.026102413367435042,
+        0.026722510868049106
+      ],
+      "events": {
+        "nh4": {
+          "actual_violations": 157,
+          "actual_new_onsets": 9,
+          "positive_with_no_member_support": 2,
+          "new_onset_with_no_member_support": 2,
+          "negative_with_all_members_forced_violation": 3,
+          "optimistic_ensemble_brier_lower_bound": 0.0018105263157894738,
+          "new_onset_subset_brier_lower_bound": 0.0007575194949870033,
+          "eligible_currently_safe_steps": 2693
+        },
+        "do": {
+          "actual_violations": 306,
+          "actual_new_onsets": 26,
+          "positive_with_no_member_support": 19,
+          "new_onset_with_no_member_support": 19,
+          "negative_with_all_members_forced_violation": 6,
+          "optimistic_ensemble_brier_lower_bound": 0.009319298245614036,
+          "new_onset_subset_brier_lower_bound": 0.007481335952848723,
+          "eligible_currently_safe_steps": 2545
+        }
+      }
+    }
+  }
+}

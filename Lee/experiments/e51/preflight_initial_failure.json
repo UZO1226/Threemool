@@ -1,0 +1,10 @@
+{
+  "stage": "preflight before fitting or outcome evaluation",
+  "failed_assumption": "All observed calibration states are inside original model clip bounds",
+  "calibration_transitions": 2850,
+  "observed_above_clip_counts_nh4_no3_do1_do2_do3": [0, 14, 0, 0, 0],
+  "data_or_clip_bounds_changed": false,
+  "adoption_gate_changed": false,
+  "resolution": "Include final clipping in transformed quantiles. Require bounded safety states and deterministic NO3 levels, preserving NO3 PIT.5. Verify actual clipped-kernel interpolation identity.",
+  "test_evaluated": false
+}

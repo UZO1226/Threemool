@@ -1,0 +1,192 @@
+{
+  "training_only": true,
+  "validation_evaluated": false,
+  "test_evaluated": false,
+  "policy_refit": false,
+  "training_dates": 16,
+  "cases_per_seed": 160,
+  "transitions_per_case": 95,
+  "scope": "Descriptive fixed-policy training-rollout audit. Scores predict discounted maxima, not probabilities. Finite-day targets differ from the existing continuation-bootstrap objective. No actor or representation is updated.",
+  "policies": [
+    {
+      "seed": 0,
+      "score_std": 0.3003396987915039,
+      "target_std": 0.3090657591819763,
+      "score_target_mse": 0.011898880824446678,
+      "score_target_rank_correlation": 0.7986824098364471,
+      "score_ordered_quartiles": [
+        {
+          "predicted_mean": 0.0008189769578166306,
+          "continuation_target_mean": 0.0025589086581021547,
+          "immediate_cost_mean": 0.0
+        },
+        {
+          "predicted_mean": 0.007002394646406174,
+          "continuation_target_mean": 0.009562140330672264,
+          "immediate_cost_mean": 0.0007894737063907087
+        },
+        {
+          "predicted_mean": 0.03973130136728287,
+          "continuation_target_mean": 0.050156861543655396,
+          "immediate_cost_mean": 0.002368421060964465
+        },
+        {
+          "predicted_mean": 0.5423433184623718,
+          "continuation_target_mean": 0.5265312194824219,
+          "immediate_cost_mean": 0.390263170003891
+        }
+      ],
+      "continuation_minus_finite_mean": 0.025836972519755363,
+      "continuation_minus_finite_max": 0.6348065733909607,
+      "fraction_targets_differ_above_0_001": 0.4754605263157895,
+      "first71_steps_mean_difference": 0.0027460698038339615,
+      "last24_steps_mean_difference": 0.09414756298065186,
+      "positive_day_end_bootstrap_fraction": 1.0,
+      "checkpoint_unchanged": true
+    },
+    {
+      "seed": 1,
+      "score_std": 0.30157843232154846,
+      "target_std": 0.30495259165763855,
+      "score_target_mse": 0.01831810362637043,
+      "score_target_rank_correlation": 0.6186097616875239,
+      "score_ordered_quartiles": [
+        {
+          "predicted_mean": 0.00012373174831736833,
+          "continuation_target_mean": 0.015437289141118526,
+          "immediate_cost_mean": 0.0013157895300537348
+        },
+        {
+          "predicted_mean": 0.0015686646802350879,
+          "continuation_target_mean": 0.007128887344151735,
+          "immediate_cost_mean": 0.0002631578827276826
+        },
+        {
+          "predicted_mean": 0.010727621614933014,
+          "continuation_target_mean": 0.019370073452591896,
+          "immediate_cost_mean": 0.0028947368264198303
+        },
+        {
+          "predicted_mean": 0.49127936363220215,
+          "continuation_target_mean": 0.4431568384170532,
+          "immediate_cost_mean": 0.3847368359565735
+        }
+      ],
+      "continuation_minus_finite_mean": 0.0036046311724931,
+      "continuation_minus_finite_max": 0.11643844842910767,
+      "fraction_targets_differ_above_0_001": 0.3076973684210526,
+      "first71_steps_mean_difference": 0.00037378445267677307,
+      "last24_steps_mean_difference": 0.013162553310394287,
+      "positive_day_end_bootstrap_fraction": 1.0,
+      "checkpoint_unchanged": true
+    },
+    {
+      "seed": 2,
+      "score_std": 0.3325846493244171,
+      "target_std": 0.35521775484085083,
+      "score_target_mse": 0.03253690153360367,
+      "score_target_rank_correlation": 0.8110350630430896,
+      "score_ordered_quartiles": [
+        {
+          "predicted_mean": -0.00013033895811531693,
+          "continuation_target_mean": 0.005096190143376589,
+          "immediate_cost_mean": 0.0
+        },
+        {
+          "predicted_mean": 0.009053886868059635,
+          "continuation_target_mean": 0.02490324340760708,
+          "immediate_cost_mean": 0.0002631578827276826
+        },
+        {
+          "predicted_mean": 0.07227778434753418,
+          "continuation_target_mean": 0.11176702380180359,
+          "immediate_cost_mean": 0.0026315790601074696
+        },
+        {
+          "predicted_mean": 0.6791830658912659,
+          "continuation_target_mean": 0.6473378539085388,
+          "immediate_cost_mean": 0.484736829996109
+        }
+      ],
+      "continuation_minus_finite_mean": 0.01666634902358055,
+      "continuation_minus_finite_max": 0.718514621257782,
+      "fraction_targets_differ_above_0_001": 0.3486184210526316,
+      "first71_steps_mean_difference": 0.0017418618081137538,
+      "last24_steps_mean_difference": 0.06081795692443848,
+      "positive_day_end_bootstrap_fraction": 1.0,
+      "checkpoint_unchanged": true
+    },
+    {
+      "seed": 3,
+      "score_std": 0.2583051323890686,
+      "target_std": 0.29148900508880615,
+      "score_target_mse": 0.040268853306770325,
+      "score_target_rank_correlation": 0.7393060772192943,
+      "score_ordered_quartiles": [
+        {
+          "predicted_mean": 0.000654460396617651,
+          "continuation_target_mean": 0.02413683757185936,
+          "immediate_cost_mean": 0.0055263158865273
+        },
+        {
+          "predicted_mean": 0.004764208570122719,
+          "continuation_target_mean": 0.02228737063705921,
+          "immediate_cost_mean": 0.005789473652839661
+        },
+        {
+          "predicted_mean": 0.025148438289761543,
+          "continuation_target_mean": 0.08557986468076706,
+          "immediate_cost_mean": 0.00815789494663477
+        },
+        {
+          "predicted_mean": 0.39335939288139343,
+          "continuation_target_mean": 0.3784811198711395,
+          "immediate_cost_mean": 0.22578947246074677
+        }
+      ],
+      "continuation_minus_finite_mean": 0.01722528599202633,
+      "continuation_minus_finite_max": 0.519260823726654,
+      "fraction_targets_differ_above_0_001": 0.3771052631578947,
+      "first71_steps_mean_difference": 0.0015590323600918055,
+      "last24_steps_mean_difference": 0.06357128918170929,
+      "positive_day_end_bootstrap_fraction": 1.0,
+      "checkpoint_unchanged": true
+    },
+    {
+      "seed": 4,
+      "score_std": 0.32314515113830566,
+      "target_std": 0.34848707914352417,
+      "score_target_mse": 0.03091520629823208,
+      "score_target_rank_correlation": 0.7382755415094566,
+      "score_ordered_quartiles": [
+        {
+          "predicted_mean": 0.0017877548234537244,
+          "continuation_target_mean": 0.008136818185448647,
+          "immediate_cost_mean": 0.0
+        },
+        {
+          "predicted_mean": 0.01163282711058855,
+          "continuation_target_mean": 0.03393583744764328,
+          "immediate_cost_mean": 0.0002631578827276826
+        },
+        {
+          "predicted_mean": 0.06272285431623459,
+          "continuation_target_mean": 0.11978214979171753,
+          "immediate_cost_mean": 0.007894736714661121
+        },
+        {
+          "predicted_mean": 0.6358519196510315,
+          "continuation_target_mean": 0.6026525497436523,
+          "immediate_cost_mean": 0.4857894778251648
+        }
+      ],
+      "continuation_minus_finite_mean": 0.011847282759845257,
+      "continuation_minus_finite_max": 0.3853219449520111,
+      "fraction_targets_differ_above_0_001": 0.2994078947368421,
+      "first71_steps_mean_difference": 0.0011206219205632806,
+      "last24_steps_mean_difference": 0.0435803197324276,
+      "positive_day_end_bootstrap_fraction": 1.0,
+      "checkpoint_unchanged": true
+    }
+  ]
+}

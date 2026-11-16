@@ -1,0 +1,25 @@
+{
+  "old_corrected_accounting": {
+    "air_m3": 84859.75950433375,
+    "cost": 28.77,
+    "nh4_viol_pct": 28.48421052631579,
+    "do_viol_pct": 1.8,
+    "reward": -37.71544866859278,
+    "n_episodes": 200,
+    "days_within_limit_pct": 48.5
+  },
+  "new_frozen": {
+    "air_m3": 84859.75950433375,
+    "cost": 13.509375,
+    "nh4_viol_pct": 13.499342105263159,
+    "do_viol_pct": 0.7210526315789474,
+    "reward": -37.71544866859278,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 71.0625
+  },
+  "observed_daily_cost": 17.55,
+  "recorded_air_m3": 84859.75950433375,
+  "matches_forecast_audit": true,
+  "test_evaluated": false,
+  "scope": "Factual prediction comparison, not an agent improvement"
+}

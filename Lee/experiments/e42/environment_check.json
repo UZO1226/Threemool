@@ -1,0 +1,14 @@
+{
+  "frozen_hashes_verified": true,
+  "full_day_forecast_adapter_agreement": true,
+  "validation_paths_exact": true,
+  "training_noise_reproducible": true,
+  "fallback_training_medians_exact": true,
+  "reward_cost_volume_exact": true,
+  "terminal_observation_before_reset": true,
+  "common_noise_air_order": true,
+  "test_split_rejected": true,
+  "test_evaluated": false,
+  "episodes_checked": 20,
+  "maximum_forecast_difference": 4.6629060079794726e-07
+}

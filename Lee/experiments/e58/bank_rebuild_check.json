@@ -1,0 +1,13 @@
+{
+  "selected": "pit_b95_a0.25",
+  "shape": [
+    5,
+    2850,
+    5
+  ],
+  "array_sha256": "9fb96ac7b36aec71350e12e3ddab13dabc2767456b74223630cbb98c1d4469c7",
+  "existing_bank_compared": true,
+  "weight_fitting": false,
+  "validation_evaluated": false,
+  "test_evaluated": false
+}
