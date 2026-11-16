@@ -89,7 +89,9 @@ def main():
         assert not summary['test_evaluated'] and not audit['test_evaluated']
         assert summary['primary'] == 'context32_block4'
         assert audit['independent_donors_and_paths_exact'] and audit['independent_full_day_passed']
-        assert audit['summary_sha256'] == sha(args.study / 'summary.json')
+        summary_path = args.study / 'summary.json'
+        canonical_summary_sha256 = hashlib.sha256(summary_path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+        assert audit['summary_sha256'] == canonical_summary_sha256
         assert audit['adoption']['passed'] == all(audit['adoption']['checks'].values())
         add(results / 'e66_block_preflight.json')
     for path in args.study.rglob('*'):

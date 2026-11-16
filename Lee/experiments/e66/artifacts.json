@@ -1,0 +1,80 @@
+{
+  "trial": "e66",
+  "new_model_fitting": false,
+  "source_data_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "captured_training_arrays_included": false,
+  "test_evaluated": false,
+  "frozen_environment_dependencies": {
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
+    "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+    "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
+    "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
+    "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
+    "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
+    "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
+    "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+  },
+  "scope": "Audited aggregate outputs and provenance. e65 includes unchanged policy/rate weights; e66 reuses archived e40 weights. Frozen model/data dependencies require separate restoration.",
+  "files": {
+    "Threemool/Lee/experiments/e42/environment_freeze.json": {
+      "bytes": 3289,
+      "sha256": "0c4d0e845b0d8aa51574d69b9941074c7fa3c413683a23f57e34a207c8ace1ad"
+    },
+    "metadata/FCSRL_LICENSE": {
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    "results/e66_block_preflight.json": {
+      "bytes": 5418,
+      "sha256": "8022d31367b1350152831aae68aaed2cf676b04d5fb654679204879abeee6ef5"
+    },
+    "results/e66_exogenous_blocks/audit.json": {
+      "bytes": 15916,
+      "sha256": "267abe3a903ea81da392b33150cafe3c8f652bed33bbf8a5a44a89a57594ee20"
+    },
+    "results/e66_exogenous_blocks/calibration_context32_block4.json": {
+      "bytes": 6717,
+      "sha256": "805b8ac59187069efe8e48588ce16f6c540f257ce7eaaf997ec0ef360168539f"
+    },
+    "results/e66_exogenous_blocks/calibration_global_block4.json": {
+      "bytes": 6538,
+      "sha256": "29c983a016117521610af83b43919b3ac454052b011c89e6c211a6685689d2d6"
+    },
+    "results/e66_exogenous_blocks/frozen_reference.json": {
+      "bytes": 2399,
+      "sha256": "c6b91ea1edf642d38c4e71921c81b26c92814ee0546ad8e675a891e3a62bd5dd"
+    },
+    "results/e66_exogenous_blocks/manifest.json": {
+      "bytes": 4400,
+      "sha256": "ebed2cf3b26eff9aa55798716c765439fc1dedd54c3ccf842079021dee985edd"
+    },
+    "results/e66_exogenous_blocks/summary.json": {
+      "bytes": 44073,
+      "sha256": "49112a01412903a65b993d336d8792815b0d0965fd68e5446e20c8e96317a557"
+    },
+    "results/e66_exogenous_blocks/validation_context32_block4.json": {
+      "bytes": 6451,
+      "sha256": "2c984af34192338cfff4340366722d8195243a0e13e66acd8a47f7fd3c0938dc"
+    },
+    "results/e66_exogenous_blocks/validation_global_block4.json": {
+      "bytes": 5899,
+      "sha256": "4a5e53f98011f46a9801e82a93c7399e8b5f83e59e62a599dd1f47b3d08845d9"
+    }
+  },
+  "archive": {
+    "name": "lee-e66-exogenous-blocks.zip",
+    "bytes": 28534,
+    "sha256": "e5e5c1c2a2e61fb9e017cd48996bd018b84320faf6148ed9750e02d6123c19cf"
+  },
+  "remote": {
+    "release_id": 442901392,
+    "tag": "lee-e26-e30-followup-20261112",
+    "asset_id": 755467717,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}
