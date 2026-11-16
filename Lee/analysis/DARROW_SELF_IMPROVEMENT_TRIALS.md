@@ -1,0 +1,27 @@
+# Self-improvement trials versus e63
+
+This block uses authenticated matched e63 as its primary comparator.
+The earlier DARROW_AGENT_TRIALS.md table retains original FCSRL as its comparator.
+Keep the two blocks separate. Five original policy seeds0 through4 are used here.
+
+| Trial | Matched cost | NH4 percent | DO percent | Cost difference95% interval | NH4 interval, pp | DO interval, pp | Joint result |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [e65](../experiments/e65/results.md) | 21.025750 | 21.810395 | 0.321974 | [-0.076250,-0.000875] | [-0.076579,0.001579] | [-0.005526,0.001842] | Fail |
+| [e67](../experiments/e67/results.md) | 21.730500 | 22.741316 | 0.132895 | [-0.506625,1.910125] | [-0.427105,2.416316] | [-0.448289,-0.018289] | Fail |
+
+Differences are candidate minus e63. Cost sums the two violation indicators over95 steps,
+not money or electricity. Air is actual m3 per23.75-hour episode. All air matches, cost and
+NH4 upper endpoints below zero, and DO upper endpoint at most zero are required.
+Intervals use10000 paired policy-seed resamples, RNG2026. All native values remain in the JSON.
+
+Pending complete committed reports: e69.
+Pending does not prove a process is live or a partial outcome is a completed trial.
+
+Environment e66 independently reconstructs but fails all seven adoption conditions.
+It is a separate forecast experiment and does not replace e42 or enter the policy table.
+
+Fresh seeds5 through9 are prepared separately in e68. No fresh candidate outcome is included.
+Reused validation and multiple hypotheses remain exploratory; this is not independent
+observational confirmation or physical plant safety. Final test41 is preserved.
+
+Regenerate with summarize_self_improvement.py using committed compact reports only.
