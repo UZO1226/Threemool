@@ -45,11 +45,23 @@ e67 prospectively fixes nine action candidates up to radius0.5 with the same
 models and input/budget as e63. All five held-state preflight checks pass:
 changed actions16124,22591,18853,43277,23447 of85120 per seed. Native smoke
 reproduces the authenticated baseline and reloaded candidate trajectories.
-Session83803 now runs its independent smoke audit (runner PID3712 and audit
-PID27868 directly confirmed live), followed by all five matched-air comparisons
-and their audits. Confirm actual processes and results/e67_study before
-treating any stage as live or complete. The companion research note records
-the study history and commands. This is a snapshot, not a process monitor.
+Session83803 passes its independent native smoke and flat-risk null, then
+starts all five matched-air comparisons under runner PID3712. The old smoke
+audit process has completed. Confirm actual processes and results/e67_study
+before treating any stage as live or complete.
+
+e68 preregisters fresh policy seeds5 through9. Session42965 runs unchanged
+original training followed by unchanged passive-capture training, at most
+two trainers concurrently,401280 steps per policy and final-checkpoint parity
+checks. Runner PID15212 and seed5/6 trainer PIDs16948/2684 were directly
+confirmed live. Session71526 waits on that runner before prepare_rates.py,
+which refuses incomplete parity and reproduces original e55 capture/provenance
+preparation followed by fixed e56 horizon4 fitting. New controllers are not
+evaluated on the fresh block yet. Neither fresh NN preparation nor fitting
+alone is e63 baseline construction, candidate replication or a goal success.
+
+The companion research note records the study history and commands. This
+is a snapshot, not a process monitor.
 Final test41 is untouched. Goal-tool state remains authoritative. No new
 joint improvement or fresh-seed confirmation is verified yet.
 

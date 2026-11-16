@@ -43,3 +43,26 @@ fails. Do not call fresh-seed preparation an improvement, a complete goal,
 or evidence that environment DO onset prediction is repaired. Source data
 and capture arrays stay local; required checkpoints/logs eventually go to
 the already authorized private draft storage with verified checksums.
+
+## Reproduction and current execution
+
+From the workspace, with the threemool Python environment and numerical
+library threads fixed to1, launch into unused output paths:
+
+```powershell
+python Threemool/Lee/experiments/e68/run_baselines.py --workspace C:/Users/user/Downloads/IoT_project2 --out results/e68_fresh_baselines
+python Threemool/Lee/experiments/e68/prepare_rates.py --workspace C:/Users/user/Downloads/IoT_project2 --baselines results/e68_fresh_baselines --out results/e68_fresh_rates
+```
+
+The second command requires the first command's completed summary and exact
+parity records; it is queued behind the live training runner, not running
+on partial checkpoints. It first reproduces the original e55 one-step
+capture/provenance fitting, then fits unchanged e56 horizon4 regressors from
+updates1 through52 and diagnoses held updates53 through66. The one-step
+models are not used or selected as fresh h4 controllers. No added environment
+training steps belong to either offline fit. This preserves the earlier
+pipeline rather than weakening capture guards to avoid provenance fitting.
+
+Current output is not a completed artifact or replicated policy gain.
+study_status.json is a progress snapshot; inspect actual process liveness
+before restarting. All historical trainer/model sources remain unchanged.
