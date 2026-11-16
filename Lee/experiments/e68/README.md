@@ -79,3 +79,8 @@ fixed offsets and achieved air. Original-FCSRL air-match flags remain separate
 from authentication and later candidate improvement. No fresh candidate is
 evaluated by any of these commands. The reference command is queued behind
 the verified rate-preparation waiter, not executing against incomplete models.
+
+fresh_report.py retains actual seed IDs5 through9 and otherwise reuses the
+e44 paired-seed arithmetic,10000 resamples and RNG2026. Its synthetic
+constant-difference/ID check passes without reading policy results. This
+software fixture is not fresh-model evidence or a reported replication.

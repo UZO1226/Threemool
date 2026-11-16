@@ -72,9 +72,16 @@ held updates53~66 are excluded from calibration. Known-optimum discrete-jump,
 multiplier-sign and zero/flat controls pass. Session23268 completes all five
 calibration and independent held checks, with fitting mean discrepancies at
 most2.22e-16. Held means need not match, and no policy gain follows from this.
-Session9972 completes the seed0 native serialization replay and now runs
-its independent smoke audit (PID22140), then all five matched-air comparisons
-and their audits. No e69 quality improvement is established yet.
+Session9972 completes the seed0 native serialization replay, independent
+sklearn action/trajectory audit, zero-multiplier flat-risk null and full
+zero-multiplier e67 identity control. It now runs all five matched-air
+comparisons under runner PID11600; their independent audits and final report
+remain pending. No e69 quality improvement is established yet.
+
+Fresh-report arithmetic now preserves actual policy IDs5 through9, with the
+same five-seed bootstrap rule. Its synthetic constant-difference/ID check
+passes; this is a software control, not fresh policy evidence. No fresh
+candidate has been evaluated or selected on its quality.
 
 The companion research note records the study history and commands. This
 is a snapshot, not a process monitor.
