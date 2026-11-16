@@ -53,6 +53,9 @@ plan=(H, do_lim, step) (Park/e28, trim=True 와 함께) 이면 회복 계획을 
 예측 비용 (NH4 > 4 스텝 수 + 구간 DO 최댓값 > do_lim 스텝 수) 이 가장 작은 공기량을 쓴다. 같으면 H 스텝 뒤 예측 NH4 가
 낮은 쪽, 그것도 같으면 공기량이 작은 쪽이다 (Park/e16 futile 처럼 공기를 줄여 NH4 회복이 늦어지는 것을 막는다).
 외부 입력은 지속 예측이다. 다른 차단 계산을 모두 마친 뒤 그 에피소드의 공기량을 바꾼다. plan_steps 에 바꾼 횟수를 센다
+
+plan_trigger (Park/e30) 는 회복 계획을 쓰는 기준이다. 공기량 9,000 에서의 다음 스텝 예측 NH4 가 plan_trigger 를 넘는 에피소드에
+쓴다 (기본 4 는 e28 과 같다). plan_now 를 주면 지금 NH4 가 plan_now 를 넘는 에피소드에도 쓴다
 """
 import numpy as np
 
@@ -65,7 +68,8 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
-                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None):
+                 do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None,
+                 plan_trigger=NH4_MAX, plan_now=None):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -83,6 +87,7 @@ class MinAirBrake:
         assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
         self.plan, self.plan_steps = (None if plan is None else (int(plan[0]), float(plan[1]), float(plan[2]))), 0
         assert self.plan is None or self.trim, 'plan 은 trim 과 함께 쓴다'
+        self.plan_trigger, self.plan_now = float(plan_trigger), (None if plan_now is None else float(plan_now))
         self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
 
     def _predict(self, x, member, n_states):
@@ -218,7 +223,10 @@ class MinAirBrake:
 
     def _plan_recovery(self, obs, env, air):
         nh_max, _ = self._rollout(obs, env, np.full((len(obs), 1), AIR_MAX), 1)
-        rows = np.flatnonzero(nh_max[:, 0] > NH4_MAX)
+        hit = nh_max[:, 0] > self.plan_trigger
+        if self.plan_now is not None:
+            hit |= np.asarray(obs[:, 0], dtype=float) > self.plan_now
+        rows = np.flatnonzero(hit)
         if not len(rows):
             return air
         H, do_lim, step = self.plan
