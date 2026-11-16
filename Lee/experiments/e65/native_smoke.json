@@ -1,0 +1,66 @@
+{
+  "policy_seed": 0,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "e63_matched_risk_only_h4",
+  "candidate_method": "e65_nested_grid_h4",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 47199.48484245352,
+    "cost": 23.041875,
+    "nh4_viol_pct": 24.24802631578947,
+    "do_viol_pct": 0.006578947368421053,
+    "reward": -20.977548818868232,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 52.25
+  },
+  "candidate_native": {
+    "air_m3": 50626.27155300004,
+    "cost": 21.24875,
+    "nh4_viol_pct": 22.35065789473684,
+    "do_viol_pct": 0.016447368421052627,
+    "reward": -22.500565134666687,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 55.5625
+  },
+  "candidate_matched": null,
+  "original_fcsrl_reference": {
+    "air_m3": 47194.437990665756,
+    "cost": 24.121875,
+    "nh4_viol_pct": 25.35855263157895,
+    "do_viol_pct": 0.03289473684210526,
+    "reward": -20.975305773629223,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 50.6875
+  },
+  "baseline_fixed_offset": -0.08984375,
+  "matching": null,
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "base_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "correction_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "pipeline_smoke_only": true,
+  "checkpoint_replay_verified": true,
+  "new_model_fitting": false,
+  "extra_environment_training_steps": 0,
+  "baseline_certificate_sha256": "8cdc37cb38daf4ee715725d611f2f5106b9dfae1639389577225fb889cb6cdcb",
+  "preflight_sha256": "c9f1f4b55ac411b51c521687994b6e690072e45988aa8f5d85cf34fac1ed1430",
+  "controller_config_sha256": "9a399a6ed73dd574c99edfd76c2144fb3d5d91b35ed14df6f8b5ee1b8df73fce",
+  "source_sha256": {
+    "audit.py": "ee363d3e38e0186944212724df77b8940a95f591c12a8b1279be3c1ea4870192",
+    "compare.py": "aea5bfa293a8490635fedf6cd69afe26933037b15a0d2c56bc1015ad1f6f05e0",
+    "grid_policy.py": "28afa12188a8bcb61a0a15b7299812e96203567a21ac7d12d86cd18751dac84f",
+    "preflight.py": "56019b4c9c8dd2b6b9df7301074dcbe9e559316d429723a6a8eff59045858b17",
+    "run_study.py": "8a6b18a90484b9cfd67e5b3683d930583f5cd663502ab99c58d15cf4daefc101"
+  },
+  "scope": "Exploratory reused validation; baseline_native denotes authenticated matched e63."
+}

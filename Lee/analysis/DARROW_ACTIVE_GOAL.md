@@ -19,10 +19,22 @@ Separate environment improvements from policy improvements. Use training
 held dates and feasible fresh seeds; reused validation40 is exploratory.
 Do not use test41 for further development or evaluation.
 
-Work proceeds on lee/e63-self-improvement. No new candidate has passed or
-been selected. The next step is a prospective hypothesis based on our own
-remaining safety-prediction and policy limitations. Goal-tool state is
-authoritative; this document does not imply a background process is running.
+Work proceeds on lee/e63-self-improvement. No new candidate has passed the
+quality criterion. e65 prospectively fixes a17-point nested action grid at
+the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
+All five85120-row held-state checks and independent sklearn subsets pass;
+changed actions number1481,3870,2637,3650,4885. No counterfactual quality
+conclusion follows from those predicted-risk differences.
+
+The seed0 native smoke exactly reproduces the authenticated matched e63
+baseline and independently reloaded new native trajectory. The runner now
+requires its full independent action/trajectory audit before all five
+matched-air comparisons and their independent audits. At this snapshot,
+runner PID9872 and smoke-audit PID17660 were directly confirmed live.
+results/e65_study holds the source manifest, logs and progress, and the live
+tool session is22575. Check actual process liveness before continuation;
+this document is a historical snapshot, not proof of ongoing execution.
+Final test41 is untouched. Goal-tool state remains authoritative.
 
 ## Previous completed objective
 
