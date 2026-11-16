@@ -331,6 +331,19 @@ class EnsemblePolicy:
         return acts.mean(axis=0)
 
 
+class ScaledPolicy:
+    """정책 공기량 조절 층 (Park/e33). 지금 관측 NH4 가 below 보다 낮은 에피소드에서만 정책 공기량에 factor 를 곱한다.
+    below 를 inf 로 두면 모든 스텝에 곱한다. 차단은 조절한 공기량 위에서 그대로 동작한다."""
+
+    def __init__(self, policy, factor, below=float('inf')):
+        self.policy, self.factor, self.below = policy, float(factor), float(below)
+
+    def __call__(self, obs):
+        air = action_to_air(np.asarray(self.policy(obs), dtype=float).reshape(len(obs)))
+        low = np.asarray(obs[:, 0], dtype=float) < self.below
+        return air_to_action(np.where(low, air * self.factor, air))
+
+
 class DisagreementBrake:
     """앙상블 의견 차이로 MinAirBrake 의 NH4 여유를 바꾼다 (Park/e27). policy 는 같은 스텝에 먼저 불린 EnsemblePolicy."""
 
