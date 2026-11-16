@@ -26,23 +26,32 @@ All five85120-row held-state checks and independent sklearn subsets pass;
 changed actions number1481,3870,2637,3650,4885. No counterfactual quality
 conclusion follows from those predicted-risk differences.
 
-The seed0 native smoke exactly reproduces the authenticated matched e63
-baseline and independently reloaded new native trajectory. Its152000-row
-independent sklearn action/trajectory replay and flat-risk null pass. The
-runner advances to all five matched-air comparisons, then their audits.
-results/e65_study holds the source manifest, logs and progress. The live
-tool session is22575; the smoke-audit process has completed.
+e65 completes all five comparisons and independent native/matched152000-row
+sklearn action/trajectory audits. A terminal Windows status-file lock was
+recovered by resume_study.py without editing the pinned runtime or changing
+the matcher: completed offsets were reused and every final trajectory was
+independently checked. results/e65_recovery is the completed authoritative
+study; results/e65_study preserves the original terminal failure evidence.
+Cost improves slightly, but NH4 and DO interval upper endpoints exceed zero.
+The candidate fails the unchanged joint criterion and is not adopted.
 
-Independent environment experiment e66 fixes current-exogenous conditional
-four-step PIT blocks, keeping e40 weights and alpha0.5. Its1200 calibration
-paths and neighbor pools reconstruct independently, with no future-input
-leakage or self-date donors. Calibration still substantially underpredicts
-DO. Evaluation is running in session47433 (PID27024 at the last direct check),
-and session31358 waits for that process before its independent audit.
-DARROW_SELF_IMPROVEMENT_20261117.md records hypotheses, limitations and commands.
-Check actual process liveness before continuation; this document is a
-historical snapshot, not proof of ongoing execution. Final test41 is untouched.
-Goal-tool state remains authoritative. No new improvement is verified yet.
+Environment e66 also finishes its independent donor, full-day, air-order and
+event audit. All seven adoption conditions fail, including worse NH4 Brier
+and no detected new DO onset. Do not replace e42 with this candidate. Both
+completed trials have verified immutable assets in their existing drafts;
+tracked artifacts.json files bind sizes, digests and remote asset identities.
+
+e67 prospectively fixes nine action candidates up to radius0.5 with the same
+models and input/budget as e63. All five held-state preflight checks pass:
+changed actions16124,22591,18853,43277,23447 of85120 per seed. Native smoke
+reproduces the authenticated baseline and reloaded candidate trajectories.
+Session83803 now runs its independent smoke audit (runner PID3712 and audit
+PID27868 directly confirmed live), followed by all five matched-air comparisons
+and their audits. Confirm actual processes and results/e67_study before
+treating any stage as live or complete. The companion research note records
+the study history and commands. This is a snapshot, not a process monitor.
+Final test41 is untouched. Goal-tool state remains authoritative. No new
+joint improvement or fresh-seed confirmation is verified yet.
 
 ## Previous completed objective
 
