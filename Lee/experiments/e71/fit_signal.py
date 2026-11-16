@@ -29,6 +29,9 @@ def main():
     args = parser.parse_args()
     if args.out.exists():
         raise FileExistsError(args.out)
+    control = json.loads(Path(__file__).with_name('signal_check.json').read_text())
+    assert control['passed'] and control['new_environment_queries'] == 0
+    verify_sources(control['source_sha256'], ROOT)
     torch.set_num_threads(1)
     workspace = args.workspace.resolve()
     data = workspace / 'kaggle_data/darrow_15min.pkl'

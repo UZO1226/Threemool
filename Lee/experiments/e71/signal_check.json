@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "known_reference_fallback": true,
+  "active_only_mean_constraint": true,
+  "flat_risk_identity_with_fitted_parameters": true,
+  "reference_only_identity": true,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee\\experiments\\e71\\check_signal.py": "2ffb1ee7f12c9b9b21cb8490625ea1b9cde22f1caecd6bd7764429f9b274b2a1",
+    "Lee\\experiments\\e71\\signal_policy.py": "2567d6ecf5f2b287026841d41fe847e39d84af4f564c595e65329d6e6e4abbb5",
+    "Lee\\experiments\\e69\\budget_policy.py": "c27119c89ff348cc5e2008852350c1c7fd6710519a32d3730f9cb46853fe0e20"
+  },
+  "scope": "Synthetic software controls only, not policy performance."
+}
