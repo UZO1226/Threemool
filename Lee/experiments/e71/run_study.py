@@ -48,6 +48,8 @@ def main():
     folders = [HERE, *[ROOT / f'Lee/experiments/{name}' for name in ('e38', 'e42', 'e44', 'e55', 'e56', 'e63')],
                ROOT / 'Lee/code/darrow']
     hashes = {str(path): digest(path) for folder in folders for path in folder.glob('*.py')}
+    shared = ROOT / 'Lee/experiments/e69/budget_policy.py'
+    hashes[str(shared)] = digest(shared)
     env = dict(os.environ, OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1',
                NUMBA_NUM_THREADS='1', PYTHONIOENCODING='utf-8', DARROW_FAST_DYNAMICS='1')
     manifest = {'source_sha256': hashes, 'policy_seeds': list(range(5)), 'test_evaluated': False,

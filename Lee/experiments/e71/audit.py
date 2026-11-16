@@ -32,6 +32,7 @@ def main():
     assert pair['candidate_method'] == 'e71_signal_gate_h4' and not pair['test_evaluated']
     assert pair['training_steps'] == 401280 and not pair['smoke_only']
     verify_sources(pair['source_sha256'], Path(__file__).parent)
+    verify_sources(pair['shared_source_sha256'], ROOT)
     calibration = json.loads((args.projection / 'fit_summary.json').read_text())
     assert pair['projection_fit_summary_sha256'] == digest(args.projection / 'fit_summary.json')
     assert calibration['passed'] and calibration['calibration']['absolute_mean_action_error'] <= 1e-10

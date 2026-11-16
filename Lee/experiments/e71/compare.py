@@ -41,6 +41,8 @@ def main():
     assert preflight['baseline_certificate_sha256'] == digest(args.certificate)
     assert preflight['data_sha256'] == cert['data_sha256'] == digest(args.data)
     verify_sources(preflight['source_sha256'], Path(__file__).parent)
+    legacy = json.loads((ROOT / 'Lee/experiments/e69/preflight.json').read_text())
+    verify_sources({'budget_policy.py': legacy['source_sha256']['budget_policy.py']}, ROOT / 'Lee/experiments/e69')
     base, config, _, hashes = load_base(args.candidate, args.freeze, args.baseline)
     models, fit = load_rates(args.correction, config, 4, False)
     seed = config['seed']
@@ -106,6 +108,7 @@ def main():
               'pipeline_smoke_only': args.native_only, 'checkpoint_replay_verified': True,
               'new_model_fitting': False, 'extra_environment_training_steps': 0,
               'projection_parameter_fitting': True,
+              'shared_source_sha256': {'Lee/experiments/e69/budget_policy.py': digest(ROOT / 'Lee/experiments/e69/budget_policy.py')},
               'projection_fit_summary_sha256': digest(args.projection / 'fit_summary.json'),
               'baseline_certificate_sha256': digest(args.certificate), 'preflight_sha256': digest(args.preflight),
               'controller_config_sha256': digest(args.out / 'controller_config.json'),
