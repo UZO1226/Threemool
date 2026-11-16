@@ -45,10 +45,11 @@ e67 prospectively fixes nine action candidates up to radius0.5 with the same
 models and input/budget as e63. All five held-state preflight checks pass:
 changed actions16124,22591,18853,43277,23447 of85120 per seed. Native smoke
 reproduces the authenticated baseline and reloaded candidate trajectories.
-Session83803 passes its independent native smoke and flat-risk null, then
-starts all five matched-air comparisons under runner PID3712. The old smoke
-audit process has completed. Confirm actual processes and results/e67_study
-before treating any stage as live or complete.
+Session83803 completes all five matched-air comparisons and independent
+native/matched audits. e67 fails the joint criterion: cost difference+.670375
+and NH4+.896579 points have intervals crossing zero. DO improves-.190921
+points with interval[-.448289,-.018289]. Preserve the full failed joint result,
+not only the DO gain. artifacts.json binds its verified immutable draft asset.
 
 e68 preregisters fresh policy seeds5 through9. Session42965 runs unchanged
 original training followed by unchanged passive-capture training, at most
@@ -59,6 +60,18 @@ which refuses incomplete parity and reproduces original e55 capture/provenance
 preparation followed by fixed e56 horizon4 fitting. New controllers are not
 evaluated on the fresh block yet. Neither fresh NN preparation nor fitting
 alone is e63 baseline construction, candidate replication or a goal success.
+
+Session52492 waits on the verified rate-preparation shell PID21528 before
+run_references.py constructs and audits all five actual fresh e63 comparators.
+No candidate is evaluated by that baseline pipeline.
+
+e69 prospectively tests a training-only mean-action budget for the radius0.5
+risk correction. A fixed64-step mean-only multiplier bisection and deterministic
+convex policy interpolation match e63 native mean action on fit updates1~52;
+held updates53~66 are excluded from calibration. Known-optimum discrete-jump,
+multiplier-sign and zero/flat controls pass. Session23268 (fitter PID5648 at
+the last direct check) calibrates and independently checks all five original
+seeds. No e69 environment query or quality improvement is established yet.
 
 The companion research note records the study history and commands. This
 is a snapshot, not a process monitor.

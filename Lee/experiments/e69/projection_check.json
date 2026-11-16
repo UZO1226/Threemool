@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "known_discrete_jump_mixture": true,
+  "air_multiplier_sign_monotone": true,
+  "zero_identity_and_flat_null": true,
+  "source_sha256": "f37bea6bf495e5a23fa85aca526e1028afe7163c7a32a030aae0c6fe84cee478"
+}

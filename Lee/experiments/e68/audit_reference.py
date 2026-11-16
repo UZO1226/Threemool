@@ -7,7 +7,7 @@ import numpy as np
 import torch
 
 from build_reference import ROOT, sha, load_base, load_rates, load_policy, verify_sources
-from quantile_env import FrozenDynamics, evaluate
+from quantile_env import FrozenDynamics, evaluate, frozen_digest
 from rate_model import ConstantRate
 from trust_policy import TrustPolicy
 
@@ -28,6 +28,7 @@ def main():
     assert seed in range(5, 10) and summary['base_training_steps'] == 401280
     verify_sources(summary['source_sha256'], Path(__file__).parent)
     freeze = ROOT / 'Lee/experiments/e42/environment_freeze.json'
+    assert frozen_digest(freeze) == summary['freeze_canonical_sha256']
     data = args.workspace.resolve() / 'kaggle_data/darrow_15min.pkl'
     assert sha(data) == summary['data_sha256']
     base, config, _, hashes = load_base(args.baselines / f'captured/new_ppolag_fcsrl/seed_{seed}',

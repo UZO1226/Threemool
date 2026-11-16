@@ -52,6 +52,7 @@ library threads fixed to1, launch into unused output paths:
 ```powershell
 python Threemool/Lee/experiments/e68/run_baselines.py --workspace C:/Users/user/Downloads/IoT_project2 --out results/e68_fresh_baselines
 python Threemool/Lee/experiments/e68/prepare_rates.py --workspace C:/Users/user/Downloads/IoT_project2 --baselines results/e68_fresh_baselines --out results/e68_fresh_rates
+python Threemool/Lee/experiments/e68/run_references.py --workspace C:/Users/user/Downloads/IoT_project2 --baselines results/e68_fresh_baselines --rates results/e68_fresh_rates --out results/e68_fresh_references
 ```
 
 The second command requires the first command's completed summary and exact
@@ -66,3 +67,15 @@ pipeline rather than weakening capture guards to avoid provenance fitting.
 Current output is not a completed artifact or replicated policy gain.
 study_status.json is a progress snapshot; inspect actual process liveness
 before restarting. All historical trainer/model sources remain unchanged.
+
+The final command refuses incomplete rate preparation, reconstructs the
+original NN's native trajectory and both independently reloaded e63 native
+trajectories, and uses the original air-only matcher to construct each actual
+fresh e63 reference. It independently audits152000 native and152000 matched
+actions per seed, including original sklearn predictions and executed air.
+The seed5 flat-risk null must exactly reproduce its original NN trajectory.
+Authentication records real seed IDs, checkpoints, models, controller configs,
+fixed offsets and achieved air. Original-FCSRL air-match flags remain separate
+from authentication and later candidate improvement. No fresh candidate is
+evaluated by any of these commands. The reference command is queued behind
+the verified rate-preparation waiter, not executing against incomplete models.
