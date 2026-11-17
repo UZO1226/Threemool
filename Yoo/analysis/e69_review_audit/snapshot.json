@@ -1,0 +1,168 @@
+{
+  "checked_at": "2026-11-17T07:43:11.237215+00:00",
+  "code_commit": "86f543c39a14ad29c992568966eac709fde2b914",
+  "root": "/home/jio/fcsrl_src/results/e69/main",
+  "previous": "/home/jio/fcsrl_src/results/e68/main",
+  "changed_manifest_files": [],
+  "invalid_commands": [],
+  "full_prefix_matches": 10,
+  "total_expected": 20,
+  "audit_failed": false,
+  "runs": [
+    {
+      "run": "fcsrl_s0",
+      "status": "checked",
+      "logged_updates": 480,
+      "metrics_exist": false,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "fcsrl_s1",
+      "status": "checked",
+      "logged_updates": 480,
+      "metrics_exist": false,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "fcsrl_s2",
+      "status": "checked",
+      "logged_updates": 480,
+      "metrics_exist": false,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "fcsrl_s3",
+      "status": "checked",
+      "logged_updates": 480,
+      "metrics_exist": false,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "fcsrl_s4",
+      "status": "checked",
+      "logged_updates": 490,
+      "metrics_exist": false,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "fcsrl_s5",
+      "status": "checked",
+      "logged_updates": 70,
+      "metrics_exist": false,
+      "compared_updates": 70,
+      "mismatched_fields": [],
+      "complete_prefix_match": false
+    },
+    {
+      "run": "fcsrl_s6",
+      "status": "checked",
+      "logged_updates": 60,
+      "metrics_exist": false,
+      "compared_updates": 60,
+      "mismatched_fields": [],
+      "complete_prefix_match": false
+    },
+    {
+      "run": "fcsrl_s7",
+      "status": "checked",
+      "logged_updates": 50,
+      "metrics_exist": false,
+      "compared_updates": 50,
+      "mismatched_fields": [],
+      "complete_prefix_match": false
+    },
+    {
+      "run": "fcsrl_s8",
+      "status": "not_logged"
+    },
+    {
+      "run": "fcsrl_s9",
+      "status": "not_logged"
+    },
+    {
+      "run": "ppolag_s0",
+      "status": "checked",
+      "logged_updates": 500,
+      "metrics_exist": true,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "ppolag_s1",
+      "status": "checked",
+      "logged_updates": 500,
+      "metrics_exist": true,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "ppolag_s2",
+      "status": "checked",
+      "logged_updates": 500,
+      "metrics_exist": true,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "ppolag_s3",
+      "status": "checked",
+      "logged_updates": 500,
+      "metrics_exist": true,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "ppolag_s4",
+      "status": "checked",
+      "logged_updates": 500,
+      "metrics_exist": true,
+      "compared_updates": 250,
+      "mismatched_fields": [],
+      "complete_prefix_match": true
+    },
+    {
+      "run": "ppolag_s5",
+      "status": "checked",
+      "logged_updates": 80,
+      "metrics_exist": false,
+      "compared_updates": 80,
+      "mismatched_fields": [],
+      "complete_prefix_match": false
+    },
+    {
+      "run": "ppolag_s6",
+      "status": "checked",
+      "logged_updates": 70,
+      "metrics_exist": false,
+      "compared_updates": 70,
+      "mismatched_fields": [],
+      "complete_prefix_match": false
+    },
+    {
+      "run": "ppolag_s7",
+      "status": "not_logged"
+    },
+    {
+      "run": "ppolag_s8",
+      "status": "not_logged"
+    },
+    {
+      "run": "ppolag_s9",
+      "status": "not_logged"
+    }
+  ]
+}
