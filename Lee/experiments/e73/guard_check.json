@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "nh4_increase_excluded": true,
+  "do_increase_excluded": true,
+  "active_only_mean_constraint": true,
+  "flat_risk_fitted_parameter_identity": true,
+  "reference_only_identity": true,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee\\experiments\\e73\\check_guard.py": "5aa69ed1e2602026e5c60fbdf5eaa56266efc0faaa95174df59bfdd8f1398182",
+    "Lee\\experiments\\e73\\guard_policy.py": "ebc51574bdc10eebc04589f422451cb1b51c7cc6ca9724def6a48773212b45d4",
+    "Lee\\experiments\\e71\\signal_policy.py": "2567d6ecf5f2b287026841d41fe847e39d84af4f564c595e65329d6e6e4abbb5",
+    "Lee\\experiments\\e69\\budget_policy.py": "c27119c89ff348cc5e2008852350c1c7fd6710519a32d3730f9cb46853fe0e20"
+  }
+}

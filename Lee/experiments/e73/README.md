@@ -33,6 +33,15 @@ Do not assume this guard constrains true safety or recursive future outcomes.
 Record all predicted increases and any numerical violation as a control failure.
 Previous-air feedback, state shift and model misspecification remain unresolved.
 
+The component guard applies to the interpolated wrapper action relative to
+same-state e63 native, before the unchanged post-wrapper air-matching offset.
+Check this wrapper property on states visited in both native and matched
+trajectories. The final matched action can violate the predicted component
+bound after its offset. Report those final-action predicted changes separately
+against the same-state authenticated e63 action including its fixed offset;
+do not claim the guard constrains matched actions or change the matcher to
+force a favorable result. Actual matched quality remains the primary test.
+
 Before evaluation require known-answer exclusion and interpolation controls,
 constant-risk NN identity, reference-only e63 identity, strict reload and all
 five held checks. Run every original policy seed0 through4 with unchanged
