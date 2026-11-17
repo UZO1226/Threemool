@@ -67,6 +67,13 @@ the active goal or silently adopt a different environment.
 
 ## Implementation and reproduction
 
+All five original policy seeds now complete fitting-only mean calibration,
+all85120 held-state component/bounds/fallback checks and1024 original-sklearn
+decision probes. Maximum component increase is zero for both heads in every
+seed. preflight.json retains the exact source hashes and parameters. Native
+smoke and full-trajectory identity controls remain required before all-seed
+comparison; no matched quality gain is established by these held checks.
+
 anchor_policy.py and check_anchor.py implement and verify the fixed offset,
 column0 fallback, admissibility, inner-grid eligibility, interpolation and
 strict configuration. fit_anchor.py uses fitting observations only and

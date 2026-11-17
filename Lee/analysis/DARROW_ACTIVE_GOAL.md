@@ -32,8 +32,11 @@ asset757737999. No exposed-block follow-up is triggered. e74 prospectively
 changes the extension anchor to actual authenticated matched e63, preserving
 the matcher, information, budgets and criterion. Its column0 reference,
 exclusion, interpolation, fixed-offset NN null and serialization software
-controls pass. The implemented original five-seed training-only calibration
-is running in results/e74_anchor_fit; no candidate quality is evaluated yet.
+controls pass. All five original-seed training-only calibrations and held
+checks now finish, with zero component increases and matched-reference
+identity on held states. Native smoke is running; the full study is queued
+behind its actual process and requires completed smoke output and controls.
+No five-seed candidate quality is verified yet.
 No robust gain is established.
 e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
