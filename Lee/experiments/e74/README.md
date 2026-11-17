@@ -64,3 +64,40 @@ selection rescues a failed block. Existing5 through9 outcomes are exposed
 development information, not unseen confirmation. Reused validation40 is
 exploratory; final test41 remains unused. Failure is not a reason to finish
 the active goal or silently adopt a different environment.
+
+## Implementation and reproduction
+
+anchor_policy.py and check_anchor.py implement and verify the fixed offset,
+column0 fallback, admissibility, inner-grid eligibility, interpolation and
+strict configuration. fit_anchor.py uses fitting observations only and
+independently checks all held rows,1024 original-sklearn decisions, serialized
+reload and e73's unchanged legacy changed-row count. Initial fitting is
+launched atb07a342. Source hashes and individual fitted configurations are
+retained in the output, not inferred from the latest branch commit.
+
+Use the threemool environment with numerical library threads1. Restore the
+original data and frozen dependencies by hash, and use unused output paths:
+
+```powershell
+python Threemool/Lee/experiments/e74/check_anchor.py --out results/e74_anchor_check.json
+python Threemool/Lee/experiments/e74/fit_anchor.py --workspace C:/Users/user/Downloads/IoT_project2 --certificate Threemool/Lee/experiments/e64/baseline_authentication.json --out results/e74_anchor_fit
+python Threemool/Lee/experiments/e74/compare.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --certificate Threemool/Lee/experiments/e64/baseline_authentication.json --preflight results/e74_anchor_fit/preflight.json --projection results/e74_anchor_fit/seed_0 --previous results/e63_study --out results/e74_native_smoke --native-only
+python Threemool/Lee/experiments/e74/run_study.py --workspace C:/Users/user/Downloads/IoT_project2
+```
+
+The fitter reads the committed anchor_check.json; regenerated sources require
+regenerating and reviewing this control certificate before fitting. Existing
+complete output directories are immutable. Reproduce in a new workspace with
+consistent runner paths. The original-only arithmetic verifier retains its
+legacy filename:
+
+```powershell
+python Threemool/Lee/analysis/verify_e71_blocks.py --trial e74 --original-only --workspace C:/Users/user/Downloads/IoT_project2 --out results/e74_initial_verified.json
+```
+
+The null control independently evaluates the NN converted to float64 before
+adding the frozen reference offset, matching the reference trust policy's
+action precision. The reference-only control reproduces e63's archived
+matched trajectory, not its native trajectory. Both controls and all five
+native/matched audits are mandatory before any adoption claim. All final
+executed predicted component changes remain disclosed after the extra offset.

@@ -26,11 +26,11 @@ def main():
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--require-fresh', action='store_true')
-    parser.add_argument('--trial', choices=('e71', 'e73'), default='e71')
+    parser.add_argument('--trial', choices=('e71', 'e73', 'e74'), default='e71')
     parser.add_argument('--original-only', action='store_true')
     args = parser.parse_args()
     assert not (args.original_only and args.require_fresh)
-    assert args.trial != 'e73' or args.original_only, 'e73 exposed and new confirmation blocks require their separate registration'
+    assert args.trial not in ('e73', 'e74') or args.original_only, 'Exposed and new confirmation blocks require their separate registration'
     workspace = args.workspace.resolve()
     results = workspace / 'results'
     data = workspace / 'kaggle_data/darrow_15min.pkl'
@@ -85,7 +85,7 @@ def main():
             pair, audit = checked_read(folder / 'summary.json'), checked_read(folder / 'action_audit.json')
             reference = next(row for row in cert['records'] if row['policy_seed'] == seed)
             assert pair['policy_seed'] == audit['policy_seed'] == seed and audit['passed']
-            assert pair['candidate_method'] == {'e71': 'e71_signal_gate_h4', 'e73': 'e73_component_guard_h4'}[args.trial]
+            assert pair['candidate_method'] == {'e71': 'e71_signal_gate_h4', 'e73': 'e73_component_guard_h4', 'e74': 'e74_matched_anchor_h4'}[args.trial]
             assert not pair['test_evaluated'] and not audit['test_evaluated']
             assert pair['training_steps'] == 401280 and pair['extra_environment_training_steps'] == 0
             assert pair['baseline_certificate_sha256'] == sha(cert_path)
@@ -100,7 +100,7 @@ def main():
                 replay = audit['replays'][mode]
                 assert replay['action_rows'] == 152000 and replay['trajectory_replay_exact']
                 assert replay['independent_sklearn_actions_exact'] and replay['executed_air_accounting_exact']
-                if args.trial == 'e73':
+                if args.trial in ('e73', 'e74'):
                     assert replay['wrapper_component_guard_passed']
                     assert replay['wrapper_component_increase_rows'] == [0, 0]
             calls = []
