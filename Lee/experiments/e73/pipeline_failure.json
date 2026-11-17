@@ -1,0 +1,8 @@
+{
+  "code_commit": "967b5fa",
+  "phase": "native_smoke_preflight",
+  "terminal": true,
+  "new_environment_queries": 0,
+  "output_directory_created": false,
+  "failure": "KeyError on POSIX literal lookup into Windows-relative source map. Normalize path separators before exact hash lookup. No policy/data/criterion change or refit."
+}

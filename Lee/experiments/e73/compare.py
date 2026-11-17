@@ -46,7 +46,9 @@ def main():
     control = json.loads(control_path.read_text())
     assert control['passed'] and control['new_environment_queries'] == 0
     verify_sources(control['source_sha256'], ROOT)
-    assert preflight['source_sha256']['guard_policy.py'] == control['source_sha256']['Lee/experiments/e73/guard_policy.py']
+    control_guard_hash = next(value for name, value in control['source_sha256'].items()
+                              if name.replace('\\', '/') == 'Lee/experiments/e73/guard_policy.py')
+    assert preflight['source_sha256']['guard_policy.py'] == control_guard_hash
     legacy = json.loads((ROOT / 'Lee/experiments/e69/preflight.json').read_text())
     verify_sources({'budget_policy.py': legacy['source_sha256']['budget_policy.py']}, ROOT / 'Lee/experiments/e69')
     base, config, _, hashes = load_base(args.candidate, args.freeze, args.baseline)
