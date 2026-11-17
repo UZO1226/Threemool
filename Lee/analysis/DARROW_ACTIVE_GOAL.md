@@ -34,8 +34,10 @@ the matcher, information, budgets and criterion. Its column0 reference,
 exclusion, interpolation, fixed-offset NN null and serialization software
 controls pass. All five original-seed training-only calibrations and held
 checks now finish, with zero component increases and matched-reference
-identity on held states. Native smoke is running; the full study is queued
-behind its actual process and requires completed smoke output and controls.
+identity on held states. Native smoke, independent152000-action replay,
+the frozen-offset NN null and the reference-only matched-e63 full-trajectory
+identity all now pass. The complete original five-seed actual-air comparison
+is running, with all native/matched independent audits still required.
 No five-seed candidate quality is verified yet.
 No robust gain is established.
 e65 fixes a17-point nested action grid at

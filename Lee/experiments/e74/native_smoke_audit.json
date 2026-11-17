@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "policy_seed": 0,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": 0.0,
+      "wrapper_component_guard_passed": true,
+      "wrapper_component_increase_rows": [
+        0,
+        0
+      ],
+      "executed_component_increase_rows_vs_same_state_matched_e63": [
+        0,
+        0
+      ],
+      "mean_executed_predicted_component_delta_vs_same_state_matched_e63": [
+        -0.00041458644438353457,
+        -0.00012077652969750874
+      ],
+      "guard_scope": "Pre-offset wrapper only; post-offset predicted changes are descriptive and not constrained."
+    }
+  },
+  "flat_risk_frozen_offset_nn_full_native_exact": true,
+  "reference_only_matched_e63_full_native_exact": true,
+  "comparison_summary_sha256": "c7520876dbb4388a122e5f16c3a1cba80f9d71fba925b920a6774e0e2b782230",
+  "audit_source_sha256": "d6f967b13eb28a900511841cf70aeb261f3f73cffedd4f20abee9c55bbd28215",
+  "test_evaluated": false
+}

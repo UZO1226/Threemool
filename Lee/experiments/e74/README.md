@@ -74,6 +74,13 @@ seed. preflight.json retains the exact source hashes and parameters. Native
 smoke and full-trajectory identity controls remain required before all-seed
 comparison; no matched quality gain is established by these held checks.
 
+The native smoke and independent152000-action trajectory audit now pass.
+The full frozen-offset NN null and reference-only matched-e63 identity
+controls also pass exactly. native_smoke_audit.json records the controls and
+zero pre-offset component increases. All five original-seed actual-air
+comparisons are now launched, with native/matched independent audits still
+required. This is not a completed five-seed improvement result.
+
 anchor_policy.py and check_anchor.py implement and verify the fixed offset,
 column0 fallback, admissibility, inner-grid eligibility, interpolation and
 strict configuration. fit_anchor.py uses fitting observations only and
