@@ -1,0 +1,217 @@
+{
+ "judgement": {
+  "H1_dev": {
+   "pairs": [
+    {
+     "air_m3": -1315.882932773471,
+     "over_budget_steps": -0.006849315068493178,
+     "nh4_excess_mg_h_L": -9.388933428120477,
+     "day_violation_pct": 0.22831050228310446
+    },
+    {
+     "air_m3": -2282.5081860583014,
+     "over_budget_steps": -0.033333333333333326,
+     "nh4_excess_mg_h_L": -8.089597773200712,
+     "day_violation_pct": 0.09132420091324178
+    },
+    {
+     "air_m3": 42.21268966154457,
+     "over_budget_steps": 0.010502283105022825,
+     "nh4_excess_mg_h_L": -8.02565318403832,
+     "day_violation_pct": 0.27397260273972535
+    },
+    {
+     "air_m3": -1153.5332238785268,
+     "over_budget_steps": -0.1721461187214612,
+     "nh4_excess_mg_h_L": -12.557818822573154,
+     "day_violation_pct": -8.812785388127853
+    },
+    {
+     "air_m3": -481.34785891163483,
+     "over_budget_steps": -1.9639269406392692,
+     "nh4_excess_mg_h_L": -23.322609709346594,
+     "day_violation_pct": -8.21917808219178
+    },
+    {
+     "air_m3": -1899.3934026715797,
+     "over_budget_steps": -0.11643835616438353,
+     "nh4_excess_mg_h_L": -24.395035292605,
+     "day_violation_pct": -9.360730593607308
+    },
+    {
+     "air_m3": -1949.8497953150363,
+     "over_budget_steps": -0.09954337899543378,
+     "nh4_excess_mg_h_L": -4.639835384437744,
+     "day_violation_pct": -1.87214611872146
+    },
+    {
+     "air_m3": -1852.839376974036,
+     "over_budget_steps": 0.13835616438356166,
+     "nh4_excess_mg_h_L": -18.312337159230935,
+     "day_violation_pct": -2.191780821917807
+    },
+    {
+     "air_m3": 1847.418177147767,
+     "over_budget_steps": -0.024200913242009126,
+     "nh4_excess_mg_h_L": -3.5849123956495337,
+     "day_violation_pct": -3.378995433789955
+    },
+    {
+     "air_m3": -1473.3933191004326,
+     "over_budget_steps": -0.23881278538812784,
+     "nh4_excess_mg_h_L": -27.262427052305576,
+     "day_violation_pct": -2.831050228310503
+    }
+   ],
+   "fcsrl_better": 7,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확"
+  },
+  "H1_val": {
+   "pairs": [
+    {
+     "air_m3": 1069.1596102818585,
+     "over_budget_steps": 0.10833333333333384,
+     "nh4_excess_mg_h_L": -6.892811807016162,
+     "day_violation_pct": 8.833333333333334
+    },
+    {
+     "air_m3": -2760.8698516919976,
+     "over_budget_steps": -0.44666666666666655,
+     "nh4_excess_mg_h_L": -7.099693552846832,
+     "day_violation_pct": -3.666666666666668
+    },
+    {
+     "air_m3": 2230.5531919698187,
+     "over_budget_steps": 0.45833333333333326,
+     "nh4_excess_mg_h_L": -6.578944853853985,
+     "day_violation_pct": 9.333333333333332
+    },
+    {
+     "air_m3": -1677.1953980445105,
+     "over_budget_steps": 0.13666666666666671,
+     "nh4_excess_mg_h_L": -7.314550320746047,
+     "day_violation_pct": 0.16666666666666785
+    },
+    {
+     "air_m3": 6411.306829042202,
+     "over_budget_steps": -0.7466666666666666,
+     "nh4_excess_mg_h_L": -17.101777241636476,
+     "day_violation_pct": 8.333333333333332
+    },
+    {
+     "air_m3": 6774.805821833055,
+     "over_budget_steps": -0.331666666666667,
+     "nh4_excess_mg_h_L": -29.13634046115981,
+     "day_violation_pct": -27.166666666666664
+    },
+    {
+     "air_m3": 188.5631816682071,
+     "over_budget_steps": 0.23833333333333329,
+     "nh4_excess_mg_h_L": -6.980929349583224,
+     "day_violation_pct": 3.666666666666667
+    },
+    {
+     "air_m3": 4518.002914978395,
+     "over_budget_steps": -0.11666666666666692,
+     "nh4_excess_mg_h_L": -19.72515928322447,
+     "day_violation_pct": -5.333333333333334
+    },
+    {
+     "air_m3": 6295.960922760547,
+     "over_budget_steps": -0.5583333333333331,
+     "nh4_excess_mg_h_L": -5.599665401862282,
+     "day_violation_pct": -11.166666666666668
+    },
+    {
+     "air_m3": 4644.341337484853,
+     "over_budget_steps": 0.7849999999999999,
+     "nh4_excess_mg_h_L": -24.594232002375676,
+     "day_violation_pct": 9.5
+    }
+   ],
+   "fcsrl_better": 1,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확"
+  },
+  "H2": {
+   "fcsrl": {
+    "dev_le_limit": 4,
+    "val_le_record": 10
+   },
+   "ppolag": {
+    "dev_le_limit": 2,
+    "val_le_record": 10
+   }
+  },
+  "H3_dev_fcsrl": {
+   "mean": {
+    "air_m3": 39711.78087439411,
+    "over_budget_steps": 0.3001826484018265,
+    "nh4_excess_mg_h_L": 13.663647800972447,
+    "day_violation_pct": 4.520547945205479
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "over_budget_steps": 0.2808219178082192,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_dev_ppolag": {
+   "mean": {
+    "air_m3": 40763.69259728149,
+    "over_budget_steps": 0.5508219178082193,
+    "nh4_excess_mg_h_L": 27.621563821123253,
+    "day_violation_pct": 8.127853881278538
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "over_budget_steps": 0.2808219178082192,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_val_fcsrl": {
+   "mean": {
+    "air_m3": 49967.49515209029,
+    "over_budget_steps": 1.9463333333333335,
+    "nh4_excess_mg_h_L": 15.020247100121685,
+    "day_violation_pct": 13.683333333333332
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "over_budget_steps": 2.3,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_val_ppolag": {
+   "mean": {
+    "air_m3": 47198.032296062054,
+    "over_budget_steps": 1.9936666666666671,
+    "nh4_excess_mg_h_L": 28.122657527552185,
+    "day_violation_pct": 14.433333333333332
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "over_budget_steps": 2.3,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "reproduce_e70_first_250": {
+   "fcsrl": 10,
+   "ppolag": 10
+  }
+ },
+ "root": "/home/jio/fcsrl_src/results/e71/main"
+}
