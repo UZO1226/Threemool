@@ -488,8 +488,9 @@ individual file hashes and remote asset identities.
 | e71 fresh | lee-e71-fresh-signal-gate.zip | [Failed separate replication, not an adopted gain](../experiments/e71/fresh_artifacts.json) |
 | e72 | lee-e72-component-risk-diagnostic.zip | [All ten held component/regime diagnostics](../experiments/e72/artifacts.json) |
 | e73 | lee-e73-component-guard.zip | [Completed cost/NH4 gain with failed DO condition](../experiments/e73/artifacts.json) |
+| e74 | lee-e74-matched-anchor.zip | [Completed anchored comparison with failed DO condition](../experiments/e74/artifacts.json) |
 
-These twelve indexes are independently checked against current remote assets
+These thirteen indexes are independently checked against current remote assets
 and every local ZIP entry by [verify_self_delivery.py](verify_self_delivery.py).
 [The recorded delivery check](DARROW_SELF_DELIVERY_VERIFICATION.json) is
 artifact evidence, not scientific success. To repeat the read-only check:
@@ -523,9 +524,11 @@ data, budget and model guards. The earlier source-location adapter has a
 tested e63 scope; do not infer that later controllers have already been
 portable-replayed. Use a new workspace for deliberate reruns.
 
-e74 is currently implemented and passes all five training-only held checks,
-its native replay, frozen-offset NN null and matched-reference identity.
-Its original five-seed actual-air comparison and later independent audits
-are running. No completed e74 archive or improvement is asserted here.
+e74 completes its original five-seed actual-air comparison, independent
+audits and controls, but fails DO with interval upper endpoint+.000526316.
+Its full archive is preserved; its cost/NH4 gains do not establish adoption.
+e75 now preregisters a training-only next-DO forecast admission study before
+any new controller evaluation, using existing captured data and reporting
+the added offline supervised compute separately from the fixed RL budget.
 Every criterion remains unchanged, exposed seeds5 through9 cannot be called
 unseen confirmation for a later method, and final test41 remains reserved.
