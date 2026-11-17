@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "column0_reference_preserved": true,
+  "inner_grid_gain_eligible": true,
+  "both_component_increases_excluded": true,
+  "monotone_interpolation_control": true,
+  "flat_risk_fixed_offset_nn_identity": true,
+  "strict_config_roundtrip_and_unknown_option_rejection": true,
+  "calibration_error": 0.0,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee/experiments/e74/check_anchor.py": "1344ef4caf4bec89a590165f0aaed6237a16265501ed381451ee290ad12c8543",
+    "Lee/experiments/e74/anchor_policy.py": "1cbf3825ed379ec17f12f016f8969d9283aab75f5c41baf57c1233aeafd43fc2",
+    "Lee/experiments/e69/budget_policy.py": "c27119c89ff348cc5e2008852350c1c7fd6710519a32d3730f9cb46853fe0e20"
+  }
+}
