@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import subprocess
 
 import numpy as np
 import torch
@@ -31,6 +32,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--previous', type=Path)
     args = parser.parse_args()
     assert not args.out.exists()
     torch.set_num_threads(1)
@@ -42,8 +44,13 @@ def main():
     assert read(initial_path)['meets_prespecified_simulation_criterion']
     assert not read(fresh_path)['meets_prespecified_simulation_criterion']
     args.out.mkdir(parents=True)
+    pinned_source = sha(Path(__file__))
+    previous = read(args.previous) if args.previous else None
+    if previous:
+        assert previous['passed'] and previous['policy_seeds'] == list(range(10))
     records = []
     for seed in range(10):
+        assert sha(Path(__file__)) == pinned_source
         fresh = seed >= 5
         run = results / (f'e68_fresh_baselines/captured/new_ppolag_fcsrl/seed_{seed}' if fresh else f'e55_study/policies/new_ppolag_fcsrl/seed_{seed}')
         original = results / (f'e68_fresh_baselines/original/new_ppolag_fcsrl/seed_{seed}' if fresh else f'e42_baselines/new_ppolag_fcsrl/seed_{seed}')
@@ -64,6 +71,7 @@ def main():
         counts = {key: 0 for key in ('changed', 'sum_risk_worse', 'nh4_risk_increase', 'do_risk_increase',
             'nh4_increase_do_decrease', 'do_increase_nh4_decrease', 'both_components_nonincreasing',
             'expanded_sum_gain', 'component_guard_gain_available', 'guard_lower_air_available', 'guard_higher_air_available')}
+        regimes = {str(code): {'rows': 0, 'counts': dict.fromkeys(counts, 0)} for code in range(4)}
         delta_sum = np.zeros(2)
         for start in range(0, len(obs), 2048):
             batch = obs[start:start + 2048]
@@ -94,6 +102,16 @@ def main():
                 'guard_higher_air_available': (feasible & (candidates > reference_action[:, None])).any(-1)}
             for key, mask in masks.items():
                 counts[key] += int(mask.sum())
+            regime = (batch[:, 0] > 4).astype(int) + 2 * (batch[:, 2:5].max(-1) > 2).astype(int)
+            for code in range(4):
+                selected = regime == code
+                regimes[str(code)]['rows'] += int(selected.sum())
+                for key, mask in masks.items():
+                    regimes[str(code)]['counts'][key] += int((mask & selected).sum())
+        assert sum(row['rows'] for row in regimes.values()) == len(obs)
+        assert all(sum(row['counts'][key] for row in regimes.values()) == value for key, value in counts.items())
+        if previous:
+            assert previous['records'][seed]['counts'] == counts
         assert counts['changed'] == calibration['held_changed_action_rows']
         assert counts['sum_risk_worse'] == calibration['held_selected_predicted_risk_worse_rows']
         np.testing.assert_allclose(delta_sum.sum() / len(obs), calibration['held_mean_predicted_risk_change'], rtol=0, atol=1e-12)
@@ -102,7 +120,8 @@ def main():
         probe = public_features(subset, action)
         np.testing.assert_allclose(policy.risk.predict(probe), slow_rates(models, probe), atol=1e-12, rtol=1e-12)
         record = {'policy_seed': seed, 'block': 'exposed_fresh' if fresh else 'original',
-            'held_rows': len(obs), 'counts': counts, 'mean_predicted_component_change': delta_sum.tolist(),
+            'held_rows': len(obs), 'counts': counts, 'by_current_regime': regimes,
+            'regime_rule': 'NH4>4 contributes1, max(DO1,DO2,DO3)>2 contributes2, current observations only.',
             'component_change_denominator': len(obs), 'independent_sklearn_probe_rows': len(subset),
             'passed': True, 'calibration_sha256': sha(calibration_path), 'rate_model_sha256': fit['model_sha256'],
             'base_checkpoint_hashes': hashes, 'capture_provenance': provenance,
@@ -113,9 +132,12 @@ def main():
         print('COMPONENT_DIAGNOSTIC_PASS', seed, counts, flush=True)
     summary = {'passed': True, 'policy_seeds': list(range(10)), 'records': records,
         'initial_report_sha256': sha(initial_path), 'fresh_report_sha256': sha(fresh_path),
-        'source_sha256': sha(Path(__file__)), 'new_environment_queries': 0,
+        'source_sha256': pinned_source, 'new_environment_queries': 0,
+        'code_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+        'previous_summary_sha256': sha(args.previous) if args.previous else None,
         'test_evaluated': False, 'new_model_fitting': False,
         'scope': 'Held logged-state predicted components and guard feasibility, not observed candidate outcomes, causality or policy improvement.'}
+    assert sha(Path(__file__)) == pinned_source
     (args.out / 'summary.json').write_text(json.dumps(summary, indent=2, allow_nan=False))
     print('COMPONENT_DIAGNOSTIC_COMPLETE', flush=True)
 

@@ -31,3 +31,12 @@ outcomes and unchanged e63 primary references, world, inputs and budgets.
 ```powershell
 python Threemool/Lee/experiments/e72/diagnose_components.py --workspace C:/Users/user/Downloads/IoT_project2 --out results/e72_component_diagnostic
 ```
+
+The first implementation at8a2c503 completes all aggregate checks but does
+not yet group by the declared current regime. Preserve that output as
+results/e72_component_diagnostic. The completed specification adds the four
+current regimes and reruns into results/e72_component_regimes with
+--previous results/e72_component_diagnostic/summary.json, requiring exact
+aggregate-count identity with the first run. Neither run introduces a new
+controller or environment query. Final regime sums must reproduce every
+aggregate count and all85120 held rows per seed.
