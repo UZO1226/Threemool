@@ -1,5 +1,10 @@
 # e74: Extend the authenticated matched reference directly
 
+Latest outcome: the complete original block and all independent audits pass
+mechanically, but the joint scientific criterion fails DO with a positive
+interval upper endpoint. See [results.md](results.md). Preserve every seed
+and do not trigger exposed-block confirmation or change the criterion.
+
 Prospective hypothesis after completed e73 failure,2026-11-17. e73 passes
 cost/NH4 but fails DO. Its component guard refers to e63 native, while the
 primary comparator is e63 after a fixed air-only offset. The final matched

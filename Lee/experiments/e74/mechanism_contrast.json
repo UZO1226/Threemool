@@ -1,0 +1,165 @@
+{
+  "primary_reference_unchanged": "Authenticated matched e63",
+  "secondary_reference": "e73",
+  "candidate": "e74",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "metrics": {
+    "candidate_native": {
+      "air_m3": {
+        "e73_mean": 56628.30458525877,
+        "e74_mean": 53761.49709402739,
+        "paired_difference": [
+          -963.7922378136136,
+          -107.80302433509496,
+          -1868.9944693278667,
+          -3055.3703819372095,
+          -8338.077342743018
+        ],
+        "mean_difference": -2866.8074912313605,
+        "paired_policy_seed95_ci": [
+          -5750.444193376958,
+          -802.4369987250568
+        ]
+      },
+      "cost": {
+        "e73_mean": 15.884125000000001,
+        "e74_mean": 16.198375,
+        "paired_difference": [
+          0.29625000000000057,
+          -0.2731249999999985,
+          0.5543750000000003,
+          0.09062500000000018,
+          0.9031249999999993
+        ],
+        "mean_difference": 0.31425000000000036,
+        "paired_policy_seed95_ci": [
+          -0.03487499999999901,
+          0.6678749999999998
+        ]
+      },
+      "nh4_viol_pct": {
+        "e73_mean": 16.359999999999996,
+        "e74_mean": 16.73486842105263,
+        "paired_difference": [
+          0.3125,
+          -0.28092105263157663,
+          0.6953947368421147,
+          0.1848684210526308,
+          0.9625000000000021
+        ],
+        "mean_difference": 0.3748684210526342,
+        "paired_policy_seed95_ci": [
+          0.0075000000000031266,
+          0.7488157894736922
+        ]
+      },
+      "do_viol_pct": {
+        "e73_mean": 0.36013157894736836,
+        "e74_mean": 0.31605263157894736,
+        "paired_difference": [
+          -0.0006578947368421047,
+          -0.006578947368421066,
+          -0.11184210526315791,
+          -0.08947368421052615,
+          -0.01184210526315789
+        ],
+        "mean_difference": -0.044078947368421016,
+        "paired_policy_seed95_ci": [
+          -0.08631578947368419,
+          -0.005263157894736846
+        ]
+      }
+    },
+    "candidate_matched": {
+      "air_m3": {
+        "e73_mean": 52013.69387284019,
+        "e74_mean": 52014.18329059958,
+        "paired_difference": [
+          45.207557546200405,
+          -2.6864914349280298,
+          21.498714033616125,
+          -27.316144424956292,
+          -34.25654692299577
+        ],
+        "mean_difference": 0.48941775938728826,
+        "paired_policy_seed95_ci": [
+          -25.16637482616643,
+          26.145210344941006
+        ]
+      },
+      "cost": {
+        "e73_mean": 20.149875,
+        "e74_mean": 18.228125,
+        "paired_difference": [
+          -0.23375000000000057,
+          -0.5050000000000008,
+          -1.546875,
+          -0.5968749999999998,
+          -6.72625
+        ],
+        "mean_difference": -1.92175,
+        "paired_policy_seed95_ci": [
+          -4.391875000000001,
+          -0.4148750000000005
+        ]
+      },
+      "nh4_viol_pct": {
+        "e73_mean": 20.910131578947368,
+        "e74_mean": 18.895657894736843,
+        "paired_difference": [
+          -0.24605263157895152,
+          -0.5421052631578949,
+          -1.5861842105263158,
+          -0.6138157894736835,
+          -7.084210526315793
+        ],
+        "mean_difference": -2.014473684210528,
+        "paired_policy_seed95_ci": [
+          -4.61697368421053,
+          -0.43802631578947526
+        ]
+      },
+      "do_viol_pct": {
+        "e73_mean": 0.3002631578947369,
+        "e74_mean": 0.2918421052631579,
+        "paired_difference": [
+          0.0,
+          0.010526315789473668,
+          -0.04210526315789476,
+          -0.014473684210526416,
+          0.003947368421052631
+        ],
+        "mean_difference": -0.008421052631578975,
+        "paired_policy_seed95_ci": [
+          -0.026052631578947404,
+          0.00578947368421052
+        ]
+      }
+    }
+  },
+  "both_primary_joint_criteria_fail": true,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee/experiments/e73/comparison.json": "083c47d665822d6fba03f472b76daca26a2910c1fe677620d6f4d7464655f84c",
+    "Lee/experiments/e73/audit_seed_0.json": "69028ab33cc666506382a1c4ab96456776b7266c00ad6091a69e809fa3734260",
+    "Lee/experiments/e73/audit_seed_1.json": "c332a2a42fa6018b952d88e6494e1bb596e61b59459e8ce052a3abf59a30aff9",
+    "Lee/experiments/e73/audit_seed_2.json": "9e8d85e7f083c52300e0cf07de1651c75db208dcea56521b36d55bc216fa0046",
+    "Lee/experiments/e73/audit_seed_3.json": "d1512052d8b6132657741092877b652bb00b333cc4dc906fb591975329fc93e1",
+    "Lee/experiments/e73/audit_seed_4.json": "f1f3ab8b2cd29f3fa41026f934e623eccf24b15025c32d4cf6933bb741aca8a7",
+    "Lee/experiments/e74/comparison.json": "e11afd049bdbc23ecc4c35feb06f25f45e8495cd453a8febb15d4e3497577881",
+    "Lee/experiments/e74/audit_seed_0.json": "9bff28361c91eaa61d045a125ef728b920113d3907ee227a97e4980a6e291cb5",
+    "Lee/experiments/e74/audit_seed_1.json": "471d3f45cb557f33cef8e6922c43f86c4779df9d69636af88e22c245462634c0",
+    "Lee/experiments/e74/audit_seed_2.json": "1fc71679893d5937fa9965accb45a43a77e60a4acb2bfac1ec7660c0b0f3a6d7",
+    "Lee/experiments/e74/audit_seed_3.json": "d0688d28ed8c06fb61cf116eebed1f3bb5ade92bfbeb1a69a4e93ee4ab39cafd",
+    "Lee/experiments/e74/audit_seed_4.json": "b7b0cfed29381b06896cba10a0135703ca1a758c31b461b1835e2c5f286cbb9d"
+  },
+  "generator_sha256": "decfc75790b1d82d9162b8ae6f5ef2f920c07931222271c4dff81b0a8c0356e8",
+  "scope": "Secondary same-policy-seed mechanism contrast; both matched policies target the same e63 air. Native is native versus native. Not a rescue of failed DO, isolated causal ablation, physical safety or unseen validation."
+}

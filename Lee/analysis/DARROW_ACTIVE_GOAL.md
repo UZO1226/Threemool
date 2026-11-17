@@ -34,11 +34,12 @@ the matcher, information, budgets and criterion. Its column0 reference,
 exclusion, interpolation, fixed-offset NN null and serialization software
 controls pass. All five original-seed training-only calibrations and held
 checks now finish, with zero component increases and matched-reference
-identity on held states. Native smoke, independent152000-action replay,
-the frozen-offset NN null and the reference-only matched-e63 full-trajectory
-identity all now pass. The complete original five-seed actual-air comparison
-is running, with all native/matched independent audits still required.
-No five-seed candidate quality is verified yet.
+identity on held states. The complete original comparison and all independent
+native/matched audits finish. Cost/NH4 improve, but DO's upper endpoint
++.000526316 fails. The full archived failure and e73 secondary contrast are
+preserved. No exposed-block evaluation is triggered and no rounding rescues
+failure. e75 prospectively tests an agent-side continuous next-DO predictor
+on existing training captures before any shield/controller evaluation.
 No robust gain is established.
 e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
