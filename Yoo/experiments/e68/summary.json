@@ -1,0 +1,213 @@
+{
+ "judgement": {
+  "H1_dev": {
+   "pairs": [
+    {
+     "air_m3": -1115.018268805703,
+     "over_budget_steps": -0.32785388127853893,
+     "nh4_excess_mg_h_L": -8.863957244738408,
+     "day_violation_pct": -0.639269406392696
+    },
+    {
+     "air_m3": -1764.9792630565644,
+     "over_budget_steps": -0.11872146118721466,
+     "nh4_excess_mg_h_L": -4.973183717391965,
+     "day_violation_pct": -2.4200913242009117
+    },
+    {
+     "air_m3": -1031.6820206188495,
+     "over_budget_steps": -0.2863013698630136,
+     "nh4_excess_mg_h_L": -12.846202612016162,
+     "day_violation_pct": -13.470319634703195
+    },
+    {
+     "air_m3": -2283.0015744887496,
+     "over_budget_steps": -0.24611872146118718,
+     "nh4_excess_mg_h_L": -11.006532637056718,
+     "day_violation_pct": -3.4703196347031957
+    },
+    {
+     "air_m3": -3325.0314730744503,
+     "over_budget_steps": 0.336986301369863,
+     "nh4_excess_mg_h_L": -21.14500368304553,
+     "day_violation_pct": -0.27397260273972535
+    },
+    {
+     "air_m3": -1272.9870983016444,
+     "over_budget_steps": 0.035616438356164404,
+     "nh4_excess_mg_h_L": -0.9108987806524347,
+     "day_violation_pct": -0.6392694063926934
+    },
+    {
+     "air_m3": -2838.88785689784,
+     "over_budget_steps": -0.22009132420091326,
+     "nh4_excess_mg_h_L": -8.625531379773077,
+     "day_violation_pct": -0.7305936073059378
+    },
+    {
+     "air_m3": 1145.768423030153,
+     "over_budget_steps": -0.5100456621004568,
+     "nh4_excess_mg_h_L": -6.249605376150583,
+     "day_violation_pct": -19.680365296803654
+    },
+    {
+     "air_m3": 3067.92105453174,
+     "over_budget_steps": -0.7296803652968038,
+     "nh4_excess_mg_h_L": 21.364691806493234,
+     "day_violation_pct": -11.369863013698634
+    },
+    {
+     "air_m3": 3152.177865509053,
+     "over_budget_steps": -0.964383561643836,
+     "nh4_excess_mg_h_L": -2.9062956015696333,
+     "day_violation_pct": -1.9178082191780828
+    }
+   ],
+   "fcsrl_better": 5,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확"
+  },
+  "H1_val": {
+   "pairs": [
+    {
+     "air_m3": 5262.0238738948465,
+     "over_budget_steps": -3.518333333333333,
+     "nh4_excess_mg_h_L": -17.148308618215708,
+     "day_violation_pct": -10.333333333333332
+    },
+    {
+     "air_m3": -2723.5651329910543,
+     "over_budget_steps": 0.6316666666666673,
+     "nh4_excess_mg_h_L": -1.772795903375922,
+     "day_violation_pct": 14.666666666666666
+    },
+    {
+     "air_m3": 700.770013445981,
+     "over_budget_steps": 0.3083333333333331,
+     "nh4_excess_mg_h_L": -9.157695684194046,
+     "day_violation_pct": -6.9999999999999964
+    },
+    {
+     "air_m3": -5294.811285120806,
+     "over_budget_steps": 1.0516666666666663,
+     "nh4_excess_mg_h_L": -2.6039724047121453,
+     "day_violation_pct": 9.166666666666666
+    },
+    {
+     "air_m3": -1901.3107111288118,
+     "over_budget_steps": 1.686666666666667,
+     "nh4_excess_mg_h_L": -15.125854836819133,
+     "day_violation_pct": 17.666666666666664
+    },
+    {
+     "air_m3": 465.4563246582111,
+     "over_budget_steps": 0.46833333333333305,
+     "nh4_excess_mg_h_L": 0.47114477677056676,
+     "day_violation_pct": 0.33333333333333215
+    },
+    {
+     "air_m3": 1446.1117925907238,
+     "over_budget_steps": -1.9016666666666664,
+     "nh4_excess_mg_h_L": -10.412971913606944,
+     "day_violation_pct": -17.833333333333336
+    },
+    {
+     "air_m3": 3236.2399341077107,
+     "over_budget_steps": -2.74,
+     "nh4_excess_mg_h_L": -9.208303515456134,
+     "day_violation_pct": -25.166666666666664
+    },
+    {
+     "air_m3": 1183.3196970963472,
+     "over_budget_steps": -2.7783333333333338,
+     "nh4_excess_mg_h_L": 12.303059372171312,
+     "day_violation_pct": -26.333333333333336
+    },
+    {
+     "air_m3": 6985.641825972438,
+     "over_budget_steps": -1.936666666666667,
+     "nh4_excess_mg_h_L": -5.14688819584838,
+     "day_violation_pct": 15.500000000000002
+    }
+   ],
+   "fcsrl_better": 0,
+   "ppolag_better": 1,
+   "verdict": "차이 불명확"
+  },
+  "H2": {
+   "fcsrl": {
+    "dev_le_limit": 0,
+    "val_le_record": 10
+   },
+   "ppolag": {
+    "dev_le_limit": 1,
+    "val_le_record": 10
+   }
+  },
+  "H3_dev_fcsrl": {
+   "mean": {
+    "air_m3": 38962.2555592682,
+    "over_budget_steps": 0.4791324200913242,
+    "nh4_excess_mg_h_L": 15.430184568181858,
+    "day_violation_pct": 7.876712328767124
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "over_budget_steps": 0.2808219178082192,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_dev_ppolag": {
+   "mean": {
+    "air_m3": 39588.827580485486,
+    "over_budget_steps": 0.7821917808219178,
+    "nh4_excess_mg_h_L": 21.04643649077199,
+    "day_violation_pct": 13.337899543378995
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "over_budget_steps": 0.2808219178082192,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_val_fcsrl": {
+   "mean": {
+    "air_m3": 47513.27906988574,
+    "over_budget_steps": 2.8281666666666667,
+    "nh4_excess_mg_h_L": 19.79359441522145,
+    "day_violation_pct": 20.383333333333333
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "over_budget_steps": 2.3,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_val_ppolag": {
+   "mean": {
+    "air_m3": 46577.2914366332,
+    "over_budget_steps": 3.7009999999999996,
+    "nh4_excess_mg_h_L": 25.573853107550104,
+    "day_violation_pct": 23.316666666666663
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "over_budget_steps": 2.3,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  }
+ },
+ "root": "/home/jio/fcsrl_src/results/e68/main"
+}
