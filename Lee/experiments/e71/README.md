@@ -51,3 +51,29 @@ Fresh seeds5~9 stay a separate required confirmation block after any initial
 success; no fresh candidate quality is inspected. Each NN trained401280
 steps and no additional environment-training transitions are added.
 Reused validation40 is exploratory and final test41 remains excluded.
+
+## Initial result and fresh confirmation
+
+[results.md](results.md) records the completed original block and immutable
+archive. The initial block passes, but fresh confirmation remains required.
+Fresh adapters preserve signal_policy.py and e69/budget_policy.py unchanged,
+retain actual seed IDs5 through9, and use e68's authenticated matched e63
+references including their fixed offsets. Calibration uses training only.
+All five original/captured training pairs and h4 models are prepared by e68.
+
+From the original workspace after restoring dependencies by their hashes,
+using the threemool Python environment with numerical threads1:
+
+```powershell
+python Threemool/Lee/experiments/e71/fresh_fit.py --workspace C:/Users/user/Downloads/IoT_project2 --certificate results/e68_fresh_references/baseline_authentication.json --baselines results/e68_fresh_baselines --rates results/e68_fresh_rates --out results/e71_fresh_fit
+python Threemool/Lee/experiments/e71/fresh_compare.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --candidate results/e68_fresh_baselines/captured/new_ppolag_fcsrl/seed_5 --baseline results/e68_fresh_baselines/original/new_ppolag_fcsrl/seed_5 --correction results/e68_fresh_rates/models/h4/seed_5 --certificate results/e68_fresh_references/baseline_authentication.json --preflight results/e71_fresh_fit/preflight.json --projection results/e71_fresh_fit/seed_5 --previous results/e68_fresh_references --out results/e71_fresh_smoke --native-only
+python Threemool/Lee/experiments/e71/run_fresh.py --workspace C:/Users/user/Downloads/IoT_project2
+python Threemool/Lee/analysis/verify_e71_blocks.py --workspace C:/Users/user/Downloads/IoT_project2 --out results/e71_blocks_verified.json --require-fresh
+```
+
+The first two stages and full native smoke audit have completed. The last
+verification command must wait for the full study to complete. Existing
+study directories are immutable; reproduce in a new workspace with fresh
+output paths, adjusting the runner's workspace layout consistently. Final
+weights and runtime manifests retain original401280-step policy identity.
+The archive scripts reject incomplete runs or failed independent audits.

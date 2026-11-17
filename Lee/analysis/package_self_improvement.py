@@ -18,6 +18,7 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71'), required=True)
+    parser.add_argument('--fresh', action='store_true')
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
     args = parser.parse_args()
@@ -25,6 +26,12 @@ def main():
         raise FileExistsError('Refusing to overwrite archive or index')
     workspace = args.workspace.resolve()
     results = workspace / 'results'
+    assert not args.fresh or args.kind == 'e71'
+    seeds = list(range(5, 10)) if args.fresh else list(range(5))
+    report_summarize = summarize
+    if args.fresh:
+        sys.path.insert(0, str(ROOT / 'Lee/experiments/e68'))
+        from fresh_report import summarize as report_summarize
     files = {}
     def add(path):
         relative = path.resolve().relative_to(workspace).as_posix()
@@ -34,11 +41,14 @@ def main():
     if args.kind in ('e65', 'e67', 'e69', 'e71'):
         status = json.loads((args.study / 'study_status.json').read_text())
         assert status['phase'] == 'complete' and not status['running'] and not status['pending']
-        cert_path = ROOT / 'Lee/experiments/e64/baseline_authentication.json'
+        cert_path = (results / 'e68_fresh_references/baseline_authentication.json' if args.fresh
+                     else ROOT / 'Lee/experiments/e64/baseline_authentication.json')
         cert = json.loads(cert_path.read_text())
-        assert cert['passed']
+        assert cert['authentication_passed' if args.fresh else 'passed'] and cert['policy_seeds'] == seeds
+        if args.fresh:
+            assert json.loads((results / 'e71_study/comparison.json').read_text())['meets_prespecified_simulation_criterion']
         pairs = []
-        for seed in range(5):
+        for seed in seeds:
             folder = args.study / f'comparisons/seed_{seed}'
             pair = json.loads((folder / 'summary.json').read_text())
             audit = json.loads((folder / 'action_audit.json').read_text())
@@ -50,7 +60,8 @@ def main():
             assert not pair['test_evaluated'] and not pair['smoke_only']
             assert pair['checkpoint_replay_verified'] and audit['passed']
             assert pair['baseline_certificate_sha256'] == sha(cert_path)
-            assert pair['baseline_native'] == cert['records'][seed]['primary_reference_metrics']
+            reference = next(row for row in cert['records'] if row['policy_seed'] == seed)
+            assert pair['baseline_native'] == reference['primary_reference_metrics']
             assert audit['comparison_summary_sha256'] == sha(folder / 'summary.json')
             assert set(audit['replays']) == {'native', 'matched'}
             for replay in audit['replays'].values():
@@ -60,6 +71,8 @@ def main():
             assert sha(folder / 'controller_config.json') == pair['controller_config_sha256']
             if args.kind in ('e69', 'e71'):
                 fit_name = 'e69_projection_fit' if args.kind == 'e69' else 'e71_signal_fit'
+                if args.fresh:
+                    fit_name = 'e71_fresh_fit'
                 calibration_folder = results / fit_name / f'seed_{seed}'
                 calibration_path = calibration_folder / 'fit_summary.json'
                 calibration = json.loads(calibration_path.read_text())
@@ -71,19 +84,21 @@ def main():
                 if args.kind == 'e71':
                     assert calibration['global_fit_mean_action_error'] <= 1e-10
                     assert calibration['reference_fallback_all_ineligible_held_rows_exact']
-            base = results / f'e55_study/policies/new_ppolag_fcsrl/seed_{seed}'
+            base = results / (f'e68_fresh_baselines/captured/new_ppolag_fcsrl/seed_{seed}' if args.fresh
+                              else f'e55_study/policies/new_ppolag_fcsrl/seed_{seed}')
             for name, expected in pair['base_checkpoint_hashes'].items():
                 path = base / 'model_final' / name
                 assert sha(path) == expected
                 add(path)
             for name in ('effective_config.json', 'metrics.json', 'base_equivalence.json', 'correction/fit_summary.json'):
                 add(base / name)
-            model = results / f'e56_study/models/h4/seed_{seed}'
+            model = results / (f'e68_fresh_rates/models/h4/seed_{seed}' if args.fresh
+                               else f'e56_study/models/h4/seed_{seed}')
             assert sha(model / 'risk_models.pkl') == pair['correction_model_sha256']
             add(model / 'risk_models.pkl')
             add(model / 'fit_summary.json')
             pairs.append(pair)
-        assert summarize(pairs) == json.loads((args.study / 'comparison.json').read_text())
+        assert report_summarize(pairs) == json.loads((args.study / 'comparison.json').read_text())
         study_manifest = json.loads((args.study / 'study_manifest.json').read_text())
         for path, expected in study_manifest['source_sha256'].items():
             assert sha(Path(path)) == expected
@@ -94,10 +109,15 @@ def main():
                 if path.is_file() and path.suffix in ('.json', '.log'):
                     add(path)
         add(cert_path)
-        for path in (results / f'{args.kind}_native_smoke').glob('*.json'):
+        smoke_name = 'e71_fresh_smoke' if args.fresh else f'{args.kind}_native_smoke'
+        for path in (results / smoke_name).glob('*.json'):
             add(path)
         preflight_name = {'e65': 'e65_preflight_v2', 'e67': 'e67_preflight',
                           'e69': 'e69_projection_fit', 'e71': 'e71_signal_fit'}[args.kind]
+        if args.fresh:
+            preflight_name = 'e71_fresh_fit'
+            add(ROOT / 'Lee/experiments/e68/artifacts.json')
+            add(results / 'e71_study/comparison.json')
         for path in (results / preflight_name).rglob('*.json'):
             add(path)
     elif args.kind == 'e70':
@@ -151,7 +171,7 @@ def main():
     add(ROOT / 'Lee/experiments/e42/environment_freeze.json')
     files['metadata/FCSRL_LICENSE'] = ROOT / 'Lee/code/darrow/FCSRL_LICENSE'
     freeze = json.loads((ROOT / 'Lee/experiments/e42/environment_freeze.json').read_text())
-    manifest = {'trial': args.kind, 'new_model_fitting': False, 'source_data_included': False,
+    manifest = {'trial': args.kind, 'fresh_seed_block': args.fresh, 'new_model_fitting': False, 'source_data_included': False,
                 'projection_parameters_fitted': args.kind in ('e69', 'e71'),
                 'residual_banks_included': False, 'pit_banks_included': False,
                 'captured_training_arrays_included': False, 'test_evaluated': False,
