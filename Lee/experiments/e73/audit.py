@@ -34,6 +34,11 @@ def main():
     assert pair['training_steps'] == 401280 and not pair['smoke_only']
     verify_sources(pair['source_sha256'], Path(__file__).parent)
     verify_sources(pair['shared_source_sha256'], ROOT)
+    control_path = Path(__file__).with_name('guard_check.json')
+    assert pair['control_certificate_sha256'] == digest(control_path)
+    control = json.loads(control_path.read_text())
+    assert control['passed']
+    verify_sources(control['source_sha256'], ROOT)
     calibration = json.loads((args.projection / 'fit_summary.json').read_text())
     assert pair['projection_fit_summary_sha256'] == digest(args.projection / 'fit_summary.json')
     assert calibration['passed'] and calibration['calibration']['absolute_mean_action_error'] <= 1e-10

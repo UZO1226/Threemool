@@ -20,9 +20,13 @@ held dates and feasible fresh seeds; reused validation40 is exploratory.
 Do not use test41 for further development or evaluation.
 
 Work proceeds on lee/e63-self-improvement. e71 passes the original
-seed block but fails its completed fresh cost/NH4 confirmation. e72 now
-diagnoses component-risk trades on held logged states without new environment
-queries or candidate fitting. e65 fixes a17-point nested action grid at
+seed block but fails its completed fresh cost/NH4 confirmation. e72 completes
+all ten held-state component-risk and regime diagnostics without environment
+queries or candidate fitting. Its verified archive preserves both runs.
+e73 implements the prospectively fixed componentwise predicted guard. All
+five original-seed mean calibrations and held checks pass with zero predicted
+component increases. Native smoke and subsequent actual-air comparison remain
+required; no policy gain is established. e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
 All five85120-row held-state checks and independent sklearn subsets pass;
 changed actions number1481,3870,2637,3650,4885. No counterfactual quality

@@ -59,3 +59,26 @@ seeds10 through14 for an additional separate confirmation before adoption.
 Do not tune after either block, select checkpoints/seeds, change offsets or
 quality-select air adjustments. Final test41 remains unused. Reused
 validation40 remains exploratory even after new policy-seed confirmation.
+
+## Training-only implementation checks and execution
+
+All original seeds0 through4 now pass mean calibration and all85120 held
+rows with zero predicted NH4 or DO increases in the pre-offset wrapper.
+Independent1024-row original-sklearn decisions, actual interpolated-rate
+checks, original e63 fallback, strict reload and e71 changed-row controls pass.
+preflight.json records exact parameters and source identities. No policy
+quality improvement follows from these training-only results.
+
+Use the threemool environment, numerical threads1 and frozen dependencies:
+
+```powershell
+python Threemool/Lee/experiments/e73/check_guard.py --out results/e73_guard_check.json
+python Threemool/Lee/experiments/e73/fit_guard.py --workspace C:/Users/user/Downloads/IoT_project2 --certificate Threemool/Lee/experiments/e64/baseline_authentication.json --out results/e73_guard_fit
+python Threemool/Lee/experiments/e73/compare.py --data kaggle_data/darrow_15min.pkl --freeze Threemool/Lee/experiments/e42/environment_freeze.json --candidate results/e55_study/policies/new_ppolag_fcsrl/seed_0 --baseline results/e42_baselines/new_ppolag_fcsrl/seed_0 --correction results/e56_study/models/h4/seed_0 --certificate Threemool/Lee/experiments/e64/baseline_authentication.json --preflight results/e73_guard_fit/preflight.json --projection results/e73_guard_fit/seed_0 --previous results/e63_study --out results/e73_native_smoke --native-only
+python Threemool/Lee/experiments/e73/run_study.py --workspace C:/Users/user/Downloads/IoT_project2
+```
+
+Do not overwrite completed output directories; reproduce in a fresh workspace
+with consistent new runner paths. The fitter reads the committed guard_check.json
+certificate; if reproducing changed sources, regenerate and review that control
+certificate before fitting. Source/model/data mismatches fail closed.

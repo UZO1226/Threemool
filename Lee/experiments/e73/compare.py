@@ -42,6 +42,11 @@ def main():
     assert preflight['baseline_certificate_sha256'] == digest(args.certificate)
     assert preflight['data_sha256'] == cert['data_sha256'] == digest(args.data)
     verify_sources(preflight['source_sha256'], Path(__file__).parent)
+    control_path = Path(__file__).with_name('guard_check.json')
+    control = json.loads(control_path.read_text())
+    assert control['passed'] and control['new_environment_queries'] == 0
+    verify_sources(control['source_sha256'], ROOT)
+    assert preflight['source_sha256']['guard_policy.py'] == control['source_sha256']['Lee/experiments/e73/guard_policy.py']
     legacy = json.loads((ROOT / 'Lee/experiments/e69/preflight.json').read_text())
     verify_sources({'budget_policy.py': legacy['source_sha256']['budget_policy.py']}, ROOT / 'Lee/experiments/e69')
     base, config, _, hashes = load_base(args.candidate, args.freeze, args.baseline)
@@ -110,6 +115,8 @@ def main():
               'pipeline_smoke_only': args.native_only, 'checkpoint_replay_verified': True,
               'new_model_fitting': False, 'extra_environment_training_steps': 0,
               'projection_parameter_fitting': True,
+              'control_certificate_sha256': digest(control_path),
+              'component_guard_scope': 'Pre-offset wrapper versus same-state e63 native. Final matched actions are not constrained by this guard.',
               'shared_source_sha256': {name: digest(ROOT / name) for name in ('Lee/experiments/e69/budget_policy.py', 'Lee/experiments/e71/signal_policy.py')},
               'projection_fit_summary_sha256': digest(args.projection / 'fit_summary.json'),
               'baseline_certificate_sha256': digest(args.certificate), 'preflight_sha256': digest(args.preflight),
