@@ -69,6 +69,14 @@ checks, original e63 fallback, strict reload and e71 changed-row controls pass.
 preflight.json records exact parameters and source identities. No policy
 quality improvement follows from these training-only results.
 
+The initial native smoke now reproduces its authenticated reference and
+strictly reloaded candidate. native_smoke_audit.json independently verifies
+all152000 actions and trajectories, zero wrapper component increases, fitted
+flat-risk NN identity and reference-only e63 identity over complete native
+trajectories. All five original-seed actual-air comparisons are now launched,
+with separate native/matched independent audits still required. These controls
+are not a completed five-seed improvement result.
+
 Use the threemool environment, numerical threads1 and frozen dependencies:
 
 ```powershell
