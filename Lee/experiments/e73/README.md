@@ -1,5 +1,10 @@
 # e73: Componentwise predicted-rate guard for budget projection
 
+Latest outcome: all five original comparisons and independent audits complete.
+Cost and NH4 conditions pass but the DO interval upper endpoint is positive.
+The joint criterion fails; see [results.md](results.md). No exposed-block
+confirmation is triggered. Preserve the prospective specification below.
+
 Prospective candidate after e71's failed separate replication and e72's held
 component diagnostic,2026-11-17. Summed-risk eligibility permits trading
 predicted NH4 risk for a DO reduction. Test a guard that excludes either

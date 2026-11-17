@@ -1,0 +1,66 @@
+# e74: Extend the authenticated matched reference directly
+
+Prospective hypothesis after completed e73 failure,2026-11-17. e73 passes
+cost/NH4 but fails DO. Its component guard refers to e63 native, while the
+primary comparator is e63 after a fixed air-only offset. The final matched
+action can violate that native-relative guard. This is a descriptive
+mismatch, not an established causal account of all failures. Native DO and
+state shift remain unfavorable, and e71 replication failure stays preserved.
+
+Change the extension's anchor to the actual authenticated matched e63 policy.
+For each current obs11, compute the original five-candidate horizon4 risk-only
+e63 action, then apply that seed's frozen authenticated offset and clipping.
+This is the reference action a_ref. The existing reference's air-derived
+offset is reused as an immutable controller parameter, not chosen using
+candidate quality. No future observation, additional sensor, member/noise
+identity or reference counterfactual trajectory enters the policy.
+
+Center the same nine offsets[0,-.125,.125,-.25,.25,-.375,.375,-.5,.5] on a_ref,
+with radius.5 relative to that reference and legal clipping[-1,1]. The radius
+is now relative to the true reference, not the original NN. Treat column0 as
+the reference; do not minimize the first five new proposals to redefine it.
+Require both predicted horizon4 rates no higher than at a_ref plus1e-12.
+Replace inadmissible columns with a_ref and its summed rate. Eligibility is
+a strict admissible summed-rate gain over column0 by more than1e-12.
+Return a_ref exactly outside eligibility or in reference-only mode.
+
+Keep original final401280-step NNs, unchanged horizon4 heads, frozen e42
+world and obs11. Fit the original two shadow prices and convex interpolation
+weight on eligible fitting updates1 through52 to preserve their a_ref mean.
+Use the same[-2^26,2^26] bounds,64 bisections and first-column tie rule.
+Require overall fitting mean error at most1e-10. No eligible fitting rows
+means reference-only for that seed; never discard seeds. Held updates53
+through66 fit nothing. This is a coherent anchor change, not an isolated
+ablation of each resulting geometry/calibration implication.
+
+The extra e44 air-only matcher remains unchanged and still adds a constant
+offset after this wrapper. The guard therefore remains pre-offset, although
+its reference is now the actual matched baseline. Report final executed
+predicted changes separately. Do not clamp, cancel or quality-select the
+matching offset, expose it as another policy observation, or claim physical
+safety. Learned risk plateaus and recursive feedback can still be wrong.
+
+Before quality evaluation require synthetic reference/exclusion/interpolation
+and strict config tests, all five held bounds/guard/mean checks,1024 original
+sklearn decisions per seed and exact equality with independently loaded e63
+reference actions. The full native reference-only controller must reproduce
+authenticated e63 matched trajectories exactly. Under constant heads it
+must reproduce the original NN plus the same frozen reference offset, not
+the unshifted NN. Verify full seed0 control trajectories and report the
+changed null target explicitly.
+
+Run all original policy seeds0 through4, all native and actual-air-matched
+outputs and independent action/trajectory/air audits. Primary comparator
+stays authenticated matched e63. Keep every actual-air match and the original
+10000 paired policy-seed resamples, RNG2026: cost and NH4 interval upper
+endpoints below zero, DO at most zero. Never round failures into success.
+Use e73 only as a secondary mechanism contrast, not a replacement reference.
+
+If the original block passes, run the unchanged entire method on exposed
+seeds5 through9 and require the same criterion separately. If both pass,
+prepare actual training seeds10 through14 for separately declared additional
+confirmation before adoption. Neither pooling nor favorable seed/checkpoint
+selection rescues a failed block. Existing5 through9 outcomes are exposed
+development information, not unseen confirmation. Reused validation40 is
+exploratory; final test41 remains unused. Failure is not a reason to finish
+the active goal or silently adopt a different environment.

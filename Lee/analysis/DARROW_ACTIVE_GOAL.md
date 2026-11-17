@@ -25,10 +25,13 @@ all ten held-state component-risk and regime diagnostics without environment
 queries or candidate fitting. Its verified archive preserves both runs.
 e73 implements the prospectively fixed componentwise predicted guard. All
 five original-seed mean calibrations and held checks pass with zero predicted
-component increases. Native smoke, independent152000-action replay and fitted
-flat-risk/reference-only full-native controls now pass. The complete original
-five-seed actual-air comparison is running, followed by all independent native
-and matched audits. No policy gain is established. e65 fixes a17-point nested action grid at
+component increases. The complete original five-seed comparison and all native
+and matched independent audits now finish. Cost/NH4 pass, but DO's upper
+endpoint+.004737 fails. Preserve the failed joint result and verified archive
+asset757737999. No exposed-block follow-up is triggered. e74 prospectively
+changes the extension anchor to actual authenticated matched e63, preserving
+the matcher, information, budgets and criterion. No robust gain is established.
+e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
 All five85120-row held-state checks and independent sklearn subsets pass;
 changed actions number1481,3870,2637,3650,4885. No counterfactual quality

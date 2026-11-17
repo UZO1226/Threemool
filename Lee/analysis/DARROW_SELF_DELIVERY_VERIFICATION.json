@@ -129,6 +129,20 @@
       "file_count": 28
     },
     {
+      "index": "Lee/experiments/e73/artifacts.json",
+      "index_sha256": "fa414ed69f66aa5a1c5da547571ed4a8836fe270d76f96776b25a545e4c5abec",
+      "release_id": 443333191,
+      "asset_id": 757737999,
+      "archive": {
+        "name": "lee-e73-component-guard.zip",
+        "bytes": 14425505,
+        "sha256": "289550c40787fe5feebf22445999e833c95bbdba6a943194161feb4c301ff813"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 168
+    },
+    {
       "index": "Lee/experiments/e68/held_artifacts.json",
       "index_sha256": "8ca487e9b4afd0f9f8881046cf7aac72d7aadb30d21f56533fb551749999b7de",
       "release_id": 443333191,
@@ -158,6 +172,6 @@
     }
   ],
   "new_uploads": 0,
-  "verifier_sha256": "d3b4c594f16c748d101210a5081af5f1e69fcbb65408e3925cb65fee86ad3176",
+  "verifier_sha256": "f8ce0ed0b97a8b52fdce7dd134031058615364fd12c5b893f96f625fb17927db",
   "scope": "Current remote asset identity, draft, size and SHA256 plus every locally available ZIP entry. Does not infer scientific success or goal completion."
 }
