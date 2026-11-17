@@ -157,6 +157,20 @@
       "file_count": 161
     },
     {
+      "index": "Lee/experiments/e75/artifacts.json",
+      "index_sha256": "d105f6e43b9da291206114a3f1172df1891ad259423faddbc84da4d16309767e",
+      "release_id": 443333191,
+      "asset_id": 757909078,
+      "archive": {
+        "name": "lee-e75-next-do-forecasts.zip",
+        "bytes": 788600,
+        "sha256": "83f0f66bcbfe0a2e75ae00ac98f057018fb6ebb1ac03d03a0472d9947fd3ac36"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 19
+    },
+    {
       "index": "Lee/experiments/e68/held_artifacts.json",
       "index_sha256": "8ca487e9b4afd0f9f8881046cf7aac72d7aadb30d21f56533fb551749999b7de",
       "release_id": 443333191,
@@ -186,6 +200,6 @@
     }
   ],
   "new_uploads": 0,
-  "verifier_sha256": "48a60fc0ba662634fbd0e51296975bd9c9dbc90702d013ab0ef382fb586b42d7",
+  "verifier_sha256": "e3310f9a66a361f1f7695890700267963ba4e8ba23605dbfa09e748557e45055",
   "scope": "Current remote asset identity, draft, size and SHA256 plus every locally available ZIP entry. Does not infer scientific success or goal completion."
 }

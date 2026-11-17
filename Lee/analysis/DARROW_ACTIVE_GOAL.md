@@ -38,8 +38,12 @@ identity on held states. The complete original comparison and all independent
 native/matched audits finish. Cost/NH4 improve, but DO's upper endpoint
 +.000526316 fails. The full archived failure and e73 secondary contrast are
 preserved. No exposed-block evaluation is triggered and no rounding rescues
-failure. e75 prospectively tests an agent-side continuous next-DO predictor
-on existing training captures before any shield/controller evaluation.
+failure. e75 completes all five agent-side next-DO fits and independent
+raw/held audits on existing training captures. Only seed3 passes admission;
+coverage, persistence-MSE or missed-event conditions fail elsewhere. No
+controller is evaluated and no seed-specific rescue is allowed. All models
+and failures are archived. e76 prospectively tests persistence plus learned
+DO change with the same capacity, partition and admission conditions.
 No robust gain is established.
 e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.

@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "passed": true,
+      "max_raw_prediction_difference": 0.0,
+      "raw_prediction_rows": 401280,
+      "monotone_held_action_probe_rows": 10000,
+      "admission": {
+        "passed": false,
+        "checks": {
+          "provenance_and_partition_passed": true,
+          "compiled_raw_prediction_passed": true,
+          "monotone_action_passed": true,
+          "mse_interval_below_persistence": true,
+          "mse_interval_below_fitting_constant": true,
+          "held_upper_coverage_at_least_95_percent": false,
+          "next_do_false_negatives_not_above_persistence": true
+        }
+      },
+      "fit_summary_sha256": "54d3687e541beeb50506b9922221c88c9a8990be9597733d40da15e30eb7282a",
+      "model_sha256": "2d4921f8bc559d606a4f597701650f50302430d431770f762bb1c6570bcb40d8"
+    },
+    {
+      "policy_seed": 1,
+      "passed": true,
+      "max_raw_prediction_difference": 0.0,
+      "raw_prediction_rows": 401280,
+      "monotone_held_action_probe_rows": 10000,
+      "admission": {
+        "passed": false,
+        "checks": {
+          "provenance_and_partition_passed": true,
+          "compiled_raw_prediction_passed": true,
+          "monotone_action_passed": true,
+          "mse_interval_below_persistence": false,
+          "mse_interval_below_fitting_constant": true,
+          "held_upper_coverage_at_least_95_percent": true,
+          "next_do_false_negatives_not_above_persistence": false
+        }
+      },
+      "fit_summary_sha256": "91ed8fca08b03a9bfaf2ad4072210820c6e814b93dd3e815a831a8717b5aa27b",
+      "model_sha256": "5531d93b9add3bcfe0e6b8da2097b06a585e9f13ed98c15ef38681ee396dc0d6"
+    },
+    {
+      "policy_seed": 2,
+      "passed": true,
+      "max_raw_prediction_difference": 0.0,
+      "raw_prediction_rows": 401280,
+      "monotone_held_action_probe_rows": 10000,
+      "admission": {
+        "passed": false,
+        "checks": {
+          "provenance_and_partition_passed": true,
+          "compiled_raw_prediction_passed": true,
+          "monotone_action_passed": true,
+          "mse_interval_below_persistence": false,
+          "mse_interval_below_fitting_constant": true,
+          "held_upper_coverage_at_least_95_percent": true,
+          "next_do_false_negatives_not_above_persistence": true
+        }
+      },
+      "fit_summary_sha256": "98cd35dba06984a31f8c71cbdad8390c4fe96b69ee5fb8101e486572ad9e41ce",
+      "model_sha256": "f124ed781119c442d35fb87ed8d084d95bb4b4f2c042d29f7255f199d364a0f1"
+    },
+    {
+      "policy_seed": 3,
+      "passed": true,
+      "max_raw_prediction_difference": 0.0,
+      "raw_prediction_rows": 401280,
+      "monotone_held_action_probe_rows": 10000,
+      "admission": {
+        "passed": true,
+        "checks": {
+          "provenance_and_partition_passed": true,
+          "compiled_raw_prediction_passed": true,
+          "monotone_action_passed": true,
+          "mse_interval_below_persistence": true,
+          "mse_interval_below_fitting_constant": true,
+          "held_upper_coverage_at_least_95_percent": true,
+          "next_do_false_negatives_not_above_persistence": true
+        }
+      },
+      "fit_summary_sha256": "fb828ae080efdce90c341315820dc8fc2afe44c9130c0666f593ec74cc2d1141",
+      "model_sha256": "685d153dbd38c3d5d360f433f6cd5af75b8c54215afe4610241304d51789f482"
+    },
+    {
+      "policy_seed": 4,
+      "passed": true,
+      "max_raw_prediction_difference": 0.0,
+      "raw_prediction_rows": 401280,
+      "monotone_held_action_probe_rows": 10000,
+      "admission": {
+        "passed": false,
+        "checks": {
+          "provenance_and_partition_passed": true,
+          "compiled_raw_prediction_passed": true,
+          "monotone_action_passed": true,
+          "mse_interval_below_persistence": false,
+          "mse_interval_below_fitting_constant": true,
+          "held_upper_coverage_at_least_95_percent": true,
+          "next_do_false_negatives_not_above_persistence": false
+        }
+      },
+      "fit_summary_sha256": "bcfb5b7f826f43c9f1533b06ac00623427b1ab2c7a652bfb8a7eed38313f2c19",
+      "model_sha256": "6d82266b521d03cc71ef0c3ef417cb0d5d7116f11a4e674c1584713be6d859e1"
+    }
+  ],
+  "all_models_admitted": false,
+  "summary_sha256": "6d3565c4849a9ffd3ffc0eff5b200598dca2a8c9aaf9251312b0c1ac33664320",
+  "audit_source_sha256": "d2ddf39841dd94b216031f4bb11e6c57afef13241519240d42f35514e7b95e8f",
+  "code_commit": "d59795ba9debdd27d07564b361f282ab1b8f1166",
+  "new_environment_queries": 0,
+  "new_model_fitting": false,
+  "test_evaluated": false,
+  "scope": "Independently reconstruct admission, including unclipped raw predictions on all401280 rows per seed. A passed audit does not mean an admitted model."
+}

@@ -1,5 +1,10 @@
 # e75: Validate a continuous next-DO predictor before shielding anchored actions
 
+Latest outcome: all five fits and the independent raw/held audit complete.
+Only seed3 passes all admission gates; the all-five condition fails.
+No conditional controller is evaluated. See [results.md](results.md).
+Keep the prospective model, split, gates and conditional plan below unchanged.
+
 Prospective study after complete e74 DO failure,2026-11-17. e74 improves
 cost/NH4 but its DO upper endpoint remains positive. Horizon4 rate heads have
 wide zero-risk plateaus. Test whether predicting the next physical DO value

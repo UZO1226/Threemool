@@ -489,8 +489,9 @@ individual file hashes and remote asset identities.
 | e72 | lee-e72-component-risk-diagnostic.zip | [All ten held component/regime diagnostics](../experiments/e72/artifacts.json) |
 | e73 | lee-e73-component-guard.zip | [Completed cost/NH4 gain with failed DO condition](../experiments/e73/artifacts.json) |
 | e74 | lee-e74-matched-anchor.zip | [Completed anchored comparison with failed DO condition](../experiments/e74/artifacts.json) |
+| e75 | lee-e75-next-do-forecasts.zip | [All five auxiliary models and independently verified failed admission](../experiments/e75/artifacts.json) |
 
-These thirteen indexes are independently checked against current remote assets
+These fourteen indexes are independently checked against current remote assets
 and every local ZIP entry by [verify_self_delivery.py](verify_self_delivery.py).
 [The recorded delivery check](DARROW_SELF_DELIVERY_VERIFICATION.json) is
 artifact evidence, not scientific success. To repeat the read-only check:
@@ -527,8 +528,10 @@ portable-replayed. Use a new workspace for deliberate reruns.
 e74 completes its original five-seed actual-air comparison, independent
 audits and controls, but fails DO with interval upper endpoint+.000526316.
 Its full archive is preserved; its cost/NH4 gains do not establish adoption.
-e75 now preregisters a training-only next-DO forecast admission study before
-any new controller evaluation, using existing captured data and reporting
-the added offline supervised compute separately from the fixed RL budget.
+e75 completes its training-only next-DO forecast study and independent audit,
+but only seed3 passes admission. All five models are archived and no controller
+is evaluated. The added offline supervised compute is recorded separately
+from the fixed RL budget. e76 preregisters persistence plus learned DO change
+with unchanged admission gates and explicitly exposed model-development data.
 Every criterion remains unchanged, exposed seeds5 through9 cannot be called
 unseen confirmation for a later method, and final test41 remains reserved.
