@@ -59,6 +59,11 @@ bias=lam (Park/e31, margins 와 함께) 이면 최근 예측 오차로 1 스텝 
 여유 검사의 mu 에 b 를 더한다 (모델 예측 제어의 외란 추정과 같다). 에피소드 첫 스텝 (env.t == 0) 에 b 를 0 으로 되돌린다.
 margin_scale 은 margins 표의 여유에 곱한다 (conflict 의 줄인 여유에는 곱하지 않는다)
 
+do_bias=lam (Park/e34) 이면 최근 DO 예측 오차로 DO 예측을 보정한다. 매 스텝 지난 스텝의 1 스텝 DO 예측 (다른 구성원 평균,
+실제로 쓴 공기량, 구역 3개) 과 지금 관측 DO 의 차이 e 로 에피소드, 구역마다 d <- lam * d + (1 - lam) * e 를 갱신하고,
+차단이 보는 모든 DO 예측 (trim, conflict 의 1 스텝 예측, 회복 계획의 H 스텝 예측) 에 d 를 더한다. 상태 굴리기에는 넣지 않는다.
+에피소드 첫 스텝 (env.t == 0) 에 d 를 0 으로 되돌린다
+
 plan_trigger (Park/e30) 는 회복 계획을 쓰는 기준이다. 공기량 9,000 에서의 다음 스텝 예측 NH4 가 plan_trigger 를 넘는 에피소드에
 쓴다 (기본 4 는 e28 과 같다). plan_now 를 주면 지금 NH4 가 plan_now 를 넘는 에피소드에도 쓴다
 """
@@ -74,7 +79,7 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
                  do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None,
-                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0):
+                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0, do_bias=None):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -87,6 +92,8 @@ class MinAirBrake:
         self.bias = None if bias is None else float(bias)
         assert self.bias is None or self.margins is not None, 'bias 는 margins 와 함께 쓴다'
         self.b, self.last_mu = None, None
+        self.do_bias = None if do_bias is None else float(do_bias)
+        self.d, self.last_do = None, None
         self.do_limit, self.futile = float(do_limit), bool(futile)
         assert (self.do_limit == DO_MAX and not self.futile) or self.trim, 'do_limit, futile 은 trim 과 함께 쓴다'
         assert self.margins is None or (self.horizon == 1 and members == 'others'), 'margins 는 1스텝, 다른 구성원만'
@@ -123,6 +130,7 @@ class MinAirBrake:
         zone = cand.reshape(-1)[:, None] * frac
         worst_nh4 = np.full(N * K, -np.inf)
         worst_do = np.full(N * K, -np.inf)
+        dcor = rep(self._do_corr(env, N))
         for _ in range(self.horizon):
             x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
             delta = self._predict(x, member, n_states)
@@ -131,7 +139,7 @@ class MinAirBrake:
             state, zone_prev = nxt, zone
             worst_nh4 = np.maximum(worst_nh4, state[:, 0])
             if n_states == len(STATE):
-                worst_do = np.maximum(worst_do, state[:, 2:].max(axis=1))
+                worst_do = np.maximum(worst_do, (state[:, 2:] + dcor).max(axis=1))
         return worst_nh4.reshape(N, K), worst_do.reshape(N, K)
 
     def _adaptive_ok(self, obs, env, rows=None):
@@ -248,11 +256,12 @@ class MinAirBrake:
         exo, frac, zone_prev, member = rep(sub.x['exo'][:, sub.t]), rep(sub.x['frac'][:, sub.t]), rep(sub.prev_zone), rep(sub.member)
         zone = np.tile(grid, n)[:, None] * frac
         cost = np.zeros(n * K)
+        dcor = rep(self._do_corr(sub, n))
         for _ in range(H):
             x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
             state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
             zone_prev = zone
-            cost += (state[:, 0] > NH4_MAX) + (state[:, 2:].max(axis=1) > do_lim)
+            cost += (state[:, 0] > NH4_MAX) + ((state[:, 2:] + dcor).max(axis=1) > do_lim)
         score = cost * 1000.0 + np.round(state[:, 0], 6)   # NH4 는 hi 아래라 1000 보다 작다
         best = grid[score.reshape(n, K).argmin(axis=1)]
         air = air.copy()
@@ -294,6 +303,27 @@ class MinAirBrake:
         x = np.column_stack([state, env.x['exo'][:, t], air[:, None] * env.x['frac'][:, t] / 1000.0, env.prev_zone / 1000.0])
         return np.clip(state[:, 0] + self._predict(x, env.member, 1)[:, 0], 0.0, self.dyn.hi[0])
 
+    def _do_corr(self, env, n):
+        """DO 예측에 더할 보정 (n, 3). do_bias 가 없으면 0. env 가 _Rows 이면 그 에피소드만 고른다."""
+        if self.do_bias is None or self.d is None:
+            return np.zeros((n, len(STATE) - 2))
+        rows = getattr(env, 'rows', None)
+        return self.d if rows is None else self.d[rows]
+
+    def _do_at(self, obs, env, air):
+        """공기량 air (N,) 를 쓸 때 다음 스텝 구역 DO 예측 (N, 3) (다른 구성원 평균, 보정 없음)."""
+        t = env.t
+        state = np.asarray(obs[:, :len(STATE)], dtype=float)
+        x = np.column_stack([state, env.x['exo'][:, t], air[:, None] * env.x['frac'][:, t] / 1000.0, env.prev_zone / 1000.0])
+        return np.clip(state + self._predict(x, env.member, len(STATE)), 0.0, self.dyn.hi)[:, 2:]
+
+    def _update_do_bias(self, obs, env):
+        if env.t == 0 or self.d is None or len(self.d) != len(obs):
+            self.d, self.last_do = np.zeros((len(obs), len(STATE) - 2)), None
+        if self.last_do is not None:
+            e = np.asarray(obs[:, 2:len(STATE)], dtype=float) - self.last_do
+            self.d = self.do_bias * self.d + (1.0 - self.do_bias) * e
+
     def _update_bias(self, obs, env):
         if env.t == 0 or self.b is None or len(self.b) != len(obs):
             self.b, self.last_mu = np.zeros(len(obs)), None
@@ -305,6 +335,8 @@ class MinAirBrake:
         policy_air = action_to_air(a)
         if self.bias is not None:
             self._update_bias(obs, env)
+        if self.do_bias is not None:
+            self._update_do_bias(obs, env)
         if self.do_cap:
             air = self.do_aware_air(obs, env, policy_air)
         elif self.trim:
@@ -314,6 +346,8 @@ class MinAirBrake:
         used = np.abs(air - policy_air) > 1e-9
         if self.bias is not None:
             self.last_mu = self._mu_at(obs, env, np.where(used, air, policy_air))
+        if self.do_bias is not None:
+            self.last_do = self._do_at(obs, env, np.where(used, air, policy_air))
         self.lowered_steps += int((air < policy_air - 1e-9).sum())
         self.steps += len(air)
         return np.where(used, air_to_action(air), a), used
@@ -365,5 +399,5 @@ class _Rows:
     """환경의 일부 에피소드만 보는 얇은 보기 (_rollout 이 쓰는 t, x, prev_zone, member 만)."""
 
     def __init__(self, env, rows):
-        self.t, self.member, self.prev_zone = env.t, env.member[rows], env.prev_zone[rows]
+        self.t, self.member, self.prev_zone, self.rows = env.t, env.member[rows], env.prev_zone[rows], rows
         self.x = {k: env.x[k][rows] for k in ('exo', 'frac')}
