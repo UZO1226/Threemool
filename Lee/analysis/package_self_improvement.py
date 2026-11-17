@@ -17,7 +17,7 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71'), required=True)
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71', 'e72'), required=True)
     parser.add_argument('--fresh', action='store_true')
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
@@ -119,6 +119,35 @@ def main():
             add(ROOT / 'Lee/experiments/e68/artifacts.json')
             add(results / 'e71_study/comparison.json')
         for path in (results / preflight_name).rglob('*.json'):
+            add(path)
+    elif args.kind == 'e72':
+        summary = json.loads((args.study / 'summary.json').read_text())
+        previous = results / 'e72_component_diagnostic'
+        assert summary['passed'] and summary['policy_seeds'] == list(range(10))
+        assert summary['new_environment_queries'] == 0 and not summary['new_model_fitting']
+        assert not summary['test_evaluated']
+        assert sha(ROOT / 'Lee/experiments/e72/diagnose_components.py') == summary['source_sha256']
+        assert sha(previous / 'summary.json') == summary['previous_summary_sha256']
+        prior = json.loads((previous / 'summary.json').read_text())
+        assert prior['passed'] and prior['policy_seeds'] == list(range(10))
+        for seed, record in enumerate(summary['records']):
+            assert record['policy_seed'] == seed and record['passed'] and record['held_rows'] == 85120
+            assert record['new_environment_queries'] == 0 and not record['test_evaluated']
+            assert record['counts'] == prior['records'][seed]['counts']
+            assert json.loads((args.study / f'seed_{seed}.json').read_text()) == record
+            regimes = record['by_current_regime']
+            assert set(regimes) == {'0', '1', '2', '3'}
+            assert sum(row['rows'] for row in regimes.values()) == 85120
+            assert all(sum(row['counts'][key] for row in regimes.values()) == value
+                       for key, value in record['counts'].items())
+        for trial_file, expected in (('comparison.json', summary['initial_report_sha256']),
+                                     ('fresh_comparison.json', summary['fresh_report_sha256'])):
+            path = ROOT / 'Lee/experiments/e71' / trial_file
+            assert sha(path) == expected
+            add(path)
+        add(ROOT / 'Lee/experiments/e71/artifacts.json')
+        add(ROOT / 'Lee/experiments/e71/fresh_artifacts.json')
+        for path in previous.glob('*.json'):
             add(path)
     elif args.kind == 'e70':
         summary = json.loads((args.study / 'summary.json').read_text())
