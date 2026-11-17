@@ -20,7 +20,7 @@ def main():
     inputs = {str(certificate_path.relative_to(ROOT)): sha(certificate_path)}
     indices = np.random.default_rng(2026).integers(0, 5, size=(10000, 5))
     completed, pending = [], []
-    for trial in ('e65', 'e67', 'e69', 'e71'):
+    for trial in ('e65', 'e67', 'e69', 'e71', 'e73'):
         folder = ROOT / f'Lee/experiments/{trial}'
         path = folder / 'comparison.json'
         if not path.exists():
@@ -38,6 +38,9 @@ def main():
             for replay in audit['replays'].values():
                 assert replay['action_rows'] == 152000 and replay['independent_sklearn_actions_exact']
                 assert replay['trajectory_replay_exact'] and replay['executed_air_accounting_exact']
+                if trial == 'e73':
+                    assert replay['wrapper_component_guard_passed']
+                    assert replay['wrapper_component_increase_rows'] == [0, 0]
             inputs[str(audit_path.relative_to(ROOT))] = sha(audit_path)
         matched = report['metrics']['candidate_matched']
         for mode in ('candidate_native', 'candidate_matched'):

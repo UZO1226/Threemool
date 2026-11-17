@@ -16,7 +16,7 @@ not money or electricity. Air is actual m3 per23.75-hour episode. All air matche
 NH4 upper endpoints below zero, and DO upper endpoint at most zero are required.
 Intervals use10000 paired policy-seed resamples, RNG2026. All native values remain in the JSON.
 
-Pending complete committed reports: none.
+Pending complete committed reports: e73.
 Pending does not prove a process is live or a partial outcome is a completed trial.
 
 Environment e66 independently reconstructs but fails all seven adoption conditions.
