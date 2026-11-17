@@ -115,6 +115,20 @@
       "file_count": 161
     },
     {
+      "index": "Lee/experiments/e72/artifacts.json",
+      "index_sha256": "c80855075d7734d9b0590ac364eabfc319c2cdb47467670d4f88df7175ccbb2a",
+      "release_id": 443333191,
+      "asset_id": 757658153,
+      "archive": {
+        "name": "lee-e72-component-risk-diagnostic.zip",
+        "bytes": 186822,
+        "sha256": "3e854f02dcae78977fe92136030f05e10e1dd98095f5471d2d698cdd19383413"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 28
+    },
+    {
       "index": "Lee/experiments/e68/held_artifacts.json",
       "index_sha256": "8ca487e9b4afd0f9f8881046cf7aac72d7aadb30d21f56533fb551749999b7de",
       "release_id": 443333191,
@@ -144,6 +158,6 @@
     }
   ],
   "new_uploads": 0,
-  "verifier_sha256": "f914a8f4129853ddf4b4c0584ddca84a8b88062b70ab334dbf89f993998975c2",
+  "verifier_sha256": "d3b4c594f16c748d101210a5081af5f1e69fcbb65408e3925cb65fee86ad3176",
   "scope": "Current remote asset identity, draft, size and SHA256 plus every locally available ZIP entry. Does not infer scientific success or goal completion."
 }
