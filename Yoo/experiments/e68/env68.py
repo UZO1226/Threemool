@@ -1,8 +1,11 @@
 """e68 환경: 하루 NH4 평균 비용, 남은 예산 관측, 새 시험 구간.
 
 문헌 기준에 맞춰 비용을 다시 정의한다 (README 근거 표).
-- 하루 비용: 그날 NH4 평균 (행동 뒤 상태 95개) 이 4 mg/L 를 넘으면 1, 아니면 0.
-- 스텝 비용: 그날 NH4 누적합이 4 x 95 = 380 을 처음 넘는 스텝에서 1. 하루 합은 하루 비용과 정확히 같다.
+- 위반일: 그날 NH4 평균 (행동 뒤 상태 95개) 이 4 mg/L 를 넘는 날. 판정과 보고의 기준이다.
+- 스텝 비용: 그날 NH4 누적합이 4 x 95 = 380 을 넘은 뒤의 모든 스텝에서 1 (예산 초과 스텝). 하루 합이 0 보다 크면
+  위반일이고, 일찍 넘을수록 커진다. 처음에는 넘는 스텝에서만 1 을 줬는데, 시험 학습 (dev, 갱신 40번) 에서 승수가 상한에
+  붙은 채 위반율이 54 % 에서 73 % 로 오르며 무너졌다. 넘을 날에는 공기를 더 넣어도 비용이 그대로라 학습 신호가 없었기 때문이다.
+  예산 초과 스텝은 Safety Gym 의 스텝별 이진 비용과 같은 형태다.
 - 관측: e30 의 11개 + 남은 예산 (380 - 누적합) / 380 (-1 ~ 1 로 자름) + 남은 스텝 비율. 누적합이 관측에 있어
   비용이 상태의 함수가 된다.
 - DO 는 비용에서 뺀다. 보고만 한다.
@@ -84,7 +87,7 @@ class DailyEnv:
         self.prev_air, self.prev_zone = air, zone
         before = self.nh4_sum
         self.nh4_sum = before + self.state[:, 0]
-        cost = ((self.nh4_sum > BUDGET) & (before <= BUDGET)).astype(float)
+        cost = (self.nh4_sum > BUDGET).astype(float)
         self.t += 1
         info = dict(air=air, zone=zone, v_nh4=(self.state[:, 0] > NH4_LIMIT).astype(float),
                     v_do=(self.state[:, 2:].max(1) > DO_MAX).astype(float))
@@ -116,13 +119,14 @@ def metrics(states, airs, costs, eps):
     nh4 = states[:, :, 0]
     day_mean = nh4.mean(1)
     day_viol = nh4.sum(1) > BUDGET
-    assert np.array_equal(costs.sum(1), day_viol.astype(float)), '스텝 비용 합과 하루 비용이 다르다'
+    assert np.array_equal(costs.sum(1) > 0, day_viol), '예산 초과 스텝과 위반일이 다르다'
+    assert np.array_equal(costs.sum(1), (np.cumsum(nh4, 1) > BUDGET).sum(1))
     do_max = states[:, :, 2:].max(2)
     air_day = (airs * STEP_H).sum(1)
     return dict(n_episodes=len(eps), air_m3=float(air_day.mean()),
                 air_m3_ok_days=float(air_day[~day_viol].mean()) if (~day_viol).any() else None,
                 air_m3_violated_days=float(air_day[day_viol].mean()) if day_viol.any() else None,
-                day_violation_pct=float(100 * day_viol.mean()), nh4_mean=float(nh4.mean()),
+                day_violation_pct=float(100 * day_viol.mean()), over_budget_steps=float(costs.sum(1).mean()), nh4_mean=float(nh4.mean()),
                 nh4_day_mean_p90=float(np.percentile(day_mean, 90)), nh4_max_day_mean=float(day_mean.max()),
                 nh4_step_viol_pct=float(100 * (nh4 > NH4_LIMIT).mean()), nh4_excess_mg_h_L=float((np.maximum(nh4 - NH4_LIMIT, 0) * STEP_H).sum(1).mean()),
                 do_step_viol_pct=float(100 * (do_max > DO_MAX).mean()), no3_mean=float(states[:, :, 1].mean()),
