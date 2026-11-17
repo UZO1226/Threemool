@@ -1,0 +1,246 @@
+{
+  "authentication_passed": true,
+  "policy_seeds": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "records": [
+    {
+      "policy_seed": 5,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "6bb9618e680666c55499938c41b5b635fa32cfb53a1decc3c0bc2611f02300ef",
+        "normalizer.json": "f6d78678e8b10493914f705162160908881211ed825d99db999e29fe99e33d1b",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "28ec052e29a243a7a87f828cc06d85d71b53a2f8be8cc2b5e6c87d97d6c0fa34"
+      },
+      "rate_model_sha256": "676a48e3081c9ed968c89f527a204f93cd7857d5d7c6eaf1bac96ff61f524b8d",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "fixed_e63_offset_after_wrapper": -0.07421875,
+      "primary_reference_metrics": {
+        "air_m3": 53304.19749674649,
+        "cost": 20.983125,
+        "nh4_viol_pct": 21.852631578947367,
+        "do_viol_pct": 0.2348684210526316,
+        "reward": -23.69075444299844,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 53.5625
+      },
+      "e63_native_metrics": {
+        "air_m3": 56292.66320353607,
+        "cost": 19.000625,
+        "nh4_viol_pct": 19.720394736842106,
+        "do_viol_pct": 0.2802631578947368,
+        "reward": -25.018961423793808,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 58.8125
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 53294.84305270482,
+        "cost": 22.179375,
+        "nh4_viol_pct": 22.969736842105267,
+        "do_viol_pct": 0.3769736842105263,
+        "reward": -23.686596912313252,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 52.5625
+      },
+      "original_fcsrl_air_match": true,
+      "summary_sha256": "f96b34cbabc1dd8b718a7c760f8cc0e63c3390adc0ca91f06269bac30a459195",
+      "action_audit_sha256": "01fe533165f41b2eff74992f512100ee0694d4e47fa320bb75567cf2eb2688d0",
+      "matched_file_sha256": "f03ef636dc7fa4f8a59fcf9ba4c504955aa0785def8158b09e09c7c6ed63eabb",
+      "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+      "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+    },
+    {
+      "policy_seed": 6,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "2ba5c6b39d60a683c37bbfc530aa01fb0988284ba5658437e77877cac91e8a6f",
+        "normalizer.json": "f9bdc79e90d885b69db4a382cb2bfadf6cdfebe1f5e949194771b86ba6b9b5fd",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "5fe869bc852615ba2da4c11c385239df1e652ec75caacdfd252a0802db9d226f"
+      },
+      "rate_model_sha256": "401b161a403c19ba58aa5ee85a237e71e1c20624b5e55d656571d99c650c9ac2",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "fixed_e63_offset_after_wrapper": 0.025390625,
+      "primary_reference_metrics": {
+        "air_m3": 79829.45233417515,
+        "cost": 6.785625,
+        "nh4_viol_pct": 5.399342105263158,
+        "do_viol_pct": 1.7434210526315792,
+        "reward": -35.47975659296673,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 83.25
+      },
+      "e63_native_metrics": {
+        "air_m3": 78870.05963215878,
+        "cost": 6.959375,
+        "nh4_viol_pct": 5.617105263157895,
+        "do_viol_pct": 1.7085526315789474,
+        "reward": -35.053359836515014,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 82.8125
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 79868.04601188982,
+        "cost": 6.990625,
+        "nh4_viol_pct": 5.019736842105263,
+        "do_viol_pct": 2.3388157894736845,
+        "reward": -35.4969093386177,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 82.875
+      },
+      "original_fcsrl_air_match": true,
+      "summary_sha256": "ace2bd2395a116ba01b55969466c43e508d33b591163e8167c3b18f02bb1a8b3",
+      "action_audit_sha256": "546d3e66acdc1a2db2b64759736039d51234cc086a21411fe70a95a25d195191",
+      "matched_file_sha256": "61f86ec7e8c3428fd9c727a1c0dde877f862956f29b79034ffbc7c58cb365cd1",
+      "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+      "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+    },
+    {
+      "policy_seed": 7,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "9526b67919cd760babcca3a38cf6a2376f955be2e67a0b660d0503f6a96c4620",
+        "normalizer.json": "998597495b7754f4ae7e4eba761bf1e28f04bcf543e16a5aaf68cc0f34973cf4",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "a43bdb2107e53821d7f27a824f0ae099016470b299654f2d6522d86210120f3f"
+      },
+      "rate_model_sha256": "583dc2f45ae917af155f8f7cb84e4f8678535f85d25484db092a9055512200ca",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "fixed_e63_offset_after_wrapper": -0.09521484375,
+      "primary_reference_metrics": {
+        "air_m3": 47921.32222731888,
+        "cost": 23.5,
+        "nh4_viol_pct": 24.719736842105263,
+        "do_viol_pct": 0.017105263157894738,
+        "reward": -21.298365434363948,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 56.9375
+      },
+      "e63_native_metrics": {
+        "air_m3": 52143.14252168551,
+        "cost": 21.461875,
+        "nh4_viol_pct": 22.53684210526316,
+        "do_viol_pct": 0.05460526315789474,
+        "reward": -23.174730009638004,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 60.875
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 47876.59236833889,
+        "cost": 25.48625,
+        "nh4_viol_pct": 26.501315789473686,
+        "do_viol_pct": 0.32631578947368417,
+        "reward": -21.278485497039508,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 53.93750000000001
+      },
+      "original_fcsrl_air_match": true,
+      "summary_sha256": "18481942b43f0ad5847f3fc406e810b4d0a8efa2729a64deb192fa46d5207723",
+      "action_audit_sha256": "c4eeb009ed31a671f548598aa1455532b6d17d778fce67810dcdbee799dce83d",
+      "matched_file_sha256": "aa874815303fc7186f4e9d9c833c85e3088c4d6b9c9bf6f7535d04a15c78b2d6",
+      "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+      "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+    },
+    {
+      "policy_seed": 8,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "3162a7927f35e9bc6c5001ed4ad965fc60e11734906df43b242d32ac1006192a",
+        "normalizer.json": "424efe893ea5292a27402b341df480380f82eb89a89a9d46a2260c1534872760",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "553d3e0a226eb525fafdaeb5871cf5e0253f3bb38215aebe00ad4fdfa93d3420"
+      },
+      "rate_model_sha256": "996427ac5f5e279a894fbfeef95b2d3e4fff6c272a5fcf46781cf661df0de775",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "fixed_e63_offset_after_wrapper": -0.029296875,
+      "primary_reference_metrics": {
+        "air_m3": 56008.88358916454,
+        "cost": 12.823125,
+        "nh4_viol_pct": 13.469736842105263,
+        "do_viol_pct": 0.02828947368421052,
+        "reward": -24.892837150739798,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 72.625
+      },
+      "e63_native_metrics": {
+        "air_m3": 56747.565883739444,
+        "cost": 12.52,
+        "nh4_viol_pct": 13.126973684210524,
+        "do_viol_pct": 0.05197368421052631,
+        "reward": -25.221140392773087,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 72.75
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 56012.11055954911,
+        "cost": 15.001875,
+        "nh4_viol_pct": 15.699342105263158,
+        "do_viol_pct": 0.09210526315789475,
+        "reward": -24.894271359799603,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 66.9375
+      },
+      "original_fcsrl_air_match": true,
+      "summary_sha256": "00ad1316211d683d485275894a82c0661e08e6f827f7791486989e702b67ba42",
+      "action_audit_sha256": "d5f81c594316d042ca205419b9ee0595e405da2b2838f744fd9a2aa2e42f8d91",
+      "matched_file_sha256": "a0cfeb78b95d066d76cfd162110a95cf46294a9631f5bd5f2298b737db9de814",
+      "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+      "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+    },
+    {
+      "policy_seed": 9,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "67c09a42fcbe4514f7d3fa2705945b07751c43e0a2f43040e3457e4f6b2c690e",
+        "normalizer.json": "10f7e733e30d3c0ef1b37bfc636a0cddc7758e5befe2d02e7cde95d20d395b33",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "5ee3edf48593911abdb11a2678708ca657928ee7a19a403c8985c84b5e281eae"
+      },
+      "rate_model_sha256": "e7fbd2e613ec7d0d3e478a90ec3feb3b2a5a8bfdd1751db45167c362a9aad06c",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "fixed_e63_offset_after_wrapper": 0.0078125,
+      "primary_reference_metrics": {
+        "air_m3": 82977.47712687757,
+        "cost": 6.604375,
+        "nh4_viol_pct": 6.2026315789473685,
+        "do_viol_pct": 0.7493421052631578,
+        "reward": -36.878878723056694,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 85.375
+      },
+      "e63_native_metrics": {
+        "air_m3": 82595.26520668827,
+        "cost": 6.69875,
+        "nh4_viol_pct": 6.367105263157896,
+        "do_viol_pct": 0.6842105263157895,
+        "reward": -36.70900675852812,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 85.5
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 82922.55094013366,
+        "cost": 6.55375,
+        "nh4_viol_pct": 5.563815789473683,
+        "do_viol_pct": 1.3348684210526316,
+        "reward": -36.85446708450385,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 84.25
+      },
+      "original_fcsrl_air_match": true,
+      "summary_sha256": "808f79b1ee4038b292fd0c68fd013458af3518e5aeb4d7d91e9d6ccbc329e7e3",
+      "action_audit_sha256": "0b830e3549f8eddb90c69decffbc6d03935da2abda61f3639ff660e52036e6bb",
+      "matched_file_sha256": "769d685adcacbc6dbca5bf34561bd292f11950c9606614124949bb0ccaa69b5f",
+      "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+      "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+    }
+  ],
+  "all_original_fcsrl_air_matches": true,
+  "test_evaluated": false,
+  "candidate_evaluation": false,
+  "scope": "Authenticates actual fresh e63 controllers and achieved air only, not a candidate improvement. Original-FCSRL air matches are reported separately."
+}

@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "policy_seeds": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "records": [
+    {
+      "policy_seed": 5,
+      "model_sha256": "676a48e3081c9ed968c89f527a204f93cd7857d5d7c6eaf1bac96ff61f524b8d",
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "6bb9618e680666c55499938c41b5b635fa32cfb53a1decc3c0bc2611f02300ef",
+        "normalizer.json": "f6d78678e8b10493914f705162160908881211ed825d99db999e29fe99e33d1b",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "28ec052e29a243a7a87f828cc06d85d71b53a2f8be8cc2b5e6c87d97d6c0fa34"
+      },
+      "checks": {
+        "passed": true,
+        "probe_rows": 10000,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      }
+    },
+    {
+      "policy_seed": 6,
+      "model_sha256": "401b161a403c19ba58aa5ee85a237e71e1c20624b5e55d656571d99c650c9ac2",
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "2ba5c6b39d60a683c37bbfc530aa01fb0988284ba5658437e77877cac91e8a6f",
+        "normalizer.json": "f9bdc79e90d885b69db4a382cb2bfadf6cdfebe1f5e949194771b86ba6b9b5fd",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "5fe869bc852615ba2da4c11c385239df1e652ec75caacdfd252a0802db9d226f"
+      },
+      "checks": {
+        "passed": true,
+        "probe_rows": 10000,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      }
+    },
+    {
+      "policy_seed": 7,
+      "model_sha256": "583dc2f45ae917af155f8f7cb84e4f8678535f85d25484db092a9055512200ca",
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "9526b67919cd760babcca3a38cf6a2376f955be2e67a0b660d0503f6a96c4620",
+        "normalizer.json": "998597495b7754f4ae7e4eba761bf1e28f04bcf543e16a5aaf68cc0f34973cf4",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "a43bdb2107e53821d7f27a824f0ae099016470b299654f2d6522d86210120f3f"
+      },
+      "checks": {
+        "passed": true,
+        "probe_rows": 10000,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      }
+    },
+    {
+      "policy_seed": 8,
+      "model_sha256": "996427ac5f5e279a894fbfeef95b2d3e4fff6c272a5fcf46781cf661df0de775",
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "3162a7927f35e9bc6c5001ed4ad965fc60e11734906df43b242d32ac1006192a",
+        "normalizer.json": "424efe893ea5292a27402b341df480380f82eb89a89a9d46a2260c1534872760",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "553d3e0a226eb525fafdaeb5871cf5e0253f3bb38215aebe00ad4fdfa93d3420"
+      },
+      "checks": {
+        "passed": true,
+        "probe_rows": 10000,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      }
+    },
+    {
+      "policy_seed": 9,
+      "model_sha256": "e7fbd2e613ec7d0d3e478a90ec3feb3b2a5a8bfdd1751db45167c362a9aad06c",
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "67c09a42fcbe4514f7d3fa2705945b07751c43e0a2f43040e3457e4f6b2c690e",
+        "normalizer.json": "10f7e733e30d3c0ef1b37bfc636a0cddc7758e5befe2d02e7cde95d20d395b33",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "5ee3edf48593911abdb11a2678708ca657928ee7a19a403c8985c84b5e281eae"
+      },
+      "checks": {
+        "passed": true,
+        "probe_rows": 10000,
+        "max_raw_sklearn_difference": 0.0,
+        "max_clipped_sklearn_difference": 0.0,
+        "max_coordinate_order_violation": 0.0
+      }
+    }
+  ],
+  "test_evaluated": false,
+  "candidate_evaluation": false,
+  "extra_environment_training_steps": 0,
+  "scope": "Fresh risk weights and parity only; no matched e63 or candidate quality result yet."
+}

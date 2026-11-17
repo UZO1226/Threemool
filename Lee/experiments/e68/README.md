@@ -44,7 +44,15 @@ or evidence that environment DO onset prediction is repaired. Source data
 and capture arrays stay local; required checkpoints/logs eventually go to
 the already authorized private draft storage with verified checksums.
 
-## Reproduction and current execution
+## Completed baseline preparation
+
+All actual seeds5 through9 now finish training parity, horizon4 fitting,
+matched e63 construction and independent native/matched replay audits.
+[results.md](results.md) binds the final records and remotely verified model
+archive. This is baseline authentication, not candidate improvement.
+The execution descriptions below preserve the staged launch history.
+
+## Reproduction and historical execution
 
 From the workspace, with the threemool Python environment and numerical
 library threads fixed to1, launch into unused output paths:
