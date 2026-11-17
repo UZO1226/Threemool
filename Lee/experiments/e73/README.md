@@ -90,3 +90,16 @@ Do not overwrite completed output directories; reproduce in a fresh workspace
 with consistent new runner paths. The fitter reads the committed guard_check.json
 certificate; if reproducing changed sources, regenerate and review that control
 certificate before fitting. Source/model/data mismatches fail closed.
+
+After the complete original five-seed study, independently recompute its
+recorded episode aggregates, air-only choices and paired policy-seed intervals:
+
+```powershell
+python Threemool/Lee/analysis/verify_e71_blocks.py --trial e73 --original-only --workspace C:/Users/user/Downloads/IoT_project2 --out results/e73_initial_verified.json
+```
+
+The verifier retains its historical filename and unchanged default e71
+two-block behavior. e73 currently requires explicit original-only scope;
+this cannot verify the exposed5 through9 or newly declared10 through14 block,
+and its original-only success flag cannot claim two-block success. Regression
+checks preserve e71's original pass and fresh failure under identical criteria.

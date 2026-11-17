@@ -26,7 +26,11 @@ def main():
     parser.add_argument('--workspace', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--require-fresh', action='store_true')
+    parser.add_argument('--trial', choices=('e71', 'e73'), default='e71')
+    parser.add_argument('--original-only', action='store_true')
     args = parser.parse_args()
+    assert not (args.original_only and args.require_fresh)
+    assert args.trial != 'e73' or args.original_only, 'e73 exposed and new confirmation blocks require their separate registration'
     workspace = args.workspace.resolve()
     results = workspace / 'results'
     data = workspace / 'kaggle_data/darrow_15min.pkl'
@@ -58,9 +62,12 @@ def main():
         assert summary['n_episodes'] == 1600
         return summary
 
-    for label, seeds, name, cert_path in (
-        ('original', list(range(5)), 'e71_study', ROOT / 'Lee/experiments/e64/baseline_authentication.json'),
-        ('fresh', list(range(5, 10)), 'e71_fresh_study', results / 'e68_fresh_references/baseline_authentication.json')):
+    specifications = [
+        ('original', list(range(5)), f'{args.trial}_study', ROOT / 'Lee/experiments/e64/baseline_authentication.json'),
+        ('fresh', list(range(5, 10)), 'e71_fresh_study', results / 'e68_fresh_references/baseline_authentication.json')]
+    if args.original_only:
+        specifications = specifications[:1]
+    for label, seeds, name, cert_path in specifications:
         study = results / name
         if not (study / 'comparison.json').exists():
             blocks.append({'block': label, 'complete': False, 'criterion_passed': None})
@@ -78,6 +85,7 @@ def main():
             pair, audit = checked_read(folder / 'summary.json'), checked_read(folder / 'action_audit.json')
             reference = next(row for row in cert['records'] if row['policy_seed'] == seed)
             assert pair['policy_seed'] == audit['policy_seed'] == seed and audit['passed']
+            assert pair['candidate_method'] == {'e71': 'e71_signal_gate_h4', 'e73': 'e73_component_guard_h4'}[args.trial]
             assert not pair['test_evaluated'] and not audit['test_evaluated']
             assert pair['training_steps'] == 401280 and pair['extra_environment_training_steps'] == 0
             assert pair['baseline_certificate_sha256'] == sha(cert_path)
@@ -92,6 +100,9 @@ def main():
                 replay = audit['replays'][mode]
                 assert replay['action_rows'] == 152000 and replay['trajectory_replay_exact']
                 assert replay['independent_sklearn_actions_exact'] and replay['executed_air_accounting_exact']
+                if args.trial == 'e73':
+                    assert replay['wrapper_component_guard_passed']
+                    assert replay['wrapper_component_increase_rows'] == [0, 0]
             calls = []
             def air_only(offset):
                 calls.append(offset)
@@ -123,7 +134,9 @@ def main():
         assert all(checks.values()) == report['meets_prespecified_simulation_criterion']
         blocks.append({'block': label, 'policy_seeds': seeds, 'complete': True,
                        'criterion_passed': all(checks.values()), 'checks': checks})
-    result = {'blocks': blocks, 'both_blocks_verified_and_passed': all(row['complete'] and row['criterion_passed'] for row in blocks),
+    result = {'candidate_trial': args.trial, 'original_only': args.original_only, 'blocks': blocks,
+        'both_blocks_verified_and_passed': len(blocks) == 2 and all(row['complete'] and row['criterion_passed'] for row in blocks),
+        'original_block_verified_and_passed': blocks[0]['complete'] and blocks[0]['criterion_passed'],
         'data_sha256': sha(data), 'input_sha256': inputs, 'verifier_sha256': sha(Path(__file__)),
         'new_environment_queries': 0, 'test_evaluated': False,
         'scope': 'Independent recorded episode/air-only matching/paired-seed arithmetic checks. No block pooling or goal completion inferred from an incomplete block.'}
