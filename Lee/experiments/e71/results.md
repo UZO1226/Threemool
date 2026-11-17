@@ -5,7 +5,9 @@ criterion against authenticated matched e63. All native and matched independent
 sklearn action, trajectory and actual-air accounting audits pass for152000
 actions per seed per mode. This is an initial exploratory result on reused
 validation40. Fresh seeds5 through9 remain a required separate confirmation.
-The active goal is not complete.
+The active goal is not complete. Subsequent fresh seed5 through9 confirmation
+is now complete and fails the joint cost/NH4 criterion. See
+[fresh_results.md](fresh_results.md). The initial success does not replicate.
 
 | Matched metric | e63 mean | e71 mean | Difference95% paired-seed interval |
 | --- | --- | --- | --- |

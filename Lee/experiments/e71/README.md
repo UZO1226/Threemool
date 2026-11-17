@@ -54,6 +54,11 @@ Reused validation40 is exploratory and final test41 remains excluded.
 
 ## Initial result and fresh confirmation
 
+Latest outcome: both blocks and every independent audit are complete.
+The original block passes, but the actual fresh seed5 through9 block fails
+cost and NH4. See [fresh_results.md](fresh_results.md). The overall gain
+does not replicate. Keep the prospective plan below and both full outcomes.
+
 [results.md](results.md) records the completed original block and immutable
 archive. The initial block passes, but fresh confirmation remains required.
 Fresh adapters preserve signal_policy.py and e69/budget_policy.py unchanged,
@@ -71,8 +76,7 @@ python Threemool/Lee/experiments/e71/run_fresh.py --workspace C:/Users/user/Down
 python Threemool/Lee/analysis/verify_e71_blocks.py --workspace C:/Users/user/Downloads/IoT_project2 --out results/e71_blocks_verified.json --require-fresh
 ```
 
-The first two stages and full native smoke audit have completed. The last
-verification command must wait for the full study to complete. Existing
+All stages and both block verifications have now completed. Existing
 study directories are immutable; reproduce in a new workspace with fresh
 output paths, adjusting the runner's workspace layout consistently. Final
 weights and runtime manifests retain original401280-step policy identity.

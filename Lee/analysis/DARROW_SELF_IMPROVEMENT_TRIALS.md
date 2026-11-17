@@ -22,9 +22,10 @@ Pending does not prove a process is live or a partial outcome is a completed tri
 Environment e66 independently reconstructs but fails all seven adoption conditions.
 It is a separate forecast experiment and does not replace e42 or enter the policy table.
 
-e71 passes this original seed block. Fresh seeds5 through9 remain a separate required
-confirmation block. Passing this table alone does not complete the active goal.
-Fresh baselines are authenticated in e68. No fresh candidate outcome is included here.
+e71 passes this original seed block, but fails its separate fresh seed5 through9
+confirmation on cost and NH4. See e71/fresh_results.md and block_verification.json.
+The fresh DO gain cannot rescue the joint failure. Do not pool the blocks.
+This table contains only original seed0 through4 results, not overall adoption.
 Reused validation and multiple hypotheses remain exploratory; this is not independent
 observational confirmation or physical plant safety. Final test41 is preserved.
 

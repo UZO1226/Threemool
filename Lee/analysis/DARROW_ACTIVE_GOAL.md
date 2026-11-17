@@ -117,7 +117,14 @@ has remotely verified size and SHA256, asset757559843. Initial success does
 not complete the goal: a separately required fresh block cannot be replaced
 by pooling or changing the criterion. The frozen e71 method has now completed
 training-only calibration and held checks on all actual seeds5 through9.
-Fresh evaluation and independent audits are the next required evidence.
+Fresh evaluation and all five independent native/matched audits now complete.
+All air matches pass, but cost difference interval[-1.142875,.460375] and
+NH4 interval[-1.095921,.793553] fail. DO improves with interval[-.416316,-.044474].
+The joint gain does not replicate. The full fresh archive is remotely verified,
+asset757626794, and block_verification.json reconstructs all episode aggregates,
+air-only choices and separate bootstrap arithmetic. No pooling or criterion
+change rescues this failure. All ten delivery indexes currently match remote
+size/digest and every local ZIP entry. Goal remains active for a new hypothesis.
 
 ## Previous completed objective
 

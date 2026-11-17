@@ -1,0 +1,149 @@
+{
+  "verified": true,
+  "fresh_candidate_delivered": true,
+  "artifacts": [
+    {
+      "index": "Lee/experiments/e63/artifacts.json",
+      "index_sha256": "77e635884811d1cce050e617da89fdf6b7a16644aa3da45fcd80ad25dc07222c",
+      "release_id": 443333191,
+      "asset_id": 753857743,
+      "archive": {
+        "name": "lee-e63-risk-only.zip",
+        "bytes": 14263028,
+        "sha256": "183c56ee7c864a04adbd337929040d557c37627680cbdb030a198c4443963aa3"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 182
+    },
+    {
+      "index": "Lee/experiments/e65/artifacts.json",
+      "index_sha256": "3df3dfae08fdd0d6f44e27c162800d38fde78b78528cd812a77ba6f2c998f75b",
+      "release_id": 443333191,
+      "asset_id": 755484263,
+      "archive": {
+        "name": "lee-e65-nested-grid.zip",
+        "bytes": 15766521,
+        "sha256": "34f88f0ee3ee5e868bb2b2e425a0db3ffc9f0fc30c569a3e1c86f9ffef8dbc31"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 225
+    },
+    {
+      "index": "Lee/experiments/e66/artifacts.json",
+      "index_sha256": "815cc77fc35cf199ba313377b9bd1114420dce5ab574ec84b4f3682ce5cd6dc9",
+      "release_id": 442901392,
+      "asset_id": 755467717,
+      "archive": {
+        "name": "lee-e66-exogenous-blocks.zip",
+        "bytes": 28534,
+        "sha256": "e5e5c1c2a2e61fb9e017cd48996bd018b84320faf6148ed9750e02d6123c19cf"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 11
+    },
+    {
+      "index": "Lee/experiments/e67/artifacts.json",
+      "index_sha256": "72d57c6ae018fe4c812945b8d3ca44629002836c7f1c9346ae8616a8d5216567",
+      "release_id": 443333191,
+      "asset_id": 755543190,
+      "archive": {
+        "name": "lee-e67-larger-radius.zip",
+        "bytes": 14226726,
+        "sha256": "b2e62e1a5a31173300751dac15c6a7682778646ac7c3ffd045126b21a028aa7b"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 157
+    },
+    {
+      "index": "Lee/experiments/e68/artifacts.json",
+      "index_sha256": "40c843dc940825fb9cdcb16456492e5a98dbb7e600d506d0c524ff30237836e8",
+      "release_id": 443333191,
+      "asset_id": 757595492,
+      "archive": {
+        "name": "lee-e68-fresh-baselines.zip",
+        "bytes": 26658731,
+        "sha256": "e03b7b321f8d91df7e3a6fb3da8bed6d023ef5832b25c7e694d460eaf97b01d6"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 240
+    },
+    {
+      "index": "Lee/experiments/e69/artifacts.json",
+      "index_sha256": "ee51c6d34ca10708733973477ed830fa7f0663fcd97c72c4dff04c3b26e90dec",
+      "release_id": 443333191,
+      "asset_id": 755687772,
+      "archive": {
+        "name": "lee-e69-training-air-budget.zip",
+        "bytes": 14195474,
+        "sha256": "382828bbed97c5901daeb398285a1730ce8c24bed5f30f35d9d8865000dc0a1d"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 160
+    },
+    {
+      "index": "Lee/experiments/e70/artifacts.json",
+      "index_sha256": "9ef4fd2ceb6417d2bfd97f9250cc99830afa9fdb7ea6cd4ce83a4036f1afe400",
+      "release_id": 443333191,
+      "asset_id": 755782069,
+      "archive": {
+        "name": "lee-e69-e70-air-transport.zip",
+        "bytes": 37379,
+        "sha256": "0f357db861cc8d616b9a8a3cf4988b8c88090df837f0584dd11d817ce26f8bd6"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 13
+    },
+    {
+      "index": "Lee/experiments/e71/artifacts.json",
+      "index_sha256": "c62f18a3820a8e5846b228a6d4729a1937d4128e9794ab93ca922aae354c73cd",
+      "release_id": 443333191,
+      "asset_id": 757559843,
+      "archive": {
+        "name": "lee-e71-signal-gated-projection.zip",
+        "bytes": 14214858,
+        "sha256": "c98edc0bd78934598440841d2dea5786f0b6a93d7cce1a0f1a578f0eaed16f98"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 161
+    },
+    {
+      "index": "Lee/experiments/e68/held_artifacts.json",
+      "index_sha256": "8ca487e9b4afd0f9f8881046cf7aac72d7aadb30d21f56533fb551749999b7de",
+      "release_id": 443333191,
+      "asset_id": 757618888,
+      "archive": {
+        "name": "lee-e68-fresh-held-audits.zip",
+        "bytes": 57594,
+        "sha256": "6cfb4d75f93715322222777e1d7d124a3febfdda888604cfdfd9146e58dec422"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 12
+    },
+    {
+      "index": "Lee/experiments/e71/fresh_artifacts.json",
+      "index_sha256": "56e3e4cb1990082fe4029dbfa8fd5ac9aef9007b1763a91477a3f5c737056937",
+      "release_id": 443333191,
+      "asset_id": 757626794,
+      "archive": {
+        "name": "lee-e71-fresh-signal-gate.zip",
+        "bytes": 14343803,
+        "sha256": "bae7dc88727e704613a893aa15c10ec735ea2a8a5d589efc2bb5412a5974a4fc"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 168
+    }
+  ],
+  "new_uploads": 0,
+  "verifier_sha256": "f914a8f4129853ddf4b4c0584ddca84a8b88062b70ab334dbf89f993998975c2",
+  "scope": "Current remote asset identity, draft, size and SHA256 plus every locally available ZIP entry. Does not infer scientific success or goal completion."
+}
