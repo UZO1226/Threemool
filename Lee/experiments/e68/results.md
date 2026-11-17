@@ -40,3 +40,43 @@ audit are rejected before any archive is written.
 
 e71 must still pass its own separate fresh comparison and all independent
 audits. Reused validation40 remains exploratory and final test41 is preserved.
+
+## Independent held logged-action errors
+
+The original e56/audit_rates.py now independently reconstructs the actual
+85120 held transitions per seed, updates53 through66, without refitting.
+Both horizon4 regressors have lower rate MSE than current-state persistence
+and the fit-mean constant on every actual fresh seed. Each persistence
+contrast's paired-date95% interval is below zero. These are conditional
+date resamples,10000 with RNG5602, not policy-seed improvement intervals.
+
+| Seed | NH4 rate MSE | NH4 difference from persistence | DO rate MSE | DO difference from persistence |
+| --- | --- | --- | --- | --- |
+| 5 | .004265317 | -.002938565 | .003375695 | -.005945623 |
+| 6 | .003900696 | -.002764894 | .004880406 | -.005843996 |
+| 7 | .003684566 | -.003130894 | .005770597 | -.008916512 |
+| 8 | .004926019 | -.003600424 | .001102109 | -.002295545 |
+| 9 | .001845701 | -.001604657 | .006829244 | -.008415656 |
+
+held_audit_seed files and held_artifacts.json retain all labels, controls,
+date counts, intervals and hashes. Held update blocks are excluded from risk
+model fitting and projection calibration; they are not held out from the base
+NN's training, and their dates overlap fitting dates. These diagnostics do
+not measure candidate actions' counterfactual water quality or repair the
+separate recursive environment's onset forecasts.
+
+The additional archive is lee-e68-fresh-held-audits.zip,57594 bytes,
+SHA256 6cfb4d75f93715322222777e1d7d124a3febfdda888604cfdfd9146e58dec422,
+existing draft asset757618888. Remote size and digest are verified. Its first
+local packaging attempt exposed Windows ZIP path normalization, failed before
+upload, and is retained locally with a failed-windows-names suffix. The corrected
+archive uses POSIX entry names and passes every stored-byte integrity check.
+
+Reproduce each seed's original held audit, substituting actual IDs5 through9:
+
+```powershell
+python Threemool/Lee/experiments/e56/audit_rates.py --run results/e68_fresh_baselines/captured/new_ppolag_fcsrl/seed_5 --baseline results/e68_fresh_baselines/original/new_ppolag_fcsrl/seed_5 --freeze Threemool/Lee/experiments/e42/environment_freeze.json --data kaggle_data/darrow_15min.pkl --correction results/e68_fresh_rates/models/h4/seed_5 --out results/e68_fresh_held_audits/seed_5.json --horizon 4 --phase held
+```
+
+package_fresh_held_audits.py authenticates all five outputs, their fit-summary
+metrics, model hashes and original audit-source hashes before archiving.

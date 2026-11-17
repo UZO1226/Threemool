@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "policy_seed": 6,
+  "horizon": 4,
+  "phase": "held",
+  "smoke_only": false,
+  "test_evaluated": false,
+  "scope": "Fixed rate controller, unchanged base policy and held on-policy captured data. Predicted rate improvements are not measured water-quality improvements.",
+  "held": {
+    "held_metrics_reconstructed": true,
+    "held_rows": 85120,
+    "held_training_dates": 188,
+    "labels": {
+      "nh4": {
+        "rate_mse": 0.0039006956437779928,
+        "target_mean": 0.04847274436090226,
+        "prediction_mean": 0.05160089744777864,
+        "safe_current_rows": 81049,
+        "safe_current_future_nonzero_windows": 744,
+        "safe_current_rate_mse": 0.002639929507982532,
+        "controls": {
+          "current_state_persistence": {
+            "rate_mse_difference": -0.0027648941118611054,
+            "paired_date_bootstrap95_ci": [
+              -0.0034784422509580313,
+              -0.0020940905144041584
+            ]
+          },
+          "fit_mean_constant": {
+            "rate_mse_difference": -0.04992432257688394,
+            "paired_date_bootstrap95_ci": [
+              -0.058614527587925985,
+              -0.04185296767967568
+            ]
+          }
+        }
+      },
+      "do": {
+        "rate_mse": 0.00488040568261375,
+        "target_mean": 0.029523026315789475,
+        "prediction_mean": 0.02917386052161239,
+        "safe_current_rows": 82588,
+        "safe_current_future_nonzero_windows": 1159,
+        "safe_current_rate_mse": 0.002654668654461862,
+        "controls": {
+          "current_state_persistence": {
+            "rate_mse_difference": -0.00584399646859761,
+            "paired_date_bootstrap95_ci": [
+              -0.007071002574167451,
+              -0.00468432824006777
+            ]
+          },
+          "fit_mean_constant": {
+            "rate_mse_difference": -0.019592437237184065,
+            "paired_date_bootstrap95_ci": [
+              -0.02548009012202,
+              -0.014334513561284236
+            ]
+          }
+        }
+      }
+    },
+    "uncertainty_scope": "10000 held training-date resamples conditional on this fitted policy/model; not policy-seed, causal-action or plant-generalization uncertainty."
+  }
+}
