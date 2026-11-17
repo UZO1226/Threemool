@@ -4,7 +4,9 @@ This audit belongs to the new goal of improving our own authenticated matched
 e63. DARROW_GOAL_AUDIT.md describes the earlier original-FCSRL goal and cannot
 complete this goal. Completion is currently unproven. Initial e71 success is
 verified, while completed fresh confirmation fails cost and NH4. The initial
-gain does not replicate and the goal remains active.
+gain does not replicate and the goal remains active. Completed e73 comparison
+and independent verification pass cost/NH4 but fail DO. e74's matched-reference
+anchor is preregistered and implemented; training-only checks are running.
 
 | Requirement | Authoritative evidence | Current assessment |
 | --- | --- | --- |
@@ -16,13 +18,13 @@ gain does not replicate and the goal remains active.
 | Separate world and policy gains | e42 freeze and all e65/e67/e69/e71 comparison identities | e66 not adopted; every policy uses the same frozen e42 world. No changed-world gain is claimed and no new-world2x2 is triggered |
 | Same information, final-checkpoint budget and genuine policy seeds | NN configs, 401280-step provenance, e68 exact original/captured parity, rate-model fit summaries | Inputs11, no extra environment-training transitions; five actual seeds per block. Twins, dates, members and draws are not additional seeds |
 | Keep actual-air matching quality-free | Unchanged e44/air_match.py, per-seed saved queries, matching trace and action audits | Initial e71 matches independently reconstructed from episode aggregates; at most25 air-only queries, original strict tolerance and final1% criterion |
-| Improve cost/NH4 without increasing DO under fixed paired-seed intervals | e71/comparison.json, fresh_comparison.json, all ten seed audits and block_verification.json | Initial block passes, fresh block fails cost and NH4. Both independently verified using10000 resamples with RNG2026. Required replicated gain is not achieved |
+| Improve cost/NH4 without increasing DO under fixed paired-seed intervals | e71 original/fresh reports and block verification; e73/comparison.json, all seed audits and initial_verification.json | e71 fails fresh cost/NH4. e73 passes original cost/NH4 but fails DO with upper endpoint+.004737. All completed blocks independently verified using10000 resamples with RNG2026. Required gain is not achieved |
 | Preserve native policy consumption and quality | Native reports in all comparison JSON files | e71 native uses more air,56385.525085m3; native result is not an energy win |
 | Held training-state checks | e71/preflight.json and fresh_preflight.json, full fit summaries; e68/held_audit_seed files and held_artifacts.json | Both blocks pass training-only calibration, held fallback and sklearn checks. Fresh risk heads' recorded-action rate MSE independently reconstructs and beats persistence on both labels in all five seeds. Held update blocks are excluded from rate fitting, not base-NN training, and dates overlap fitting. This is not counterfactual policy improvement |
 | Fresh policy-seed replication | e68 authenticated actual seeds5 through9, e71/run_fresh.py, fresh_results.md | Entire block and all audits complete; mechanical checks pass but scientific joint criterion fails. No seed dropping or block pooling |
 | Preserve failures and uncertainty | e65/e66/e67/e69 results and immutable archives, e70 transport/exposure audit, separate original-FCSRL and e63 trial tables | Preserved. Reused validation40 and repeated hypotheses remain exploratory; no block pooling, seed dropping or criterion retuning |
 | Preserve final evaluation data | Runtime train/validation constructors and independent recorded-episode date checks | Additional test41 evaluation excluded. Fresh seed randomness is not a new observational date holdout |
-| Deliver reproducible models, logs and checksums without raw observations | e71 initial/fresh artifacts indexes, e68 baseline/held indexes, earlier failure indexes | All ten current assets remotely size/digest verified and every local ZIP entry verified. Fresh candidate asset757626794 preserves the failed replication |
+| Deliver reproducible models, logs and checksums without raw observations | e71 initial/fresh indexes, e68 baseline/held indexes, e72/e73 and earlier failure indexes; DARROW_SELF_DELIVERY_VERIFICATION.json | All twelve current assets remotely size/digest verified and every local ZIP entry verified. Fresh candidate asset757626794 and e73 asset757737999 preserve failures |
 | Follow GitHub and folder rules | Lee-only work on lee/e63-self-improvement, scope and paper checks, pushed commits | Passed at3370a34. No main direct push, teammate edits, shared-protocol edits or raw data upload |
 | Complete all requested work before ending the goal | Separate block verifier plus this requirement audit and final artifact/remote checks | Not achieved yet. Keep goal active |
 

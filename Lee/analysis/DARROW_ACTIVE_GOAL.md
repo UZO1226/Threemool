@@ -30,7 +30,11 @@ and matched independent audits now finish. Cost/NH4 pass, but DO's upper
 endpoint+.004737 fails. Preserve the failed joint result and verified archive
 asset757737999. No exposed-block follow-up is triggered. e74 prospectively
 changes the extension anchor to actual authenticated matched e63, preserving
-the matcher, information, budgets and criterion. No robust gain is established.
+the matcher, information, budgets and criterion. Its column0 reference,
+exclusion, interpolation, fixed-offset NN null and serialization software
+controls pass. The implemented original five-seed training-only calibration
+is running in results/e74_anchor_fit; no candidate quality is evaluated yet.
+No robust gain is established.
 e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
 All five85120-row held-state checks and independent sklearn subsets pass;

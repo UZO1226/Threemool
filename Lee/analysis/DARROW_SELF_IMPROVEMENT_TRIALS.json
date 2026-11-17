@@ -1992,7 +1992,9 @@
       }
     }
   ],
-  "pending_committed_complete_reports": [],
+  "pending_committed_complete_reports": [
+    "e74"
+  ],
   "environment_e66_adoption": {
     "passed": false,
     "checks": {
@@ -2039,7 +2041,7 @@
     "Lee\\experiments\\e73\\audit_seed_4.json": "f1f3ab8b2cd29f3fa41026f934e623eccf24b15025c32d4cf6933bb741aca8a7",
     "Lee\\experiments\\e66\\audit.json": "267abe3a903ea81da392b33150cafe3c8f652bed33bbf8a5a44a89a57594ee20"
   },
-  "generator_sha256": "92b34ea0a50cbe17716ea5fa55db0003d24ec19af368b1faeb66367edaca53ff",
+  "generator_sha256": "e73179e2e0ae95d63d4c00ee9d948a3dfb9e64638d1104b74d73c72d85c317cb",
   "test_evaluated": false,
   "scope": "Recompute committed aggregate arithmetic and require all independent seed audits; no new simulator query or policy gain."
 }
