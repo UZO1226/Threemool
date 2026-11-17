@@ -69,6 +69,7 @@ FCSRL은 평균 공기량이 10.31% 줄었지만 NH4 비용과 초과 적분, �
 
 | 위치 | 내용 |
 | --- | --- |
+| [STATUS.md](STATUS.md) | 한 페이지 현재 상태: 연구 질문, 대표 결과, 미채택 후보, 다음 질문 |
 | [experiments/](experiments/) | 실험별 설정, 원 수치, 실패와 판단, 재현 명령 |
 | [EXPERIMENTS_SUMMARY_e01-e28.md](EXPERIMENTS_SUMMARY_e01-e28.md) | 과거 e01~e28 전체 기록. 현재 DARROW 성과와 구분 |
 | [analysis/](analysis/) | 논문과 연구 설계 검토 |
