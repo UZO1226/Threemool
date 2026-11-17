@@ -20,7 +20,7 @@ def main():
     inputs = {str(certificate_path.relative_to(ROOT)): sha(certificate_path)}
     indices = np.random.default_rng(2026).integers(0, 5, size=(10000, 5))
     completed, pending = [], []
-    for trial in ('e65', 'e67', 'e69'):
+    for trial in ('e65', 'e67', 'e69', 'e71'):
         folder = ROOT / f'Lee/experiments/{trial}'
         path = folder / 'comparison.json'
         if not path.exists():
@@ -93,7 +93,9 @@ def main():
         'Pending does not prove a process is live or a partial outcome is a completed trial.', '',
         'Environment e66 independently reconstructs but fails all seven adoption conditions.',
         'It is a separate forecast experiment and does not replace e42 or enter the policy table.', '',
-        'Fresh seeds5 through9 are prepared separately in e68. No fresh candidate outcome is included.',
+        'e71 passes this original seed block. Fresh seeds5 through9 remain a separate required',
+        'confirmation block. Passing this table alone does not complete the active goal.',
+        'Fresh baselines are authenticated in e68. No fresh candidate outcome is included here.',
         'Reused validation and multiple hypotheses remain exploratory; this is not independent',
         'observational confirmation or physical plant safety. Final test41 is preserved.', '',
         'Regenerate with summarize_self_improvement.py using committed compact reports only.', ''])

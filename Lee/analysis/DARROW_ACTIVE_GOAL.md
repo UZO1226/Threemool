@@ -19,8 +19,8 @@ Separate environment improvements from policy improvements. Use training
 held dates and feasible fresh seeds; reused validation40 is exploratory.
 Do not use test41 for further development or evaluation.
 
-Work proceeds on lee/e63-self-improvement. No new candidate has passed the
-quality criterion. e65 prospectively fixes a17-point nested action grid at
+Work proceeds on lee/e63-self-improvement. e71 now passes the original
+seed block; required fresh confirmation remains incomplete. e65 fixes a17-point nested action grid at
 the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
 All five85120-row held-state checks and independent sklearn subsets pass;
 changed actions number1481,3870,2637,3650,4885. No counterfactual quality
@@ -94,8 +94,30 @@ candidate has been evaluated or selected on its quality.
 
 The companion research note records the study history and commands. This
 is a snapshot, not a process monitor.
-Final test41 is untouched. Goal-tool state remains authoritative. No new
-joint improvement or fresh-seed confirmation is verified yet.
+Final test41 is untouched. Goal-tool state remains authoritative.
+
+### Current verified snapshot after the historical execution notes above
+
+e68 baseline training, parity checks, horizon4 risk fitting and construction
+of the actual matched e63 references are complete for every actual seed5
+through9. baseline_authentication.json authenticates all five checkpoints,
+fixed offsets, original-FCSRL air matches and independent replay audits.
+No twin original/captured run is counted as another independent policy seed.
+
+e70 completes both native replays and the exact air decomposition for all
+five seeds. Mean same-state mapping contribution is+7612.759656m3 and occupancy
+contribution is-4565.770431m3, totaling+3046.989225m3. Occupancy partly offsets
+the mapping increase. The diagnosis is descriptive, not physical causality.
+
+e71 passes the unchanged original seed0 through4 joint criterion and all
+native/matched independent action and trajectory audits. Matched cost falls
+21.060125 to20.089750, NH4 falls21.844737% to20.900132%, and DO falls.323816%
+to.246974%, with all required interval endpoints favorable. Its initial archive
+has remotely verified size and SHA256, asset757559843. Initial success does
+not complete the goal: a separately required fresh block cannot be replaced
+by pooling or changing the criterion. The frozen e71 method has now completed
+training-only calibration and held checks on all actual seeds5 through9.
+Fresh evaluation and independent audits are the next required evidence.
 
 ## Previous completed objective
 

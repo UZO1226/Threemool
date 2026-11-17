@@ -9,6 +9,7 @@ Keep the two blocks separate. Five original policy seeds0 through4 are used here
 | [e65](../experiments/e65/results.md) | 21.025750 | 21.810395 | 0.321974 | [-0.076250,-0.000875] | [-0.076579,0.001579] | [-0.005526,0.001842] | Fail |
 | [e67](../experiments/e67/results.md) | 21.730500 | 22.741316 | 0.132895 | [-0.506625,1.910125] | [-0.427105,2.416316] | [-0.448289,-0.018289] | Fail |
 | [e69](../experiments/e69/results.md) | 21.167375 | 22.102632 | 0.178816 | [-0.766125,0.926250] | [-0.645000,1.160789] | [-0.312368,-0.018421] | Fail |
+| [e71](../experiments/e71/results.md) | 20.089750 | 20.900132 | 0.246974 | [-1.430500,-0.486750] | [-1.382368,-0.472368] | [-0.135263,-0.018421] | Pass |
 
 Differences are candidate minus e63. Cost sums the two violation indicators over95 steps,
 not money or electricity. Air is actual m3 per23.75-hour episode. All air matches, cost and
@@ -21,7 +22,9 @@ Pending does not prove a process is live or a partial outcome is a completed tri
 Environment e66 independently reconstructs but fails all seven adoption conditions.
 It is a separate forecast experiment and does not replace e42 or enter the policy table.
 
-Fresh seeds5 through9 are prepared separately in e68. No fresh candidate outcome is included.
+e71 passes this original seed block. Fresh seeds5 through9 remain a separate required
+confirmation block. Passing this table alone does not complete the active goal.
+Fresh baselines are authenticated in e68. No fresh candidate outcome is included here.
 Reused validation and multiple hypotheses remain exploratory; this is not independent
 observational confirmation or physical plant safety. Final test41 is preserved.
 

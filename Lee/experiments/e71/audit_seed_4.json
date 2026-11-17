@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "policy_seed": 4,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": 0.0
+    },
+    "matched": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": -0.30078125
+    }
+  },
+  "flat_risk_fitted_parameters_null_full_native_exact": false,
+  "reference_only_e63_full_native_exact": false,
+  "comparison_summary_sha256": "2ad44b82d3bf488e1e27fffc144455a7a8cce2083fc30570833ef2c392e12926",
+  "audit_source_sha256": "e658afcda2da87e54d015171a0f27338e43797b176d43edf36bdc5d7190665b0",
+  "test_evaluated": false
+}
