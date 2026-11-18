@@ -70,3 +70,22 @@ class MixedSurrogate:
         self.w, self.hi, self.n_members = float(w), np.asarray(gbm.hi), gbm.n_members
         self.models = [[_MixHead(gbm.models[m][j], mlp.models[m][j], self.w) for j in range(len(self.hi))]
                        for m in range(self.n_members)]
+
+
+class _MaskHead:
+    def __init__(self, h, cols, vals):
+        self.h, self.cols, self.vals = h, cols, vals
+
+    def predict(self, x):
+        x = np.array(x, dtype=float)
+        x[:, self.cols] = self.vals
+        return self.h.predict(x)
+
+
+class MaskedSurrogate:
+    """차단 예측용: 입력 열 cols 를 고정값 vals 로 바꿔 예측한다 (Park/e39 정보 제한, 측정할 수 없는 유입 변수를 학습 구간 평균으로)."""
+
+    def __init__(self, dyn, cols, vals):
+        self.hi, self.n_members = np.asarray(dyn.hi), dyn.n_members
+        cols, vals = np.asarray(cols, dtype=int), np.asarray(vals, dtype=float)
+        self.models = [[_MaskHead(dyn.models[m][j], cols, vals) for j in range(len(self.hi))] for m in range(self.n_members)]
