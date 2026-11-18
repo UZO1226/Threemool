@@ -50,7 +50,7 @@ extra 는 margins 가 쓰이는 모든 곳 (기본 필요 공기량, conflict �
 
 plan=(H, do_lim, step) (Park/e28, trim=True 와 함께) 이면 회복 계획을 더한다. 공기량 9,000 에서도 다음 스텝 예측 NH4
 (다른 구성원 평균) 가 4 를 넘는 에피소드 (막을 수 없는 스텝) 에서만, step 간격 격자의 공기량을 H 스텝 동안 유지했을 때의
-예측 비용 (NH4 > 4 스텝 수 + 구간 DO 최댓값 > do_lim 스텝 수) 이 가장 작은 공기량을 쓴다. 같으면 H 스텝 뒤 예측 NH4 가
+예측 비용 (NH4 > 4 이거나 구간 DO 최댓값 > do_lim 인 스텝 수, 두 위반이 함께여도 1, Park/e35 정정) 이 가장 작은 공기량을 쓴다. 같으면 H 스텝 뒤 예측 NH4 가
 낮은 쪽, 그것도 같으면 공기량이 작은 쪽이다 (Park/e16 futile 처럼 공기를 줄여 NH4 회복이 늦어지는 것을 막는다).
 외부 입력은 지속 예측이다. 다른 차단 계산을 모두 마친 뒤 그 에피소드의 공기량을 바꾼다. plan_steps 에 바꾼 횟수를 센다
 
@@ -63,6 +63,10 @@ do_bias=lam (Park/e34) 이면 최근 DO 예측 오차로 DO 예측을 보정한�
 실제로 쓴 공기량, 구역 3개) 과 지금 관측 DO 의 차이 e 로 에피소드, 구역마다 d <- lam * d + (1 - lam) * e 를 갱신하고,
 차단이 보는 모든 DO 예측 (trim, conflict 의 1 스텝 예측, 회복 계획의 H 스텝 예측) 에 d 를 더한다. 상태 굴리기에는 넣지 않는다.
 에피소드 첫 스텝 (env.t == 0) 에 d 를 0 으로 되돌린다
+
+plan_sum=True (Park/e35) 이면 회복 계획의 예측 비용을 문서대로 두 지시값의 합으로 센다. 기본 False 는 e28 ~ e34 와 같은
+원판이다. 원판은 두 bool 배열을 더해 NumPy 에서 OR 가 되므로, 한 스텝에 NH4 와 DO 를 함께 넘어도 1 로 센다 (팀 검토
+Yoo/analysis/TEAM_RESEARCH_REVIEW_20261117.md 4.1 절). plan_both, plan_cells 에 두 위반이 함께 예측된 칸 수와 전체 칸 수를 센다
 
 plan_trigger (Park/e30) 는 회복 계획을 쓰는 기준이다. 공기량 9,000 에서의 다음 스텝 예측 NH4 가 plan_trigger 를 넘는 에피소드에
 쓴다 (기본 4 는 e28 과 같다). plan_now 를 주면 지금 NH4 가 plan_now 를 넘는 에피소드에도 쓴다
@@ -79,7 +83,7 @@ E15_MARGINS = [(0.05, 0.13), (0.1, 0.23), (0.2, 0.38), (float('inf'), 0.47)]
 class MinAirBrake:
     def __init__(self, dyn, target, horizon=1, members='others', grid_step=250.0, do_cap=False, trim=False, margins=None,
                  do_limit=DO_MAX, futile=False, recover=None, conflict=None, conflict_recover=True, plan=None,
-                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0, do_bias=None):
+                 plan_trigger=NH4_MAX, plan_now=None, bias=None, margin_scale=1.0, do_bias=None, plan_sum=False):
         assert members in ('others', 'same')
         self.dyn, self.target, self.horizon, self.members = dyn, float(target), int(horizon), members
         self.grid = np.arange(0.0, AIR_MAX + 1e-9, grid_step)
@@ -103,6 +107,7 @@ class MinAirBrake:
         assert conflict is None or (self.trim and self.margins is not None), 'conflict 는 trim, margins 와 함께 쓴다'
         self.plan, self.plan_steps = (None if plan is None else (int(plan[0]), float(plan[1]), float(plan[2]))), 0
         assert self.plan is None or self.trim, 'plan 은 trim 과 함께 쓴다'
+        self.plan_sum, self.plan_both, self.plan_cells = bool(plan_sum), 0, 0
         self.plan_trigger, self.plan_now = float(plan_trigger), (None if plan_now is None else float(plan_now))
         self.extra = None   # Park/e27: 에피소드별 추가 NH4 여유 (N,), DisagreementBrake 가 정한다
 
@@ -261,8 +266,12 @@ class MinAirBrake:
             x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
             state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
             zone_prev = zone
-            cost += (state[:, 0] > NH4_MAX) + ((state[:, 2:] + dcor).max(axis=1) > do_lim)
-        score = cost * 1000.0 + np.round(state[:, 0], 6)   # NH4 는 hi 아래라 1000 보다 작다
+            nh_v, do_v = state[:, 0] > NH4_MAX, (state[:, 2:] + dcor).max(axis=1) > do_lim
+            self.plan_both += int((nh_v & do_v).sum())
+            self.plan_cells += len(nh_v)
+            # 원판 (e28 ~ e34): bool 끼리 더하면 OR 가 된다. 결과를 바꾸지 않으려고 그대로 둔다
+            cost += (nh_v.astype(float) + do_v.astype(float)) if self.plan_sum else (nh_v | do_v)
+        score = cost * 1000.0 + np.round(state[:, 0], 6)   # NH4 는 hi 아래라 1000 보다 작다 (cost 는 정수)
         best = grid[score.reshape(n, K).argmin(axis=1)]
         air = air.copy()
         self.plan_steps += int((np.abs(best - air[rows]) > 1e-9).sum())
