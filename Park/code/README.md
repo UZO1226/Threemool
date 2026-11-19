@@ -30,6 +30,7 @@
 | `mlp_surrogate.py` | Lee/e08 MLP 대리 모델을 GBM 과 같은 모양 (`models[m][j].predict`) 으로 부른다. `MixedSurrogate(gbm, mlp, w)` 는 차단 예측을 (1 - w) x GBM + w x MLP 로 섞어 모델 불일치를 만든다 (Park/e38). `MaskedSurrogate(dyn, cols, vals)` 는 차단 예측 입력의 일부 열을 고정값으로 바꾼다 (Park/e39 정보 제한) |
 | `slope_brake.py` | `SlopeBiasBrake`: MinAirBrake 의 상수 온라인 보정 대신 NH4 오차를 공기량의 직선 (b0 + b1 (u - 5000) / 1000) 으로 보고 에피소드마다 RLS 로 갱신해 1 스텝 여유 검사의 후보마다 더한다. `rls_step` 은 한 스텝 갱신 (Park/e42 사전 진단에 씀, 검증 평가는 하지 않음) |
 | `baselines_darrow.py` | 비학습 기준 `ABAC`: NH4 피드백 폭기 제어 (속도형 PI, Yoo/e68 과 같은 식). 관측 NH4 와 설정값의 차이로 총 공기량을 바꾼다 (Park/e43) |
+| `audit_brake.py` | `AuditBrake`: MinAirBrake 의 trim 경로를 단계별로 다시 계산해 스텝마다 각 단계의 공기량, 마지막으로 바꾼 단계, 실행 공기량에서 다시 한 자신의 NH4, DO 검사를 기록한다. `rollout_log` 는 `evaluate` 와 같은 지표에 스텝 기록을 더하고, `delay` 로 정책과 차단이 보는 NH4 를 d 스텝 늦출 수 있다 (Park/e44, e45, e46) |
 
 2026-11-09 확인: `prepare.py` 의 MATLAB 정상상태 최대 절대 오차 8.68e-08, `check_env.py` 기준값 12개 모두 통과 (`../experiments/e01/check_env.json`). `train.py --updates 1` 과 차단기 3종의 연결 시험도 끝까지 돌았다. 연결 시험 수치는 결과가 아니다.
 
