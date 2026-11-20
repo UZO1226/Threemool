@@ -9,6 +9,10 @@
 
 위반 두 항은 환경 비용 (NH4 위반 + DO 위반 스텝 수) 과 같은 모양이다. 같은 값이면 공기량이 작은 후보를 고른다 (후보를 u0, u1 오름차순으로
 두고 첫 최솟값을 고름).
+
+objective='excess' (Park/e52) 는 위반 지표 대신 초과량을 쓴다. 피할 수 없는 위반 앞에서도 공기를 더 넣으면 목적이 줄어든다.
+
+    J = sum_h [ max(NH4_h + margin - 4, 0) + max(구간 DO 최댓값_h - do_limit, 0) + lam x 공기량_h / 9000 ]
 """
 import numpy as np
 
@@ -17,9 +21,11 @@ from min_brake import MinAirBrake
 
 
 class ShortMPC:
-    def __init__(self, env, dyn, H=4, margin=0.2, lam=0.5, do_limit=1.8, step0=500.0, step1=1500.0):
+    def __init__(self, env, dyn, H=4, margin=0.2, lam=0.5, do_limit=1.8, step0=500.0, step1=1500.0, objective='indicator'):
         self.env, self.dyn, self.H = env, dyn, int(H)
         self.margin, self.lam, self.do_limit = float(margin), float(lam), float(do_limit)
+        assert objective in ('indicator', 'excess')
+        self.objective = objective
         g0 = np.arange(0.0, AIR_MAX + 1e-9, step0)
         g1 = np.arange(0.0, AIR_MAX + 1e-9, step1)
         self.cand = np.array([(a, b) for a in g0 for b in g1])          # (K, 2), u0 다음 u1 오름차순
@@ -39,7 +45,11 @@ class ShortMPC:
             x = np.column_stack([state, exo, zone / 1000.0, zone_prev / 1000.0])
             state = np.clip(state + self._predict(x, member, len(STATE)), 0.0, self.dyn.hi)
             zone_prev = zone
-            J += (state[:, 0] + self.margin > NH4_MAX) + (state[:, 2:].max(axis=1) > self.do_limit) + self.lam * air / AIR_MAX
+            nx, dx = state[:, 0] + self.margin - NH4_MAX, state[:, 2:].max(axis=1) - self.do_limit
+            if self.objective == 'indicator':
+                J += (nx > 0) + (dx > 0) + self.lam * air / AIR_MAX
+            else:
+                J += np.maximum(nx, 0.0) + np.maximum(dx, 0.0) + self.lam * air / AIR_MAX
         return self.cand[J.reshape(N, K).argmin(axis=1), 0]
 
     def __call__(self, obs):
