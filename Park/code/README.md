@@ -32,7 +32,7 @@
 | `baselines_darrow.py` | 비학습 기준 `ABAC`: NH4 피드백 폭기 제어 (속도형 PI, Yoo/e68 과 같은 식). 관측 NH4 와 설정값의 차이로 총 공기량을 바꾼다 (Park/e43) |
 | `audit_brake.py` | `AuditBrake`: MinAirBrake 의 trim 경로를 단계별로 다시 계산해 스텝마다 각 단계의 공기량, 마지막으로 바꾼 단계, 실행 공기량에서 다시 한 자신의 NH4, DO 검사를 기록한다. `rollout_log` 는 `evaluate` 와 같은 지표에 스텝 기록을 더하고, `delay` 로 정책과 차단이 보는 NH4 를 d 스텝 늦출 수 있다 (Park/e44, e45, e46) |
 | `fcsrl_ablation.py` | FCSRL 기전 제거 대조. `FCSRLRandomRepr` (표현을 학습하지 않는 무작위 고정 인코더) 와 `FCSRLDynOnly` (원본 train_encoder 의 동역학 일관성 손실만). 망, 입력, 초기값은 FCSRL 과 같다. `register()` 가 agent.METHODS 에 이름을 더한다 (Park/e47) |
-| `mpc_darrow.py` | 짧은 예측 구간 모델 예측 제어 `ShortMPC` (학습 정책 없음). 대표 차단과 같은 정보와 구성원 평균 예측으로 H 스텝 이동 묶음 후보를 굴려 위반 지표와 공기량의 합이 가장 작은 첫 행동을 실행한다 (Park/e48) |
+| `mpc_darrow.py` | 짧은 예측 구간 모델 예측 제어 `ShortMPC` (학습 정책 없음). 대표 차단과 같은 정보와 구성원 평균 예측으로 H 스텝 이동 묶음 후보를 굴려 위반 지표와 공기량의 합이 가장 작은 첫 행동을 실행한다 (Park/e48). `objective='excess'` 는 위반 지표 대신 NH4, DO 초과량을 쓴다 (Park/e52) |
 | `delay_comp.py` | NH4 분석계 지연 보정 `DelayComp` (Smith 예측기 방식). 늦은 NH4 에서 출발해 그 뒤 실제로 넣은 구간 공기량, 지연 없는 다른 센서 값, 외부 입력으로 대리 모델 (다른 구성원 4개 평균) 을 굴려 지금 NH4 를 추정한다 (Park/e53) |
 
 2026-11-09 확인: `prepare.py` 의 MATLAB 정상상태 최대 절대 오차 8.68e-08, `check_env.py` 기준값 12개 모두 통과 (`../experiments/e01/check_env.json`). `train.py --updates 1` 과 차단기 3종의 연결 시험도 끝까지 돌았다. 연결 시험 수치는 결과가 아니다.
