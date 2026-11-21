@@ -1,0 +1,355 @@
+{
+  "post_hoc": true,
+  "source_sha256": "47c5af758e81e7b89fc6cfc53fbf09121c7fa95dd593015911fb1f543e645739",
+  "parent_manifest_sha256": "02f74e7a78cd568b8073990de069b00ce5ae8f7e3993c236ef26c1ea4c4f9197",
+  "result_hashes": {
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_air_cem_0/result.json": "1e4b7ce31a52129888fcff0747e540439a70862a0ef7ca1e76f25386452cef0a",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_air_cem_1/result.json": "4ef188541f2fc72c93c52d802b25317ae43c69263dc87bb9f1269c955a4fd1f7",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_air_random_0/result.json": "fb86e4a16b9d114772aef737ba0a1b132a409f7034b009095385ca0b859f996b",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_air_random_1/result.json": "6fab8705474e593854c4eb6e3c4ed2779bc5b75da33140df796b7626e4c05eaf",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_cost_cem_0/result.json": "ce235bdba0bf082bdd18f2e2b82b9813bb38caf48eca1b186a14c60c78f29be0",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_cost_cem_1/result.json": "26ed91495f5779d9d491059d3c0bd269daff7d2cf4f4e1af8f73e3b52f29707e",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_cost_random_0/result.json": "abd1ccc9a2140b6062e9c0cfbdeb12ece87014aaef45e86291cc6d08351b895a",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/dev_cost_random_1/result.json": "7c3d1d6493e46ff800fd5223ba20cf9df28ce8ca6d93160d0b073986d38f9492",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_air_cem_0/result.json": "90831f1d2111ffb7f9516074fe0d1495a412bddae2b26444e51a1ea5f57f691b",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_air_cem_1/result.json": "85eb88eaae33cd293876bac1c3863c75e1a429883a84f94846f1f6c72eaa401f",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_air_random_0/result.json": "4ffbe34545f11aea58ec5a21ee1cbfdc64e02b2e7b16fba88d148418c237cb0f",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_air_random_1/result.json": "0f666dfe9d4b40805f42278ae42845837274ab5a2a1c4a8943fc8b7e556a380f",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_cost_cem_0/result.json": "9c6143f109c2691ba1bff24e163175fedea3222666e4feaea12bd29fbafc8ddd",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_cost_cem_1/result.json": "d8e787419b14195eac4e5874e3fe9ed90d6ba41def1ce0efe9385684e78de9b0",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_cost_random_0/result.json": "37bd23d22c615aa89b4e1b9fa547f44c5e2dc0c3691ddb6e7391eea9cf658e03",
+    "/home/jio/fcsrl_src/results/e75/main/jobs/val_cost_random_1/result.json": "ad972efe99ddd36b0ff889d0821c8f3a9b75149a2198e79eca1821db8f520a90"
+  },
+  "controls": {
+    "dev": {
+      "source_abac": {
+        "air_m3": 48873.77055435441,
+        "step_cost": 5.783333333333333,
+        "nh4_excess_mg_h_L": 4.016815567207992,
+        "nh4_steps": 5.266666666666667,
+        "over_budget_steps": 1.5166666666666666,
+        "do_steps": 1.9166666666666667,
+        "air_tv_m3h": 253238.59689767752,
+        "day_violation": 0.06666666666666667,
+        "within_4_75_pct": 75.0
+      },
+      "target_feedback_abac": {
+        "air_m3": 48873.770554354414,
+        "step_cost": 5.783333333333333,
+        "nh4_excess_mg_h_L": 4.016815567207991,
+        "nh4_steps": 5.266666666666667,
+        "over_budget_steps": 1.5166666666666666,
+        "do_steps": 1.9166666666666667,
+        "air_tv_m3h": 253238.59689767752,
+        "day_violation": 0.06666666666666667,
+        "within_4_75_pct": 75.0
+      },
+      "target_open_loop_abac": {
+        "air_m3": 48873.77055435441,
+        "step_cost": 41.75,
+        "nh4_excess_mg_h_L": 51.97705887561576,
+        "nh4_steps": 41.68333333333333,
+        "over_budget_steps": 18.016666666666666,
+        "do_steps": 2.316666666666667,
+        "air_tv_m3h": 253238.59689767752,
+        "day_violation": 0.5666666666666667,
+        "within_4_75_pct": 30.0
+      },
+      "candidates": [
+        {
+          "mode": "air",
+          "algorithm": "cem",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 47511.892498706824,
+            "step_cost": 43.05,
+            "nh4_excess_mg_h_L": 53.92896253595832,
+            "nh4_steps": 43.0,
+            "over_budget_steps": 18.85,
+            "do_steps": 2.2,
+            "air_tv_m3h": 245646.20780534152,
+            "day_violation": 0.5833333333333334,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "cem",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 47498.0106292256,
+            "step_cost": 44.13333333333333,
+            "nh4_excess_mg_h_L": 56.106747958026766,
+            "nh4_steps": 44.1,
+            "over_budget_steps": 19.4,
+            "do_steps": 2.1666666666666665,
+            "air_tv_m3h": 245551.8074588798,
+            "day_violation": 0.6166666666666667,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "random",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 47525.27166019909,
+            "step_cost": 44.4,
+            "nh4_excess_mg_h_L": 54.831210848201714,
+            "nh4_steps": 44.083333333333336,
+            "over_budget_steps": 19.65,
+            "do_steps": 1.9,
+            "air_tv_m3h": 245003.51237775752,
+            "day_violation": 0.6,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "random",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 47539.651017516495,
+            "step_cost": 44.75,
+            "nh4_excess_mg_h_L": 57.294458526281765,
+            "nh4_steps": 44.75,
+            "over_budget_steps": 19.933333333333334,
+            "do_steps": 2.3333333333333335,
+            "air_tv_m3h": 245335.47571521346,
+            "day_violation": 0.6,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "cem",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 47719.721376069276,
+            "step_cost": 42.1,
+            "nh4_excess_mg_h_L": 53.09672153171876,
+            "nh4_steps": 42.1,
+            "over_budget_steps": 18.3,
+            "do_steps": 1.9833333333333334,
+            "air_tv_m3h": 245217.6077018716,
+            "day_violation": 0.5666666666666667,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "cem",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 47734.19266938455,
+            "step_cost": 43.93333333333333,
+            "nh4_excess_mg_h_L": 55.87924024769607,
+            "nh4_steps": 43.93333333333333,
+            "over_budget_steps": 19.383333333333333,
+            "do_steps": 2.066666666666667,
+            "air_tv_m3h": 245441.20392534966,
+            "day_violation": 0.6,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "random",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 47696.41122451065,
+            "step_cost": 43.75,
+            "nh4_excess_mg_h_L": 54.32779690802261,
+            "nh4_steps": 43.516666666666666,
+            "over_budget_steps": 19.216666666666665,
+            "do_steps": 1.6833333333333333,
+            "air_tv_m3h": 244741.43814266505,
+            "day_violation": 0.5833333333333334,
+            "within_4_75_pct": 26.666666666666668
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "random",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 47701.79996160419,
+            "step_cost": 43.71666666666667,
+            "nh4_excess_mg_h_L": 55.48878076066478,
+            "nh4_steps": 43.71666666666667,
+            "over_budget_steps": 19.233333333333334,
+            "do_steps": 2.033333333333333,
+            "air_tv_m3h": 245115.70220297415,
+            "day_violation": 0.5833333333333334,
+            "within_4_75_pct": 26.666666666666668
+          }
+        }
+      ]
+    },
+    "val": {
+      "source_abac": {
+        "air_m3": 58878.08916525369,
+        "step_cost": 8.0,
+        "nh4_excess_mg_h_L": 3.3956361145768805,
+        "nh4_steps": 5.783333333333333,
+        "over_budget_steps": 2.2666666666666666,
+        "do_steps": 0.7833333333333333,
+        "air_tv_m3h": 281400.9037383159,
+        "day_violation": 0.08333333333333333,
+        "within_4_75_pct": 61.66666666666667
+      },
+      "target_feedback_abac": {
+        "air_m3": 58878.08916525369,
+        "step_cost": 8.0,
+        "nh4_excess_mg_h_L": 3.3956361145768805,
+        "nh4_steps": 5.783333333333333,
+        "over_budget_steps": 2.2666666666666666,
+        "do_steps": 0.7833333333333333,
+        "air_tv_m3h": 281400.903738316,
+        "day_violation": 0.08333333333333333,
+        "within_4_75_pct": 61.66666666666667
+      },
+      "target_open_loop_abac": {
+        "air_m3": 58878.08916525369,
+        "step_cost": 47.3,
+        "nh4_excess_mg_h_L": 57.60744567606717,
+        "nh4_steps": 47.3,
+        "over_budget_steps": 20.05,
+        "do_steps": 0.95,
+        "air_tv_m3h": 281400.9037383159,
+        "day_violation": 0.6166666666666667,
+        "within_4_75_pct": 23.333333333333332
+      },
+      "candidates": [
+        {
+          "mode": "air",
+          "algorithm": "cem",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 58420.43107371498,
+            "step_cost": 49.13333333333333,
+            "nh4_excess_mg_h_L": 60.562059560297186,
+            "nh4_steps": 49.13333333333333,
+            "over_budget_steps": 21.35,
+            "do_steps": 1.0,
+            "air_tv_m3h": 278920.98256516515,
+            "day_violation": 0.65,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "cem",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 58348.10643456656,
+            "step_cost": 49.266666666666666,
+            "nh4_excess_mg_h_L": 60.806281325529554,
+            "nh4_steps": 49.266666666666666,
+            "over_budget_steps": 21.383333333333333,
+            "do_steps": 1.0166666666666666,
+            "air_tv_m3h": 278536.49878491525,
+            "day_violation": 0.65,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "random",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 58431.382034944145,
+            "step_cost": 47.96666666666667,
+            "nh4_excess_mg_h_L": 58.475342567597146,
+            "nh4_steps": 47.96666666666667,
+            "over_budget_steps": 20.4,
+            "do_steps": 0.9333333333333333,
+            "air_tv_m3h": 278723.74435685336,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "air",
+          "algorithm": "random",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 58442.9365376958,
+            "step_cost": 47.96666666666667,
+            "nh4_excess_mg_h_L": 58.62341462043503,
+            "nh4_steps": 47.96666666666667,
+            "over_budget_steps": 20.433333333333334,
+            "do_steps": 0.95,
+            "air_tv_m3h": 278460.2046859355,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "cem",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 58439.786328888345,
+            "step_cost": 48.0,
+            "nh4_excess_mg_h_L": 58.707778150951704,
+            "nh4_steps": 48.0,
+            "over_budget_steps": 20.45,
+            "do_steps": 0.8333333333333334,
+            "air_tv_m3h": 278912.04967590905,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "cem",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 58491.35601981185,
+            "step_cost": 48.21666666666667,
+            "nh4_excess_mg_h_L": 58.885704152754315,
+            "nh4_steps": 48.21666666666667,
+            "over_budget_steps": 20.5,
+            "do_steps": 0.8833333333333333,
+            "air_tv_m3h": 278626.5055512022,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "random",
+          "seed": 0,
+          "metrics": {
+            "air_m3": 58431.382034944145,
+            "step_cost": 47.96666666666667,
+            "nh4_excess_mg_h_L": 58.475342567597146,
+            "nh4_steps": 47.96666666666667,
+            "over_budget_steps": 20.4,
+            "do_steps": 0.9333333333333333,
+            "air_tv_m3h": 278723.74435685336,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        },
+        {
+          "mode": "cost",
+          "algorithm": "random",
+          "seed": 1,
+          "metrics": {
+            "air_m3": 58488.066424338715,
+            "step_cost": 47.96666666666667,
+            "nh4_excess_mg_h_L": 58.61897809540931,
+            "nh4_steps": 47.96666666666667,
+            "over_budget_steps": 20.433333333333334,
+            "do_steps": 0.9333333333333333,
+            "air_tv_m3h": 278577.18406695616,
+            "day_violation": 0.6333333333333333,
+            "within_4_75_pct": 20.0
+          }
+        }
+      ]
+    }
+  }
+}

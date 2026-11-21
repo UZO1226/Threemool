@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "baseline_aggregate_parity": true,
+    "air_m3": 47852.72248923345,
+    "cost": 4.184931506849315
+  },
+  "val": {
+    "baseline_aggregate_parity": true,
+    "air_m3": 55256.098745386116,
+    "cost": 8.495
+  },
+  "action_replay": true,
+  "candidate_layout": true,
+  "threshold_cost": true,
+  "feasible_rank": true,
+  "population32_two_dates_seconds": 5.195798820001073,
+  "total_seconds": 44.068506104988046
+}
