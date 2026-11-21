@@ -22,7 +22,10 @@ def main(root):
     for r in rows:
         b,f=r['transfer_baseline'],r['transfer'];q=r['snapshots']['2'];z=r['final']
         lines.append(f"| {r['split']}/{r['mode']}/{r['algorithm']}/{r['search_seed']} | {q['air_m3']:.1f}/{q['step_cost']:.3f} | {z['air_m3']:.1f}/{z['step_cost']:.3f} | {b['air_m3']:.1f}/{b['step_cost']:.3f} | {f['air_m3']:.1f}/{f['step_cost']:.3f} | {r['transfer_weak_dominance_pct']:.1f} | {r['elapsed_seconds']:.1f} |")
-    lines += ['','## 해석 제한','',
+    lines += ['','## 공기 명령 변화량','', '| 분할/목적/탐색/난수 | ABAC 총 변화량 | 후보 총 변화량 |', '| --- | --- | --- |']
+    for r in rows:
+        lines.append(f"| {r['split']}/{r['mode']}/{r['algorithm']}/{r['search_seed']} | {r['baseline']['air_tv_m3h']:.1f} | {r['final']['air_tv_m3h']:.1f} |")
+    lines += ['', '## 해석 제한','',
               '- 비악화는 ABAC fallback과候補 제약으로 보장한 설계 성질이다. 중요한 것은 그 조건에서 추가 개선을 찾았는지다.'.replace('候補','후보'),
               '- 작은 이득은 최적 개선 여지가 작다는 증명이 아니다. 블록 잔차와 보수적인 날짜별 제약, 제한된 탐색 예산도 원인일 수 있다.',
               '- 찾은 해는 날짜/환경 구성원을 알고 고른다. 독립 검증, RL이 학습할 수 있는 성능 또는 FCSRL 기여로 해석하지 않는다.',
