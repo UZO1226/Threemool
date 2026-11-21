@@ -1,0 +1,198 @@
+{
+ "judgement": {
+  "margin": 0.5,
+  "S1": {
+   "dev": {
+    "fcsrl": 9,
+    "ppolag": 9
+   },
+   "val": {
+    "fcsrl": 0,
+    "ppolag": 0
+   }
+  },
+  "S2_dev": {
+   "pairs": [
+    {
+     "air_m3": -397.03411791831604,
+     "over_budget_steps": -0.0410958904109589,
+     "nh4_excess_mg_h_L": 4.221150527365122,
+     "day_violation_pct": -0.273972602739726
+    },
+    {
+     "air_m3": -2777.446983787733,
+     "over_budget_steps": 0.12831050228310503,
+     "nh4_excess_mg_h_L": -15.344802776983114,
+     "day_violation_pct": 0.319634703196347
+    },
+    {
+     "air_m3": -2761.5090834943767,
+     "over_budget_steps": -0.0141552511415525,
+     "nh4_excess_mg_h_L": 11.570355807687235,
+     "day_violation_pct": -0.136986301369863
+    },
+    {
+     "air_m3": -2976.075367665144,
+     "over_budget_steps": -0.03287671232876713,
+     "nh4_excess_mg_h_L": 3.079100551532928,
+     "day_violation_pct": -0.136986301369863
+    },
+    {
+     "air_m3": -1220.366768336411,
+     "over_budget_steps": -0.01963470319634704,
+     "nh4_excess_mg_h_L": -5.1943619232607645,
+     "day_violation_pct": -0.091324200913242
+    },
+    {
+     "air_m3": 1286.5631074683697,
+     "over_budget_steps": 0.061187214611872154,
+     "nh4_excess_mg_h_L": -3.9132523040466847,
+     "day_violation_pct": 0.182648401826484
+    },
+    {
+     "air_m3": 373.1470489798812,
+     "over_budget_steps": 0.04703196347031963,
+     "nh4_excess_mg_h_L": -17.404498988739753,
+     "day_violation_pct": 0.18264840182648412
+    },
+    {
+     "air_m3": -376.63980816032563,
+     "over_budget_steps": -0.12054794520547943,
+     "nh4_excess_mg_h_L": -1.4202529883643429,
+     "day_violation_pct": -0.45662100456621
+    },
+    {
+     "air_m3": -1019.3378082811032,
+     "over_budget_steps": 0.16529680365296806,
+     "nh4_excess_mg_h_L": -26.757794035644622,
+     "day_violation_pct": 0.3652968036529681
+    },
+    {
+     "air_m3": -4445.71760794607,
+     "over_budget_steps": 0.08356164383561646,
+     "nh4_excess_mg_h_L": -4.741834526324446,
+     "day_violation_pct": 0.273972602739726
+    }
+   ],
+   "fcsrl_better": 2,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확",
+   "fcsrl_lower_by_metric": {
+    "air_m3": 8,
+    "over_budget_steps": 5,
+    "nh4_excess_mg_h_L": 7,
+    "day_violation_pct": 5
+   }
+  },
+  "S2_val": {
+   "pairs": [
+    {
+     "air_m3": -2448.479716473201,
+     "over_budget_steps": 0.0,
+     "nh4_excess_mg_h_L": 1.9547898750257318,
+     "day_violation_pct": 0.0
+    },
+    {
+     "air_m3": 2354.965331032101,
+     "over_budget_steps": 0.0216666666666665,
+     "nh4_excess_mg_h_L": -16.4982015054859,
+     "day_violation_pct": 1.4999999999999996
+    },
+    {
+     "air_m3": -1492.7340993019825,
+     "over_budget_steps": -0.0066666666666663765,
+     "nh4_excess_mg_h_L": 7.372135058629166,
+     "day_violation_pct": -0.6666666666666665
+    },
+    {
+     "air_m3": -6132.747686532501,
+     "over_budget_steps": 0.0,
+     "nh4_excess_mg_h_L": 8.343629669093986,
+     "day_violation_pct": 0.0
+    },
+    {
+     "air_m3": -4700.747217183474,
+     "over_budget_steps": -0.004999999999999893,
+     "nh4_excess_mg_h_L": -4.438177084807926,
+     "day_violation_pct": -0.5
+    },
+    {
+     "air_m3": 7558.689683127755,
+     "over_budget_steps": 0.05999999999999983,
+     "nh4_excess_mg_h_L": -3.3513611795310556,
+     "day_violation_pct": 2.166666666666667
+    },
+    {
+     "air_m3": 9425.11712870717,
+     "over_budget_steps": 0.021666666666666723,
+     "nh4_excess_mg_h_L": -14.651087678505709,
+     "day_violation_pct": 0.5
+    },
+    {
+     "air_m3": 192.92839383622777,
+     "over_budget_steps": -0.008333333333333082,
+     "nh4_excess_mg_h_L": 0.12989999354348924,
+     "day_violation_pct": -0.666666666666667
+    },
+    {
+     "air_m3": 7401.152161376274,
+     "over_budget_steps": 0.06166666666666698,
+     "nh4_excess_mg_h_L": -25.516568778981913,
+     "day_violation_pct": 3.9999999999999996
+    },
+    {
+     "air_m3": -3171.4037550437934,
+     "over_budget_steps": 0.008333333333333304,
+     "nh4_excess_mg_h_L": -4.2940538091712845,
+     "day_violation_pct": 0.666666666666667
+    }
+   ],
+   "fcsrl_better": 1,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확",
+   "fcsrl_lower_by_metric": {
+    "air_m3": 5,
+    "over_budget_steps": 3,
+    "nh4_excess_mg_h_L": 6,
+    "day_violation_pct": 3
+   }
+  },
+  "S3": {
+   "fcsrl_lower": 4,
+   "fcsrl": [
+    0.2547464551790435,
+    1.4198509973564046,
+    0.7680845950492668,
+    0.30088920932468155,
+    0.16342225426580148,
+    1.7317952415284787,
+    14.481614996395097,
+    0.4013458303292478,
+    10.720980533525596,
+    0.6190819514539774
+   ],
+   "ppolag": [
+    0.07209805335255948,
+    0.6858928142273492,
+    1.1997116077865897,
+    0.38115837539053105,
+    0.22302331170391732,
+    0.5282384042297524,
+    0.3018505167027157,
+    1.5875991348233598,
+    0.8959384763278058,
+    0.28550829127613553
+   ]
+  },
+  "S4": {
+   "fcsrl": 0,
+   "ppolag": 0
+  },
+  "S5": {
+   "fcsrl": 0,
+   "ppolag": 0,
+   "air0": false
+  }
+ },
+ "root": "/home/jio/fcsrl_src/results/e73/main"
+}
