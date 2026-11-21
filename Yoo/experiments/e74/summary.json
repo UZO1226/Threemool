@@ -1,0 +1,479 @@
+{
+ "judgement": {
+  "H1_dev": {
+   "pairs": [
+    {
+     "air_m3": -12.311626060836716,
+     "step_cost": -0.398173515981735,
+     "nh4_excess_mg_h_L": 0.33179776796209004,
+     "day_violation_pct": 0.867579908675799,
+     "over_budget_steps": 0.1643835616438356
+    },
+    {
+     "air_m3": -1155.8760337373024,
+     "step_cost": 0.7684931506849311,
+     "nh4_excess_mg_h_L": 0.18789771928329668,
+     "day_violation_pct": 0.6849315068493151,
+     "over_budget_steps": 0.1013698630136986
+    },
+    {
+     "air_m3": -3437.3162577557378,
+     "step_cost": 0.1442922374429223,
+     "nh4_excess_mg_h_L": -0.08052669866322204,
+     "day_violation_pct": -0.04566210045662089,
+     "over_budget_steps": -0.04885844748858448
+    },
+    {
+     "air_m3": -7099.788807327335,
+     "step_cost": 0.5922374429223747,
+     "nh4_excess_mg_h_L": 0.21276188176422783,
+     "day_violation_pct": 0.7762557077625567,
+     "over_budget_steps": 0.11552511415525116
+    },
+    {
+     "air_m3": -12835.875257043605,
+     "step_cost": 0.37442922374429255,
+     "nh4_excess_mg_h_L": -0.07939246050791238,
+     "day_violation_pct": 3.1963470319634704,
+     "over_budget_steps": 0.2534246575342466
+    },
+    {
+     "air_m3": -739.711220865749,
+     "step_cost": 0.08127853881278568,
+     "nh4_excess_mg_h_L": 0.08095888244493343,
+     "day_violation_pct": 0.6392694063926943,
+     "over_budget_steps": 0.12831050228310498
+    },
+    {
+     "air_m3": -1105.849574000691,
+     "step_cost": -0.8502283105022825,
+     "nh4_excess_mg_h_L": -0.02825685750319029,
+     "day_violation_pct": -0.2739726027397258,
+     "over_budget_steps": 0.04474885844748866
+    },
+    {
+     "air_m3": -1237.244895971191,
+     "step_cost": -0.057534246575342785,
+     "nh4_excess_mg_h_L": -0.0015602527078208972,
+     "day_violation_pct": 0.8219178082191778,
+     "over_budget_steps": 0.03698630136986297
+    },
+    {
+     "air_m3": -1080.809773025845,
+     "step_cost": 0.7753424657534249,
+     "nh4_excess_mg_h_L": 0.031233127955206275,
+     "day_violation_pct": 1.1872146118721467,
+     "over_budget_steps": 0.13835616438356163
+    },
+    {
+     "air_m3": -291.7777317855216,
+     "step_cost": 0.372146118721461,
+     "nh4_excess_mg_h_L": -0.13869316422974887,
+     "day_violation_pct": -0.365296803652968,
+     "over_budget_steps": -0.03698630136986303
+    }
+   ],
+   "fcsrl_better": 2,
+   "ppolag_better": 0,
+   "verdict": "차이 불명확",
+   "fcsrl_lower_by_metric": {
+    "air_m3": 10,
+    "step_cost": 3,
+    "nh4_excess_mg_h_L": 5,
+    "day_violation_pct": 3,
+    "over_budget_steps": 2
+   }
+  },
+  "H1_val": {
+   "pairs": [
+    {
+     "air_m3": -7248.8193028079695,
+     "step_cost": 2.723333333333332,
+     "nh4_excess_mg_h_L": 8.044026214597938,
+     "day_violation_pct": 3.5,
+     "over_budget_steps": 2.2266666666666666
+    },
+    {
+     "air_m3": -1022.4666362309799,
+     "step_cost": 3.033333333333333,
+     "nh4_excess_mg_h_L": 0.21361720556982844,
+     "day_violation_pct": 0.0,
+     "over_budget_steps": -0.07666666666666622
+    },
+    {
+     "air_m3": -5005.2484381932445,
+     "step_cost": 1.086666666666666,
+     "nh4_excess_mg_h_L": 0.06693016810821861,
+     "day_violation_pct": 3.0,
+     "over_budget_steps": 0.6000000000000003
+    },
+    {
+     "air_m3": -9096.22150027594,
+     "step_cost": 2.205,
+     "nh4_excess_mg_h_L": 0.10655317642282025,
+     "day_violation_pct": 3.166666666666667,
+     "over_budget_steps": 1.0050000000000001
+    },
+    {
+     "air_m3": -7565.479828976699,
+     "step_cost": 0.12166666666666437,
+     "nh4_excess_mg_h_L": -0.28847272494189724,
+     "day_violation_pct": 2.166666666666667,
+     "over_budget_steps": 0.3900000000000001
+    },
+    {
+     "air_m3": 86.44766676651489,
+     "step_cost": 2.841666666666667,
+     "nh4_excess_mg_h_L": 0.3041006405698461,
+     "day_violation_pct": 1.5,
+     "over_budget_steps": 0.5466666666666669
+    },
+    {
+     "air_m3": -1025.4503535342883,
+     "step_cost": 0.3966666666666665,
+     "nh4_excess_mg_h_L": 0.03814231982040761,
+     "day_violation_pct": -0.16666666666666607,
+     "over_budget_steps": 0.32666666666666666
+    },
+    {
+     "air_m3": -1145.5948203860025,
+     "step_cost": -0.4349999999999996,
+     "nh4_excess_mg_h_L": -0.005463734947978693,
+     "day_violation_pct": -0.5,
+     "over_budget_steps": 0.009999999999999787
+    },
+    {
+     "air_m3": -993.298028840305,
+     "step_cost": 2.695000000000001,
+     "nh4_excess_mg_h_L": 0.25001858476269323,
+     "day_violation_pct": 1.9999999999999991,
+     "over_budget_steps": 0.4616666666666669
+    },
+    {
+     "air_m3": -287.6747199117817,
+     "step_cost": 2.8883333333333328,
+     "nh4_excess_mg_h_L": 0.33580771781874885,
+     "day_violation_pct": 0.5000000000000009,
+     "over_budget_steps": 0.5549999999999997
+    }
+   ],
+   "fcsrl_better": 1,
+   "ppolag_better": 1,
+   "verdict": "차이 불명확",
+   "fcsrl_lower_by_metric": {
+    "air_m3": 9,
+    "step_cost": 1,
+    "nh4_excess_mg_h_L": 2,
+    "day_violation_pct": 2,
+    "over_budget_steps": 1
+   }
+  },
+  "H2": {
+   "fcsrl": {
+    "dev_le_limit": 10,
+    "val_le_limit": 0,
+    "dev_old_budget_le_03": 2
+   },
+   "ppolag": {
+    "dev_le_limit": 10,
+    "val_le_limit": 0,
+    "dev_old_budget_le_03": 5
+   }
+  },
+  "H3_abac_dev_fcsrl": {
+   "mean": {
+    "air_m3": 47497.001756370664,
+    "step_cost": 3.3340639269406394,
+    "nh4_excess_mg_h_L": 1.4975734477843234,
+    "day_violation_pct": 3.018264840182648,
+    "over_budget_steps": 0.3819178082191781
+   },
+   "abac": {
+    "air_m3": 47852.72248923345,
+    "step_cost": 4.184931506849315,
+    "nh4_excess_mg_h_L": 1.9844775698154262,
+    "day_violation_pct": 5.068493150684931,
+    "over_budget_steps": 0.7095890410958904
+   },
+   "seeds_better": 5,
+   "verdict": "ABAC 대비 우위"
+  },
+  "H3_abac_dev_ppolag": {
+   "mean": {
+    "air_m3": 50396.65787412804,
+    "step_cost": 3.1538356164383563,
+    "nh4_excess_mg_h_L": 1.4459514532045374,
+    "day_violation_pct": 2.2694063926940644,
+    "over_budget_steps": 0.2921917808219178
+   },
+   "abac": {
+    "air_m3": 47852.72248923345,
+    "step_cost": 4.184931506849315,
+    "nh4_excess_mg_h_L": 1.9844775698154262,
+    "day_violation_pct": 5.068493150684931,
+    "over_budget_steps": 0.7095890410958904
+   },
+   "seeds_better": 5,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_val_fcsrl": {
+   "mean": {
+    "air_m3": 55309.528591010916,
+    "step_cost": 8.858333333333333,
+    "nh4_excess_mg_h_L": 4.7662399354833,
+    "day_violation_pct": 8.216666666666667,
+    "over_budget_steps": 2.754166666666667
+   },
+   "abac": {
+    "air_m3": 55256.098745386116,
+    "step_cost": 8.495,
+    "nh4_excess_mg_h_L": 4.0103579308257835,
+    "day_violation_pct": 9.0,
+    "over_budget_steps": 2.77
+   },
+   "seeds_better": 2,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_val_ppolag": {
+   "mean": {
+    "air_m3": 58639.90918724999,
+    "step_cost": 7.102666666666667,
+    "nh4_excess_mg_h_L": 3.859713978705238,
+    "day_violation_pct": 6.7,
+    "over_budget_steps": 2.1496666666666666
+   },
+   "abac": {
+    "air_m3": 55256.098745386116,
+    "step_cost": 8.495,
+    "nh4_excess_mg_h_L": 4.0103579308257835,
+    "day_violation_pct": 9.0,
+    "over_budget_steps": 2.77
+   },
+   "seeds_better": 3,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_e68_dev_fcsrl": {
+   "mean": {
+    "air_m3": 47497.001756370664,
+    "step_cost": 3.3340639269406394,
+    "nh4_excess_mg_h_L": 1.4975734477843234,
+    "day_violation_pct": 3.018264840182648,
+    "over_budget_steps": 0.3819178082191781
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "step_cost": 2.5054794520547947,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192,
+    "over_budget_steps": 0.2808219178082192
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_e68_dev_ppolag": {
+   "mean": {
+    "air_m3": 50396.65787412804,
+    "step_cost": 3.1538356164383563,
+    "nh4_excess_mg_h_L": 1.4459514532045374,
+    "day_violation_pct": 2.2694063926940644,
+    "over_budget_steps": 0.2921917808219178
+   },
+   "abac": {
+    "air_m3": 62426.6196818627,
+    "step_cost": 2.5054794520547947,
+    "nh4_excess_mg_h_L": 1.470647022182107,
+    "day_violation_pct": 1.7808219178082192,
+    "over_budget_steps": 0.2808219178082192
+   },
+   "seeds_better": 1,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_e68_val_fcsrl": {
+   "mean": {
+    "air_m3": 55309.528591010916,
+    "step_cost": 8.858333333333333,
+    "nh4_excess_mg_h_L": 4.7662399354833,
+    "day_violation_pct": 8.216666666666667,
+    "over_budget_steps": 2.754166666666667
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "step_cost": 6.04,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001,
+    "over_budget_steps": 2.3
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "H3_abac_e68_val_ppolag": {
+   "mean": {
+    "air_m3": 58639.90918724999,
+    "step_cost": 7.102666666666667,
+    "nh4_excess_mg_h_L": 3.859713978705238,
+    "day_violation_pct": 6.7,
+    "over_budget_steps": 2.1496666666666666
+   },
+   "abac": {
+    "air_m3": 72721.9280036578,
+    "step_cost": 6.04,
+    "nh4_excess_mg_h_L": 3.7004309187337445,
+    "day_violation_pct": 7.000000000000001,
+    "over_budget_steps": 2.3
+   },
+   "seeds_better": 0,
+   "verdict": "우위 아님"
+  },
+  "first_collection_reward_air_same_as_e72": {
+   "fcsrl": 0,
+   "ppolag": 10
+  },
+  "lagrange_diag": {
+   "fcsrl": [
+    {
+     "seed": 0,
+     "dev_step_cost": 3.00365296803653,
+     "train_cost_last50": 3.261904776096344,
+     "lagrg_last50": 0.7592355794864577,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 1,
+     "dev_step_cost": 3.6406392694063925,
+     "train_cost_last50": 3.2892857217788696,
+     "lagrg_last50": 0.661403571764613,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 2,
+     "dev_step_cost": 2.734246575342466,
+     "train_cost_last50": 3.509523787498474,
+     "lagrg_last50": 0.6495176285870895,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 3,
+     "dev_step_cost": 3.038812785388128,
+     "train_cost_last50": 3.4150000047683715,
+     "lagrg_last50": 0.4341856398917015,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 4,
+     "dev_step_cost": 4.198630136986302,
+     "train_cost_last50": 3.5554761910438537,
+     "lagrg_last50": 0.3857955830452377,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 5,
+     "dev_step_cost": 3.3922374429223745,
+     "train_cost_last50": 3.0702380967140197,
+     "lagrg_last50": 0.7398183337847384,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 6,
+     "dev_step_cost": 3.0073059360730596,
+     "train_cost_last50": 3.045238082408905,
+     "lagrg_last50": 1.211046392436628,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 7,
+     "dev_step_cost": 2.8689497716894974,
+     "train_cost_last50": 3.1523809671401977,
+     "lagrg_last50": 0.2500250733944414,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 8,
+     "dev_step_cost": 3.821004566210046,
+     "train_cost_last50": 3.371904780864716,
+     "lagrg_last50": 0.041974943671310265,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 9,
+     "dev_step_cost": 3.635159817351598,
+     "train_cost_last50": 3.2628571355342864,
+     "lagrg_last50": 0.08407643564123869,
+     "at_cap_last100_pct": 0.0
+    }
+   ],
+   "ppolag": [
+    {
+     "seed": 0,
+     "dev_step_cost": 3.401826484018265,
+     "train_cost_last50": 3.229047622680664,
+     "lagrg_last50": 0.5662029833124405,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 1,
+     "dev_step_cost": 2.8721461187214614,
+     "train_cost_last50": 3.1814285683631898,
+     "lagrg_last50": 2.776810777333738,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 2,
+     "dev_step_cost": 2.5899543378995435,
+     "train_cost_last50": 2.303333328962326,
+     "lagrg_last50": 0.8863596379338031,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 3,
+     "dev_step_cost": 2.4465753424657533,
+     "train_cost_last50": 3.4430952310562133,
+     "lagrg_last50": 0.6159023501580316,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 4,
+     "dev_step_cost": 3.8242009132420094,
+     "train_cost_last50": 3.2507142758369447,
+     "lagrg_last50": 0.8024124802622414,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 5,
+     "dev_step_cost": 3.310958904109589,
+     "train_cost_last50": 3.4583333373069762,
+     "lagrg_last50": 1.074216867455268,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 6,
+     "dev_step_cost": 3.857534246575342,
+     "train_cost_last50": 3.580952377319336,
+     "lagrg_last50": 0.2677693136533217,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 7,
+     "dev_step_cost": 2.92648401826484,
+     "train_cost_last50": 3.082619020938873,
+     "lagrg_last50": 2.079310678139041,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 8,
+     "dev_step_cost": 3.045662100456621,
+     "train_cost_last50": 2.775714282989502,
+     "lagrg_last50": 0.30505645982002766,
+     "at_cap_last100_pct": 0.0
+    },
+    {
+     "seed": 9,
+     "dev_step_cost": 3.2630136986301372,
+     "train_cost_last50": 3.49714284658432,
+     "lagrg_last50": 1.019981252571988,
+     "at_cap_last100_pct": 0.0
+    }
+   ]
+  }
+ },
+ "root": "/home/jio/fcsrl_src/results/e74/main"
+}
