@@ -7,6 +7,8 @@ import plan75 as P
 
 
 def main(root):
+    parent=json.loads((root/'manifest.json').read_text())
+    assert all(P.digest(p)==h for p,h in parent['hashes'].items())
     ctx=P.context();controls={}
     for split in ('dev','val'):
         dates=P.select_dates(ctx[0][split]);eps=P.E.episodes(dates,ctx[2].n_members)
@@ -25,7 +27,8 @@ def main(root):
                             candidates=[dict(mode=r['mode'],algorithm=r['algorithm'],seed=r['search_seed'],metrics=r['transfer']) for r in reports])
         np.savez_compressed(root/f'{split}_transfer_control.npz',source_commands=acts,
                             **{f'open_{k}':v for k,v in op.items()},**{f'feedback_{k}':v for k,v in fb.items()})
-    P.write_json(root/'transfer_control.json',dict(post_hoc=True,controls=controls))
+    P.write_json(root/'transfer_control.json',dict(post_hoc=True,source_sha256=P.digest(__file__),parent_manifest_sha256=P.digest(root/'manifest.json'),
+        result_hashes={str(p):P.digest(p) for p in sorted((root/'jobs').glob('*/result.json'))},controls=controls))
     lines=['# 사후 구성원 이전 대조','',
            '초기 이전 악화 결과를 본 뒤 추가했다. 원 ABAC 행동열도 고정해 다른 구성원에 넣는다. 후보를 재선택하지 않는다.','',
            '| 분할 | source ABAC 비용 | target 피드백 ABAC 비용 | target 고정 ABAC 비용 |',
