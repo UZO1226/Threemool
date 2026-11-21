@@ -70,6 +70,13 @@ def main(a):
                 print(f"margin {m}: over {res['over_budget_steps']:.3f} air {res['air_m3']:.0f} int {cnt['intervention_pct']:.1f}", flush=True)
             grid += ext
             ok = [m for m in grid if rows[m]['dev']['over_budget_steps'] <= 0.3]
+        if ok and min(ok, key=lambda m: rows[m]['dev']['air_m3']) == max(grid):
+            ext = [0.75, 1.0, 1.25, 1.5, 2.0]   # 2026-11-21 수정 (protocol.json amendment_20261121)
+            for m, res, cnt in ex.map(calib, ext):
+                rows[m] = dict(dev=res, shield=cnt)
+                print(f"margin {m}: over {res['over_budget_steps']:.3f} air {res['air_m3']:.0f} int {cnt['intervention_pct']:.1f}", flush=True)
+            grid += ext
+            ok = [m for m in grid if rows[m]['dev']['over_budget_steps'] <= 0.3]
     chosen = min(ok, key=lambda m: rows[m]['dev']['air_m3']) if ok else None
     out['calibration'] = dict(grid=grid, rows={str(k): v for k, v in rows.items()}, chosen_margin=chosen)
     (a.out / 'checks.json').write_text(json.dumps(out, indent=1))
