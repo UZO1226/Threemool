@@ -1,0 +1,20 @@
+{
+ "smoke": {
+  "pass_checks": true,
+  "seconds": 12.18396471399683,
+  "episodes": 10.0
+ },
+ "first_batch_reproduction": {
+  "fcsrl_s0": true,
+  "fcsrl_s1": true,
+  "fcsrl_s2": true,
+  "fcsrl_s3": true,
+  "ppolag_s0": true,
+  "ppolag_s1": true,
+  "ppolag_s2": true,
+  "ppolag_s3": true
+ },
+ "final_audit_pending": true,
+ "running_results": "/home/jio/fcsrl_src/results/e76/main",
+ "execution_commit": "35beed9"
+}
