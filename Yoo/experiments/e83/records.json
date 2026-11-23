@@ -1,0 +1,157 @@
+[
+  {
+    "seed": 0,
+    "mode": "base",
+    "air": 84934.5928526652,
+    "nh": 12.16,
+    "do": 1.485,
+    "excess": 5.748157046190929,
+    "limit_pct": 62.0
+  },
+  {
+    "seed": 0,
+    "mode": "recover",
+    "air": 85325.9884624963,
+    "nh": 12.22,
+    "do": 1.34,
+    "excess": 5.776362584175782,
+    "limit_pct": 62.0
+  },
+  {
+    "seed": 0,
+    "mode": "limited",
+    "air": 85430.0427522429,
+    "nh": 12.19,
+    "do": 1.34,
+    "excess": 5.7738176105090595,
+    "limit_pct": 62.0,
+    "clipped_steps": 8,
+    "clipped_episodes": 4,
+    "bypassed_steps": 0,
+    "withheld_volume": 4.246898349374533
+  },
+  {
+    "seed": 1,
+    "mode": "base",
+    "air": 79296.70578332445,
+    "nh": 29.45,
+    "do": 1.61,
+    "excess": 10.916426926316994,
+    "limit_pct": 27.5
+  },
+  {
+    "seed": 1,
+    "mode": "recover",
+    "air": 79365.31460654398,
+    "nh": 28.975,
+    "do": 1.695,
+    "excess": 10.860810544075589,
+    "limit_pct": 27.5
+  },
+  {
+    "seed": 1,
+    "mode": "limited",
+    "air": 79285.40926939168,
+    "nh": 28.985,
+    "do": 1.695,
+    "excess": 10.878768079523873,
+    "limit_pct": 27.5,
+    "clipped_steps": 19,
+    "clipped_episodes": 14,
+    "bypassed_steps": 1,
+    "withheld_volume": 4.069730752380565
+  },
+  {
+    "seed": 2,
+    "mode": "base",
+    "air": 82731.17491820245,
+    "nh": 13.835,
+    "do": 1.4,
+    "excess": 6.871110787569405,
+    "limit_pct": 64.5
+  },
+  {
+    "seed": 2,
+    "mode": "recover",
+    "air": 82952.2522047197,
+    "nh": 13.785,
+    "do": 1.41,
+    "excess": 6.868732869753441,
+    "limit_pct": 65.0
+  },
+  {
+    "seed": 2,
+    "mode": "limited",
+    "air": 82940.51297197235,
+    "nh": 13.675,
+    "do": 1.41,
+    "excess": 6.873770693728786,
+    "limit_pct": 65.5,
+    "clipped_steps": 7,
+    "clipped_episodes": 3,
+    "bypassed_steps": 0,
+    "withheld_volume": 2.6897513680160046
+  },
+  {
+    "seed": 3,
+    "mode": "base",
+    "air": 96309.906504628,
+    "nh": 3.89,
+    "do": 2.01,
+    "excess": 3.118985218812236,
+    "limit_pct": 89.0
+  },
+  {
+    "seed": 3,
+    "mode": "recover",
+    "air": 96235.94570988788,
+    "nh": 3.905,
+    "do": 2.0,
+    "excess": 3.0898112303834324,
+    "limit_pct": 89.0
+  },
+  {
+    "seed": 3,
+    "mode": "limited",
+    "air": 96170.15199163345,
+    "nh": 3.895,
+    "do": 1.995,
+    "excess": 3.088995042091855,
+    "limit_pct": 89.0,
+    "clipped_steps": 4,
+    "clipped_episodes": 2,
+    "bypassed_steps": 0,
+    "withheld_volume": 2.174099236726761
+  },
+  {
+    "seed": 4,
+    "mode": "base",
+    "air": 80670.35462723112,
+    "nh": 11.1,
+    "do": 1.735,
+    "excess": 4.717367030714724,
+    "limit_pct": 66.0
+  },
+  {
+    "seed": 4,
+    "mode": "recover",
+    "air": 80774.21107796254,
+    "nh": 10.98,
+    "do": 1.83,
+    "excess": 4.704271799272217,
+    "limit_pct": 64.5
+  },
+  {
+    "seed": 4,
+    "mode": "limited",
+    "air": 80814.05961095938,
+    "nh": 11.0,
+    "do": 1.79,
+    "excess": 4.705240537596989,
+    "limit_pct": 64.5,
+    "clipped_steps": 81,
+    "clipped_episodes": 43,
+    "bypassed_steps": 10,
+    "withheld_volume": 19.156656295526773
+  }
+]
