@@ -14,7 +14,7 @@ def increments(z):
 
 def timing(source, out):
     with out.open('x') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator='\n')
         writer.writerow(['seed','elapsed_min','active_pairs','air','raw_air','nh','do','excess'])
         for seed in range(5):
             with np.load(source/f'{seed}_recover.npz') as rec, np.load(source/f'{seed}_pulse.npz') as pulse:
