@@ -1,0 +1,253 @@
+{
+  "commit": "eae63de12d34ea70470dd0cdc3d18b7e042c7f6b",
+  "fit_dates": 140,
+  "probe_dates": 48,
+  "eligible_fit": 718,
+  "eligible_probe": 305,
+  "observed": {
+    "increase": {
+      "n": 36,
+      "dates": 25,
+      "model_mae": 0.5892689213476836,
+      "persistence_mae": 1.3852794089098286,
+      "passed": true
+    },
+    "decrease": {
+      "n": 36,
+      "dates": 26,
+      "model_mae": 0.3644361283703401,
+      "persistence_mae": 0.5536781009177485,
+      "passed": true
+    }
+  },
+  "policies": [
+    {
+      "seed": 0,
+      "metrics": {
+        "low": {
+          "n": 231,
+          "days": 44,
+          "fraction": 0.7573770491803279,
+          "precision": 0.9620853080568721,
+          "recall": 0.8787878787878788,
+          "passed": true
+        },
+        "high": {
+          "n": 30,
+          "days": 11,
+          "fraction": 0.09836065573770492,
+          "precision": 0.3023255813953488,
+          "recall": 0.43333333333333335,
+          "passed": false
+        }
+      },
+      "confusion": [
+        [
+          32,
+          7,
+          5
+        ],
+        [
+          3,
+          203,
+          25
+        ],
+        [
+          16,
+          1,
+          13
+        ]
+      ]
+    },
+    {
+      "seed": 1,
+      "metrics": {
+        "low": {
+          "n": 233,
+          "days": 44,
+          "fraction": 0.7639344262295082,
+          "precision": 0.966824644549763,
+          "recall": 0.8755364806866953,
+          "passed": true
+        },
+        "high": {
+          "n": 30,
+          "days": 12,
+          "fraction": 0.09836065573770492,
+          "precision": 0.2916666666666667,
+          "recall": 0.4666666666666667,
+          "passed": false
+        }
+      },
+      "confusion": [
+        [
+          29,
+          7,
+          6
+        ],
+        [
+          1,
+          204,
+          28
+        ],
+        [
+          16,
+          0,
+          14
+        ]
+      ]
+    },
+    {
+      "seed": 2,
+      "metrics": {
+        "low": {
+          "n": 228,
+          "days": 44,
+          "fraction": 0.7475409836065574,
+          "precision": 0.9459459459459459,
+          "recall": 0.7675438596491229,
+          "passed": true
+        },
+        "high": {
+          "n": 36,
+          "days": 12,
+          "fraction": 0.1180327868852459,
+          "precision": 0.21568627450980393,
+          "recall": 0.3055555555555556,
+          "passed": false
+        }
+      },
+      "confusion": [
+        [
+          26,
+          8,
+          7
+        ],
+        [
+          20,
+          175,
+          33
+        ],
+        [
+          23,
+          2,
+          11
+        ]
+      ]
+    },
+    {
+      "seed": 3,
+      "metrics": {
+        "low": {
+          "n": 236,
+          "days": 44,
+          "fraction": 0.7737704918032787,
+          "precision": 0.9804878048780488,
+          "recall": 0.8516949152542372,
+          "passed": true
+        },
+        "high": {
+          "n": 32,
+          "days": 10,
+          "fraction": 0.10491803278688525,
+          "precision": 0.275,
+          "recall": 0.34375,
+          "passed": false
+        }
+      },
+      "confusion": [
+        [
+          29,
+          4,
+          4
+        ],
+        [
+          10,
+          201,
+          25
+        ],
+        [
+          21,
+          0,
+          11
+        ]
+      ]
+    },
+    {
+      "seed": 4,
+      "metrics": {
+        "low": {
+          "n": 235,
+          "days": 44,
+          "fraction": 0.7704918032786885,
+          "precision": 0.9902439024390244,
+          "recall": 0.8638297872340426,
+          "passed": true
+        },
+        "high": {
+          "n": 29,
+          "days": 12,
+          "fraction": 0.09508196721311475,
+          "precision": 0.275,
+          "recall": 0.3793103448275862,
+          "passed": false
+        }
+      },
+      "confusion": [
+        [
+          34,
+          2,
+          5
+        ],
+        [
+          8,
+          203,
+          24
+        ],
+        [
+          18,
+          0,
+          11
+        ]
+      ]
+    }
+  ],
+  "eligible_policies": 0,
+  "advance": false,
+  "sha256": {
+    "/home/jio/fcsrl_src/results/e50/prepared/data.pkl": "e997af4fe93e095c1e9c3d06d7559e85b92b3e5643c862c71c5c72149deb1b38",
+    "/home/jio/fcsrl_src/results/e50/prepared/surrogate.pkl": "9fdee8ff0443b79644ca38de022591f3484ef5b918fe9cf89bd1ea34f1750f0b",
+    "/home/jio/fcsrl_src/results/e50/prepared/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e50/prepared/normalizer.json": "c8e8281d1a2cf28c1503f69cac4579dec8a83c0473a8b157b2daeebdd71658cf",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/model.pt": "7200b8946c17fe15cccd68f8472bab72f0874f3b8d95642360d7aff8ad9043d5",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/normalizer.json": "fc9f4ec63c7d30d07262920eca84d7a186a39666538ae62dc0cc34cffe770985",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_0/model_final/representation.pt": "42cf28546ecda0858db5f716182860d675e37aa022ceb857f28df23490657490",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/model.pt": "1b4e7ed8b72ac7cd1b9d854ea4fc4c93b53c6b45595a26ad3bb1a7ea2eec370a",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/normalizer.json": "fc9f4ec63c7d30d07262920eca84d7a186a39666538ae62dc0cc34cffe770985",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_1/model_final/representation.pt": "ac868ad3c9a4a3c4fd460c35c22817259726bc874dd2652807644f2c4dee6703",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/model.pt": "436c9a38888813db23a3bcd58cf04876d61e5b339224d3af47206c68b86090c3",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/normalizer.json": "fc9f4ec63c7d30d07262920eca84d7a186a39666538ae62dc0cc34cffe770985",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_2/model_final/representation.pt": "6740077fed04ff0b66881c46b6725bc22c43bf6575458e602f44ad7332e8b9f8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/model.pt": "c442fe5fd37fd436d52748c9634802ae13478d5e0f32c9ccd98c56539c209abf",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/normalizer.json": "fc9f4ec63c7d30d07262920eca84d7a186a39666538ae62dc0cc34cffe770985",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_3/model_final/representation.pt": "d44670876e1bbeb89743310f07555d0286fd2a36d2c878aeff5329a41ef36ae0",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/config.json": "763e722ee9d6b29f09e407185111a2e0c07c7270173a4624f4c285d2b256c1d8",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/model.pt": "0cbe2cfeaf3291949ac21f9b1aa531adf9ce7fb4869000e479780828f34eff4c",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/normalizer.json": "fc9f4ec63c7d30d07262920eca84d7a186a39666538ae62dc0cc34cffe770985",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/prior.pt": "c92aad6b7cdcd6b6821d4343d33ddae7f3c8eb6fd6de825aabd66e5280f9174e",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/representation.json": "435fb35540050874b874d54018a1fa28030dbebc9d33a0b23e856054e36c6c56",
+    "/home/jio/fcsrl_src/results/e58/main/runs/baseline/seed_4/model_final/representation.pt": "83c9122d8c833e5f83bc6c3457a328cb06bf28b160dc8954b4671e0fab6f294b"
+  }
+}
