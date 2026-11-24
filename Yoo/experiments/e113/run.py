@@ -11,6 +11,8 @@ import numpy as np
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 
+from fast_gbm import FastPredictor
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / 'e112'))
 spec = importlib.util.spec_from_file_location("e112_coverage", HERE.parent / "e112/coverage.py")
@@ -19,7 +21,6 @@ spec.loader.exec_module(coverage112)
 observations = coverage112.observations
 from response import S, onsets
 from darrow_env import BatchEnv, Dynamics
-from fast_gbm import FastPredictor
 
 base = S.base
 prepared = S.PREPARED
