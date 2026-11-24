@@ -94,7 +94,15 @@ def run(out):
     x = np.stack([days[d]['state'][t:t+5] for d,t in anchors])
     e = np.stack([days[d]['exo'][t:t+4] for d,t in anchors])
     z = np.stack([days[d]['zone'][t-1:t+4] for d,t in anchors])
-    short,_ = forecasts(dyn,x,e,z)
+    # e77 sent total flow through the action conversion and reapplied recorded fractions.
+    # In the primary e37 cohort, replay the five sensor flow values directly.
+    from darrow_env import action_to_air, air_to_action
+    e77_zone = z.copy()
+    for i,(d,t) in enumerate(anchors):
+        g = days[d]
+        flow = action_to_air(air_to_action(g['air'][t:t+4]))
+        e77_zone[i,1:] = flow[:,None]*g['frac'][t:t+4]
+    short,_ = forecasts(dyn,x,e,e77_zone)
     up = (z[:,1].sum(1)-z[:,0].sum(1))>0
     for name, on in [('increase',up),('decrease',~up)]:
         expected = ref['observed'][name]
