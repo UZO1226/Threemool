@@ -85,21 +85,28 @@ def run(out):
     for seed in range(5):
         path = S.ROOT/'e88/main'/f'{seed}_early_down.npz'
         assert S.digest(path) == E.ref('e89')[seed]['input_sha256'][0]
-        archive, _ = S.read_candidates(path,dates[:140])
+        archive, early = S.read_candidates(path,dates[:140])
         agent = S.E.restore(seed)
         with np.load(S.ROOT/'e102/main'/f'size{seed}.npz') as z:
             keys, q, ref = z['keys'], z['q'], z['totals']
             x, raw = S.before_action(rows[:140], archive, keys)
             np.testing.assert_array_equal(q,raw)
             np.testing.assert_array_equal(x[:,0],z['nh4'])
-        totals = np.empty((len(keys),5,3,4))
-        for start in range(0,len(keys),250):
-            ids = np.arange(start,min(start+250,len(keys)))
-            for arm,cut in enumerate((0.,250.,500.)):
+        # Preserve the network inference batches that produced both sets of archived endpoints.
+        full_q = S.before_action(rows[:140], archive, early)[1]
+        position = {tuple(row): i for i,row in enumerate(early)}
+        source_rows = np.array([position[tuple(row)] for row in keys])
+        totals = np.full((len(keys),5,3,4), np.nan)
+        for arm,cut in enumerate((0.,250.,500.)):
+            base_keys, base_q, positions = (keys,q,np.arange(len(keys))) if arm==1 else (early,full_q,source_rows)
+            for chunk in np.unique(positions//250):
+                batch = slice(chunk*250,(chunk+1)*250)
+                ids = np.flatnonzero(positions//250 == chunk)
+                within = positions[ids] % 250
                 original = None
                 for shift in range(5):
                     model = ShiftModel(dyn,shift)
-                    result = S.P.branch(rows[:140],model,agent,keys[ids],q[ids],-cut,archive)[:,-1]
+                    result = S.P.branch(rows[:140],model,agent,base_keys[batch],base_q[batch],-cut,archive)[within,-1]
                     target = (keys[ids,2]+shift)%5
                     totals[ids,target,arm] = result
                     if shift == 0:
