@@ -160,6 +160,21 @@ def run(source, prepared, out):
     counts.to_csv(out/'counts.csv', index=False)
     (out/'signals.json').write_text(json.dumps(signals, indent=2)+'\n')
     primary = pairs[pairs.opposite & (pairs.gap<=1000)].sort_values(['gap','day','member','seed_lo','seed_hi'])
+    parts = []
+    for case in primary.itertuples():
+        for side in ('lo', 'hi'):
+            seed = getattr(case, 'seed_'+side)
+            u, w, un, wn = paths[case.day,case.member,seed]
+            span = longest(u-w >= 250)
+            if span is None:
+                continue
+            first, end = span
+            cost = (wn[1:]>4).astype(int) - (un[1:]>4).astype(int)
+            before, during, after = (int(part.sum()) for part in (cost[:first],cost[first:end],cost[end:]))
+            assert before+during+after == getattr(case,'nh_'+side)
+            parts.append(dict(day=case.day,member=case.member,seed=seed,other=getattr(case,'seed_'+('hi' if side=='lo' else 'lo')),
+                              side=side,before=before,during=during,after=after))
+    pd.DataFrame(parts).to_csv(out/'phases.csv', index=False)
     if not primary.empty:
         example = primary.iloc[0]
         rows = []
