@@ -78,21 +78,22 @@ def evaluate(df, model, n_days):
     df = df.copy()
     y, w = df.fall.to_numpy(), weights(df)
     avg = lambda v: float(np.average(v, weights=w))
-    df['constant'] = model['constant']
+    df['prob_constant'] = model['constant']
     for key, cols in MODELS.items():
         m = model[key]
         logit = ((df[cols].to_numpy()-m['mean'])/m['scale']) @ m['coef'] + m['intercept']
-        df[key] = 1 / (1+np.exp(-logit))
+        df[f'prob_{key}'] = 1 / (1+np.exp(-logit))
     scores = {}
     for key in ['constant', *MODELS]:
-        scores[key] = dict(brier=avg((df[key]-y)**2), auc=float(roc_auc_score(y, df[key], sample_weight=w)))
-    chosen = df.full >= .5
+        prob = df[f'prob_{key}']
+        scores[key] = dict(brier=avg((prob-y)**2), auc=float(roc_auc_score(y, prob, sample_weight=w)))
+    chosen = df.prob_full >= .5
     mean_errors = {}
     for col in ERRORS:
         a, b = df['base_'+col], df['corrected_'+col]
         df['selected_'+col] = np.where(chosen, b, a)
         mean_errors[col] = [avg(a), avg(b), avg(df['selected_'+col])]
-    daily = ((df.full-y)**2 - (df.level-y)**2).groupby(df.day).mean().reindex(range(n_days)).to_numpy()
+    daily = ((df.prob_full-y)**2 - (df.prob_level-y)**2).groupby(df.day).mean().reindex(range(n_days)).to_numpy()
     rng = np.random.default_rng(107)
     starts = rng.integers(n_days, size=(2000, (n_days+6)//7))
     draws = ((starts[:, :, None] + np.arange(7)) % n_days).reshape(2000, -1)[:, :n_days]
@@ -129,6 +130,7 @@ def run(out):
         for direction, sample in load(name, dates, all_days).groupby('direction'):
             frame, stats = evaluate(sample, fitted[direction], len(dates))
             result[name][direction] = stats
+            np.testing.assert_array_equal(frame[FEATURES], sample[FEATURES])
             scored.append(frame)
         pd.concat(scored).sort_index().to_csv(out/f'{name}.csv', index=False)
         up, down = [result[name][d]['errors'] for d in ('increase', 'decrease')]

@@ -1,0 +1,402 @@
+{
+  "confirm": {
+    "decrease": {
+      "n": 48,
+      "days": 35,
+      "useful": 11,
+      "methods": {
+        "base": {
+          "chosen": 0,
+          "mae": {
+            "nh4_3h": 0.5059902706413888,
+            "segment_mae": 0.4494714133256262,
+            "do_3h": 0.1263912836396328
+          }
+        },
+        "always": {
+          "chosen": 48,
+          "mae": {
+            "nh4_3h": 0.48320899867388056,
+            "segment_mae": 0.4172840361251528,
+            "do_3h": 0.12706494995815892
+          }
+        },
+        "e107": {
+          "chosen": 0,
+          "mae": {
+            "nh4_3h": 0.5059902706413888,
+            "segment_mae": 0.4494714133256262,
+            "do_3h": 0.1263912836396328
+          },
+          "gain_ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "observed_fall": {
+          "chosen": 17,
+          "mae": {
+            "nh4_3h": 0.48610167731668524,
+            "segment_mae": 0.4352815996751504,
+            "do_3h": 0.12685531829424526
+          }
+        },
+        "endpoint": {
+          "chosen": 22,
+          "mae": {
+            "nh4_3h": 0.42009851007343807,
+            "segment_mae": 0.3988188876379626,
+            "do_3h": 0.12475212929002501
+          },
+          "gain_ci": [
+            0.027383728134118816,
+            0.17009010248112288
+          ]
+        },
+        "joint": {
+          "chosen": 11,
+          "mae": {
+            "nh4_3h": 0.44512741756866153,
+            "segment_mae": 0.4084664487900197,
+            "do_3h": 0.1236970746063919
+          },
+          "gain_ci": [
+            0.006576610469147034,
+            0.13952988650613665
+          ]
+        }
+      },
+      "counts": {
+        "observed_fall": {
+          "both": 6,
+          "flag_only": 11,
+          "useful_only": 5,
+          "neither": 26
+        },
+        "underpredicted_drop": {
+          "both": 11,
+          "flag_only": 20,
+          "useful_only": 0,
+          "neither": 17
+        },
+        "fall_and_short": {
+          "both": 6,
+          "flag_only": 7,
+          "useful_only": 5,
+          "neither": 30
+        },
+        "e107": {
+          "both": 0,
+          "flag_only": 0,
+          "useful_only": 11,
+          "neither": 37
+        },
+        "endpoint": {
+          "both": 11,
+          "flag_only": 11,
+          "useful_only": 0,
+          "neither": 26
+        }
+      }
+    },
+    "increase": {
+      "n": 48,
+      "days": 34,
+      "useful": 9,
+      "methods": {
+        "base": {
+          "chosen": 0,
+          "mae": {
+            "nh4_3h": 0.8414932051378335,
+            "segment_mae": 0.8575941235064135,
+            "do_3h": 0.18781036059831582
+          }
+        },
+        "always": {
+          "chosen": 48,
+          "mae": {
+            "nh4_3h": 0.8943306522353224,
+            "segment_mae": 0.871797349909401,
+            "do_3h": 0.1743009772110952
+          }
+        },
+        "e107": {
+          "chosen": 32,
+          "mae": {
+            "nh4_3h": 0.8512970547498608,
+            "segment_mae": 0.8435017380623854,
+            "do_3h": 0.18403271811736346
+          },
+          "gain_ci": [
+            -0.0693649449232489,
+            0.03854971108591108
+          ]
+        },
+        "observed_fall": {
+          "chosen": 26,
+          "mae": {
+            "nh4_3h": 0.78712735959916,
+            "segment_mae": 0.8172922921632315,
+            "do_3h": 0.17823480179406204
+          }
+        },
+        "endpoint": {
+          "chosen": 19,
+          "mae": {
+            "nh4_3h": 0.745233250907651,
+            "segment_mae": 0.8216407899638378,
+            "do_3h": 0.178699496002934
+          },
+          "gain_ci": [
+            0.038622433972135155,
+            0.15463671938209755
+          ]
+        },
+        "joint": {
+          "chosen": 9,
+          "mae": {
+            "nh4_3h": 0.784554021085157,
+            "segment_mae": 0.8355561261726884,
+            "do_3h": 0.17708428113215502
+          },
+          "gain_ci": [
+            0.02189208056885413,
+            0.09183240885335066
+          ]
+        }
+      },
+      "counts": {
+        "observed_fall": {
+          "both": 9,
+          "flag_only": 17,
+          "useful_only": 0,
+          "neither": 22
+        },
+        "underpredicted_drop": {
+          "both": 9,
+          "flag_only": 12,
+          "useful_only": 0,
+          "neither": 27
+        },
+        "fall_and_short": {
+          "both": 9,
+          "flag_only": 10,
+          "useful_only": 0,
+          "neither": 29
+        },
+        "e107": {
+          "both": 5,
+          "flag_only": 27,
+          "useful_only": 4,
+          "neither": 12
+        },
+        "endpoint": {
+          "both": 9,
+          "flag_only": 10,
+          "useful_only": 0,
+          "neither": 29
+        }
+      }
+    }
+  },
+  "winter": {
+    "decrease": {
+      "n": 65,
+      "days": 33,
+      "useful": 3,
+      "methods": {
+        "base": {
+          "chosen": 0,
+          "mae": {
+            "nh4_3h": 1.7724377336605202,
+            "segment_mae": 1.755578589473469,
+            "do_3h": 0.29590211719328485
+          }
+        },
+        "always": {
+          "chosen": 65,
+          "mae": {
+            "nh4_3h": 1.9037186339771732,
+            "segment_mae": 1.8632186756908982,
+            "do_3h": 0.2871103223905394
+          }
+        },
+        "e107": {
+          "chosen": 3,
+          "mae": {
+            "nh4_3h": 1.7650067708189963,
+            "segment_mae": 1.75706743000641,
+            "do_3h": 0.29571213506756133
+          },
+          "gain_ci": [
+            0.0,
+            0.017646165577558454
+          ]
+        },
+        "observed_fall": {
+          "chosen": 8,
+          "mae": {
+            "nh4_3h": 1.7477046649655255,
+            "segment_mae": 1.7361493839846724,
+            "do_3h": 0.2941767205170961
+          }
+        },
+        "endpoint": {
+          "chosen": 12,
+          "mae": {
+            "nh4_3h": 1.7327943136674848,
+            "segment_mae": 1.7361633482059091,
+            "do_3h": 0.2876215782470705
+          },
+          "gain_ci": [
+            0.013443666746945344,
+            0.07156061865215517
+          ]
+        },
+        "joint": {
+          "chosen": 3,
+          "mae": {
+            "nh4_3h": 1.7606478254616857,
+            "segment_mae": 1.7480215563735289,
+            "do_3h": 0.2938033579756357
+          },
+          "gain_ci": [
+            0.002526497460531423,
+            0.024597434390233097
+          ]
+        }
+      },
+      "counts": {
+        "observed_fall": {
+          "both": 3,
+          "flag_only": 5,
+          "useful_only": 0,
+          "neither": 57
+        },
+        "underpredicted_drop": {
+          "both": 3,
+          "flag_only": 8,
+          "useful_only": 0,
+          "neither": 54
+        },
+        "fall_and_short": {
+          "both": 3,
+          "flag_only": 4,
+          "useful_only": 0,
+          "neither": 58
+        },
+        "e107": {
+          "both": 1,
+          "flag_only": 2,
+          "useful_only": 2,
+          "neither": 60
+        },
+        "endpoint": {
+          "both": 3,
+          "flag_only": 9,
+          "useful_only": 0,
+          "neither": 53
+        }
+      }
+    },
+    "increase": {
+      "n": 67,
+      "days": 39,
+      "useful": 43,
+      "methods": {
+        "base": {
+          "chosen": 0,
+          "mae": {
+            "nh4_3h": 3.1156811915626994,
+            "segment_mae": 2.0425035070810553,
+            "do_3h": 0.6301849754538272
+          }
+        },
+        "always": {
+          "chosen": 67,
+          "mae": {
+            "nh4_3h": 2.7758494471552777,
+            "segment_mae": 1.841391474051814,
+            "do_3h": 0.6077108147509778
+          }
+        },
+        "e107": {
+          "chosen": 66,
+          "mae": {
+            "nh4_3h": 2.791860248832082,
+            "segment_mae": 1.8500006098576733,
+            "do_3h": 0.6071158799930056
+          },
+          "gain_ci": [
+            0.16227587235149474,
+            0.47551619467567446
+          ]
+        },
+        "observed_fall": {
+          "chosen": 53,
+          "mae": {
+            "nh4_3h": 2.7632255358162174,
+            "segment_mae": 1.8365276243716033,
+            "do_3h": 0.6111704351886939
+          }
+        },
+        "endpoint": {
+          "chosen": 57,
+          "mae": {
+            "nh4_3h": 2.7266513122589364,
+            "segment_mae": 1.8225093376338641,
+            "do_3h": 0.6092242892385211
+          },
+          "gain_ci": [
+            0.2841401057926467,
+            0.4927418858251816
+          ]
+        },
+        "joint": {
+          "chosen": 43,
+          "mae": {
+            "nh4_3h": 2.7935070739546655,
+            "segment_mae": 1.848832512267693,
+            "do_3h": 0.610522233336663
+          },
+          "gain_ci": [
+            0.2197776934582324,
+            0.4311592810708706
+          ]
+        }
+      },
+      "counts": {
+        "observed_fall": {
+          "both": 40,
+          "flag_only": 13,
+          "useful_only": 3,
+          "neither": 11
+        },
+        "underpredicted_drop": {
+          "both": 42,
+          "flag_only": 11,
+          "useful_only": 1,
+          "neither": 13
+        },
+        "fall_and_short": {
+          "both": 40,
+          "flag_only": 10,
+          "useful_only": 3,
+          "neither": 14
+        },
+        "e107": {
+          "both": 43,
+          "flag_only": 23,
+          "useful_only": 0,
+          "neither": 1
+        },
+        "endpoint": {
+          "both": 43,
+          "flag_only": 14,
+          "useful_only": 0,
+          "neither": 10
+        }
+      }
+    }
+  }
+}
