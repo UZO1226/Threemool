@@ -78,7 +78,7 @@ def run(out):
             fit = day < start
             cal = (day >= start) & (day < stop)
             assert day[fit].max() < day[cal].min()
-            pred, _ = E.predict(x[fit], target[fit,:1], day[fit], x[cal])
+            pred, _ = E.predict(x[fit], target[fit], day[fit], x[cal])
             residuals.extend(target[cal,0]-pred[:,0])
             days.extend(day[cal])
             blocks.append(dict(fit=int(fit.sum()), cal=int(cal.sum()), dates=len(np.unique(day[cal]))))
