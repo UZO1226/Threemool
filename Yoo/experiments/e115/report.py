@@ -77,7 +77,6 @@ def compare(source,out):
         assert list(same.t)==list(range(same.event.iloc[0]+1)) and len(g)==5*len(same)
         cross=g.groupby('t').joint.sum()
         good=same[same.joint].sort_values(['nh','air','t'])
-        date_id=dates.index(day)
         row=dict(day=day,period=same.period.iloc[0],seed=seed,origin=orig,event=int(same.event.iloc[0]),
                  native_gap=int(same.native_gap.iloc[0]),n=len(same),nh_better=int((same.nh<0).sum()),
                  joint=int(same.joint.sum()),keeps_savings=int(same.retains.sum()),repeat_t=int(((cross>=4)&same.set_index('t').joint).sum()),

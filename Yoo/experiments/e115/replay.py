@@ -14,7 +14,6 @@ import run as e113
 from darrow_env import action_to_air
 
 ROOT = Path('/home/jio/fcsrl_src/results/e113/main')
-METRICS = ['air', 'nh', 'do', 'excess']
 
 
 def read(path):
@@ -23,12 +22,6 @@ def read(path):
 
 def verify(path, digest):
     assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, path
-
-
-def totals(air, states):
-    nh = states[:, :, 0]
-    do = states[:, :, 2:].max(axis=2)
-    return np.column_stack([air.sum(1)*.25, (nh>4).sum(1), (do>2).sum(1), np.maximum(nh-4,0).sum(1)*.25])
 
 
 def action(policy, obs):
