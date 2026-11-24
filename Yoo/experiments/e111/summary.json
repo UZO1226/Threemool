@@ -1,0 +1,264 @@
+{
+  "all": {
+    "delta": {
+      "air": -5139.546472973423,
+      "cost": -1.0169999999999981,
+      "nh4": -0.6439999999999989,
+      "do": -0.373
+    },
+    "days": 40,
+    "joint_seed_dates": 48,
+    "water_seed_dates": 33,
+    "joint_seeds": 1,
+    "water_seeds": 1,
+    "joint_mean_days": 28,
+    "water_mean_days": 17,
+    "joint_4seed_days": 0,
+    "water_4seed_days": 0
+  },
+  "interval": {
+    "air": [
+      -9292.044103689132,
+      -835.1205653279987
+    ],
+    "cost": [
+      -6.0381750000000025,
+      3.6822999999999992
+    ],
+    "nh4": [
+      -5.959550000000004,
+      4.305399999999996
+    ],
+    "do": [
+      -1.1570499999999997,
+      0.30402499999999966
+    ]
+  },
+  "medians": {
+    "q_in": 1796.9417870702387,
+    "temp": 16.103298844016372
+  },
+  "groups": {
+    "early": {
+      "delta": {
+        "air": -6023.718409595545,
+        "cost": -1.1500000000000008,
+        "nh4": -1.0720000000000007,
+        "do": -0.07800000000000001
+      },
+      "days": 20,
+      "joint_seed_dates": 29,
+      "water_seed_dates": 22,
+      "joint_seeds": 1,
+      "water_seeds": 1,
+      "joint_mean_days": 15,
+      "water_mean_days": 7,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    "late": {
+      "delta": {
+        "air": -4255.374536351301,
+        "cost": -0.884,
+        "nh4": -0.21599999999999983,
+        "do": -0.6679999999999999
+      },
+      "days": 20,
+      "joint_seed_dates": 19,
+      "water_seed_dates": 11,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 13,
+      "water_mean_days": 10,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    "q_in_low": {
+      "delta": {
+        "air": -4672.543675950263,
+        "cost": -1.9820000000000002,
+        "nh4": -1.956000000000001,
+        "do": -0.026000000000000006
+      },
+      "days": 20,
+      "joint_seed_dates": 26,
+      "water_seed_dates": 19,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 16,
+      "water_mean_days": 10,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    "q_in_high": {
+      "delta": {
+        "air": -5606.5492699965835,
+        "cost": -0.05199999999999985,
+        "nh4": 0.6679999999999998,
+        "do": -0.7199999999999998
+      },
+      "days": 20,
+      "joint_seed_dates": 22,
+      "water_seed_dates": 14,
+      "joint_seeds": 1,
+      "water_seeds": 1,
+      "joint_mean_days": 12,
+      "water_mean_days": 7,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    "temp_low": {
+      "delta": {
+        "air": -4886.049190113321,
+        "cost": -0.33799999999999975,
+        "nh4": 0.3759999999999999,
+        "do": -0.7139999999999996
+      },
+      "days": 20,
+      "joint_seed_dates": 19,
+      "water_seed_dates": 12,
+      "joint_seeds": 1,
+      "water_seeds": 1,
+      "joint_mean_days": 12,
+      "water_mean_days": 9,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    "temp_high": {
+      "delta": {
+        "air": -5393.043755833525,
+        "cost": -1.6960000000000008,
+        "nh4": -1.6640000000000008,
+        "do": -0.032
+      },
+      "days": 20,
+      "joint_seed_dates": 29,
+      "water_seed_dates": 21,
+      "joint_seeds": 1,
+      "water_seeds": 1,
+      "joint_mean_days": 16,
+      "water_mean_days": 8,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    }
+  },
+  "seeds": [
+    {
+      "delta": {
+        "air": -5545.235333981691,
+        "cost": 2.3549999999999995,
+        "nh4": 1.7900000000000003,
+        "do": 0.5650000000000002
+      },
+      "days": 40,
+      "joint_seed_dates": 1,
+      "water_seed_dates": 0,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 1,
+      "water_mean_days": 0,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    {
+      "delta": {
+        "air": -786.4161786914337,
+        "cost": -7.880000000000001,
+        "nh4": -7.410000000000001,
+        "do": -0.47000000000000003
+      },
+      "days": 40,
+      "joint_seed_dates": 15,
+      "water_seed_dates": 11,
+      "joint_seeds": 1,
+      "water_seeds": 1,
+      "joint_mean_days": 15,
+      "water_mean_days": 11,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    {
+      "delta": {
+        "air": 980.2939994644839,
+        "cost": -7.034999999999998,
+        "nh4": -7.075,
+        "do": 0.039999999999999966
+      },
+      "days": 40,
+      "joint_seed_dates": 15,
+      "water_seed_dates": 12,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 15,
+      "water_mean_days": 12,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    {
+      "delta": {
+        "air": -9725.809843910392,
+        "cost": 2.0299999999999994,
+        "nh4": 2.8649999999999993,
+        "do": -0.835
+      },
+      "days": 40,
+      "joint_seed_dates": 12,
+      "water_seed_dates": 7,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 12,
+      "water_mean_days": 7,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    },
+    {
+      "delta": {
+        "air": -10620.565007748082,
+        "cost": 5.445,
+        "nh4": 6.610000000000001,
+        "do": -1.165
+      },
+      "days": 40,
+      "joint_seed_dates": 5,
+      "water_seed_dates": 3,
+      "joint_seeds": 0,
+      "water_seeds": 0,
+      "joint_mean_days": 5,
+      "water_mean_days": 3,
+      "joint_4seed_days": 0,
+      "water_4seed_days": 0
+    }
+  ],
+  "without_seed": [
+    {
+      "air": -5038.124257721356,
+      "cost": -1.8599999999999977,
+      "nh4": -1.2524999999999988,
+      "do": -0.6074999999999999
+    },
+    {
+      "air": -6227.82904654392,
+      "cost": 0.6987499999999996,
+      "nh4": 1.0475000000000003,
+      "do": -0.34874999999999995
+    },
+    {
+      "air": -6669.5065910829,
+      "cost": 0.4874999999999997,
+      "nh4": 0.9637500000000001,
+      "do": -0.47624999999999995
+    },
+    {
+      "air": -3992.9806302391808,
+      "cost": -1.7787499999999987,
+      "nh4": -1.5212499999999998,
+      "do": -0.25749999999999995
+    },
+    {
+      "air": -3769.2918392797583,
+      "cost": -2.6324999999999985,
+      "nh4": -2.4574999999999987,
+      "do": -0.175
+    }
+  ]
+}
