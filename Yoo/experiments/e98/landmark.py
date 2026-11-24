@@ -5,6 +5,8 @@ from pathlib import Path
 import sys
 
 import numpy as np
+from sklearn.linear_model import Ridge
+from sklearn.preprocessing import StandardScaler
 
 HERE = Path(__file__).resolve().parent
 for folder in ('e90', 'e97'):
@@ -108,13 +110,16 @@ def run(out):
             np.testing.assert_array_equal(qt, flow[subset])
             panel, truth = replay(rows[140:], late, full, flow, dyn, agent, z['totals'], False)
         panel, truth = panel[subset], truth[subset]
+        weights = S.weights(k[:,0])
+        center = float(np.average(train_y, weights=weights))
         preds = []
         for width in (0,4,8):
-            p, c = prior.predict(np.column_stack((x, train_panel[:,:width])), train_y[:,None], k[:,0],
-                                 np.column_stack((xt, panel[:,:width])))
-            preds.append(p[:,0])
+            train = np.column_stack((x, train_panel[:,:width]))
+            evaluation = np.column_stack((xt, panel[:,:width]))
+            scaler = StandardScaler().fit(train, sample_weight=weights)
+            reg = Ridge(alpha=1.).fit(scaler.transform(train), train_y, sample_weight=weights)
+            preds.append(reg.predict(scaler.transform(evaluation)))
         pred = np.column_stack(preds)
-        center = c.item()
         with np.load(root/'e97/main'/f'interval{seed}.npz') as z:
             np.testing.assert_array_equal(keys,z['keys'])
             np.testing.assert_allclose(truth, z['truth'][:,2], atol=1e-7, rtol=0)
