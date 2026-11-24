@@ -10,7 +10,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "e115"))
 import replay
 from darrow_env import AIR_MAX, air_to_action, action_to_air
-from report import daily
+from runpy import run_path
+
+daily = run_path(str(HERE.parent / "e115/report.py"))["daily"]
 
 ARMS = {"A": (False, False), "B": (True, False),
         "C": (True, True), "D": (False, True)}
