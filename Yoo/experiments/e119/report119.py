@@ -59,6 +59,16 @@ def summarize(root, out):
                                      native_positive=int(part.source_good.sum()),
                                      retained_native_positive=int((yes & part.source_good).sum()),
                                      auc=roc_auc_score(yes, part.score) if yes.nunique() == 2 else np.nan))
+    daily = []
+    for day, part in candidates.groupby("day"):
+        agreed = part.votes == 5
+        daily.append(dict(day=day, candidates=len(part), total_episodes=25,
+                          eligible_episodes=len(part.drop_duplicates(EP)),
+                          opposite=int(((part.nh_min < 0) & (part.nh_max > 0)).sum()),
+                          unanimous_favorable=int(agreed.sum()),
+                          favorable_episodes=len(part[agreed].drop_duplicates(EP)),
+                          selected=int(part.selected.sum()), captured=int((agreed & part.selected).sum())))
+    pd.DataFrame(daily).to_csv(out / "dates.csv", index=False)
     pd.DataFrame(support).to_csv(out / "votes.csv", index=False)
     pd.DataFrame(direction).to_csv(out / "nh_response.csv", index=False)
     pd.DataFrame(coverage).to_csv(out / "coverage.csv", index=False)
