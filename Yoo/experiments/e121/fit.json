@@ -1,0 +1,17 @@
+{
+  "risk_cutoff": 0.30941781741419744,
+  "loss_cutoff": 3227.2556270181667,
+  "thresholds": {
+    "risk_air": 29.575303538915055,
+    "air_only": 42.43595966288343,
+    "consensus": 0.05233215584518223
+  },
+  "calibration_episodes": {
+    "risk_air": 40,
+    "air_only": 40
+  },
+  "calibration_eligible": {
+    "risk_air": 242,
+    "air_only": 327
+  }
+}
