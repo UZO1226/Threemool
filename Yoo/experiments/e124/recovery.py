@@ -106,8 +106,10 @@ def summarize(source, dest):
                         recovered=recovery.sum(), recovered_alert=(alarm & recovery).sum(),
                         passed=large.any() and (~large).any() and tp > large.sum()/2 and fp <= (~large).sum()/4))
                 for group, g in x.groupby("group"):
-                    groups.append(dict(**tags, group=group, n=len(g), recovered=g.recovery_minutes.count(),
-                        recovery_min_median=g.recovery_minutes.median(), nh_change_median=g.nh_change.median(),
+                    recovered_times = g.recovery_minutes.dropna()
+                    groups.append(dict(**tags, group=group, n=len(g), recovered=len(recovered_times),
+                        recovery_min_median=recovered_times.median() if len(recovered_times) else np.nan,
+                        nh_change_median=g.nh_change.median(),
                         air_change_median=g.air_change.median()))
     dest.mkdir(parents=True, exist_ok=True)
     perf = pd.DataFrame(performance)
