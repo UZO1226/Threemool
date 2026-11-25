@@ -75,7 +75,7 @@ def run_row(out, method, seed, config, dates):
 
 
 def joint(delta):
-    return (delta["air_m3"] < -0.05) & (delta[OUTCOMES[1:]] <= 1e-8).all(axis=-1)
+    return (delta["air_m3"] < -0.05) & (delta[OUTCOMES[1:]].to_numpy() <= 1e-8).all(axis=-1)
 
 
 def report(out, tables):
