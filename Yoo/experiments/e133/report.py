@@ -69,6 +69,10 @@ def run_row(out, method, seed, config, dates):
                 nh4_minutes=15 * metrics["nh4_cost"], nh4_excess_mg_h_L=metrics["nh4_excess_mg_h_L"],
                 do_minutes=15 * metrics["do_cost"], cost=metrics["cost"],
                 within_12=metrics["mean_cost_within_12"], elapsed_seconds=training["elapsed_seconds"],
+                mean_kl_before_extra=(np.mean([r["preserve_before_kl"] for r in logs])
+                                      if method != "fcsrl" else None),
+                mean_kl_after_extra=(np.mean([r["preserve_after_kl"] for r in logs])
+                                     if method != "fcsrl" else None),
                 extra_steps=int(sum(r.get("extra_attempted_steps", 0) for r in logs)),
                 accepted_updates=int(sum(r.get("preserve_accepted", 0) for r in logs)),
                 extra_cpu_seconds=sum(r.get("extra_cpu_seconds", 0) for r in logs),
