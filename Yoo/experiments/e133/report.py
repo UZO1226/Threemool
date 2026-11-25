@@ -1,5 +1,6 @@
 """Verify the 15 final rollouts and apply the frozen e133 paired decision."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -111,6 +112,15 @@ def report(out, tables):
     pairs.to_csv(tables / "paired.csv", index=False)
     summary.to_csv(tables / "summary.csv")
     (tables / "decision.json").write_text(json.dumps(decision, indent=2) + "\n")
+    # Include the artifacts needed for replay in the server-side checksum list.
+    paths = sorted(path for method in METHODS for path in (out / method).rglob("*")
+                   if path.is_file() and path.name != "progress.json")
+    checksums = []
+    for path in paths:
+        with path.open("rb") as stream:
+            digest = hashlib.file_digest(stream, "sha256").hexdigest()
+        checksums.append(f"{digest}  {path.relative_to(out)}")
+    (tables / "SHA256SUMS").write_text("\n".join(checksums) + "\n")
     print(summary.to_string())
     print(json.dumps(decision, indent=2))
 
