@@ -1,0 +1,15 @@
+{
+  "mean_joint": {
+    "fcsrl": false,
+    "actor_extra_ppo": false
+  },
+  "paired_joint_counts": {
+    "actor_extra_ppo": 0,
+    "fcsrl": 0
+  },
+  "joint_seeds_both": [],
+  "replication_pass": false,
+  "original_cost_wins": 2,
+  "original_e50_pass": false,
+  "extra_steps_matched": true
+}

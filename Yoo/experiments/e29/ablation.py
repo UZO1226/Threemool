@@ -17,6 +17,8 @@ METHODS = ('fcsrl', 'fcsrl_actor', 'fcsrl_critic', 'fcsrl_preserve', 'fcsrl_extr
 
 
 class AblatedFCSRL(PreservingFCSRL):
+    actor_only_task = False
+
     def update(self, buf):
         self._extra_buffer = buf
         try:
@@ -40,6 +42,10 @@ class AblatedFCSRL(PreservingFCSRL):
         active = {'fcsrl_actor': (0,), 'fcsrl_critic': (1, 2),
                   'fcsrl_extra_ppo': (0, 1, 2)}[self.mode]
         extra_ppo = self.mode == 'fcsrl_extra_ppo'
+
+        if self.actor_only_task:
+            assert extra_ppo
+            active = (0,)
 
         def errors(sl):
             terms = [(((m(features[sl]) - t[sl]) / scale) ** 2).mean()
@@ -68,6 +74,8 @@ class AblatedFCSRL(PreservingFCSRL):
                 ratio = (logp - old_logp[sl]).clamp(-20, 20).exp()
                 clipped = ratio.clamp(1 - self.config.clip_ratio, 1 + self.config.clip_ratio)
                 policy = -torch.minimum(ratio * adv[sl], clipped * adv[sl]).mean()
+                if self.actor_only_task:
+                    return policy
                 values = [((net(features[sl])[:, 0] - ret[sl] / self.config.value_scale) ** 2).mean()
                           for net, ret in zip(modules[1:], returns)]
                 return torch.stack([policy, *values])
