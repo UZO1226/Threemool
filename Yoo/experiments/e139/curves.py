@@ -42,7 +42,7 @@ def overlap(candidate, control):
 
 
 def minimum_air(points, target):
-    valid = np.flatnonzero(np.all(points[:,1:4] <= target+1e-8,axis=1))
+    valid = np.flatnonzero(np.all(points[:,1:4] <= np.asarray(target)+1e-8,axis=1))
     if not len(valid):
         return np.nan,np.nan
     index = valid[np.argmin(points[valid,0])]
