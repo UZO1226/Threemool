@@ -5,7 +5,7 @@
 |근거|확인 범위|적용과 검산|
 |---|---|---|
 |[Hyndman과 Athanasopoulos 5.10절](https://otexts.com/fpp3/tscv.html), [scikit-learn 1.7.2 TimeSeriesSplit._split](https://github.com/scikit-learn/scikit-learn/blob/1.7.2/sklearn/model_selection/_split.py)|과거 관측만 학습, 일정 간격으로 예측 기점 이동. 구현은 다음 시험 시작 인덱스 전까지 학습 인덱스를 만든다.|기존 188일에서 학습 108일 및 148일, 각각 40일 평가. 훈련 입력과 평가일 분리, 첫 접점에서 하루 전이 절단 확인.|
-|[Cobbe 등 2.2, 3.3절](https://proceedings.mlr.press/v119/cobbe20a/cobbe20a.pdf), [저자 구현의 시작 레벨과 범위](https://github.com/openai/procgen/blob/master/procgen/env.py)|학습 환경 수와 학습 난수를 구분하고 추가 적응 없이 다른 환경에 평가한다.|시드 10~14는 최적화 반복, 40일 구간은 시간 이동이다. 동일 시설 후향 검증이며 독립 처리장 전이는 미검증이다.|
+|[Cobbe 등 2.2, 3.3절](https://proceedings.mlr.press/v119/cobbe20a/cobbe20a.pdf), [저자 구현의 시작 레벨과 범위](https://github.com/openai/procgen/blob/37b521dbb530f0734fd82f72d921f5e0e715c0d1/procgen/env.py)|학습 환경 수와 학습 난수를 구분하고 추가 적응 없이 다른 환경에 평가한다.|시드 10~14는 최적화 반복, 40일 구간은 시간 이동이다. 동일 시설 후향 검증이며 독립 처리장 전이는 미검증이다.|
 
 ## 고정 조건
 
