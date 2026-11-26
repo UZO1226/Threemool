@@ -1,5 +1,6 @@
 """Resource-matched water outcomes and discrete water-constrained air minima."""
 import argparse
+import json
 from pathlib import Path
 import sys
 
@@ -76,6 +77,17 @@ def tables(root, dest, prefixes):
         daily = {arm: np.array([[report.day_metrics(directory/f"seed_{s}/{arm}_{scale}.npz")
                                 for scale in SCALES] for s in report.SEEDS]) for arm in ARMS}
         means = {arm: values.mean(axis=2) for arm,values in daily.items()}
+        if prefix != 188:
+            for arm,method in [("base","fcsrl"),("actor","fcsrl_actor")]:
+                for i,seed in enumerate(report.SEEDS):
+                    run = root/f"prefix{prefix}"/method/f"seed_{seed}"
+                    entry = json.loads((run/"metrics.json").read_text())
+                    assert entry["steps"] == 401280 and entry["normalizer_and_prior_frozen"]
+                    assert len(json.loads((run/"train_log.json").read_text())) == 66
+                    val = entry["val_final"]
+                    expected = [val["air_m3"],val["nh4_viol_pct"]*14.25,val["do_viol_pct"]*14.25,val["cost"]]
+                    actual = means[arm][i,NATIVE,[0,1,3,4]]
+                    np.testing.assert_allclose(actual,expected,rtol=0,atol=1e-8)
         for i,seed in enumerate(report.SEEDS):
             target = means["base"][i,NATIVE,1:4]
             for arm in ARMS:
