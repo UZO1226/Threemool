@@ -112,8 +112,16 @@ def tables(root, dest, prefixes):
                 intervals.append(dict(prefix=prefix,arm=arm,reference=ref,endpoint="matched",
                                       metric=metric,mean=mean,low=l,high=h,replicates=n))
     dest.mkdir(exist_ok=True,parents=True)
+    matched_air = pd.DataFrame(limits).pivot(index=["prefix","seed"],columns="arm",values="min_air")
+    target_pairs = []
+    for arm,ref in PAIRS:
+        for (prefix,seed), row in matched_air.iterrows():
+            both = np.isfinite(row[arm]) and np.isfinite(row[ref])
+            target_pairs.append(dict(prefix=prefix,seed=seed,arm=arm,reference=ref,comparable=both,
+                                     candidate_air=row[arm],reference_air=row[ref],
+                                     delta_air=row[arm]-row[ref] if both else np.nan))
     for name,records in [("operating_points",rows),("paired_common_air",paired),("quality_target",limits),
-                         ("intervals",intervals),("decision",decisions)]:
+                         ("quality_pairs",target_pairs),("intervals",intervals),("decision",decisions)]:
         pd.DataFrame(records).to_csv(dest/f"{name}.csv",index=False)
 
 
