@@ -12,32 +12,7 @@ from surrogate_dw import train_gbm, build_arrays, STATE
 from darrow_env import AIR_MAX, Dynamics, BatchEnv, load_days, all_episodes
 
 
-def main(raw, out):
-    out.mkdir(parents=True, exist_ok=False)
-    torch.set_num_threads(1)
-    torch.manual_seed(2300)
-    online = raw / 'train_val_test_online_dataset.csv'
-    influent = raw / 'train_val_test_dynamic_influent.csv'
-    table, alignment = add_influent(load(online), influent)
-    splits = split_days(complete_days(table))
-    assert [len(splits[k]) for k in ('train', 'val', 'test')] == [188, 40, 41]
-    assert max(splits['train']) < min(splits['val']) < min(splits['test'])
-    train_table = pd.concat([table.loc[d] for d in splits['train']])
-    zones = [f'air{i}' for i in range(1, 6)]
-    med = train_table[zones].median()
-    pd.to_pickle({'data': table, 'days': splits, 'zone_fractions': (med / med.sum()).to_dict(),
-                  'steps_per_day': 96}, out / 'data.pkl')
-    save(out / 'data_manifest.json', {'source': 'https://www.kaggle.com/competitions/dynamic-modeling-of-wastewater-treatment-process/data',
-         'raw_sha256': {p.name: sha(p) for p in sorted(raw.iterdir()) if p.is_file()},
-         'used_for_training': [online.name, influent.name], 'splits': splits, 'alignment_correlation': alignment,
-         'test_not_evaluated_by_e30': True, 'evaluation_files_have_no_online_quality_labels': True})
-    print('TRAIN surrogate: 25 GBMs, training dates only', flush=True)
-    log = train_gbm(table, splits, out / 'surrogate.pkl')
-    save(out / 'surrogate_fit.json', log)
-    _, day_data = load_days(out / 'data.pkl')
-    # Fit/check both lie inside train. No old model, normalizer or prior is loaded.
-    fit, check = splits['train'][:150], splits['train'][150:]
-
+def fit_prior(day_data, fit, check, out):
     def arrays(days):
         xs, ys = [], []
         for day in days:
@@ -71,6 +46,36 @@ def main(raw, out):
         bc_log.append({'epoch': epoch + 1, 'check_air_mae': float(abs(pred-yv).mean() * AIR_MAX / 2)})
     torch.save(net.state_dict(), out / 'prior.pt')
     save(out / 'normalizer.json', norm.state())
+    return bc_log
+
+
+def main(raw, out):
+    out.mkdir(parents=True, exist_ok=False)
+    torch.set_num_threads(1)
+    torch.manual_seed(2300)
+    online = raw / 'train_val_test_online_dataset.csv'
+    influent = raw / 'train_val_test_dynamic_influent.csv'
+    table, alignment = add_influent(load(online), influent)
+    splits = split_days(complete_days(table))
+    assert [len(splits[k]) for k in ('train', 'val', 'test')] == [188, 40, 41]
+    assert max(splits['train']) < min(splits['val']) < min(splits['test'])
+    train_table = pd.concat([table.loc[d] for d in splits['train']])
+    zones = [f'air{i}' for i in range(1, 6)]
+    med = train_table[zones].median()
+    pd.to_pickle({'data': table, 'days': splits, 'zone_fractions': (med / med.sum()).to_dict(),
+                  'steps_per_day': 96}, out / 'data.pkl')
+    save(out / 'data_manifest.json', {'source': 'https://www.kaggle.com/competitions/dynamic-modeling-of-wastewater-treatment-process/data',
+         'raw_sha256': {p.name: sha(p) for p in sorted(raw.iterdir()) if p.is_file()},
+         'used_for_training': [online.name, influent.name], 'splits': splits, 'alignment_correlation': alignment,
+         'test_not_evaluated_by_e30': True, 'evaluation_files_have_no_online_quality_labels': True})
+    print('TRAIN surrogate: 25 GBMs, training dates only', flush=True)
+    log = train_gbm(table, splits, out / 'surrogate.pkl')
+    save(out / 'surrogate_fit.json', log)
+    _, day_data = load_days(out / 'data.pkl')
+    # Fit/check both lie inside train. No old model, normalizer or prior is loaded.
+    fit, check = splits['train'][:150], splits['train'][150:]
+
+    bc_log = fit_prior(day_data, fit, check, out)
     save(out / 'preparation.json', {'fit_days': fit, 'check_days': check, 'seed': 2300, 'epochs': 40,
          'log': bc_log, 'input_sha256': {str(p): sha(p) for p in (online, influent, out / 'data.pkl', out / 'surrogate.pkl')}})
     print('PREPARED', bc_log[-1], flush=True)
