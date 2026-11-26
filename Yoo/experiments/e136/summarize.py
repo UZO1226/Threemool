@@ -42,6 +42,32 @@ def diagnose():
     return frame
 
 
+def episode_overlap(out, arm):
+    """Partition combined-only excess by overlap within the same above-limit run."""
+    rows = []
+    for seed in prev.SEEDS:
+        d = SRC / f"seed_{seed}"
+        path = d/"combined_1000.npz" if arm == "original" else out/d.name/f"{arm}.npz"
+        with np.load(path) as a, np.load(d/"base_1000.npz") as b:
+            combined, base = a["states"][:, :, 0], b["states"][:, :, 0]
+        values = np.zeros(4)
+        for x, y in zip(combined, base):
+            borders = np.flatnonzero(np.diff(np.r_[False, x > 4, False].astype(int)))
+            for start, end in borders.reshape(-1, 2):
+                shared = np.flatnonzero(y[start:end] > 4)
+                volume = np.maximum(x[start:end]-4,0) * .25 * (y[start:end] <= 4)
+                if len(shared):
+                    first, last = shared[0], shared[-1]
+                    values[:3] += [volume[:first].sum(),volume[first:last+1].sum(),volume[last+1:].sum()]
+                else:
+                    values[3] += volume.sum()
+        values /= len(combined)
+        np.testing.assert_allclose(values.sum(),exposure(combined,base)[1],rtol=0,atol=1e-8)
+        rows.append(dict(seed=seed, arm=arm, **dict(zip(("before_overlap","between_overlaps","after_overlap",
+                                                "no_overlap"), values))))
+    return pd.DataFrame(rows)
+
+
 def direct(delta):
     return ((delta[...,0] <= .05) & (delta[...,1] <= 1e-8) & (delta[...,2] < -1e-8)
             & (delta[...,3] <= 1e-8))
@@ -50,6 +76,8 @@ def direct(delta):
 def summarize(out, dest):
     dest.mkdir(parents=True, exist_ok=True)
     diagnose().to_csv(dest / "exposure.csv", index=False)
+    pd.concat([episode_overlap(out, arm) for arm in ("original","severity","max_air")]).to_csv(
+        dest / "event_overlap.csv", index=False)
     daily, counts, runs = {}, [], []
     for s in prev.SEEDS:
         d = out / f"seed_{s}"
