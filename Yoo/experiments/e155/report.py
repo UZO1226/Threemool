@@ -39,10 +39,10 @@ def daily(out, split, ev, ctrl, module):
     return days, c, a
 
 
-def compare(out, split, ev, ctrl, mod_a, mod_b):
-    """(mod_a 빼기 mod_b) 날짜별 비용과 공기량 차이, 블록 구간 (비교마다 seed 0)."""
+def compare(out, split, ev, ctrl, mod_a, mod_b, ctrl_b=None):
+    """(ctrl, mod_a 빼기 ctrl_b, mod_b) 날짜별 비용과 공기량 차이, 블록 구간 (비교마다 seed 0)."""
     da, ca, aa = daily(out, split, ev, ctrl, mod_a)
-    db, cb, ab = daily(out, split, ev, ctrl, mod_b)
+    db, cb, ab = daily(out, split, ev, ctrl_b or ctrl, mod_b)
     assert da == db
     dc, dair = ca - cb, aa - ab
     clo, chi = R.block_ci(dc, np.random.default_rng(R_SEED))
@@ -75,7 +75,7 @@ def three_way(c):
 def main(a):
     out = a.out
     S, L = {}, []
-    # ---- 사전 검사 ----
+    # 사전 검사
     L += ['# e155 결과', '', '대리 환경 결과이며 현장 성능이 아니다. test 41일은 불러오지 않았다. 판정 규칙은 [README](README.md).', '', '## 사전 검사', '']
     rep = {f'{m}_s{s}': res(out, job('val', 'v11', m, s, 'none')).get('reproduced_e50') for m in R.METHODS for s in R.SEEDS}
     S['reproduced_e50'] = rep
@@ -90,7 +90,7 @@ def main(a):
     fit = json.loads((out / 'risk_fit.json').read_text())
     L.append(f"- 위험 선택기 적합 행 수 {fit[0]['rows']:,} (seed 마다), 빠른 예측과 sklearn 차이 1e-12 이내 (적합 중 검사)")
 
-    # ---- 조건별 평균 ----
+    # 조건별 평균
     L += ['', '## 조건별 평균 (seed 평균, 구성원 5개)', '',
           '| 날 | 평가 모델 | 제어기 | 모듈 | 공기량 m³/23.75h | 하루 비용 | NH4 위반 % | DO 위반 % | 개입 % | 내린 스텝 % |',
           '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
@@ -107,7 +107,7 @@ def main(a):
                 L.append(f"| {split} | {ev} | {LABEL[c]} | {MOD[m]} | {mean['air_m3']:,.0f} | {mean['cost']:.3f} | {mean['nh4_viol_pct']:.2f} | "
                          f"{mean['do_viol_pct']:.2f} | {mean['intervention_pct']:.2f} | {mean['lowered_pct']:.2f} |")
 
-    # ---- H1 ----
+    # H1
     L += ['', '## H1 차단의 몫 (차단 빼기 없음, v1.1)', ''] + CMP_HEAD
     H1 = {}
     for split in ('train', 'val'):
@@ -121,7 +121,7 @@ def main(a):
           + ', '.join(f"{LABEL[m]} {three_way(H1[f'train_{m}'])}" for m in R.METHODS)
           + f". 검증 확인: " + ', '.join(f"{LABEL[m]} {three_way(H1[f'val_{m}'])}" for m in R.METHODS)]
 
-    # ---- H2 ----
+    # H2
     L += ['', '## H2 같은 실행 공기량에서의 차단 개입 (검증, v1.1)', '',
           '| seed | FCSRL 공기 | FCSRL 개입 % | PPO-Lag 세 점 공기 범위 | 보간 PPO-Lag 개입 % | 개입 차이 | 보간 비용 차이 (참고) | 반대 방향 개입 차이 (참고) |',
           '| --- | --- | --- | --- | --- | --- | --- | --- |']
@@ -149,9 +149,10 @@ def main(a):
     vals = [h['diff'] for h in H2 if h['diff'] is not None]
     h2 = neg >= 4 and len(vals) > 0 and float(np.mean(vals)) < 0
     S['H2'] = dict(rows=H2, negative=neg, mean=(float(np.mean(vals)) if vals else None), supported=h2)
-    L += ['', f"- H2: FCSRL 개입이 낮은 seed {neg}/5 (범위 밖은 미지지), 평균 차이 {S['H2']['mean'] if vals else '없음'} -> **{'지지' if h2 else '미지지'}**"]
+    h2_mean = f"{S['H2']['mean']:+.3f}" if vals else '없음'
+    L += ['', f"- H2: FCSRL 개입이 낮은 seed {neg}/5 (범위 밖은 미지지), 평균 차이 {h2_mean} -> **{'지지' if h2 else '미지지'}**"]
 
-    # ---- H3 ----
+    # H3
     L += ['', '## H3 위험 선택 빼기 차단 (같은 정책)', ''] + CMP_HEAD
     H3 = {}
     for split in ('val', 'train'):
@@ -172,7 +173,7 @@ def main(a):
     L += ['', '- H3 (검증): ' + ', '.join(f"{LABEL[m]} **{H3[f'val_{m}']['verdict']}**" for m in R.METHODS)
           + '. 학습 188일 (참고, 위험 선택기를 그 날로 적합): ' + ', '.join(f"{LABEL[m]} {H3[f'train_{m}']['verdict']}" for m in R.METHODS)]
 
-    # ---- H4 ----
+    # H4
     L += ['', '## H4 다른 대리 모델에서의 차단과 위험 선택 (검증)', ''] + CMP_HEAD
     H4 = {}
     for ev in ('past148', 'dofix'):
@@ -188,6 +189,17 @@ def main(a):
     L += ['', f"- H4 (past148, ABAC 와 세 방법 차단 모두 구간 0 아래): **{'지지' if h4 else '미지지'}**. "
           + ', '.join(f"{LABEL[c]} {three_way(H4[f'past148_{c}_shield'])}" for c in CTRLS)
           + '. dofix 차단: ' + ', '.join(f"{LABEL[c]} {three_way(H4[f'dofix_{c}_shield'])}" for c in CTRLS)]
+
+    # 사후 탐색 (사전 등록 밖)
+    L += ['', '## 사후 탐색: 같은 차단 위에서 학습 정책 빼기 ABAC (사전 등록 밖, 판정 아님)', '',
+          '결과를 본 뒤 정한 비교라 판정에 쓰지 않는다. 학습 정책은 seed 5개 평균, ABAC 는 하나.', ''] + CMP_HEAD
+    POST = {}
+    for split, ev in (('train', 'v11'), ('val', 'v11'), ('val', 'dofix'), ('val', 'past148')):
+        for m in R.METHODS:
+            c = compare(out, split, ev, m, 'shield', 'shield', ctrl_b='abac')
+            POST[f'{split}_{ev}_{m}'] = c
+            L.append(f"| {split} {ev} {LABEL[m]} | {c['n']} | {fmt(c)} |")
+    S['posthoc_policy_minus_abac_under_shield'] = POST
     S['test_evaluated'] = False
     Path(a.md).write_text('\n'.join(L) + '\n')
     Path(a.json).write_text(json.dumps(S, indent=1, ensure_ascii=False) + '\n')
