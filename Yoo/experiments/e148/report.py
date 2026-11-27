@@ -19,8 +19,8 @@ def describe(frame):
     hit = frame.dropna(subset=["onset_min"])
     near = np.isclose(hit.onset_min, hit.nh_min)
     return dict(pairs=len(frame), decisions=len(frame[ID].drop_duplicates()), hits=len(hit),
-                median_min=hit.onset_min.median(), q25=hit.onset_min.quantile(.25),
-                q75=hit.onset_min.quantile(.75), small_min=frame.small_min.median(),
+                median_min=hit.onset_min.median() if len(hit) else np.nan, q25=hit.onset_min.quantile(.25),
+                q75=hit.onset_min.quantile(.75), small_min=frame.small_min.median() if frame.small_min.notna().any() else np.nan,
                 nh_before=(hit.nh_min < hit.onset_min).sum(), nh_same=near.sum(),
                 nh_later=(hit.nh_min > hit.onset_min).sum(), nh_never=hit.nh_min.isna().sum(),
                 positive_gap=(hit.gap>0).sum(),
