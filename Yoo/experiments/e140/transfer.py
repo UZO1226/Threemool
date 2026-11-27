@@ -1,6 +1,6 @@
 """Replay the e139 policies at later DARROW dates with no refitting."""
 import argparse
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import pickle
 import subprocess
@@ -95,8 +95,13 @@ def run(out, jobs):
     evaluate((out, 108, 108, 10, True))
     print("Recorded-air replay and adjacent-window trajectory check complete.", flush=True)
     tasks = [(out, n, offset, s, False) for n, offset in CELLS for s in folds.report.SEEDS]
-    with ProcessPoolExecutor(jobs) as pool:
-        for cell in pool.map(evaluate, tasks):
+    def worker(task):
+        directory, n, offset, seed, _ = task
+        subprocess.run([sys.executable, __file__, str(directory), "--cell", str(n), str(offset), str(seed)], check=True)
+        return n, offset, seed
+
+    with ThreadPoolExecutor(jobs) as pool:
+        for cell in pool.map(worker, tasks):
             print(*cell, flush=True)
 
 
@@ -104,5 +109,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("out", type=Path)
     parser.add_argument("--jobs", type=int, default=5)
+    parser.add_argument("--cell", type=int, nargs=3)
     args = parser.parse_args()
-    run(args.out, args.jobs)
+    if args.cell:
+        evaluate((args.out, *args.cell, False))
+    else:
+        run(args.out, args.jobs)
