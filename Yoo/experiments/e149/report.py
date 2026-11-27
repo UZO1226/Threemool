@@ -69,7 +69,10 @@ def report(source,dest):
     dest.mkdir(exist_ok=True,parents=True)
     pd.DataFrame(summaries).to_csv(dest/"summary.csv",index=False)
     pd.DataFrame(decisions).to_csv(dest/"decisions.csv",index=False)
-    pairs.to_csv(dest/"pairs.csv.gz",index=False,compression={"method":"gzip","mtime":0})
+    selection = ["day","onset","old_loss","projected","changed","changed_current","changed_prior"]
+    outcomes = [f"gap_{when}_{metric}" for when in ("before","after") for metric in METRICS[:2]]
+    outcomes += [f"prior_cut_change_{metric}" for metric in METRICS]
+    pairs[KEYS+selection+outcomes].to_csv(dest/"pairs.csv",index=False)
 
 
 if __name__ == "__main__":
