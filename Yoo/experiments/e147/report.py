@@ -34,6 +34,7 @@ def report(source, dest):
     own["votes"] = votes
     own["previous_votes"] = older.groupby(KEY).supports.sum()
     for name in M:
+        own["ensemble_" + name] = current.groupby(KEY)[name].mean()
         own["previous_" + name] = older.groupby(KEY)[name].mean()
     own = own.reset_index()
     assert len(own) == 3000
@@ -75,6 +76,7 @@ def report(source, dest):
                                      current_unique=len(chosen.drop_duplicates(DEC)),
                                      retained_unique=len(transferable.drop_duplicates(DEC)),
                                      dates=transferable.day.nunique(), seeds=transferable.seed.nunique(),
+                                     **{"current_" + m:group["ensemble_" + m].mul(primary).mean() for m in M},
                                      **{m:group["previous_" + m].mul(primary).mean() for m in M}))
     # For each unique unanimous current decision, identify which criteria fail in the earlier version.
     chosen_keys = unique.loc[unique.votes == 5, DEC]
