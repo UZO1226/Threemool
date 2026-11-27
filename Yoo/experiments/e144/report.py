@@ -36,7 +36,7 @@ def rates(anchor, pairs, tol):
     return dates.assign(tol=tol)
 
 
-def main(root, dest):
+def main(root, dest, actor_root=None):
     anchors, pairs, effects = (load(root,k) for k in ("anchors","pairs","daily"))
     assert len(anchors)==69000 and not anchors.duplicated(KEY).any()
     assert len(effects)==3000 and not effects.duplicated(KEY[:3]).any()
@@ -69,11 +69,24 @@ def main(root, dest):
     daily.to_csv(dest/"daily_effect.csv")
     print(summary.loc[(slice(None),.025),cols+["different_days","better_days","both_versions_days"]].to_string())
     print(daily.to_string())
+    if actor_root is not None:
+        actor_anchors = load(actor_root,"anchors")
+        actor_pairs = load(actor_root,"pairs")
+        pd.testing.assert_frame_equal(anchors,actor_anchors)
+        baseline = [*KEY,"choice","alternative","alternative_air","gap"]
+        pd.testing.assert_frame_equal(pairs[baseline],actor_pairs[baseline])
+        counter = rates(actor_anchors,actor_pairs,.025)
+        alternative = counter.groupby("prefix")[cols].sum()
+        alternative["better_days"] = (counter.groupby(["prefix","day"]).better.sum()>0).groupby("prefix").sum()
+        alternative.loc[108,"both_versions"] = np.nan
+        alternative.to_csv(dest/"actor_continuation.csv")
+        print(alternative.to_string())
 
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root",type=Path)
     parser.add_argument("dest",type=Path)
+    parser.add_argument("--actor-root",type=Path)
     args=parser.parse_args()
-    main(args.root,args.dest)
+    main(args.root,args.dest,args.actor_root)
