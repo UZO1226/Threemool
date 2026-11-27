@@ -126,6 +126,7 @@ def main(out):
     assert len(set(dates))==228 and dates==sorted(dates)
     table = pd.read_pickle(prep/"data.pkl")["data"]
     fits, frames, rows = {}, [], []
+    timing = []
     for n in PREFIXES:
         history, target = dates[:n], dates[n:n+40]
         assert len(target)==40 and history[-1]<target[0]
@@ -150,6 +151,11 @@ def main(out):
             for name, members in sets.items():
                 result[name]=[k in members for k in keys]
             result=result[result[list(COHORTS)].any(axis=1)].assign(fit=fit,period=n)
+            if fit==n:
+                for i in result.index[result.near & (result.actual==0) & (result.direct>0) & ~result.day.isin(DISCOVERY)]:
+                    item = result.loc[i]
+                    timing.append(dict(day=item.day, t=item.t, actual_min=int((truth[i,1:]>4).sum())*15,
+                                       **{m+"_min":int((paths[m][i]>4).sum())*15 for m in MODELS}))
             frames.append(result)
             schedule="rolling" if fit==n else "frozen148"
             rows.extend(summarize(result,schedule,str(n)))
@@ -166,6 +172,7 @@ def main(out):
     assert set(zip(rolling.loc[idx,"day"],rolling.loc[idx,"t"]))=={("2021-10-30",51),("2021-11-04",64)}
     all_events.to_csv(out/"windows.csv",index=False)
     pd.DataFrame(rows).to_csv(out/"summary.csv",index=False)
+    pd.DataFrame(timing).to_csv(out/"false_case_minutes.csv",index=False)
 
 
 if __name__=="__main__":
