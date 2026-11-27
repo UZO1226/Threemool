@@ -11,7 +11,7 @@ main 23ac905에서 Lee와 Park의 README, RESULT, 열린 PR(0개)을 확인했�
 | OUR와 산소전달을 구분한다 | [산소전달 실험의 계측 방법](https://www.mdpi.com/2073-4441/13/14/1964) 실험 장치 및 측정 절에 DO 외에 송기량, 배출가스 O₂와 CO₂, 압력, 온도가 나온다. [연속식 및 회분식 산소 질량수지의 차이](https://www.sciencedirect.com/science/article/abs/pii/S0048969721027224) 식 1. 계측 장비 구현을 이식하지 않는다. | OUR 직접 열, 배출가스, 독립 산소전달 보정의 출처를 확인한다. 기상 조성 및 반응조 산소 수지가 없는 상태에서 DO 기울기나 유입 생성기의 S_O에 OUR 정답을 부여하지 않는다. |
 | 시점 및 센서 대응 | [DARROW 원자료](https://www.kaggle.com/competitions/dynamic-modeling-of-wastewater-treatment-process/data), [사업단 Tilburg 소개](https://www.wastewater.ai/the-project/), e35가 보관한 제공자 원문. e30/prep_darrow.py의 load, complete_days와 e142/hour.py의 first_cross를 확인했다. | 세 호기조 DO 및 말단 NH4/NO3의 실제 15분 간격으로 묶는다. 미래의 실제 운전 명령도 모르는 경보를 시험하므로 e142의 미래 공기 입력은 제외한다. 개발 날짜 3개 기간은 e150과 맞춘다. |
 | 사건 예측과 오경보를 구분한다 | [Saito와 Rehmsmeier의 희귀 사건 PR 평가](https://doi.org/10.1371/journal.pone.0118432). scikit-learn 1.9.1의 linear_model/_logistic.py LogisticRegression.fit, metrics/_ranking.py average_precision_score와 비보간 AP 구현을 확인했다. [공식 코드](https://github.com/scikit-learn/scikit-learn/blob/1.9.1/sklearn/metrics/_ranking.py) | 동일 훈련 행과 모델에서 센서만 교체한다. 연속 점수의 AP, Brier, 동결 경보의 적중과 오경보를 따로 평가한다. |
- 
+
 ## 실행 전 결정
 
 1. 2021년 5월 6일 이후 첫 108, 148, 188개 온전한 날짜로 학습하고 각각 바로 다음 40일을 평가한다. 개발 마지막 날은 12월 19일이다. 하루의 15분 시점 중 과거 60분, 미래 60분이 그날 안에 있고 현재 NH4가 4 mg/L 이하인 시점만 포함한다. 다음 네 관측 중 하나라도 4를 초과하면 양성이다. 동일 사건을 앞둔 여러 판단이 겹치므로 분모는 일별 의사결정 기회다.
