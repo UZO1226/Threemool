@@ -105,7 +105,8 @@ def metrics(air, states):
                             15*(states[:,:,2:].max(2)>2).sum(1)))
 
 
-def inspect(env, older, policy, air, states):
+def inspect(env, older, policy, air, states, actor_followup=False):
+    followup = policy.agent if actor_followup else policy
     counts = []
     records = []
     for t in range(0,92,4):
@@ -125,18 +126,19 @@ def inspect(env, older, policy, air, states):
         parents,inverse = np.unique(rows,return_inverse=True)
         joint = np.r_[parents,rows]
         moves = np.r_[actions[parents,win[parents]],actions[rows,cols]]
-        nh,do = branch(env,env.dyn,joint,moves,policy)
+        nh,do = branch(env,env.dyn,joint,moves,followup)
         k = len(parents)
         # Check the incumbent continuation on the original source member against the archived four-step result.
         orig = env.member[parents]
-        np.testing.assert_array_equal(nh[:k][np.arange(k),orig],(states[parents,t:t+4,0]>4).sum(1))
-        np.testing.assert_array_equal(do[:k][np.arange(k),orig],(states[parents,t:t+4,2:].max(2)>2).sum(1))
+        if not actor_followup:
+            np.testing.assert_array_equal(nh[:k][np.arange(k),orig],(states[parents,t:t+4,0]>4).sum(1))
+            np.testing.assert_array_equal(do[:k][np.arange(k),orig],(states[parents,t:t+4,2:].max(2)>2).sum(1))
         def votes(N):
             return (N[:k][inverse]==4).astype(int)-(N[k:]==4).astype(int)
         v = votes(nh)
         old_net = np.full(len(rows),np.nan)
         if older is not None:
-            old_nh,_ = branch(env,older,joint,moves,policy)
+            old_nh,_ = branch(env,older,joint,moves,followup)
             old_net = votes(old_nh).sum(1)
         records.extend(zip(rows,np.full(len(rows),t),win[rows],cols,old.action_to_air(actions[rows,cols]),
                            gap[rows,cols],v.sum(1),(v!=0).sum(1),3*(nh[k:]-nh[:k][inverse]).sum(1),
@@ -144,12 +146,18 @@ def inspect(env, older, policy, air, states):
     return pd.DataFrame(counts,columns=["episode","t","high"]),pd.DataFrame(records,columns=PAIR_COLS)
 
 
-def run(n,seed,out):
+def run(n,seed,out,actor_followup=False):
     torch.set_num_threads(1)
     base.DeviceConfig().select_device(-1)
     env,older,episodes,policy,air,states = load(n,seed)
-    counts,pairs = inspect(env,older,policy,air,states)
+    counts,pairs = inspect(env,older,policy,air,states,actor_followup)
     assert len(counts)==23*200
+    folder = out/f"p{n}_s{seed}"
+    folder.mkdir()
+    for name,table in (("anchors",counts),("pairs",pairs)):
+        save_table(folder,name,table,episodes)
+    if actor_followup:
+        return
     best = pairs[(pairs.gap<=.025+1e-12)&(pairs.net>=4)].sort_values(
         ["episode","t","net","alternative_air","alternative"],ascending=[True,True,False,True,True])
     first = best.drop_duplicates("episode").set_index("episode")
@@ -174,12 +182,13 @@ def run(n,seed,out):
     daily["start"] = start
     daily["first_air_delta_m3"] = np.where(start>=0,(rate-air[np.arange(200),start])/4,0.)
     daily["episode"] = np.arange(len(episodes))
-    folder = out/f"p{n}_s{seed}"
-    folder.mkdir()
-    for name,table in (("anchors",counts),("pairs",pairs),("daily",daily)):
-        table["day"] = [episodes[i][0] for i in table.episode]
-        table["member"] = [episodes[i][1] for i in table.episode]
-        table.to_csv(folder/f"{name}.csv.gz",index=False)
+    save_table(folder,"daily",daily,episodes)
+
+
+def save_table(folder,name,table,episodes):
+    table["day"] = [episodes[i][0] for i in table.episode]
+    table["member"] = [episodes[i][1] for i in table.episode]
+    table.to_csv(folder/f"{name}.csv.gz",index=False)
 
 
 if __name__=="__main__":
@@ -188,8 +197,9 @@ if __name__=="__main__":
     p.add_argument("--check",action="store_true")
     p.add_argument("--prefix",type=int,choices=[108,148,188])
     p.add_argument("--seed",type=int,choices=range(10,15))
+    p.add_argument("--actor-followup",action="store_true")
     a=p.parse_args()
     if a.check:
         check()
     else:
-        run(a.prefix,a.seed,a.out)
+        run(a.prefix,a.seed,a.out,a.actor_followup)
