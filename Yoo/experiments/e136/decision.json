@@ -1,0 +1,17 @@
+{
+  "base": {
+    "passed_seeds": 0,
+    "mean_pass": true,
+    "candidate": false
+  },
+  "original": {
+    "passed_seeds": 0,
+    "mean_pass": false,
+    "candidate": false
+  },
+  "max_air": {
+    "passed_seeds": 1,
+    "mean_pass": true,
+    "candidate": false
+  }
+}

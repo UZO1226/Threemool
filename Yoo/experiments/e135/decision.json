@@ -1,0 +1,31 @@
+{
+  "comparisons": {
+    "base": {
+      "joint_seeds": 0,
+      "mean_joint": true,
+      "all_upper_nonpositive": false
+    },
+    "actor": {
+      "joint_seeds": 0,
+      "mean_joint": false,
+      "all_upper_nonpositive": false
+    },
+    "extra": {
+      "joint_seeds": 1,
+      "mean_joint": false,
+      "all_upper_nonpositive": false
+    },
+    "base_risk": {
+      "joint_seeds": 1,
+      "mean_joint": false,
+      "all_upper_nonpositive": false
+    },
+    "actor_penalty": {
+      "joint_seeds": 0,
+      "mean_joint": false,
+      "all_upper_nonpositive": false
+    }
+  },
+  "primary_candidate": false,
+  "supported": false
+}

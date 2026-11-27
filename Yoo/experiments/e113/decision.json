@@ -1,0 +1,62 @@
+{
+  "held": {
+    "joint_seeds": 1,
+    "joint_seed_ids": [
+      0
+    ],
+    "delta": {
+      "air_m3": 1213.53995107449,
+      "nh4_pct": -4.0394736842105265,
+      "do_pct": -0.20789473684210544,
+      "cost": -4.035000000000002,
+      "within_pct": 9.833333333333327
+    },
+    "pass_gate": false
+  },
+  "winter": {
+    "joint_seeds": 2,
+    "joint_seed_ids": [
+      0,
+      4
+    ],
+    "delta": {
+      "air_m3": -2633.3283040436218,
+      "nh4_pct": 0.3178947368421053,
+      "do_pct": -1.0305263157894737,
+      "cost": -0.6769999999999967,
+      "within_pct": 9.0
+    },
+    "pass_gate": false
+  },
+  "winter_early": {
+    "joint_seeds": 2,
+    "joint_seed_ids": [
+      0,
+      4
+    ],
+    "delta": {
+      "air_m3": -2907.787308473722,
+      "nh4_pct": 2.9115789473684215,
+      "do_pct": -0.76,
+      "cost": 2.044000000000001,
+      "within_pct": 1.4
+    },
+    "pass_gate": false
+  },
+  "winter_late": {
+    "joint_seeds": 2,
+    "joint_seed_ids": [
+      0,
+      4
+    ],
+    "delta": {
+      "air_m3": -2358.8692996135214,
+      "nh4_pct": -2.275789473684209,
+      "do_pct": -1.3010526315789472,
+      "cost": -3.398000000000002,
+      "within_pct": 16.6
+    },
+    "pass_gate": false
+  },
+  "adopt": false
+}

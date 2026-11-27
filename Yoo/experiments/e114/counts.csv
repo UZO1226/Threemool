@@ -1,0 +1,16 @@
+rule,period,candidates,discordant,days,pairs01_14
+primary,all,20,11,10,2
+primary,early,10,5,5,1
+primary,late,10,6,5,1
+strict,all,11,5,5,0
+strict,early,5,0,0,0
+strict,late,6,5,5,0
+wide,all,42,20,14,4
+wide,early,19,8,7,2
+wide,late,23,12,7,2
+base_close,all,5,3,3,0
+base_close,early,2,1,1,0
+base_close,late,3,2,2,0
+do_ok,all,20,10,9,1
+do_ok,early,10,4,4,0
+do_ok,late,10,6,5,1

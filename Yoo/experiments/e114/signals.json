@@ -1,0 +1,10 @@
+[
+  {
+    "metric": "pre",
+    "both_halves": false
+  },
+  {
+    "metric": "duration",
+    "both_halves": false
+  }
+]

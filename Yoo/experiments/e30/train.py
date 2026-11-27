@@ -58,14 +58,14 @@ def collect(agent, c, env, days, rng):
     return {k: v.reshape(T*N, *v.shape[2:]) for k, v in b.items()}, diag
 
 
-def train(a):
+def train(a, *, load_data=load_days, dynamics=Dynamics, agent_factory=make_agent):
     a.out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
     DeviceConfig().select_device(-1)
     c = config(a.updates)
-    agent = make_agent(a.method, a.seed, a.prepared, c)
-    splits, days = load_days(a.prepared / 'data.pkl')
-    env = BatchEnv(days, Dynamics(a.prepared / 'surrogate.pkl'))
+    agent = agent_factory(a.method, a.seed, a.prepared, c)
+    splits, days = load_data(a.prepared / 'data.pkl')
+    env = BatchEnv(days, dynamics(a.prepared / 'surrogate.pkl'))
     rng = np.random.default_rng(a.seed)
     save(a.out / 'effective_config.json', {'method': a.method, 'seed': a.seed, 'config': c.to_dict(),
          'prepared': str(a.prepared), 'evaluation_split': 'val', 'model_selection': 'last',

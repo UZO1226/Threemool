@@ -1,0 +1,5 @@
+arm,target,auc
+native,native,0.5580800362130476
+native,consensus,0.6699145971350557
+consensus,native,0.5553331331456948
+consensus,consensus,0.8228231466182938
