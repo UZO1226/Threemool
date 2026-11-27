@@ -21,16 +21,18 @@ def report(source, dest):
     assert data.groupby(KEY + ["version"]).size().eq(5).all()
     assert np.isfinite(data[M].values).all()
     data["yes"] = success(data)
-    # Duplicated visits to one physical starting state must have the same signs and outputs.
+    # Keep every observed replica. A model supports a decision only if all its duplicate runs pass.
     groups = data.groupby(DEC + ["version", "evaluator"])
-    assert groups.yes.nunique().max() == 1
-    assert (groups[M].max() - groups[M].min()).abs().max().max() < 1e-7
+    spread = groups[M].max() - groups[M].min()
+    spread["mixed"] = groups.yes.nunique() > 1
+    spread["copies"] = groups.size()
+    data["supports"] = groups.yes.transform("all")
     current = data[data.version == "current"]
     older = data[data.version == "previous"]
-    votes = current.groupby(KEY).yes.sum()
+    votes = current.groupby(KEY).supports.sum()
     own = current[current.evaluator == current.origin].set_index(KEY).copy().sort_index()
     own["votes"] = votes
-    own["previous_votes"] = older.groupby(KEY).yes.sum()
+    own["previous_votes"] = older.groupby(KEY).supports.sum()
     for name in M:
         own["previous_" + name] = older.groupby(KEY)[name].mean()
     own = own.reset_index()
@@ -44,7 +46,7 @@ def report(source, dest):
                                   unique_decisions=int((distinct.votes == level).sum())))
         for method, mask in (("own", group.yes), ("four_or_more", group.votes >= 4),
                              ("unanimous", group.votes == 5),
-                             ("other_four", group.votes - group.yes.astype(int) == 4)):
+                             ("other_four", group.votes - group.supports.astype(int) == 4)):
             selected = group[mask]
             result = group[M].mul(mask.astype(float), axis=0)
             summary = dict(prefix=n, method=method, origins=len(group), selected=len(selected),
@@ -74,7 +76,21 @@ def report(source, dest):
                                      retained_unique=len(transferable.drop_duplicates(DEC)),
                                      dates=transferable.day.nunique(), seeds=transferable.seed.nunique(),
                                      **{m:group["previous_" + m].mul(primary).mean() for m in M}))
+    # For each unique unanimous current decision, identify which criteria fail in the earlier version.
+    chosen_keys = unique.loc[unique.votes == 5, DEC]
+    prior_checks = older.merge(chosen_keys, on=DEC, validate="many_to_one")
+    prior_checks["air_ok"] = prior_checks.air_m3 < -.05
+    for name in M[1:]:
+        prior_checks[name + "_ok"] = prior_checks[name] <= 1e-8
+    reqs = ["air_ok"] + [name + "_ok" for name in M[1:]]
+    failures = prior_checks.groupby(DEC)[reqs].all().reset_index()
+    failures = failures.merge(unique[DEC + ["day", "first", "previous_votes"]], on=DEC, validate="one_to_one")
+    assert ((failures.previous_votes == 5) == failures[reqs].all(axis=1)).all()
     dest.mkdir(parents=True, exist_ok=True)
+    failures.to_csv(dest / "previous_criteria.csv", index=False)
+    duplicate = spread[spread.copies > 1].reset_index().groupby(["prefix", "version"])
+    audits = duplicate[M].max().join(duplicate.mixed.sum().rename("mixed_votes")).join(duplicate.size().rename("repeated_evaluations"))
+    audits.to_csv(dest / "duplicate_check.csv")
     for name, rows in (("votes", histogram), ("effects", effects), ("by_seed", byseed),
                        ("transfer", transfer), ("by_day", byday)):
         pd.DataFrame(rows).to_csv(dest / f"{name}.csv", index=False)
