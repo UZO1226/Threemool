@@ -1,0 +1,4 @@
+prefix,air_m3,nh4_min,excess,do_min,first_air_delta_m3,switched_episodes,joint_seeds,switched_dates
+108,0.0,0.0,0.0,0.0,0.0,0,0,0
+148,0.0,0.0,0.0,0.0,0.0,0,0,0
+188,-1.188788873143494,0.0,-0.0001742975699128877,-0.015,0.28125,1,1,1

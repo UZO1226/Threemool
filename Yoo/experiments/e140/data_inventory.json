@@ -1,0 +1,165 @@
+{
+  "files": {
+    "evaluation_dynamic_influent.csv": {
+      "sha256": "8842efffa96f4e01aa2504a4793967c3a7719e890d732874bdeea4be9afd6196",
+      "columns": [
+        "Unnamed: 0",
+        "Time",
+        "Q_in",
+        "X_BH",
+        "X_I",
+        "X_ND",
+        "X_P",
+        "X_S",
+        "S_ALK",
+        "S_I",
+        "S_ND",
+        "S_NH",
+        "S_NO",
+        "S_O",
+        "S_S",
+        "X_BA"
+      ]
+    },
+    "evaluation_lab_dataset.xlsx": {
+      "sha256": "f2fe3220c21814689390f5c7b699edcd95e4f0adf3aaf19bfdfe37a132778677",
+      "sheets": {
+        "influent": [
+          null,
+          "COD",
+          "BOD5",
+          "TKN",
+          "Ntot",
+          "TSS",
+          "Q"
+        ]
+      }
+    },
+    "evaluation_online_dataset.csv": {
+      "sha256": "28e53bf41d392e59c2e5ef220e07dd0f2960da53b1b26e32c4779bcfe39e399a",
+      "columns": [
+        "DATETIME",
+        "Q_inf",
+        "Q_air_1",
+        "Q_air_2",
+        "Q_air_3",
+        "Q_air_4",
+        "Q_air_5",
+        "Temp"
+      ]
+    },
+    "train_val_test_dynamic_influent.csv": {
+      "sha256": "8c22eba0527371792511af966d52641ddf35209f6b25394da387fccd0380c81e",
+      "columns": [
+        "Unnamed: 0",
+        "Time",
+        "Q_in",
+        "X_BH",
+        "X_I",
+        "X_ND",
+        "X_P",
+        "X_S",
+        "S_ALK",
+        "S_I",
+        "S_ND",
+        "S_NH",
+        "S_NO",
+        "S_O",
+        "S_S",
+        "X_BA"
+      ]
+    },
+    "train_val_test_lab_dataset.xlsx": {
+      "sha256": "4a7ef4616c88ff6642127ed41ac43b126f07768dec67bf1ff81dd21122990aaa",
+      "sheets": {
+        "influent": [
+          null,
+          "COD",
+          "BOD5",
+          "TKN",
+          "Ntot",
+          "TSS",
+          "Q"
+        ],
+        "effluent": [
+          null,
+          "COD",
+          "BOD5",
+          "TKN",
+          "NH4",
+          "NOx",
+          "Ntot",
+          "TSS",
+          "Q"
+        ]
+      }
+    },
+    "train_val_test_online_dataset.csv": {
+      "sha256": "0a8d06be567d012f5d3791763c9d910c83aac4787d5183a7a505c9b4fc7c9a82",
+      "columns": [
+        "DATETIME",
+        "Q_inf",
+        "DO_1",
+        "DO_2",
+        "DO_3",
+        "NO3",
+        "NH4",
+        "Q_air_1",
+        "Q_air_2",
+        "Q_air_3",
+        "Q_air_4",
+        "Q_air_5",
+        "Temp"
+      ]
+    }
+  },
+  "periods": {
+    "train_val_test": {
+      "raw_start": "2021-05-05 11:57:00",
+      "raw_end": "2022-01-30 11:57:00",
+      "gaps_minutes": {},
+      "all_full_days": 269,
+      "input_days": 188,
+      "first_day": "2021-05-06",
+      "last_day": "2021-11-09",
+      "min": {
+        "Temp": 14.018329218132251,
+        "Q_inf": 95.29417316891296,
+        "air": 1095.4576710625365
+      },
+      "max": {
+        "Temp": 28.42086533983884,
+        "Q_inf": 17536.956878096502,
+        "air": 8388.12354530202
+      },
+      "mean_recorded_air_95": 89621.56077292375
+    },
+    "evaluation": {
+      "raw_start": "2022-03-13 22:57:00",
+      "raw_end": "2022-06-11 23:42:00",
+      "gaps_minutes": {
+        "2022-03-27 03:12:00": 90.0
+      },
+      "all_full_days": 88,
+      "input_days": 88,
+      "first_day": "2022-03-14",
+      "last_day": "2022-06-10",
+      "min": {
+        "Temp": 0.0,
+        "Q_inf": 0.0,
+        "air": 0.0
+      },
+      "max": {
+        "Temp": 26.750403560800503,
+        "Q_inf": 23702.98046875,
+        "air": 6573.790579937986
+      },
+      "mean_recorded_air_95": 91333.6309989757
+    }
+  },
+  "evaluation_fraction_outside_training_range": {
+    "Temp": 0.052083333333333336,
+    "Q_inf": 0.10535037878787878,
+    "air": 0.0023674242424242425
+  }
+}

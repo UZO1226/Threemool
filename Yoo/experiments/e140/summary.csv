@@ -1,0 +1,7 @@
+prefix,offset,mode,seeds,both_feasible,saved,mean_paired_delta_air,passed
+108,148,fixed,5,2,0,7096.393033447261,False
+108,148,retrospective,5,2,0,7096.393033447261,False
+108,188,fixed,5,0,0,,False
+108,188,retrospective,5,1,0,1221.2888623699837,False
+148,188,fixed,5,0,0,,False
+148,188,retrospective,5,2,0,10835.969133181345,False
