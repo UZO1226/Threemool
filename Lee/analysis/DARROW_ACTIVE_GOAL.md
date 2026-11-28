@@ -1,5 +1,17 @@
 # Active DARROW research goal
 
+## Renewed active objective, 2026-11-29
+
+The user explicitly renewed autonomous research after e76 delivery. The goal
+is active again: improve our own e63 matched-air controller with NH4 and DO
+reported separately, preserve all original criteria and final test41, and
+continue after failed hypotheses or merges. Completed Lee-only work should
+be merged through passing PRs and existing private artifact delivery.
+The goal-cleared status below describes the previous completed bounded task.
+e77 now reconstructs e76 and diagnoses conditional tail failures. e78 is
+prospectively specified before implementation. No robust controller gain
+has yet been established. Model admission alone cannot complete the goal.
+
 ## Latest status, 2026-11-29
 
 e76 is complete and rejected for controller admission. All five seeds improve
