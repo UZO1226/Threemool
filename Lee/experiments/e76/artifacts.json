@@ -1,0 +1,114 @@
+{
+  "trial": "e76",
+  "fresh_seed_block": false,
+  "new_model_fitting": true,
+  "source_data_included": false,
+  "projection_parameters_fitted": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "captured_training_arrays_included": false,
+  "test_evaluated": false,
+  "frozen_environment_dependencies": {
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
+    "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+    "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
+    "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
+    "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
+    "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
+    "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
+    "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+  },
+  "scope": "All five next-DO supervised models, calibrated margins, complete admission outcomes and independent raw/held audits. No controller evaluation or new environment-training transition. Base NN and frozen-world weights restored from referenced earlier archives.",
+  "files": {
+    "Threemool/Lee/experiments/e42/environment_freeze.json": {
+      "bytes": 3289,
+      "sha256": "0c4d0e845b0d8aa51574d69b9941074c7fa3c413683a23f57e34a207c8ace1ad"
+    },
+    "Threemool/Lee/experiments/e64/baseline_authentication.json": {
+      "bytes": 12138,
+      "sha256": "8cdc37cb38daf4ee715725d611f2f5106b9dfae1639389577225fb889cb6cdcb"
+    },
+    "Threemool/Lee/experiments/e74/artifacts.json": {
+      "bytes": 31341,
+      "sha256": "6254fba0819495eba2df237a0eecc64d954e9b5288f00992ef2064229320a9b1"
+    },
+    "Threemool/Lee/experiments/e76/residual_check.json": {
+      "bytes": 1228,
+      "sha256": "9cbd9f4f9cfdc498538e38ef870c7986c7494bb5b96713aaeebaf6f2242630b5"
+    },
+    "metadata/FCSRL_LICENSE": {
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    "results/e76_do_forecast/audit.json": {
+      "bytes": 4904,
+      "sha256": "52a55222d565f7097f50bde19c6fcd554caea39ab79530f5d7cadc27411bb405"
+    },
+    "results/e76_do_forecast/seed_0/do_model.pkl": {
+      "bytes": 367588,
+      "sha256": "5cadbbc5a7d155d33ad0b018cad91ac63ebb0486b4b87f3008cafac6c6f740da"
+    },
+    "results/e76_do_forecast/seed_0/fit_summary.json": {
+      "bytes": 14204,
+      "sha256": "6a73521acb6870f3b76724f41a21deac3be249966b0093d97fb79f766279d42c"
+    },
+    "results/e76_do_forecast/seed_1/do_model.pkl": {
+      "bytes": 367508,
+      "sha256": "24b0310ee2f6f6d85d6c59af5ded973d546fb25e7ba4fc73d79516e4128065b9"
+    },
+    "results/e76_do_forecast/seed_1/fit_summary.json": {
+      "bytes": 14160,
+      "sha256": "716e5ee2ac44ab8245a4273f827e6da5d6789ed8f464fbcf94971c330dda990f"
+    },
+    "results/e76_do_forecast/seed_2/do_model.pkl": {
+      "bytes": 367644,
+      "sha256": "6c2b78434af4a14a18f9a65ff71b8d0c8023ea14403d63ff6d285a30e5ffd58e"
+    },
+    "results/e76_do_forecast/seed_2/fit_summary.json": {
+      "bytes": 14189,
+      "sha256": "7f0e81cd744f7e59c0635a9d999eff2d174da2d5ac40c30ac4bcd11651cc2b92"
+    },
+    "results/e76_do_forecast/seed_3/do_model.pkl": {
+      "bytes": 367644,
+      "sha256": "dd3ca82cc3793b8525deef90ac8caa537f4b5b601877a1ecf4d5398f913403bc"
+    },
+    "results/e76_do_forecast/seed_3/fit_summary.json": {
+      "bytes": 14196,
+      "sha256": "a9935e27b11c66b4b32f10bdf0e0fdd2db4c286c126e834a9660942cadf8db28"
+    },
+    "results/e76_do_forecast/seed_4/do_model.pkl": {
+      "bytes": 367740,
+      "sha256": "222dae1d77cc3acf416dd2c8401b4a421104127441a55ee37640318acbc52482"
+    },
+    "results/e76_do_forecast/seed_4/fit_summary.json": {
+      "bytes": 14195,
+      "sha256": "d0dbb3a3d01a5fa437d209f057914ec491d618fb6c53783fde6b4784241d94e0"
+    },
+    "results/e76_do_forecast/study_manifest.json": {
+      "bytes": 1847,
+      "sha256": "66713bb6e49d34e14d494fd13e52e0cd0405ef24cab11c223e4041f53cd9f8d7"
+    },
+    "results/e76_do_forecast/study_status.json": {
+      "bytes": 156,
+      "sha256": "d199c60d01bd8092cba310ef1064d1eca1c3c0bb42096d76fa9b66e04f11d912"
+    },
+    "results/e76_do_forecast/summary.json": {
+      "bytes": 78833,
+      "sha256": "c6766830b0a869bba2bdde435947144835a3b7d2fb1c7627a9a3cdbd597aa4cc"
+    }
+  },
+  "archive": {
+    "name": "lee-e76-residual-do-forecasts.zip",
+    "bytes": 803466,
+    "sha256": "281c895beb18719f1b8a1a0dfd0fdc528aa43120c7165222b511d5d392712645"
+  },
+  "remote": {
+    "release_id": 443333191,
+    "tag": "lee-e42-e44-policy-comparison-20261113",
+    "asset_id": 805303302,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

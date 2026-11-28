@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "negative_changes_preserved": true,
+  "physical_values_above_one_preserved": true,
+  "physical_floor_after_addition": true,
+  "zero_change_exact_persistence": true,
+  "unchanged_margin_and_max_threshold_rule": true,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee/experiments/e76/check_residual.py": "c72b6d86187bfce89866592f5f143c2ff4560cd179e59e47ffdae7d3577129f9",
+    "Lee/experiments/e76/residual_forecast.py": "54bfcf79a157136d3b192194bf147d861713aed946f7a17145020dffa61362cb",
+    "Lee/experiments/e75/check_forecast.py": "65e3095d5df2cb26fa710b6dd27f27f847d29514d4823ab74f3aaa01872d6979",
+    "Lee/experiments/e75/do_forecast.py": "4115e168014c8a44ecb0b40778852a1d276506611e750b871985fee461819bf1",
+    "Lee/experiments/e75/forecast_data.py": "13af1deb221ddaf4f583efaa06843d8247489c3ac5662d73dbcedf396eddc5b7",
+    "Lee/experiments/e56/rate_model.py": "6da72c695016c153f86142204e0dd063e181f4b7ba97c39376b5745bee7f67da",
+    "Lee/experiments/e56/targets.py": "628e907f8556b049420686f68918a850a08858e76e17a120140f2308b5405102",
+    "Lee/experiments/e55/fast_cost.py": "47e8371b853c2fab6088abc3640486471a59621baefbf9d8601209f02afbb79f"
+  }
+}

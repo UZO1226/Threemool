@@ -1,5 +1,20 @@
 # Active DARROW research goal
 
+## Latest status, 2026-11-29
+
+e76 is complete and rejected for controller admission. All five seeds improve
+DO MSE against persistence, but seeds0 and1 fail95% upper coverage and
+seeds1 and4 increase violation misses. Only2 of5 pass every condition.
+The independent reconstruction and raw prediction audit pass. No controller
+or final test evaluation is run. See Lee/experiments/e76/results.md,
+summary.json, audit.json and artifacts.json for complete evidence.
+The five forecast weights are preserved in private draft443333191,
+asset805303302, SHA256
+281c895beb18719f1b8a1a0dfd0fdc528aa43120c7165222b511d5d392712645.
+The delivery inventory now includes15 archives. Earlier prospective e76
+statements below are historical. The automatic goal was cleared; this
+bounded request ends with delivery and merge, without a new study loop.
+
 ## New active objective, 2026-11-17
 
 Improve our own e63 matched controller. Other team members' rankings are not

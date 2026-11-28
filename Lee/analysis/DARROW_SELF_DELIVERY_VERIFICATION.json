@@ -171,6 +171,20 @@
       "file_count": 19
     },
     {
+      "index": "Lee/experiments/e76/artifacts.json",
+      "index_sha256": "02d8a989ba9b10e5b4246afa8e35818b8a720ea6e190b766f3aa0c60bdbacc22",
+      "release_id": 443333191,
+      "asset_id": 805303302,
+      "archive": {
+        "name": "lee-e76-residual-do-forecasts.zip",
+        "bytes": 803466,
+        "sha256": "281c895beb18719f1b8a1a0dfd0fdc528aa43120c7165222b511d5d392712645"
+      },
+      "remote_size_digest_and_draft_verified": true,
+      "local_zip_entries_verified": true,
+      "file_count": 19
+    },
+    {
       "index": "Lee/experiments/e68/held_artifacts.json",
       "index_sha256": "8ca487e9b4afd0f9f8881046cf7aac72d7aadb30d21f56533fb551749999b7de",
       "release_id": 443333191,
@@ -200,6 +214,6 @@
     }
   ],
   "new_uploads": 0,
-  "verifier_sha256": "e3310f9a66a361f1f7695890700267963ba4e8ba23605dbfa09e748557e45055",
+  "verifier_sha256": "8274405bd542d1542bc0f551af20df67be256ae59e906da4c8c5a49dbe899b82",
   "scope": "Current remote asset identity, draft, size and SHA256 plus every locally available ZIP entry. Does not infer scientific success or goal completion."
 }
