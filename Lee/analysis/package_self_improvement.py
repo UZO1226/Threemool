@@ -17,7 +17,7 @@ def sha(path):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71', 'e72', 'e73', 'e74', 'e75'), required=True)
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71', 'e72', 'e73', 'e74', 'e75', 'e76'), required=True)
     parser.add_argument('--fresh', action='store_true')
     for name in ('workspace', 'study', 'out', 'index'):
         parser.add_argument('--' + name, type=Path, required=True)
@@ -133,7 +133,7 @@ def main():
             add(results / 'e71_study/comparison.json')
         for path in (results / preflight_name).rglob('*.json'):
             add(path)
-    elif args.kind == 'e75':
+    elif args.kind in ('e75', 'e76'):
         summary = json.loads((args.study / 'summary.json').read_text())
         audit = json.loads((args.study / 'audit.json').read_text())
         status = json.loads((args.study / 'study_status.json').read_text())
@@ -141,7 +141,7 @@ def main():
         assert summary['policy_seeds'] == audit['policy_seeds'] == list(range(5))
         assert status['phase'] == 'complete' and status['terminal'] and status['current_policy_seed'] is None
         assert audit['passed'] and sha(args.study / 'summary.json') == audit['summary_sha256']
-        assert sha(ROOT / 'Lee/experiments/e75/audit_forecast.py') == audit['audit_source_sha256']
+        assert sha(ROOT / f'Lee/experiments/{args.kind}/audit_forecast.py') == audit['audit_source_sha256']
         assert not summary['test_evaluated'] and not summary['controller_evaluation']
         assert summary['new_environment_queries'] == audit['new_environment_queries'] == 0
         for name, expected in summary['source_sha256'].items():
@@ -151,7 +151,8 @@ def main():
         assert certificate['passed'] and sha(certificate_path) == summary['baseline_certificate_sha256']
         add(certificate_path)
         add(ROOT / 'Lee/experiments/e74/artifacts.json')
-        add(ROOT / 'Lee/experiments/e75/forecast_check.json')
+        control_name = 'forecast_check.json' if args.kind == 'e75' else 'residual_check.json'
+        add(ROOT / f'Lee/experiments/{args.kind}' / control_name)
         for seed in range(5):
             record = summary['records'][seed]
             checked = audit['records'][seed]
@@ -166,6 +167,9 @@ def main():
             assert record['base_checkpoint_hashes'] == certificate['records'][seed]['base_checkpoint_hashes']
             assert sha(folder / 'fit_summary.json') == checked['fit_summary_sha256']
             assert sha(folder / 'do_model.pkl') == checked['model_sha256'] == record['model_sha256']
+            if args.kind == 'e76':
+                assert record['model_target'] == 'next maxDO minus current maxDO'
+                assert record['max_original_compiled_raw_change_difference'] <= 1e-12
             add(folder / 'do_model.pkl')
         assert summary['all_models_admitted'] == audit['all_models_admitted'] == all(r['admission']['passed'] for r in summary['records'])
     elif args.kind == 'e72':
@@ -248,14 +252,14 @@ def main():
     add(ROOT / 'Lee/experiments/e42/environment_freeze.json')
     files['metadata/FCSRL_LICENSE'] = ROOT / 'Lee/code/darrow/FCSRL_LICENSE'
     freeze = json.loads((ROOT / 'Lee/experiments/e42/environment_freeze.json').read_text())
-    manifest = {'trial': args.kind, 'fresh_seed_block': args.fresh, 'new_model_fitting': args.kind == 'e75', 'source_data_included': False,
+    manifest = {'trial': args.kind, 'fresh_seed_block': args.fresh, 'new_model_fitting': args.kind in ('e75', 'e76'), 'source_data_included': False,
                 'projection_parameters_fitted': args.kind in ('e69', 'e71', 'e73', 'e74'),
                 'residual_banks_included': False, 'pit_banks_included': False,
                 'captured_training_arrays_included': False, 'test_evaluated': False,
                 'frozen_environment_dependencies': freeze['frozen_files_sha256'],
                 'scope': 'Audited aggregate outputs and provenance. Agent trials include policy/rate weights; non-agent studies reuse frozen environment and referenced prior model archives. Frozen model/data dependencies require separate restoration.',
                 'files': {name: {'bytes': path.stat().st_size, 'sha256': sha(path)} for name, path in sorted(files.items())}}
-    if args.kind == 'e75':
+    if args.kind in ('e75', 'e76'):
         manifest['scope'] = 'All five next-DO supervised models, calibrated margins, complete admission outcomes and independent raw/held audits. No controller evaluation or new environment-training transition. Base NN and frozen-world weights restored from referenced earlier archives.'
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(args.out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
