@@ -1,0 +1,1066 @@
+{
+  "completed": true,
+  "reconstruction_passed": true,
+  "records": [
+    {
+      "policy_seed": 0,
+      "blocks": {
+        "calibration": {
+          "all": {
+            "n": 72960,
+            "next_do_events": 1592,
+            "onset_events": 393,
+            "false_negatives": 29,
+            "onset_false_negatives": 26,
+            "false_positives": 1903,
+            "persistence_false_negatives": 43,
+            "model_missed_persistence_detected": 5,
+            "model_detected_persistence_missed": 19,
+            "mse": 0.003256990807393706,
+            "upper_coverage": 0.9500137061403509,
+            "residual_quantiles_50_95_975_99": [
+              0.0011005565529409733,
+              0.08084794827566776,
+              0.11552501928531071,
+              0.16293250279675522
+            ],
+            "largest_missed_residual": 0.7956056834847394
+          },
+          "current_do_0_1": {
+            "n": 61396,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0022843027983873755,
+            "upper_coverage": 0.9613655612743501,
+            "residual_quantiles_50_95_975_99": [
+              4.7886904711830214e-05,
+              0.07182565838010102,
+              0.09793015431408822,
+              0.13841533197053602
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 4480,
+            "next_do_events": 3,
+            "onset_events": 3,
+            "false_negatives": 3,
+            "onset_false_negatives": 3,
+            "false_positives": 0,
+            "persistence_false_negatives": 3,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010806884683865443,
+            "upper_coverage": 0.8272321428571429,
+            "residual_quantiles_50_95_975_99": [
+              0.010875159368778975,
+              0.15887293858056517,
+              0.19565522192989643,
+              0.26506521463641775
+            ],
+            "largest_missed_residual": 0.6580109331310859
+          },
+          "current_do_1p5_2": {
+            "n": 5449,
+            "next_do_events": 390,
+            "onset_events": 390,
+            "false_negatives": 23,
+            "onset_false_negatives": 23,
+            "false_positives": 1512,
+            "persistence_false_negatives": 40,
+            "model_missed_persistence_detected": 2,
+            "model_detected_persistence_missed": 19,
+            "mse": 0.006025323809567442,
+            "upper_coverage": 0.9311800330335841,
+            "residual_quantiles_50_95_975_99": [
+              0.006542858688391329,
+              0.09668423677440154,
+              0.14853706034860586,
+              0.2368155560981538
+            ],
+            "largest_missed_residual": 0.7956056834847394
+          },
+          "current_do_2_plus": {
+            "n": 1635,
+            "next_do_events": 1199,
+            "onset_events": 0,
+            "false_negatives": 3,
+            "onset_false_negatives": 0,
+            "false_positives": 391,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 3,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.009869212156332316,
+            "upper_coverage": 0.9229357798165138,
+            "residual_quantiles_50_95_975_99": [
+              -0.008574272369928249,
+              0.10479030746894405,
+              0.16458366789303758,
+              0.23365325633078224
+            ],
+            "largest_missed_residual": 0.30591299951546613
+          }
+        },
+        "held": {
+          "all": {
+            "n": 85120,
+            "next_do_events": 1247,
+            "onset_events": 326,
+            "false_negatives": 33,
+            "onset_false_negatives": 23,
+            "false_positives": 1596,
+            "persistence_false_negatives": 38,
+            "model_missed_persistence_detected": 12,
+            "model_detected_persistence_missed": 17,
+            "mse": 0.003249421786651335,
+            "upper_coverage": 0.9488956766917294,
+            "residual_quantiles_50_95_975_99": [
+              0.001133396930863284,
+              0.08189526220082732,
+              0.1146760992385817,
+              0.15785497783694305
+            ],
+            "largest_missed_residual": 0.7717556462972923
+          },
+          "current_do_0_1": {
+            "n": 72503,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.002338222955904174,
+            "upper_coverage": 0.9572017709612016,
+            "residual_quantiles_50_95_975_99": [
+              -0.00039408524084094676,
+              0.07504516245150547,
+              0.10416052242150928,
+              0.13905979589643258
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 5252,
+            "next_do_events": 2,
+            "onset_events": 2,
+            "false_negatives": 2,
+            "onset_false_negatives": 2,
+            "false_positives": 0,
+            "persistence_false_negatives": 2,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010933939995229288,
+            "upper_coverage": 0.8472962680883473,
+            "residual_quantiles_50_95_975_99": [
+              0.008902508776579943,
+              0.14949261675193495,
+              0.19546298573539733,
+              0.29167631549499307
+            ],
+            "largest_missed_residual": 0.6351011724094475
+          },
+          "current_do_1p5_2": {
+            "n": 6068,
+            "next_do_events": 324,
+            "onset_events": 324,
+            "false_negatives": 21,
+            "onset_false_negatives": 21,
+            "false_positives": 1269,
+            "persistence_false_negatives": 36,
+            "model_missed_persistence_detected": 2,
+            "model_detected_persistence_missed": 17,
+            "mse": 0.005563810213912183,
+            "upper_coverage": 0.9428147659854977,
+            "residual_quantiles_50_95_975_99": [
+              0.00865343233871596,
+              0.08857912149603508,
+              0.13920250245924146,
+              0.20731488309919105
+            ],
+            "largest_missed_residual": 0.7717556462972923
+          },
+          "current_do_2_plus": {
+            "n": 1297,
+            "next_do_events": 921,
+            "onset_events": 0,
+            "false_negatives": 10,
+            "onset_false_negatives": 0,
+            "false_positives": 327,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 10,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.012240825192658405,
+            "upper_coverage": 0.9244410177332305,
+            "residual_quantiles_50_95_975_99": [
+              -0.012647810845229923,
+              0.1244524357326243,
+              0.21742168337283452,
+              0.34396673044457293
+            ],
+            "largest_missed_residual": 0.45647961459019815
+          }
+        }
+      },
+      "model_sha256": "5cadbbc5a7d155d33ad0b018cad91ac63ebb0486b4b87f3008cafac6c6f740da"
+    },
+    {
+      "policy_seed": 1,
+      "blocks": {
+        "calibration": {
+          "all": {
+            "n": 72960,
+            "next_do_events": 78,
+            "onset_events": 12,
+            "false_negatives": 11,
+            "onset_false_negatives": 3,
+            "false_positives": 105,
+            "persistence_false_negatives": 8,
+            "model_missed_persistence_detected": 8,
+            "model_detected_persistence_missed": 5,
+            "mse": 0.002147833048218405,
+            "upper_coverage": 0.9500137061403509,
+            "residual_quantiles_50_95_975_99": [
+              0.0011480817848537606,
+              0.06990951020880705,
+              0.09661752156148026,
+              0.13555304148280917
+            ],
+            "largest_missed_residual": 0.3157864996471593
+          },
+          "current_do_0_1": {
+            "n": 65048,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0015881990244304173,
+            "upper_coverage": 0.9569241175747141,
+            "residual_quantiles_50_95_975_99": [
+              -0.000506660984922136,
+              0.06506176280840237,
+              0.08795218628619388,
+              0.11851708724525538
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3759,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.008830324337892801,
+            "upper_coverage": 0.8326682628358606,
+            "residual_quantiles_50_95_975_99": [
+              0.007437357728688809,
+              0.1466941586995876,
+              0.1808222136592428,
+              0.22936324750111672
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1p5_2": {
+            "n": 4008,
+            "next_do_events": 12,
+            "onset_events": 12,
+            "false_negatives": 3,
+            "onset_false_negatives": 3,
+            "false_positives": 78,
+            "persistence_false_negatives": 8,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 5,
+            "mse": 0.0035199317116646023,
+            "upper_coverage": 0.9573353293413174,
+            "residual_quantiles_50_95_975_99": [
+              0.00653937173177066,
+              0.056777079445057374,
+              0.10491506153126404,
+              0.1522400263885642
+            ],
+            "largest_missed_residual": 0.2744970260289288
+          },
+          "current_do_2_plus": {
+            "n": 145,
+            "next_do_events": 66,
+            "onset_events": 0,
+            "false_negatives": 8,
+            "onset_false_negatives": 0,
+            "false_positives": 27,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 8,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0420389901405123,
+            "upper_coverage": 0.6896551724137931,
+            "residual_quantiles_50_95_975_99": [
+              -0.013505719628499335,
+              0.28253151454386544,
+              0.3044569471641622,
+              0.4179250553191467
+            ],
+            "largest_missed_residual": 0.3157864996471593
+          }
+        },
+        "held": {
+          "all": {
+            "n": 85120,
+            "next_do_events": 86,
+            "onset_events": 11,
+            "false_negatives": 24,
+            "onset_false_negatives": 2,
+            "false_positives": 129,
+            "persistence_false_negatives": 4,
+            "model_missed_persistence_detected": 22,
+            "model_detected_persistence_missed": 2,
+            "mse": 0.002287185646590867,
+            "upper_coverage": 0.948672462406015,
+            "residual_quantiles_50_95_975_99": [
+              0.0009094779247994789,
+              0.07100806398220788,
+              0.09941594615415209,
+              0.13713390937496334
+            ],
+            "largest_missed_residual": 0.37186057453306454
+          },
+          "current_do_0_1": {
+            "n": 76853,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0016434985973672578,
+            "upper_coverage": 0.9567225742651556,
+            "residual_quantiles_50_95_975_99": [
+              -0.0008658706144631934,
+              0.06477959507447685,
+              0.08897842811570279,
+              0.11883531257518119
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3677,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010849962891899106,
+            "upper_coverage": 0.8033723143867283,
+            "residual_quantiles_50_95_975_99": [
+              0.008684333560711854,
+              0.15151576757151794,
+              0.18952626379780652,
+              0.25327973191636655
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1p5_2": {
+            "n": 4417,
+            "next_do_events": 11,
+            "onset_events": 11,
+            "false_negatives": 2,
+            "onset_false_negatives": 2,
+            "false_positives": 103,
+            "persistence_false_negatives": 4,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 2,
+            "mse": 0.004437492667155502,
+            "upper_coverage": 0.9452116821371972,
+            "residual_quantiles_50_95_975_99": [
+              0.006910917267970218,
+              0.07558807301473101,
+              0.1258891044116977,
+              0.188771216787051
+            ],
+            "largest_missed_residual": 0.20789862838972462
+          },
+          "current_do_2_plus": {
+            "n": 173,
+            "next_do_events": 75,
+            "onset_events": 0,
+            "false_negatives": 22,
+            "onset_false_negatives": 0,
+            "false_positives": 26,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 22,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.05133945589601044,
+            "upper_coverage": 0.5491329479768786,
+            "residual_quantiles_50_95_975_99": [
+              0.032418696866768126,
+              0.2695898646431869,
+              0.37091427230806795,
+              0.4295968166320077
+            ],
+            "largest_missed_residual": 0.37186057453306454
+          }
+        }
+      },
+      "model_sha256": "24b0310ee2f6f6d85d6c59af5ded973d546fb25e7ba4fc73d79516e4128065b9"
+    },
+    {
+      "policy_seed": 2,
+      "blocks": {
+        "calibration": {
+          "all": {
+            "n": 72960,
+            "next_do_events": 3020,
+            "onset_events": 494,
+            "false_negatives": 69,
+            "onset_false_negatives": 50,
+            "false_positives": 2114,
+            "persistence_false_negatives": 84,
+            "model_missed_persistence_detected": 24,
+            "model_detected_persistence_missed": 39,
+            "mse": 0.004017788832829483,
+            "upper_coverage": 0.9500137061403509,
+            "residual_quantiles_50_95_975_99": [
+              -0.00048362414395441977,
+              0.08384107796519705,
+              0.12464696853958088,
+              0.18797120711513757
+            ],
+            "largest_missed_residual": 0.881266965333737
+          },
+          "current_do_0_1": {
+            "n": 61391,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0023125839140496806,
+            "upper_coverage": 0.9636591682819957,
+            "residual_quantiles_50_95_975_99": [
+              -0.0010739309914522543,
+              0.07010264015940437,
+              0.10166565410823826,
+              0.14795596054108082
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3940,
+            "next_do_events": 10,
+            "onset_events": 10,
+            "false_negatives": 10,
+            "onset_false_negatives": 10,
+            "false_positives": 0,
+            "persistence_false_negatives": 10,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.01478857004091927,
+            "upper_coverage": 0.8185279187817259,
+            "residual_quantiles_50_95_975_99": [
+              0.0069419521369977755,
+              0.17863182269105388,
+              0.23835796698350548,
+              0.34919419819441666
+            ],
+            "largest_missed_residual": 0.881266965333737
+          },
+          "current_do_1p5_2": {
+            "n": 4609,
+            "next_do_events": 484,
+            "onset_events": 484,
+            "false_negatives": 40,
+            "onset_false_negatives": 40,
+            "false_positives": 1658,
+            "persistence_false_negatives": 74,
+            "model_missed_persistence_detected": 5,
+            "model_detected_persistence_missed": 39,
+            "mse": 0.008486436946846403,
+            "upper_coverage": 0.9260143198090692,
+            "residual_quantiles_50_95_975_99": [
+              0.005033636033212385,
+              0.11023471224171932,
+              0.17790126226034536,
+              0.2827292279859902
+            ],
+            "largest_missed_residual": 0.8397160677532636
+          },
+          "current_do_2_plus": {
+            "n": 3020,
+            "next_do_events": 2526,
+            "onset_events": 0,
+            "false_negatives": 19,
+            "onset_false_negatives": 0,
+            "false_positives": 456,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 19,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.017809629247211297,
+            "upper_coverage": 0.8807947019867549,
+            "residual_quantiles_50_95_975_99": [
+              -0.007815736453518962,
+              0.1809323248533358,
+              0.29154237024223834,
+              0.47209356072651404
+            ],
+            "largest_missed_residual": 0.5735168443627905
+          }
+        },
+        "held": {
+          "all": {
+            "n": 85120,
+            "next_do_events": 2684,
+            "onset_events": 491,
+            "false_negatives": 55,
+            "onset_false_negatives": 42,
+            "false_positives": 2204,
+            "persistence_false_negatives": 73,
+            "model_missed_persistence_detected": 19,
+            "model_detected_persistence_missed": 37,
+            "mse": 0.0035982675791854527,
+            "upper_coverage": 0.9515625,
+            "residual_quantiles_50_95_975_99": [
+              1.1109510237250486e-05,
+              0.08216815552731653,
+              0.11802873057163098,
+              0.1692796382648034
+            ],
+            "largest_missed_residual": 0.8555518519629433
+          },
+          "current_do_0_1": {
+            "n": 71171,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0022013257266002588,
+            "upper_coverage": 0.9639178879037811,
+            "residual_quantiles_50_95_975_99": [
+              -0.0006113887408064622,
+              0.07063658281479873,
+              0.09986750827171217,
+              0.14108482010226056
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 5283,
+            "next_do_events": 4,
+            "onset_events": 4,
+            "false_negatives": 4,
+            "onset_false_negatives": 4,
+            "false_positives": 0,
+            "persistence_false_negatives": 4,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.011294530952933106,
+            "upper_coverage": 0.8358886996024986,
+            "residual_quantiles_50_95_975_99": [
+              0.00589232769278758,
+              0.15710125033055702,
+              0.20798031069313586,
+              0.29315329861550293
+            ],
+            "largest_missed_residual": 0.8555518519629433
+          },
+          "current_do_1p5_2": {
+            "n": 5976,
+            "next_do_events": 487,
+            "onset_events": 487,
+            "false_negatives": 38,
+            "onset_false_negatives": 38,
+            "false_positives": 1760,
+            "persistence_false_negatives": 69,
+            "model_missed_persistence_detected": 6,
+            "model_detected_persistence_missed": 37,
+            "mse": 0.0070103066634532455,
+            "upper_coverage": 0.9360776439089692,
+            "residual_quantiles_50_95_975_99": [
+              0.005826018561935986,
+              0.10073437396084722,
+              0.16037763093841387,
+              0.24941423008617075
+            ],
+            "largest_missed_residual": 0.634070989047957
+          },
+          "current_do_2_plus": {
+            "n": 2690,
+            "next_do_events": 2193,
+            "onset_events": 0,
+            "false_negatives": 13,
+            "onset_false_negatives": 0,
+            "false_positives": 444,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 13,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.017862967809389053,
+            "upper_coverage": 0.8862453531598513,
+            "residual_quantiles_50_95_975_99": [
+              -0.00983660803433506,
+              0.15785033812835,
+              0.23976112080679363,
+              0.4303277657244682
+            ],
+            "largest_missed_residual": 0.24928140252671582
+          }
+        }
+      },
+      "model_sha256": "6c2b78434af4a14a18f9a65ff71b8d0c8023ea14403d63ff6d285a30e5ffd58e"
+    },
+    {
+      "policy_seed": 3,
+      "blocks": {
+        "calibration": {
+          "all": {
+            "n": 72960,
+            "next_do_events": 1687,
+            "onset_events": 504,
+            "false_negatives": 40,
+            "onset_false_negatives": 25,
+            "false_positives": 1834,
+            "persistence_false_negatives": 41,
+            "model_missed_persistence_detected": 23,
+            "model_detected_persistence_missed": 24,
+            "mse": 0.002463565431122103,
+            "upper_coverage": 0.9500137061403509,
+            "residual_quantiles_50_95_975_99": [
+              0.0001899647872399962,
+              0.0672648802467556,
+              0.09284833654504071,
+              0.13249274012934506
+            ],
+            "largest_missed_residual": 0.6393159960052159
+          },
+          "current_do_0_1": {
+            "n": 61922,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0015963985714017837,
+            "upper_coverage": 0.959271341364943,
+            "residual_quantiles_50_95_975_99": [
+              -0.00016961797629612418,
+              0.06081551387181551,
+              0.08190949517769702,
+              0.11206439954177509
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3975,
+            "next_do_events": 5,
+            "onset_events": 5,
+            "false_negatives": 5,
+            "onset_false_negatives": 5,
+            "false_positives": 0,
+            "persistence_false_negatives": 5,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.009435503944787826,
+            "upper_coverage": 0.8520754716981133,
+            "residual_quantiles_50_95_975_99": [
+              0.004151966945560082,
+              0.136076840077135,
+              0.1984444675429526,
+              0.29629137900767044
+            ],
+            "largest_missed_residual": 0.6149514732775319
+          },
+          "current_do_1p5_2": {
+            "n": 5376,
+            "next_do_events": 499,
+            "onset_events": 499,
+            "false_negatives": 20,
+            "onset_false_negatives": 20,
+            "false_positives": 1390,
+            "persistence_false_negatives": 36,
+            "model_missed_persistence_detected": 8,
+            "model_detected_persistence_missed": 24,
+            "mse": 0.005647594333008929,
+            "upper_coverage": 0.9293154761904762,
+            "residual_quantiles_50_95_975_99": [
+              0.004093545764515594,
+              0.08596969598568216,
+              0.12947145986867944,
+              0.21970419259794055
+            ],
+            "largest_missed_residual": 0.6393159960052159
+          },
+          "current_do_2_plus": {
+            "n": 1687,
+            "next_do_events": 1183,
+            "onset_events": 0,
+            "false_negatives": 15,
+            "onset_false_negatives": 0,
+            "false_positives": 444,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 15,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.007718995970088793,
+            "upper_coverage": 0.9069353882631891,
+            "residual_quantiles_50_95_975_99": [
+              -0.00684368819510528,
+              0.1133421672285575,
+              0.1776375491188432,
+              0.2960566669905968
+            ],
+            "largest_missed_residual": 0.3440645865888208
+          }
+        },
+        "held": {
+          "all": {
+            "n": 85120,
+            "next_do_events": 1652,
+            "onset_events": 509,
+            "false_negatives": 43,
+            "onset_false_negatives": 32,
+            "false_positives": 2239,
+            "persistence_false_negatives": 48,
+            "model_missed_persistence_detected": 18,
+            "model_detected_persistence_missed": 23,
+            "mse": 0.0023380507285214007,
+            "upper_coverage": 0.9515390037593985,
+            "residual_quantiles_50_95_975_99": [
+              0.00015734739573380896,
+              0.06607854874056059,
+              0.0931365378819992,
+              0.13511353453454297
+            ],
+            "largest_missed_residual": 0.7877022823772961
+          },
+          "current_do_0_1": {
+            "n": 73690,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0015852925522493741,
+            "upper_coverage": 0.9607002306961596,
+            "residual_quantiles_50_95_975_99": [
+              -0.00018466371787717595,
+              0.059843832051349674,
+              0.08201790640400242,
+              0.11104263555842214
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3583,
+            "next_do_events": 3,
+            "onset_events": 3,
+            "false_negatives": 3,
+            "onset_false_negatives": 3,
+            "false_positives": 0,
+            "persistence_false_negatives": 3,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010830917403380836,
+            "upper_coverage": 0.8222160200948926,
+            "residual_quantiles_50_95_975_99": [
+              0.0057190043816257585,
+              0.15457967447126214,
+              0.2229531109139423,
+              0.3167731561339741
+            ],
+            "largest_missed_residual": 0.7877022823772961
+          },
+          "current_do_1p5_2": {
+            "n": 6178,
+            "next_do_events": 506,
+            "onset_events": 506,
+            "false_negatives": 29,
+            "onset_false_negatives": 29,
+            "false_positives": 1776,
+            "persistence_false_negatives": 45,
+            "model_missed_persistence_detected": 7,
+            "model_detected_persistence_missed": 23,
+            "mse": 0.005223749889978403,
+            "upper_coverage": 0.9292651343476853,
+            "residual_quantiles_50_95_975_99": [
+              0.003105312646928149,
+              0.08232708718757537,
+              0.12819125183103905,
+              0.21555362452382237
+            ],
+            "largest_missed_residual": 0.6227264666531982
+          },
+          "current_do_2_plus": {
+            "n": 1669,
+            "next_do_events": 1143,
+            "onset_events": 0,
+            "false_negatives": 11,
+            "onset_false_negatives": 0,
+            "false_positives": 463,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 11,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0066597758896855125,
+            "upper_coverage": 0.9071300179748353,
+            "residual_quantiles_50_95_975_99": [
+              -0.006553812292653616,
+              0.10992240342726188,
+              0.1626558049976661,
+              0.26240155845826457
+            ],
+            "largest_missed_residual": 0.316945002458795
+          }
+        }
+      },
+      "model_sha256": "dd3ca82cc3793b8525deef90ac8caa537f4b5b601877a1ecf4d5398f913403bc"
+    },
+    {
+      "policy_seed": 4,
+      "blocks": {
+        "calibration": {
+          "all": {
+            "n": 72960,
+            "next_do_events": 1754,
+            "onset_events": 408,
+            "false_negatives": 54,
+            "onset_false_negatives": 38,
+            "false_positives": 1843,
+            "persistence_false_negatives": 49,
+            "model_missed_persistence_detected": 23,
+            "model_detected_persistence_missed": 18,
+            "mse": 0.00286526499456076,
+            "upper_coverage": 0.9500137061403509,
+            "residual_quantiles_50_95_975_99": [
+              3.3572666127190676e-05,
+              0.07351888600983901,
+              0.10689368690033373,
+              0.15892170833064767
+            ],
+            "largest_missed_residual": 0.7068020429171453
+          },
+          "current_do_0_1": {
+            "n": 62024,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0017984099493717307,
+            "upper_coverage": 0.9625628788855927,
+            "residual_quantiles_50_95_975_99": [
+              -0.0006851966546034816,
+              0.06313516973453846,
+              0.08888198111608947,
+              0.12652144973839255
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 3928,
+            "next_do_events": 6,
+            "onset_events": 6,
+            "false_negatives": 6,
+            "onset_false_negatives": 6,
+            "false_positives": 0,
+            "persistence_false_negatives": 6,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.011373356722977127,
+            "upper_coverage": 0.8233197556008147,
+            "residual_quantiles_50_95_975_99": [
+              0.00726771705783269,
+              0.16483929676070777,
+              0.20777780422337064,
+              0.2949250704649683
+            ],
+            "largest_missed_residual": 0.7068020429171453
+          },
+          "current_do_1p5_2": {
+            "n": 5232,
+            "next_do_events": 402,
+            "onset_events": 402,
+            "false_negatives": 32,
+            "onset_false_negatives": 32,
+            "false_positives": 1453,
+            "persistence_false_negatives": 43,
+            "model_missed_persistence_detected": 7,
+            "model_detected_persistence_missed": 18,
+            "mse": 0.006663557174242995,
+            "upper_coverage": 0.9130351681957186,
+            "residual_quantiles_50_95_975_99": [
+              0.006398873213329659,
+              0.10997584582924826,
+              0.15881207478832843,
+              0.2258413778947896
+            ],
+            "largest_missed_residual": 0.6956238607236394
+          },
+          "current_do_2_plus": {
+            "n": 1776,
+            "next_do_events": 1346,
+            "onset_events": 0,
+            "false_negatives": 16,
+            "onset_false_negatives": 0,
+            "false_positives": 390,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 16,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010116485900803671,
+            "upper_coverage": 0.9009009009009009,
+            "residual_quantiles_50_95_975_99": [
+              -0.005104406873507772,
+              0.1353185618798044,
+              0.2142252785744243,
+              0.3060910220649836
+            ],
+            "largest_missed_residual": 0.31085648532500754
+          }
+        },
+        "held": {
+          "all": {
+            "n": 85120,
+            "next_do_events": 1149,
+            "onset_events": 329,
+            "false_negatives": 43,
+            "onset_false_negatives": 33,
+            "false_positives": 1468,
+            "persistence_false_negatives": 32,
+            "model_missed_persistence_detected": 22,
+            "model_detected_persistence_missed": 11,
+            "mse": 0.0024469901208786183,
+            "upper_coverage": 0.954405545112782,
+            "residual_quantiles_50_95_975_99": [
+              0.0015375979093158465,
+              0.06952919819660429,
+              0.1001100230253049,
+              0.144730599979761
+            ],
+            "largest_missed_residual": 0.7385527113535377
+          },
+          "current_do_0_1": {
+            "n": 73981,
+            "next_do_events": 0,
+            "onset_events": 0,
+            "false_negatives": 0,
+            "onset_false_negatives": 0,
+            "false_positives": 0,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.0015337677912936356,
+            "upper_coverage": 0.9667617361214366,
+            "residual_quantiles_50_95_975_99": [
+              0.0006621136470969791,
+              0.058869496031315804,
+              0.08401107179832587,
+              0.11576011085661693
+            ],
+            "largest_missed_residual": null
+          },
+          "current_do_1_1p5": {
+            "n": 4239,
+            "next_do_events": 1,
+            "onset_events": 1,
+            "false_negatives": 1,
+            "onset_false_negatives": 1,
+            "false_positives": 0,
+            "persistence_false_negatives": 1,
+            "model_missed_persistence_detected": 0,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.010662871423130896,
+            "upper_coverage": 0.8063222458126916,
+            "residual_quantiles_50_95_975_99": [
+              0.01101105288684523,
+              0.1603691018333864,
+              0.20184143210953145,
+              0.27062106177256273
+            ],
+            "largest_missed_residual": 0.7385527113535377
+          },
+          "current_do_1p5_2": {
+            "n": 5692,
+            "next_do_events": 328,
+            "onset_events": 328,
+            "false_negatives": 32,
+            "onset_false_negatives": 32,
+            "false_positives": 1156,
+            "persistence_false_negatives": 31,
+            "model_missed_persistence_detected": 12,
+            "model_detected_persistence_missed": 11,
+            "mse": 0.006096588324299282,
+            "upper_coverage": 0.9207659873506676,
+            "residual_quantiles_50_95_975_99": [
+              0.00813818529924637,
+              0.09989772886095917,
+              0.14936593217084557,
+              0.21263292286609356
+            ],
+            "largest_missed_residual": 0.6432289400951623
+          },
+          "current_do_2_plus": {
+            "n": 1208,
+            "next_do_events": 820,
+            "onset_events": 0,
+            "false_negatives": 10,
+            "onset_false_negatives": 0,
+            "false_positives": 312,
+            "persistence_false_negatives": 0,
+            "model_missed_persistence_detected": 10,
+            "model_detected_persistence_missed": 0,
+            "mse": 0.012348039252425638,
+            "upper_coverage": 0.8758278145695364,
+            "residual_quantiles_50_95_975_99": [
+              -0.003291073481834328,
+              0.1612858471917598,
+              0.23847314639957262,
+              0.40666937219028787
+            ],
+            "largest_missed_residual": 0.3869048261954968
+          }
+        }
+      },
+      "model_sha256": "222dae1d77cc3acf416dd2c8401b4a421104127441a55ee37640318acbc52482"
+    }
+  ],
+  "code_commit": "453cd30548c101871e01d4e9140d8f430708db13",
+  "source_sha256": {
+    "Lee/experiments/e77/diagnose.py": "6a77897cb4087185be48c5e44e3149854218e86194ae47f97ab8d502ff274698"
+  },
+  "e76_summary_sha256": "c6766830b0a869bba2bdde435947144835a3b7d2fb1c7627a9a3cdbd597aa4cc",
+  "e76_audit_sha256": "52a55222d565f7097f50bde19c6fcd554caea39ab79530f5d7cadc27411bb405",
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "new_model_fitting": false,
+  "interpretation": "Exposed simulator training-capture diagnosis. Associations are not causal or independent generalization evidence."
+}
