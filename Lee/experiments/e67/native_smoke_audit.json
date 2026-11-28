@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "policy_seed": 0,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": 0.0
+    }
+  },
+  "flat_risk_null_full_native_exact": true,
+  "comparison_summary_sha256": "05b17869fa342066adbddeea1f4cde520e2f09c76f668e38fbe22b2be71c20d1",
+  "audit_source_sha256": "430b134e852232892e4d81653cad80797f74e82909a69d98ba1fb4cb532e2129",
+  "test_evaluated": false
+}

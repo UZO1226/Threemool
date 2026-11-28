@@ -1,0 +1,150 @@
+{
+  "trial": "e72",
+  "fresh_seed_block": false,
+  "new_model_fitting": false,
+  "source_data_included": false,
+  "projection_parameters_fitted": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "captured_training_arrays_included": false,
+  "test_evaluated": false,
+  "frozen_environment_dependencies": {
+    "results\\e40_monotone_quantile\\summary.json": "b86ca7c4e3409aee0e6166726ac1818b0ec9016abe0b9c2f6c68be4671320dfe",
+    "results\\e40_monotone_quantile\\pit_bank.npz": "f27d222f2d84f57728dbe771a6953fef52c22bdeadc06695b5132c07930f87ab",
+    "results\\e40_monotone_quantile\\quantile_0.05.pkl": "ff142855f23c49cb1298274bd7ea3c50af0fcd8643907b8575125d65dfe70bd4",
+    "results\\e40_monotone_quantile\\quantile_0.25.pkl": "d941ce5d127f03c830d162efadb40cdfd1673b3b6d2645bbc4acdd3ce04dfc30",
+    "results\\e40_monotone_quantile\\quantile_0.5.pkl": "2a47bb723a18ecccd635689ef7dd966590cb0ad452d976ffce23e3125197a66e",
+    "results\\e40_monotone_quantile\\quantile_0.75.pkl": "60fc0122d12b36d57226575e627228b103b919eb6e86f24fc880cfc936984cc5",
+    "results\\e40_monotone_quantile\\quantile_0.95.pkl": "2d47ca7abcc0c84af4dd70f3b5ebd3c116f613d7e59e514b8d74e0a26f4da8f8",
+    "Threemool\\Lee\\experiments\\e40\\audit.json": "5bc69ea635089ab78acadb29e13f625c50d118357887412c81356de5133d1a82",
+    "kaggle_data\\darrow_15min.pkl": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355"
+  },
+  "scope": "Audited aggregate outputs and provenance. Agent trials include policy/rate weights; non-agent studies reuse frozen environment and referenced prior model archives. Frozen model/data dependencies require separate restoration.",
+  "files": {
+    "Threemool/Lee/experiments/e42/environment_freeze.json": {
+      "bytes": 3289,
+      "sha256": "0c4d0e845b0d8aa51574d69b9941074c7fa3c413683a23f57e34a207c8ace1ad"
+    },
+    "Threemool/Lee/experiments/e71/artifacts.json": {
+      "bytes": 31314,
+      "sha256": "c62f18a3820a8e5846b228a6d4729a1937d4128e9794ab93ca922aae354c73cd"
+    },
+    "Threemool/Lee/experiments/e71/comparison.json": {
+      "bytes": 12181,
+      "sha256": "6dcf6c8b8d3abaa43ab9f4ecdd5519fe26e528a7d3119fada0bfbe5094175493"
+    },
+    "Threemool/Lee/experiments/e71/fresh_artifacts.json": {
+      "bytes": 33597,
+      "sha256": "56e3e4cb1990082fe4029dbfa8fd5ac9aef9007b1763a91477a3f5c737056937"
+    },
+    "Threemool/Lee/experiments/e71/fresh_comparison.json": {
+      "bytes": 12232,
+      "sha256": "95154764af1daca23facb30012f98e1e3b5e677c8bd0b2ce25349b5fb59a273e"
+    },
+    "metadata/FCSRL_LICENSE": {
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    "results/e72_component_diagnostic/seed_0.json": {
+      "bytes": 8682,
+      "sha256": "dfcce6f65d522f828536dd5d2db16cecbc77deafdf307af7b55c41c5566f57a9"
+    },
+    "results/e72_component_diagnostic/seed_1.json": {
+      "bytes": 8682,
+      "sha256": "21075648258e43fdff5857e66fd177d9f824e1a2a9b0bede35ae1a5bc59884c0"
+    },
+    "results/e72_component_diagnostic/seed_2.json": {
+      "bytes": 8680,
+      "sha256": "e3757f902d6f804054a93f79c9f10847da68d08e6df1521cb4cb1371dd407ff8"
+    },
+    "results/e72_component_diagnostic/seed_3.json": {
+      "bytes": 8684,
+      "sha256": "d573d0b0b930a46fe49663b00280eb1f1c626a99f2c03f693183c120cacf5372"
+    },
+    "results/e72_component_diagnostic/seed_4.json": {
+      "bytes": 8683,
+      "sha256": "57501435aabe21581cabd2ebb4c360952839a9cc9d89224435764bc8ec78e418"
+    },
+    "results/e72_component_diagnostic/seed_5.json": {
+      "bytes": 8687,
+      "sha256": "7e7bc40f1dbd608b2240ee696267b4e3f7877d9979fb1bfda5807e80b8646b67"
+    },
+    "results/e72_component_diagnostic/seed_6.json": {
+      "bytes": 8686,
+      "sha256": "4b92b33947e9ebd0a4ac2db7cdbda83a07d5c3282ca5714941f3c0e0f601bf9f"
+    },
+    "results/e72_component_diagnostic/seed_7.json": {
+      "bytes": 8689,
+      "sha256": "d0233039751ffbb777aa5110937bc40ad337b0e7b0a9481571611fa04aaab315"
+    },
+    "results/e72_component_diagnostic/seed_8.json": {
+      "bytes": 8688,
+      "sha256": "3051098c3386113ce52e278b461cf5a666afa02fc9918a18e3cad6a1352c7cbc"
+    },
+    "results/e72_component_diagnostic/seed_9.json": {
+      "bytes": 8687,
+      "sha256": "7759668cbbd7b59dc7712e30d46d196818e5a4c54b05269c4b660f5407ce3d20"
+    },
+    "results/e72_component_diagnostic/summary.json": {
+      "bytes": 94860,
+      "sha256": "6fbb37eb8953cafc763e61745d26d61957a8048107f7f42fefe0f6441650f278"
+    },
+    "results/e72_component_regimes/seed_0.json": {
+      "bytes": 10784,
+      "sha256": "0b473f40aab03a972c7d7a069a1592983efa03976c3055e9194810cb28897682"
+    },
+    "results/e72_component_regimes/seed_1.json": {
+      "bytes": 10774,
+      "sha256": "83f1684c191cb5525a89e6387741f3b7a25617b542a108947a6797ada0b6f7e1"
+    },
+    "results/e72_component_regimes/seed_2.json": {
+      "bytes": 10795,
+      "sha256": "88b34e5cc925cbe3a89980d8eacf582f793e4acd463f9dc5a725bebbca90b19e"
+    },
+    "results/e72_component_regimes/seed_3.json": {
+      "bytes": 10799,
+      "sha256": "e23f571d5da9e41c566accd3f342fce45b8af84350b3d0b39e53138da6dd1817"
+    },
+    "results/e72_component_regimes/seed_4.json": {
+      "bytes": 10800,
+      "sha256": "a71dce86acbc5615ee469a21b292e61400941953bc055b9dfad1c1158c877698"
+    },
+    "results/e72_component_regimes/seed_5.json": {
+      "bytes": 10779,
+      "sha256": "4a4561b28f509f9363d111c14f8aee09afc809653772b2941acf383cd76d3cbb"
+    },
+    "results/e72_component_regimes/seed_6.json": {
+      "bytes": 10794,
+      "sha256": "79d2b407a307a46b445b7fa44d78475ac50a221bfe15ba3aa5616e7f8f0d3055"
+    },
+    "results/e72_component_regimes/seed_7.json": {
+      "bytes": 10797,
+      "sha256": "9c824bd96ba068dcc5527d250b6f215c2688b3d3652ca9e4413217278c1f88e7"
+    },
+    "results/e72_component_regimes/seed_8.json": {
+      "bytes": 10779,
+      "sha256": "e81ede85d99bb0987af95ae018e7a1a9e0122c3ba3cf88a350514c44818acf0d"
+    },
+    "results/e72_component_regimes/seed_9.json": {
+      "bytes": 10793,
+      "sha256": "60c0088cad0197c9a05eb4e6c89b434f9a8a945c455eafe3580271404bcd172b"
+    },
+    "results/e72_component_regimes/summary.json": {
+      "bytes": 118746,
+      "sha256": "575eaecc01d6e4db81283e8c30545595d031ce8580fe31a5ae6e7ed2e33df53d"
+    }
+  },
+  "archive": {
+    "name": "lee-e72-component-risk-diagnostic.zip",
+    "bytes": 186822,
+    "sha256": "3e854f02dcae78977fe92136030f05e10e1dd98095f5471d2d698cdd19383413"
+  },
+  "remote": {
+    "release_id": 443333191,
+    "tag": "lee-e42-e44-policy-comparison-20261113",
+    "asset_id": 757658153,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

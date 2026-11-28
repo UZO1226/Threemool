@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "policy_seed": 7,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": 0.0
+    },
+    "matched": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": -0.09521484375
+    }
+  },
+  "flat_risk_null_full_native_exact": false,
+  "test_evaluated": false,
+  "summary_sha256": "18481942b43f0ad5847f3fc406e810b4d0a8efa2729a64deb192fa46d5207723",
+  "audit_source_sha256": "7d42e0aac08770999ae0ac8118e66e4e702789a0a7340105863d14d3c0b22960",
+  "scope": "Comparator authentication only, not candidate replication or physical safety."
+}

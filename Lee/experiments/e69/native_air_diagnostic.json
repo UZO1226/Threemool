@@ -1,0 +1,94 @@
+{
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rows": [
+    {
+      "policy_seed": 0,
+      "fit_mean_action_difference": 1.1102230246251565e-16,
+      "held_mean_action_difference": 0.0011097780508044774,
+      "fit_static_equivalent_air_difference_m3": 1.186550857568136e-11,
+      "held_static_equivalent_air_difference_m3": 118.60752917972853,
+      "e63_native_air_m3": 50602.19865019757,
+      "candidate_native_air_m3": 55100.393605461155,
+      "actual_native_air_difference_m3": 4498.194955263585,
+      "actual_native_air_relative_difference": 0.08889327094972034,
+      "full_native_sklearn_trajectory_audit_available": true
+    },
+    {
+      "policy_seed": 1,
+      "fit_mean_action_difference": 5.551115123125783e-17,
+      "held_mean_action_difference": 0.02633900974336828,
+      "fit_static_equivalent_air_difference_m3": 5.93275428784068e-12,
+      "held_static_equivalent_air_difference_m3": 2814.981666322485,
+      "e63_native_air_m3": 65012.59496530605,
+      "candidate_native_air_m3": 64916.17181358865,
+      "actual_native_air_difference_m3": -96.42315171740483,
+      "actual_native_air_relative_difference": -0.0014831457161317897,
+      "full_native_sklearn_trajectory_audit_available": true
+    },
+    {
+      "policy_seed": 2,
+      "fit_mean_action_difference": 5.551115123125783e-17,
+      "held_mean_action_difference": 0.007428221316198136,
+      "fit_static_equivalent_air_difference_m3": 5.93275428784068e-12,
+      "held_static_equivalent_air_difference_m3": 793.8911531686757,
+      "e63_native_air_m3": 42267.21500276268,
+      "candidate_native_air_m3": 47459.12821291486,
+      "actual_native_air_difference_m3": 5191.913210152183,
+      "actual_native_air_relative_difference": 0.12283546975623608,
+      "full_native_sklearn_trajectory_audit_available": true
+    },
+    {
+      "policy_seed": 3,
+      "fit_mean_action_difference": -1.1102230246251565e-16,
+      "held_mean_action_difference": 0.025004891046592093,
+      "fit_static_equivalent_air_difference_m3": -1.186550857568136e-11,
+      "held_static_equivalent_air_difference_m3": 2672.39773060453,
+      "e63_native_air_m3": 67271.3705910377,
+      "candidate_native_air_m3": 67525.39300502023,
+      "actual_native_air_difference_m3": 254.02241398252954,
+      "actual_native_air_relative_difference": 0.00377608500838798,
+      "full_native_sklearn_trajectory_audit_available": true
+    },
+    {
+      "policy_seed": 4,
+      "fit_mean_action_difference": 2.220446049250313e-16,
+      "held_mean_action_difference": 0.003736442155599984,
+      "fit_static_equivalent_air_difference_m3": 2.373101715136272e-11,
+      "held_static_equivalent_air_difference_m3": 399.3322553797483,
+      "e63_native_air_m3": 50043.347030609875,
+      "candidate_native_air_m3": 55430.585726836194,
+      "actual_native_air_difference_m3": 5387.238696226319,
+      "actual_native_air_relative_difference": 0.10765144651358195,
+      "full_native_sklearn_trajectory_audit_available": true
+    }
+  ],
+  "mean_actual_native_air_difference_m3": 3046.9892247814423,
+  "all_native_audits_available": true,
+  "source_sha256": {
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e64\\baseline_authentication.json": "8cdc37cb38daf4ee715725d611f2f5106b9dfae1639389577225fb889cb6cdcb",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_projection_fit\\preflight.json": "7fe5602cd1a87eacfa558ed249b3e1772859fb62a4627c0129df13614522ab23",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\study_manifest.json": "0d649362b515b9a9e3904ecfcbba6168b6d38596a23a769d415984a29d024ba5",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_0\\candidate_native.json": "6d823e3233ce21a997575696e7b17cd5ed91f3e94a8a68591da628bf7d755184",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_0\\action_audit.json": "89859aa8a42e7b3c969dd55c8fb63edcd898a1e659da0d4ec22f00e8605d1cd1",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_1\\candidate_native.json": "05079a5ffe2a5b0c21727221f276c658bfdb2968ed003895add30a1a607edf52",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_1\\action_audit.json": "ed7ca54c0a24bd6d7e6e5d9f59fe0c820c33f3f99eec55913462d04ae71a4314",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_2\\candidate_native.json": "f6a10b14cac1ff0eac61a18f09bc929632a69b1444c3d57fb677acf68c928c8c",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_2\\action_audit.json": "c2df87fe718f37fa1be487d72bb2c13ee07d9e9401461983ba6d1a0ea6811b2c",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_3\\candidate_native.json": "4fb53fc0fa14b7e78cf17d8fb474122c9fdc9ac56ccb394d8d2c638a066e7e29",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_3\\action_audit.json": "2a6d0684c006cf3bf2f0b28b4c146ef7335ff631014320bebd48624e996378ca",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_4\\candidate_native.json": "5d9ece4acb536ea96b9a663c2261779367e91cf79b2f2d1faba7185f40998f9b",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e69_study\\comparisons\\seed_4\\action_audit.json": "69a47f0b937113c05c39280a964a55efdb33d49631faf26dd40e1666d6b7959d"
+  },
+  "generator_sha256": "a7e3fc0b8e0cfc23ca58b55f3dfb46f3d7c8d674322078a90017e7b714b7c141",
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "candidate_selection": false,
+  "scope": "Native air mechanism diagnostic, not a complete matched-air result or success claim.",
+  "interpretation": "Static equivalent volumes rescale mean actions on logged states; they are not executed closed-loop volumes. Native drift can reflect occupancy and date shift, but does not identify a cause."
+}

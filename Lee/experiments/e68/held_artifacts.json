@@ -1,0 +1,421 @@
+{
+  "trial": "e68_fresh_held",
+  "policy_seeds": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "passed": true,
+  "source_data_included": false,
+  "captured_training_arrays_included": false,
+  "residual_banks_included": false,
+  "pit_banks_included": false,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "new_model_fitting": false,
+  "audit_sources_sha256": {
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\audit_reference.py": "7d42e0aac08770999ae0ac8118e66e4e702789a0a7340105863d14d3c0b22960",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\build_reference.py": "a2d209eda32c704644493973405bf662ecff45cb3c52018367230e15051be478",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\fresh_report.py": "02b38e6e8b67c95dac4e979e7e6ed5fd2841d22aa477a43d5f84c26f2d71490b",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\prepare_rates.py": "3d994908066c70d887ea30677b4180db102fdabe4387a2b7359208d294ae3e19",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\run_baselines.py": "bc3093003b23e05ee7c9000e8b6a5358b94e66a55aba1246756b55cc05597755",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e68\\run_references.py": "6b3da53124f2610fb324040c5bc7ca9af0b9f05d77ff9d669986a7d4292ec67d",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\air_match.py": "f54f8e635e16369ba450ecc7086444b7f51db455334b3c8274dad611bec173a3",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\capacity_contrast.py": "51615b0b99561272ab90420d1c6911b4cd84b15b76f5e684bc6544cbc13c8f8f",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_capacity_contrast.py": "42636f543737d325b7821f9582313f55fe871449fa14de6bad31e2c9f0a43849",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_matching.py": "6db5e0588f5c6e05604fd39dc106e2df7c408a7455d3dbb713020127e5fd0487",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\check_report.py": "ac9e515d098cb97cca97678997c4a09aa22b4341089d9345a8efc8d993915a57",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\evaluate_pair.py": "498cdd5543e0252848d281e231139a806d910fd6eba69af299b172207b7da11f",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\native_eval.py": "1302d99f7f54ac540604bfb4542fddce499dfe80e446795e5205019abbff6e2c",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\report.py": "7d791b273f1657cf566bf94297ba91bbf0a58d777ee9a219a52d5dfeacebcb13",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\run_native_batch.py": "89abddd9b7ea8e413adfb82bea59b41f11365f26c2c879dd958132f1964fa856",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e44\\run_pair_batch.py": "11fe389bdf131b38c031b0b837f63290341676e0db8587e97a771713a850b4ee",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_correction.py": "5ebdf729c3758e2614d380270d78fd6b39728ab89fdcda2424d43d90018e0194",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\audit_cost_models.py": "42d133e3ed05df04ebbe192a6dcff038eb8e6b51abcc9279de47066b7877e427",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\capture_env.py": "908632ebbc4bce04924b99880f75faa3e471a1d7d71a05d31ec34b81ff23b9ce",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\check_capture.py": "55cc7aa69748714e809c204c4ee14e66357bdc837465b19ee94be85285654627",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\compare.py": "783b13f5301abacd641f56518a98d29d3d488bdb49cddce839ff4c669b30f47e",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\cost_model.py": "225d1a4ffbe104637d8c9f2c8b28fbf3cd37c8e778038fac8c81ee234ff4d824",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fast_cost.py": "47e8371b853c2fab6088abc3640486471a59621baefbf9d8601209f02afbb79f",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\fit_models.py": "f721baeb4d3b1906961f4d4eda289ccadfb0221971d9ead311f2fe0e03bdbf18",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\policy_io.py": "57352bd9b4d06cdc75411b34f42636bdff023e92b87374e3cf32aa79829a0119",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\run_study.py": "dec0d9d8f3896626b270525a63c9e347a2e0a2624952f6cebec5af388cf72b23",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_capture.py": "d7be3a743ce9514cbd1187766f321ceb0f0d46e43493f8c046043af42dc17f1e",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\train_stream.py": "708e9a6f5e24e520e91a7ab0bc416d699331393ec57f93b849138811b8ddf401",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e55\\verify_base.py": "6a64f0636e01232f9c7575d363bfdeaccf26b0b9697424b980f8de93f4498d27",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\audit_rates.py": "5c6e4766a463e55d7bff224282b1b815b5936983675c14a548e61db3e5a9b576",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\check_rate_model.py": "075f1d1dec4da0f2bf18bd1b0d42828416a2342a1b796eec67d71407808b8cac",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\check_targets.py": "93ee363131f5ab0b8f62698ecaadd0730c71331ebc8bdab7972cce69672f91ad",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\compare_rates.py": "167ff44a2bc912c27628bd80521c235975de1b8e6f029cfe950f200d6ee490b2",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\fit_rates.py": "3072845a1d109ddb1b0f17b6c035eb174d23d099cc250e4f1e83389fe2068216",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\horizon_contrast.py": "fcd558fea55bcfb5c6fc6304c1d0baf93c6b06cfa1555288880b250bed84e12a",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\rate_io.py": "1d0c2d2ba0faca55d5e799d39a16d1326769bd423bc87f67feef5e05c39c7dd3",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\rate_model.py": "6da72c695016c153f86142204e0dd063e181f4b7ba97c39376b5745bee7f67da",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\run_study.py": "1dfdf5ce17e09799f1cf76a348397e87adc493a7f34a55b4edd7cc744d88f4d3",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\streams.py": "674817b67d6acc0cb6e9bac75ce167a5235c61433aa20c9772016392896b3cda",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\summarize_smoke.py": "319c893fd10f516809b212918d76e9722b99aabede08eb2f0d9e2b4d6ebd4f11",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e56\\targets.py": "628e907f8556b049420686f68918a850a08858e76e17a120140f2308b5405102",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\calibrate_dw.py": "b3005cfdaf73622d521af9e262d9956b4d265de543b79cd894ec75805024e7e0",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\curriculum_dw.py": "b7c6063524a014d4636a3203326eb56f446dd87f888d9022ced2fee6cdde6854",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\direct_dynamics.py": "d0d58bd70d2cbec678a6b1818caad6a6ee6b34f22443d368d1bd5779a628617a",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env.py": "53adb88d86de302d5283231254e6b8711f9e21bc97493320c278db2180428fb8",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\env_dw.py": "a1a78f1e36b196f3ba60ac00134a3461e7b0ec062478ff0a7d82ca819eed6ce8",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fast_gbm.py": "2aceeb34c5013857affab218f6d5e615f15d68ecc523b409afd1b9569292c312",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\fcsrl_compat.py": "8f412d0633e94778b7496d0f12dfa21cab5ddfb16c8f48c12aadab3bbbc42b19",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\feasibility_policy.py": "04027155083d756ffcaf5cb033230ccaa8ed412f7f3008e4bd713a8ffde390c2",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_config.py": "9e11cf4eec433601cd914a2f16aeed0c5c55d2f9b27d5fca0cb547e326635eb0",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_fcsrl.py": "56020b2dd8c5477ba78162f7bb9ce7f1bbcc83a96468e92abe8ffa5869a89dc2",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_lag.py": "79e9fb579d9866591f9f94f2bd58cb97415bf5696eac9a8daa8968f27cd20ae4",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\ppo_tail.py": "1a865fe264831f6f3451356a1edae9297bb67f64e66b9ab5c15bd06ba4bd70fb",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\prep_darrow.py": "1472c7c3f0c8362405d3a34dec601ccedbc6f9257eed5df959f35b8721ddfb6a",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate.py": "02bc4716bb3286789b672727c0dd7bb5c505c82f81c31a0a440174e8488072a2",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\surrogate_dw.py": "15f9fc2d2c6d30230538367ad2764354159e9ababb835abff5032f280fd7f963",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\code\\darrow\\train_dw.py": "4a1a4772a1d525e9c8e6c66a7ec0bc1a69046c6c7c6c0a18b51385fc9ec08b10",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e38\\quantile_dynamics.py": "91555cf7433ed02db5c89c7f85326b61eb8e1ef52bf555bd67798d1a5096c62d",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_env.py": "ee8e21d9399c44cc788960de4aad630ee4fa76b666a9e7cc2558368440a881ee",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\check_reset.py": "86ff9feea0c66a4689e22b4a0362af67f83a2a59dee2fcfb0882f94496165d81",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\factual_replay.py": "c419dbdac90e71c235f91e1b3a5cc457d3c446722e7a766d2d9c127225a892e3",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\quantile_env.py": "18e45ea23ca16eb974483ef52801c3a5138f5996d5b7e3dce8df466fce15bd8a",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\rebuild_bank.py": "395a685fb3443bd4726099e743f2e0d3035aa6e95b63afae40a575f93ec99df5",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\run_policies.py": "c9a305fe4e0036882c4291b51c2186b19c21c5ae98e6253a3e9300f401503dc6",
+    "C:\\Users\\user\\Downloads\\IoT_project2\\Threemool\\Lee\\experiments\\e42\\train_policy.py": "dcb6e0adbcfd1920d71562442d940587127ccbaa7c5f2ad1980d9a394c4c2a39"
+  },
+  "scope": "Independent original-sklearn held logged-action errors and date-conditional contrasts. Held updates are excluded from rate fitting, but not from base-policy training. This is not counterfactual candidate quality or fresh observational confirmation.",
+  "rows": [
+    {
+      "policy_seed": 5,
+      "label": "nh4",
+      "held_training_dates": 187,
+      "rate_mse": 0.004265316824501254,
+      "target_mean": 0.07936834273182956,
+      "prediction_mean": 0.08113834137599556,
+      "safe_current_rows": 78611,
+      "safe_current_future_nonzero_windows": 946,
+      "safe_current_rate_mse": 0.0032366406009968537,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0029385652765847948,
+          "paired_date_bootstrap95_ci": [
+            -0.0035568630014306338,
+            -0.002356365801395037
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.06916401753702647,
+          "paired_date_bootstrap95_ci": [
+            -0.08565758966855515,
+            -0.05465387985040508
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 5,
+      "label": "do",
+      "held_training_dates": 187,
+      "rate_mse": 0.0033756949543258066,
+      "target_mean": 0.012546992481203008,
+      "prediction_mean": 0.013965967890534075,
+      "safe_current_rows": 83998,
+      "safe_current_future_nonzero_windows": 1055,
+      "safe_current_rate_mse": 0.0023781981203159584,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0059456226626332575,
+          "paired_date_bootstrap95_ci": [
+            -0.007733649450310647,
+            -0.004311373627199975
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.005072236903475931,
+          "paired_date_bootstrap95_ci": [
+            -0.007246528356225466,
+            -0.0031298668272282002
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 6,
+      "label": "nh4",
+      "held_training_dates": 188,
+      "rate_mse": 0.0039006956437779928,
+      "target_mean": 0.04847274436090226,
+      "prediction_mean": 0.05160089744777864,
+      "safe_current_rows": 81049,
+      "safe_current_future_nonzero_windows": 744,
+      "safe_current_rate_mse": 0.002639929507982532,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0027648941118611054,
+          "paired_date_bootstrap95_ci": [
+            -0.0034784422509580313,
+            -0.0020940905144041584
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.04992432257688394,
+          "paired_date_bootstrap95_ci": [
+            -0.058614527587925985,
+            -0.04185296767967568
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 6,
+      "label": "do",
+      "held_training_dates": 188,
+      "rate_mse": 0.00488040568261375,
+      "target_mean": 0.029523026315789475,
+      "prediction_mean": 0.02917386052161239,
+      "safe_current_rows": 82588,
+      "safe_current_future_nonzero_windows": 1159,
+      "safe_current_rate_mse": 0.002654668654461862,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.00584399646859761,
+          "paired_date_bootstrap95_ci": [
+            -0.007071002574167451,
+            -0.00468432824006777
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.019592437237184065,
+          "paired_date_bootstrap95_ci": [
+            -0.02548009012202,
+            -0.014334513561284236
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 7,
+      "label": "nh4",
+      "held_training_dates": 188,
+      "rate_mse": 0.0036845659371629947,
+      "target_mean": 0.06442571271929826,
+      "prediction_mean": 0.06738574617444157,
+      "safe_current_rows": 79722,
+      "safe_current_future_nonzero_windows": 777,
+      "safe_current_rate_mse": 0.002641088970175599,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0031308939364794452,
+          "paired_date_bootstrap95_ci": [
+            -0.0038919384771479893,
+            -0.0024063242079466287
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.058009248009537814,
+          "paired_date_bootstrap95_ci": [
+            -0.0719942947600241,
+            -0.045403187110412045
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 7,
+      "label": "do",
+      "held_training_dates": 188,
+      "rate_mse": 0.0057705965459819335,
+      "target_mean": 0.025599154135338347,
+      "prediction_mean": 0.02676265982510466,
+      "safe_current_rows": 82954,
+      "safe_current_future_nonzero_windows": 1698,
+      "safe_current_rate_mse": 0.0036969897114107896,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.008916511850008042,
+          "paired_date_bootstrap95_ci": [
+            -0.01095799152033774,
+            -0.0070498262254251615
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.012976124922038729,
+          "paired_date_bootstrap95_ci": [
+            -0.016506641214024967,
+            -0.009815397442895078
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 8,
+      "label": "nh4",
+      "held_training_dates": 186,
+      "rate_mse": 0.004926018860108983,
+      "target_mean": 0.09538592575187971,
+      "prediction_mean": 0.09778978569401027,
+      "safe_current_rows": 77244,
+      "safe_current_future_nonzero_windows": 1047,
+      "safe_current_rate_mse": 0.003710860765962933,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0036004242006679598,
+          "paired_date_bootstrap95_ci": [
+            -0.004285477881268959,
+            -0.002945263613432226
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.07987265637673481,
+          "paired_date_bootstrap95_ci": [
+            -0.09227546985475957,
+            -0.06838089582321669
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 8,
+      "label": "do",
+      "held_training_dates": 186,
+      "rate_mse": 0.001102109118274133,
+      "target_mean": 0.0029703164160401,
+      "prediction_mean": 0.004788741767205411,
+      "safe_current_rows": 84756,
+      "safe_current_future_nonzero_windows": 349,
+      "safe_current_rate_mse": 0.0006937292448609993,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.0022955451737058166,
+          "paired_date_bootstrap95_ci": [
+            -0.0030956815301083633,
+            -0.001556248736897303
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.000610856433311396,
+          "paired_date_bootstrap95_ci": [
+            -0.0009598759529563836,
+            -0.00031069127921511596
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 9,
+      "label": "nh4",
+      "held_training_dates": 187,
+      "rate_mse": 0.0018457006196964953,
+      "target_mean": 0.029149044486215536,
+      "prediction_mean": 0.03192200247791799,
+      "safe_current_rows": 82568,
+      "safe_current_future_nonzero_windows": 289,
+      "safe_current_rate_mse": 0.0010824256250472797,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.001604657045299328,
+          "paired_date_bootstrap95_ci": [
+            -0.0022312862696351222,
+            -0.0010548742507951688
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.04008113907842485,
+          "paired_date_bootstrap95_ci": [
+            -0.04723017813702073,
+            -0.03386032514760113
+          ]
+        }
+      }
+    },
+    {
+      "policy_seed": 9,
+      "label": "do",
+      "held_training_dates": 187,
+      "rate_mse": 0.006829243551471452,
+      "target_mean": 0.03172481986215539,
+      "prediction_mean": 0.030995891603656817,
+      "safe_current_rows": 82387,
+      "safe_current_future_nonzero_windows": 1735,
+      "safe_current_rate_mse": 0.00428209421625106,
+      "controls": {
+        "current_state_persistence": {
+          "rate_mse_difference": -0.008415655806297972,
+          "paired_date_bootstrap95_ci": [
+            -0.010153159068039333,
+            -0.006747842886811993
+          ]
+        },
+        "fit_mean_constant": {
+          "rate_mse_difference": -0.017521010908737845,
+          "paired_date_bootstrap95_ci": [
+            -0.022021873875336193,
+            -0.0134177311261729
+          ]
+        }
+      }
+    }
+  ],
+  "files": {
+    "Threemool/Lee/experiments/e68/artifacts.json": {
+      "bytes": 46406,
+      "sha256": "40c843dc940825fb9cdcb16456492e5a98dbb7e600d506d0c524ff30237836e8"
+    },
+    "Threemool/Lee/experiments/e68/baseline_authentication.json": {
+      "bytes": 11693,
+      "sha256": "c1f0585011df2fd69ec33377c488e2f150eede9e9c8fcda06a52d96592564b80"
+    },
+    "results/e68_fresh_held_audits/seed_5.json": {
+      "bytes": 2287,
+      "sha256": "c59178e7d03786920f35dcc11acccfa615ecccc8d801807a3d39f5fb23ada3ba"
+    },
+    "results/e68_fresh_held_audits/seed_6.json": {
+      "bytes": 2277,
+      "sha256": "2fb322d578fc8c6e50a03e2ae9853f4156c5b0283a57e4efcea121b7c0335dff"
+    },
+    "results/e68_fresh_held_audits/seed_7.json": {
+      "bytes": 2286,
+      "sha256": "a5d84ae900e8c97e7947ddd4f7b97b3b94846f1708ad0c842ceda07eb2be2e68"
+    },
+    "results/e68_fresh_held_audits/seed_8.json": {
+      "bytes": 2285,
+      "sha256": "f3d45d05532394d3f0d8546eea0d48c36a1faad2800dd3b1cfdbdacc3829fdc7"
+    },
+    "results/e68_fresh_held_audits/seed_9.json": {
+      "bytes": 2281,
+      "sha256": "663ec0125dfc6b74c3257a55ce9c90be67b46e206a8b291b77dc1e0daedc3ff3"
+    },
+    "results/e68_fresh_rates/models/h4/seed_5/fit_summary.json": {
+      "bytes": 14726,
+      "sha256": "a9964e207f4acbcbb824e6a8f2a1e6fb8fb46210004dc9eb245d007576b1a604"
+    },
+    "results/e68_fresh_rates/models/h4/seed_6/fit_summary.json": {
+      "bytes": 14731,
+      "sha256": "54e579d17aaff3c1d4315c26033ead07a290fb77f594373a4f2af363ec4eaa74"
+    },
+    "results/e68_fresh_rates/models/h4/seed_7/fit_summary.json": {
+      "bytes": 14732,
+      "sha256": "e53b6c52470cafa2aa1845f7cc8d6d099d3843ddd908504a68b46b6436592846"
+    },
+    "results/e68_fresh_rates/models/h4/seed_8/fit_summary.json": {
+      "bytes": 14703,
+      "sha256": "7483386d16bf356aa772910b344cc07d3bf829f844f9e3da4f37eadfbe21cbab"
+    },
+    "results/e68_fresh_rates/models/h4/seed_9/fit_summary.json": {
+      "bytes": 14726,
+      "sha256": "6d0cdcad3d7615dd675312ec34990acb1e9f7d9b8b387290603ba6e29ead008f"
+    }
+  },
+  "archive": {
+    "name": "lee-e68-fresh-held-audits.zip",
+    "bytes": 57594,
+    "sha256": "6cfb4d75f93715322222777e1d7d124a3febfdda888604cfdfd9146e58dec422"
+  },
+  "remote": {
+    "release_id": 443333191,
+    "tag": "lee-e42-e44-policy-comparison-20261113",
+    "asset_id": 757618888,
+    "size_verified": true,
+    "sha256_verified": true,
+    "draft": true
+  }
+}

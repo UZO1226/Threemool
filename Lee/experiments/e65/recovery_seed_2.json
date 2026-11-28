@@ -1,0 +1,102 @@
+{
+  "reason": "Terminal Windows status-file replacement permission error, not a scientific failure.",
+  "original_manifest_sha256": "0f70220e637092714f894cad738c6d33067ae31b3e1b8059be7fb39bad1408b7",
+  "original_failure_sha256": "ee1a6547f6435145620358da4fe6ca8ac0ec7ae04c7a8e14d53c796961a5e319",
+  "original_log_sha256": "ac1f144045c41e171ea408dcb695429da84c205cd76251f023ff7200c5a49b0f",
+  "original_baseline_sha256": "40b9992401c492414d7eb8d1295a5f71f326dfdb080d92014446b4f207ba2c97",
+  "original_native_sha256": "e23e8a6f20d5edfd76b45a7a39489b8f48af1c6ece9d5604258086603baed392",
+  "previous_query_sources": {
+    "-1.0": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_01.json",
+      "sha256": "1f24c0475c34ead9ddb28301749312eac5637e27ddf4b13ac49438d0e0eb1bef"
+    },
+    "-0.5": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_02.json",
+      "sha256": "8e6b8946b9de8749e304f392672873998a9fc8870972ea7f32ea9fe8f1a3237b"
+    },
+    "-0.25": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_03.json",
+      "sha256": "769e80185e30a5b586d1531e403b87b2bff9c509c02198c1231c1c6b33ac5c2d"
+    },
+    "-0.125": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_04.json",
+      "sha256": "ad189066b268ce002bcc28fd25b674021e918a10c563f7b988da1638ee6c2a78"
+    },
+    "-0.0625": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_05.json",
+      "sha256": "04074ccda82e4a2e69af410f9535d7debb61410b70a3947ee8435188ea16a9c4"
+    },
+    "-0.09375": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_06.json",
+      "sha256": "102e1974e01091bba5eb394b883523561fac3919c61cc6a431dacaec01806639"
+    },
+    "-0.078125": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_07.json",
+      "sha256": "7d215b284a5f385bfb305ffa3e21bb5a6ebaf02077d0ac4d4a5e87fe04df552a"
+    },
+    "-0.0703125": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_08.json",
+      "sha256": "b05aac9c74aed92ea2dac7fb36d570099194c51c63becfd56c3b5c6807d53ea7"
+    },
+    "-0.07421875": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_2\\query_09.json",
+      "sha256": "6294d37ee81a065bc9243e90df7dd702fbac54a69ed69d1f8b90db7661f29c93"
+    }
+  },
+  "reused_calls": [
+    {
+      "kind": "authenticated_baseline",
+      "offset": -0.0712890625
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": 0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": 0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -1.0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.5
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.25
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.125
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.0625
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.09375
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.078125
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.0703125
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.07421875
+    }
+  ],
+  "fresh_offsets": [
+    -0.072265625
+  ],
+  "native_serialization_replay": "Reused original native file, which original pinned compare.py writes only after two exact independently reloaded trajectories.",
+  "new_independent_full_trajectory_audits_required": true,
+  "source_sha256": "192a487d394dcd07e4a33aed6e7bcc0e4d1c2348a720dbdd2ea3fca41525a396"
+}

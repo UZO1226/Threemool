@@ -1,0 +1,186 @@
+{
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "same_base_models_grid_and_primary_reference_verified": true,
+  "metrics": {
+    "candidate_native": {
+      "air_m3": {
+        "projection_mean": 58086.33447276421,
+        "unconstrained_control_mean": 60138.22699637911,
+        "projection_sd": 8134.015939733967,
+        "control_sd": 10143.839550344674,
+        "paired_difference": [
+          -881.9873968248285,
+          -582.7426309135044,
+          -393.541286208143,
+          -6906.92951234254,
+          -1494.2617917854877
+        ],
+        "paired_mean_difference": -2051.8925236149007,
+        "paired_seed_bootstrap95_ci": [
+          -4521.71832300425,
+          -566.9110462136247
+        ]
+      },
+      "cost": {
+        "projection_mean": 15.513625,
+        "unconstrained_control_mean": 15.313624999999998,
+        "projection_sd": 5.758021059655609,
+        "control_sd": 5.839326691574765,
+        "paired_difference": [
+          0.2943749999999987,
+          0.08374999999999844,
+          0.027499999999999858,
+          0.37124999999999986,
+          0.22312499999999957
+        ],
+        "paired_mean_difference": 0.1999999999999993,
+        "paired_seed_bootstrap95_ci": [
+          0.08912499999999923,
+          0.31087499999999935
+        ]
+      },
+      "nh4_viol_pct": {
+        "projection_mean": 16.04171052631579,
+        "unconstrained_control_mean": 15.840526315789475,
+        "projection_sd": 6.210747298978831,
+        "control_sd": 6.288692172322252,
+        "paired_difference": [
+          0.3098684210526308,
+          0.08881578947368318,
+          0.019078947368416976,
+          0.35197368421052744,
+          0.23618421052631433
+        ],
+        "paired_mean_difference": 0.20118421052631455,
+        "paired_seed_bootstrap95_ci": [
+          0.09039473684210293,
+          0.3119736842105262
+        ]
+      },
+      "do_viol_pct": {
+        "projection_mean": 0.28842105263157897,
+        "unconstrained_control_mean": 0.2790789473684211,
+        "projection_sd": 0.42736418765728,
+        "control_sd": 0.4106342111081467,
+        "paired_difference": [
+          0.0,
+          -0.0006578947368421056,
+          0.009868421052631582,
+          0.03881578947368425,
+          -0.0013157894736842103
+        ],
+        "paired_mean_difference": 0.009342105263157903,
+        "paired_seed_bootstrap95_ci": [
+          -0.0007894736842105263,
+          0.025000000000000022
+        ]
+      }
+    },
+    "candidate_matched": {
+      "air_m3": {
+        "projection_mean": 51988.73496244941,
+        "unconstrained_control_mean": 51996.85257452806,
+        "projection_sd": 12889.894421540139,
+        "control_sd": 12885.879950823559,
+        "paired_difference": [
+          10.62563929220778,
+          18.490026813698933,
+          11.915446566410537,
+          -25.416462287132163,
+          -56.20271077839425
+        ],
+        "paired_mean_difference": -8.117612078641832,
+        "paired_seed_bootstrap95_ci": [
+          -36.421829611180875,
+          14.287317210485345
+        ]
+      },
+      "cost": {
+        "projection_mean": 21.167375,
+        "unconstrained_control_mean": 21.7305,
+        "projection_sd": 9.473020482945897,
+        "control_sd": 9.16220652454623,
+        "paired_difference": [
+          -0.1906250000000007,
+          -0.12624999999999886,
+          -0.291249999999998,
+          -1.7718749999999996,
+          -0.43562499999999815
+        ],
+        "paired_mean_difference": -0.5631249999999991,
+        "paired_seed_bootstrap95_ci": [
+          -1.179624999999999,
+          -0.18499999999999944
+        ]
+      },
+      "nh4_viol_pct": {
+        "projection_mean": 22.10263157894737,
+        "unconstrained_control_mean": 22.74131578947368,
+        "projection_sd": 10.106814563185187,
+        "control_sd": 9.709230368343718,
+        "paired_difference": [
+          -0.20131578947368212,
+          -0.13092105263157805,
+          -0.3131578947368432,
+          -2.0894736842105264,
+          -0.4585526315789501
+        ],
+        "paired_mean_difference": -0.638684210526316,
+        "paired_seed_bootstrap95_ci": [
+          -1.3789473684210531,
+          -0.19552631578947272
+        ]
+      },
+      "do_viol_pct": {
+        "projection_mean": 0.1788157894736842,
+        "unconstrained_control_mean": 0.13289473684210526,
+        "projection_sd": 0.2910782383805525,
+        "control_sd": 0.1973711622616657,
+        "paired_difference": [
+          0.0006578947368421052,
+          -0.001973684210526316,
+          0.006578947368421073,
+          0.2243421052631579,
+          0.0
+        ],
+        "paired_mean_difference": 0.04592105263157895,
+        "paired_seed_bootstrap95_ci": [
+          -0.0006578947368421054,
+          0.1355263157894737
+        ]
+      }
+    }
+  },
+  "test_evaluated": false,
+  "new_training": false,
+  "source_sha256": {
+    "results\\e69_study\\comparisons\\seed_0\\summary.json": "903487feefaa1f48b4ad9be6f96bd3c45f21516d2c114c0cadeea430abe9446e",
+    "results\\e69_study\\comparisons\\seed_0\\action_audit.json": "89859aa8a42e7b3c969dd55c8fb63edcd898a1e659da0d4ec22f00e8605d1cd1",
+    "results\\e67_study\\comparisons\\seed_0\\summary.json": "e6d9ee2f7af4cb2d7e5835faf14ed29e4aee5f1d1c62b45cd0eb6890b21780dc",
+    "results\\e67_study\\comparisons\\seed_0\\action_audit.json": "c0c75bd0a8d4dbd6c87fb670ae974c2d0d83ba0474134a08e8be0e446dbc2526",
+    "results\\e69_study\\comparisons\\seed_1\\summary.json": "4297221a4283aeb45f95ae8cd2780b708c8cde974d328a335b69990e9a1d062d",
+    "results\\e69_study\\comparisons\\seed_1\\action_audit.json": "ed7ca54c0a24bd6d7e6e5d9f59fe0c820c33f3f99eec55913462d04ae71a4314",
+    "results\\e67_study\\comparisons\\seed_1\\summary.json": "7c1676761d23b119bf05940f16b2e41ecc20404e2baf034edf5172ebe5347cf6",
+    "results\\e67_study\\comparisons\\seed_1\\action_audit.json": "222605a5daf2a69ca4ceea5bac855b25795349036e4ce4e1b2544b6f5041b9ac",
+    "results\\e69_study\\comparisons\\seed_2\\summary.json": "4a5e5e26d4c424996dbbfe381cd8a373493c861b1da29f52626606c6b2e14ac3",
+    "results\\e69_study\\comparisons\\seed_2\\action_audit.json": "c2df87fe718f37fa1be487d72bb2c13ee07d9e9401461983ba6d1a0ea6811b2c",
+    "results\\e67_study\\comparisons\\seed_2\\summary.json": "88609504803f3d28e6a957dff075e067ebd1a8a69aacd06f98239aecf11e6d4e",
+    "results\\e67_study\\comparisons\\seed_2\\action_audit.json": "acb8979d373a30399bcc2df99b55a13a6fc0b18a5ede8e9080bdf6eee89a2e86",
+    "results\\e69_study\\comparisons\\seed_3\\summary.json": "beb634807a1eefd41f8a1ed2c839b20b144ee661368de4aaa4f812f398472bae",
+    "results\\e69_study\\comparisons\\seed_3\\action_audit.json": "2a6d0684c006cf3bf2f0b28b4c146ef7335ff631014320bebd48624e996378ca",
+    "results\\e67_study\\comparisons\\seed_3\\summary.json": "d1790df2f309a04d23c78d9208fa54abb7432bd4500076f974937d73a499569a",
+    "results\\e67_study\\comparisons\\seed_3\\action_audit.json": "1cc476d8f131fee2ed0fe7c9912f0a29dda08b353ddef5dc76476a02f9ba0d75",
+    "results\\e69_study\\comparisons\\seed_4\\summary.json": "d42cc9e5a91084ded3e36f85bcf9e2c3baea33d6c23acec12dc34a1194e0dffd",
+    "results\\e69_study\\comparisons\\seed_4\\action_audit.json": "69a47f0b937113c05c39280a964a55efdb33d49631faf26dd40e1666d6b7959d",
+    "results\\e67_study\\comparisons\\seed_4\\summary.json": "f1c41445a8e96e65ddecfcddf6f0e0771774c9415e854c38fcac7c03ade40368",
+    "results\\e67_study\\comparisons\\seed_4\\action_audit.json": "3a4e038415c0c9c1aea146fc2838c05b892514d534ac88d68b548a5a6f6a0a3a"
+  },
+  "generator_sha256": "9160b96667a5ea8d20c26db132d294a682ea5249c5a83fec7fb62b4e3901e37e",
+  "scope": "Secondary exploratory mechanism contrast only. Both policies matched air to the same e63 references, not directly to each other. Cannot rescue failed primary e63 criterion."
+}

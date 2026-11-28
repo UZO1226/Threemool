@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "policy_seed": 1,
+  "replays": {
+    "native": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": 0.0,
+      "wrapper_component_guard_passed": true,
+      "wrapper_component_increase_rows": [
+        0,
+        0
+      ],
+      "executed_component_increase_rows_vs_same_state_matched_e63": [
+        656,
+        0
+      ],
+      "mean_executed_predicted_component_delta_vs_same_state_matched_e63": [
+        -0.00018736019091400533,
+        -0.00014810649819435828
+      ],
+      "guard_scope": "Pre-offset wrapper only; post-offset predicted changes are descriptive and not constrained."
+    },
+    "matched": {
+      "independent_sklearn_actions_exact": true,
+      "trajectory_replay_exact": true,
+      "executed_air_accounting_exact": true,
+      "action_rows": 152000,
+      "offset": -0.033203125,
+      "wrapper_component_guard_passed": true,
+      "wrapper_component_increase_rows": [
+        0,
+        0
+      ],
+      "executed_component_increase_rows_vs_same_state_matched_e63": [
+        12029,
+        0
+      ],
+      "mean_executed_predicted_component_delta_vs_same_state_matched_e63": [
+        -8.044922170285836e-05,
+        -0.00016411826271975049
+      ],
+      "guard_scope": "Pre-offset wrapper only; post-offset predicted changes are descriptive and not constrained."
+    }
+  },
+  "flat_risk_fitted_parameters_null_full_native_exact": false,
+  "reference_only_e63_full_native_exact": false,
+  "comparison_summary_sha256": "91cab291e45e3120825e84c556da67657c65d2792145d083c5a8b4065b37b789",
+  "audit_source_sha256": "f8e0bab1d2def3f77f557299fcb3cc3fd7fefaf150724ac9cd08ae4ef673f401",
+  "test_evaluated": false
+}

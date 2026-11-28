@@ -1,0 +1,260 @@
+{
+  "passed": true,
+  "baseline": "e63 matched policy including fixed post-wrapper offset",
+  "policy_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "records": [
+    {
+      "policy_seed": 0,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+        "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+      },
+      "rate_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "comparison_summary_sha256": "88d27b9885d2453762f44f4f51126c3920e5102a64836a4503fd258801b5fe83",
+      "action_audit_sha256": "d442724941c7812751d76f34ac8ad2caffc3162831f4bfc06e4b7f043af7d8f6",
+      "native_file_sha256": "ac208e8bdc109c278830d6382a3d8f11ce63d59d35fbeb7015504e064f50151c",
+      "matched_file_sha256": "03ff0a7b6851077a1c88d089c8f81974b3334966f43ee297ef98f54426bc48ca",
+      "fixed_e63_offset_after_wrapper": -0.08984375,
+      "primary_reference_air_m3": 47199.48484245352,
+      "primary_reference_metrics": {
+        "air_m3": 47199.48484245352,
+        "cost": 23.041875,
+        "nh4_viol_pct": 24.24802631578947,
+        "do_viol_pct": 0.006578947368421053,
+        "reward": -20.977548818868232,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 52.25
+      },
+      "e63_native_metrics": {
+        "air_m3": 50602.19865019757,
+        "cost": 21.29,
+        "nh4_viol_pct": 22.397368421052633,
+        "do_viol_pct": 0.013157894736842105,
+        "reward": -22.489866066754477,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 55.625
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 47194.437990665756,
+        "cost": 24.121875,
+        "nh4_viol_pct": 25.35855263157895,
+        "do_viol_pct": 0.03289473684210526,
+        "reward": -20.975305773629223,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 50.6875
+      }
+    },
+    {
+      "policy_seed": 1,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "00c02245298bbdf5f21beff420641ffb108c5ab42e0531388f817a26ea66cf8b",
+        "normalizer.json": "b0da4f8348001531b9c332a33e72b052062252251737e1316a10c42f6c8235b2",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "9e6a7045a72284cb2b29600ac0c913ccab4d5763201546d28d13537882d4b8f1"
+      },
+      "rate_model_sha256": "1c049797f3739eeaf14e88f09a79d6b09a7b6f79fff9c5b4f94df7bde50a86d7",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "comparison_summary_sha256": "fdc704babf99e20af60fab9fb3abb5760dee9d36199034f647fcfad8d8f8cbf8",
+      "action_audit_sha256": "74defc9b1d8749ccbe4388682a0c0dba9e31adadaf87961514260c16f4654add",
+      "native_file_sha256": "2ee2db39050aae7ff8f4ac48e4b269dc4fdd924a1bf3b73f921bf18c3b7def24",
+      "matched_file_sha256": "f68558250f653db44670d6f4f4d7aa626fd0cce46c174ac970ecbee2c05fe9c1",
+      "fixed_e63_offset_after_wrapper": 0.0078125,
+      "primary_reference_air_m3": 65285.756638693856,
+      "primary_reference_metrics": {
+        "air_m3": 65285.756638693856,
+        "cost": 12.19375,
+        "nh4_viol_pct": 12.754605263157895,
+        "do_viol_pct": 0.08092105263157894,
+        "reward": -29.015891839419492,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 78.4375
+      },
+      "e63_native_metrics": {
+        "air_m3": 65012.59496530605,
+        "cost": 12.205,
+        "nh4_viol_pct": 12.77763157894737,
+        "do_viol_pct": 0.06973684210526315,
+        "reward": -28.894486651247135,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 78.4375
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 65341.394539187306,
+        "cost": 13.33625,
+        "nh4_viol_pct": 13.8625,
+        "do_viol_pct": 0.17565789473684212,
+        "reward": -29.04061979519436,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 76.625
+      }
+    },
+    {
+      "policy_seed": 2,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "5a5ca8c2f639c8509b3f2062ba6fb208d515bf0d6d2035df186aa58a0816ac31",
+        "normalizer.json": "f1270e50a7aa71719dfeb37e168aed7290dea7a0c9e9f1da413cb070f1c3475c",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "7ad6d68d4b0afaf7bce07ece900d964910f5cbfca32c19ed47811c06eebb2834"
+      },
+      "rate_model_sha256": "477eeb3a1f00f7d44dd17d1b12a89c2811bec7f017f3861df449cf78d755bbaf",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "comparison_summary_sha256": "f25e558a3332d713872da60a7b62a06235999b7b264442240134913098835708",
+      "action_audit_sha256": "90813350f1970909d4e16223ebc1a17127109fa998dfcd4e74d29412c5b59d2d",
+      "native_file_sha256": "197a79d59df62dd84864ce9d89759624324a441204e121a5c9fd0feab4b29974",
+      "matched_file_sha256": "40b9992401c492414d7eb8d1295a5f71f326dfdb080d92014446b4f207ba2c97",
+      "fixed_e63_offset_after_wrapper": -0.0712890625,
+      "primary_reference_air_m3": 38811.50818618771,
+      "primary_reference_metrics": {
+        "air_m3": 38811.50818618771,
+        "cost": 31.58875,
+        "nh4_viol_pct": 32.85526315789474,
+        "do_viol_pct": 0.3960526315789474,
+        "reward": -17.249559193861206,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 31.5
+      },
+      "e63_native_metrics": {
+        "air_m3": 42267.21500276268,
+        "cost": 29.741875,
+        "nh4_viol_pct": 30.842763157894733,
+        "do_viol_pct": 0.4644736842105263,
+        "reward": -18.785428890116744,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 34.9375
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 38825.80827255326,
+        "cost": 34.500625,
+        "nh4_viol_pct": 35.83355263157895,
+        "do_viol_pct": 0.48289473684210527,
+        "reward": -17.255914787801448,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 25.5
+      }
+    },
+    {
+      "policy_seed": 3,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "f13169a673e414b35815cfd7dd2618363d90bfb51a95fad7d1ad48d32c434a3c",
+        "normalizer.json": "f2b8e59d6e354559f44de90c03fc58455d619ecade5b847c77252191a748fa93",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "fcc4f50df2b441d47957dd3497b089582b3807c5a245e39e75ade6a0b77afa03"
+      },
+      "rate_model_sha256": "90bf3773602ca4be1518f62eae45d1f6ec6af51f8a1dc2a66019061d870fc772",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "comparison_summary_sha256": "4a30430d4b76705998c635d83594064c3207b674afad343ab2b130f2ea32c051",
+      "action_audit_sha256": "ffd3426f9010f1068613668741de3b2910b54852c706762f968122e04e9cf983",
+      "native_file_sha256": "9071bccda5fa13e906d74ab7e8486dc6ef522df5c5dfff12cf316db2cbe71c7b",
+      "matched_file_sha256": "9ff60a30095411abfaff53d7bf6b77b8bd8438b632c1563fde84e8bc93869530",
+      "fixed_e63_offset_after_wrapper": -0.0703125,
+      "primary_reference_air_m3": 66258.94018654944,
+      "primary_reference_metrics": {
+        "air_m3": 66258.94018654944,
+        "cost": 9.68125,
+        "nh4_viol_pct": 9.059210526315788,
+        "do_viol_pct": 1.131578947368421,
+        "reward": -29.448417860688643,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 77.5625
+      },
+      "e63_native_metrics": {
+        "air_m3": 67271.3705910377,
+        "cost": 8.836875,
+        "nh4_viol_pct": 8.13092105263158,
+        "do_viol_pct": 1.1710526315789473,
+        "reward": -29.89838692935009,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 79.5625
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 66228.26037566687,
+        "cost": 9.950625,
+        "nh4_viol_pct": 9.06578947368421,
+        "do_viol_pct": 1.4085526315789474,
+        "reward": -29.434782389185276,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 75.0625
+      }
+    },
+    {
+      "policy_seed": 4,
+      "base_checkpoint_hashes": {
+        "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+        "model.pt": "d2eeb492be3c1bec582bd7314e8d7743e893c060a887a6dc80db6972e89b500c",
+        "normalizer.json": "6907118f4fbf84e4a2fa46e23a902ec15e95097df4e6262702907b128945f53c",
+        "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+        "representation.pt": "46a467f0c1817508e9f9fec1feae285577ac38203f05bcb2ef854413aab1bbf1"
+      },
+      "rate_model_sha256": "bc6d1b989bad8e269033d3cd2576e2b479e5c7b0329e562d7c245662a5db6c13",
+      "controller_config_sha256": "27a3975d96d7302d82a75fc9c08249d99af7cadd8e0c28c23db41da2ec11db18",
+      "comparison_summary_sha256": "161d6e01c9e3f1722c406154f0ce0370959ef95ef7e2d47113b877804771537f",
+      "action_audit_sha256": "de1036c32b9f67f62e84d58b4f6de86aa81298e36d2d554b39fdda53090428cc",
+      "native_file_sha256": "7157ce383e6bd6b3c0fc603c0c1485a4546caee60a63e5969ba7d076fbcb63b1",
+      "matched_file_sha256": "ec8e2be41584fe81be5c4747eb877d623b0ddd272e52096b7fb79753c684bd2f",
+      "fixed_e63_offset_after_wrapper": -0.1484375,
+      "primary_reference_air_m3": 42536.99904034067,
+      "primary_reference_metrics": {
+        "air_m3": 42536.99904034067,
+        "cost": 28.795,
+        "nh4_viol_pct": 30.306578947368415,
+        "do_viol_pct": 0.003947368421052631,
+        "reward": -18.905332906818074,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 35.5
+      },
+      "e63_native_metrics": {
+        "air_m3": 50043.347030609875,
+        "cost": 23.32125,
+        "nh4_viol_pct": 24.523026315789476,
+        "do_viol_pct": 0.025657894736842102,
+        "reward": -22.241487569159943,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 46.4375
+      },
+      "original_fcsrl_metrics": {
+        "air_m3": 42512.98622940583,
+        "cost": 30.41125,
+        "nh4_viol_pct": 31.923026315789475,
+        "do_viol_pct": 0.08881578947368421,
+        "reward": -18.89466054640259,
+        "n_episodes": 1600,
+        "days_within_limit_pct": 32.5625
+      }
+    }
+  ],
+  "matched_reference_means": {
+    "air_m3": 52018.53777884504,
+    "cost": 21.060125000000003,
+    "nh4_viol_pct": 21.84473684210526,
+    "do_viol_pct": 0.3238157894736842
+  },
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "data_sha256": "f959f357af92a97612b365d8d4b771e889036c57a896c9cc4801b39a944a6355",
+  "test_evaluated": false,
+  "new_model_fitting": false,
+  "new_environment_queries": 0,
+  "source_identity_rule": "Existing raw-or-canonical-LF digest guard for source only; exact model/data/config bytes.",
+  "criterion": {
+    "all_five_air_matches": true,
+    "cost_ci_upper_below_zero_vs_e63": true,
+    "nh4_ci_upper_below_zero_vs_e63": true,
+    "do_ci_upper_at_most_zero_vs_e63": true,
+    "bootstrap_resamples": 10000,
+    "bootstrap_rng": 2026
+  },
+  "source_sha256": "3ff2395b00489f0d555622aa864d7096dc9384a8082c28afdb10981a43caa511",
+  "scope": "Baseline authentication only, not a candidate result or new independent confirmation."
+}

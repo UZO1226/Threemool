@@ -1,0 +1,104 @@
+{
+  "reason": "Terminal Windows status-file replacement permission error, not a scientific failure.",
+  "original_manifest_sha256": "0f70220e637092714f894cad738c6d33067ae31b3e1b8059be7fb39bad1408b7",
+  "original_failure_sha256": "ee1a6547f6435145620358da4fe6ca8ac0ec7ae04c7a8e14d53c796961a5e319",
+  "original_log_sha256": "2a76b2e6e9333aa52fa639b7ee8baad957e8ceed572f480b6321182c14aa30cd",
+  "original_baseline_sha256": "ec8e2be41584fe81be5c4747eb877d623b0ddd272e52096b7fb79753c684bd2f",
+  "original_native_sha256": "1a32cdac0a523f1766ce55ebd0132785ce8f1cfc4b9242fe1bc5104165213111",
+  "previous_query_sources": {
+    "-1.0": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_01.json",
+      "sha256": "51a55d01a43e9baa87264385a917ed15bff51bf13c6420276c4136aaa5367ee8"
+    },
+    "-0.5": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_02.json",
+      "sha256": "1db38d489b96c75fa47ff6e033206a37334ba3754d10e80b2d7245d69a6a950b"
+    },
+    "-0.25": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_03.json",
+      "sha256": "8c6b8c8f8d448298c9e9a4b6bab0ad02e06cb833f100b69c52de808165e80332"
+    },
+    "-0.125": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_04.json",
+      "sha256": "10d2c2f402e35e5648aeca62f2c13389696771eb236a71803cb8826214e880b7"
+    },
+    "-0.1875": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_05.json",
+      "sha256": "04549d4964f46e864ec544f1169c9f8bb8b12760fae75551a751b2e06e48cb67"
+    },
+    "-0.15625": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_06.json",
+      "sha256": "821d4db60623a091c5fbaeb0af8d131bfe9f82799712abf9d62875f7cb4f9ab2"
+    },
+    "-0.140625": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_07.json",
+      "sha256": "2a376a34bb734ff6dde32658fff071c9699af34494a41641e0236f3aca6e907a"
+    },
+    "-0.1484375": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_08.json",
+      "sha256": "87b1079b58ff367ff4fb7531984cf4de53030e62147e10ee219434e2b6c456f4"
+    },
+    "-0.15234375": {
+      "path": "C:\\Users\\user\\Downloads\\IoT_project2\\results\\e65_study\\comparisons\\seed_4\\query_09.json",
+      "sha256": "2886aaabc40a85ba7d2b7b5db5886e74638e5f969a598615db97f98dd3e05a1e"
+    }
+  },
+  "reused_calls": [
+    {
+      "kind": "authenticated_baseline",
+      "offset": -0.1484375
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": 0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": 0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -1.0
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.5
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.25
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.125
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.1875
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.15625
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.140625
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.1484375
+    },
+    {
+      "kind": "previous_native_or_air_query",
+      "offset": -0.15234375
+    }
+  ],
+  "fresh_offsets": [
+    -0.150390625,
+    -0.1494140625,
+    -0.14892578125
+  ],
+  "native_serialization_replay": "Reused original native file, which original pinned compare.py writes only after two exact independently reloaded trajectories.",
+  "new_independent_full_trajectory_audits_required": true,
+  "source_sha256": "192a487d394dcd07e4a33aed6e7bcc0e4d1c2348a720dbdd2ea3fca41525a396"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "physical_values_above_one_preserved": true,
+  "nonnegative_mean": true,
+  "higher_order_margin_and_nonnegative_floor": true,
+  "reference_always_feasible_max_rule": true,
+  "next_event_and_onset_controls": true,
+  "test_evaluated": false,
+  "new_environment_queries": 0,
+  "source_sha256": {
+    "Lee/experiments/e75/check_forecast.py": "c7d4c4ac3040f2b44ac07d4bfae024d58528d810ddb4677db241705185b997fd",
+    "Lee/experiments/e75/do_forecast.py": "32978323edc5e4d04fbfbc439568e379f2852a9d481ee251a08a85f09aca5210",
+    "Lee/experiments/e75/forecast_data.py": "cf52eaf1d04040f235d386cf91dc1ba68b302459dafa30ba4b4c8150f05b9b34",
+    "Lee/experiments/e56/rate_model.py": "6da72c695016c153f86142204e0dd063e181f4b7ba97c39376b5745bee7f67da",
+    "Lee/experiments/e56/targets.py": "628e907f8556b049420686f68918a850a08858e76e17a120140f2308b5405102",
+    "Lee/experiments/e55/fast_cost.py": "47e8371b853c2fab6088abc3640486471a59621baefbf9d8601209f02afbb79f"
+  }
+}

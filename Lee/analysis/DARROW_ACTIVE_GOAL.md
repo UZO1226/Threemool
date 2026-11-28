@@ -1,5 +1,158 @@
 # Active DARROW research goal
 
+## New active objective, 2026-11-17
+
+Improve our own e63 matched controller. Other team members' rankings are not
+the optimization target. The previous goal below is preserved as history;
+its completion does not complete this new objective.
+
+Baseline authentication e64 passed for all five policy seeds, including their
+fixed post-wrapper offsets, checkpoints, rate models, frozen environment,
+independent audit records and recomputed report. The primary reference means
+are air52018.537779m3 per23.75hours, cost21.060125, NH4 violations21.844737%
+and DO violations0.323816%. Original FCSRL remains a secondary reference.
+
+New candidates require all five actual-air matches and paired policy-seed
+bootstrap95% interval upper endpoints below zero for cost and NH4, and at
+most zero for DO, versus e63. Preserve native results and unsuccessful trials.
+Separate environment improvements from policy improvements. Use training
+held dates and feasible fresh seeds; reused validation40 is exploratory.
+Do not use test41 for further development or evaluation.
+
+Work proceeds on lee/e63-self-improvement. e71 passes the original
+seed block but fails its completed fresh cost/NH4 confirmation. e72 completes
+all ten held-state component-risk and regime diagnostics without environment
+queries or candidate fitting. Its verified archive preserves both runs.
+e73 implements the prospectively fixed componentwise predicted guard. All
+five original-seed mean calibrations and held checks pass with zero predicted
+component increases. The complete original five-seed comparison and all native
+and matched independent audits now finish. Cost/NH4 pass, but DO's upper
+endpoint+.004737 fails. Preserve the failed joint result and verified archive
+asset757737999. No exposed-block follow-up is triggered. e74 prospectively
+changes the extension anchor to actual authenticated matched e63, preserving
+the matcher, information, budgets and criterion. Its column0 reference,
+exclusion, interpolation, fixed-offset NN null and serialization software
+controls pass. All five original-seed training-only calibrations and held
+checks now finish, with zero component increases and matched-reference
+identity on held states. The complete original comparison and all independent
+native/matched audits finish. Cost/NH4 improve, but DO's upper endpoint
++.000526316 fails. The full archived failure and e73 secondary contrast are
+preserved. No exposed-block evaluation is triggered and no rounding rescues
+failure. e75 completes all five agent-side next-DO fits and independent
+raw/held audits on existing training captures. Only seed3 passes admission;
+coverage, persistence-MSE or missed-event conditions fail elsewhere. No
+controller is evaluated and no seed-specific rescue is allowed. All models
+and failures are archived. e76 prospectively tests persistence plus learned
+DO change with the same capacity, partition and admission conditions.
+No robust gain is established.
+e65 fixes a17-point nested action grid at
+the unchanged radius0.25 with the same e63 horizon4 regressors and policies.
+All five85120-row held-state checks and independent sklearn subsets pass;
+changed actions number1481,3870,2637,3650,4885. No counterfactual quality
+conclusion follows from those predicted-risk differences.
+
+e65 completes all five comparisons and independent native/matched152000-row
+sklearn action/trajectory audits. A terminal Windows status-file lock was
+recovered by resume_study.py without editing the pinned runtime or changing
+the matcher: completed offsets were reused and every final trajectory was
+independently checked. results/e65_recovery is the completed authoritative
+study; results/e65_study preserves the original terminal failure evidence.
+Cost improves slightly, but NH4 and DO interval upper endpoints exceed zero.
+The candidate fails the unchanged joint criterion and is not adopted.
+
+Environment e66 also finishes its independent donor, full-day, air-order and
+event audit. All seven adoption conditions fail, including worse NH4 Brier
+and no detected new DO onset. Do not replace e42 with this candidate. Both
+completed trials have verified immutable assets in their existing drafts;
+tracked artifacts.json files bind sizes, digests and remote asset identities.
+
+e67 prospectively fixes nine action candidates up to radius0.5 with the same
+models and input/budget as e63. All five held-state preflight checks pass:
+changed actions16124,22591,18853,43277,23447 of85120 per seed. Native smoke
+reproduces the authenticated baseline and reloaded candidate trajectories.
+Session83803 completes all five matched-air comparisons and independent
+native/matched audits. e67 fails the joint criterion: cost difference+.670375
+and NH4+.896579 points have intervals crossing zero. DO improves-.190921
+points with interval[-.448289,-.018289]. Preserve the full failed joint result,
+not only the DO gain. artifacts.json binds its verified immutable draft asset.
+
+e68 preregisters fresh policy seeds5 through9. Session42965 runs unchanged
+original training followed by unchanged passive-capture training, at most
+two trainers concurrently,401280 steps per policy and final-checkpoint parity
+checks. Runner PID15212 and seed5/6 trainer PIDs16948/2684 were directly
+confirmed live. Session71526 waits on that runner before prepare_rates.py,
+which refuses incomplete parity and reproduces original e55 capture/provenance
+preparation followed by fixed e56 horizon4 fitting. New controllers are not
+evaluated on the fresh block yet. Neither fresh NN preparation nor fitting
+alone is e63 baseline construction, candidate replication or a goal success.
+
+Session52492 waits on the verified rate-preparation shell PID21528 before
+run_references.py constructs and audits all five actual fresh e63 comparators.
+No candidate is evaluated by that baseline pipeline.
+
+e69 prospectively tests a training-only mean-action budget for the radius0.5
+risk correction. A fixed64-step mean-only multiplier bisection and deterministic
+convex policy interpolation match e63 native mean action on fit updates1~52;
+held updates53~66 are excluded from calibration. Known-optimum discrete-jump,
+multiplier-sign and zero/flat controls pass. Session23268 completes all five
+calibration and independent held checks, with fitting mean discrepancies at
+most2.22e-16. Held means need not match, and no policy gain follows from this.
+Session9972 completes all five matched-air comparisons and independent
+native/matched audits. e69 fails the primary criterion: cost21.167375 and
+NH4 22.102632% versus e63 21.060125 and21.844737%; their difference intervals
+cross zero. DO improves, but cannot rescue the joint failure. The separate
+e67 mechanism contrast improves cost/NH4 versus that weaker control only.
+The primary archive is remotely size/digest verified, and compact follow-up
+contrasts remain separately tracked. No e69 adoption or fresh replication.
+
+e70 preregisters a failure-only native air transport diagnostic. Session6207
+(PID25296 directly confirmed live) replays both unchanged controllers and
+observes both actions on each state. It checks exact native reconstruction,
+four fixed current-violation regimes and two exact air-decomposition identities.
+At the last output, seeds0/1 completed and seed2's e63 replay passed. No new
+candidate, fitting, environment-training step or success claim is introduced.
+
+Fresh-report arithmetic now preserves actual policy IDs5 through9, with the
+same five-seed bootstrap rule. Its synthetic constant-difference/ID check
+passes; this is a software control, not fresh policy evidence. No fresh
+candidate has been evaluated or selected on its quality.
+
+The companion research note records the study history and commands. This
+is a snapshot, not a process monitor.
+Final test41 is untouched. Goal-tool state remains authoritative.
+
+### Current verified snapshot after the historical execution notes above
+
+e68 baseline training, parity checks, horizon4 risk fitting and construction
+of the actual matched e63 references are complete for every actual seed5
+through9. baseline_authentication.json authenticates all five checkpoints,
+fixed offsets, original-FCSRL air matches and independent replay audits.
+No twin original/captured run is counted as another independent policy seed.
+
+e70 completes both native replays and the exact air decomposition for all
+five seeds. Mean same-state mapping contribution is+7612.759656m3 and occupancy
+contribution is-4565.770431m3, totaling+3046.989225m3. Occupancy partly offsets
+the mapping increase. The diagnosis is descriptive, not physical causality.
+
+e71 passes the unchanged original seed0 through4 joint criterion and all
+native/matched independent action and trajectory audits. Matched cost falls
+21.060125 to20.089750, NH4 falls21.844737% to20.900132%, and DO falls.323816%
+to.246974%, with all required interval endpoints favorable. Its initial archive
+has remotely verified size and SHA256, asset757559843. Initial success does
+not complete the goal: a separately required fresh block cannot be replaced
+by pooling or changing the criterion. The frozen e71 method has now completed
+training-only calibration and held checks on all actual seeds5 through9.
+Fresh evaluation and all five independent native/matched audits now complete.
+All air matches pass, but cost difference interval[-1.142875,.460375] and
+NH4 interval[-1.095921,.793553] fail. DO improves with interval[-.416316,-.044474].
+The joint gain does not replicate. The full fresh archive is remotely verified,
+asset757626794, and block_verification.json reconstructs all episode aggregates,
+air-only choices and separate bootstrap arithmetic. No pooling or criterion
+change rescues this failure. All ten delivery indexes currently match remote
+size/digest and every local ZIP entry. Goal remains active for a new hypothesis.
+
+## Previous completed objective
+
 The research stopping condition is verified: e63 passes every original
 matched-air simulation criterion after all five policy-seed comparisons and
 independent native/matched action audits. DARROW_GOAL_AUDIT.md now accounts for

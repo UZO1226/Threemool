@@ -1,0 +1,276 @@
+"""Archive only completed and independently audited self-improvement trials."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import sys
+import zipfile
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'Lee/experiments/e44'))
+from report import summarize
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--kind', choices=('e65', 'e66', 'e67', 'e69', 'e70', 'e71', 'e72', 'e73', 'e74', 'e75'), required=True)
+    parser.add_argument('--fresh', action='store_true')
+    for name in ('workspace', 'study', 'out', 'index'):
+        parser.add_argument('--' + name, type=Path, required=True)
+    args = parser.parse_args()
+    if args.out.exists() or args.index.exists():
+        raise FileExistsError('Refusing to overwrite archive or index')
+    workspace = args.workspace.resolve()
+    results = workspace / 'results'
+    assert not args.fresh or args.kind == 'e71'
+    seeds = list(range(5, 10)) if args.fresh else list(range(5))
+    report_summarize = summarize
+    if args.fresh:
+        sys.path.insert(0, str(ROOT / 'Lee/experiments/e68'))
+        from fresh_report import summarize as report_summarize
+    files = {}
+    def add(path):
+        relative = path.resolve().relative_to(workspace).as_posix()
+        assert path.is_file() and path.suffix in ('.json', '.log', '.pkl', '.pt')
+        assert '/transitions/' not in relative and 'pit_bank' not in relative
+        files[relative] = path
+    if args.kind in ('e65', 'e67', 'e69', 'e71', 'e73', 'e74'):
+        status = json.loads((args.study / 'study_status.json').read_text())
+        assert status['phase'] == 'complete' and not status['running'] and not status['pending']
+        cert_path = (results / 'e68_fresh_references/baseline_authentication.json' if args.fresh
+                     else ROOT / 'Lee/experiments/e64/baseline_authentication.json')
+        cert = json.loads(cert_path.read_text())
+        assert cert['authentication_passed' if args.fresh else 'passed'] and cert['policy_seeds'] == seeds
+        if args.fresh:
+            assert json.loads((results / 'e71_study/comparison.json').read_text())['meets_prespecified_simulation_criterion']
+        pairs = []
+        for seed in seeds:
+            folder = args.study / f'comparisons/seed_{seed}'
+            pair = json.loads((folder / 'summary.json').read_text())
+            audit = json.loads((folder / 'action_audit.json').read_text())
+            expected_method = {'e65': 'e65_nested_grid_h4', 'e67': 'e67_larger_radius_h4',
+                               'e69': 'e69_training_air_budget_h4', 'e71': 'e71_signal_gate_h4',
+                               'e73': 'e73_component_guard_h4', 'e74': 'e74_matched_anchor_h4'}[args.kind]
+            assert pair['candidate_method'] == expected_method
+            assert pair['policy_seed'] == audit['policy_seed'] == seed
+            assert pair['training_steps'] == 401280 and not pair['pipeline_smoke_only']
+            assert not pair['test_evaluated'] and not pair['smoke_only']
+            assert pair['checkpoint_replay_verified'] and audit['passed']
+            assert pair['baseline_certificate_sha256'] == sha(cert_path)
+            reference = next(row for row in cert['records'] if row['policy_seed'] == seed)
+            assert pair['baseline_native'] == reference['primary_reference_metrics']
+            assert audit['comparison_summary_sha256'] == sha(folder / 'summary.json')
+            assert set(audit['replays']) == {'native', 'matched'}
+            for replay in audit['replays'].values():
+                assert replay['action_rows'] == 152000
+                assert replay['independent_sklearn_actions_exact'] and replay['trajectory_replay_exact']
+                assert replay['executed_air_accounting_exact']
+                if args.kind in ('e73', 'e74'):
+                    assert replay['wrapper_component_guard_passed']
+                    assert replay['wrapper_component_increase_rows'] == [0, 0]
+            assert sha(folder / 'controller_config.json') == pair['controller_config_sha256']
+            if args.kind in ('e69', 'e71', 'e73', 'e74'):
+                fit_name = {'e69': 'e69_projection_fit', 'e71': 'e71_signal_fit', 'e73': 'e73_guard_fit', 'e74': 'e74_anchor_fit'}[args.kind]
+                if args.fresh:
+                    fit_name = 'e71_fresh_fit'
+                calibration_folder = results / fit_name / f'seed_{seed}'
+                calibration_path = calibration_folder / 'fit_summary.json'
+                calibration = json.loads(calibration_path.read_text())
+                assert sha(calibration_path) == pair['projection_fit_summary_sha256']
+                assert calibration['passed'] and calibration['calibration']['absolute_mean_action_error'] <= 1e-10
+                assert calibration['controller_config_sha256'] == pair['controller_config_sha256']
+                assert calibration['base_checkpoint_hashes'] == pair['base_checkpoint_hashes']
+                assert calibration['rate_model_sha256'] == pair['correction_model_sha256']
+                if args.kind in ('e71', 'e73', 'e74'):
+                    assert calibration['global_fit_mean_action_error'] <= 1e-10
+                    assert calibration['reference_fallback_all_ineligible_held_rows_exact']
+                if args.kind in ('e73', 'e74'):
+                    assert calibration['componentwise_guard_all_held_rows_passed']
+                    assert calibration['largest_held_component_increase'] == [0, 0]
+                if args.kind == 'e74':
+                    assert calibration['controller_config']['reference_fixed_offset'] == reference['fixed_e63_offset_after_wrapper']
+            base = results / (f'e68_fresh_baselines/captured/new_ppolag_fcsrl/seed_{seed}' if args.fresh
+                              else f'e55_study/policies/new_ppolag_fcsrl/seed_{seed}')
+            for name, expected in pair['base_checkpoint_hashes'].items():
+                path = base / 'model_final' / name
+                assert sha(path) == expected
+                add(path)
+            for name in ('effective_config.json', 'metrics.json', 'base_equivalence.json', 'correction/fit_summary.json'):
+                add(base / name)
+            model = results / (f'e68_fresh_rates/models/h4/seed_{seed}' if args.fresh
+                               else f'e56_study/models/h4/seed_{seed}')
+            assert sha(model / 'risk_models.pkl') == pair['correction_model_sha256']
+            add(model / 'risk_models.pkl')
+            add(model / 'fit_summary.json')
+            pairs.append(pair)
+        assert report_summarize(pairs) == json.loads((args.study / 'comparison.json').read_text())
+        study_manifest = json.loads((args.study / 'study_manifest.json').read_text())
+        for path, expected in study_manifest['source_sha256'].items():
+            assert sha(Path(path)) == expected
+        if 'previous_terminal_manifest_sha256' in study_manifest:
+            previous = results / 'e65_study'
+            assert sha(previous / 'study_manifest.json') == study_manifest['previous_terminal_manifest_sha256']
+            for path in previous.rglob('*'):
+                if path.is_file() and path.suffix in ('.json', '.log'):
+                    add(path)
+        add(cert_path)
+        smoke_name = 'e71_fresh_smoke' if args.fresh else f'{args.kind}_native_smoke'
+        if args.kind == 'e74':
+            smoke_audit = json.loads((results / smoke_name / 'action_audit.json').read_text())
+            assert smoke_audit['passed'] and smoke_audit['flat_risk_frozen_offset_nn_full_native_exact']
+            assert smoke_audit['reference_only_matched_e63_full_native_exact']
+        for path in (results / smoke_name).glob('*.json'):
+            add(path)
+        preflight_name = {'e65': 'e65_preflight_v2', 'e67': 'e67_preflight',
+                          'e69': 'e69_projection_fit', 'e71': 'e71_signal_fit', 'e73': 'e73_guard_fit', 'e74': 'e74_anchor_fit'}[args.kind]
+        if args.fresh:
+            preflight_name = 'e71_fresh_fit'
+            add(ROOT / 'Lee/experiments/e68/artifacts.json')
+            add(results / 'e71_study/comparison.json')
+        for path in (results / preflight_name).rglob('*.json'):
+            add(path)
+    elif args.kind == 'e75':
+        summary = json.loads((args.study / 'summary.json').read_text())
+        audit = json.loads((args.study / 'audit.json').read_text())
+        status = json.loads((args.study / 'study_status.json').read_text())
+        assert summary['completed'] and summary['computation_passed']
+        assert summary['policy_seeds'] == audit['policy_seeds'] == list(range(5))
+        assert status['phase'] == 'complete' and status['terminal'] and status['current_policy_seed'] is None
+        assert audit['passed'] and sha(args.study / 'summary.json') == audit['summary_sha256']
+        assert sha(ROOT / 'Lee/experiments/e75/audit_forecast.py') == audit['audit_source_sha256']
+        assert not summary['test_evaluated'] and not summary['controller_evaluation']
+        assert summary['new_environment_queries'] == audit['new_environment_queries'] == 0
+        for name, expected in summary['source_sha256'].items():
+            assert sha(ROOT / name) == expected
+        certificate_path = ROOT / 'Lee/experiments/e64/baseline_authentication.json'
+        certificate = json.loads(certificate_path.read_text())
+        assert certificate['passed'] and sha(certificate_path) == summary['baseline_certificate_sha256']
+        add(certificate_path)
+        add(ROOT / 'Lee/experiments/e74/artifacts.json')
+        add(ROOT / 'Lee/experiments/e75/forecast_check.json')
+        for seed in range(5):
+            record = summary['records'][seed]
+            checked = audit['records'][seed]
+            folder = args.study / f'seed_{seed}'
+            assert record['policy_seed'] == checked['policy_seed'] == seed
+            assert json.loads((folder / 'fit_summary.json').read_text()) == record
+            assert record['admission'] == checked['admission']
+            assert record['admission']['passed'] == all(record['admission']['checks'].values())
+            assert record['base_training_steps'] == 401280 and record['extra_environment_training_steps'] == 0
+            assert [record['fit_rows'], record['calibration_rows'], record['held_rows']] == [243200, 72960, 85120]
+            assert checked['raw_prediction_rows'] == 401280 and checked['max_raw_prediction_difference'] <= 1e-12
+            assert record['base_checkpoint_hashes'] == certificate['records'][seed]['base_checkpoint_hashes']
+            assert sha(folder / 'fit_summary.json') == checked['fit_summary_sha256']
+            assert sha(folder / 'do_model.pkl') == checked['model_sha256'] == record['model_sha256']
+            add(folder / 'do_model.pkl')
+        assert summary['all_models_admitted'] == audit['all_models_admitted'] == all(r['admission']['passed'] for r in summary['records'])
+    elif args.kind == 'e72':
+        summary = json.loads((args.study / 'summary.json').read_text())
+        previous = results / 'e72_component_diagnostic'
+        assert summary['passed'] and summary['policy_seeds'] == list(range(10))
+        assert summary['new_environment_queries'] == 0 and not summary['new_model_fitting']
+        assert not summary['test_evaluated']
+        assert sha(ROOT / 'Lee/experiments/e72/diagnose_components.py') == summary['source_sha256']
+        assert sha(previous / 'summary.json') == summary['previous_summary_sha256']
+        prior = json.loads((previous / 'summary.json').read_text())
+        assert prior['passed'] and prior['policy_seeds'] == list(range(10))
+        for seed, record in enumerate(summary['records']):
+            assert record['policy_seed'] == seed and record['passed'] and record['held_rows'] == 85120
+            assert record['new_environment_queries'] == 0 and not record['test_evaluated']
+            assert record['counts'] == prior['records'][seed]['counts']
+            assert json.loads((args.study / f'seed_{seed}.json').read_text()) == record
+            regimes = record['by_current_regime']
+            assert set(regimes) == {'0', '1', '2', '3'}
+            assert sum(row['rows'] for row in regimes.values()) == 85120
+            assert all(sum(row['counts'][key] for row in regimes.values()) == value
+                       for key, value in record['counts'].items())
+        for trial_file, expected in (('comparison.json', summary['initial_report_sha256']),
+                                     ('fresh_comparison.json', summary['fresh_report_sha256'])):
+            path = ROOT / 'Lee/experiments/e71' / trial_file
+            assert sha(path) == expected
+            add(path)
+        add(ROOT / 'Lee/experiments/e71/artifacts.json')
+        add(ROOT / 'Lee/experiments/e71/fresh_artifacts.json')
+        for path in previous.glob('*.json'):
+            add(path)
+    elif args.kind == 'e70':
+        summary = json.loads((args.study / 'summary.json').read_text())
+        assert summary['passed'] and summary['policy_seeds'] == list(range(5))
+        assert not summary['test_evaluated'] and not summary['candidate_selection']
+        assert summary['environment_training_steps'] == 0
+        assert summary['environment_evaluation_transitions'] == 5 * 2 * 152000
+        assert sha(ROOT / 'Lee/experiments/e70/diagnose_transport.py') == summary['source_sha256']
+        primary = results / 'e69_study/comparison.json'
+        assert sha(primary) == summary['initial_report_sha256']
+        assert not json.loads(primary.read_text())['meets_prespecified_simulation_criterion']
+        for seed, record in enumerate(summary['records']):
+            assert record['policy_seed'] == seed
+            assert json.loads((args.study / f'seed_{seed}.json').read_text()) == record
+            assert all(item['native_replay_exact'] and sum(item['regime_counts']) == 152000
+                       for item in record['occupancies'])
+            delta = record['actual_native_air_difference_m3']
+            mapping = record['symmetric_mapping_component_m3']
+            occupancy = record['symmetric_occupancy_component_m3']
+            assert abs(mapping + occupancy - delta) <= 1e-8
+            assert abs(record['occupancies'][1]['native_summary']['air_m3'] -
+                       record['occupancies'][0]['native_summary']['air_m3'] - delta) <= 1e-8
+        add(primary)
+        add(ROOT / 'Lee/experiments/e69/artifacts.json')
+        add(ROOT / 'Lee/experiments/e69/projection_control_contrast.json')
+        add(ROOT / 'Lee/experiments/e69/native_air_diagnostic.json')
+        exposure_path = args.study / 'exposure_summary.json'
+        if exposure_path.exists():
+            exposure = json.loads(exposure_path.read_text())
+            assert exposure['passed'] and exposure['policy_seeds'] == list(range(5))
+            assert exposure['transport_summary_sha256'] == sha(args.study / 'summary.json')
+            assert exposure['new_environment_queries'] == 0 and not exposure['new_model_fitting']
+            for record in exposure['records']:
+                for name, count in (('fit', 316160), ('held', 85120), ('e63_native', 152000), ('e69_native', 152000)):
+                    assert sum(record['populations'][name]['regime_counts']) == count
+    else:
+        summary = json.loads((args.study / 'summary.json').read_text())
+        audit = json.loads((args.study / 'audit.json').read_text())
+        assert not summary['test_evaluated'] and not audit['test_evaluated']
+        assert summary['primary'] == 'context32_block4'
+        assert audit['independent_donors_and_paths_exact'] and audit['independent_full_day_passed']
+        summary_path = args.study / 'summary.json'
+        canonical_summary_sha256 = hashlib.sha256(summary_path.read_bytes().replace(b'\r\n', b'\n')).hexdigest()
+        assert audit['summary_sha256'] == canonical_summary_sha256
+        assert audit['adoption']['passed'] == all(audit['adoption']['checks'].values())
+        add(results / 'e66_block_preflight.json')
+    for path in args.study.rglob('*'):
+        if path.is_file() and path.suffix in ('.json', '.log'):
+            add(path)
+    add(ROOT / 'Lee/experiments/e42/environment_freeze.json')
+    files['metadata/FCSRL_LICENSE'] = ROOT / 'Lee/code/darrow/FCSRL_LICENSE'
+    freeze = json.loads((ROOT / 'Lee/experiments/e42/environment_freeze.json').read_text())
+    manifest = {'trial': args.kind, 'fresh_seed_block': args.fresh, 'new_model_fitting': args.kind == 'e75', 'source_data_included': False,
+                'projection_parameters_fitted': args.kind in ('e69', 'e71', 'e73', 'e74'),
+                'residual_banks_included': False, 'pit_banks_included': False,
+                'captured_training_arrays_included': False, 'test_evaluated': False,
+                'frozen_environment_dependencies': freeze['frozen_files_sha256'],
+                'scope': 'Audited aggregate outputs and provenance. Agent trials include policy/rate weights; non-agent studies reuse frozen environment and referenced prior model archives. Frozen model/data dependencies require separate restoration.',
+                'files': {name: {'bytes': path.stat().st_size, 'sha256': sha(path)} for name, path in sorted(files.items())}}
+    if args.kind == 'e75':
+        manifest['scope'] = 'All five next-DO supervised models, calibrated margins, complete admission outcomes and independent raw/held audits. No controller evaluation or new environment-training transition. Base NN and frozen-world weights restored from referenced earlier archives.'
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(args.out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
+        for name, path in sorted(files.items()):
+            archive.write(path, name)
+        archive.writestr('artifact_manifest.json', json.dumps(manifest, indent=2))
+    with zipfile.ZipFile(args.out) as archive:
+        assert archive.testzip() is None
+        for name, entry in manifest['files'].items():
+            assert hashlib.sha256(archive.read(name)).hexdigest() == entry['sha256']
+    manifest['archive'] = {'name': args.out.name, 'bytes': args.out.stat().st_size, 'sha256': sha(args.out)}
+    args.index.parent.mkdir(parents=True, exist_ok=True)
+    args.index.write_text(json.dumps(manifest, indent=2, allow_nan=False))
+    print(json.dumps(manifest['archive']), flush=True)
+
+
+if __name__ == '__main__':
+    main()

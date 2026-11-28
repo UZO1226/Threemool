@@ -457,3 +457,81 @@ It is an additive metadata-location adapter, not a modified controller or
 claim of testing all operating systems. [The final objective audit](DARROW_GOAL_AUDIT.md)
 accounts separately for model safety limits, simulation evidence, held-out
 test preservation and the completed research deliverables.
+
+## New self-improvement goal versus our own e63
+
+The preceding completed goal compares e63 with original FCSRL. The new goal
+uses authenticated matched e63 as its primary reference and remains active.
+Use [e64 authentication](../experiments/e64/baseline_authentication.json),
+the separate [self-comparison table](DARROW_SELF_IMPROVEMENT_TRIALS.md),
+and [new objective audit](DARROW_SELF_IMPROVEMENT_AUDIT.md). Do not replace
+this reference with original FCSRL or e63 native. Each seed's original fixed
+post-wrapper e63 offset is part of the authenticated controller.
+
+Completed archives below are in the existing private policy draft443333191,
+tag lee-e42-e44-policy-comparison-20261113, except e66 in environment
+draft442901392, tag lee-e26-e30-followup-20261112. Draft access requires an
+authorized account. The linked indexes contain exact sizes, SHA256 digests,
+individual file hashes and remote asset identities.
+
+| Study | Archive | Manifest and role |
+| --- | --- | --- |
+| e63 | lee-e63-risk-only.zip | [Baseline weights and comparisons](../experiments/e63/artifacts.json) |
+| e65 | lee-e65-nested-grid.zip | [Failed finer-grid comparison and recovered logs](../experiments/e65/artifacts.json) |
+| e66 | lee-e66-exogenous-blocks.zip | [Failed environment candidate and independent audit](../experiments/e66/artifacts.json) |
+| e67 | lee-e67-larger-radius.zip | [Failed wider search](../experiments/e67/artifacts.json) |
+| e68 | lee-e68-fresh-baselines.zip | [Actual seeds5 through9, NN twins, h4 heads and authenticated e63 references](../experiments/e68/artifacts.json) |
+| e68 held | lee-e68-fresh-held-audits.zip | [Independent logged-action held errors](../experiments/e68/held_artifacts.json) |
+| e69 | lee-e69-training-air-budget.zip | [Failed global mean-action projection](../experiments/e69/artifacts.json) |
+| e70 | lee-e69-e70-air-transport.zip | [Air decomposition and exposure diagnostics](../experiments/e70/artifacts.json) |
+| e71 original | lee-e71-signal-gated-projection.zip | [Original seed-block gain](../experiments/e71/artifacts.json) |
+| e71 fresh | lee-e71-fresh-signal-gate.zip | [Failed separate replication, not an adopted gain](../experiments/e71/fresh_artifacts.json) |
+| e72 | lee-e72-component-risk-diagnostic.zip | [All ten held component/regime diagnostics](../experiments/e72/artifacts.json) |
+| e73 | lee-e73-component-guard.zip | [Completed cost/NH4 gain with failed DO condition](../experiments/e73/artifacts.json) |
+| e74 | lee-e74-matched-anchor.zip | [Completed anchored comparison with failed DO condition](../experiments/e74/artifacts.json) |
+| e75 | lee-e75-next-do-forecasts.zip | [All five auxiliary models and independently verified failed admission](../experiments/e75/artifacts.json) |
+
+These fourteen indexes are independently checked against current remote assets
+and every local ZIP entry by [verify_self_delivery.py](verify_self_delivery.py).
+[The recorded delivery check](DARROW_SELF_DELIVERY_VERIFICATION.json) is
+artifact evidence, not scientific success. To repeat the read-only check:
+
+```powershell
+python Threemool/Lee/analysis/verify_self_delivery.py --workspace C:/Users/user/Downloads/IoT_project2 --gh .tools/github-cli/package/bin/gh.exe --out results/self_delivery_rechecked.json --require-fresh
+```
+
+Here require-fresh requires preservation of the completed e71 fresh archive;
+it does not assert that e71 passed, that any later method has unseen
+confirmation, or that the active goal is complete. No source observations,
+captured arrays, residual banks or PIT banks are uploaded. Restore the
+earlier frozen e40/e42 and original-policy dependencies using the preceding
+sections, rather than treating each small diagnostic archive as standalone
+environment weights. Existing archived policies/risk heads are referenced
+when a diagnostic fits no new weights.
+
+For actual seeds5 through9, restore the e68 baseline archive under its
+documented results/ layout. It includes both original and passive-capture
+final NN checkpoints, their configurations and logs, h4 model weights,
+preparation provenance and full authenticated e63 native/matched references.
+The twins are exact copies by training parity and count as five independent
+policy seeds, not ten. Captured observations are excluded: regenerate their
+full fixed training locally if re-fitting or independently auditing held
+logged-action errors. The published held error summaries are not candidate
+counterfactual outcomes or an observational holdout.
+
+Each experiment README gives commands, source commits and immutable output
+paths. Restore exactly matching weights/configurations and retain source,
+data, budget and model guards. The earlier source-location adapter has a
+tested e63 scope; do not infer that later controllers have already been
+portable-replayed. Use a new workspace for deliberate reruns.
+
+e74 completes its original five-seed actual-air comparison, independent
+audits and controls, but fails DO with interval upper endpoint+.000526316.
+Its full archive is preserved; its cost/NH4 gains do not establish adoption.
+e75 completes its training-only next-DO forecast study and independent audit,
+but only seed3 passes admission. All five models are archived and no controller
+is evaluated. The added offline supervised compute is recorded separately
+from the fixed RL budget. e76 preregisters persistence plus learned DO change
+with unchanged admission gates and explicitly exposed model-development data.
+Every criterion remains unchanged, exposed seeds5 through9 cannot be called
+unseen confirmation for a later method, and final test41 remains reserved.

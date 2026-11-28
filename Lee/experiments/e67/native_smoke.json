@@ -1,0 +1,66 @@
+{
+  "policy_seed": 0,
+  "kind": "agent",
+  "evaluation_environment": "new",
+  "baseline_method": "e63_matched_risk_only_h4",
+  "candidate_method": "e67_larger_radius_h4",
+  "baseline_training_environment": "new",
+  "candidate_training_environment": "new",
+  "baseline_native": {
+    "air_m3": 47199.48484245352,
+    "cost": 23.041875,
+    "nh4_viol_pct": 24.24802631578947,
+    "do_viol_pct": 0.006578947368421053,
+    "reward": -20.977548818868232,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 52.25
+  },
+  "candidate_native": {
+    "air_m3": 55982.38100228598,
+    "cost": 17.640625,
+    "nh4_viol_pct": 18.564473684210526,
+    "do_viol_pct": 0.004605263157894736,
+    "reward": -24.881058223238213,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 62.18749999999999
+  },
+  "candidate_matched": null,
+  "original_fcsrl_reference": {
+    "air_m3": 47194.437990665756,
+    "cost": 24.121875,
+    "nh4_viol_pct": 25.35855263157895,
+    "do_viol_pct": 0.03289473684210526,
+    "reward": -20.975305773629223,
+    "n_episodes": 1600,
+    "days_within_limit_pct": 50.6875
+  },
+  "baseline_fixed_offset": -0.08984375,
+  "matching": null,
+  "freeze_canonical_sha256": "a7aedafa35295d02369a43a76742b286eeff8e8608fe8029242935c491afa4b9",
+  "base_checkpoint_hashes": {
+    "config.json": "132b6721073cde5d04dad0680219fd1d632c39358afe02d766eea8e2554e4cd9",
+    "model.pt": "a5fdf6330fbb6ec939e0e3eaf8ae7fc17e4befbecd67d481d2b138fac60718d5",
+    "normalizer.json": "9581714311f0571aa3ca8603c8317017ff3ef18bbcde6486ffac8b0617adb33f",
+    "representation.json": "3a947c70d0c5b0d3f2b8549c1edebfb0e4d7c43d769554890c6a610bced43b42",
+    "representation.pt": "85028c20438eaa0f920c6723c42dd2c53aaa94c6317991d9bebc99f17c84da22"
+  },
+  "correction_model_sha256": "e97cf10b8f2b6358508efe4cc9f8dca5054f33bedce874abbdb7af6a1a4258fc",
+  "training_steps": 401280,
+  "test_evaluated": false,
+  "smoke_only": false,
+  "pipeline_smoke_only": true,
+  "checkpoint_replay_verified": true,
+  "new_model_fitting": false,
+  "extra_environment_training_steps": 0,
+  "baseline_certificate_sha256": "8cdc37cb38daf4ee715725d611f2f5106b9dfae1639389577225fb889cb6cdcb",
+  "preflight_sha256": "afa40a009c245d3caa07acdd37b71f924bd1b2034cae7f9e4af7dfcb3506e95b",
+  "controller_config_sha256": "373b8cdd65b696156d767be00ca780656459999cea9cdd182554058035804a9a",
+  "source_sha256": {
+    "audit.py": "430b134e852232892e4d81653cad80797f74e82909a69d98ba1fb4cb532e2129",
+    "compare.py": "87d314bb7cb2707259eaf0f376a2d15c8691ff60a6932579f34855e55be4fb9c",
+    "preflight.py": "d1430c7c7bfc935a7fa0baca904765cc2dad781164b000b753ab64891b7aa193",
+    "radius_policy.py": "5205b7dbe04d1e610d263c23b06f9820f49b25b95b720ef3bc8aeecc450375d5",
+    "run_study.py": "993928163e2b3b6bba724cae911ac78910bcbf2733befb78624e5d483560d470"
+  },
+  "scope": "Exploratory reused validation; baseline_native denotes authenticated matched e63."
+}

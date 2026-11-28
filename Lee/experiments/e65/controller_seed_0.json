@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "horizon": 4,
+  "candidate_offsets": [
+    0,
+    -0.125,
+    0.125,
+    -0.25,
+    0.25,
+    -0.03125,
+    0.03125,
+    -0.0625,
+    0.0625,
+    -0.09375,
+    0.09375,
+    -0.15625,
+    0.15625,
+    -0.1875,
+    0.1875,
+    -0.21875,
+    0.21875
+  ],
+  "action_clip": [
+    -1,
+    1
+  ],
+  "tie_rule": "first_candidate",
+  "observation_dimension": 11,
+  "rate_output_clip": [
+    0,
+    1
+  ],
+  "penalty": 0,
+  "hard_action_radius": 0.25
+}
