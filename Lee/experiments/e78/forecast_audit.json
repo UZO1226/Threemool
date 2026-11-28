@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "policy_seed": 0,
+      "passed": true,
+      "admitted": true,
+      "raw_prediction_rows": 401280
+    },
+    {
+      "policy_seed": 1,
+      "passed": true,
+      "admitted": true,
+      "raw_prediction_rows": 401280
+    },
+    {
+      "policy_seed": 2,
+      "passed": true,
+      "admitted": true,
+      "raw_prediction_rows": 401280
+    },
+    {
+      "policy_seed": 3,
+      "passed": true,
+      "admitted": true,
+      "raw_prediction_rows": 401280
+    },
+    {
+      "policy_seed": 4,
+      "passed": true,
+      "admitted": true,
+      "raw_prediction_rows": 401280
+    }
+  ],
+  "all_models_admitted": true,
+  "summary_sha256": "762952cacec34ae9c04b0d264cdf7c498d7a271f71750a4901d1f37d06cbd711",
+  "audit_source_sha256": "749cf8e92759e4c0b741ad632ef7ba103fc5238fb708c8473f66387aae4688d2",
+  "code_commit": "4d0cfae911452ff87e1b94fa1ea376b282202730",
+  "test_evaluated": false,
+  "new_environment_queries": 0
+}
