@@ -1,0 +1,432 @@
+[
+  {
+    "seed": 0,
+    "score_sha256": "4e9031ebd69caafa61a3904618b47fbddeb4c9b1968450606e9b21b05a093cf1",
+    "metrics": {
+      "bootstrap_peak": {
+        "n": 240,
+        "positive": 118,
+        "class_days": [
+          33,
+          28
+        ],
+        "auc": 0.5199335759493641,
+        "passed": false,
+        "ties": 19,
+        "decreases": 103
+      },
+      "observed_peak": {
+        "n": 240,
+        "positive": 23,
+        "class_days": [
+          33,
+          16
+        ],
+        "auc": 0.5324866462706772,
+        "passed": false,
+        "ties": 200,
+        "decreases": 17
+      },
+      "nh_peak": {
+        "n": 240,
+        "positive": 21,
+        "class_days": [
+          33,
+          12
+        ],
+        "auc": 0.5383364381966025,
+        "passed": false,
+        "ties": 210,
+        "decreases": 9
+      },
+      "combined_count": {
+        "n": 240,
+        "positive": 27,
+        "class_days": [
+          33,
+          15
+        ],
+        "auc": 0.5663550694366916,
+        "passed": false,
+        "ties": 195,
+        "decreases": 18
+      },
+      "nh_count": {
+        "n": 240,
+        "positive": 22,
+        "class_days": [
+          33,
+          12
+        ],
+        "auc": 0.5570205608815866,
+        "passed": false,
+        "ties": 209,
+        "decreases": 9
+      },
+      "e85_harm": {
+        "n": 240,
+        "positive": 23,
+        "class_days": [
+          33,
+          12
+        ],
+        "auc": 0.5667268270044769,
+        "passed": false
+      },
+      "absolute": {
+        "n": 240,
+        "positive": 48,
+        "class_days": [
+          31,
+          21
+        ],
+        "auc": 0.6447523855475745,
+        "passed": true
+      }
+    }
+  },
+  {
+    "seed": 1,
+    "score_sha256": "7fc997deadf01689b03d9e9d2571158d83faffe93967d55cf3a9a4c197e0fd09",
+    "metrics": {
+      "bootstrap_peak": {
+        "n": 601,
+        "positive": 218,
+        "class_days": [
+          46,
+          44
+        ],
+        "auc": 0.42689316454891013,
+        "passed": false,
+        "ties": 172,
+        "decreases": 211
+      },
+      "observed_peak": {
+        "n": 601,
+        "positive": 71,
+        "class_days": [
+          46,
+          31
+        ],
+        "auc": 0.49658226222317836,
+        "passed": false,
+        "ties": 484,
+        "decreases": 46
+      },
+      "nh_peak": {
+        "n": 601,
+        "positive": 74,
+        "class_days": [
+          46,
+          32
+        ],
+        "auc": 0.47563328541984085,
+        "passed": false,
+        "ties": 492,
+        "decreases": 35
+      },
+      "combined_count": {
+        "n": 601,
+        "positive": 111,
+        "class_days": [
+          46,
+          33
+        ],
+        "auc": 0.5678259336558021,
+        "passed": false,
+        "ties": 409,
+        "decreases": 81
+      },
+      "nh_count": {
+        "n": 601,
+        "positive": 110,
+        "class_days": [
+          46,
+          33
+        ],
+        "auc": 0.5675839987776582,
+        "passed": false,
+        "ties": 425,
+        "decreases": 66
+      },
+      "e85_harm": {
+        "n": 601,
+        "positive": 147,
+        "class_days": [
+          46,
+          35
+        ],
+        "auc": 0.5785548517624488,
+        "passed": false
+      },
+      "absolute": {
+        "n": 601,
+        "positive": 263,
+        "class_days": [
+          41,
+          42
+        ],
+        "auc": 0.8897828990546754,
+        "passed": true
+      }
+    }
+  },
+  {
+    "seed": 2,
+    "score_sha256": "3c7a33d319558978576dca723f14b2dfba3bedbf958942d3a89da1faef96629f",
+    "metrics": {
+      "bootstrap_peak": {
+        "n": 594,
+        "positive": 259,
+        "class_days": [
+          44,
+          44
+        ],
+        "auc": 0.5266422331149002,
+        "passed": false,
+        "ties": 74,
+        "decreases": 261
+      },
+      "observed_peak": {
+        "n": 594,
+        "positive": 61,
+        "class_days": [
+          47,
+          30
+        ],
+        "auc": 0.5846372974343053,
+        "passed": false,
+        "ties": 469,
+        "decreases": 64
+      },
+      "nh_peak": {
+        "n": 594,
+        "positive": 62,
+        "class_days": [
+          47,
+          30
+        ],
+        "auc": 0.5630535221912188,
+        "passed": false,
+        "ties": 478,
+        "decreases": 54
+      },
+      "combined_count": {
+        "n": 594,
+        "positive": 64,
+        "class_days": [
+          47,
+          31
+        ],
+        "auc": 0.5870716913204741,
+        "passed": false,
+        "ties": 457,
+        "decreases": 73
+      },
+      "nh_count": {
+        "n": 594,
+        "positive": 59,
+        "class_days": [
+          47,
+          30
+        ],
+        "auc": 0.5693592337074115,
+        "passed": false,
+        "ties": 472,
+        "decreases": 63
+      },
+      "e85_harm": {
+        "n": 594,
+        "positive": 77,
+        "class_days": [
+          47,
+          33
+        ],
+        "auc": 0.5086260057661711,
+        "passed": false
+      },
+      "absolute": {
+        "n": 594,
+        "positive": 171,
+        "class_days": [
+          45,
+          40
+        ],
+        "auc": 0.740138563031159,
+        "passed": true
+      }
+    }
+  },
+  {
+    "seed": 3,
+    "score_sha256": "96cf9e6dafffecb156855e1a405c05bb979f7784c2b4e02c87fac66b0dbc6b89",
+    "metrics": {
+      "bootstrap_peak": {
+        "n": 290,
+        "positive": 130,
+        "class_days": [
+          38,
+          37
+        ],
+        "auc": 0.5827833839114066,
+        "passed": false,
+        "ties": 44,
+        "decreases": 116
+      },
+      "observed_peak": {
+        "n": 290,
+        "positive": 37,
+        "class_days": [
+          40,
+          23
+        ],
+        "auc": 0.6580116015459192,
+        "passed": true,
+        "ties": 227,
+        "decreases": 26
+      },
+      "nh_peak": {
+        "n": 290,
+        "positive": 35,
+        "class_days": [
+          40,
+          22
+        ],
+        "auc": 0.6518130196906133,
+        "passed": true,
+        "ties": 233,
+        "decreases": 22
+      },
+      "combined_count": {
+        "n": 290,
+        "positive": 41,
+        "class_days": [
+          42,
+          22
+        ],
+        "auc": 0.5765801758196787,
+        "passed": false,
+        "ties": 216,
+        "decreases": 33
+      },
+      "nh_count": {
+        "n": 290,
+        "positive": 35,
+        "class_days": [
+          42,
+          19
+        ],
+        "auc": 0.6334365178964321,
+        "passed": true,
+        "ties": 225,
+        "decreases": 30
+      },
+      "e85_harm": {
+        "n": 290,
+        "positive": 42,
+        "class_days": [
+          42,
+          23
+        ],
+        "auc": 0.5352352746127573,
+        "passed": false
+      },
+      "absolute": {
+        "n": 290,
+        "positive": 90,
+        "class_days": [
+          32,
+          34
+        ],
+        "auc": 0.7767278999165439,
+        "passed": true
+      }
+    }
+  },
+  {
+    "seed": 4,
+    "score_sha256": "5c87de11bd28afe079ed43f6c55a8a3a706cd538c5145465a7ddf5a86a5f80ec",
+    "metrics": {
+      "bootstrap_peak": {
+        "n": 983,
+        "positive": 462,
+        "class_days": [
+          48,
+          48
+        ],
+        "auc": 0.523360292385834,
+        "passed": false,
+        "ties": 64,
+        "decreases": 457
+      },
+      "observed_peak": {
+        "n": 983,
+        "positive": 43,
+        "class_days": [
+          48,
+          24
+        ],
+        "auc": 0.5359303932451653,
+        "passed": false,
+        "ties": 904,
+        "decreases": 36
+      },
+      "nh_peak": {
+        "n": 983,
+        "positive": 30,
+        "class_days": [
+          48,
+          15
+        ],
+        "auc": 0.6458799429386005,
+        "passed": true,
+        "ties": 934,
+        "decreases": 19
+      },
+      "combined_count": {
+        "n": 983,
+        "positive": 52,
+        "class_days": [
+          48,
+          26
+        ],
+        "auc": 0.48585098359946566,
+        "passed": false,
+        "ties": 886,
+        "decreases": 45
+      },
+      "nh_count": {
+        "n": 983,
+        "positive": 34,
+        "class_days": [
+          48,
+          17
+        ],
+        "auc": 0.6179991947925628,
+        "passed": true,
+        "ties": 922,
+        "decreases": 27
+      },
+      "e85_harm": {
+        "n": 983,
+        "positive": 42,
+        "class_days": [
+          48,
+          18
+        ],
+        "auc": 0.5844866332954631,
+        "passed": false
+      },
+      "absolute": {
+        "n": 983,
+        "positive": 122,
+        "class_days": [
+          48,
+          32
+        ],
+        "auc": 0.765977418701596,
+        "passed": true
+      }
+    }
+  }
+]

@@ -1,0 +1,57 @@
+{
+ "experiment": "e155",
+ "status": "사전 등록 2026-11-28, 결과 전",
+ "question": "같은 e50 정책 위에서 Park 대표 차단과 Lee 위험 선택은 각각 하루 비용을 얼마나 낮추는가, 차단의 몫은 다른 대리 모델에서도 남는가, FCSRL 은 같은 공기량에서 차단 개입을 줄이는가",
+ "environment": "공통 v1.1 (e50 준비물), 비용 1[NH4>4]+1[구간 DO 최댓값>2], 한도 12",
+ "controllers": {
+  "abac": [
+   3.2,
+   4000.0,
+   1600.0
+  ],
+  "policies": [
+   "ppo",
+   "fcsrl",
+   "fcsrl_actor"
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "source": "/home/jio/fcsrl_src/results/e50/main/runs, model_final, 결정적"
+ },
+ "modules": {
+  "shield": "MinAirBrake(v1.1, 3.5, 1, 'others', **Park/experiments/e38/run_e38.BRAKE)",
+  "risk": "Yoo/e135 Lee e63 원리, 후보 0 +-0.125 +-0.25, 벌점 0, seed 별 적합 (학습 188일, 세 정책 경로, 난수 155000+seed)"
+ },
+ "evaluators": {
+  "v11": "e50 prepared/surrogate.pkl (주)",
+  "dofix": "e51 corrected_surrogate.pkl",
+  "past148": "e139 prefix148 surrogate.pkl"
+ },
+ "days": {
+  "val": "40일, 모든 평가 모델",
+  "train": "188일, v1.1 만",
+  "test": "불러오지 않음"
+ },
+ "h2_scales": [
+  0.9,
+  1.1
+ ],
+ "judgement": {
+  "unit": "날짜 (구성원 5개 평균, 정책은 seed 5개도 평균), Park/e49 block_ci, 5일 원형 블록 10,000번, 비교마다 seed 0",
+  "H1": "주. 학습 188일 v1.1, 방법마다 (차단-없음) 비용 블록 구간 < 0, 세 방법 모두면 지지. 검증은 확인",
+  "H2": "검증 v1.1 차단, seed 마다 PPO-Lag 세 배율 점을 보간한 FCSRL 실행 공기량에서의 개입률 차 (FCSRL-PPO), 범위 밖은 미지지, 4/5 이상 음수와 평균 음수면 지지",
+  "H3": "검증 v1.1, 방법마다 (위험 선택-차단) 비용과 공기 블록 구간. 비용 구간 > 0 이고 공기 구간이 전부 < 0 이 아니면 차단 우위, 비용 구간 < 0 이고 공기 구간이 전부 > 0 이 아니면 위험 선택 우위, 그 밖은 가르지 못함. 학습 188일은 참고",
+  "H4": "검증 past148, ABAC 와 세 방법 각각 (차단-없음) 비용 블록 구간 < 0, 넷 모두면 지지. dofix 와 위험 선택은 함께 보고"
+ },
+ "prechecks": [
+  "검증 v1.1 차단 없음 15개 정책이 e50 val_final 재현 (공기 상대 1e-7, 비용 1e-9)",
+  "ABAC 없음과 차단이 Park/e86 검증과 학습 188일 표시값 재현",
+  "FastRate 와 sklearn 예측 1e-12"
+ ],
+ "no_retuning": "결과를 본 뒤 차단 설정, 위험 선택기, 배율, 날짜를 바꾸지 않는다"
+}

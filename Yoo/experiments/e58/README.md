@@ -1,6 +1,8 @@
 # e58: 연속 NH4 초과 크기 보조 표현 학습
 
-**2026-11-13 12:06:40 KST 본 학습 시작.** 세 조건 각5seed, 총15개를 동시3개씩 실행한다. 아직 최종 성능 결과는 없다. 사용자는 팀과 겹치는 실험을 피하되 새 아이디어는 실행하도록 지시했다. Lee/Park 문서 대조와 원 논문 방법 검토를 끝냈다. [중복 검토](../../analysis/TEAM_EXPERIMENT_REVIEW_20261113.md), [논문과 구현 대응](LITERATURE.md), [고정 조건](protocol.json).
+**2026-11-13 14:03 KST 완료. 15개 모두 정상 종료, test 미사용. 사전 동시 개선 판정 불통과.** [결과 표](results.md), [요약](summary.json), [결과 요약](#결과-2026-11-13-완료). [중복 검토](../../analysis/TEAM_EXPERIMENT_REVIEW_20261113.md), [논문과 구현 대응](LITERATURE.md), [고정 조건](protocol.json).
+
+시작 당시 기록: 12:06:40 KST 에 세 조건 각5seed, 총15개를 동시3개씩 시작했다. 사용자는 팀과 겹치는 실험을 피하되 새 아이디어는 실행하도록 지시했다. Lee/Park 문서 대조와 원 논문 방법 검토를 끝낸 뒤 실행했다.
 
 ## 질문과 변경 범위
 
@@ -37,9 +39,12 @@ severity를 baseline과 detached 각각에 대응 비교한다. 세 주 지표�
 ```bash
 export OMP_NUM_THREADS=1 OMP_WAIT_POLICY=PASSIVE OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 export CUDA_VISIBLE_DEVICES=1 CUBLAS_WORKSPACE_CONFIG=:4096:8
-/home/jio/fcsrl_src/.venv-skl191/bin/python Yoo/experiments/e58/check.py --out <새 검사 경로>
-/home/jio/fcsrl_src/.venv-skl191/bin/python -u Yoo/experiments/e58/run.py --check <검사 경로>/checks.json --out <새 본 실행 경로> --jobs 3
+PY=<scikit-learn 1.9.1 환경의 python>
+$PY Yoo/experiments/e58/check.py --out <새 검사 경로>
+$PY -u Yoo/experiments/e58/run.py --check <검사 경로>/checks.json --out <새 본 실행 경로> --jobs 3
 ```
+
+서버 .32 에서는 PY 가 `fcsrl_src/.venv-skl191` 환경이다. 학습 진입점 [train_severity.py](train_severity.py) 는 e50 준비물 위치를 `prepared` 인자로 받는다. 기본값이 서버 경로이므로 다른 작업 공간에서는 이 인자로 준비물 폴더를 넘긴다. 실행한 코드는 manifest 해시와 맞아야 하므로 기본값 자체는 고치지 않았다.
 
 본 실행의 `manifest.json`에 코드 커밋, 입력/소스 SHA256, 장치 및 명령을 남긴다. `status.json`은 전체 상태, 각 `progress.json`과 tqdm 로그는 갱신과 잔여 추정, `resume.pt`는 재개 상태다. 모두 완료되면 `results.md`와 `summary.json`을 자동 집계한다.
 
@@ -51,6 +56,20 @@ export CUDA_VISIBLE_DEVICES=1 CUBLAS_WORKSPACE_CONFIG=:4096:8
 
 실제 학습 진입점도 severity seed0, 1갱신6,080전이, 마지막 정책 저장/복원과 개발200/학습940 에피소드 평가까지39.22초에 완료했다. [진입점 검사](entrypoint_checks.json). 이는 본66갱신 결과에 포함하지 않는다. 보고서의 동일값 거절, 공기량 악화 교환관계 거절, 세 지표와 tail 개선 통과를 인공 결과로 검사했다. [집계 검사](report_checks.json).
 
-## 본 실행 상태
+## 본 실행 기록
 
 실행 커밋 `d4b068c`, `/home/jio/fcsrl_src/results/e58/main/`, supervisor `/home/jio/fcsrl_src/results/e58/supervisor.log`, tmux `yoo-e58-severity`. 12:06:40 KST에 baseline/severity/detached seed0을 시작했고 나머지12개는 대기한다. 원 코드/데이터 해시는 manifest에 고정했으며 완료 시 다시 검사한다. 문서 이후 상태는 runtime의 status/progress를 확인한다.
+
+## 결과 (2026-11-13 완료)
+
+서버 결과 폴더에만 있던 자동 집계 [results.md](results.md) 와 [summary.json](summary.json) 을 2026-11-18 에 그대로 저장소로 옮겼다. 개발 val 40일 x 모델 5구성원, 마지막 정책, seed 5개 평균이다. 반복 사용한 개발 자료의 대리 환경 결과이며 현장 성능이나 독립 시험이 아니다.
+
+| 조건 | 공기량 m³/23.75h | NH4 비용 | DO 비용 | 합산 비용 | NH4 초과 mg h/L | 합산 한도 12 충족 seed |
+| --- | --- | --- | --- | --- | --- | --- |
+| baseline | 84,789 ± 6,784 | 14.09 ± 9.39 | 1.65 ± 0.24 | 15.74 ± 9.28 | 6.27 ± 2.94 | 1/5 |
+| severity | 89,131 ± 4,442 | 8.33 ± 4.23 | 1.68 ± 0.42 | 10.01 ± 4.23 | 4.62 ± 1.78 | 3/5 |
+| detached | baseline 과 같음 | | | | | 1/5 |
+
+- **사전 판정 불통과.** severity 는 baseline, detached 어느 쪽과 비교해도 세 지표 비악화 seed 가 0/5 다. NH4 비용과 초과 적분은 평균으로 줄었지만 공기가 5.1 % 늘었고 DO 비용도 조금 늘었다. seed 3, 4 는 NH4 비용도 baseline 보다 나빴다. 공기를 더 써서 NH4 를 낮춘 교환관계이며 동시 개선이 아니다.
+- **detached 항등 대조 성립.** 다섯 seed 모두 detached 의 마지막 정책이 baseline 과 정확히 같았다 (`baseline_detached_final_policy_exact`). 보조 head 만 학습하고 Encoder 로 경사를 보내지 않으면 정책이 바뀌지 않으므로, severity 의 차이는 보조 경사가 Encoder 표현을 바꾼 효과다.
+- seed 별 수치, paired 차이와 탐색적 bootstrap 95 % 구간은 [results.md](results.md) 와 [summary.json](summary.json) 에 있다. 후속 [e59](../e59/README.md) 는 이 정책들에 실행 시점 차단을 걸어 평가했다.

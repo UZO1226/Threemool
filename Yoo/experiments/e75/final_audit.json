@@ -1,0 +1,24 @@
+{
+  "verified_jobs": [
+    "dev_air_cem_0",
+    "dev_air_cem_1",
+    "dev_air_random_0",
+    "dev_air_random_1",
+    "dev_cost_cem_0",
+    "dev_cost_cem_1",
+    "dev_cost_random_0",
+    "dev_cost_random_1",
+    "val_air_cem_0",
+    "val_air_cem_1",
+    "val_air_random_0",
+    "val_air_random_1",
+    "val_cost_cem_0",
+    "val_cost_cem_1",
+    "val_cost_random_0",
+    "val_cost_random_1"
+  ],
+  "all_16_passed": true,
+  "independent_saved_array_accounting": true,
+  "per_episode_baseline_guards": true,
+  "budget_primary_monotonicity": true
+}

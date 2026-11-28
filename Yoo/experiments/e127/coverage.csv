@@ -1,0 +1,7 @@
+seed_set,reason,n,median_air
+0-4,day_ended,9,0.0
+0-4,fired,88,-106.6885972395612
+0-4,nh_never_at_or_below_3,3,0.0
+5-9,day_ended,42,0.0
+5-9,fired,54,71.45316642709076
+5-9,nh_never_at_or_below_3,4,0.0

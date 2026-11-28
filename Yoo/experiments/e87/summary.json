@@ -1,0 +1,267 @@
+[
+  {
+    "seed": 0,
+    "sha256": [
+      "4e9031ebd69caafa61a3904618b47fbddeb4c9b1968450606e9b21b05a093cf1",
+      "e728d9f92ad82c5c95a5d9d343eb2c71e5b7b9a0e702857c5dfe2115284be142"
+    ],
+    "all": {
+      "n": 240,
+      "eligible_days": 34,
+      "good": 108,
+      "useful": 104,
+      "good_days": 30,
+      "useful_days": 29,
+      "passes": true,
+      "oracle_m3": 382.49542844021585,
+      "base_m3": 21275.54339570456,
+      "oracle_pct": 1.797817434441839,
+      "median_good_m3": 626.5766941942275,
+      "always_cut_delta": [
+        247.67129862436312,
+        0.10314823635257071,
+        -0.029701752495870135,
+        0.0165709139055348
+      ],
+      "good_date_weighted_pct": 43.4133221439723
+    },
+    "nonoverlap": {
+      "n": 174,
+      "eligible_days": 34,
+      "good": 73,
+      "useful": 69,
+      "good_days": 29,
+      "useful_days": 28,
+      "passes": true,
+      "oracle_m3": 361.731473383331,
+      "base_m3": 21732.710052318256,
+      "oracle_pct": 1.6644563540971946,
+      "median_good_m3": 621.7242972925305,
+      "always_cut_delta": [
+        247.67573446000205,
+        0.10196078431372547,
+        -0.02091503267973856,
+        0.02074890450758687
+      ],
+      "good_date_weighted_pct": 41.31652661064425
+    },
+    "agreement": {
+      "complete": 12,
+      "agree": 5,
+      "eligible_days": 10,
+      "agree_days": 4
+    }
+  },
+  {
+    "seed": 1,
+    "sha256": [
+      "7fc997deadf01689b03d9e9d2571158d83faffe93967d55cf3a9a4c197e0fd09",
+      "e6106daa222d34e4cce0e33cd31a2bc7c48a264a80baa242890f5704196b249c"
+    ],
+    "all": {
+      "n": 601,
+      "eligible_days": 46,
+      "good": 240,
+      "useful": 235,
+      "good_days": 44,
+      "useful_days": 44,
+      "passes": true,
+      "oracle_m3": 527.0934323341601,
+      "base_m3": 19681.59543630009,
+      "oracle_pct": 2.6781031753249347,
+      "median_good_m3": 745.3455380164087,
+      "always_cut_delta": [
+        -101.5376588340193,
+        0.09241279338242961,
+        -0.014440158952781673,
+        0.021942587806419764
+      ],
+      "good_date_weighted_pct": 39.79028862147656
+    },
+    "nonoverlap": {
+      "n": 339,
+      "eligible_days": 46,
+      "good": 135,
+      "useful": 132,
+      "good_days": 40,
+      "useful_days": 40,
+      "passes": true,
+      "oracle_m3": 522.0400433378636,
+      "base_m3": 19273.3715153355,
+      "oracle_pct": 2.708607795592406,
+      "median_good_m3": 832.043556496501,
+      "always_cut_delta": [
+        -82.5545679792791,
+        0.07848087902435731,
+        -0.0199872591176939,
+        0.010051525634013648
+      ],
+      "good_date_weighted_pct": 38.66013213839301
+    },
+    "agreement": {
+      "complete": 10,
+      "agree": 1,
+      "eligible_days": 8,
+      "agree_days": 1
+    }
+  },
+  {
+    "seed": 2,
+    "sha256": [
+      "3c7a33d319558978576dca723f14b2dfba3bedbf958942d3a89da1faef96629f",
+      "842a577560404a15567a84b6a386821aeeb04bae1949f341477aba13d5a94070"
+    ],
+    "all": {
+      "n": 594,
+      "eligible_days": 47,
+      "good": 262,
+      "useful": 261,
+      "good_days": 44,
+      "useful_days": 44,
+      "passes": true,
+      "oracle_m3": 512.8069246656448,
+      "base_m3": 18156.276574251006,
+      "oracle_pct": 2.8244057781808682,
+      "median_good_m3": 651.4454111456871,
+      "always_cut_delta": [
+        -204.0315512422648,
+        -0.08453389449489378,
+        -0.013893388343131557,
+        0.034976466723689974
+      ],
+      "good_date_weighted_pct": 46.11031660782711
+    },
+    "nonoverlap": {
+      "n": 323,
+      "eligible_days": 47,
+      "good": 162,
+      "useful": 161,
+      "good_days": 42,
+      "useful_days": 42,
+      "passes": true,
+      "oracle_m3": 446.53049380822677,
+      "base_m3": 18320.84018722969,
+      "oracle_pct": 2.4372817471519412,
+      "median_good_m3": 627.0536705851555,
+      "always_cut_delta": [
+        -271.2079798859598,
+        -0.12760318877340154,
+        -0.019976359338061467,
+        0.026961369338139234
+      ],
+      "good_date_weighted_pct": 48.71502610864313
+    },
+    "agreement": {
+      "complete": 28,
+      "agree": 10,
+      "eligible_days": 20,
+      "agree_days": 8
+    }
+  },
+  {
+    "seed": 3,
+    "sha256": [
+      "96cf9e6dafffecb156855e1a405c05bb979f7784c2b4e02c87fac66b0dbc6b89",
+      "9a5b460e876abb0b8811bc21f1c99f4f00e1a0b8c9319fc31c8da5d2a5411ae5"
+    ],
+    "all": {
+      "n": 290,
+      "eligible_days": 43,
+      "good": 128,
+      "useful": 126,
+      "good_days": 35,
+      "useful_days": 35,
+      "passes": true,
+      "oracle_m3": 457.3299256196331,
+      "base_m3": 21011.118134024317,
+      "oracle_pct": 2.1766091775908714,
+      "median_good_m3": 936.8474665097892,
+      "always_cut_delta": [
+        -33.709461784355355,
+        -0.01625977381791331,
+        -0.021834625322997427,
+        0.02070709778898114
+      ],
+      "good_date_weighted_pct": 40.00494983053123
+    },
+    "nonoverlap": {
+      "n": 191,
+      "eligible_days": 43,
+      "good": 77,
+      "useful": 76,
+      "good_days": 32,
+      "useful_days": 32,
+      "passes": true,
+      "oracle_m3": 372.598891738968,
+      "base_m3": 21131.721173915423,
+      "oracle_pct": 1.7632207460644365,
+      "median_good_m3": 996.1553155444562,
+      "always_cut_delta": [
+        128.65677453158648,
+        0.01201550387596898,
+        -0.01976744186046512,
+        0.016546666227410783
+      ],
+      "good_date_weighted_pct": 34.63178294573643
+    },
+    "agreement": {
+      "complete": 2,
+      "agree": 0,
+      "eligible_days": 2,
+      "agree_days": 0
+    }
+  },
+  {
+    "seed": 4,
+    "sha256": [
+      "5c87de11bd28afe079ed43f6c55a8a3a706cd538c5145465a7ddf5a86a5f80ec",
+      "c6b35118c55e2e3f3fc3c8ac9ec3fb1cce7dc602e939ac64b865708896b2084e"
+    ],
+    "all": {
+      "n": 983,
+      "eligible_days": 48,
+      "good": 523,
+      "useful": 511,
+      "good_days": 48,
+      "useful_days": 48,
+      "passes": true,
+      "oracle_m3": 426.19654251279667,
+      "base_m3": 21576.29108272212,
+      "oracle_pct": 1.9753003001247358,
+      "median_good_m3": 526.6470117494464,
+      "always_cut_delta": [
+        -97.03992055094209,
+        0.014882156224940825,
+        -0.010422681038147905,
+        0.004954297160919284
+      ],
+      "good_date_weighted_pct": 53.12217056071732
+    },
+    "nonoverlap": {
+      "n": 406,
+      "eligible_days": 48,
+      "good": 222,
+      "useful": 219,
+      "good_days": 48,
+      "useful_days": 48,
+      "passes": true,
+      "oracle_m3": 464.79872371161673,
+      "base_m3": 22471.416001328238,
+      "oracle_pct": 2.068399800369249,
+      "median_good_m3": 526.710513047874,
+      "always_cut_delta": [
+        -162.73128652732842,
+        0.01765803640803641,
+        -0.020452290764790767,
+        0.01004514863658045
+      ],
+      "good_date_weighted_pct": 55.15400687275687
+    },
+    "agreement": {
+      "complete": 63,
+      "agree": 18,
+      "eligible_days": 29,
+      "agree_days": 13
+    }
+  }
+]

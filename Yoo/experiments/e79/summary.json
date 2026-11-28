@@ -1,0 +1,543 @@
+{
+  "means": {
+    "base": {
+      "air": 84788.54693721025,
+      "nh": 14.087,
+      "do": 1.6480000000000001,
+      "excess": 6.274409401920858,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "limit_pct": 61.8
+    },
+    "down": {
+      "air": 83636.7400227274,
+      "nh": 15.008000000000001,
+      "do": 1.5630000000000002,
+      "excess": 6.577406094587021,
+      "up_steps": 0.0,
+      "down_steps": 16.948,
+      "limit_pct": 58.9
+    },
+    "both": {
+      "air": 84156.6518845025,
+      "nh": 14.247,
+      "do": 1.738,
+      "excess": 5.928345039029155,
+      "up_steps": 3.9699999999999998,
+      "down_steps": 17.032999999999998,
+      "limit_pct": 60.1
+    },
+    "gated": {
+      "air": 83676.95888066886,
+      "nh": 14.989,
+      "do": 1.6079999999999999,
+      "excess": 6.503484923029477,
+      "up_steps": 0.462,
+      "down_steps": 16.939,
+      "limit_pct": 58.8
+    }
+  },
+  "paired": [
+    {
+      "joint": false,
+      "secondary": false
+    },
+    {
+      "joint": false,
+      "secondary": false
+    },
+    {
+      "joint": false,
+      "secondary": true
+    },
+    {
+      "joint": false,
+      "secondary": false
+    },
+    {
+      "joint": false,
+      "secondary": false
+    }
+  ],
+  "decision": {
+    "joint": false,
+    "secondary": false
+  },
+  "evidence": [
+    {
+      "seed": 0,
+      "leaves": [
+        {
+          "leaf": 3,
+          "fit_positive": 2,
+          "fit_days": 2,
+          "cal_proposed": 7,
+          "cal_positive": 0,
+          "cal_days": 0,
+          "permit": false
+        },
+        {
+          "leaf": 11,
+          "fit_positive": 10,
+          "fit_days": 7,
+          "cal_proposed": 8,
+          "cal_positive": 0,
+          "cal_days": 0,
+          "permit": false
+        },
+        {
+          "leaf": 12,
+          "fit_positive": 2,
+          "fit_days": 2,
+          "cal_proposed": 15,
+          "cal_positive": 3,
+          "cal_days": 3,
+          "permit": false
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "leaves": [
+        {
+          "leaf": 2,
+          "fit_positive": 1,
+          "fit_days": 1,
+          "cal_proposed": 17,
+          "cal_positive": 0,
+          "cal_days": 0,
+          "permit": false
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "leaves": [
+        {
+          "leaf": 3,
+          "fit_positive": 2,
+          "fit_days": 2,
+          "cal_proposed": 11,
+          "cal_positive": 2,
+          "cal_days": 2,
+          "permit": false
+        },
+        {
+          "leaf": 12,
+          "fit_positive": 11,
+          "fit_days": 9,
+          "cal_proposed": 26,
+          "cal_positive": 13,
+          "cal_days": 7,
+          "permit": true
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "leaves": [
+        {
+          "leaf": 14,
+          "fit_positive": 10,
+          "fit_days": 7,
+          "cal_proposed": 23,
+          "cal_positive": 2,
+          "cal_days": 2,
+          "permit": false
+        }
+      ]
+    },
+    {
+      "seed": 4,
+      "leaves": [
+        {
+          "leaf": 10,
+          "fit_positive": 2,
+          "fit_days": 2,
+          "cal_proposed": 31,
+          "cal_positive": 2,
+          "cal_days": 2,
+          "permit": false
+        },
+        {
+          "leaf": 11,
+          "fit_positive": 7,
+          "fit_days": 7,
+          "cal_proposed": 1,
+          "cal_positive": 1,
+          "cal_days": 1,
+          "permit": false
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "seed": 0,
+      "mode": "base",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 415,
+        "0": 347,
+        "1": 14
+      },
+      "air": 84934.59285266523,
+      "nh": 12.16,
+      "do": 1.485,
+      "excess": 5.748157046190934,
+      "limit_pct": 62.0,
+      "reward": -37.74870793451788,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "raw_air": 84934.59285266523
+    },
+    {
+      "seed": 0,
+      "mode": "down",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 415,
+        "0": 347,
+        "1": 14
+      },
+      "air": 83684.37064459315,
+      "nh": 11.875,
+      "do": 1.385,
+      "excess": 5.7490445565453845,
+      "limit_pct": 61.0,
+      "reward": -37.193053619819175,
+      "up_steps": 0.0,
+      "down_steps": 8.02,
+      "raw_air": 84686.87064459315
+    },
+    {
+      "seed": 0,
+      "mode": "both",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 415,
+        "0": 347,
+        "1": 14
+      },
+      "air": 84176.92969979951,
+      "nh": 11.495,
+      "do": 1.7,
+      "excess": 5.35642753575826,
+      "limit_pct": 64.0,
+      "reward": -37.411968755466454,
+      "up_steps": 2.95,
+      "down_steps": 7.98,
+      "raw_air": 84805.67969979951
+    },
+    {
+      "seed": 0,
+      "mode": "gated",
+      "split": "winter",
+      "air": 83684.37064459315,
+      "nh": 11.875,
+      "do": 1.385,
+      "excess": 5.7490445565453845,
+      "limit_pct": 61.0,
+      "reward": -37.193053619819175,
+      "up_steps": 0.0,
+      "down_steps": 8.02,
+      "raw_air": 84686.87064459315
+    },
+    {
+      "seed": 1,
+      "mode": "base",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 293,
+        "0": 270,
+        "1": 1
+      },
+      "air": 79296.70578332443,
+      "nh": 29.45,
+      "do": 1.61,
+      "excess": 10.91642692631699,
+      "limit_pct": 27.5,
+      "reward": -35.242980348144194,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "raw_air": 79296.70578332443
+    },
+    {
+      "seed": 1,
+      "mode": "down",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 293,
+        "0": 270,
+        "1": 1
+      },
+      "air": 78169.8661965155,
+      "nh": 32.24,
+      "do": 1.495,
+      "excess": 12.374620141576838,
+      "limit_pct": 25.5,
+      "reward": -34.74216275400689,
+      "up_steps": 0.0,
+      "down_steps": 19.76,
+      "raw_air": 80639.8661965155
+    },
+    {
+      "seed": 1,
+      "mode": "both",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 293,
+        "0": 270,
+        "1": 1
+      },
+      "air": 79366.3174549694,
+      "nh": 29.505,
+      "do": 1.645,
+      "excess": 10.08209493245039,
+      "limit_pct": 25.5,
+      "reward": -35.27391886887529,
+      "up_steps": 10.415,
+      "down_steps": 19.61,
+      "raw_air": 80515.6924549694
+    },
+    {
+      "seed": 1,
+      "mode": "gated",
+      "split": "winter",
+      "air": 78169.8661965155,
+      "nh": 32.24,
+      "do": 1.495,
+      "excess": 12.374620141576838,
+      "limit_pct": 25.5,
+      "reward": -34.74216275400689,
+      "up_steps": 0.0,
+      "down_steps": 19.76,
+      "raw_air": 80639.8661965155
+    },
+    {
+      "seed": 2,
+      "mode": "base",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 320,
+        "0": 237,
+        "1": 13
+      },
+      "air": 82731.17491820245,
+      "nh": 13.835,
+      "do": 1.4,
+      "excess": 6.871110787569405,
+      "limit_pct": 64.5,
+      "reward": -36.76941107475665,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "raw_air": 82731.17491820245
+    },
+    {
+      "seed": 2,
+      "mode": "down",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 320,
+        "0": 237,
+        "1": 13
+      },
+      "air": 81156.2371917849,
+      "nh": 15.49,
+      "do": 1.28,
+      "excess": 6.956957013109893,
+      "limit_pct": 57.0,
+      "reward": -36.0694387519044,
+      "up_steps": 0.0,
+      "down_steps": 20.95,
+      "raw_air": 83774.9871917849
+    },
+    {
+      "seed": 2,
+      "mode": "both",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 320,
+        "0": 237,
+        "1": 13
+      },
+      "air": 81407.00840209145,
+      "nh": 15.4,
+      "do": 1.53,
+      "excess": 6.5764280846713845,
+      "limit_pct": 56.5,
+      "reward": -36.180892623151756,
+      "up_steps": 3.085,
+      "down_steps": 21.02,
+      "raw_air": 83648.88340209145
+    },
+    {
+      "seed": 2,
+      "mode": "gated",
+      "split": "winter",
+      "air": 81357.33148149215,
+      "nh": 15.395,
+      "do": 1.505,
+      "excess": 6.587351155322173,
+      "limit_pct": 56.5,
+      "reward": -36.15881399177429,
+      "up_steps": 2.31,
+      "down_steps": 20.905,
+      "raw_air": 83681.70648149215
+    },
+    {
+      "seed": 3,
+      "mode": "base",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 237,
+        "0": 231,
+        "1": 10
+      },
+      "air": 96309.90650462803,
+      "nh": 3.89,
+      "do": 2.01,
+      "excess": 3.118985218812237,
+      "limit_pct": 89.0,
+      "reward": -42.80440289094579,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "raw_air": 96309.90650462803
+    },
+    {
+      "seed": 3,
+      "mode": "down",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 237,
+        "0": 231,
+        "1": 10
+      },
+      "air": 95324.87849129131,
+      "nh": 3.995,
+      "do": 1.92,
+      "excess": 3.1202070351445115,
+      "limit_pct": 89.0,
+      "reward": -42.366612662796136,
+      "up_steps": 0.0,
+      "down_steps": 15.395,
+      "raw_air": 97249.25349129131
+    },
+    {
+      "seed": 3,
+      "mode": "both",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 237,
+        "0": 231,
+        "1": 10
+      },
+      "air": 95212.76022342965,
+      "nh": 3.97,
+      "do": 1.875,
+      "excess": 3.0651946802947028,
+      "limit_pct": 89.0,
+      "reward": -42.316782321524286,
+      "up_steps": 0.49,
+      "down_steps": 15.35,
+      "raw_air": 97070.26022342965
+    },
+    {
+      "seed": 3,
+      "mode": "gated",
+      "split": "winter",
+      "air": 95324.87849129131,
+      "nh": 3.995,
+      "do": 1.92,
+      "excess": 3.1202070351445115,
+      "limit_pct": 89.0,
+      "reward": -42.366612662796136,
+      "up_steps": 0.0,
+      "down_steps": 15.395,
+      "raw_air": 97249.25349129131
+    },
+    {
+      "seed": 4,
+      "mode": "base",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 300,
+        "0": 293,
+        "1": 9
+      },
+      "air": 80670.35462723114,
+      "nh": 11.1,
+      "do": 1.735,
+      "excess": 4.717367030714724,
+      "limit_pct": 66.0,
+      "reward": -35.85349094543606,
+      "up_steps": 0.0,
+      "down_steps": 0.0,
+      "raw_air": 80670.35462723114
+    },
+    {
+      "seed": 4,
+      "mode": "down",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 300,
+        "0": 293,
+        "1": 9
+      },
+      "air": 79848.34758945217,
+      "nh": 11.44,
+      "do": 1.735,
+      "excess": 4.686201726558479,
+      "limit_pct": 62.0,
+      "reward": -35.48815448420096,
+      "up_steps": 0.0,
+      "down_steps": 20.615,
+      "raw_air": 82425.22258945217
+    },
+    {
+      "seed": 4,
+      "mode": "both",
+      "split": "winter",
+      "fit_labels": {
+        "-1": 300,
+        "0": 293,
+        "1": 9
+      },
+      "air": 80620.24364222249,
+      "nh": 10.865,
+      "do": 1.94,
+      "excess": 4.561579961971038,
+      "limit_pct": 65.5,
+      "reward": -35.83121939654333,
+      "up_steps": 2.91,
+      "down_steps": 21.205,
+      "raw_air": 82907.11864222249
+    },
+    {
+      "seed": 4,
+      "mode": "gated",
+      "split": "winter",
+      "air": 79848.34758945217,
+      "nh": 11.44,
+      "do": 1.735,
+      "excess": 4.686201726558479,
+      "limit_pct": 62.0,
+      "reward": -35.48815448420096,
+      "up_steps": 0.0,
+      "down_steps": 20.615,
+      "raw_air": 82425.22258945217
+    }
+  ],
+  "e78_input_sha256": {
+    "fit0.npz": "574f78da42edcaae4f276e311fcc4ec0296b35b7b60a5c1bf2801dcdd4f6689f",
+    "tree0.joblib": "d773f76157d57292aaced0bfeb549d45e1c82773229bdc808344632d869be3f4",
+    "fit1.npz": "f464d738d5e4d2ec36a3983cc3fbc5d8db42d184d92266ce40d6014fe25e0589",
+    "tree1.joblib": "ec45890a6e6089be6422aac9329c8f869b63b9af003c7e90609c0662c89b9cd7",
+    "fit2.npz": "d178729d9c156d390bd0b4536ad10930674ce5577d6cd5c3c59750e3fd61696b",
+    "tree2.joblib": "816c06e68a3baa04221b35b45a1bceb955f440c9afe6dff6b4ea62888f30098f",
+    "fit3.npz": "ee9e5fe9b32dad7547e1abcdc4aceccdda296d5ae02760ba98366c648ef376a9",
+    "tree3.joblib": "680603936bcc990632ed590edb407d5fe41f4bb255e90b65d1c8dde0629f8b91",
+    "fit4.npz": "8d6a026bf9990e5a91bf19fd0f713f8145c650f94279dcb064ffc19c8dac31da",
+    "tree4.joblib": "ef1791cf4effc9483f8efc3d8d339a4d94898af31f1e5ee20c8254e9b43abc6e"
+  }
+}

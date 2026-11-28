@@ -1,0 +1,16 @@
+{
+  "native": {
+    "train_candidates": 2246,
+    "train_positive": 799,
+    "threshold": 0.3980332406984839,
+    "autumn_selections": 40,
+    "autumn_episodes": 400
+  },
+  "consensus": {
+    "train_candidates": 2246,
+    "train_positive": 76,
+    "threshold": 0.05233215584518223,
+    "autumn_selections": 40,
+    "autumn_episodes": 400
+  }
+}
