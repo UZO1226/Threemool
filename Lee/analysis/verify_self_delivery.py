@@ -20,7 +20,7 @@ def main():
     workspace = args.workspace.resolve()
     root = workspace / 'Threemool'
     indexes = [root / f'Lee/experiments/{trial}/artifacts.json'
-               for trial in ('e63', 'e65', 'e66', 'e67', 'e68', 'e69', 'e70', 'e71', 'e72', 'e73', 'e74', 'e75')]
+               for trial in ('e63', 'e65', 'e66', 'e67', 'e68', 'e69', 'e70', 'e71', 'e72', 'e73', 'e74', 'e75', 'e76')]
     indexes.append(root / 'Lee/experiments/e68/held_artifacts.json')
     fresh = root / 'Lee/experiments/e71/fresh_artifacts.json'
     if fresh.exists():
